@@ -6,8 +6,7 @@
       "es5",
       "es6",
       "es7",
-      "esnext",
-      "dom",
+      "esnext"
     ],
     "allowJs": true,
     "jsx": "react",
@@ -34,10 +33,6 @@
     /* Module Resolution Options */
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": "./",
-    "typeRoots": [
-      "./types"
-    ],
     "types": [
       "node"
     ],
@@ -51,7 +46,6 @@
   "exclude": [
     "node_modules",
     "babel.config.js",
-    "metro.config.js",
     "jest.config.js"
   ]
 }
