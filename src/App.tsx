@@ -1,6 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+
+import Icon from "./Components/assets/icons/iconList";
 
 const App: React.FC = () => {
   return (
@@ -18,9 +20,10 @@ const App: React.FC = () => {
         >
           Learn React
         </a>
+        <Icon icon="amyIcon" size={45} color="#fff" />
       </header>
     </div>
   );
-}
+};
 
 export default App;
