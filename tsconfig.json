@@ -24,7 +24,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": false,
     "baseUrl": "./",
     "typeRoots": ["./types"],
     "types": ["node", "jest", "mocha"],
@@ -32,9 +32,5 @@
     "esModuleInterop": true
   },
   "include": ["src", "types"],
-  "exclude": [
-    "node_modules",
-    "babel.config.js",
-    "jest.config.js"
-  ]
+  "exclude": ["node_modules", "babel.config.js", "jest.config.js"]
 }
