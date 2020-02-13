@@ -1,6 +1,6 @@
 import React from "react";
-import Icon from "./componentforrenaming/assets/icons/iconList";
-import Header from "./componentforrenaming/headers/Header";
+import Icon from "./component/assets/icons/iconList";
+import Header from "./component/headers/Header";
 const App: React.FC = () => {
   return (
     <div style={{ backgroundColor: "#ff2626", height: "100vh", padding: 100 }}>
