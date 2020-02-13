@@ -8,7 +8,7 @@ const Icon: React.FC<{
   icon: string;
   className?: string;
 }> = props => {
-  const { color, size = "100%", icon, className = "" } = props;
+  const { color = "#ff2626", size = "100%", icon, className = "" } = props;
   return (
     <IcomoonReact
       className={className}

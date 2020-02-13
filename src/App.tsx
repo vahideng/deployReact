@@ -1,26 +1,17 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-
-import Icon from "./Components/assets/icons/iconList";
-
+import Icon from "./components/assets/icons/iconList";
+import Header from "./components/headers/Header";
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Icon icon="amyIcon" size={45} color="#fff" />
+    <div style={{ backgroundColor: "#ff2626", height: "100vh", padding: 100 }}>
+      <header>
+        <Icon icon="amyIcon" size={75} color="#ffffff" />
+        <Header
+          title="good morning"
+          subTitle="Banking your way. 
+What would you like
+to do today?"
+        />
       </header>
     </div>
   );

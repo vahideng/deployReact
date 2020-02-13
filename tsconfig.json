@@ -2,13 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
-    "lib": [
-      "es5",
-      "es6",
-      "es7",
-      "esnext",
-      "dom"
-    ],
+    "lib": ["es5", "es6", "es7", "esnext", "dom"],
     "allowJs": true,
     "jsx": "react",
     "noEmit": true,
@@ -32,19 +26,12 @@
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "./",
-    "typeRoots": [
-      "./types"
-    ],
-    "types": [
-      "node"
-    ],
+    "typeRoots": ["./types"],
+    "types": ["node", "jest", "mocha"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },
-  "include": [
-    "src",
-    "types"
-  ],
+  "include": ["src", "types"],
   "exclude": [
     "node_modules",
     "babel.config.js",
