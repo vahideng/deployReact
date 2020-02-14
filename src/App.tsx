@@ -8,9 +8,7 @@ const App: React.FC = () => {
         <Icon icon="amyIcon" size={75} color="#ffffff" />
         <Header
           title="good morning"
-          subTitle="Banking your way. 
-What would you like
-to do today?"
+          subTitle="Mist enveloped the ship three hours out from port."
         />
       </header>
     </div>
