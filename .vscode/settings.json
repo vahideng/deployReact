@@ -8,6 +8,7 @@
         "browserslist",
         "crossorigin",
         "esnext",
+        "flexbox",
         "onepass",
         "plusplus",
         "webfonts"

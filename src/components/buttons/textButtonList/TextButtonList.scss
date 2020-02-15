@@ -1,0 +1,18 @@
+@import "../../assets/colors/colors.scss";
+
+.rowWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  padding: 10px 0;
+  white-space: nowrap;
+}
+
+.separator {
+  border-right: 1px solid $grey444;
+  padding-right: 5px;
+  padding-left: 5px;
+  line-height: 12px;
+  text-align: center;
+}
