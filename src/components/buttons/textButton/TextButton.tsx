@@ -2,17 +2,17 @@ import React from "react";
 import Paragraphs from "../../assets/typography";
 import "./TextButton.scss";
 
-const {} = Paragraphs;
+const { B_13_ORANGE_463 } = Paragraphs;
 interface Props {
-  buttonText?: string;
+  buttonText: string;
 }
 
 const TextButton: React.FC<Props> = props => {
-  const {} = props;
+  const { buttonText } = props;
 
   return (
     <>
-      <div></div>
+      <B_13_ORANGE_463>{buttonText}</B_13_ORANGE_463>
     </>
   );
 };

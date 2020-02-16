@@ -4,7 +4,7 @@ import "./header.scss";
 const { SB_15_BLACK, B_48_BLACK } = Paragraphs;
 interface Props {
   title: string;
-  subTitle?: string;
+  subTitle: string;
 }
 
 const Header: React.FC<Props> = props => {

@@ -3,7 +3,7 @@ import Header from "../../components/headers/header/Header";
 import TextButtonList from "../../components/buttons/textButtonList/TextButtonList";
 interface Props {}
 
-function HeadersCon({}: Props): ReactElement {
+function Sprint_1({}: Props): ReactElement {
   return (
     <>
       <Header
@@ -27,4 +27,4 @@ function HeadersCon({}: Props): ReactElement {
   );
 }
 
-export default HeadersCon;
+export default Sprint_1;

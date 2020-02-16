@@ -1,9 +1,9 @@
 import React from "react";
-import HeaderCon from "../src/containers/HeadersCon/HeadersCon";
+import Sprint_1 from "./containers/Sprint_1/Sprint_1";
 const App: React.FC = () => {
   return (
     <>
-      <HeaderCon />
+      <Sprint_1 />
     </>
   );
 };
