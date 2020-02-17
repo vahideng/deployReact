@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Paragraphs from "../../assets/typography";
 import "./TextButtonList.scss";
 
@@ -6,10 +6,11 @@ const { SB_11_GREY444 } = Paragraphs;
 interface Props {
   data?: string[];
   footerText?: string;
+  onTextClick: (text: ReactNode, _index: number) => void;
 }
 
 const TextButtonList: React.FC<Props> = props => {
-  const { data, footerText } = props;
+  const { data, footerText, onTextClick } = props;
 
   return (
     <>
@@ -19,6 +20,9 @@ const TextButtonList: React.FC<Props> = props => {
             data.map((text: React.ReactNode, _index) => {
               return (
                 <SB_11_GREY444
+                  onClick={() => {
+                    onTextClick(text, _index);
+                  }}
                   key={_index}
                   className="separator"
                   style={_index >= data.length - 1 ? { border: 0 } : {}}

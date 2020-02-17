@@ -7,6 +7,7 @@ const SB_15_BLACK = styled.p`
   font-weight: 600;
   line-height: 20px;
 `;
+
 const B_48_BLACK = styled.p`
   margin: 0;
   color: #000000;
@@ -24,11 +25,12 @@ const SB_11_GREY444 = styled.p`
   font-weight: 600;
   font-size: 0.68rem;
 `;
+
 const B_13_ORANGE_463 = styled.p`
   margin: 0;
   color: #ffa463;
   font-weight: 700;
-  font-size: 1.23rem;
+  font-size: 0.81rem;
 `;
 export default {
   SB_15_BLACK,

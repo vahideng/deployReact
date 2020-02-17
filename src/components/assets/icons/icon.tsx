@@ -4,11 +4,10 @@ import iconSet from "./iconSVG";
 
 const Icon: React.FC<{
   color?: string;
-  size: string | number;
-  icon: string;
+  size?: number;
+  icon?: string;
   className?: string;
-}> = props => {
-  const { color = "#ff2626", size = "100%", icon, className = "" } = props;
+}> = ({ color = "#ff2626", size = 50, icon = "amyIcon", className = "" }) => {
   return (
     <IcomoonReact
       className={className}
