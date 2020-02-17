@@ -1,0 +1,40 @@
+import styled from "styled-components";
+
+const SB_15_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-size: 0.93rem;
+  font-weight: 600;
+  line-height: 20px;
+`;
+
+const B_48_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 60px;
+  @media (max-width: 400px) {
+    font-size: 2rem;
+  }
+`;
+
+const SB_11_GREY444 = styled.p`
+  margin: 0;
+  color: #444444;
+  font-weight: 600;
+  font-size: 0.68rem;
+`;
+
+const B_13_ORANGE_463 = styled.p`
+  margin: 0;
+  color: #ffa463;
+  font-weight: 700;
+  font-size: 0.81rem;
+`;
+export default {
+  SB_15_BLACK,
+  B_48_BLACK,
+  SB_11_GREY444,
+  B_13_ORANGE_463
+};
