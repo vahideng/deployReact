@@ -2,7 +2,8 @@ form input {
   display: none;
 }
 div.row {
-  padding-left: 13px;
+  display: flex;
+  flex-direction: row;
 }
 label {
   padding: O;

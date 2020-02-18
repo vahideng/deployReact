@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import Paragraphs from "../../assets/typography";
-import "./TextButtonList.scss";
+import classes from "./TextButtonList.module.css";
 
 const { SB_11_GREY444 } = Paragraphs;
 interface Props {
@@ -16,7 +16,7 @@ const TextButtonList: React.FC<Props> = props => {
   return (
     <>
       <div className="container" id={`${testId}-1`}>
-        <div className="rowWrapper" id={`${testId}-2`}>
+        <div className={classes.rowWrapper} id={`${testId}-2`}>
           {!!data &&
             data.map((text: React.ReactNode, _index) => {
               return (
@@ -26,7 +26,7 @@ const TextButtonList: React.FC<Props> = props => {
                     onTextClick(text, _index, testId!);
                   }}
                   key={_index}
-                  className="separator"
+                  className={classes.separator}
                   style={_index >= data.length - 1 ? { border: 0 } : {}}
                 >
                   {text}

@@ -6,6 +6,8 @@ import Logo from "src/components/assets/logo/logo";
 import styled from "styled-components";
 import images from "src/assets";
 import Checkbox from "src/components/inputs/checkBox/checkBox";
+import Tabs from "src/components/buttons/tabs/Tabs";
+import FooterLogo from "src/components/headers/footerLogo/footerLogo";
 
 const CenteredDiv = styled.div`
   display: flex;
@@ -122,6 +124,95 @@ class Sprint1 extends Component<Props, State> {
               </p>
             </div>
           }
+        />
+        <hr />
+        <Tabs titles={["test", "test"]} selected={1} />
+        <hr />
+        <FooterLogo
+          onLogoClick={(logo, index) => {
+            console.log(logo.src, logo.id, index);
+          }}
+          logos={[
+            {
+              src:
+                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
+              id: "idTest-0"
+            },
+            {
+              src:
+                "https://images.unsplash.com/photo-1554463529-e27854014799?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
+              id: "idTest-1"
+            },
+            {
+              src:
+                "https://images.unsplash.com/photo-1554463529-e27854014799?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
+              id: "idTest-2"
+            },
+            {
+              src:
+                "https://images.unsplash.com/photo-1522827130596-971a53beeadc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+              id: "idTest-3"
+            },
+            {
+              src:
+                "https://images.unsplash.com/photo-1554463529-e27854014799?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
+              id: "idTest-4"
+            },
+            {
+              src:
+                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
+              id: "idTest-5"
+            },
+            {
+              src:
+                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
+              id: "idTest-6"
+            },
+            {
+              src:
+                "https://images.unsplash.com/photo-1522827130596-971a53beeadc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+              id: "idTest-7"
+            },
+            {
+              src:
+                "https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
+              id: "idTest-8"
+            },
+            {
+              src:
+                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
+              id: "idTest-9"
+            },
+            {
+              src: images.common.sampleLogo,
+              id: "idTest-10"
+            },
+            {
+              src:
+                "https://images.unsplash.com/photo-1557053964-937650b63311?ixlib=rb-1.2.1&auto=format&fit=crop&w=2359&q=80",
+              id: "idTest-11"
+            },
+            {
+              src:
+                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
+              id: "idTest-12"
+            },
+            {
+              src:
+                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
+              id: "idTest-13"
+            },
+            {
+              src:
+                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
+              id: "idTest-14"
+            },
+            {
+              src:
+                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
+              id: "idTest-15"
+            }
+          ]}
         />
         <hr />
       </>

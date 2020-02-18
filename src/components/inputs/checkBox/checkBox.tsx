@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import "./checkBox.scss";
+import classes from "./checkBox.module.css";
 
 import Icon from "src/components/assets/icons/icon";
 interface Props {
@@ -15,7 +15,7 @@ const Checkbox: React.FC<Props> = props => {
 
   return (
     <form id={`${testId}`}>
-      <div className="row" id={`${testId}-1`}>
+      <div className={classes.row} id={`${testId}-1`}>
         <label id={`${testId}-2`}>
           {!!isChecked ? (
             <Icon icon="checkbox-yes" color="#36a03e" size={25} />
@@ -32,7 +32,7 @@ const Checkbox: React.FC<Props> = props => {
             id={`${testId}-3`}
           />
         </label>
-        <div className="children">{children}</div>
+        <div className={classes.children}>{children}</div>
       </div>
     </form>
   );

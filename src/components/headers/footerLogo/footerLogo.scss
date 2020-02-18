@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.imageContainer {
+  display: flex;
+  margin: 5px;
+  max-height: 1.1rem;
+  max-width: 2rem;
+}

@@ -7,6 +7,12 @@ const SB_15_BLACK = styled.p`
   font-weight: 600;
   line-height: 20px;
 `;
+const B_17_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-size: 1.06rem;
+  font-weight: 400;
+`;
 
 const B_48_BLACK = styled.p`
   margin: 0;
@@ -25,6 +31,12 @@ const SB_11_GREY444 = styled.p`
   font-weight: 600;
   font-size: 0.68rem;
 `;
+const R_17_GREY969 = styled.p`
+  margin: 0;
+  color: #696969;
+  font-weight: 400;
+  font-size: 1.06rem;
+`;
 
 const B_13_ORANGE_463 = styled.p`
   margin: 0;
@@ -36,5 +48,7 @@ export default {
   SB_15_BLACK,
   B_48_BLACK,
   SB_11_GREY444,
-  B_13_ORANGE_463
+  B_13_ORANGE_463,
+  R_17_GREY969,
+  B_17_BLACK
 };

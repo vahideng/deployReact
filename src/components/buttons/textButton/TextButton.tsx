@@ -1,6 +1,5 @@
 import React from "react";
 import Paragraphs from "../../assets/typography";
-import "./TextButton.scss";
 
 const { B_13_ORANGE_463 } = Paragraphs;
 interface Props {
