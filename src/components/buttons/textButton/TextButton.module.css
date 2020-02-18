@@ -1,3 +1,7 @@
+:export {
+  primaryBlack: #000000;
+}
+
 .rowWrapper {
   display: -webkit-box;
   display: -ms-flexbox;

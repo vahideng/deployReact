@@ -7,7 +7,14 @@ const Icon: React.FC<{
   size?: number;
   icon?: string;
   className?: string;
-}> = ({ color = "#ff2626", size = 50, icon = "amyIcon", className = "" }) => {
+  style?: {};
+}> = ({
+  color = "#ff2626",
+  size = 50,
+  icon = "amyIcon",
+  className = "",
+  style = {}
+}) => {
   return (
     <IcomoonReact
       className={className}
@@ -15,6 +22,7 @@ const Icon: React.FC<{
       color={color}
       size={size}
       icon={icon}
+      style={style}
     />
   );
 };

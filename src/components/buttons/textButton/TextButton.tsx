@@ -4,23 +4,27 @@ import "./TextButton.scss";
 
 const { B_13_ORANGE_463 } = Paragraphs;
 interface Props {
+  testId?: string;
   buttonText: string;
   buttonStyles?: {};
-  onTextClick: () => void;
+  onTextClick: (testId: string) => void;
 }
 
 const TextButton: React.FC<Props> = props => {
-  const { buttonText, buttonStyles, onTextClick } = props;
+  const { buttonText, buttonStyles, onTextClick, testId } = props;
 
   return (
-    <>
+    <div>
       <B_13_ORANGE_463
-        onClick={onTextClick}
+        id={testId}
+        onClick={() => {
+          onTextClick(testId!);
+        }}
         style={!!buttonStyles ? buttonStyles : {}}
       >
         {buttonText}
       </B_13_ORANGE_463>
-    </>
+    </div>
   );
 };
 

@@ -1,0 +1,22 @@
+form input {
+  display: none;
+}
+
+div.row {
+  padding-left: 13px;
+}
+
+label {
+  padding: O;
+  margin: 0;
+}
+
+.children {
+  padding: 5px 0 0 5px;
+}
+
+@media (max-width: 400px) {
+  .children {
+    max-width: 350px;
+  }
+}
