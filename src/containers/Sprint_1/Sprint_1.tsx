@@ -10,6 +10,8 @@ import Tabs from "src/components/buttons/tabs/Tabs";
 import FooterLogo from "src/components/headers/footerLogo/FooterLogo";
 import BannerHero from "src/components/banners/bannerHero/BannerHero";
 import BackButton from "src/components/buttons/backButton/BackButton";
+import StickyTimer from "src/components/headers/stickyTimer/StickyTimer";
+import Profile from "src/components/headers/profile/Profile";
 
 const CenteredDiv = styled.div`
   display: flex;
@@ -223,6 +225,17 @@ class Sprint1 extends Component<Props, State> {
           onButtonClick={() => {
             alert("BackButton clicked");
           }}
+        />
+        <hr />
+        <StickyTimer />
+        <hr />
+        <Profile
+          greeting="Good Morning"
+          name="Adam Constantine"
+          alt="AVATAR"
+          src={
+            "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+          }
         />
         <hr />
       </>

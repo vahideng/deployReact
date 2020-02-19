@@ -7,6 +7,12 @@ const SB_15_BLACK = styled.p`
   font-weight: 600;
   line-height: 20px;
 `;
+const B_15_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-size: 0.93rem;
+  font-weight: 700;
+`;
 const B_16_BLACK = styled.p`
   margin: 0;
   color: #000000;
@@ -37,6 +43,12 @@ const SB_11_GREY444 = styled.p`
   font-weight: 600;
   font-size: 0.68rem;
 `;
+const B_15_GREY969 = styled.p`
+  margin: 0;
+  color: #696969;
+  font-weight: 700;
+  font-size: 0.93rem;
+`;
 const R_17_GREY969 = styled.p`
   margin: 0;
   color: #696969;
@@ -57,5 +69,7 @@ export default {
   B_13_ORANGE_463,
   R_17_GREY969,
   B_17_BLACK,
-  B_16_BLACK
+  B_16_BLACK,
+  B_15_BLACK,
+  B_15_GREY969
 };
