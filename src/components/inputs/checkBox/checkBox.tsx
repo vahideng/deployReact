@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import classes from "./checkBox.module.css";
+import classes from "./CheckBox.module.css";
 
 import Icon from "src/components/assets/icons/icon";
 interface Props {

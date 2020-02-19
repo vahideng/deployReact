@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import Header from "../../components/headers/header/Header";
 import TextButtonList from "../../components/buttons/textButtonList/TextButtonList";
 import TextButton from "src/components/buttons/textButton/TextButton";
-import Logo from "src/components/assets/logo/logo";
+import Logo from "src/components/assets/logo/Logo";
 import styled from "styled-components";
 import images from "src/assets";
-import Checkbox from "src/components/inputs/checkBox/checkBox";
+import Checkbox from "src/components/inputs/checkBox/CheckBox";
 import Tabs from "src/components/buttons/tabs/Tabs";
-import FooterLogo from "src/components/headers/footerLogo/footerLogo";
+import FooterLogo from "src/components/headers/footerLogo/FooterLogo";
+import BannerHero from "src/components/banners/bannerHero/BannerHero";
+import BackButton from "src/components/buttons/backButton/BackButton";
 
 const CenteredDiv = styled.div`
   display: flex;
@@ -100,9 +102,7 @@ class Sprint1 extends Component<Props, State> {
             this.setState({
               isCheckboxChecked: !isCheckboxChecked
             });
-            console.log(
-              `${event.target.checked} ${event.target.name} ${testId}`
-            );
+            alert(`${event.target.checked} ${event.target.name} ${testId}`);
           }}
           children={
             <div>
@@ -130,7 +130,7 @@ class Sprint1 extends Component<Props, State> {
         <hr />
         <FooterLogo
           onLogoClick={(logo, index) => {
-            console.log(logo.src, logo.id, index);
+            alert(`${logo.src}<=-link  id-=>${logo.id} index-=>${index}`);
           }}
           logos={[
             {
@@ -213,6 +213,16 @@ class Sprint1 extends Component<Props, State> {
               id: "idTest-15"
             }
           ]}
+        />
+        <hr />
+        <BannerHero />
+        <hr />
+
+        <BackButton
+          buttonText="Forgot Username/Password"
+          onButtonClick={() => {
+            alert("BackButton clicked");
+          }}
         />
         <hr />
       </>

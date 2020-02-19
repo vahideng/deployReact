@@ -7,11 +7,17 @@ const SB_15_BLACK = styled.p`
   font-weight: 600;
   line-height: 20px;
 `;
+const B_16_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 700;
+`;
 const B_17_BLACK = styled.p`
   margin: 0;
   color: #000000;
   font-size: 1.06rem;
-  font-weight: 400;
+  font-weight: 700;
 `;
 
 const B_48_BLACK = styled.p`
@@ -50,5 +56,6 @@ export default {
   SB_11_GREY444,
   B_13_ORANGE_463,
   R_17_GREY969,
-  B_17_BLACK
+  B_17_BLACK,
+  B_16_BLACK
 };

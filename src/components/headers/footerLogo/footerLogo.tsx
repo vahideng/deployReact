@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./footerLogo.module.css";
+import classes from "./FooterLogo.module.css";
 
 interface Props {
   logos: any;

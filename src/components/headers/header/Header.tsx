@@ -1,6 +1,6 @@
 import React from "react";
 import Paragraphs from "../../assets/typography";
-import classes from "./header.module.css";
+import classes from "./Header.module.css";
 const { SB_15_BLACK, B_48_BLACK } = Paragraphs;
 interface Props {
   title: string;
