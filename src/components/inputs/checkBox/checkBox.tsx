@@ -18,9 +18,9 @@ const Checkbox: React.FC<Props> = props => {
       <div className={classes.row} id={`${testId}-1`}>
         <label id={`${testId}-2`}>
           {!!isChecked ? (
-            <Icon icon="checkbox-yes" color="#36a03e" size={25} />
+            <Icon icon="CheckboxYes" color="#36a03e" size={25} />
           ) : (
-            <Icon icon="checkbox-no" color="#ffffff" size={25} />
+            <Icon icon="CheckboxNo" color="#ffffff" size={25} />
           )}
           <input
             type="checkbox"

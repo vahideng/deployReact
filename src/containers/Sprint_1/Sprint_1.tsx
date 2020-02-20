@@ -12,6 +12,7 @@ import BannerHero from "src/components/banners/bannerHero/BannerHero";
 import BackButton from "src/components/buttons/backButton/BackButton";
 import StickyTimer from "src/components/headers/stickyTimer/StickyTimer";
 import Profile from "src/components/headers/profile/Profile";
+import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
 
 const CenteredDiv = styled.div`
   display: flex;
@@ -74,10 +75,7 @@ class Sprint1 extends Component<Props, State> {
         </CenteredDiv>
         <hr />
 
-        <Logo
-          icon={{ name: "v-conservative", size: 40, color: "black" }}
-          testId="testId"
-        />
+        <Logo icon={{ name: "QR", size: 40, color: "black" }} testId="testId" />
         <CenteredDiv>
           <Logo
             image={{
@@ -237,6 +235,28 @@ class Sprint1 extends Component<Props, State> {
             "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
           }
         />
+        <hr />
+        <div>
+          <StatusIcon />
+          <StatusIcon
+            iconColor={{ top: "#FD8585", bottom: "#FF2222" }}
+            icon={{ name: "Fail", color: "#ff3" }}
+          />
+          <StatusIcon
+            iconColor={{ top: "#FD8585", bottom: "#FF2222" }}
+            image={{
+              src:
+                "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80"
+            }}
+          />
+          <StatusIcon
+            iconColor={{ top: "#FD8585", bottom: "#FF2222" }}
+            image={{
+              src: images.common.amyIcon,
+              alt: "logo"
+            }}
+          />
+        </div>
         <hr />
       </>
     );

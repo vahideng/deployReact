@@ -13,7 +13,7 @@ const BackButton: React.FC<Props> = ({ buttonText, onButtonClick }) => {
   return (
     <div className="container row" onClick={onButtonClick}>
       <Icon
-        icon="left-1"
+        icon="left"
         color="#000000"
         size={25}
         style={{ marginRight: -3, marginLeft: -7 }}

@@ -9,7 +9,7 @@ const Icon: React.FC<{
   className?: string;
   style?: {};
 }> = ({
-  color = "#ff2626",
+  color = "#ffffff",
   size = 50,
   icon = "amyIcon",
   className = "",
