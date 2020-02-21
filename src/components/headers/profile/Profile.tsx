@@ -3,15 +3,22 @@ import classes from "./Profile.module.css";
 import Paragraphs from "../../assets/typography";
 const { B_15_BLACK, B_15_GREY969 } = Paragraphs;
 interface Props {
+  testId?: string;
   src: string;
   greeting: string;
   name: string;
   alt?: string;
 }
 
-const Profile: React.FC<Props> = ({ src, greeting, name, alt = "AVATAR" }) => {
+const Profile: React.FC<Props> = ({
+  testId,
+  src,
+  greeting,
+  name,
+  alt = "AVATAR"
+}) => {
   return (
-    <div>
+    <div id={testId}>
       <div className={`${classes.avatarContainer}`}>
         <img src={src} alt={alt} />
         <div className={classes.textContainer}>

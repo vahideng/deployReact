@@ -3,16 +3,17 @@ import classes from "./StatusIcon.module.css";
 import Icon from "../icon";
 
 interface Props {
+  testId?: string;
   iconColor?: { top: string; bottom: string };
-  icon?: { name: string; color: string };
-  imageIcon?: object;
+  icon?: { name: string; color?: string };
   image?: { src: string; alt?: string };
 }
 
-const StatusIcon: React.FC<Props> = ({ iconColor, icon, image }) => {
+const StatusIcon: React.FC<Props> = ({ iconColor, icon, image, testId }) => {
   return (
     <>
       <div
+        id={testId}
         className={classes.outerRound}
         style={!!iconColor ? { background: `${iconColor.top}70` } : {}}
       >

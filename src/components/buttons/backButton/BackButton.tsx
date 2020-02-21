@@ -5,13 +5,19 @@ import Icon from "src/components/assets/icons/icon";
 const { B_16_BLACK } = Paragraphs;
 
 interface Props {
+  testId?: string;
   buttonText: string;
   onButtonClick: () => void;
 }
 
-const BackButton: React.FC<Props> = ({ buttonText, onButtonClick }) => {
+const BackButton: React.FC<Props> = ({ buttonText, onButtonClick, testId }) => {
   return (
-    <div className="container row" onClick={onButtonClick}>
+    <div
+      id={testId}
+      className="container row"
+      onClick={onButtonClick}
+      style={{ cursor: "pointer" }}
+    >
       <Icon
         icon="left"
         color="#000000"

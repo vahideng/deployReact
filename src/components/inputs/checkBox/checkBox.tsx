@@ -15,7 +15,7 @@ const Checkbox: React.FC<Props> = props => {
 
   return (
     <form id={`${testId}`}>
-      <div className={classes.row} id={`${testId}-1`}>
+      <div className={classes.checkboxRow} id={`${testId}-1`}>
         <label id={`${testId}-2`}>
           {!!isChecked ? (
             <Icon icon="CheckboxYes" color="#36a03e" size={25} />
@@ -32,7 +32,7 @@ const Checkbox: React.FC<Props> = props => {
             id={`${testId}-3`}
           />
         </label>
-        <div className={classes.children}>{children}</div>
+        <div className={classes.boxChildren}>{children}</div>
       </div>
     </form>
   );

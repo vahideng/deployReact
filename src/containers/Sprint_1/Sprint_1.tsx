@@ -13,10 +13,15 @@ import BackButton from "src/components/buttons/backButton/BackButton";
 import StickyTimer from "src/components/headers/stickyTimer/StickyTimer";
 import Profile from "src/components/headers/profile/Profile";
 import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
+import DetailSummary from "src/components/infographic/detailSummary/DetailSummary";
 
 const CenteredDiv = styled.div`
   display: flex;
   justify-content: center;
+`;
+const RowDiv = styled.div`
+  display: flex;
+  flex-direction: "row";
 `;
 interface Props {}
 interface State {}
@@ -236,8 +241,8 @@ class Sprint1 extends Component<Props, State> {
           }
         />
         <hr />
-        <div>
-          <StatusIcon />
+        <RowDiv>
+          <StatusIcon icon={{ name: "Tick-1" }} />
           <StatusIcon
             iconColor={{ top: "#FD8585", bottom: "#FF2222" }}
             icon={{ name: "Fail", color: "#ff3" }}
@@ -256,7 +261,20 @@ class Sprint1 extends Component<Props, State> {
               alt: "logo"
             }}
           />
-        </div>
+        </RowDiv>
+        <hr />
+        <DetailSummary
+          mainTitle="Protected by PIDM up to RM 250,000 for each depositor"
+          logoTitle="Account Insights"
+          iconColor={{ top: "#FD8585", bottom: "#FF2222" }}
+          image={{
+            src: images.common.amyIcon,
+            alt: "logo"
+          }}
+          detailTitle="Looking Good"
+          detail="Your lowest balance for this month is RM 10,000.00 Keep it up so you can earn the 3-month FD/TD-i prevailing interest/profit rate."
+          link={{ text: "How does this work?", src: "" }}
+        />
         <hr />
       </>
     );

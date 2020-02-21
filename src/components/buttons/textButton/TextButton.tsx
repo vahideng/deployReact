@@ -1,5 +1,6 @@
 import React from "react";
 import Paragraphs from "../../assets/typography";
+import classes from "./TextButton.module.css";
 
 const { B_13_ORANGE_463 } = Paragraphs;
 interface Props {
@@ -15,6 +16,7 @@ const TextButton: React.FC<Props> = props => {
   return (
     <div>
       <B_13_ORANGE_463
+        className={classes.textButton}
         id={testId}
         onClick={() => {
           onTextClick(testId!);

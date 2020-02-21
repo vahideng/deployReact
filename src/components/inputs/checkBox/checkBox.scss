@@ -1,20 +1,21 @@
-form input {
+div.checkboxRow input {
   display: none;
 }
-div.row {
+div.checkboxRow {
   display: flex;
   flex-direction: row;
 }
-label {
+div.checkboxRow label {
   padding: O;
   margin: 0;
+  cursor: pointer;
 }
-.children {
+.boxChildren {
   padding: 5px 0 0 5px;
 }
 
 @media (max-width: 400px) {
-  .children {
+  .boxChildren {
     max-width: 350px;
   }
 }
