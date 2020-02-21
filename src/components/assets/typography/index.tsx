@@ -92,6 +92,12 @@ const B_13_ORANGE_463 = styled.p`
   font-weight: 700;
   font-size: 0.81rem;
 `;
+const B_13_Red_626 = styled.p`
+  margin: 0;
+  color: #ff2626;
+  font-weight: 700;
+  font-size: 0.81rem;
+`;
 export default {
   SB_15_BLACK,
   B_48_BLACK,
@@ -106,5 +112,6 @@ export default {
   B_13_BLACK,
   R_13_BLACK,
   R_15_BLACK,
-  B_15_WHITE
+  B_15_WHITE,
+  B_13_Red_626
 };

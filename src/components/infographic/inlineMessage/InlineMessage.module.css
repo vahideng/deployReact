@@ -1,0 +1,15 @@
+.InlineMessageDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 0.81rem;
+  min-height: 2.56rem;
+  border-left: 1px solid #ff2626;
+}

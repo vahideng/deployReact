@@ -17,6 +17,7 @@ import DetailSummary from "src/components/infographic/detailSummary/DetailSummar
 import Prompt from "src/components/infographic/prompt/Prompt";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import FullButton from "src/components/buttons/fullButton/FullButton";
+import InlineMessage from "src/components/infographic/inlineMessage/InlineMessage";
 
 const CenteredDiv = styled.div`
   display: flex;
@@ -35,6 +36,13 @@ class Sprint1 extends Component<Props, State> {
     const { isCheckboxChecked } = this.state;
     return (
       <>
+        <CenteredDiv>
+          <InlineMessage
+            errorText="The TAC is incorrect"
+            subText="Please try again."
+          />
+        </CenteredDiv>
+        <hr />
         <div>
           <PrimaryButton
             title="Load More"
