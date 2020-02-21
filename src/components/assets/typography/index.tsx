@@ -1,4 +1,10 @@
 import styled from "styled-components";
+const B_15_WHITE = styled.p`
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.93rem;
+  font-weight: 700;
+`;
 
 const R_13_BLACK = styled.p`
   margin: 0;
@@ -11,6 +17,12 @@ const B_13_BLACK = styled.p`
   color: #000000;
   font-size: 0.82rem;
   font-weight: 700;
+`;
+const R_15_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-size: 0.93rem;
+  font-weight: 400;
 `;
 const SB_15_BLACK = styled.p`
   margin: 0;
@@ -92,5 +104,7 @@ export default {
   B_15_GREY969,
   B_13_GREY393,
   B_13_BLACK,
-  R_13_BLACK
+  R_13_BLACK,
+  R_15_BLACK,
+  B_15_WHITE
 };

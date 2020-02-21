@@ -1,0 +1,24 @@
+.PrimaryButton {
+  border: none;
+  margin: 0;
+  height: 3.5rem;
+  min-width: 16rem;
+  border-radius: 2rem;
+  background: linear-gradient(180deg, #fd8585 0%, #ff2222 100%);
+}
+.PrimaryButtonSmall {
+  border: none;
+  margin: 0;
+  height: 2.2rem;
+  width: 2.2rem;
+  border-radius: 1.1rem;
+  background: linear-gradient(180deg, #f6f6f3 0%, #eae9e3 100%);
+  display: flex;
+  justify-content: center;
+}
+.PrimaryButton:focus {
+  outline: none;
+}
+.PrimaryButtonSmall:focus {
+  outline: none;
+}

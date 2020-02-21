@@ -2,6 +2,7 @@ import React from "react";
 import Paragraphs from "../../assets/typography";
 import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
 import classes from "./DetailSummary.module.css";
+
 const {
   B_13_GREY393,
   B_16_BLACK,
@@ -15,7 +16,8 @@ interface Props {
   logoTitle?: string;
   detailTitle?: string;
   detail?: string;
-  link?: { text: string; src: string };
+  linkText: string;
+  onLinkClick: () => void;
   iconColor?: { top: string; bottom: string };
   icon?: { name: string; color: string };
   image?: { src: string; alt?: string };
@@ -27,7 +29,8 @@ const DetailSummary: React.FC<Props> = ({
   logoTitle,
   detailTitle,
   detail,
-  link,
+  linkText,
+  onLinkClick,
   iconColor,
   icon,
   image
@@ -47,13 +50,8 @@ const DetailSummary: React.FC<Props> = ({
           <div>
             <B_13_BLACK>{detailTitle}</B_13_BLACK>
             <R_13_BLACK className={classes.dsDetail}>{detail}</R_13_BLACK>
-            <B_13_ORANGE_463
-              className={classes.dsLink}
-              onClick={() => {
-                alert("link clicked");
-              }}
-            >
-              {link?.text}
+            <B_13_ORANGE_463 className={classes.dsLink} onClick={onLinkClick}>
+              {linkText}
             </B_13_ORANGE_463>
           </div>
         </div>

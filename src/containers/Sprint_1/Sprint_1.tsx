@@ -14,6 +14,8 @@ import StickyTimer from "src/components/headers/stickyTimer/StickyTimer";
 import Profile from "src/components/headers/profile/Profile";
 import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
 import DetailSummary from "src/components/infographic/detailSummary/DetailSummary";
+import Prompt from "src/components/infographic/prompt/Prompt";
+import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 
 const CenteredDiv = styled.div`
   display: flex;
@@ -32,6 +34,41 @@ class Sprint1 extends Component<Props, State> {
     const { isCheckboxChecked } = this.state;
     return (
       <>
+        <div>
+          <RowDiv>
+            <PrimaryButton
+              title="Load More"
+              onButtonClick={() => {
+                alert("Button Clicked");
+              }}
+            />
+            <PrimaryButton
+              onButtonClick={() => {
+                alert("Button Clicked");
+              }}
+              title="Continue"
+              titleColor="#000000"
+              buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
+            />
+            <PrimaryButton
+              small={true}
+              onButtonClick={() => {
+                alert("Button Clicked");
+              }}
+            />
+          </RowDiv>
+          <div style={{ paddingTop: 5 }}>
+            <PrimaryButton
+              onButtonClick={() => {
+                alert("Button Clicked");
+              }}
+              width={500}
+              title="Continue"
+              titleColor="#000000"
+              buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
+            />
+          </div>
+        </div>
         <Header
           testId="testId"
           title="good morning"
@@ -263,6 +300,12 @@ class Sprint1 extends Component<Props, State> {
           />
         </RowDiv>
         <hr />
+        <Prompt
+          iconColor={{ top: "#DCEAEA", bottom: "#7FA2A2" }}
+          icon={{ name: "Tick-1", color: "#ffffff" }}
+          text="Your profile is successfully activated."
+        />
+        <hr />
         <DetailSummary
           mainTitle="Protected by PIDM up to RM 250,000 for each depositor"
           logoTitle="Account Insights"
@@ -273,7 +316,10 @@ class Sprint1 extends Component<Props, State> {
           }}
           detailTitle="Looking Good"
           detail="Your lowest balance for this month is RM 10,000.00 Keep it up so you can earn the 3-month FD/TD-i prevailing interest/profit rate."
-          link={{ text: "How does this work?", src: "" }}
+          linkText="How does this work?"
+          onLinkClick={() => {
+            alert("link clicked");
+          }}
         />
         <hr />
       </>

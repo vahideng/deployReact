@@ -4,16 +4,16 @@ import Icon from "../icon";
 
 interface Props {
   testId?: string;
-  iconColor?: { top: string; bottom: string };
-  icon?: { name: string; color?: string };
-  image?: { src: string; alt?: string };
+  iconColor?: any;
+  icon?: any;
+  image?: any;
 }
 
 const StatusIcon: React.FC<Props> = ({ iconColor, icon, image, testId }) => {
   return (
     <>
       <div
-        id={testId}
+        id={!!testId ? testId : ""}
         className={classes.outerRound}
         style={!!iconColor ? { background: `${iconColor.top}70` } : {}}
       >
@@ -29,8 +29,8 @@ const StatusIcon: React.FC<Props> = ({ iconColor, icon, image, testId }) => {
         >
           {!!icon && (
             <Icon
-              icon={icon?.name ? icon.name : "Tick-1"}
-              color={icon?.color ? icon.color : "#ffffff"}
+              icon={icon.name ? icon.name : "Tick-1"}
+              color={icon.color ? icon.color : "#ffffff"}
               size={40}
             />
           )}
