@@ -7,7 +7,7 @@ interface Props {
   title?: string;
   titleColor?: string;
   buttonColor?: any;
-  width?: number;
+  width?: number | string;
   onButtonClick: () => void;
   small?: boolean;
   icon?: { name: string; color: string };

@@ -1,0 +1,45 @@
+.FullButton {
+  border: none;
+  margin: 0;
+  height: 3.5rem;
+  min-width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fd8585), to(#ff2626));
+  background: linear-gradient(180deg, #fd8585 0%, #ff2626 100%);
+}
+
+.fullButtonSplit {
+  border: none;
+  margin: 0;
+  height: 3.5rem;
+  min-width: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fd8585), to(#ff2626));
+  background: linear-gradient(180deg, #fd8585 0%, #ff2626 100%);
+}
+
+.fullButtonLeft {
+  color: #ff2626;
+  border-top: 1px solid #dedede;
+  background: #ffffff;
+}
+
+.fullButtonLeft .leftText {
+  color: #000000;
+}
+
+.leftText .fullButtonRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.FullButton:focus {
+  outline: none;
+}
+
+.fullButtonSplit:focus {
+  outline: none;
+}

@@ -16,6 +16,7 @@ import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
 import DetailSummary from "src/components/infographic/detailSummary/DetailSummary";
 import Prompt from "src/components/infographic/prompt/Prompt";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
+import FullButton from "src/components/buttons/fullButton/FullButton";
 
 const CenteredDiv = styled.div`
   display: flex;
@@ -35,37 +36,55 @@ class Sprint1 extends Component<Props, State> {
     return (
       <>
         <div>
-          <RowDiv>
-            <PrimaryButton
-              title="Load More"
-              onButtonClick={() => {
-                alert("Button Clicked");
-              }}
-            />
-            <PrimaryButton
-              onButtonClick={() => {
-                alert("Button Clicked");
-              }}
-              title="Continue"
-              titleColor="#000000"
-              buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
-            />
-            <PrimaryButton
-              small={true}
-              onButtonClick={() => {
-                alert("Button Clicked");
-              }}
-            />
-          </RowDiv>
+          <PrimaryButton
+            title="Load More"
+            onButtonClick={() => {
+              alert("Button Clicked");
+            }}
+          />
+          <PrimaryButton
+            onButtonClick={() => {
+              alert("Button Clicked");
+            }}
+            title="Continue"
+            titleColor="#000000"
+            buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
+          />
+          <PrimaryButton
+            small={true}
+            onButtonClick={() => {
+              alert("Button Clicked");
+            }}
+          />
+
           <div style={{ paddingTop: 5 }}>
             <PrimaryButton
               onButtonClick={() => {
                 alert("Button Clicked");
               }}
-              width={500}
+              width={"70vw"}
               title="Continue"
               titleColor="#000000"
               buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
+            />
+          </div>
+          <FullButton
+            title="Login"
+            onButtonClick={() => {
+              alert("Button Clicked");
+            }}
+          />
+          <div style={{ paddingTop: 5 }}>
+            <FullButton
+              split
+              leftTitle="No"
+              rightTitle="Yes"
+              onRightButton={() => {
+                alert("Right Button Clicked");
+              }}
+              onLeftButton={() => {
+                alert("Left Button Clicked");
+              }}
             />
           </div>
         </div>

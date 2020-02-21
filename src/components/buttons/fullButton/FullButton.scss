@@ -1,0 +1,34 @@
+@import "../../assets/colors/colors.scss";
+
+.FullButton {
+  border: none;
+  margin: 0;
+  height: 3.5rem;
+  min-width: 100%;
+  background: linear-gradient(180deg, #fd8585 0%, $primaryRed 100%);
+}
+.fullButtonSplit {
+  border: none;
+  margin: 0;
+  height: 3.5rem;
+  min-width: 50%;
+  background: linear-gradient(180deg, #fd8585 0%, $primaryRed 100%);
+}
+.fullButtonLeft {
+  color: $primaryRed;
+  border-top: 1px solid $greyEDE;
+  background: #ffffff;
+}
+.fullButtonLeft .leftText {
+  color: #000000;
+}
+.leftText .fullButtonRow {
+  display: flex;
+  flex-direction: row;
+}
+.FullButton:focus {
+  outline: none;
+}
+.fullButtonSplit:focus {
+  outline: none;
+}
