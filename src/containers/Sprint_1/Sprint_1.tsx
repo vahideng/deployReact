@@ -18,6 +18,7 @@ import Prompt from "src/components/infographic/prompt/Prompt";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import FullButton from "src/components/buttons/fullButton/FullButton";
 import InlineMessage from "src/components/infographic/inlineMessage/InlineMessage";
+import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
 
 const CenteredDiv = styled.div`
   display: flex;
@@ -36,6 +37,15 @@ class Sprint1 extends Component<Props, State> {
     const { isCheckboxChecked } = this.state;
     return (
       <>
+        <LabeledIcon
+          leftLabel="Powered by"
+          imageIcon={{ src: images.common.sampleLogo, size: 100 }}
+        />
+        <LabeledIcon
+          rightLabel="AmBank"
+          icon={{ name: "Account", color: "#000000", size: 30 }}
+        />
+
         <CenteredDiv>
           <InlineMessage
             errorText="The TAC is incorrect"
