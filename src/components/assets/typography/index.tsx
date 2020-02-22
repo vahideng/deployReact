@@ -67,6 +67,12 @@ const SB_11_GREY444 = styled.p`
   font-weight: 600;
   font-size: 0.68rem;
 `;
+const SB_16_GREY444 = styled.p`
+  margin: 0;
+  color: #444444;
+  font-weight: 600;
+  font-size: 1rem;
+`;
 const B_15_GREY969 = styled.p`
   margin: 0;
   color: #696969;
@@ -113,5 +119,6 @@ export default {
   R_13_BLACK,
   R_15_BLACK,
   B_15_WHITE,
-  B_13_Red_626
+  B_13_Red_626,
+  SB_16_GREY444
 };

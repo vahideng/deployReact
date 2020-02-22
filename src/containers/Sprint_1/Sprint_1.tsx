@@ -19,6 +19,8 @@ import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import FullButton from "src/components/buttons/fullButton/FullButton";
 import InlineMessage from "src/components/infographic/inlineMessage/InlineMessage";
 import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
+import NavBar from "src/components/headers/navbar/Navbar";
+import ZeroResult from "src/components/infographic/zeroResault/ZeroResult";
 
 const CenteredDiv = styled.div`
   display: flex;
@@ -37,6 +39,34 @@ class Sprint1 extends Component<Props, State> {
     const { isCheckboxChecked } = this.state;
     return (
       <>
+        <ZeroResult
+          text={`We can’t seem to find any result for 
+“Damansara Heights”`}
+        />
+        <NavBar
+          icon={{ name: "Investment" }}
+          profile={{
+            greeting: "Good Morning",
+            name: "Adam Constantine",
+            alt: "AVATAR",
+            src:
+              "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+          }}
+          rightButtons={[
+            {
+              iconName: "Time",
+              link: ""
+            },
+            {
+              iconName: "Settings",
+              link: ""
+            },
+            {
+              iconName: "Share",
+              link: ""
+            }
+          ]}
+        />
         <LabeledIcon
           leftLabel="Powered by"
           imageIcon={{ src: images.common.sampleLogo, size: 100 }}
