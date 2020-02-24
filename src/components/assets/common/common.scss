@@ -8,3 +8,9 @@ $green988: #81d988;
 
 $mainBoxShadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede,
   0px 1px 5px #dedede;
+
+%truncatedText {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

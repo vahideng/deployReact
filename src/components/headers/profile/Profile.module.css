@@ -31,6 +31,23 @@
   margin-right: 0.81rem;
 }
 
+.avatarInitials {
+  background-color: #f5a623;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 1.25rem;
+  margin-right: 0.81rem;
+}
+
 .greeting {
   padding-right: 0.3rem;
 }

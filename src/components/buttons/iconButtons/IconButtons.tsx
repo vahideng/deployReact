@@ -28,7 +28,7 @@ const IconButtons: React.FC<Props> = ({ label, list, selected }) => {
                 style={
                   selected === index ? { borderBottomColor: "#ff2626" } : {}
                 }
-                className={`${classes.IconButtonsIcon} ${classes.mainBoxShadow}`}
+                className={`${classes.IconButtonsIcon}`}
               >
                 <Icon
                   icon={item.icon.name}

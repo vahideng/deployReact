@@ -1,0 +1,41 @@
+.SelectionTileTitle {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.SelectionTileRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.SelectionTileWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 15.06rem;
+  min-height: 5.31rem;
+  border: 1px solid #dedede;
+  border-radius: 0.75rem;
+  border-bottom: 0.37rem solid #dedede;
+  padding: 1rem;
+  margin: 0 2rem 1.5rem 0;
+}
+
+.SelectionTileTDiv {
+  max-width: 13rem;
+}
+
+.SelectionTAmount {
+  padding-top: 1rem;
+}

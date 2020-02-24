@@ -27,6 +27,7 @@ import AmModal from "src/components/modal/Modal";
 import InputField from "src/components/inputs/checkBox/inputFields/InputFields";
 import IconButtons from "src/components/buttons/iconButtons/IconButtons";
 import DescriptionButton from "src/components/buttons/descriptionButton/DescriptionButton";
+import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -56,6 +57,121 @@ class Sprint1 extends Component<Props, State> {
     const { isCheckboxChecked, hidden, inputValue } = this.state;
     return (
       <>
+        <Title>SelectionTile</Title>
+        <div style={{ paddingBottom: 20 }}>
+          <LabeledIcon
+            rightLabel="AmBank"
+            icon={{ name: "Account", color: "#000000", size: 30 }}
+          />
+        </div>
+        <SelectionTile
+          onTileClick={(item, index) => {
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={2}
+          list={[
+            {
+              accountTitle: "Saving Account A",
+              accountNumber: "RM 2,000.00"
+            },
+            {
+              accountTitle: "Ambank AmMoneyLine AmMoneyLine",
+              accountNumber: "RM 2,000.00"
+            },
+            {
+              accountTitle: "Ambank BonusLink Visa",
+              accountNumber: "RM 2,000.00"
+            },
+            {
+              accountTitle: "Saving Account B",
+              accountNumber: "RM 2,000.00"
+            },
+            {
+              accountTitle: "Saving Account C",
+              accountNumber: "RM 2,000.00"
+            }
+          ]}
+        />
+
+        <SelectionTile
+          onTileClick={(item, index) => {
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={3}
+          list={[
+            {
+              avatar: {
+                name: "Myself Adam Constantine",
+                src:
+                  "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+              }
+            },
+            {
+              avatar: {
+                name: "Christina Azalea Rossie",
+                initials: "CA",
+                initialsBg: "#f1f1f1"
+              }
+            },
+            {
+              avatar: {
+                name: "Ahmad Kassim Azmi",
+                initials: "AK"
+              }
+            },
+            {
+              avatar: {
+                name: "Kurniawan Suriawati",
+                initials: "KS"
+              }
+            },
+            {
+              avatar: {
+                name: "Deevan Raja",
+                initials: "DR"
+              }
+            },
+            {
+              avatar: {
+                name: "Lee Chong Wei",
+                initials: "LC"
+              }
+            }
+          ]}
+        />
+        <SelectionTile
+          onTileClick={(item, index) => {
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={1}
+          list={[
+            {
+              accountTitle: "Saving Account A",
+              accountNumber: "RM 2,000.00",
+              amount: "RM 10,301.50"
+            },
+            {
+              accountTitle: "Ambank AmMoneyLine AmMoneyLine",
+              accountNumber: "RM 2,000.00",
+              amount: " RM 11,555.00"
+            },
+            {
+              accountTitle: "Ambank BonusLink Visa",
+              accountNumber: "RM 2,000.00",
+              amount: " RM 55,555.00"
+            },
+            {
+              accountTitle: "Saving Account B",
+              accountNumber: "RM 2,000.00",
+              amount: " RM 33,555.50"
+            },
+            {
+              accountTitle: "Saving Account C",
+              accountNumber: "RM 2,000.00",
+              amount: " RM 245,555.50"
+            }
+          ]}
+        />
         <Title>DescriptionButton</Title>
         <DescriptionButton
           onButtonClick={(item, index) => {
