@@ -6,7 +6,7 @@ import Logo from "src/components/assets/logo/Logo";
 import styled from "styled-components";
 import images from "src/assets";
 import Checkbox from "src/components/inputs/checkBox/CheckBox";
-import Tabs from "src/components/buttons/tabs/Tabs";
+import AMTabs from "src/components/buttons/tabs/Tabs";
 import FooterLogo from "src/components/headers/footerLogo/FooterLogo";
 import BannerHero from "src/components/banners/bannerHero/BannerHero";
 import BackButton from "src/components/buttons/backButton/BackButton";
@@ -21,7 +21,9 @@ import InlineMessage from "src/components/infographic/inlineMessage/InlineMessag
 import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
 import NavBar from "src/components/headers/navbar/Navbar";
 import ZeroResult from "src/components/infographic/zeroResault/ZeroResult";
-
+import PieChart from "src/components/pies/PieChart";
+import AmModal from "src/components/modal/Modal";
+import InputField from "src/components/inputs/checkBox/inputFields/InputFields";
 const CenteredDiv = styled.div`
   display: flex;
   justify-content: center;
@@ -31,14 +33,73 @@ const RowDiv = styled.div`
   flex-direction: "row";
 `;
 interface Props {}
-interface State {}
+interface State {
+  isCheckboxChecked: boolean;
+  hidden: boolean;
+  inputValue: string;
+}
 
 class Sprint1 extends Component<Props, State> {
-  state = { isCheckboxChecked: false };
+  state = { isCheckboxChecked: false, hidden: true, inputValue: "" };
   render() {
-    const { isCheckboxChecked } = this.state;
+    const { isCheckboxChecked, hidden, inputValue } = this.state;
     return (
       <>
+        <InputField
+          type="text"
+          label="input label"
+          icon={{ name: "Bill" }}
+          value={inputValue}
+          handleChange={event => {
+            this.setState({
+              inputValue: event.target.value
+            });
+          }}
+        />
+        <InputField
+          type="text"
+          label="input label"
+          autoFocus
+          value={inputValue}
+          handleChange={event => {
+            this.setState({
+              inputValue: event.target.value
+            });
+          }}
+        />
+        <InputField
+          type="text"
+          label="input label"
+          icon={{ name: "Account-2" }}
+          value={inputValue}
+          handleChange={event => {
+            this.setState({
+              inputValue: event.target.value
+            });
+          }}
+        />
+        <InputField
+          value={inputValue}
+          handleChange={event => {
+            this.setState({
+              inputValue: event.target.value
+            });
+            console.log(inputValue);
+          }}
+          isSecure
+          type={!!hidden ? "password" : "text"}
+          label="input label"
+          icon={{ name: "Account-2" }}
+          onSecureClick={() => {
+            this.setState({
+              hidden: !hidden
+            });
+          }}
+        />
+
+        <AmModal />
+        <AMTabs />
+        <PieChart />
         <ZeroResult
           text={`We can’t seem to find any result for 
 “Damansara Heights”`}
@@ -235,7 +296,7 @@ class Sprint1 extends Component<Props, State> {
           }
         />
         <hr />
-        <Tabs titles={["test", "test"]} selected={1} />
+        <AMTabs />
         <hr />
         <FooterLogo
           onLogoClick={(logo, index) => {

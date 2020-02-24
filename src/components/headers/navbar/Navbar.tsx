@@ -57,9 +57,9 @@ const Navbar: React.FC<Props> = ({ icon, profile = {}, rightButtons }) => {
               </li>
             )}
             {!!rightButtons &&
-              rightButtons.map(button => {
+              rightButtons.map((button, index) => {
                 return (
-                  <li className="nav-item">
+                  <li key={index} className="nav-item">
                     <Link className="nav-link" to="#">
                       <Icon
                         icon={button.iconName}

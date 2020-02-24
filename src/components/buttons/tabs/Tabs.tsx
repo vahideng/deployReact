@@ -1,26 +1,26 @@
 import React from "react";
-import Paragraphs from "../../assets/typography";
-import classes from "./Tabs.module.css";
-const { B_17_BLACK } = Paragraphs;
-interface Props {
-  testId?: string;
-  titles: string[];
-  selected: number;
-}
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+interface Props {}
 
-const Tabs: React.FC<Props> = props => {
-  const { titles, testId } = props;
+const AMTabs: React.FC<Props> = () => {
   return (
-    <div className={classes.row}>
-      {titles.map((title, index) => {
-        return (
-          <div className={classes.buttons} key={index} id={`${testId}`}>
-            <B_17_BLACK id={`${testId}-1`}>{title}</B_17_BLACK>
-          </div>
-        );
-      })}
+    <div>
+      <Tabs>
+        <TabList>
+          <Tab>Title 1</Tab>
+          <Tab>Title 2</Tab>
+        </TabList>
+
+        <TabPanel>
+          <h2>Any content 1</h2>
+        </TabPanel>
+        <TabPanel>
+          <h2>Any content 2</h2>
+        </TabPanel>
+      </Tabs>
     </div>
   );
 };
 
-export default Tabs;
+export default AMTabs;

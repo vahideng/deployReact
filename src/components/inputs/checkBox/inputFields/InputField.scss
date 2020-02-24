@@ -1,0 +1,36 @@
+.InputFieldMain {
+  display: flex;
+  flex-direction: column;
+}
+.InputFieldIconDiv {
+  display: flex;
+  align-items: center;
+}
+.InputFieldIcon {
+  position: absolute;
+  left: 1rem;
+}
+.InputFieldIconDiv input {
+  height: 3.12rem;
+  width: 31.6rem;
+  border-radius: 0.95rem;
+  border: 0.5px solid #dedede;
+  box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede,
+    0px 1px 5px #dedede;
+}
+
+.InputFieldIconDiv input:focus {
+  outline: none;
+}
+.InputFieldLabel {
+  padding: 0 0 0.62rem 1rem;
+}
+.InputFieldPassword {
+  position: relative;
+  left: -6rem;
+}
+@media (max-width: 400px) {
+  .InputFieldIconDiv input {
+    width: 90vw;
+  }
+}

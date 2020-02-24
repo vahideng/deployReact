@@ -25,7 +25,7 @@ const LabeledIcon: React.FC<Props> = ({
       {!!icon && (
         <div className={classes.LabeledIconRow}>
           <Icon
-            icon={icon.name}
+            icon={!!icon.name ? icon.name : ""}
             size={!!icon.size ? icon.size : 30}
             color={icon.color}
           />
