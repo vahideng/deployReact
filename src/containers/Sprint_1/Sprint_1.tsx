@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Paragraphs from "../../components/assets/typography";
 import Header from "../../components/headers/header/Header";
 import TextButtonList from "../../components/buttons/textButtonList/TextButtonList";
 import TextButton from "src/components/buttons/textButton/TextButton";
@@ -24,6 +25,15 @@ import ZeroResult from "src/components/infographic/zeroResault/ZeroResult";
 import PieChart from "src/components/pies/PieChart";
 import AmModal from "src/components/modal/Modal";
 import InputField from "src/components/inputs/checkBox/inputFields/InputFields";
+import IconButtons from "src/components/buttons/iconButtons/IconButtons";
+const { B_13_ORANGE_463 } = Paragraphs;
+const Title = styled(B_13_ORANGE_463)`
+  text-align: center;
+  padding: 5px 0;
+  margin: 5px 0;
+  border-top: 1px solid #ffa463;
+  border-bottom: 1px solid #ffa463;
+`;
 const CenteredDiv = styled.div`
   display: flex;
   justify-content: center;
@@ -45,6 +55,44 @@ class Sprint1 extends Component<Props, State> {
     const { isCheckboxChecked, hidden, inputValue } = this.state;
     return (
       <>
+        <Title>IconButtons</Title>
+        <IconButtons
+          selected={3}
+          label="Transfer To"
+          list={[
+            {
+              text: "Account",
+              icon: {
+                name: "Account"
+              }
+            },
+            {
+              text: "Card2",
+              icon: {
+                name: "Card2"
+              }
+            },
+            {
+              text: "Account",
+              icon: {
+                name: "Account"
+              }
+            },
+            {
+              text: "Card2",
+              icon: {
+                name: "Card2"
+              }
+            },
+            {
+              text: "Account",
+              icon: {
+                name: "Account"
+              }
+            }
+          ]}
+        />
+        <Title>InputField</Title>
         <InputField
           type="text"
           label="input label"
@@ -97,13 +145,19 @@ class Sprint1 extends Component<Props, State> {
           }}
         />
 
-        <AmModal />
+        <Title>AMTabs</Title>
         <AMTabs />
+        <Title>PieChart</Title>
         <PieChart />
+
+        <Title>ZeroResult</Title>
         <ZeroResult
           text={`We can’t seem to find any result for 
-“Damansara Heights”`}
+          “Damansara Heights”`}
         />
+
+        <Title>NavBar</Title>
+
         <NavBar
           icon={{ name: "Investment" }}
           profile={{
@@ -128,6 +182,8 @@ class Sprint1 extends Component<Props, State> {
             }
           ]}
         />
+
+        <Title>LabeledIcon</Title>
         <LabeledIcon
           leftLabel="Powered by"
           imageIcon={{ src: images.common.sampleLogo, size: 100 }}
@@ -137,13 +193,17 @@ class Sprint1 extends Component<Props, State> {
           icon={{ name: "Account", color: "#000000", size: 30 }}
         />
 
+        <Title>InlineMessage</Title>
+
         <CenteredDiv>
           <InlineMessage
             errorText="The TAC is incorrect"
             subText="Please try again."
           />
         </CenteredDiv>
-        <hr />
+
+        <Title>PrimaryButton</Title>
+
         <div>
           <PrimaryButton
             title="Load More"
@@ -177,6 +237,8 @@ class Sprint1 extends Component<Props, State> {
               buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
             />
           </div>
+
+          <Title>FullButton</Title>
           <FullButton
             title="Login"
             onButtonClick={() => {
@@ -197,14 +259,16 @@ class Sprint1 extends Component<Props, State> {
             />
           </div>
         </div>
+        <Title>Header</Title>
         <Header
           testId="testId"
           title="good morning"
           subTitle="Banking your way. 
-        What would you like
-        to do today?"
+          What would you like
+          to do today?"
         />
-        <hr />
+
+        <Title>TextButtonList</Title>
         <TextButtonList
           testId="testId"
           data={[
@@ -222,7 +286,8 @@ class Sprint1 extends Component<Props, State> {
           footerText="  Copyright © AmBank (M) Berhad (Company No. 8515-D) All Rights
           Reserved."
         />
-        <hr />
+
+        <Title>TextButton</Title>
         <TextButton
           testId="testId"
           buttonText="Forgot username/password?"
@@ -243,8 +308,8 @@ class Sprint1 extends Component<Props, State> {
             }}
           />
         </CenteredDiv>
-        <hr />
 
+        <Title>Logo</Title>
         <Logo icon={{ name: "QR", size: 40, color: "black" }} testId="testId" />
         <CenteredDiv>
           <Logo
@@ -256,6 +321,7 @@ class Sprint1 extends Component<Props, State> {
             }}
           />
         </CenteredDiv>
+
         <Logo
           image={{
             src: images.common.sampleLogo,
@@ -263,7 +329,8 @@ class Sprint1 extends Component<Props, State> {
             height: 50
           }}
         />
-        <hr />
+
+        <Title>Checkbox</Title>
         <Checkbox
           testId="testId"
           isChecked={isCheckboxChecked}
@@ -295,9 +362,11 @@ class Sprint1 extends Component<Props, State> {
             </div>
           }
         />
-        <hr />
+
+        <Title>AMTabs</Title>
         <AMTabs />
-        <hr />
+
+        <Title>FooterLogo</Title>
         <FooterLogo
           onLogoClick={(logo, index) => {
             alert(`${logo.src}<=-link  id-=>${logo.id} index-=>${index}`);
@@ -384,19 +453,22 @@ class Sprint1 extends Component<Props, State> {
             }
           ]}
         />
-        <hr />
-        <BannerHero />
-        <hr />
 
+        <Title>BannerHero</Title>
+        <BannerHero />
+
+        <Title>BackButton</Title>
         <BackButton
           buttonText="Forgot Username/Password"
           onButtonClick={() => {
             alert("BackButton clicked");
           }}
         />
-        <hr />
+
+        <Title>StickyTimer</Title>
         <StickyTimer />
-        <hr />
+
+        <Title>Profile</Title>
         <Profile
           greeting="Good Morning"
           name="Adam Constantine"
@@ -405,7 +477,9 @@ class Sprint1 extends Component<Props, State> {
             "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
           }
         />
-        <hr />
+
+        <Title>StatusIcon</Title>
+
         <RowDiv>
           <StatusIcon icon={{ name: "Tick-1" }} />
           <StatusIcon
@@ -427,13 +501,15 @@ class Sprint1 extends Component<Props, State> {
             }}
           />
         </RowDiv>
-        <hr />
+
+        <Title>Prompt</Title>
         <Prompt
           iconColor={{ top: "#DCEAEA", bottom: "#7FA2A2" }}
           icon={{ name: "Tick-1", color: "#ffffff" }}
           text="Your profile is successfully activated."
         />
-        <hr />
+
+        <Title>DetailSummary</Title>
         <DetailSummary
           mainTitle="Protected by PIDM up to RM 250,000 for each depositor"
           logoTitle="Account Insights"
@@ -449,7 +525,8 @@ class Sprint1 extends Component<Props, State> {
             alert("link clicked");
           }}
         />
-        <hr />
+
+        <AmModal />
       </>
     );
   }

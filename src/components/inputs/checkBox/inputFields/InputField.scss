@@ -1,3 +1,5 @@
+@import "../../../assets/colors/colors.scss";
+
 .InputFieldMain {
   display: flex;
   flex-direction: column;
@@ -15,8 +17,7 @@
   width: 31.6rem;
   border-radius: 0.95rem;
   border: 0.5px solid #dedede;
-  box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede,
-    0px 1px 5px #dedede;
+  box-shadow: $mainBoxShadow;
 }
 
 .InputFieldIconDiv input:focus {

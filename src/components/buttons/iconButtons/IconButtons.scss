@@ -1,0 +1,26 @@
+@import "../../assets/colors/colors.scss";
+
+.IconButtonsLabel {
+  padding: 0 0 0.62rem 1rem;
+}
+.IconButtonsRow {
+  display: flex;
+  flex-direction: row;
+}
+.IconButtonsIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5.5rem;
+  height: 4rem;
+  border: 1px solid $greyEDE;
+  border-radius: 0.75rem;
+  border-bottom: 0.37rem solid $greyEDE;
+}
+.IconButtonsWrapper {
+  margin-right: 2rem;
+}
+.IconButtonsText {
+  text-align: center;
+  padding-top: 1rem;
+}
