@@ -1,0 +1,20 @@
+@import "../../assets/colors/colors.scss";
+
+.DescriptionButtonRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 34.62rem;
+  height: 3.12rem;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border: 1px solid $greyEDE;
+  border-radius: 0.95rem;
+  box-shadow: $mainBoxShadow;
+  margin-bottom: 1rem;
+}
+.DescriptionButtonAmount {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

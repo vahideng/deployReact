@@ -26,6 +26,7 @@ import PieChart from "src/components/pies/PieChart";
 import AmModal from "src/components/modal/Modal";
 import InputField from "src/components/inputs/checkBox/inputFields/InputFields";
 import IconButtons from "src/components/buttons/iconButtons/IconButtons";
+import DescriptionButton from "src/components/buttons/descriptionButton/DescriptionButton";
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -55,6 +56,21 @@ class Sprint1 extends Component<Props, State> {
     const { isCheckboxChecked, hidden, inputValue } = this.state;
     return (
       <>
+        <Title>DescriptionButton</Title>
+        <DescriptionButton
+          onButtonClick={(item, index) => {
+            alert(`${item.title} with indexOf ${index} clicked`);
+          }}
+          list={[
+            { title: "Pay Minimum Payment" },
+            { title: "Pay Minimum Payment", amount: "RM 1,000.00" },
+            {
+              title: "Pay Unpaid Statement Balance",
+              amount: "RM 2,000.00",
+              icon: { name: "Alert", color: "#ff2626" }
+            }
+          ]}
+        />
         <Title>IconButtons</Title>
         <IconButtons
           selected={3}
