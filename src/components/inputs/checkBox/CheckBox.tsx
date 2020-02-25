@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import classes from "./FixCheck.module.css";
+import classes from "./CheckBox.module.css";
 import Icon from "src/components/assets/icons/icon";
 interface Props {
   onCheckClick: (event: any, testId?: string | undefined) => void;
