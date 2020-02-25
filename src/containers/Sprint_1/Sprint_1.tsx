@@ -28,6 +28,7 @@ import InputField from "src/components/inputs/checkBox/inputFields/InputFields";
 import IconButtons from "src/components/buttons/iconButtons/IconButtons";
 import DescriptionButton from "src/components/buttons/descriptionButton/DescriptionButton";
 import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
+import DetailList from "src/components/lists/DetailList/DetailList";
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -57,6 +58,34 @@ class Sprint1 extends Component<Props, State> {
     const { isCheckboxChecked, hidden, inputValue } = this.state;
     return (
       <>
+        <Title>DetailList</Title>
+        <div>
+          <DetailList
+            title="Protected by PIDM up to RM 250,000 for each depositor"
+            list={[
+              {
+                leftText: "Total Balance",
+                rightText: "RM 100,000.00"
+              },
+              {
+                leftText: "Available Balance",
+                rightText: "RM 99,980.00 <tooltip>"
+              },
+              {
+                leftText: "Account Type",
+                rightText: "TRUE Savings Account-i"
+              },
+              {
+                leftText: "Holder Name",
+                rightText: "Adam Constantine"
+              },
+              {
+                leftText: "Currency",
+                rightText: "MYR"
+              }
+            ]}
+          />
+        </div>
         <Title>SelectionTile</Title>
         <div style={{ paddingBottom: 20 }}>
           <LabeledIcon
