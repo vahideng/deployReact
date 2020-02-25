@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Paragraphs from "../../components/assets/typography";
-import Header from "../../components/headers/header/FixHeader";
+import Header from "../../components/headers/header/Header";
 import TextButtonList from "../../components/buttons/textButtonList/TextButtonList";
 import TextButton from "src/components/buttons/textButton/TextButton";
-import Logo from "src/components/assets/logo/FixLogo";
+import Logo from "src/components/assets/logo/Logo";
 import styled from "styled-components";
 import images from "src/assets";
 import Checkbox from "src/components/inputs/checkBox/CheckBox";
