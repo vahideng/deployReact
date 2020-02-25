@@ -6,7 +6,7 @@ import TextButton from "src/components/buttons/textButton/TextButton";
 import Logo from "src/components/assets/logo/Logo";
 import styled from "styled-components";
 import images from "src/assets";
-import Checkbox from "src/components/inputs/checkBox/CheckBox";
+import Checkbox from "src/components/inputs/checkBox/FixCheck";
 import AMTabs from "src/components/buttons/tabs/Tabs";
 import FooterLogo from "src/components/headers/footerLogo/FooterLogo";
 import BannerHero from "src/components/banners/bannerHero/BannerHero";
@@ -62,7 +62,7 @@ class Sprint1 extends Component<Props, State> {
         <div>
           <DetailList
             title="Protected by PIDM up to RM 250,000 for each depositor"
-            list={[
+            singleList={[
               {
                 leftText: "Total Balance",
                 rightText: "RM 100,000.00"
@@ -83,6 +83,57 @@ class Sprint1 extends Component<Props, State> {
                 leftText: "Currency",
                 rightText: "MYR"
               }
+            ]}
+          />
+          <DetailList
+            title="Protected by PIDM up to RM 250,000 for each depositor"
+            multiList={[
+              [
+                {
+                  leftText: "Total Balance",
+                  rightText: "RM 100,000.00"
+                },
+                {
+                  leftText: "Available Balance",
+                  rightText: "RM 99,980.00 <tooltip>"
+                },
+                {
+                  leftText: "Account Type",
+                  rightText: "TRUE Savings Account-i"
+                },
+                {
+                  leftText: "Holder Name",
+                  rightText: "Adam Constantine"
+                },
+                {
+                  leftText: "Currency",
+                  rightText: "MYR"
+                }
+              ],
+
+              [
+                "Jan",
+                {
+                  leftText: "Total Balance",
+                  rightText: "RM 100,000.00"
+                },
+                {
+                  leftText: "Available Balance",
+                  rightText: "RM 99,980.00 <tooltip>"
+                },
+                {
+                  leftText: "Account Type",
+                  rightText: "TRUE Savings Account-i"
+                },
+                {
+                  leftText: "Holder Name",
+                  rightText: "Adam Constantine"
+                },
+                {
+                  leftText: "Currency",
+                  rightText: "MYR"
+                }
+              ]
             ]}
           />
         </div>
