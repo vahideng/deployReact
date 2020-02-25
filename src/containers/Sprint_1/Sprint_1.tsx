@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import Paragraphs from "../../components/assets/typography";
-import Header from "../../components/headers/header/Header";
+import Header from "../../components/headers/header/FixHeader";
 import TextButtonList from "../../components/buttons/textButtonList/TextButtonList";
 import TextButton from "src/components/buttons/textButton/TextButton";
-import Logo from "src/components/assets/logo/Logo";
+import Logo from "src/components/assets/logo/FixLogo";
 import styled from "styled-components";
 import images from "src/assets";
 import Checkbox from "src/components/inputs/checkBox/CheckBox";
 import AMTabs from "src/components/buttons/tabs/Tabs";
-import FooterLogo from "src/components/headers/footerLogo/FixFooterLogo";
+import FooterLogo from "src/components/headers/footerLogo/FooterLogo";
 import BannerHero from "src/components/banners/bannerHero/BannerHero";
 import BackButton from "src/components/buttons/backButton/BackButton";
 import StickyTimer from "src/components/headers/stickyTimer/StickyTimer";
