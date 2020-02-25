@@ -1,0 +1,31 @@
+.DetailListMonthDiv {
+  width: auto;
+  height: 100vh;
+  background-color: #e5e5e5;
+}
+
+.DetailListMonthTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#title {
+  margin: 0 0.5rem;
+}
+
+.DetailListRows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.5rem 2rem;
+}

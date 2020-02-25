@@ -29,6 +29,8 @@ import IconButtons from "src/components/buttons/iconButtons/IconButtons";
 import DescriptionButton from "src/components/buttons/descriptionButton/DescriptionButton";
 import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
 import DetailList from "src/components/lists/DetailList/DetailList";
+import DetailListMonthly from "src/components/lists/DetailListMonthly/DetailListMonthly";
+// import Tooltip from "src/components/tooltip/Tooltip";
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -58,11 +60,45 @@ class Sprint1 extends Component<Props, State> {
     const { isCheckboxChecked, hidden, inputValue } = this.state;
     return (
       <>
+        {/* <Title>Tooltips</Title>
+        <CenteredDiv> */}
+        {/* <Tooltip
+            title="Available"
+            subTitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa."
+          /> */}
+        {/* </CenteredDiv> */}
+        <Title>NavBar</Title>
+        <div style={{ paddingTop: 20, paddingBottom: 20 }}>
+          <NavBar
+            icon={{ name: "Investment" }}
+            profile={{
+              greeting: "Good Morning",
+              name: "Adam Constantine",
+              alt: "AVATAR",
+              src:
+                "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+            }}
+            rightButtons={[
+              {
+                iconName: "Time",
+                link: ""
+              },
+              {
+                iconName: "Settings",
+                link: ""
+              },
+              {
+                iconName: "Share",
+                link: ""
+              }
+            ]}
+          />
+        </div>
         <Title>DetailList</Title>
-        <div>
+        <div style={{ height: 500 }}>
           <DetailList
             title="Protected by PIDM up to RM 250,000 for each depositor"
-            singleList={[
+            list={[
               {
                 leftText: "Total Balance",
                 rightText: "RM 100,000.00"
@@ -85,55 +121,193 @@ class Sprint1 extends Component<Props, State> {
               }
             ]}
           />
-          <DetailList
-            title="Protected by PIDM up to RM 250,000 for each depositor"
-            multiList={[
-              [
-                {
-                  leftText: "Total Balance",
-                  rightText: "RM 100,000.00"
-                },
-                {
-                  leftText: "Available Balance",
-                  rightText: "RM 99,980.00 <tooltip>"
-                },
-                {
-                  leftText: "Account Type",
-                  rightText: "TRUE Savings Account-i"
-                },
-                {
-                  leftText: "Holder Name",
-                  rightText: "Adam Constantine"
-                },
-                {
-                  leftText: "Currency",
-                  rightText: "MYR"
-                }
-              ],
-
-              [
-                "Jan",
-                {
-                  leftText: "Total Balance",
-                  rightText: "RM 100,000.00"
-                },
-                {
-                  leftText: "Available Balance",
-                  rightText: "RM 99,980.00 <tooltip>"
-                },
-                {
-                  leftText: "Account Type",
-                  rightText: "TRUE Savings Account-i"
-                },
-                {
-                  leftText: "Holder Name",
-                  rightText: "Adam Constantine"
-                },
-                {
-                  leftText: "Currency",
-                  rightText: "MYR"
-                }
-              ]
+        </div>
+        <div>
+          <Title>DetailList Monthly</Title>
+          <DetailListMonthly
+            selected={4}
+            list={[
+              {
+                date: "Nov 2019",
+                content: [
+                  {
+                    leftText: "Bonus Nov",
+                    rightText: "RM 40,000.00"
+                  },
+                  {
+                    leftText: "Your Highest Qualifier so far",
+                    rightText: "RM 20,000.00(Aug 2019)"
+                  },
+                  {
+                    leftText: "Lowest Balance of the Month",
+                    rightText: "RM 60,000.00"
+                  },
+                  {
+                    leftText: "Total Balance",
+                    rightText: "RM 110,000.00"
+                  },
+                  {
+                    leftText: "Available Balance",
+                    rightText: "RM 9,980.00"
+                  },
+                  {
+                    leftText: "Account Type",
+                    rightText: "eFlex"
+                  },
+                  {
+                    leftText: "Holder Name",
+                    rightText: "Adam Constantine"
+                  },
+                  {
+                    leftText: "Currency",
+                    rightText: "MYR"
+                  }
+                ]
+              },
+              {
+                date: "Dec 2019",
+                content: [
+                  {
+                    leftText: "Bonus Rate Qualifier Dec",
+                    rightText: "RM 10,000.00"
+                  },
+                  {
+                    leftText: "Your Highest Qualifier so far",
+                    rightText: "RM 10,000.00(Aug 2019)"
+                  },
+                  {
+                    leftText: "Lowest Balance of the Month",
+                    rightText: "RM 10,000.00"
+                  },
+                  {
+                    leftText: "Total Balance",
+                    rightText: "RM 10,000.00"
+                  },
+                  {
+                    leftText: "Available Balance",
+                    rightText: "RM 9,980.00"
+                  },
+                  {
+                    leftText: "Account Type",
+                    rightText: "eFlex"
+                  },
+                  {
+                    leftText: "Holder Name",
+                    rightText: "Adam Constantine"
+                  },
+                  {
+                    leftText: "Currency",
+                    rightText: "MYR"
+                  }
+                ]
+              },
+              {
+                date: "Jan 2020",
+                content: [
+                  {
+                    leftText: "Bonus Rate Jan",
+                    rightText: "RM 1,000.00"
+                  },
+                  {
+                    leftText: "Your Highest Qualifier so far",
+                    rightText: "RM 1,000.00(Aug 2019)"
+                  },
+                  {
+                    leftText: "Lowest Balance of the Month",
+                    rightText: "RM 40,000.00"
+                  },
+                  {
+                    leftText: "Total Balance",
+                    rightText: "RM 1,000.00"
+                  },
+                  {
+                    leftText: "noOfUnsuccessfulTransfer",
+                    rightText: "444,440"
+                  },
+                  {
+                    leftText: "Available Balance",
+                    rightText: "RM 500,0.00"
+                  },
+                  {
+                    leftText: "scheduledEndDate",
+                    rightText: "End 12 Jun 2019"
+                  }
+                ]
+              },
+              {
+                date: "Feb 2020",
+                content: [
+                  {
+                    leftText: "Bonus Rate Feb",
+                    rightText: "RM 10,000.00"
+                  },
+                  {
+                    leftText: "Your Highest Qualifier so far",
+                    rightText: "RM 10,000.00(Aug 2019)"
+                  },
+                  {
+                    leftText: "Lowest Balance of the Month",
+                    rightText: "RM 10,000.00"
+                  },
+                  {
+                    leftText: "Total Balance",
+                    rightText: "RM 10,000.00"
+                  },
+                  {
+                    leftText: "Available Balance",
+                    rightText: "RM 9,980.00"
+                  },
+                  {
+                    leftText: "Account Type",
+                    rightText: "eFlex"
+                  },
+                  {
+                    leftText: "Holder Name",
+                    rightText: "Adam Constantine"
+                  },
+                  {
+                    leftText: "Currency",
+                    rightText: "MYR"
+                  }
+                ]
+              },
+              {
+                date: "Mrc 2020",
+                content: [
+                  {
+                    leftText: "Bonus Mrc",
+                    rightText: "RM 80,000.00"
+                  },
+                  {
+                    leftText: "Your Highest Qualifier so far",
+                    rightText: "RM 60,000.00(Aug 2019)"
+                  },
+                  {
+                    leftText: "Lowest Balance of the Month",
+                    rightText: "RM 20,000.00"
+                  },
+                  {
+                    leftText: "Total Balance",
+                    rightText: "RM 70,000.00"
+                  },
+                  {
+                    leftText: "Available Balance",
+                    rightText: "RM 9,980.00"
+                  },
+                  {
+                    leftText: "Account Type",
+                    rightText: "eFlex"
+                  },
+                  {
+                    leftText: "Holder Name",
+                    rightText: "Adam Constantine"
+                  },
+                  {
+                    leftText: "Currency",
+                    rightText: "MYR"
+                  }
+                ]
+              }
             ]}
           />
         </div>
@@ -319,7 +493,6 @@ class Sprint1 extends Component<Props, State> {
         <InputField
           type="text"
           label="input label"
-          autoFocus
           value={inputValue}
           handleChange={event => {
             this.setState({
@@ -366,33 +539,6 @@ class Sprint1 extends Component<Props, State> {
         <ZeroResult
           text={`We can’t seem to find any result for 
           “Damansara Heights”`}
-        />
-
-        <Title>NavBar</Title>
-
-        <NavBar
-          icon={{ name: "Investment" }}
-          profile={{
-            greeting: "Good Morning",
-            name: "Adam Constantine",
-            alt: "AVATAR",
-            src:
-              "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
-          }}
-          rightButtons={[
-            {
-              iconName: "Time",
-              link: ""
-            },
-            {
-              iconName: "Settings",
-              link: ""
-            },
-            {
-              iconName: "Share",
-              link: ""
-            }
-          ]}
         />
 
         <Title>LabeledIcon</Title>

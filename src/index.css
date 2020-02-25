@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.trigger {
+  background-color: brown;
+}
+
+.Hossein {
+  background-color: chartreuse;
+}
+
+.__react_component_tooltip {
+  background-color: red !important;
+}
+.__react_component_tooltip::after {
+  display: none !important;
+}

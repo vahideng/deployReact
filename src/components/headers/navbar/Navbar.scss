@@ -1,9 +1,23 @@
+@import "../../assets/common/common.scss";
+
 .NavbarMainDiv {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
   width: 100vw;
   background-color: #ffffff;
   height: 4.31rem;
+  box-shadow: $mainBoxShadow;
+  padding: $HorizontalPadding;
 }
 
-.navbarContainer {
+.navbarIconDiv {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.navbarIcons {
+  padding-left: 2rem;
 }
