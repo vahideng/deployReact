@@ -23,23 +23,17 @@ const Navbar: React.FC<Props> = ({ icon, profile = {}, rightButtons }) => {
     <div className={classes.NavbarMainDiv}>
       <div>
         <Link to={!!icon.link ? icon.link : "#"}>
-          <Icon
-            icon={icon.name}
-            color={!!icon.color ? icon.color : "#ff2626"}
-            size={!!icon.size ? icon.size : 30}
-          />
+          <Icon icon={"amonline"} color={"#ff2626"} size={150} />
         </Link>
       </div>
       <div className={classes.navbarIconDiv}>
         {!!profile && (
-          <Link to="#">
-            <Profile
-              greeting={!!profile.greeting ? profile.greeting : ""}
-              name={!!profile.name ? profile.name : ""}
-              alt={!!profile.alt ? profile.alt : ""}
-              src={!!profile.src ? profile.src : ""}
-            />
-          </Link>
+          <Profile
+            greeting={!!profile.greeting ? profile.greeting : ""}
+            name={!!profile.name ? profile.name : ""}
+            alt={!!profile.alt ? profile.alt : ""}
+            src={!!profile.src ? profile.src : ""}
+          />
         )}
         {!!rightButtons &&
           rightButtons.map((button, index) => {

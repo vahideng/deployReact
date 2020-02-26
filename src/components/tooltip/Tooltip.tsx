@@ -1,41 +1,44 @@
-import React from "react";
+import React, { Component } from "react";
+
 import classes from "./Tooltip.module.css";
-import Paragraphs from "../../components/assets/typography";
-
-// import Icon from "../assets/icons/icon";
+import Icon from "../assets/icons/icon";
 import ReactTooltip from "react-tooltip";
-const {
-  B_14_WHITE
-  //  R_11_WHITE
-} = Paragraphs;
-interface TriggerProps {
-  title?: any;
+
+interface TooltipProps {
+  tipChildren: any;
+  datatip?: any;
 }
-const Trigger: React.FC<TriggerProps> = ({}) => {
-  let fooRef: any;
+interface State {}
 
-  return (
-    <div className={classes.Hov}>
-      <B_14_WHITE
-        className={classes.Hover}
-        ref={ref => (fooRef = ref)}
-        data-tip="tooltip"
-      >
-        hellllll
-      </B_14_WHITE>
-      <button
-        onClick={() => {
-          ReactTooltip.show(fooRef);
-        }}
-      ></button>
-      <button
-        onClick={() => {
-          ReactTooltip.hide(fooRef);
-        }}
-      ></button>
-      <ReactTooltip />
-    </div>
-  );
-};
+class Tooltip extends Component<TooltipProps, State> {
+  state = {
+    clicked: true
+  };
+  render() {
+    const { clicked } = this.state;
+    const { tipChildren, datatip } = this.props;
+    const clickHandler = () => {
+      this.setState({ clicked: !clicked });
+      if (!!clicked) {
+        ReactTooltip.show(fooRef);
+      } else {
+        ReactTooltip.hide(fooRef);
+      }
+    };
+    let fooRef: any;
+    return (
+      <div data-for = "1">
+        <p ref={ref => (fooRef = ref)} data-tip={`${datatip}`}></p>
 
-export default Trigger;
+        <div onClick={clickHandler}>
+          <Icon icon={!!clicked ? "Love" : "FAQ"} color={"#000000"} size={40} />
+        </div>
+        <ReactTooltip place={"left"}>
+          <div className={classes.TooltipContent}>{tipChildren}</div>
+        </ReactTooltip>
+      </div>
+    );
+  }
+}
+
+export default Tooltip;

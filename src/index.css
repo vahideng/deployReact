@@ -12,16 +12,8 @@ code {
     monospace;
 }
 
-.trigger {
-  background-color: brown;
-}
-
-.Hossein {
-  background-color: chartreuse;
-}
-
 .__react_component_tooltip {
-  background-color: red !important;
+  background-color: transparent !important;
 }
 .__react_component_tooltip::after {
   display: none !important;

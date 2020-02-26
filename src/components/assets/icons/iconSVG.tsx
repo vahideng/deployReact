@@ -4,6 +4,31 @@ export default {
     {
       icon: {
         paths: [
+          "M6529.455 1002.518h-235.197v-1002.518h235.197v1002.518zM5021.901 654.789c-11.738 40.691-29.777 75.884-54.089 105.838-21.736 26.398-47.142 45.778-76.229 58.373-29.033 12.482-59.683 18.766-91.799 18.766-32.278 0-62.809-6.187-91.961-18.437-29.033-12.369-54.428-31.491-76.159-57.349-21.72-25.972-39.192-59.451-52.429-100.584-13.285-41.149-19.882-90.861-19.882-149.335 0-57.137 6.802-107.306 20.491-150.591 13.754-43.285 31.394-77.237 53.173-101.857 23.412-26.414 49.174-45.275 77.161-56.745 28.036-11.356 57.829-17.115 89.605-17.115 31.216 0 61.268 5.971 90.123 17.816 28.974 11.845 54.493 31.016 76.568 57.349 21.714 25.518 39.354 58.899 52.747 100.209 13.511 41.311 20.205 91.367 20.205 150.298 0 54.917-5.788 102.754-17.527 143.364zM5166.473 884.903c88.608-92.101 132.942-216.409 132.942-372.855 0-157.754-44.56-282.517-133.508-374.129-89.126-91.611-211.332-137.408-366.845-137.408-155.901 0-278.108 45.797-366.732 137.408-88.592 91.611-132.877 216.375-132.877 374.129 0 156.446 44.285 280.754 132.877 372.855 88.625 92.052 210.831 138.078 366.732 138.078 156.338 0 278.851-46.026 367.411-138.078zM2552.342 624.166l-119.318-351.677-119.323 351.677h238.641zM2938.438 1002.539h-258.28l-67.633-198.392h-358.912l-67.665 198.392h-252.055l358.303-981.549h287.911l358.33 981.549zM3712.717 477.806v524.717h-235.127v-369.788c0-35.991-0.938-66.743-2.614-91.966-1.741-25.34-6.532-45.848-14.331-61.658-7.772-15.744-19.688-27.394-35.538-34.572-15.78-7.227-38.125-10.915-66.776-10.915-23.008 0-45.336 4.731-67.115 14.162-21.655 9.447-41.197 19.529-58.621 30.020v524.717h-235.127v-740.26h235.127v81.642c40.302-32.043 78.999-57.087 115.917-75.1 36.794-17.98 77.549-27.019 122.222-27.019 48.177 0 90.673 10.915 127.574 32.647 36.81 21.7 65.665 53.71 86.496 95.951 46.851-40.087 92.365-71.478 136.623-94.287 44.221-22.842 87.557-34.312 130.043-34.312 79.031 0 138.924 23.968 179.858 71.853 40.965 47.902 61.537 116.933 61.537 206.994v481.89h-235.127v-369.788c0-36.465-0.787-67.282-2.35-92.327-1.504-25.028-6.193-45.487-13.948-61.297-7.432-15.744-19.154-27.394-35.242-34.572-16.077-7.227-38.648-10.915-67.73-10.915-19.607 0-38.648 3.394-57.333 10.23-18.653 6.771-41.499 18.126-68.419 33.953zM6145.347 1002.518h-235.197v-367.174c0-29.825-1.455-59.618-4.527-89.331-3.072-29.644-8.3-51.474-15.683-65.538-8.677-16.283-21.396-28.21-38.050-35.616-16.707-7.505-40.044-11.241-70.063-11.241-21.235 0-42.9 3.507-64.835 10.621-21.935 6.95-45.649 18.143-71.249 33.561v524.718h-235.251v-740.261h235.251v81.659c41.553-32.94 81.651-58.18 120.024-75.768s80.95-26.35 127.731-26.35c79.010 0 140.719 23.331 185.075 69.879 44.571 46.614 66.776 116.296 66.776 208.952v481.89zM6683.594 1002.518h235.143v-740.265h-235.143v740.265zM6677.073 180.040h248.239v-180.040h-248.239v180.040zM7572.534 1002.518h235.197v-481.89c0-92.655-22.312-162.338-66.722-208.952-44.463-46.548-106.173-69.879-185.128-69.879-46.835 0-89.357 8.762-127.838 26.35-38.373 17.588-78.363 42.828-120.024 75.768v-81.659h-235.197v740.261h235.197v-524.718c25.654-15.418 49.368-26.611 71.303-33.561 21.989-7.114 43.547-10.621 64.835-10.621 29.965 0 53.41 3.736 70.063 11.241 16.707 7.407 29.48 19.334 38.104 35.616 7.33 14.064 12.557 35.894 15.629 65.538 3.018 29.712 4.581 59.505 4.581 89.331v367.174zM8443.85 537.085c-1.347-49.55-13.42-87.026-36.487-112.054-22.959-25.028-58.799-37.525-107.52-37.525-45.11 0-82.243 11.845-111.293 35.551-29.157 23.804-45.433 61.787-48.883 114.028h304.182zM8676.999 676.271h-536.738c3.557 57.969 25.384 102.378 65.536 133.152 40.152 30.752 99.328 46.139 177.529 46.139 49.475 0 97.442-9.006 143.953-27.001 46.457-18.049 83.16-37.365 110.053-58.050h26.085v190.464c-52.979 21.585-102.993 37.182-149.773 46.84-46.996 9.755-98.951 14.519-155.756 14.519-146.863 0-259.341-33.377-337.489-100.223-78.093-66.813-117.275-161.948-117.275-285.47 0-122.106 37.026-218.954 111.131-290.301 74.051-71.461 175.643-107.127 304.559-107.127 118.946 0 208.465 30.363 268.45 91.284 59.823 60.808 89.735 148.389 89.735 262.694v83.079zM964.155 508.347v-0.179c0-269.318-216.086-487.309-481.859-487.309-266.291 0-482.296 217.99-482.296 487.309 0 268.569 216.006 486.654 482.296 486.654 49.302 0 96.943-7.702 141.697-21.385v-338.4c-34.757 39.532-85.076 64.577-141.584 64.577-104.698 0-189.227-85.655-189.227-191.266 0-105.887 84.529-191.511 189.227-191.511 104.407 0 189.065 85.624 189.065 191.511v486.474h292.681v-486.474zM1167.958 20.86c-117.803 0-225.469 42.681-308.704 114.061 73.464 73.843 124.346 173.123 140.633 284.508 31.55-61.003 94.909-102.82 167.737-102.82 104.405 0 188.95 85.721 188.95 191.739 0 105.609-84.545 191.022-188.95 191.022-22.733 0-44.614-3.87-64.604-11.517v302.533c21.057 2.727 42.9 4.441 64.938 4.441 265.954 0 481.011-217.875 481.011-486.886 0-268.829-215.056-487.080-481.011-487.080z"
+        ],
+        attrs: [],
+        width: 8677,
+        isMulticolor: false,
+        isMulticolor2: false,
+        grid: 0,
+        tags: ["amonline"],
+        colorPermutations: {}
+      },
+      attrs: [],
+      properties: {
+        order: 54,
+        id: 106,
+        name: "amonline",
+        prevSize: 32,
+        code: 59648
+      },
+      setIdx: 0,
+      setId: 0,
+      iconIdx: 0
+    },
+    {
+      icon: {
+        paths: [
           "M856.478 933.222c75.408 31.383 232.318 96.682 294.677 36.554 34.998-33.743 38.486-106.682 10.829-213.283-26.868-4.75-81.289-22.481-107.448-88.66-19.928-50.427-42.456-172.572-18.995-233.281-57.53-113.408-121.318-205.714-190.718-275.734-115.577-116.615-206.152-129.205-239.735-129.205-33.578 0-124.153 12.59-239.73 129.205-69.169 69.791-132.768 161.705-190.145 274.591 24.211 60.3 1.542 183.666-18.518 234.424-26.51 67.072-82.084 84.392-108.544 88.862-27.602 106.487-24.098 179.358 10.875 213.080 62.338 60.106 219.138-5.127 294.586-36.515l0.098-0.042c18.143-7.55 32.477-13.512 42.415-16.68 127.409-40.602 200.467-39.345 208.963-39.054 8.518-0.296 81.564-1.543 208.968 39.054 9.942 3.167 24.271 9.13 42.419 16.68l0.002 0.002zM170.024 443.774c-32.393 64.88-62.781 136.495-91.026 214.7-11.534 31.939-21.014 61.757-28.493 89.421 25.775-4.822 74.197-21.995 98.379-83.186 16.66-42.149 40.54-159.458 21.14-220.935zM1062.349 664.702c23.834 60.307 71.238 77.873 97.278 82.984-7.475-27.608-16.938-57.353-28.444-89.218-28.060-77.703-58.238-148.894-90.394-213.443-18.669 61.817 5.015 177.822 21.56 219.678zM605.089 0c147.437 0 380.923 169.802 553.74 648.343 63.991 177.21 68.138 289.345 12.667 342.824-76.193 73.465-238.771 5.825-326.179-30.541l-0.081-0.035c-16.798-6.996-31.311-13.033-40.052-15.821-127.153-40.515-198.677-37.704-199.38-37.674l-0.714 0.035-0.735-0.035c-0.684-0.042-72.187-2.851-199.354 37.674-8.741 2.788-23.249 8.825-40.052 15.818-59.017 24.562-152.366 63.411-230.231 63.411-37.435 0-71.285-8.979-96.030-32.833-55.469-53.478-51.322-165.613 12.669-342.824 172.82-478.542 406.307-648.343 553.735-648.343zM605.091 617.702c2.129 0 214.486-0.694 310.663-56.851 55.969-32.689 69.374-68.759 44.821-120.627h-0.002c-129.080-272.641-288.97-344.679-355.482-344.679-55.899 0-228.701 61.872-355.351 344.4-23.925 53.369-10.978 88.394 44.688 120.906 96.177 56.157 308.534 56.851 310.663 56.851zM431.414 142.251c89.342-70.82 155.52-76.319 173.677-76.319 78.315 0 246.912 76.15 382.033 361.556 31.425 66.378 12.912 118.379-56.613 158.981-103.026 60.158-316.39 60.847-325.42 60.847s-222.394-0.689-325.416-60.847c-68.202-39.827-86.766-91.741-56.743-158.701 54.704-122.040 126.796-220.771 208.481-285.516zM916.894 696.604c-0.31-4.108-1.494-7.997-3.209-11.706-2.504-5.425-6.067-10.014-10.74-13.775-6.558-5.288-14.064-7.95-22.37-8.436-3.61-0.212-7.208 0.254-10.698 1.147-6.505 1.662-12.241 4.857-17.089 9.544-3.819 3.689-6.733 8.024-8.762 12.97-1.503 3.661-2.499 7.464-2.76 11.39-0.24 3.626-0.163 7.277 0.61 10.873 1.096 5.111 3.035 9.861 6 14.154 2.534 3.663 5.618 6.782 9.258 9.393 6.323 4.547 13.382 6.828 21.076 7.119 3.819 0.149 7.594-0.384 11.294-1.455 0.984-0.284 1.161-0.64 1.157-1.531-0.021-6.691-0.019-13.382-0.019-20.073l0.002-5.032v-1.231c-0.312 0.296-0.6 0.584-0.88 0.861l-0.002 0.002c-0.591 0.593-1.136 1.136-1.741 1.594-3.098 2.344-6.547 3.372-10.468 2.932-4.247-0.475-7.566-2.502-10.058-5.848-2.344-3.146-3.293-6.735-2.686-10.719 0.782-5.122 3.479-8.893 8.031-11.11 4.634-2.253 9.36-2.046 13.819 0.656 4.508 2.73 6.968 6.879 7.031 12.116 0.105 8.844 0.084 17.687 0.063 26.531-0.009 3.598-0.019 7.196-0.019 10.792v1.303h23.389v-1.401l0.002-9.809c0.002-8.725 0.005-17.452-0.012-26.179-0.005-1.692-0.091-3.384-0.219-5.071zM958.429 673.001c3.386 3.135 6.079 6.772 8.127 10.889 1.801 3.626 3.158 7.429 3.512 11.501l0.088 0.984v0.002c0.219 2.381 0.438 4.778 0.314 7.149-0.226 4.34-1.264 8.536-2.974 12.57-1.853 4.361-4.419 8.246-7.689 11.604-4.678 4.801-10.235 8.215-16.707 10.061-3.831 1.096-7.731 1.615-11.711 1.545-1.087-0.023-2.183-0.128-3.267-0.233-0.493-0.047-0.861-0.209-0.861-0.877 0.019-6.237 0.019-12.472 0.016-18.76v-4.762c8.541 2.881 16.084-1.496 18.8-8.343 2.49-6.281 0.282-14.134-6.249-18.008-5.581-3.314-14.85-2.932-20.203 5.753-0.945-4.371-2.113-8.397-4.063-12.125-1.971-3.777-4.492-7.166-7.58-10.408 0.614-0.407 1.219-0.819 1.82-1.226l0.014-0.009c1.394-0.947 2.767-1.88 4.191-2.728 3.479-2.064 7.256-3.449 11.22-4.154 3.205-0.575 6.442-0.859 9.761-0.605 5.546 0.426 10.731 1.864 15.607 4.496 2.856 1.548 5.441 3.461 7.836 5.683zM552.022 368.035c0 64.521-28.379 116.831-63.386 116.831-35.005 0-63.381-52.31-63.381-116.831 0-64.524 28.376-116.831 63.381-116.831 35.007 0 63.386 52.308 63.386 116.831zM714.557 484.866c35.007 0 63.386-52.31 63.386-116.831 0-64.524-28.379-116.831-63.386-116.831s-63.381 52.308-63.381 116.831c0 64.521 28.374 116.831 63.381 116.831z"
         ],
         attrs: [{ fill: "rgb(147, 147, 147)" }],
@@ -20,15 +45,15 @@ export default {
       },
       attrs: [{ fill: "rgb(147, 147, 147)" }],
       properties: {
-        order: 4,
+        order: 55,
         id: 102,
         name: "Amy1",
         prevSize: 32,
-        code: 59648
+        code: 59649
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 0
+      iconIdx: 1
     },
     {
       icon: {
@@ -36,23 +61,26 @@ export default {
           "M736.006 402.285c10.752 0 20.518 6.552 24.96 16.839s2.797 22.355-4.333 30.803l-192.002 229.88c-5.212 6.202-12.727 9.824-20.627 9.824s-15.415-3.565-20.627-9.824l-192.001-229.88c-7.076-8.506-8.832-20.516-4.334-30.803 4.444-10.23 14.208-16.839 24.961-16.839h109.715v-373.551c0-15.862 12.289-28.735 27.429-28.735h109.715c15.14 0 27.428 12.873 27.428 28.735v373.551h109.715zM919.469 901.536v-608.964h136.531v670.193c0 33.862-30.515 61.235-68.269 61.235h-887.464c-37.683 0-68.267-27.373-68.267-61.235v-670.193h136.533v608.964h750.936z"
         ],
         attrs: [],
+        width: 1088,
         isMulticolor: false,
         isMulticolor2: false,
         grid: 0,
-        tags: ["Download"],
-        colorPermutations: {}
+        tags: ["Combined Shape"],
+        colorPermutations: {
+          "110510510511471471471151151151118918918912552552551541606217474741861532421": []
+        }
       },
       attrs: [],
       properties: {
-        order: 106,
+        order: 56,
         id: 101,
         name: "Download",
         prevSize: 32,
-        code: 59648
+        code: 59650
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 0
+      iconIdx: 2
     },
     {
       icon: {
@@ -64,19 +92,21 @@ export default {
         isMulticolor2: false,
         grid: 0,
         tags: ["Account 2"],
-        colorPermutations: {}
+        colorPermutations: {
+          "110510510511471471471151151151118918918912552552551541606217474741861532421": []
+        }
       },
       attrs: [],
       properties: {
-        order: 103,
+        order: 57,
         id: 100,
         name: "Account-2",
         prevSize: 32,
-        code: 59648
+        code: 59651
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 0
+      iconIdx: 3
     },
     {
       icon: {
@@ -88,19 +118,21 @@ export default {
         isMulticolor2: false,
         grid: 0,
         tags: ["Account"],
-        colorPermutations: {}
+        colorPermutations: {
+          "110510510511471471471151151151118918918912552552551541606217474741861532421": []
+        }
       },
       attrs: [],
       properties: {
-        order: 3,
+        order: 58,
         id: 99,
         name: "Account",
         prevSize: 32,
-        code: 59649
+        code: 59652
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 1
+      iconIdx: 4
     },
     {
       icon: {
@@ -119,10 +151,10 @@ export default {
         }
       },
       attrs: [{}],
-      properties: { order: 4, id: 98, name: "Add", prevSize: 32, code: 59650 },
+      properties: { order: 59, id: 98, name: "Add", prevSize: 32, code: 59653 },
       setIdx: 0,
       setId: 0,
-      iconIdx: 2
+      iconIdx: 5
     },
     {
       icon: {
@@ -142,15 +174,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 5,
+        order: 60,
         id: 97,
         name: "Address",
         prevSize: 32,
-        code: 59651
+        code: 59654
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 3
+      iconIdx: 6
     },
     {
       icon: {
@@ -170,15 +202,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 6,
+        order: 61,
         id: 96,
         name: "Aggressive",
         prevSize: 32,
-        code: 59652
+        code: 59655
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 4
+      iconIdx: 7
     },
     {
       icon: {
@@ -198,15 +230,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 7,
+        order: 62,
         id: 95,
         name: "Alert-1",
         prevSize: 32,
-        code: 59653
+        code: 59656
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 5
+      iconIdx: 8
     },
     {
       icon: {
@@ -226,15 +258,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 8,
+        order: 63,
         id: 94,
         name: "Alert",
         prevSize: 32,
-        code: 59654
+        code: 59657
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 6
+      iconIdx: 9
     },
     {
       icon: {
@@ -254,15 +286,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 9,
+        order: 64,
         id: 93,
         name: "AmSecure-1",
         prevSize: 32,
-        code: 59655
+        code: 59658
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 7
+      iconIdx: 10
     },
     {
       icon: {
@@ -282,15 +314,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 10,
+        order: 65,
         id: 92,
         name: "AmSecure",
         prevSize: 32,
-        code: 59656
+        code: 59659
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 8
+      iconIdx: 11
     },
     {
       icon: {
@@ -309,10 +341,10 @@ export default {
         }
       },
       attrs: [{}],
-      properties: { order: 11, id: 91, name: "Amy", prevSize: 32, code: 59657 },
+      properties: { order: 66, id: 91, name: "Amy", prevSize: 32, code: 59660 },
       setIdx: 0,
       setId: 0,
-      iconIdx: 9
+      iconIdx: 12
     },
     {
       icon: {
@@ -332,15 +364,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 12,
+        order: 67,
         id: 90,
         name: "Announcement-1",
         prevSize: 32,
-        code: 59658
+        code: 59661
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 10
+      iconIdx: 13
     },
     {
       icon: {
@@ -360,15 +392,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 13,
+        order: 68,
         id: 89,
         name: "Announcement",
         prevSize: 32,
-        code: 59659
+        code: 59662
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 11
+      iconIdx: 14
     },
     {
       icon: {
@@ -388,15 +420,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 14,
+        order: 69,
         id: 88,
         name: "Apply",
         prevSize: 32,
-        code: 59660
+        code: 59663
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 12
+      iconIdx: 15
     },
     {
       icon: {
@@ -416,15 +448,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 15,
+        order: 70,
         id: 87,
         name: "Armed",
         prevSize: 32,
-        code: 59661
+        code: 59664
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 13
+      iconIdx: 16
     },
     {
       icon: {
@@ -444,15 +476,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 16,
+        order: 71,
         id: 86,
         name: "Bank",
         prevSize: 32,
-        code: 59662
+        code: 59665
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 14
+      iconIdx: 17
     },
     {
       icon: {
@@ -472,15 +504,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 17,
+        order: 72,
         id: 85,
         name: "Bell",
         prevSize: 32,
-        code: 59663
+        code: 59666
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 15
+      iconIdx: 18
     },
     {
       icon: {
@@ -492,19 +524,21 @@ export default {
         isMulticolor2: false,
         grid: 0,
         tags: ["Bill"],
-        colorPermutations: {}
+        colorPermutations: {
+          "110510510511471471471151151151118918918912552552551541606217474741861532421": []
+        }
       },
       attrs: [],
       properties: {
-        order: 18,
+        order: 73,
         id: 84,
         name: "Bill",
         prevSize: 32,
-        code: 59664
+        code: 59667
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 16
+      iconIdx: 19
     },
     {
       icon: {
@@ -524,15 +558,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 19,
+        order: 74,
         id: 83,
         name: "Business",
         prevSize: 32,
-        code: 59665
+        code: 59668
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 17
+      iconIdx: 20
     },
     {
       icon: {
@@ -552,15 +586,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 20,
+        order: 75,
         id: 82,
         name: "Calendar",
         prevSize: 32,
-        code: 59666
+        code: 59669
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 18
+      iconIdx: 21
     },
     {
       icon: {
@@ -580,15 +614,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 21,
+        order: 76,
         id: 81,
         name: "Call",
         prevSize: 32,
-        code: 59667
+        code: 59670
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 19
+      iconIdx: 22
     },
     {
       icon: {
@@ -607,10 +641,10 @@ export default {
         }
       },
       attrs: [{}],
-      properties: { order: 22, id: 80, name: "Car", prevSize: 32, code: 59668 },
+      properties: { order: 77, id: 80, name: "Car", prevSize: 32, code: 59671 },
       setIdx: 0,
       setId: 0,
-      iconIdx: 20
+      iconIdx: 23
     },
     {
       icon: {
@@ -630,15 +664,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 23,
+        order: 78,
         id: 79,
         name: "Card",
         prevSize: 32,
-        code: 59669
+        code: 59672
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 21
+      iconIdx: 24
     },
     {
       icon: {
@@ -658,15 +692,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 24,
+        order: 79,
         id: 78,
         name: "Card2",
         prevSize: 32,
-        code: 59670
+        code: 59673
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 22
+      iconIdx: 25
     },
     {
       icon: {
@@ -704,15 +738,15 @@ export default {
         }
       ],
       properties: {
-        order: 25,
+        order: 80,
         id: 77,
         name: "CheckboxNo",
         prevSize: 32,
-        code: 59671
+        code: 59674
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 23
+      iconIdx: 26
     },
     {
       icon: {
@@ -732,15 +766,15 @@ export default {
       },
       attrs: [{ fill: "rgb(54, 160, 62)" }],
       properties: {
-        order: 26,
+        order: 81,
         id: 76,
         name: "CheckboxYes",
         prevSize: 32,
-        code: 59672
+        code: 59675
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 24
+      iconIdx: 27
     },
     {
       icon: {
@@ -760,15 +794,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 27,
+        order: 82,
         id: 75,
         name: "Clock",
         prevSize: 32,
-        code: 59673
+        code: 59676
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 25
+      iconIdx: 28
     },
     {
       icon: {
@@ -788,15 +822,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 28,
+        order: 83,
         id: 74,
         name: "Conservative",
         prevSize: 32,
-        code: 59674
+        code: 59677
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 26
+      iconIdx: 29
     },
     {
       icon: {
@@ -816,15 +850,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 29,
+        order: 84,
         id: 73,
         name: "Dining",
         prevSize: 32,
-        code: 59675
+        code: 59678
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 27
+      iconIdx: 30
     },
     {
       icon: {
@@ -844,15 +878,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 30,
+        order: 85,
         id: 72,
-        name: "Download",
+        name: "Download1",
         prevSize: 32,
-        code: 59676
+        code: 59679
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 28
+      iconIdx: 31
     },
     {
       icon: {
@@ -872,15 +906,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 31,
+        order: 86,
         id: 71,
         name: "Education",
         prevSize: 32,
-        code: 59677
+        code: 59680
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 29
+      iconIdx: 32
     },
     {
       icon: {
@@ -900,15 +934,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 32,
+        order: 87,
         id: 70,
         name: "Email",
         prevSize: 32,
-        code: 59678
+        code: 59681
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 30
+      iconIdx: 33
     },
     {
       icon: {
@@ -928,15 +962,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 33,
+        order: 88,
         id: 69,
         name: "eStatement",
         prevSize: 32,
-        code: 59679
+        code: 59682
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 31
+      iconIdx: 34
     },
     {
       icon: {
@@ -956,15 +990,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 34,
+        order: 89,
         id: 68,
         name: "Fail",
         prevSize: 32,
-        code: 59680
+        code: 59683
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 32
+      iconIdx: 35
     },
     {
       icon: {
@@ -983,10 +1017,10 @@ export default {
         }
       },
       attrs: [{}],
-      properties: { order: 35, id: 67, name: "FAQ", prevSize: 32, code: 59681 },
+      properties: { order: 90, id: 67, name: "FAQ", prevSize: 32, code: 59684 },
       setIdx: 0,
       setId: 0,
-      iconIdx: 33
+      iconIdx: 36
     },
     {
       icon: {
@@ -1005,10 +1039,10 @@ export default {
         }
       },
       attrs: [{}],
-      properties: { order: 36, id: 66, name: "FD", prevSize: 32, code: 59682 },
+      properties: { order: 91, id: 66, name: "FD", prevSize: 32, code: 59685 },
       setIdx: 0,
       setId: 0,
-      iconIdx: 34
+      iconIdx: 37
     },
     {
       icon: {
@@ -1028,15 +1062,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 37,
+        order: 92,
         id: 65,
         name: "Flag-1",
         prevSize: 32,
-        code: 59683
+        code: 59686
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 35
+      iconIdx: 38
     },
     {
       icon: {
@@ -1056,15 +1090,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 38,
+        order: 93,
         id: 64,
         name: "Flag",
         prevSize: 32,
-        code: 59684
+        code: 59687
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 36
+      iconIdx: 39
     },
     {
       icon: {
@@ -1083,10 +1117,10 @@ export default {
         }
       },
       attrs: [{}],
-      properties: { order: 39, id: 63, name: "FPX", prevSize: 32, code: 59685 },
+      properties: { order: 94, id: 63, name: "FPX", prevSize: 32, code: 59688 },
       setIdx: 0,
       setId: 0,
-      iconIdx: 37
+      iconIdx: 40
     },
     {
       icon: {
@@ -1105,10 +1139,10 @@ export default {
         }
       },
       attrs: [{}],
-      properties: { order: 40, id: 62, name: "Gif", prevSize: 32, code: 59686 },
+      properties: { order: 95, id: 62, name: "Gif", prevSize: 32, code: 59689 },
       setIdx: 0,
       setId: 0,
-      iconIdx: 38
+      iconIdx: 41
     },
     {
       icon: {
@@ -1128,15 +1162,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 41,
+        order: 96,
         id: 61,
         name: "Globe",
         prevSize: 32,
-        code: 59687
+        code: 59690
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 39
+      iconIdx: 42
     },
     {
       icon: {
@@ -1156,15 +1190,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 42,
+        order: 97,
         id: 60,
         name: "Health",
         prevSize: 32,
-        code: 59688
+        code: 59691
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 40
+      iconIdx: 43
     },
     {
       icon: {
@@ -1184,15 +1218,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 43,
+        order: 98,
         id: 59,
         name: "Hold",
         prevSize: 32,
-        code: 59689
+        code: 59692
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 41
+      iconIdx: 44
     },
     {
       icon: {
@@ -1212,15 +1246,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 44,
+        order: 99,
         id: 58,
         name: "House",
         prevSize: 32,
-        code: 59690
+        code: 59693
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 42
+      iconIdx: 45
     },
     {
       icon: {
@@ -1240,15 +1274,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 45,
+        order: 100,
         id: 57,
         name: "Icon-Green-Flag",
         prevSize: 32,
-        code: 59691
+        code: 59694
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 43
+      iconIdx: 46
     },
     {
       icon: {
@@ -1268,15 +1302,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 46,
+        order: 101,
         id: 56,
         name: "ID-2",
         prevSize: 32,
-        code: 59692
+        code: 59695
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 44
+      iconIdx: 47
     },
     {
       icon: {
@@ -1296,15 +1330,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 47,
+        order: 102,
         id: 55,
         name: "ID-3",
         prevSize: 32,
-        code: 59693
+        code: 59696
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 45
+      iconIdx: 48
     },
     {
       icon: {
@@ -1324,15 +1358,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 48,
+        order: 103,
         id: 54,
         name: "Inbox",
         prevSize: 32,
-        code: 59694
+        code: 59697
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 46
+      iconIdx: 49
     },
     {
       icon: {
@@ -1352,15 +1386,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 49,
+        order: 104,
         id: 53,
         name: "InProgress",
         prevSize: 32,
-        code: 59695
+        code: 59698
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 47
+      iconIdx: 50
     },
     {
       icon: {
@@ -1380,15 +1414,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 50,
+        order: 105,
         id: 52,
         name: "Investment",
         prevSize: 32,
-        code: 59696
+        code: 59699
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 48
+      iconIdx: 51
     },
     {
       icon: {
@@ -1408,15 +1442,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 51,
+        order: 106,
         id: 51,
         name: "JomPay",
         prevSize: 32,
-        code: 59697
+        code: 59700
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 49
+      iconIdx: 52
     },
     {
       icon: {
@@ -1435,10 +1469,16 @@ export default {
         }
       },
       attrs: [{}],
-      properties: { order: 52, id: 50, name: "Jpg", prevSize: 32, code: 59698 },
+      properties: {
+        order: 107,
+        id: 50,
+        name: "Jpg",
+        prevSize: 32,
+        code: 59701
+      },
       setIdx: 0,
       setId: 0,
-      iconIdx: 50
+      iconIdx: 53
     },
     {
       icon: {
@@ -1457,10 +1497,16 @@ export default {
         }
       },
       attrs: [{}],
-      properties: { order: 53, id: 49, name: "key", prevSize: 32, code: 59699 },
+      properties: {
+        order: 108,
+        id: 49,
+        name: "key",
+        prevSize: 32,
+        code: 59702
+      },
       setIdx: 0,
       setId: 0,
-      iconIdx: 51
+      iconIdx: 54
     },
     {
       icon: {
@@ -1480,15 +1526,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 54,
+        order: 109,
         id: 48,
         name: "Language",
         prevSize: 32,
-        code: 59700
+        code: 59703
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 52
+      iconIdx: 55
     },
     {
       icon: {
@@ -1508,15 +1554,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 55,
+        order: 110,
         id: 47,
         name: "left",
         prevSize: 32,
-        code: 59701
+        code: 59704
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 53
+      iconIdx: 56
     },
     {
       icon: {
@@ -1536,15 +1582,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 56,
+        order: 111,
         id: 46,
         name: "left2",
         prevSize: 32,
-        code: 59702
+        code: 59705
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 54
+      iconIdx: 57
     },
     {
       icon: {
@@ -1564,15 +1610,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 57,
+        order: 112,
         id: 45,
         name: "left3",
         prevSize: 32,
-        code: 59703
+        code: 59706
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 55
+      iconIdx: 58
     },
     {
       icon: {
@@ -1592,15 +1638,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 58,
+        order: 113,
         id: 44,
         name: "Loan",
         prevSize: 32,
-        code: 59704
+        code: 59707
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 56
+      iconIdx: 59
     },
     {
       icon: {
@@ -1620,15 +1666,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 59,
+        order: 114,
         id: 43,
         name: "Locate",
         prevSize: 32,
-        code: 59705
+        code: 59708
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 57
+      iconIdx: 60
     },
     {
       icon: {
@@ -1648,15 +1694,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 60,
+        order: 115,
         id: 42,
         name: "Lock",
         prevSize: 32,
-        code: 59706
+        code: 59709
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 58
+      iconIdx: 61
     },
     {
       icon: {
@@ -1676,15 +1722,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 61,
+        order: 116,
         id: 41,
         name: "Love",
         prevSize: 32,
-        code: 59707
+        code: 59710
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 59
+      iconIdx: 62
     },
     {
       icon: {
@@ -1704,15 +1750,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 62,
+        order: 117,
         id: 40,
         name: "Mobile",
         prevSize: 32,
-        code: 59708
+        code: 59711
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 60
+      iconIdx: 63
     },
     {
       icon: {
@@ -1732,15 +1778,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 63,
+        order: 118,
         id: 39,
         name: "Moderate",
         prevSize: 32,
-        code: 59709
+        code: 59712
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 61
+      iconIdx: 64
     },
     {
       icon: {
@@ -1762,16 +1808,16 @@ export default {
       },
       attrs: [{ fill: "rgb(0, 0, 0)" }, { fill: "rgb(86, 153, 242)" }],
       properties: {
-        order: 64,
+        order: 119,
         id: 38,
         name: "NotifiMenu",
         prevSize: 32,
-        code: 59710,
-        codes: [59710, 59711]
+        code: 59713,
+        codes: [59713, 59752]
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 62
+      iconIdx: 65
     },
     {
       icon: {
@@ -1791,15 +1837,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 65,
+        order: 120,
         id: 37,
         name: "Passport",
         prevSize: 32,
-        code: 59712
+        code: 59714
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 63
+      iconIdx: 66
     },
     {
       icon: {
@@ -1818,10 +1864,16 @@ export default {
         }
       },
       attrs: [{}],
-      properties: { order: 66, id: 36, name: "PDF", prevSize: 32, code: 59713 },
+      properties: {
+        order: 121,
+        id: 36,
+        name: "PDF",
+        prevSize: 32,
+        code: 59715
+      },
       setIdx: 0,
       setId: 0,
-      iconIdx: 64
+      iconIdx: 67
     },
     {
       icon: {
@@ -1841,15 +1893,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 67,
+        order: 122,
         id: 35,
         name: "Petrol",
         prevSize: 32,
-        code: 59714
+        code: 59716
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 65
+      iconIdx: 68
     },
     {
       icon: {
@@ -1868,10 +1920,16 @@ export default {
         }
       },
       attrs: [{}],
-      properties: { order: 68, id: 34, name: "PIN", prevSize: 32, code: 59715 },
+      properties: {
+        order: 123,
+        id: 34,
+        name: "PIN",
+        prevSize: 32,
+        code: 59717
+      },
       setIdx: 0,
       setId: 0,
-      iconIdx: 66
+      iconIdx: 69
     },
     {
       icon: {
@@ -1891,15 +1949,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 69,
+        order: 124,
         id: 33,
         name: "PIN2",
         prevSize: 32,
-        code: 59716
+        code: 59718
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 67
+      iconIdx: 70
     },
     {
       icon: {
@@ -1918,10 +1976,16 @@ export default {
         }
       },
       attrs: [{}],
-      properties: { order: 70, id: 32, name: "PNG", prevSize: 32, code: 59717 },
+      properties: {
+        order: 125,
+        id: 32,
+        name: "PNG",
+        prevSize: 32,
+        code: 59719
+      },
       setIdx: 0,
       setId: 0,
-      iconIdx: 68
+      iconIdx: 71
     },
     {
       icon: {
@@ -1941,15 +2005,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 71,
+        order: 126,
         id: 31,
         name: "Police",
         prevSize: 32,
-        code: 59718
+        code: 59720
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 69
+      iconIdx: 72
     },
     {
       icon: {
@@ -1969,15 +2033,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 72,
+        order: 127,
         id: 30,
         name: "Prepaid",
         prevSize: 32,
-        code: 59719
+        code: 59721
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 70
+      iconIdx: 73
     },
     {
       icon: {
@@ -1997,15 +2061,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 73,
+        order: 128,
         id: 29,
         name: "Promotion",
         prevSize: 32,
-        code: 59720
+        code: 59722
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 71
+      iconIdx: 74
     },
     {
       icon: {
@@ -2024,10 +2088,10 @@ export default {
         }
       },
       attrs: [{}],
-      properties: { order: 74, id: 28, name: "QR", prevSize: 32, code: 59721 },
+      properties: { order: 129, id: 28, name: "QR", prevSize: 32, code: 59723 },
       setIdx: 0,
       setId: 0,
-      iconIdx: 72
+      iconIdx: 75
     },
     {
       icon: {
@@ -2047,15 +2111,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 75,
+        order: 130,
         id: 27,
         name: "Renovation",
         prevSize: 32,
-        code: 59722
+        code: 59724
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 73
+      iconIdx: 76
     },
     {
       icon: {
@@ -2075,15 +2139,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 76,
+        order: 131,
         id: 26,
         name: "Repeat",
         prevSize: 32,
-        code: 59723
+        code: 59725
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 74
+      iconIdx: 77
     },
     {
       icon: {
@@ -2103,15 +2167,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 77,
+        order: 132,
         id: 25,
         name: "Right1",
         prevSize: 32,
-        code: 59724
+        code: 59726
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 75
+      iconIdx: 78
     },
     {
       icon: {
@@ -2131,15 +2195,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 78,
+        order: 133,
         id: 24,
         name: "Right2",
         prevSize: 32,
-        code: 59725
+        code: 59727
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 76
+      iconIdx: 79
     },
     {
       icon: {
@@ -2159,15 +2223,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 79,
+        order: 134,
         id: 23,
         name: "Right3",
         prevSize: 32,
-        code: 59726
+        code: 59728
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 77
+      iconIdx: 80
     },
     {
       icon: {
@@ -2187,15 +2251,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 80,
+        order: 135,
         id: 22,
         name: "Security",
         prevSize: 32,
-        code: 59727
+        code: 59729
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 78
+      iconIdx: 81
     },
     {
       icon: {
@@ -2215,15 +2279,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 81,
+        order: 136,
         id: 21,
         name: "Settings",
         prevSize: 32,
-        code: 59728
+        code: 59730
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 79
+      iconIdx: 82
     },
     {
       icon: {
@@ -2243,15 +2307,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 82,
+        order: 137,
         id: 20,
         name: "Shape",
         prevSize: 32,
-        code: 59729
+        code: 59731
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 80
+      iconIdx: 83
     },
     {
       icon: {
@@ -2271,15 +2335,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 83,
+        order: 138,
         id: 19,
         name: "Share",
         prevSize: 32,
-        code: 59730
+        code: 59732
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 81
+      iconIdx: 84
     },
     {
       icon: {
@@ -2299,15 +2363,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 84,
+        order: 139,
         id: 18,
         name: "Shopping",
         prevSize: 32,
-        code: 59731
+        code: 59733
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 82
+      iconIdx: 85
     },
     {
       icon: {
@@ -2327,15 +2391,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 85,
+        order: 140,
         id: 17,
         name: "ShoppingCart",
         prevSize: 32,
-        code: 59732
+        code: 59734
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 83
+      iconIdx: 86
     },
     {
       icon: {
@@ -2355,15 +2419,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 86,
+        order: 141,
         id: 16,
         name: "Star",
         prevSize: 32,
-        code: 59733
+        code: 59735
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 84
+      iconIdx: 87
     },
     {
       icon: {
@@ -2382,10 +2446,16 @@ export default {
         }
       },
       attrs: [{}],
-      properties: { order: 87, id: 15, name: "TAC", prevSize: 32, code: 59734 },
+      properties: {
+        order: 142,
+        id: 15,
+        name: "TAC",
+        prevSize: 32,
+        code: 59736
+      },
       setIdx: 0,
       setId: 0,
-      iconIdx: 85
+      iconIdx: 88
     },
     {
       icon: {
@@ -2405,15 +2475,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 88,
+        order: 143,
         id: 14,
         name: "Target",
         prevSize: 32,
-        code: 59735
+        code: 59737
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 86
+      iconIdx: 89
     },
     {
       icon: {
@@ -2433,15 +2503,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 89,
+        order: 144,
         id: 13,
         name: "Tick-1",
         prevSize: 32,
-        code: 59736
+        code: 59738
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 87
+      iconIdx: 90
     },
     {
       icon: {
@@ -2461,15 +2531,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 90,
+        order: 145,
         id: 12,
         name: "Tiff",
         prevSize: 32,
-        code: 59737
+        code: 59739
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 88
+      iconIdx: 91
     },
     {
       icon: {
@@ -2489,15 +2559,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 91,
+        order: 146,
         id: 11,
         name: "Time",
         prevSize: 32,
-        code: 59738
+        code: 59740
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 89
+      iconIdx: 92
     },
     {
       icon: {
@@ -2517,15 +2587,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 92,
+        order: 147,
         id: 10,
         name: "Touchid",
         prevSize: 32,
-        code: 59739
+        code: 59741
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 90
+      iconIdx: 93
     },
     {
       icon: {
@@ -2545,15 +2615,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 93,
+        order: 148,
         id: 9,
         name: "Touchid2",
         prevSize: 32,
-        code: 59740
+        code: 59742
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 91
+      iconIdx: 94
     },
     {
       icon: {
@@ -2573,15 +2643,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 94,
+        order: 157,
         id: 8,
         name: "Transfer",
         prevSize: 32,
-        code: 59741
+        code: 59751
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 92
+      iconIdx: 95
     },
     {
       icon: {
@@ -2601,15 +2671,15 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 95,
+        order: 156,
         id: 7,
         name: "Travel",
         prevSize: 32,
-        code: 59742
+        code: 59750
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 93
+      iconIdx: 96
     },
     {
       icon: {
@@ -2629,7 +2699,7 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 96,
+        order: 155,
         id: 6,
         name: "User1",
         prevSize: 32,
@@ -2637,7 +2707,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 94
+      iconIdx: 97
     },
     {
       icon: {
@@ -2657,7 +2727,7 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 97,
+        order: 154,
         id: 5,
         name: "User2",
         prevSize: 32,
@@ -2665,7 +2735,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 95
+      iconIdx: 98
     },
     {
       icon: {
@@ -2684,10 +2754,10 @@ export default {
         }
       },
       attrs: [{}],
-      properties: { order: 102, id: 4, name: "UT", prevSize: 32, code: 59745 },
+      properties: { order: 153, id: 4, name: "UT", prevSize: 32, code: 59745 },
       setIdx: 0,
       setId: 0,
-      iconIdx: 96
+      iconIdx: 99
     },
     {
       icon: {
@@ -2707,7 +2777,7 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 101,
+        order: 152,
         id: 3,
         name: "VConservative",
         prevSize: 32,
@@ -2715,7 +2785,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 97
+      iconIdx: 100
     },
     {
       icon: {
@@ -2735,7 +2805,7 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 100,
+        order: 151,
         id: 2,
         name: "Verified",
         prevSize: 32,
@@ -2743,7 +2813,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 98
+      iconIdx: 101
     },
     {
       icon: {
@@ -2763,7 +2833,7 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 99,
+        order: 150,
         id: 1,
         name: "ViewRates",
         prevSize: 32,
@@ -2771,7 +2841,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 99
+      iconIdx: 102
     },
     {
       icon: {
@@ -2791,7 +2861,7 @@ export default {
       },
       attrs: [{}],
       properties: {
-        order: 98,
+        order: 149,
         id: 0,
         name: "WhatsNew",
         prevSize: 32,
@@ -2799,7 +2869,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 100
+      iconIdx: 103
     }
   ],
   height: 1024,
@@ -2812,18 +2882,25 @@ export default {
     showSVGs: true,
     fontPref: {
       prefix: "icon-",
-      metadata: { fontFamily: "icomoon" },
+      metadata: { fontFamily: "icomoon", majorVersion: 1, minorVersion: 0 },
       metrics: { emSize: 1024, baseline: 6.25, whitespace: 50 },
-      embed: false
+      embed: false,
+      showMetadata: false,
+      showVersion: false,
+      showMetrics: false,
+      showSelector: false
     },
     imagePref: {
       prefix: "icon-",
       png: true,
       useClassSelector: true,
       color: 0,
-      bgColor: 16777215
+      bgColor: 16777215,
+      name: "icomoon",
+      classSelector: ".icon"
     },
     historySize: 50,
-    gridSize: 16
+    gridSize: 16,
+    showLiga: false
   }
 };

@@ -20,7 +20,7 @@ import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import FullButton from "src/components/buttons/fullButton/FullButton";
 import InlineMessage from "src/components/infographic/inlineMessage/InlineMessage";
 import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
-import NavBar from "src/components/headers/navbar/Navbar";
+import Navbar from "src/components/headers/navbar/Navbar";
 import ZeroResult from "src/components/infographic/zeroResault/ZeroResult";
 import PieChart from "src/components/pies/PieChart";
 import AmModal from "src/components/modal/Modal";
@@ -30,8 +30,9 @@ import DescriptionButton from "src/components/buttons/descriptionButton/Descript
 import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
 import DetailList from "src/components/lists/DetailList/DetailList";
 import DetailListMonthly from "src/components/lists/DetailListMonthly/DetailListMonthly";
-// import Tooltip from "src/components/tooltip/Tooltip";
-const { B_13_ORANGE_463 } = Paragraphs;
+import TextDropdown from "src/components/inputs/checkBox/textDropdown /TextDropdown";
+import Tooltip from "src/components/tooltip/Tooltip";
+const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
   padding: 5px 0;
@@ -60,16 +61,53 @@ class Sprint1 extends Component<Props, State> {
     const { isCheckboxChecked, hidden, inputValue } = this.state;
     return (
       <>
-        {/* <Title>Tooltips</Title>
-        <CenteredDiv> */}
-        {/* <Tooltip
-            title="Available"
-            subTitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa."
-          /> */}
-        {/* </CenteredDiv> */}
+        <TextDropdown
+          options={[
+            { value: "english", label: "English" },
+            { value: "malay", label: "Malay" },
+            { value: "中文", label: "中文" }
+          ]}
+        />
+        <Title>Tooltips</Title>
+        <CenteredDiv>
+          <Tooltip
+            tipChildren={
+              <div>
+                <B_14_WHITE>Tips</B_14_WHITE>
+                <RowDiv style={{ paddingTop: 10 }}>
+                  <B_14_WHITE>
+                    Value:
+                    <R_11_WHITE>
+                      Accumulation of fund’s market value based on current NAV.
+                      Current value is an indicative value and is to be
+                      considered as reference only.
+                    </R_11_WHITE>
+                  </B_14_WHITE>
+                </RowDiv>
+                <RowDiv style={{ paddingTop: 10 }}>
+                  <B_14_WHITE>
+                    Invested:
+                    <R_11_WHITE>
+                      Accumulation of fund’s initial book value
+                    </R_11_WHITE>
+                  </B_14_WHITE>
+                </RowDiv>
+                <RowDiv style={{ paddingTop: 10 }}>
+                  <B_14_WHITE>
+                    P/L:
+                    <R_11_WHITE>
+                      Profit or loss is the difference between Market Value and
+                      Book Value
+                    </R_11_WHITE>
+                  </B_14_WHITE>
+                </RowDiv>
+              </div>
+            }
+          ></Tooltip>
+        </CenteredDiv>
         <Title>NavBar</Title>
         <div style={{ paddingTop: 20, paddingBottom: 20 }}>
-          <NavBar
+          <Navbar
             icon={{ name: "Investment" }}
             profile={{
               greeting: "Good Morning",
@@ -125,7 +163,12 @@ class Sprint1 extends Component<Props, State> {
         <div>
           <Title>DetailList Monthly</Title>
           <DetailListMonthly
-            selected={4}
+            tipChildren={
+              <div>
+                <B_14_WHITE>Tips</B_14_WHITE>
+              </div>
+            }
+            selected={0}
             list={[
               {
                 date: "Nov 2019",
@@ -136,7 +179,14 @@ class Sprint1 extends Component<Props, State> {
                   },
                   {
                     leftText: "Your Highest Qualifier so far",
-                    rightText: "RM 20,000.00(Aug 2019)"
+                    rightText: "RM 20,000.00(Aug 2019)",
+                    tipChildren: (
+                      <div>
+                        <B_14_WHITE>first</B_14_WHITE>
+                        <B_14_WHITE>second</B_14_WHITE>
+                        <B_14_WHITE>third</B_14_WHITE>
+                      </div>
+                    )
                   },
                   {
                     leftText: "Lowest Balance of the Month",

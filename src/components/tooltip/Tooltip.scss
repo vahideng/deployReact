@@ -1,24 +1,10 @@
-.TooltipMainDiv {
-  display: flex;
-}
 .TooltipContent {
   background-color: #000000;
   width: 17.75rem;
   padding: 1rem;
   border-radius: 18px 0px 18px 18px;
   border-radius: 18px 0px 18px 18px;
-}
-.TooltipTitle {
-  padding-bottom: 0.5rem;
-}
-
-.Hover {
-  pointer-events: none;
-  color: darkblue;
-  //this is what you want
-}
-
-.Hov {
-  background-color: "red";
-  width: 100px !important;
+  position: absolute;
+  top: 2rem;
+  right: -1rem;
 }
