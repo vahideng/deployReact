@@ -1,30 +1,34 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
 
-interface Props {}
+interface Props {
+  pieLabels?: string[];
+  pieDataSets: { data: number[]; backgroundColor: string[] };
+}
 
-const PieChart: React.FC<Props> = () => {
+const PieChart: React.FC<Props> = ({ pieLabels, pieDataSets }) => {
   return (
     <div>
       <div style={{ width: 280 }}>
         <Doughnut
           data={{
-            labels: ["Red", "Green", "Yellow"],
-            datasets: [
-              {
-                data: [300, 50, 100],
-                backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-                hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"]
-              }
-            ]
+            labels: pieLabels,
+            datasets: [pieDataSets]
           }}
           options={{
+            tooltips: { enabled: false },
+            hover: { mode: null },
             defaultFontSize: "16px",
+
             legend: {
               display: true,
               position: "right",
-              fontSize: 30,
-              fontFamily: ""
+              labels: {
+                boxWidth: 13,
+                boxBorderRadius: 7,
+                fontFamily: "Nunito Sans",
+                fontColor: "#000000"
+              }
             }
           }}
         />

@@ -1,12 +1,7 @@
 @import "../../assets/common/common.scss";
-
-.row {
+.AMTabsContents {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.buttons {
-  justify-content: center;
-  border-bottom: 4px solid $red585;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem 0rem 1.5rem;
+  margin-bottom: 1.5rem;
 }

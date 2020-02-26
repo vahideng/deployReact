@@ -5,7 +5,7 @@ import classes from "./Navbar.module.css";
 import Profile from "../profile/Profile";
 
 interface Props {
-  icon: { name: string; color?: string; size?: number; link?: string };
+  icon: { link?: string };
   profile?: {
     greeting: string;
     name: string;
@@ -23,7 +23,7 @@ const Navbar: React.FC<Props> = ({ icon, profile = {}, rightButtons }) => {
     <div className={classes.NavbarMainDiv}>
       <div>
         <Link to={!!icon.link ? icon.link : "#"}>
-          <Icon icon={"amonline"} color={"#ff2626"} size={150} />
+          <Icon icon={"amonline-white"} color={"#ff2626"} size={130} />
         </Link>
       </div>
       <div className={classes.navbarIconDiv}>
@@ -39,7 +39,7 @@ const Navbar: React.FC<Props> = ({ icon, profile = {}, rightButtons }) => {
           rightButtons.map((button, index) => {
             return (
               <div key={index} className={classes.navbarIcons}>
-                <Link to="#">
+                <Link to={button.link}>
                   <Icon icon={button.iconName} size={30} color={"#444444"} />
                 </Link>
               </div>

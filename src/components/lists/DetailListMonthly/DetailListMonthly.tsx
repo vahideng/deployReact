@@ -25,7 +25,6 @@ const DetailListMonthly: React.FC<Props> = ({
         list.map((item, index) => {
           return (
             <div key={index}>
-              {console.log(list.length, "list")}
               {index === click && (
                 <div className={classes.DetailListMonthTitle} key={index}>
                   <div
@@ -72,7 +71,9 @@ const DetailListMonthly: React.FC<Props> = ({
                       <div className={classes.DetailListMonthTool}>
                         <B_15_BLACK>{contentList.rightText}</B_15_BLACK>
                         {!!contentList.tipChildren && (
-                          <Tooltip tipChildren={contentList.tipChildren} />
+                          <div className={classes.DetailListToolIcon}>
+                            <Tooltip tipChildren={contentList.tipChildren} />
+                          </div>
                         )}
                       </div>
                     </div>

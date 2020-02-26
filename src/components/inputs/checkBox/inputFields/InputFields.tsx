@@ -42,7 +42,6 @@ class InputField extends Component<Props, {}> {
               size={30}
             />
           )}
-
           <input
             style={
               autoFocus
@@ -59,15 +58,18 @@ class InputField extends Component<Props, {}> {
               handleChange(event, testId);
             }}
           />
-          {!!isSecure && (
+
+          {!!isSecure && !!value && (
             <span
               className={classes.InputFieldPassword}
               onClick={onSecureClick}
             >
               <Icon
-                icon={type === "password" ? "Love" : "FAQ"}
+                icon={
+                  type === "password" ? "field-close-eye" : "field-open-eye"
+                }
                 color={"#444444"}
-                size={20}
+                size={25}
               />
             </span>
           )}

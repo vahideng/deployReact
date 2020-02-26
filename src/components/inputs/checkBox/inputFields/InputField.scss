@@ -7,9 +7,11 @@
 .InputFieldIconDiv {
   display: flex;
   align-items: center;
+  position: relative;
 }
 .InputFieldIcon {
   position: absolute;
+  top: 0.5rem;
   left: 1rem;
 }
 .InputFieldIconDiv input {

@@ -4,6 +4,7 @@ import classes from "./IconButtons.module.css";
 import Icon from "src/components/assets/icons/icon";
 const { B_14_BLACK, B_13_BLACK, R_13_GREY444 } = Paragraphs;
 interface Props {
+  onButtonClick: (item: React.ReactNode, index: number) => void;
   label?: string;
   selected?: number;
   list: {
@@ -16,14 +17,23 @@ interface Props {
   }[];
 }
 
-const IconButtons: React.FC<Props> = ({ label, list, selected }) => {
+const IconButtons: React.FC<Props> = ({
+  label,
+  list,
+  selected,
+  onButtonClick
+}) => {
   return (
     <>
       <B_14_BLACK className={classes.IconButtonsLabel}>{label}</B_14_BLACK>
       <div className={classes.IconButtonsRow}>
         {list.map((item, index) => {
           return (
-            <div className={classes.IconButtonsWrapper} key={index}>
+            <div
+              className={classes.IconButtonsWrapper}
+              key={index}
+              onClick={() => onButtonClick(item, index)}
+            >
               <div
                 style={
                   selected === index ? { borderBottomColor: "#ff2626" } : {}

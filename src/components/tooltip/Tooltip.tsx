@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import classes from "./Tooltip.module.css";
+import "../assets/common.css";
 import Icon from "../assets/icons/icon";
 import ReactTooltip from "react-tooltip";
 
@@ -30,7 +31,11 @@ class Tooltip extends Component<TooltipProps, State> {
         <p ref={ref => (fooRef = ref)} data-tip={`${children}`}></p>
 
         <div onClick={clickHandler}>
-          <Icon icon={!!clicked ? "Love" : "FAQ"} color={"#000000"} size={40} />
+          <Icon
+            icon={!!clicked ? "system-info" : "system-close-grey"}
+            color={"#000000"}
+            size={25}
+          />
         </div>
         <ReactTooltip place={"left"}>
           <div className={classes.TooltipContent}>

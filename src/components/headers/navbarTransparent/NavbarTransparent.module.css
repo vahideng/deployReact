@@ -1,9 +1,7 @@
-.NavbarMainDiv {
+.NavbarTransparentMainDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: fixed;
-  top: 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -11,15 +9,13 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100vw;
-  background-color: #ffffff;
+  background-color: transparent;
   height: 4.31rem;
-  -webkit-box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
-          box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
   padding: 0 18vw;
   z-index: 1000;
 }
 
-.navbarIconDiv {
+.NavbarTransparentIconDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,6 +27,6 @@
           justify-content: space-between;
 }
 
-.navbarIcons {
-  padding-left: 2rem;
+.NavbarTransparentIcons {
+  margin-left: 2rem;
 }

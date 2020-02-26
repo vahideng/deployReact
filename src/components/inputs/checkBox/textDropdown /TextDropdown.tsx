@@ -3,34 +3,26 @@ import Select from "react-select";
 
 interface Props {
   options: { value: string; label: string }[];
+  selectedOption: any;
+  handleChange: any;
+  placeHolder?: string;
 }
 interface State {}
 
 class TextDropdown extends Component<Props, State> {
-  state = {
-    selectedOption: null
-  };
-
-  handleChange = (selectedOption: any) => {
-    this.setState({ selectedOption });
-  };
   render() {
-    const { selectedOption } = this.state;
-    const { options } = this.props;
+    const { options, selectedOption, handleChange, placeHolder } = this.props;
     return (
-      <Select
-        value={selectedOption}
-        onChange={this.handleChange}
-        options={options}
-      />
+      <div style={{ width: 150 }}>
+        <Select
+          placeholder={placeHolder}
+          value={selectedOption}
+          onChange={handleChange}
+          options={options}
+        />
+      </div>
     );
   }
 }
 
 export default TextDropdown;
-
-// const options = [
-//   { value: "chocolate", label: "Chocolate" },
-//   { value: "strawberry", label: "Strawberry" },
-//   { value: "vanilla", label: "Vanilla" }
-// ];

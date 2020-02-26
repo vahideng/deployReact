@@ -11,7 +11,7 @@ import AMTabs from "src/components/buttons/tabs/Tabs";
 import FooterLogo from "src/components/headers/footerLogo/FooterLogo";
 import BannerHero from "src/components/banners/bannerHero/BannerHero";
 import BackButton from "src/components/buttons/backButton/BackButton";
-import StickyTimer from "src/components/headers/stickyTimer/StickyTimer";
+// import StickyTimer from "src/components/headers/stickyTimer/StickyTimer";
 import Profile from "src/components/headers/profile/Profile";
 import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
 import DetailSummary from "src/components/infographic/detailSummary/DetailSummary";
@@ -20,7 +20,6 @@ import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import FullButton from "src/components/buttons/fullButton/FullButton";
 import InlineMessage from "src/components/infographic/inlineMessage/InlineMessage";
 import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
-import Navbar from "src/components/headers/navbar/Navbar";
 import ZeroResult from "src/components/infographic/zeroResault/ZeroResult";
 import PieChart from "src/components/pies/PieChart";
 import AmModal from "src/components/modal/Modal";
@@ -30,8 +29,8 @@ import DescriptionButton from "src/components/buttons/descriptionButton/Descript
 import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
 import DetailList from "src/components/lists/DetailList/DetailList";
 import DetailListMonthly from "src/components/lists/DetailListMonthly/DetailListMonthly";
-import TextDropdown from "src/components/inputs/checkBox/textDropdown /TextDropdown";
 import Tooltip from "src/components/tooltip/Tooltip";
+import Navbar from "src/components/headers/navbar/Navbar";
 const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -53,21 +52,59 @@ interface State {
   isCheckboxChecked: boolean;
   hidden: boolean;
   inputValue: string;
+  SelectionTileNum: number;
+  SelectionTileNum1: number;
+  SelectionTileNum2: number;
+  IconButtonsNum: number;
 }
 
 class Sprint1 extends Component<Props, State> {
-  state = { isCheckboxChecked: false, hidden: true, inputValue: "" };
+  state = {
+    isCheckboxChecked: false,
+    hidden: true,
+    inputValue: "",
+    SelectionTileNum: 2,
+    SelectionTileNum1: 0,
+    SelectionTileNum2: 3,
+    IconButtonsNum: 1
+  };
   render() {
-    const { isCheckboxChecked, hidden, inputValue } = this.state;
+    const {
+      isCheckboxChecked,
+      hidden,
+      inputValue,
+      SelectionTileNum,
+      SelectionTileNum1,
+      SelectionTileNum2,
+      IconButtonsNum
+    } = this.state;
     return (
       <>
-        <TextDropdown
-          options={[
-            { value: "english", label: "English" },
-            { value: "malay", label: "Malay" },
-            { value: "中文", label: "中文" }
+        <Navbar
+          icon={{ link: "/" }}
+          profile={{
+            greeting: "Good Morning",
+            name: "Adam Constantine",
+            alt: "AVATAR",
+            src:
+              "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+          }}
+          rightButtons={[
+            {
+              iconName: "Time",
+              link: "/sprint-1"
+            },
+            {
+              iconName: "Settings",
+              link: ""
+            },
+            {
+              iconName: "Share",
+              link: ""
+            }
           ]}
         />
+
         <Title>Tooltips</Title>
         <CenteredDiv>
           <Tooltip
@@ -105,33 +142,7 @@ class Sprint1 extends Component<Props, State> {
             }
           ></Tooltip>
         </CenteredDiv>
-        <Title>NavBar</Title>
-        <div style={{ paddingTop: 20, paddingBottom: 20 }}>
-          <Navbar
-            icon={{ name: "Investment" }}
-            profile={{
-              greeting: "Good Morning",
-              name: "Adam Constantine",
-              alt: "AVATAR",
-              src:
-                "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
-            }}
-            rightButtons={[
-              {
-                iconName: "Time",
-                link: ""
-              },
-              {
-                iconName: "Settings",
-                link: ""
-              },
-              {
-                iconName: "Share",
-                link: ""
-              }
-            ]}
-          />
-        </div>
+
         <Title>DetailList</Title>
         <div style={{ height: 500 }}>
           <DetailList
@@ -388,9 +399,10 @@ class Sprint1 extends Component<Props, State> {
         </div>
         <SelectionTile
           onTileClick={(item, index) => {
+            this.setState({ SelectionTileNum: index });
             alert(`${item.accountTitle} with indexOf ${index} clicked`);
           }}
-          selected={2}
+          selected={SelectionTileNum}
           list={[
             {
               accountTitle: "Saving Account A",
@@ -417,9 +429,10 @@ class Sprint1 extends Component<Props, State> {
 
         <SelectionTile
           onTileClick={(item, index) => {
+            this.setState({ SelectionTileNum1: index });
             alert(`${item.accountTitle} with indexOf ${index} clicked`);
           }}
-          selected={3}
+          selected={SelectionTileNum1}
           list={[
             {
               avatar: {
@@ -463,9 +476,10 @@ class Sprint1 extends Component<Props, State> {
         />
         <SelectionTile
           onTileClick={(item, index) => {
+            this.setState({ SelectionTileNum2: index });
             alert(`${item.accountTitle} with indexOf ${index} clicked`);
           }}
-          selected={1}
+          selected={SelectionTileNum2}
           list={[
             {
               accountTitle: "Saving Account A",
@@ -511,7 +525,13 @@ class Sprint1 extends Component<Props, State> {
         />
         <Title>IconButtons</Title>
         <IconButtons
-          selected={3}
+          onButtonClick={(item, index) => {
+            this.setState({
+              IconButtonsNum: index
+            });
+            alert(`${item} with index of ${index} clicked`);
+          }}
+          selected={IconButtonsNum}
           label="Transfer To"
           list={[
             {
@@ -546,6 +566,7 @@ class Sprint1 extends Component<Props, State> {
             }
           ]}
         />
+
         <Title>InputField</Title>
         <InputField
           type="text"
@@ -585,7 +606,7 @@ class Sprint1 extends Component<Props, State> {
             this.setState({
               inputValue: event.target.value
             });
-            // console.log(inputValue);
+            console.log(inputValue);
           }}
           isSecure
           type={!!hidden ? "password" : "text"}
@@ -599,9 +620,34 @@ class Sprint1 extends Component<Props, State> {
         />
 
         <Title>AMTabs</Title>
-        <AMTabs />
+        <CenteredDiv>
+          <AMTabs
+            defaultIndex={1}
+            titles={["Login", "Security", "Contact Us"]}
+            contents={[
+              <ZeroResult
+                text={`We can’t seem to find any result for 
+              “Damansara Heights”`}
+              />,
+              <PieChart
+                pieLabels={["Red", "Green", "Yellow"]}
+                pieDataSets={{
+                  data: [300, 50, 100],
+                  backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"]
+                }}
+              />,
+              "Contact Us"
+            ]}
+          />
+        </CenteredDiv>
         <Title>PieChart</Title>
-        <PieChart />
+        <PieChart
+          pieLabels={["Red", "Green", "Yellow"]}
+          pieDataSets={{
+            data: [300, 50, 100],
+            backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"]
+          }}
+        />
 
         <Title>ZeroResult</Title>
         <ZeroResult
@@ -789,9 +835,6 @@ class Sprint1 extends Component<Props, State> {
           }
         />
 
-        <Title>AMTabs</Title>
-        <AMTabs />
-
         <Title>FooterLogo</Title>
         <FooterLogo
           onLogoClick={(logo, index) => {
@@ -891,8 +934,8 @@ class Sprint1 extends Component<Props, State> {
           }}
         />
 
-        <Title>StickyTimer</Title>
-        <StickyTimer />
+        {/* <Title>StickyTimer</Title>
+        <StickyTimer /> */}
 
         <Title>Profile</Title>
         <Profile

@@ -52,3 +52,7 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
+.DetailListToolIcon {
+  padding-left: 0.4rem;
+}

@@ -1,0 +1,17 @@
+@import "../../assets/common/common.scss";
+
+.BackgroundSingleMain {
+  height: 100vh;
+  max-width: 100vw;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.BackgroundSingleChild {
+  display: flex;
+  justify-content: space-between;
+
+  padding: $HorizontalPadding;
+}
+.BackgroundSingleNav {
+  padding: 3.75rem 0 7.5rem 0;
+}
