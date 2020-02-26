@@ -1,3 +1,12 @@
+.TooltipMainDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .TooltipContent {
   background-color: #000000;
   width: 17.75rem;

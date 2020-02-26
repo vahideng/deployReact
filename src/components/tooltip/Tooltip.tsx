@@ -5,8 +5,7 @@ import Icon from "../assets/icons/icon";
 import ReactTooltip from "react-tooltip";
 
 interface TooltipProps {
-  tipChildren: any;
-  datatip?: any;
+  tipChildren?: any;
 }
 interface State {}
 
@@ -16,7 +15,7 @@ class Tooltip extends Component<TooltipProps, State> {
   };
   render() {
     const { clicked } = this.state;
-    const { tipChildren, datatip } = this.props;
+    const { children, tipChildren } = this.props;
     const clickHandler = () => {
       this.setState({ clicked: !clicked });
       if (!!clicked) {
@@ -27,14 +26,16 @@ class Tooltip extends Component<TooltipProps, State> {
     };
     let fooRef: any;
     return (
-      <div data-for = "1">
-        <p ref={ref => (fooRef = ref)} data-tip={`${datatip}`}></p>
+      <div className={classes.TooltipMainDiv}>
+        <p ref={ref => (fooRef = ref)} data-tip={`${children}`}></p>
 
         <div onClick={clickHandler}>
           <Icon icon={!!clicked ? "Love" : "FAQ"} color={"#000000"} size={40} />
         </div>
         <ReactTooltip place={"left"}>
-          <div className={classes.TooltipContent}>{tipChildren}</div>
+          <div className={classes.TooltipContent}>
+            <>{tipChildren}</>
+          </div>
         </ReactTooltip>
       </div>
     );

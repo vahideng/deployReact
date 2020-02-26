@@ -13,7 +13,6 @@ class TextDropdown extends Component<Props, State> {
 
   handleChange = (selectedOption: any) => {
     this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
   };
   render() {
     const { selectedOption } = this.state;

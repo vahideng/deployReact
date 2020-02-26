@@ -168,7 +168,7 @@ class Sprint1 extends Component<Props, State> {
                 <B_14_WHITE>Tips</B_14_WHITE>
               </div>
             }
-            selected={0}
+            selected={3}
             list={[
               {
                 date: "Nov 2019",
@@ -182,9 +182,7 @@ class Sprint1 extends Component<Props, State> {
                     rightText: "RM 20,000.00(Aug 2019)",
                     tipChildren: (
                       <div>
-                        <B_14_WHITE>first</B_14_WHITE>
-                        <B_14_WHITE>second</B_14_WHITE>
-                        <B_14_WHITE>third</B_14_WHITE>
+                        <B_14_WHITE>Tips</B_14_WHITE>
                       </div>
                     )
                   },
@@ -219,7 +217,12 @@ class Sprint1 extends Component<Props, State> {
                 content: [
                   {
                     leftText: "Bonus Rate Qualifier Dec",
-                    rightText: "RM 10,000.00"
+                    rightText: "RM 10,000.00",
+                    tipChildren: (
+                      <div>
+                        <B_14_WHITE>Tips</B_14_WHITE>
+                      </div>
+                    )
                   },
                   {
                     leftText: "Your Highest Qualifier so far",
@@ -268,7 +271,12 @@ class Sprint1 extends Component<Props, State> {
                   },
                   {
                     leftText: "Total Balance",
-                    rightText: "RM 1,000.00"
+                    rightText: "RM 1,000.00",
+                    tipChildren: (
+                      <div>
+                        <B_14_WHITE>Tips</B_14_WHITE>
+                      </div>
+                    )
                   },
                   {
                     leftText: "noOfUnsuccessfulTransfer",
@@ -313,7 +321,12 @@ class Sprint1 extends Component<Props, State> {
                   },
                   {
                     leftText: "Holder Name",
-                    rightText: "Adam Constantine"
+                    rightText: "Adam Constantine",
+                    tipChildren: (
+                      <div>
+                        <B_14_WHITE>Tips</B_14_WHITE>
+                      </div>
+                    )
                   },
                   {
                     leftText: "Currency",
@@ -326,7 +339,12 @@ class Sprint1 extends Component<Props, State> {
                 content: [
                   {
                     leftText: "Bonus Mrc",
-                    rightText: "RM 80,000.00"
+                    rightText: "RM 80,000.00",
+                    tipChildren: (
+                      <div>
+                        <B_14_WHITE>Tips</B_14_WHITE>
+                      </div>
+                    )
                   },
                   {
                     leftText: "Your Highest Qualifier so far",
@@ -567,7 +585,7 @@ class Sprint1 extends Component<Props, State> {
             this.setState({
               inputValue: event.target.value
             });
-            console.log(inputValue);
+            // console.log(inputValue);
           }}
           isSecure
           type={!!hidden ? "password" : "text"}

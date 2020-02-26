@@ -17,11 +17,17 @@
 .DetailListRows {
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem 2rem;
+  margin: 1.5rem 2rem;
+
+  align-items: center;
 }
 .DetailListMonthTopTool {
   display: flex;
   padding: 0 2rem 0 0;
   justify-content: flex-end;
-  margin-top: -3rem;
+  margin-top: -1.7rem;
+}
+.DetailListMonthTool {
+  display: flex;
+  align-items: center;
 }
