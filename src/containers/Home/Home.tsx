@@ -29,8 +29,14 @@ const Home: React.FC<Props> = () => {
           to do today?"
         />
         <Box
-
-        fullButton={true}
+          fullButton={false}
+          buttonColor = "blue"
+          splitButton={true}
+          onButtonClick={() => console.log("buttonCLicked")}
+          onRightButton={() => console.log("rightButtonClicked")}
+          onLeftButton={() => console.log("leftButtonClicked")}
+          leftTitle={"LeftTitle"}
+          rightTitle={"rightTitle"}
           onSelect={(obj: any) => console.log(obj)}
           content={[
             <ZeroResult
@@ -40,12 +46,12 @@ const Home: React.FC<Props> = () => {
             <>
               <p>any things</p>
             </>,
-             <FullButton
-             title="Login"
-             onButtonClick={() => {
-               alert("Button Clicked");
-             }}
-           />
+            <FullButton
+              title="Login"
+              onButtonClick={() => {
+                alert("Button Clicked");
+              }}
+            />
           ]}
         ></Box>
       </BackgroundSingle>

@@ -3,8 +3,15 @@
   background-color: #f7f7f7;
   border-radius: 1rem;
   z-index: 10;
+  position: relative;
 }
 
 .Container {
   padding: 1.5rem 1.5rem 0rem 1.5rem;
+}
+
+.Wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }

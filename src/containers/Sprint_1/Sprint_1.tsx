@@ -31,6 +31,8 @@ import DetailList from "src/components/lists/DetailList/DetailList";
 import DetailListMonthly from "src/components/lists/DetailListMonthly/DetailListMonthly";
 import Tooltip from "src/components/tooltip/Tooltip";
 import Navbar from "src/components/headers/navbar/Navbar";
+import SecurityImage from "src/components/securityImage/securityImage";
+import TacModal from "src/components/tacModal/tacModal";
 
 const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -105,6 +107,27 @@ class Sprint1 extends Component<Props, State> {
             }
           ]}
         />
+
+        <Title>Security Image</Title>
+        <CenteredDiv>
+          <Title>Security Image</Title>
+          <CenteredDiv>
+            <TacModal
+             onButtonClick = {()=> alert("TAC Submitted")}
+            buttonTitle = "Continue"
+              modalIsOpen={true}
+              handleChange={(e: any) => console.log(e.target.value)
+              }
+              label={"TAC verification"}
+              value={""}
+              content="TAC was sent to your registered mobile number (**** 6867). You should receive a TAC within 2 minutes."
+
+              buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
+              
+            />
+          </CenteredDiv>
+          <SecurityImage label="sdas" />
+        </CenteredDiv>
 
         <Title>Tooltips</Title>
         <CenteredDiv>
@@ -571,8 +594,10 @@ class Sprint1 extends Component<Props, State> {
         <Title>InputField</Title>
         <InputField
           type="text"
+          clearClickHandler={() => alert("clear cliked")}
+          clearIcon={true}
           label="input label"
-          icon={{ name: "Bill" }}
+          icon={{ name: "Account-2" }}
           value={inputValue}
           handleChange={event => {
             this.setState({
@@ -610,6 +635,8 @@ class Sprint1 extends Component<Props, State> {
             console.log(inputValue);
           }}
           isSecure
+          clearClickHandler={() => alert("clear cliked")}
+          clearIcon={true}
           type={!!hidden ? "password" : "text"}
           label="input label"
           icon={{ name: "Account-2" }}

@@ -5,8 +5,8 @@
   min-width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(#fd8585), to(#ff2626));
   background: linear-gradient(180deg, #fd8585 0%, #ff2626 100%);
-  border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
 .fullButtonSplit {
@@ -20,6 +20,7 @@
 }
 
 .fullButtonLeft {
+  border-bottom-left-radius: 1rem;
   color: #ff2626;
   border-top: 1px solid #dedede;
   background: #ffffff;
@@ -45,4 +46,8 @@
 
 .fullButtonSplit:focus {
   outline: none;
+}
+
+.fullButtonRight {
+  border-bottom-right-radius: 1rem;
 }

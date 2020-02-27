@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Paragraphs from "../../../assets/typography";
 import classes from "./InputField.module.css";
 import Icon from "src/components/assets/icons/icon";
+import clearIcone from 'src/components/assets/common/clearIcone.svg'
 const { B_13_BLACK } = Paragraphs;
 interface Props {
   testId?: string;
@@ -13,6 +14,8 @@ interface Props {
   isSecure?: boolean;
   onSecureClick?: () => void;
   handleChange: (event: any, testId?: string | undefined) => void;
+  clearIcon?: boolean;
+  clearClickHandler ?: () => void;
 }
 
 class InputField extends Component<Props, {}> {
@@ -26,7 +29,9 @@ class InputField extends Component<Props, {}> {
       type,
       autoFocus,
       isSecure,
-      onSecureClick
+      onSecureClick,
+      clearIcon,
+      clearClickHandler
     } = this.props;
     return (
       <div className={classes.InputFieldMain}>
@@ -58,7 +63,7 @@ class InputField extends Component<Props, {}> {
               handleChange(event, testId);
             }}
           />
-
+          <div className={`${classes.IconContainer}`}>
           {!!isSecure && !!value && (
             <span
               className={classes.InputFieldPassword}
@@ -73,6 +78,21 @@ class InputField extends Component<Props, {}> {
               />
             </span>
           )}
+          {!!clearIcon && (
+            <span
+            onClick = {clearClickHandler}
+              className={classes.InputFieldClear}
+              
+            >
+            <img src={clearIcone} alt="clear"/>
+            </span>
+          )}
+
+
+          </div>
+
+          
+      
         </div>
       </div>
     );
