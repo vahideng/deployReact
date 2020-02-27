@@ -8,7 +8,7 @@ import styled from "styled-components";
 import images from "src/assets";
 import Checkbox from "src/components/inputs/checkBox/CheckBox";
 import AMTabs from "src/components/buttons/tabs/Tabs";
-import FooterLogo from "src/components/headers/footerLogo/FooterLogo";
+import FooterLogo from "src/components/stickies/footerLogo/FooterLogo";
 import BannerHero from "src/components/banners/bannerHero/BannerHero";
 import BackButton from "src/components/buttons/backButton/BackButton";
 // import StickyTimer from "src/components/headers/stickyTimer/StickyTimer";
@@ -22,7 +22,7 @@ import InlineMessage from "src/components/infographic/inlineMessage/InlineMessag
 import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
 import ZeroResult from "src/components/infographic/zeroResault/ZeroResult";
 import PieChart from "src/components/pies/PieChart";
-import AmModal from "src/components/modal/Modal";
+import AmModal from "src/components/modals/Modal";
 import InputField from "src/components/inputs/checkBox/inputFields/InputFields";
 import IconButtons from "src/components/buttons/iconButtons/IconButtons";
 import DescriptionButton from "src/components/buttons/descriptionButton/DescriptionButton";
@@ -34,6 +34,8 @@ import Navbar from "src/components/headers/navbar/Navbar";
 import SecurityImage from "src/components/securityImage/securityImage";
 import TacModal from "src/components/tacModal/tacModal";
 
+import Tag from "src/components/tags/Tag";
+import Dock from "src/components/stickies/dock/Dock";
 const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -166,7 +168,15 @@ class Sprint1 extends Component<Props, State> {
             }
           ></Tooltip>
         </CenteredDiv>
-
+        <Title>Tags</Title>
+        <Tag
+          text="How may I help you?"
+          image={{
+            src:
+              "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+          }}
+        />
+        <Tag text="How may I help you?" />
         <Title>DetailList</Title>
         <div style={{ height: 500 }}>
           <DetailList
@@ -1022,7 +1032,7 @@ class Sprint1 extends Component<Props, State> {
             alert("link clicked");
           }}
         />
-
+        <Dock />
         <AmModal />
       </>
     );

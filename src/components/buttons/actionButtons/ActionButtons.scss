@@ -1,0 +1,20 @@
+.ActionButtonsMain {
+  display: flex;
+}
+.ActionButtonsWidth {
+  width: 2.81rem;
+}
+.ActionButtonsIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 2.81rem;
+  height: 2.81rem;
+  border-radius: 1rem;
+  margin-right: 2.1rem;
+}
+.ActionButtonsText {
+  text-align: center;
+  padding-top: 0.6rem;
+}
