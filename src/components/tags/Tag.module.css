@@ -1,0 +1,25 @@
+.TagMainDiv {
+  width: auto;
+  display: inline-block;
+  background-color: #000000;
+  min-height: 3.12rem;
+  border-radius: 4rem;
+  padding: 0 1.43rem;
+}
+
+.TagChildDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 3.12rem;
+  border-radius: 4rem;
+}
+
+.TagImage {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.75rem;
+}
