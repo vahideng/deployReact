@@ -31,6 +31,7 @@ import DetailList from "src/components/lists/DetailList/DetailList";
 import DetailListMonthly from "src/components/lists/DetailListMonthly/DetailListMonthly";
 import Tooltip from "src/components/tooltip/Tooltip";
 import Navbar from "src/components/headers/navbar/Navbar";
+
 const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;

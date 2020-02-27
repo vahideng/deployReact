@@ -6,6 +6,7 @@ import TextButton from "src/components/buttons/textButton/TextButton";
 interface Props {
   image?: string;
   children?: any;
+
 }
 
 const BackgroundSingle: React.FC<Props> = ({ image, children }) => {
@@ -20,6 +21,7 @@ const BackgroundSingle: React.FC<Props> = ({ image, children }) => {
       <div className={classes.BackgroundSingleNav}>
         <NavbarTransparent
           icon={{ link: "/Sprint-1" }}
+         
           rightButtons={[
             <TextButton
               buttonText="FAQ"

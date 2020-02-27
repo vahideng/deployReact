@@ -6,6 +6,7 @@ import classes from "./NavbarTransparent.module.css";
 interface Props {
   icon: { link?: string };
   rightButtons?: any;
+  menuIsOpen  ?: boolean;
 }
 
 const NavbarTransparent: React.FC<Props> = ({ icon, rightButtons }) => {
@@ -14,7 +15,7 @@ const NavbarTransparent: React.FC<Props> = ({ icon, rightButtons }) => {
       <div>
         <Link to={!!icon.link ? icon.link : "#"}>
           <Icon icon={"amonline"} color={"#ff2626"} size={150} />
-        </Link>
+        </Link> 
       </div>
       <div className={classes.NavbarTransparentIconDiv}>
         {!!rightButtons &&
@@ -22,6 +23,7 @@ const NavbarTransparent: React.FC<Props> = ({ icon, rightButtons }) => {
             (button: React.ReactNode, index: string | number | undefined) => {
               return (
                 <div key={index} className={classes.NavbarTransparentIcons}>
+                  
                   {button}
                 </div>
               );

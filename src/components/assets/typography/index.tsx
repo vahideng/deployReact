@@ -93,7 +93,7 @@ const B_48_BLACK = styled.p`
   font-weight: 700;
   line-height: 60px;
   @media (max-width: 400px) {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 `;
 
