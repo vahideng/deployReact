@@ -1,7 +1,7 @@
 .DockMainDiv {
   display: inline-block;
   min-height: 5rem;
-  background-color: #44444480;
+  background-color: #44444490;
   border-radius: 1.3rem 1.3rem 0 0;
 }
 .DockInnerDiv {
@@ -9,10 +9,8 @@
   align-items: center;
   min-height: 5rem;
   border-radius: 1.3rem 1.3rem 0 0;
-  padding: 3.12rem 2.5rem 1.31rem 2.5rem;
 }
 .DockTag {
-  z-index: 1;
   position: relative;
   margin: 0 0 -1.8rem 2rem;
 }

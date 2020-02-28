@@ -18,24 +18,30 @@ const customStyles = {
   }
 };
 
-
 interface Props {
-    content ?: string;
-    modalIsOpen ?: boolean;
-    handleChange ?:any;
-    label ?: string;
-    value ?: string;
-    buttonTitle ?: string;
-    onButtonClick ?:any;
-    buttonColor ?: any;
-    buttonColorDown ? : string;
-
-
+  content?: string;
+  modalIsOpen?: boolean;
+  handleChange?: any;
+  label?: string;
+  value?: string;
+  buttonTitle?: string;
+  onButtonClick?: any;
+  buttonColor?: any;
+  buttonColorDown?: string;
 }
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 
-const TacModal: React.FC<Props> = ({ modalIsOpen, handleChange, label , value, content, buttonTitle, onButtonClick, buttonColor, }) => {
+const TacModal: React.FC<Props> = ({
+  modalIsOpen,
+  handleChange,
+  label,
+  value,
+  content,
+  buttonTitle,
+  onButtonClick,
+  buttonColor
+}) => {
   // let subtitle: any;
   // const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -55,7 +61,7 @@ const TacModal: React.FC<Props> = ({ modalIsOpen, handleChange, label , value, c
         overlayClassName={classes.OverLay}
         isOpen={!!modalIsOpen && modalIsOpen}
         // onAfterOpen={afterOpenModal}
-        
+
         style={customStyles}
         contentLabel="Example Modal"
       >
@@ -68,8 +74,6 @@ const TacModal: React.FC<Props> = ({ modalIsOpen, handleChange, label , value, c
               <InputField
                 handleChange={handleChange}
                 type="text"
-               
-               
                 label={label}
                 icon={{ name: "TAC" }}
                 value={value}
@@ -89,8 +93,11 @@ const TacModal: React.FC<Props> = ({ modalIsOpen, handleChange, label , value, c
             style={{ alignSelf: "center", paddingBottom: "26px" }}
             className="col-lg-4"
           >
-            {" "}
-            <FullButton   buttonColor={{ top: buttonColor.top, bottom: buttonColor.bottom }} title={buttonTitle} onButtonClick ={!!onButtonClick && onButtonClick}/>
+            <FullButton
+              buttonColor={{ top: buttonColor.top, bottom: buttonColor.bottom }}
+              title={buttonTitle}
+              onButtonClick={!!onButtonClick && onButtonClick}
+            />
           </div>
         </div>
       </Modal>

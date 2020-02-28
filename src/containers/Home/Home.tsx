@@ -30,7 +30,7 @@ const Home: React.FC<Props> = () => {
         />
         <Box
           fullButton={false}
-          buttonColor = "blue"
+          buttonColor="blue"
           splitButton={true}
           onButtonClick={() => console.log("buttonCLicked")}
           onRightButton={() => console.log("rightButtonClicked")}
