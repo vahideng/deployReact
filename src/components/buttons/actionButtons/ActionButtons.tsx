@@ -19,9 +19,8 @@ const ActionButtons: React.FC<Props> = ({ list }) => {
         {!!list &&
           list.map((item, index) => {
             return (
-              <div>
+              <div key={index}>
                 <div
-                  key={index}
                   className={classes.ActionButtonsIcon}
                   style={{
                     background: `linear-gradient(180deg, ${item.backgroundColor.top} 0%,  ${item.backgroundColor.bottom} 100%)`

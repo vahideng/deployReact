@@ -31,7 +31,6 @@ import DetailList from "src/components/lists/DetailList/DetailList";
 import DetailListMonthly from "src/components/lists/DetailListMonthly/DetailListMonthly";
 import Tooltip from "src/components/tooltip/Tooltip";
 import Navbar from "src/components/headers/navbar/Navbar";
-import SecurityImage from "src/components/securityImage/securityImage";
 // import TacModal from "src/components/tacModal/tacModal";
 
 import Tag from "src/components/tags/Tag";
@@ -125,8 +124,6 @@ class Sprint1 extends Component<Props, State> {
             content="TAC was sent to your registered mobile number (**** 6867). You should receive a TAC within 2 minutes."
             buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
           /> */}
-
-          <SecurityImage label="sdas" />
         </CenteredDiv>
 
         <Title>Tooltips</Title>
@@ -169,6 +166,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>secureImage</Title>
         <CenteredDiv>
           <SecureImage
+            label="Hi Adam3011, is this your security image?"
             image={
               "https://images.unsplash.com/photo-1520167112707-56e25f2d7d6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
             }
@@ -1038,7 +1036,55 @@ class Sprint1 extends Component<Props, State> {
             alert("link clicked");
           }}
         />
-        <Dock />
+        <Dock
+        // list={[
+        //   {
+        //     name: "Health",
+        //     color: "#ffffff",
+        //     backgroundColor: {
+        //       top: "#FFC5A2",
+        //       bottom: "#EA5702"
+        //     },
+        //     text: "Cash Advance"
+        //   },
+        //   {
+        //     name: "Health",
+        //     color: "#ffffff",
+        //     backgroundColor: {
+        //       top: "#FFC5A2",
+        //       bottom: "#EA5702"
+        //     },
+        //     text: "Cash Advance"
+        //   },
+        //   {
+        //     name: "Health",
+        //     color: "#ffffff",
+        //     backgroundColor: {
+        //       top: "#FFC5A2",
+        //       bottom: "#EA5702"
+        //     },
+        //     text: "Cash Advance"
+        //   },
+        //   {
+        //     name: "Health",
+        //     color: "#ffffff",
+        //     backgroundColor: {
+        //       top: "#FFC5A2",
+        //       bottom: "#EA5702"
+        //     },
+        //     text: "Cash Advance"
+        //   },
+        //   {
+        //     name: "Health",
+        //     color: "#ffffff",
+        //     backgroundColor: {
+        //       top: "#FFC5A2",
+        //       bottom: "#EA5702"
+        //     },
+        //     text: "Cash Advance"
+        //   }
+        // ]}
+        />
         {/* <AmModal /> */}
       </>
     );

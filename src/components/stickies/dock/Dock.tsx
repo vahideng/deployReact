@@ -3,7 +3,14 @@ import classes from "./Dock.module.css";
 import Tag from "src/components/tags/Tag";
 import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 
-interface Props {}
+interface Props {
+  // {
+  //   name: string;
+  //   color: string;
+  //   backgroundColor: { top: string; bottom: string };
+  //   text: string;
+  // }[];
+}
 
 const Dock: React.FC<Props> = () => {
   return (

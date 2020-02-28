@@ -1,16 +1,11 @@
+.SecureImageTitle {
+  padding-bottom: 1.5rem;
+}
+
 .SecureImageMain {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: 2px solid red;
+  border: 1px solid #ffffff;
+  padding: 1px;
   border-radius: 1rem;
 }
 
@@ -22,19 +17,19 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 21.25rem;
-  height: 12rem;
+  height: 10.43rem;
   border-radius: 1rem;
   -o-object-fit: inherit;
      object-fit: inherit;
-  background-size: 26rem 15rem;
-  -webkit-filter: blur(2px);
-          filter: blur(2px);
+  background-size: 20rem 18rem;
+  -webkit-filter: blur(1.5px);
+          filter: blur(1.5px);
 }
 
 .SecureImageImg {
   position: absolute;
-  top: 0rem;
-  right: 4rem;
-  width: 12rem;
-  height: 12rem;
+  top: 0.1rem;
+  right: 5rem;
+  width: 10.62rem;
+  height: 10.4rem;
 }
