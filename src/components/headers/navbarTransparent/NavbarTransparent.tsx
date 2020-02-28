@@ -1,21 +1,19 @@
 import React from "react";
 import Icon from "src/components/assets/icons/icon";
-import { Link } from "react-router-dom";
+
 import classes from "./NavbarTransparent.module.css";
 
 interface Props {
-  icon: { link?: string };
+  // icon?: { link?: string };
   rightButtons?: any;
-  menuIsOpen  ?: boolean;
+  menuIsOpen?: boolean;
 }
 
-const NavbarTransparent: React.FC<Props> = ({ icon, rightButtons }) => {
+const NavbarTransparent: React.FC<Props> = ({ rightButtons }) => {
   return (
     <div className={classes.NavbarTransparentMainDiv}>
       <div>
-        <Link to={!!icon.link ? icon.link : "#"}>
-          <Icon icon={"amonline"} color={"#ff2626"} size={150} />
-        </Link> 
+        <Icon icon={"amonline"} color={"#ff2626"} size={150} />
       </div>
       <div className={classes.NavbarTransparentIconDiv}>
         {!!rightButtons &&
@@ -23,7 +21,6 @@ const NavbarTransparent: React.FC<Props> = ({ icon, rightButtons }) => {
             (button: React.ReactNode, index: string | number | undefined) => {
               return (
                 <div key={index} className={classes.NavbarTransparentIcons}>
-                  
                   {button}
                 </div>
               );

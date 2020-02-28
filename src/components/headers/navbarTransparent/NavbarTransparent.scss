@@ -4,11 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vw;
   background-color: transparent;
   height: 4.31rem;
-  padding: $HorizontalPadding;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .NavbarTransparentIconDiv {
