@@ -1,0 +1,24 @@
+.FormContainerMain {
+  width: 52.18rem;
+  -webkit-box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
+          box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
+  border-radius: 1rem;
+}
+
+.FormContainerLabel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #474747;
+  height: 3.18rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding-left: 2rem;
+}
+
+.FormContainerContent {
+  padding: 2rem;
+}

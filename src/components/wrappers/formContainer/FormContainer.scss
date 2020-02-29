@@ -1,0 +1,19 @@
+@import "../../assets/common/common.scss";
+
+.FormContainerMain {
+  width: 52.18rem;
+  box-shadow: $mainBoxShadow;
+  border-radius: 1rem;
+}
+.FormContainerLabel {
+  display: flex;
+  align-items: center;
+  background-color: #474747;
+  height: 3.18rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding-left: 2rem;
+}
+.FormContainerContent {
+  padding: 2rem;
+}

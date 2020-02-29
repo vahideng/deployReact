@@ -36,6 +36,7 @@ import Navbar from "src/components/headers/navbar/Navbar";
 import Tag from "src/components/tags/Tag";
 import Dock from "src/components/stickies/dock/Dock";
 import SecureImage from "src/components/secureImage/SecureImage";
+import FormContainer from "src/components/wrappers/formContainer/FormContainer";
 // import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -55,7 +56,7 @@ const RowDiv = styled.div`
 `;
 interface Props {}
 interface State {
-  isCheckboxChecked: boolean;
+  // isCheckboxChecked: boolean;
   hidden: boolean;
   inputValue: string;
   SelectionTileNum: number;
@@ -66,7 +67,7 @@ interface State {
 
 class Sprint1 extends Component<Props, State> {
   state = {
-    isCheckboxChecked: false,
+    // isCheckboxChecked: false,
     hidden: true,
     inputValue: "",
     SelectionTileNum: 2,
@@ -76,7 +77,7 @@ class Sprint1 extends Component<Props, State> {
   };
   render() {
     const {
-      isCheckboxChecked,
+      // isCheckboxChecked,
       hidden,
       inputValue,
       SelectionTileNum,
@@ -85,7 +86,7 @@ class Sprint1 extends Component<Props, State> {
       IconButtonsNum
     } = this.state;
     return (
-      <>
+      <div style={{ paddingTop: "4rem" }}>
         <Navbar
           icon={{ link: "/" }}
           profile={{
@@ -111,10 +112,59 @@ class Sprint1 extends Component<Props, State> {
           ]}
         />
 
-        <Title>Security Image</Title>
+        <Title>FormContainer</Title>
         <CenteredDiv>
-          <Title>Security Image</Title>
-
+          <FormContainer
+            label={"Select your account/card type"}
+            children={
+              <>
+                <InputField
+                  type="text"
+                  clearClickHandler={() => alert("clear cliked")}
+                  clearIcon={true}
+                  label="input label"
+                  icon={{ name: "Account-2" }}
+                  value={inputValue}
+                  handleChange={event => {
+                    this.setState({
+                      inputValue: event.target.value
+                    });
+                  }}
+                />
+                <p style={{ fontSize: 13 }}>
+                  I have read and agree to the
+                  <a
+                    href="https://www.ambank.com.my/eng/"
+                    style={{
+                      fontSize: 13,
+                      fontWeight: 700,
+                      color: "#ffa463",
+                      paddingRight: 5,
+                      paddingLeft: 5
+                    }}
+                  >
+                    Terms & Conditions
+                  </a>
+                  of AmOnline
+                </p>
+                <InputField
+                  type="text"
+                  clearClickHandler={() => alert("clear cliked")}
+                  clearIcon={true}
+                  label="input label"
+                  icon={{ name: "Account-2" }}
+                  value={inputValue}
+                  handleChange={event => {
+                    this.setState({
+                      inputValue: event.target.value
+                    });
+                  }}
+                />
+              </>
+            }
+          />
+        </CenteredDiv>
+        <CenteredDiv>
           {/* <TacModal
             onButtonClick={() => alert("TAC Submitted")}
             buttonTitle="Continue"
@@ -847,15 +897,15 @@ class Sprint1 extends Component<Props, State> {
 
         <Title>Checkbox</Title>
         <Checkbox
-          testId="testId"
-          isChecked={isCheckboxChecked}
-          name="checkBox"
-          onCheckClick={(event, testId) => {
-            this.setState({
-              isCheckboxChecked: !isCheckboxChecked
-            });
-            alert(`${event.target.checked} ${event.target.name} ${testId}`);
-          }}
+          // testId="testId"
+          // isChecked={isCheckboxChecked}
+          // name="checkBox"
+          // onCheckClick={(event, testId) => {
+          //   this.setState({
+          //     isCheckboxChecked: !isCheckboxChecked
+          //   });
+          //   alert(`${event.target.checked} ${event.target.name} ${testId}`);
+          // }}
           children={
             <div>
               <p style={{ fontSize: 13 }}>
@@ -1088,7 +1138,7 @@ class Sprint1 extends Component<Props, State> {
         />
 
         {/* <AmModal /> */}
-      </>
+      </div>
     );
   }
 }
