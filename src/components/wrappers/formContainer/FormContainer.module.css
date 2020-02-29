@@ -1,7 +1,7 @@
 .FormContainerMain {
   width: 52.18rem;
-  -webkit-box-shadow: 1px 1px 1px #dedede, -1px 1px 1px #dedede;
-          box-shadow: 1px 1px 1px #dedede, -1px 1px 1px #dedede;
+  -webkit-box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
+          box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
   border-radius: 0.7rem;
   background-color: #ffffff;
 }

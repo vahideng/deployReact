@@ -2,7 +2,7 @@
 
 .FormContainerMain {
   width: 52.18rem;
-  box-shadow: 1px 1px 1px #dedede, -1px 1px 1px #dedede;
+  box-shadow: $mainBoxShadow;
   border-radius: 0.7rem;
   background-color: #ffffff;
 }

@@ -48,9 +48,16 @@ const Title = styled(B_13_ORANGE_463)`
   border-top: 1px solid #ffa463;
   border-bottom: 1px solid #ffa463;
 `;
+const Text = styled.p`
+  margin: 0;
+  color: #000000;
+  font-size: 0.87rem;
+  font-weight: 400;
+`;
 const CenteredDiv = styled.div`
   display: flex;
   justify-content: center;
+  padding: 2rem 0 2rem 0;
 `;
 const RowDiv = styled.div`
   display: flex;
@@ -114,14 +121,99 @@ class Sprint1 extends Component<Props, State> {
           ]}
         />
 
+        <Title>List with Header</Title>
+        <CenteredDiv>
+          <FormContainer
+            children={
+              <List
+                header={{
+                  title: "Transfer Successful",
+                  subTitle: (
+                    <Text style={{ display: "flex" }}>
+                      You have successfully transferred
+                      <Text style={{ fontWeight: 700 }}> RM 500.00</Text> to
+                      Adam Constantine.
+                    </Text>
+                  )
+                }}
+                list={[
+                  {
+                    leftLabel: "To",
+                    rightLabel: "Saving Account A",
+                    details: ["8881019596535 | AmBank"]
+                  },
+                  {
+                    leftLabel: "Amount",
+                    rightLabel: "RM 500.00",
+                    details: ["Fees & Charges: RM 0.00"]
+                  },
+                  {
+                    leftLabel: "Date",
+                    rightLabel: "Transfer Now",
+                    details: ["Today, 5 January 2019"]
+                  },
+                  {
+                    leftLabel: "Reference",
+                    rightLabel: "House Rental"
+                  },
+                  {
+                    leftLabel: "From",
+                    rightLabel: "Savings Account",
+                    details: ["2998202013", "Available Balance: RM 10,301.50"]
+                  }
+                ]}
+              />
+            }
+          />
+        </CenteredDiv>
         <Title>List</Title>
-        <List />
+
+        <CenteredDiv>
+          <FormContainer
+            children={
+              <List
+                header={{
+                  icon: {
+                    name: "LOGO",
+                    color: "#ff2626",
+                    iconText: "Review & Confirm"
+                  }
+                }}
+                list={[
+                  {
+                    leftLabel: "To",
+                    rightLabel: "Saving Account A",
+                    details: ["8881019596535 | AmBank"]
+                  },
+                  {
+                    leftLabel: "Amount",
+                    rightLabel: "RM 500.00",
+                    details: ["Fees & Charges: RM 0.00"]
+                  },
+                  {
+                    leftLabel: "Date",
+                    rightLabel: "Transfer Now",
+                    details: ["Today, 5 January 2019"]
+                  },
+                  {
+                    leftLabel: "Reference",
+                    rightLabel: "House Rental"
+                  },
+                  {
+                    leftLabel: "From",
+                    rightLabel: "Savings Account",
+                    details: ["2998202013", "Available Balance: RM 10,301.50"]
+                  }
+                ]}
+              />
+            }
+          />
+        </CenteredDiv>
+
         <Title>FormContainer curvedTab</Title>
         <CenteredDiv
           style={{
-            paddingTop: "3rem",
-            backgroundColor: "#eeeeee",
-            paddingBottom: "3rem"
+            backgroundColor: "#eeeeee"
           }}
         >
           <FormContainerCurved
@@ -130,7 +222,7 @@ class Sprint1 extends Component<Props, State> {
               <>
                 <InputField
                   type="text"
-                  clearClickHandler={() => alert("clear cliked")}
+                  clearClickHandler={() => alert("clear clicked")}
                   clearIcon={true}
                   label="input label"
                   icon={{ name: "Account-2" }}

@@ -10,9 +10,11 @@ interface Props {
 const FormContainer: React.FC<Props> = ({ children, label }) => {
   return (
     <div className={classes.FormContainerMain}>
-      <div className={classes.FormContainerLabel}>
-        <B_14_WHITE>{label}</B_14_WHITE>
-      </div>
+      {!!label && (
+        <div className={classes.FormContainerLabel}>
+          <B_14_WHITE>{label}</B_14_WHITE>
+        </div>
+      )}
 
       <div className={classes.FormContainerContent}>{children}</div>
     </div>
