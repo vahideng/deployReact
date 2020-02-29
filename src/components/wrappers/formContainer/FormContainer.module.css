@@ -1,8 +1,9 @@
 .FormContainerMain {
   width: 52.18rem;
-  -webkit-box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
-          box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
-  border-radius: 1rem;
+  -webkit-box-shadow: 1px 1px 1px #dedede, -1px 1px 1px #dedede;
+          box-shadow: 1px 1px 1px #dedede, -1px 1px 1px #dedede;
+  border-radius: 0.7rem;
+  background-color: #ffffff;
 }
 
 .FormContainerLabel {
@@ -14,8 +15,8 @@
           align-items: center;
   background-color: #474747;
   height: 3.18rem;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
   padding-left: 2rem;
 }
 

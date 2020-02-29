@@ -37,6 +37,8 @@ import Tag from "src/components/tags/Tag";
 import Dock from "src/components/stickies/dock/Dock";
 import SecureImage from "src/components/secureImage/SecureImage";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
+import FormContainerCurved from "src/components/wrappers/formContainerCurved/FormContainerCurved";
+import List from "src/components/lists/list/List";
 // import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -112,6 +114,66 @@ class Sprint1 extends Component<Props, State> {
           ]}
         />
 
+        <Title>List</Title>
+        <List />
+        <Title>FormContainer curvedTab</Title>
+        <CenteredDiv
+          style={{
+            paddingTop: "3rem",
+            backgroundColor: "#eeeeee",
+            paddingBottom: "3rem"
+          }}
+        >
+          <FormContainerCurved
+            curvedTab={{ leftTab: "New Recipient", rightTab: "Own/Favorite" }}
+            children={
+              <>
+                <InputField
+                  type="text"
+                  clearClickHandler={() => alert("clear cliked")}
+                  clearIcon={true}
+                  label="input label"
+                  icon={{ name: "Account-2" }}
+                  value={inputValue}
+                  handleChange={event => {
+                    this.setState({
+                      inputValue: event.target.value
+                    });
+                  }}
+                />
+                <p style={{ fontSize: 13 }}>
+                  I have read and agree to the
+                  <a
+                    href="https://www.ambank.com.my/eng/"
+                    style={{
+                      fontSize: 13,
+                      fontWeight: 700,
+                      color: "#ffa463",
+                      paddingRight: 5,
+                      paddingLeft: 5
+                    }}
+                  >
+                    Terms & Conditions
+                  </a>
+                  of AmOnline
+                </p>
+                <InputField
+                  type="text"
+                  clearClickHandler={() => alert("clear cliked")}
+                  clearIcon={true}
+                  label="input label"
+                  icon={{ name: "Account-2" }}
+                  value={inputValue}
+                  handleChange={event => {
+                    this.setState({
+                      inputValue: event.target.value
+                    });
+                  }}
+                />
+              </>
+            }
+          />
+        </CenteredDiv>
         <Title>FormContainer</Title>
         <CenteredDiv>
           <FormContainer

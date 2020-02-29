@@ -13,6 +13,7 @@ const FormContainer: React.FC<Props> = ({ children, label }) => {
       <div className={classes.FormContainerLabel}>
         <B_14_WHITE>{label}</B_14_WHITE>
       </div>
+
       <div className={classes.FormContainerContent}>{children}</div>
     </div>
   );

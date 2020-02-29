@@ -1,0 +1,67 @@
+@import "../../assets/common/common.scss";
+
+.FormContainerCurvedMain {
+  width: 52.18rem;
+  box-shadow: 1px 1px 1px #dedede, -1px 1px 1px #dedede;
+  border-radius: 0.7rem;
+  border-top-left-radius: 0;
+  background-color: #ffffff;
+}
+.FormContainerCurvedLabel {
+  display: flex;
+  align-items: center;
+  background-color: #474747;
+  height: 3.18rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding-left: 2rem;
+}
+.FormContainerCurvedContent {
+  padding: 2rem;
+}
+.FormContainerCurvedMainCurve {
+  height: 3.18rem;
+  display: flex;
+  background-color: #eeeeee;
+}
+.FormContainerCurvedLeftCurve {
+  border-top-left-radius: 1rem;
+
+  display: flex;
+  flex: 2;
+}
+.FormContainerCurvedRightCurve {
+  display: flex;
+  flex: 4;
+}
+.FormContainerCurvedFirstCurve {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 11rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1.5rem;
+  height: 3.18rem;
+}
+.FormContainerCurvedFirstCurveWr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 1rem;
+}
+.FormContainerCurvedSecondCurveWr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 1.5rem;
+}
+.FormContainerCurvedSecondCurve {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 11rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  height: 3.18rem;
+}
