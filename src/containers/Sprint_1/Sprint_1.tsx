@@ -33,6 +33,7 @@ import Tooltip from "src/components/tooltip/Tooltip";
 import Navbar from "src/components/headers/navbar/Navbar";
 import SecurityImage from "src/components/securityImage/securityImage";
 import TacModal from "src/components/tacModal/tacModal";
+import VerticalTab from "src/components/verticalTabs/verticalTabs";
 
 import Tag from "src/components/tags/Tag";
 import Dock from "src/components/stickies/dock/Dock";
@@ -115,21 +116,46 @@ class Sprint1 extends Component<Props, State> {
           <Title>Security Image</Title>
           <CenteredDiv>
             <TacModal
-             onButtonClick = {()=> alert("TAC Submitted")}
-            buttonTitle = "Continue"
-              modalIsOpen={true}
-              handleChange={(e: any) => console.log(e.target.value)
-              }
+              onButtonClick={() => alert("TAC Submitted")}
+              buttonTitle="Continue"
+              modalIsOpen={false}
+              handleChange={(e: any) => console.log(e.target.value)}
               label={"TAC verification"}
               value={""}
               content="TAC was sent to your registered mobile number (**** 6867). You should receive a TAC within 2 minutes."
-
               buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
-              
             />
           </CenteredDiv>
           <SecurityImage label="sdas" />
         </CenteredDiv>
+
+        <Title>Vertical tab</Title>
+        <VerticalTab
+        minimize = {true}
+          data={[
+            {
+              selected: false,
+              onClick: (index: any) => console.log(index, "indedeede"),
+              icon: {
+                name: "Account-2",
+                color: "#ff2626"
+              },
+              accountTitle: "Service/Current-Account",
+              children: <p> its a first children </p>
+            },
+            {
+              selected: true,
+              onClick: (index: any) => console.log(index, "indedeede"),
+
+              icon: {
+                name: "Account-2",
+                color: "#ff2626"
+              },
+              accountTitle: "onYekii",
+              children: <p> its a second children </p>
+            }
+          ]}
+        />
 
         <Title>Tooltips</Title>
         <CenteredDiv>
