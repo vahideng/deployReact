@@ -31,7 +31,9 @@ import DetailList from "src/components/lists/DetailList/DetailList";
 import DetailListMonthly from "src/components/lists/DetailListMonthly/DetailListMonthly";
 import Tooltip from "src/components/tooltip/Tooltip";
 import Navbar from "src/components/headers/navbar/Navbar";
+import VerticalTab from "src/components/verticalTabs/verticalTabs";
 // import TacModal from "src/components/tacModal/tacModal";
+import TacModal from "src/components/modals/tacModal/TacModal";
 
 import Tag from "src/components/tags/Tag";
 import Dock from "src/components/stickies/dock/Dock";
@@ -68,6 +70,7 @@ interface State {
   SelectionTileNum1: number;
   SelectionTileNum2: number;
   IconButtonsNum: number;
+  TacModalOpen: boolean;
 }
 
 class Sprint1 extends Component<Props, State> {
@@ -78,7 +81,8 @@ class Sprint1 extends Component<Props, State> {
     SelectionTileNum: 2,
     SelectionTileNum1: 0,
     SelectionTileNum2: 3,
-    IconButtonsNum: 1
+    IconButtonsNum: 1,
+    TacModalOpen: false
   };
   render() {
     const {
@@ -88,7 +92,8 @@ class Sprint1 extends Component<Props, State> {
       SelectionTileNum,
       SelectionTileNum1,
       SelectionTileNum2,
-      IconButtonsNum
+      IconButtonsNum,
+      TacModalOpen
     } = this.state;
     return (
       <div style={{ paddingTop: "4rem" }}>
@@ -307,17 +312,73 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
         <CenteredDiv>
-          {/* <TacModal
-            onButtonClick={() => alert("TAC Submitted")}
-            buttonTitle="Continue"
-            modalIsOpen={true}
-            handleChange={(e: any) => console.log(e.target.value)}
-            label={"TAC verification"}
-            value={""}
-            content="TAC was sent to your registered mobile number (**** 6867). You should receive a TAC within 2 minutes."
-            buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
-          /> */}
+          <PrimaryButton
+            title="Open MenuBanner"
+            onButtonClick={() => {
+              this.setState({
+                TacModalOpen: true
+              });
+            }}
+          />
         </CenteredDiv>
+        <TacModal
+          onButtonClick={() => alert("TAC Submitted")}
+          buttonTitle="Continue"
+          modalIsOpen={TacModalOpen}
+          handleChange={(e: any) => console.log(e.target.value)}
+          label={"TAC verification"}
+          value={""}
+          content="TAC was sent to your registered mobile number (**** 6867). You should receive a TAC within 2 minutes."
+          buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
+        />
+        <CenteredDiv>
+          <PrimaryButton
+            title="Open TacModal"
+            onButtonClick={() => {
+              this.setState({
+                TacModalOpen: true
+              });
+            }}
+          />
+        </CenteredDiv>
+        <TacModal
+          onButtonClick={() => alert("TAC Submitted")}
+          buttonTitle="Continue"
+          modalIsOpen={TacModalOpen}
+          handleChange={(e: any) => console.log(e.target.value)}
+          label={"TAC verification"}
+          value={""}
+          content="TAC was sent to your registered mobile number (**** 6867). You should receive a TAC within 2 minutes."
+          buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
+        />
+
+        <Title>Vertical tab</Title>
+        <VerticalTab
+          minimize={true}
+          data={[
+            {
+              selected: false,
+              onClick: (index: any) => console.log(index, "indedeede"),
+              icon: {
+                name: "Account-2",
+                color: "#ff2626"
+              },
+              accountTitle: "Service/Current-Account",
+              children: <p> its a first children </p>
+            },
+            {
+              selected: true,
+              onClick: (index: any) => console.log(index, "indedeede"),
+
+              icon: {
+                name: "Account-2",
+                color: "#ff2626"
+              },
+              accountTitle: "onYekii",
+              children: <p> its a second children </p>
+            }
+          ]}
+        />
 
         <Title>Tooltips</Title>
         <CenteredDiv>

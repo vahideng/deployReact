@@ -23,3 +23,15 @@
     width: -webkit-fill-available !important;
 
 }
+
+
+.nav-link{
+  padding: 0;
+ 
+}
+
+
+
+.nav-link.active {
+  background-color: transparent !important;
+}
