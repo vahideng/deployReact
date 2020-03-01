@@ -1,7 +1,6 @@
 import React from "react";
 
 import Modal from "react-modal";
-import classes from "./TacModal.module.css";
 
 import InputField from "../../inputs/checkBox/inputFields/InputFields";
 import Paragraphs from "../../assets/typography";
@@ -58,7 +57,7 @@ const TacModal: React.FC<Props> = ({
     <div style={{ margin: "auto" }}>
       {/* <button onClick={openModal}>Open Modal</button> */}
       <Modal
-        overlayClassName={classes.OverLay}
+        // overlayClassName={classes.OverLay}
         isOpen={!!modalIsOpen && modalIsOpen}
         // onAfterOpen={afterOpenModal}
 

@@ -33,7 +33,6 @@ import Tooltip from "src/components/tooltip/Tooltip";
 import Navbar from "src/components/headers/navbar/Navbar";
 import VerticalTab from "src/components/verticalTabs/verticalTabs";
 // import TacModal from "src/components/tacModal/tacModal";
-import TacModal from "src/components/modals/tacModal/TacModal";
 
 import Tag from "src/components/tags/Tag";
 import Dock from "src/components/stickies/dock/Dock";
@@ -42,6 +41,7 @@ import FormContainer from "src/components/wrappers/formContainer/FormContainer";
 import FormContainerCurved from "src/components/wrappers/formContainerCurved/FormContainerCurved";
 import List from "src/components/lists/list/List";
 import LinkList from "src/components/lists/linkList/LinkList";
+import TacModal from "src/components/modals/tacModal/TacModal";
 // import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
