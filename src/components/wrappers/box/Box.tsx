@@ -6,7 +6,6 @@ interface Props {
   content: any;
   fullButton?: boolean;
   onSelect?: any;
-  splitButton?: boolean;
 
   title?: string;
   titleColor?: string;
@@ -21,9 +20,9 @@ interface Props {
 
 const Box: React.FC<Props> = ({
   content,
-  fullButton,
+
   onSelect,
-  splitButton,
+  split,
   title,
   titleColor,
   onButtonClick,
@@ -44,31 +43,19 @@ const Box: React.FC<Props> = ({
         />
       </div>
 
-      {fullButton && !splitButton ? (
-        <div className={classes.Wrapper}>
-          <FullButton
-            title={title}
-            onButtonClick={() => (onButtonClick ? onButtonClick() : null)}
-            buttonColor={buttonColor}
-            titleColor={titleColor}
-          />
-        </div>
-      ) : null}
-
-      {splitButton && !fullButton ? (
-        <div className={classes.Wrapper}>
-          <FullButton
-            split={true}
-            onButtonClick={() => (onButtonClick ? onButtonClick() : null)}
-            onRightButton={() => (onRightButton ? onRightButton() : null)}
-            onLeftButton={() => (onLeftButton ? onLeftButton() : null)}
-            titleColor={titleColor}
-            leftTitle={leftTitle}
-            rightTitle={rightTitle}
-            buttonColor={buttonColor}
-          />
-        </div>
-      ) : null}
+      <div className={classes.Wrapper}>
+        <FullButton
+          title={title}
+          split={split}
+          onButtonClick={() => (onButtonClick ? onButtonClick() : null)}
+          onRightButton={() => (onRightButton ? onRightButton() : null)}
+          onLeftButton={() => (onLeftButton ? onLeftButton() : null)}
+          titleColor={titleColor}
+          leftTitle={leftTitle}
+          rightTitle={rightTitle}
+          buttonColor={buttonColor}
+        />
+      </div>
     </div>
   );
 };

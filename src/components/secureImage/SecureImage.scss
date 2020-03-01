@@ -1,0 +1,28 @@
+.SecureImageTitle {
+  padding-bottom: 1.5rem;
+}
+
+.SecureImageMain {
+  position: relative;
+  border: 1px solid #ffffff;
+  padding: 1px;
+  border-radius: 1rem;
+}
+
+.SecureImageBG {
+  display: flex;
+  justify-content: center;
+  width: 21.25rem;
+  height: 10.43rem;
+  border-radius: 1rem;
+  object-fit: inherit;
+  background-size: 20rem 18rem;
+  filter: blur(1.5px);
+}
+.SecureImageImg {
+  position: absolute;
+  top: 0.1rem;
+  right: 5rem;
+  width: 10.62rem;
+  height: 10.4rem;
+}

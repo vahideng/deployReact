@@ -8,11 +8,9 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100vw;
   background-color: transparent;
   height: 4.31rem;
-  padding: 0 18vw;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .NavbarTransparentIconDiv {

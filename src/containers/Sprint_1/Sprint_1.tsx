@@ -22,7 +22,7 @@ import InlineMessage from "src/components/infographic/inlineMessage/InlineMessag
 import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
 import ZeroResult from "src/components/infographic/zeroResault/ZeroResult";
 import PieChart from "src/components/pies/PieChart";
-import AmModal from "src/components/modals/Modal";
+// import AmModal from "src/components/modals/Modal";
 import InputField from "src/components/inputs/checkBox/inputFields/InputFields";
 import IconButtons from "src/components/buttons/iconButtons/IconButtons";
 import DescriptionButton from "src/components/buttons/descriptionButton/DescriptionButton";
@@ -31,12 +31,14 @@ import DetailList from "src/components/lists/DetailList/DetailList";
 import DetailListMonthly from "src/components/lists/DetailListMonthly/DetailListMonthly";
 import Tooltip from "src/components/tooltip/Tooltip";
 import Navbar from "src/components/headers/navbar/Navbar";
-import SecurityImage from "src/components/securityImage/securityImage";
 import TacModal from "src/components/tacModal/tacModal";
 import VerticalTab from "src/components/verticalTabs/verticalTabs";
+// import TacModal from "src/components/tacModal/tacModal";
 
 import Tag from "src/components/tags/Tag";
 import Dock from "src/components/stickies/dock/Dock";
+import SecureImage from "src/components/secureImage/SecureImage";
+// import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -126,7 +128,18 @@ class Sprint1 extends Component<Props, State> {
               buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
             />
           </CenteredDiv>
-          <SecurityImage label="sdas" />
+       
+
+          {/* <TacModal
+            onButtonClick={() => alert("TAC Submitted")}
+            buttonTitle="Continue"
+            modalIsOpen={true}
+            handleChange={(e: any) => console.log(e.target.value)}
+            label={"TAC verification"}
+            value={""}
+            content="TAC was sent to your registered mobile number (**** 6867). You should receive a TAC within 2 minutes."
+            buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
+          /> */}
         </CenteredDiv>
 
         <Title>Vertical tab</Title>
@@ -193,6 +206,15 @@ class Sprint1 extends Component<Props, State> {
               </div>
             }
           ></Tooltip>
+        </CenteredDiv>
+        <Title>secureImage</Title>
+        <CenteredDiv>
+          <SecureImage
+            label="Hi Adam3011, is this your security image?"
+            image={
+              "https://images.unsplash.com/photo-1520167112707-56e25f2d7d6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+            }
+          />
         </CenteredDiv>
         <Title>Tags</Title>
         <Tag
@@ -1058,8 +1080,57 @@ class Sprint1 extends Component<Props, State> {
             alert("link clicked");
           }}
         />
-        <Dock />
-        <AmModal />
+        <Dock
+        // list={[
+        //   {
+        //     name: "Health",
+        //     color: "#ffffff",
+        //     backgroundColor: {
+        //       top: "#FFC5A2",
+        //       bottom: "#EA5702"
+        //     },
+        //     text: "Cash Advance"
+        //   },
+        //   {
+        //     name: "Health",
+        //     color: "#ffffff",
+        //     backgroundColor: {
+        //       top: "#FFC5A2",
+        //       bottom: "#EA5702"
+        //     },
+        //     text: "Cash Advance"
+        //   },
+        //   {
+        //     name: "Health",
+        //     color: "#ffffff",
+        //     backgroundColor: {
+        //       top: "#FFC5A2",
+        //       bottom: "#EA5702"
+        //     },
+        //     text: "Cash Advance"
+        //   },
+        //   {
+        //     name: "Health",
+        //     color: "#ffffff",
+        //     backgroundColor: {
+        //       top: "#FFC5A2",
+        //       bottom: "#EA5702"
+        //     },
+        //     text: "Cash Advance"
+        //   },
+        //   {
+        //     name: "Health",
+        //     color: "#ffffff",
+        //     backgroundColor: {
+        //       top: "#FFC5A2",
+        //       bottom: "#EA5702"
+        //     },
+        //     text: "Cash Advance"
+        //   }
+        // ]}
+        />
+
+        {/* <AmModal /> */}
       </>
     );
   }
