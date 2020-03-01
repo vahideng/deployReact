@@ -11,7 +11,7 @@ import AMTabs from "src/components/buttons/tabs/Tabs";
 import FooterLogo from "src/components/stickies/footerLogo/FooterLogo";
 import BannerHero from "src/components/banners/bannerHero/BannerHero";
 import BackButton from "src/components/buttons/backButton/BackButton";
-// import StickyTimer from "src/components/headers/stickyTimer/StickyTimer";
+
 import Profile from "src/components/headers/profile/Profile";
 import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
 import DetailSummary from "src/components/infographic/detailSummary/DetailSummary";
@@ -42,6 +42,10 @@ import FormContainerCurved from "src/components/wrappers/formContainerCurved/For
 import List from "src/components/lists/list/List";
 import LinkList from "src/components/lists/linkList/LinkList";
 import TacModal from "src/components/modals/tacModal/TacModal";
+import MenuBanner from "src/components/modals/menuBanner/MenuBanner";
+import FloatingButton from "src/components/buttons/floatingButton/FloatingButton";
+import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
+// import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
 // import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -55,6 +59,7 @@ const Title = styled(B_13_ORANGE_463)`
 const CenteredDiv = styled.div`
   display: flex;
   justify-content: center;
+
   padding-top: 5rem;
 `;
 const RowDiv = styled.div`
@@ -71,6 +76,7 @@ interface State {
   SelectionTileNum2: number;
   IconButtonsNum: number;
   TacModalOpen: boolean;
+  StickyModalOpen: boolean;
 }
 
 class Sprint1 extends Component<Props, State> {
@@ -82,7 +88,8 @@ class Sprint1 extends Component<Props, State> {
     SelectionTileNum1: 0,
     SelectionTileNum2: 3,
     IconButtonsNum: 1,
-    TacModalOpen: false
+    TacModalOpen: false,
+    StickyModalOpen: false
   };
   render() {
     const {
@@ -93,7 +100,8 @@ class Sprint1 extends Component<Props, State> {
       SelectionTileNum1,
       SelectionTileNum2,
       IconButtonsNum,
-      TacModalOpen
+      TacModalOpen,
+      StickyModalOpen
     } = this.state;
     return (
       <div style={{ paddingTop: "4rem" }}>
@@ -121,34 +129,6 @@ class Sprint1 extends Component<Props, State> {
             }
           ]}
         />
-        <Title>LinkList</Title>
-        <>
-          <LinkList
-            list={[
-              {
-                label: "Jan 2020 eStatement",
-                link: "/"
-              },
-              {
-                label: "Dec 2019 eStatement",
-                link: "/sprint-1"
-              },
-              {
-                label: "Nov 2019 eStatement",
-                link: "/sprint-1"
-              },
-              {
-                label: "Oct 2019 eStatement",
-                rightItem: "|Compo|",
-                link: "/sprint-1"
-              },
-              {
-                label: "Sep 2019 eStatement",
-                link: "/sprint-1"
-              }
-            ]}
-          />
-        </>
         <Title>List with Header inside FormContainer with statusIcon</Title>
         <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
           <FormContainer
@@ -200,6 +180,58 @@ class Sprint1 extends Component<Props, State> {
             }
           />
         </CenteredDiv>
+        <Title>FloatingButton</Title>
+        <CenteredDiv>
+          <div
+            style={{
+              backgroundColor: "#f1f1f1",
+              padding: "1rem",
+              display: "inline-block"
+            }}
+          >
+            <FloatingButton />
+          </div>
+
+          <div
+            style={{
+              backgroundColor: "black",
+              padding: "1rem",
+              display: "inline-block"
+            }}
+          >
+            <FloatingButton darkButton={true} />
+          </div>
+        </CenteredDiv>
+
+        <Title>LinkList</Title>
+        <>
+          <LinkList
+            list={[
+              {
+                label: "Jan 2020 eStatement",
+                link: "/"
+              },
+              {
+                label: "Dec 2019 eStatement",
+                link: "/sprint-1"
+              },
+              {
+                label: "Nov 2019 eStatement",
+                link: "/sprint-1"
+              },
+              {
+                label: "Oct 2019 eStatement",
+                rightItem: "|Compo|",
+                link: "/sprint-1"
+              },
+              {
+                label: "Sep 2019 eStatement",
+                link: "/sprint-1"
+              }
+            ]}
+          />
+        </>
+
         <Title>List</Title>
 
         <CenteredDiv>
@@ -296,7 +328,7 @@ class Sprint1 extends Component<Props, State> {
                 </p>
                 <InputField
                   type="text"
-                  clearClickHandler={() => alert("clear cliked")}
+                  clearClickHandler={() => alert("clear clicked")}
                   clearIcon={true}
                   label="input label"
                   icon={{ name: "Account-2" }}
@@ -311,16 +343,52 @@ class Sprint1 extends Component<Props, State> {
             }
           />
         </CenteredDiv>
-        <CenteredDiv>
-          <PrimaryButton
-            title="Open MenuBanner"
-            onButtonClick={() => {
-              this.setState({
-                TacModalOpen: true
-              });
-            }}
-          />
-        </CenteredDiv>
+
+        <MenuBanner
+          content={
+            <List
+              header={{
+                title: "Transfer Successful",
+                subTitle: (
+                  <div style={{ display: "flex" }}>
+                    <p>You have successfully transferred</p>
+                    <p style={{ fontWeight: 700 }}> RM 500.00 </p>
+                    <p> to </p>
+                    <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
+                  </div>
+                )
+              }}
+              list={[
+                {
+                  leftLabel: "To",
+                  rightLabel: "Saving Account A",
+                  details: ["8881019596535 | AmBank"]
+                },
+                {
+                  leftLabel: "Amount",
+                  rightLabel: "RM 500.00",
+                  details: ["Fees & Charges: RM 0.00"]
+                },
+                {
+                  leftLabel: "Date",
+                  rightLabel: "Transfer Now",
+                  details: ["Today, 5 January 2019"]
+                },
+                {
+                  leftLabel: "Reference",
+                  rightLabel: "House Rental"
+                },
+                {
+                  leftLabel: "From",
+                  rightLabel: "Savings Account",
+                  details: ["2998202013", "Available Balance: RM 10,301.50"]
+                }
+              ]}
+            />
+          }
+          notification={true}
+        />
+
         <TacModal
           onButtonClick={() => alert("TAC Submitted")}
           buttonTitle="Continue"
@@ -331,25 +399,30 @@ class Sprint1 extends Component<Props, State> {
           content="TAC was sent to your registered mobile number (**** 6867). You should receive a TAC within 2 minutes."
           buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
         />
-        <CenteredDiv>
-          <PrimaryButton
-            title="Open TacModal"
-            onButtonClick={() => {
-              this.setState({
-                TacModalOpen: true
-              });
-            }}
-          />
-        </CenteredDiv>
-        <TacModal
-          onButtonClick={() => alert("TAC Submitted")}
-          buttonTitle="Continue"
-          modalIsOpen={TacModalOpen}
-          handleChange={(e: any) => console.log(e.target.value)}
-          label={"TAC verification"}
-          value={""}
-          content="TAC was sent to your registered mobile number (**** 6867). You should receive a TAC within 2 minutes."
-          buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
+
+        <PrimaryButton
+          title="Open TacModal"
+          onButtonClick={() => {
+            this.setState({
+              TacModalOpen: true
+            });
+          }}
+        />
+        {console.log(this.state.StickyModalOpen)}
+        <StickyTimer
+          modalIsOpen={StickyModalOpen}
+          expirationTime={35}
+          text={
+            "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
+          }
+        />
+        <PrimaryButton
+          title="Open StickyTimer"
+          onButtonClick={() => {
+            this.setState({
+              StickyModalOpen: true
+            });
+          }}
         />
 
         <Title>Vertical tab</Title>
@@ -1229,9 +1302,6 @@ class Sprint1 extends Component<Props, State> {
             alert("BackButton clicked");
           }}
         />
-
-        {/* <Title>StickyTimer</Title>
-        <StickyTimer /> */}
 
         <Title>Profile</Title>
         <Profile

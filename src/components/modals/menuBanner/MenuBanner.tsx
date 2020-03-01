@@ -1,106 +1,60 @@
-import React from "react";
+import React, { useState, ReactNode } from "react";
 
 import Modal from "react-modal";
 import classes from "./MenuBanner.module.css";
+import Icon from "src/components/assets/icons/icon";
 
-import InputField from "../../inputs/checkBox/inputFields/InputFields";
-import Paragraphs from "../../assets/typography";
-import FullButton from "../../buttons/primaryButton/PrimaryButton";
-
-const { R_15_GREY444 } = Paragraphs;
 const customStyles = {
   content: {
-    top: "auto",
-    left: "50%",
-    right: "auto",
+    top: "0",
     bottom: "0",
-    marginRight: "-50%"
+    marginRight: "-50%",
+    transform: "translate(71.5%, 0)",
+    backgroundColor: "transparent",
+    border: 0
   }
 };
 
 interface Props {
-  content?: string;
-  modalIsOpen?: boolean;
-  handleChange?: any;
-  label?: string;
-  value?: string;
-  buttonTitle?: string;
-  onButtonClick?: any;
-  buttonColor?: any;
-  buttonColorDown?: string;
+  content?: ReactNode;
+  notification?: boolean;
 }
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 
-const MenuBanner: React.FC<Props> = ({
-  modalIsOpen,
-  handleChange,
-  label,
-  value,
-  content,
-  buttonTitle,
-  onButtonClick,
-  buttonColor
-}) => {
-  // let subtitle: any;
-  // const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  //   function afterOpenModal() {
-  //     // references are now sync'd and can be accessed.
-  //     subtitle.style.color = "#f00";
-  //   }
-
-  //   function closeModal() {
-  //     setIsOpen(false);
-  //   }
-
+const MenuBanner: React.FC<Props> = ({ content }) => {
+  const [isModalIsOpen, setIsModalIsOpen] = useState(false);
   return (
-    <div style={{ margin: "auto" }}>
-      {/* <button onClick={openModal}>Open Modal</button> */}
+    <div>
       <Modal
-        overlayClassName={classes.OverLay}
-        isOpen={!!modalIsOpen && modalIsOpen}
-        // onAfterOpen={afterOpenModal}
-
+        isOpen={isModalIsOpen}
         style={customStyles}
-        contentLabel="Example Modal"
+        // contentLabel="Example Modal"
       >
-        <div className="row">
-          <div
-            style={{ display: "flex", justifyContent: "center", width: "80%" }}
-            className="col-lg-8"
-          >
-            <form>
-              <InputField
-                handleChange={handleChange}
-                type="text"
-                label={label}
-                icon={{ name: "TAC" }}
-                value={value}
-              />
-              <R_15_GREY444
-                style={{
-                  width: "34.6rem",
-                  paddingTop: "16px",
-                  paddingLeft: " 20px"
-                }}
-              >
-                {content}
-              </R_15_GREY444>
-            </form>
+        <div className={classes.MenuBannerMainDiv}>
+          <div className={classes.MenuBannerInsideButtonDiv}>
+            <div
+              className={classes.MenuBannerInsideButton}
+              onClick={() => {
+                setIsModalIsOpen(!isModalIsOpen);
+              }}
+            >
+              <Icon icon="Vector" size={20} />
+            </div>
           </div>
-          <div
-            style={{ alignSelf: "center", paddingBottom: "26px" }}
-            className="col-lg-4"
-          >
-            <FullButton
-              buttonColor={{ top: buttonColor.top, bottom: buttonColor.bottom }}
-              title={buttonTitle}
-              onButtonClick={!!onButtonClick && onButtonClick}
-            />
-          </div>
+          <div className={classes.MenuBannerContentDiv}>{content}</div>
         </div>
       </Modal>
+      <div
+        className={classes.MenuBannerButton}
+        onClick={() => {
+          setIsModalIsOpen(!isModalIsOpen);
+        }}
+      >
+        <div>
+          <Icon icon="Vector" size={20} />
+        </div>
+      </div>
     </div>
   );
 };

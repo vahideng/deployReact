@@ -35,6 +35,7 @@
 
 .FormContainerCurvedLeftCurve {
   border-top-left-radius: 1rem;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

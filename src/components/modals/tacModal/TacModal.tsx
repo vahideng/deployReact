@@ -53,6 +53,8 @@ const TacModal: React.FC<Props> = ({
   //     setIsOpen(false);
   //   }
 
+  console.log(modalIsOpen, "modalIsOpenmodalIsOpen");
+
   return (
     <div style={{ margin: "auto" }}>
       {/* <button onClick={openModal}>Open Modal</button> */}

@@ -97,6 +97,12 @@ const B_17_BLACK = styled.p`
   font-size: 1.06rem;
   font-weight: 700;
 `;
+const R_17_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-size: 1.06rem;
+  font-weight: 400;
+`;
 const B_18_BLACK = styled.p`
   margin: 0;
   color: #000000;
@@ -211,5 +217,6 @@ export default {
   B_17_WHITE,
   SB_11_WHITE,
   B_18_BLACK,
-  B_24_BLACK
+  B_24_BLACK,
+  R_17_BLACK
 };
