@@ -42,6 +42,7 @@ import FormContainerCurved from "src/components/wrappers/formContainerCurved/For
 import List from "src/components/lists/list/List";
 import LinkList from "src/components/lists/linkList/LinkList";
 import TacModal from "src/components/modals/tacModal/TacModal";
+import TransactionList from "src/components/transactionList/transactionList";
 // import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -73,6 +74,49 @@ interface State {
   TacModalOpen: boolean;
 }
 
+const dataTransactionList = [
+  {
+    leftLabel: "DoItNow tr DF",
+    middle: {
+      title: "this is saample long data fot testing purposes only",
+      content: [
+        {
+          leftLabel: "this is saample long data fot testing purposes",
+          rightLabel: "16 Augest 1998"
+        },
+        {
+          leftLabel: "DoItNow tr DF",
+          rightLabel: "12 March 2012"
+        }
+      ]
+    },
+    rightLabel: {
+      prefix: "RM",
+      content: "18.00000000000"
+    }
+  },
+  {
+    leftLabel: "doLaterNow tr DF",
+    middle: {
+      title: "this is saample long data fot testing purposes only",
+      content: [
+        {
+          leftLabel: "this is saample long data fot testing purposes",
+          rightLabel: "16 Jul 2020"
+        },
+        {
+          leftLabel: "KhiarShore Sanati",
+          rightLabel: "10 Jul 2018"
+        }
+      ]
+    },
+    rightLabel: {
+      prefix: "RM",
+      content: "38.00"
+    }
+  }
+];
+
 class Sprint1 extends Component<Props, State> {
   state = {
     // isCheckboxChecked: false,
@@ -97,6 +141,10 @@ class Sprint1 extends Component<Props, State> {
     } = this.state;
     return (
       <div style={{ paddingTop: "4rem" }}>
+        <Title>List with Header inside FormContainer with statusIcon</Title>
+        <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
+          <TransactionList data={dataTransactionList}  title="Today"/>
+        </CenteredDiv>
         <Navbar
           icon={{ link: "/" }}
           profile={{
@@ -149,6 +197,7 @@ class Sprint1 extends Component<Props, State> {
             ]}
           />
         </>
+
         <Title>List with Header inside FormContainer with statusIcon</Title>
         <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
           <FormContainer
