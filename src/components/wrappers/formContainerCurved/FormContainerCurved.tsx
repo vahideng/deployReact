@@ -6,16 +6,12 @@ interface Props {
   curvedTab: {
     leftTab: string;
     rightTab: string;
+    leftContent?: ReactNode;
+    rightContent?: ReactNode;
   };
-
-  children?: ReactNode;
 }
 
-const FormContainerCurved: React.FC<Props> = ({
-  children,
-
-  curvedTab
-}) => {
+const FormContainerCurved: React.FC<Props> = ({ curvedTab }) => {
   const [LeftSelected, setLeftSelected] = useState(true);
   const [RightSelected, setRightSelected] = useState(false);
   return (
@@ -73,7 +69,13 @@ const FormContainerCurved: React.FC<Props> = ({
         <div className={classes.FormContainerCurvedRightCurve}></div>
       </div>
       <div className={classes.FormContainerCurvedMain}>
-        <div className={classes.FormContainerCurvedContent}>{children}</div>
+        <div className={classes.FormContainerCurvedContent}>
+          {!!LeftSelected ? (
+            <>{curvedTab.leftContent}</>
+          ) : (
+            <>{curvedTab.rightContent}</>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -48,16 +48,11 @@ const Title = styled(B_13_ORANGE_463)`
   border-top: 1px solid #ffa463;
   border-bottom: 1px solid #ffa463;
 `;
-const Text = styled.p`
-  margin: 0;
-  color: #000000;
-  font-size: 0.87rem;
-  font-weight: 400;
-`;
+
 const CenteredDiv = styled.div`
   display: flex;
   justify-content: center;
-  padding: 2rem 0 2rem 0;
+  padding: 5rem 0 2rem 0;
 `;
 const RowDiv = styled.div`
   display: flex;
@@ -122,18 +117,24 @@ class Sprint1 extends Component<Props, State> {
         />
 
         <Title>List with Header</Title>
-        <CenteredDiv>
+        <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
           <FormContainer
+            statusIcon={{
+              backgroundColor: "#eeeeee",
+              icon: "Tick-1",
+              iconColor: { top: "#94EC9B", bottom: "#5BB362" }
+            }}
             children={
               <List
                 header={{
                   title: "Transfer Successful",
                   subTitle: (
-                    <Text style={{ display: "flex" }}>
-                      You have successfully transferred
-                      <Text style={{ fontWeight: 700 }}> RM 500.00</Text> to
-                      Adam Constantine.
-                    </Text>
+                    <div style={{ display: "flex" }}>
+                      <p>You have successfully transferred</p>
+                      <p style={{ fontWeight: 700 }}> RM 500.00 </p>
+                      <p> to </p>
+                      <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
+                    </div>
                   )
                 }}
                 list={[
@@ -217,53 +218,12 @@ class Sprint1 extends Component<Props, State> {
           }}
         >
           <FormContainerCurved
-            curvedTab={{ leftTab: "New Recipient", rightTab: "Own/Favorite" }}
-            children={
-              <>
-                <InputField
-                  type="text"
-                  clearClickHandler={() => alert("clear clicked")}
-                  clearIcon={true}
-                  label="input label"
-                  icon={{ name: "Account-2" }}
-                  value={inputValue}
-                  handleChange={event => {
-                    this.setState({
-                      inputValue: event.target.value
-                    });
-                  }}
-                />
-                <p style={{ fontSize: 13 }}>
-                  I have read and agree to the
-                  <a
-                    href="https://www.ambank.com.my/eng/"
-                    style={{
-                      fontSize: 13,
-                      fontWeight: 700,
-                      color: "#ffa463",
-                      paddingRight: 5,
-                      paddingLeft: 5
-                    }}
-                  >
-                    Terms & Conditions
-                  </a>
-                  of AmOnline
-                </p>
-                <InputField
-                  type="text"
-                  clearClickHandler={() => alert("clear cliked")}
-                  clearIcon={true}
-                  label="input label"
-                  icon={{ name: "Account-2" }}
-                  value={inputValue}
-                  handleChange={event => {
-                    this.setState({
-                      inputValue: event.target.value
-                    });
-                  }}
-                />
-              </>
-            }
+            curvedTab={{
+              leftTab: "New Recipient",
+              rightTab: "Own/Favorite",
+              leftContent: <p>left content</p>,
+              rightContent: <p>right content</p>
+            }}
           />
         </CenteredDiv>
         <Title>FormContainer</Title>
