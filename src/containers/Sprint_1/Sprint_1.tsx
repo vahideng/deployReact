@@ -37,6 +37,14 @@ import Tag from "src/components/tags/Tag";
 import Dock from "src/components/stickies/dock/Dock";
 import SecureImage from "src/components/secureImage/SecureImage";
 // import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
+import NavigationButtons from "src/components/buttons/navigationButtons/NavigationButtons";
+import ToggleButton from "src/components/buttons/toggleButton/ToggleButton";
+import SearchBar from "src/components/inputs/searchBar/SearchBar";
+import AccountsList from "src/components/lists/AccountsList/AccountsList";
+import CardList from "src/components/lists/CardList/CardList";
+
+import UnionPay_logo from "src/components/assets/common/UnionPay_logo.svg";
+
 const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -163,6 +171,146 @@ class Sprint1 extends Component<Props, State> {
               </div>
             }
           ></Tooltip>
+        </CenteredDiv>
+        <Title>NavigationButtons</Title>
+        <CenteredDiv>
+          <NavigationButtons
+            onLeftButtonPress={() => alert('Left Button Clicked')}
+            onRightButtonPress={() => alert('Right Button Clicked')}
+            leftButtonDisable={true}
+            rightButtonDisable={false}
+            label={'1 of 5'}
+          />
+        </CenteredDiv>
+        <Title>ToggleButtons</Title>
+        <CenteredDiv>
+          <ToggleButton
+            value={true}
+            onTogglePress={() => alert('Toggle pressed')}
+            toggleOffLabel="NO"
+            toggleOnLabel="YES"
+            disabled={false}
+          />
+        </CenteredDiv>
+        <Title>SearchBar/Filter</Title>
+        <CenteredDiv>
+          <SearchBar
+            clearClickHandler={() => alert("clear clicked")}
+            searchIconClickHandler={() => alert("Search Icon clicked")}
+            placeholder={'Search'}
+            value={this.state.inputValue}
+            handleChange={event => {
+              this.setState({
+                inputValue: event.target.value
+              });
+            }}
+            autoFocus={false}
+
+            showFilter={true}
+            filterOptions={[
+              { label: "Successful", value: "Succesful", selected: true },
+              { label: "Unsuccessful", value: "Unsuccesful", selected: true },
+              { label: "Pending Verification", value: "Pending Verification", selected: false }
+            ]}
+            onFilterOptionClick={(obj) => alert(JSON.stringify(obj))}
+            selectedFilters={[
+              { label: "Successful", value: "Succesful", closeIconClickHandler: () => alert('clear Succesful') },
+              { label: "Unsuccessful", value: "Unsuccesful", closeIconClickHandler: () => alert('clear Unsuccesful') },
+            ]}
+
+          />
+        </CenteredDiv>
+        <Title>CardList</Title>
+        <CenteredDiv>
+          <CardList
+            list={[
+              {
+                cardName: 'AmBank TRUE VISA (Supp)',
+                cardNumber: '2379 4793 4797 7493',
+                amount: 'RM 13,356',
+                expiryDate: 'EXP 12/21',
+                colorLeft: '#798E96',
+                colorRight: '#31434A',
+                active: false,
+                activeLabel: '',
+                selected: false,
+              },
+              {
+                cardName: 'AmBank Platinum Card',
+                cardNumber: '2379 4793 4797 7493',
+                amount: 'RM 50,293',
+                expiryDate: 'EXP 12/21',
+                cardVendorLogo: UnionPay_logo,
+                colorLeft: '#6C3F4F',
+                colorRight: '#3D1A1A',
+                active: true,
+                activeLabel: 'ACTIVE',
+                selected: true,
+              },
+              {
+                cardName: 'AmBank World MasterCard',
+                cardNumber: '2379 4793 4797 7493',
+                amount: 'RM 7,398',
+                expiryDate: 'EXP 12/21',
+                colorLeft: '#5F73E9',
+                colorRight: '#131E5B',
+                active: false,
+                activeLabel: 'ACTIVE',
+                selected: false,
+              },
+              {
+                cardName: 'AmBank Platinum Card',
+                cardNumber: '2379 4793 4797 7493',
+                amount: 'RM 3,897,576',
+                expiryDate: 'EXP 12/21',
+                cardVendorLogo: UnionPay_logo,
+                colorLeft: '#989898',
+                colorRight: '#000000',
+                active: false,
+                activeLabel: '',
+                selected: false,
+              }
+            ]}
+            onCardTileClick={(item) => alert(JSON.stringify(item))}
+          />
+        </CenteredDiv>
+        <Title>AccountsList</Title>
+        <CenteredDiv>
+          <AccountsList
+            list={[
+              {
+                label1: 'Foreign Current Account',
+                label2: '79429284',
+                amount: 'RM 10,648.50',
+                selected: false
+              },
+              {
+                label1: 'Foreign Current Account',
+                label2: '79429284',
+                amount: 'RM 10,648.50',
+                selected: false
+              },
+              {
+                label1: 'Foreign Current Account',
+                label2: '79429284',
+                amount: 'RM 10,648.50',
+                defaultLabel: 'DEFAULT',
+                default: true,
+                statusLabel: 'ACTIVE',
+                statusLabelColor: '#36A03E',
+                selected: true
+              },
+              {
+                label1: 'Foreign Current Account',
+                label2: '79429284',
+                amount: 'RM 10,648.50',
+                statusLabel: 'ACTIVE',
+                statusLabelColor: '#36A03E',
+                selected: false
+              }
+            ]}
+            onAccountTileClick={(item) => alert(JSON.stringify(item))}
+          />
         </CenteredDiv>
         <Title>secureImage</Title>
         <CenteredDiv>
@@ -1037,6 +1185,7 @@ class Sprint1 extends Component<Props, State> {
             alert("link clicked");
           }}
         />
+
         <Dock
         // list={[
         //   {

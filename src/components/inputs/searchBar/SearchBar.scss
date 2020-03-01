@@ -1,0 +1,128 @@
+@import "../../../assets/common/common.scss";
+
+.SearchBar {
+  display: flex;
+  flex-direction: column;
+}
+.SearchBarContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 3.12rem;
+  width: 850px;
+  border-radius: 25px;
+  border: 1px solid #dedede;
+  overflow: hidden;
+}
+
+.FilterContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 2.625rem;
+  width: 6.3rem;
+  background: linear-gradient(180deg, #F6F6F3 0%, #EAE9E3 100%);
+  overflow: hidden;
+}
+.FilterContainerOpen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 2.625rem;
+  width: 6.3rem;  
+  background: linear-gradient(180deg, #EAE9E3 0%, #F6F6F3 100%);
+  overflow: hidden;
+}
+
+.FilterDropdownContainer {
+  position: absolute;
+  top: 16;
+  margin-top: 16px;
+  background: #FFFFFF;
+  z-index: 299;
+  box-sizing: border-box;
+  border-radius: 5px;
+  left: 0;
+  -webkit-box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
+  box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
+}
+
+.FilterOptionContainer {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  margin-bottom: 16px;
+}
+.FilterOptionSelectedContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+.SelectedFiltersContainer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-top: 16px;
+  width: 53.12rem;
+}
+
+.SelectedFilter {
+  background: #dedede;
+  border-radius: 13px;
+  padding-left: 9px;
+  padding-right: 6px;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin-right: 8px; 
+  height: 1.5rem; 
+  margin-bottom: 8px;
+}
+
+.SelectedFilterLabel {
+  margin-right: 8px;
+}
+
+.SelectedFilterClearIcon {
+  display: flex;
+  cursor: pointer;
+}
+
+.InputField {
+  margin-left: 1.5rem;
+  display: flex;
+  flex: 1;
+  outline: none;
+  padding-right: 0.3rem;
+}
+
+.IconContainer {
+  margin-right: 1.5rem;
+}
+
+.InputFieldPassword {
+  padding-right: 2px;
+}
+
+.ClearIcon{
+  margin-right: 1.05rem;
+}
+
+@media (max-width: 400px) {
+  .SearchBarContainer {
+    width: 90vw;
+  }
+}
