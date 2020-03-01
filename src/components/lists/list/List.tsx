@@ -20,7 +20,7 @@ interface Props {
 
 const List: React.FC<Props> = ({ header, testId, list }) => {
   return (
-    <div className={classes.ListMainDiv} id={testId}>
+    <div id={testId}>
       {!!header && (
         <div>
           {!!header.title && (
