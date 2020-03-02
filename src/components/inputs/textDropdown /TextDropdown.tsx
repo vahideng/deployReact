@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Select from "react-select";
-import arrowUp from "../../../assets/common/arrowUp.svg";
-import arrowDown from "../../../assets/common/arrowDown.svg";
-import classes from "./textDropdown.module.css";
+import arrowUp from "../../assets/common/arrowUp.svg";
+import arrowDown from "../../assets/common/arrowDown.svg";
+import classes from "./TextDropdown.module.css";
 import onClickOutside from "react-onclickoutside";
 interface Props {
   options: { value: string; label: string }[];
@@ -24,8 +24,8 @@ const customStyles = {
     boxShadow: "none"
   }),
 
-  placeholder : ()=> ({
-    color : "black"
+  placeholder: () => ({
+    color: "black"
   }),
 
   menu: (provided: any) => ({
@@ -79,15 +79,12 @@ class TextDropdown extends Component<Props, State> {
   };
 
   onchangeHandler = (object: any) => {
-
-
-    
     this.props.handleChange(object);
     this.setState({ menuIsOpen: false });
   };
   handleClickOutside = (evt: any) => {
     evt.preventDefault();
-    this.setState({ menuIsOpen: false })
+    this.setState({ menuIsOpen: false });
   };
 
   render() {
@@ -99,7 +96,7 @@ class TextDropdown extends Component<Props, State> {
             components={{ DropdownIndicator: () => null }}
             placeholder={placeHolder}
             value={selectedOption}
-            onChange={(object)=>this.onchangeHandler(object)}
+            onChange={object => this.onchangeHandler(object)}
             options={options}
             styles={customStyles}
             menuIsOpen={this.state.menuIsOpen}

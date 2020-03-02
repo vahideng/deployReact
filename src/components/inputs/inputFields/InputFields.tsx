@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Paragraphs from "../../../assets/typography";
+import Paragraphs from "../../assets/typography";
 import classes from "./InputField.module.css";
 import Icon from "src/components/assets/icons/icon";
 import clearIcone from 'src/components/assets/common/clearIcone.svg'

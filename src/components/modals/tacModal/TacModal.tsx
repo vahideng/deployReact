@@ -2,7 +2,7 @@ import React from "react";
 
 import Modal from "react-modal";
 
-import InputField from "../../inputs/checkBox/inputFields/InputFields";
+import InputField from "../../inputs/inputFields/InputFields";
 import Paragraphs from "../../assets/typography";
 import FullButton from "../../buttons/primaryButton/PrimaryButton";
 

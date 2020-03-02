@@ -1,7 +1,7 @@
 div.checkboxRow input {
   display: none;
 }
-div.checkboxRow {
+.checkboxRow {
   display: flex;
   flex-direction: row;
 }
@@ -11,7 +11,7 @@ div.checkboxRow label {
   cursor: pointer;
 }
 .boxChildren {
-  padding: 5px 0 0 5px;
+  padding: 3px 0 0 5px;
 }
 
 @media (max-width: 400px) {

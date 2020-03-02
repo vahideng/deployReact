@@ -29,9 +29,11 @@ const ActionButtons: React.FC<Props> = ({ list }) => {
                   <Icon icon={item.name} size={20} color={item.color} />
                 </div>
                 <div className={classes.ActionButtonsWidth}>
-                  <SB_11_WHITE className={classes.ActionButtonsText}>
-                    {item.text}
-                  </SB_11_WHITE>
+                  {!!item.text && (
+                    <SB_11_WHITE className={classes.ActionButtonsText}>
+                      {item.text}
+                    </SB_11_WHITE>
+                  )}
                 </div>
               </div>
             );

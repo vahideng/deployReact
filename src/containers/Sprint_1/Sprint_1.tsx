@@ -23,7 +23,7 @@ import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
 import ZeroResult from "src/components/infographic/zeroResault/ZeroResult";
 import PieChart from "src/components/pies/PieChart";
 // import AmModal from "src/components/modals/Modal";
-import InputField from "src/components/inputs/checkBox/inputFields/InputFields";
+import InputField from "src/components/inputs/inputFields/InputFields";
 import IconButtons from "src/components/buttons/iconButtons/IconButtons";
 import DescriptionButton from "src/components/buttons/descriptionButton/DescriptionButton";
 import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
@@ -77,7 +77,7 @@ const RowDiv = styled.div`
 `;
 interface Props {}
 interface State {
-  // isCheckboxChecked: boolean;
+  isCheckboxChecked: boolean;
   hidden: boolean;
   inputValue: string;
   SelectionTileNum: number;
@@ -133,7 +133,7 @@ const dataTransactionList = [
 
 class Sprint1 extends Component<Props, State> {
   state = {
-    // isCheckboxChecked: false,
+    isCheckboxChecked: false,
     hidden: true,
     inputValue: "",
     SelectionTileNum: 2,
@@ -145,7 +145,7 @@ class Sprint1 extends Component<Props, State> {
   };
   render() {
     const {
-      // isCheckboxChecked,
+      isCheckboxChecked,
       hidden,
       inputValue,
       SelectionTileNum,
@@ -734,7 +734,7 @@ class Sprint1 extends Component<Props, State> {
                 </RowDiv>
               </div>
             }
-          ></Tooltip>
+          />
         </CenteredDiv>
         <Title>NavigationButtons</Title>
         <CenteredDiv>
@@ -919,7 +919,12 @@ class Sprint1 extends Component<Props, State> {
               },
               {
                 leftText: "Account Type",
-                rightText: "TRUE Savings Account-i"
+                rightText: "TRUE Savings Account-i",
+                tipChildren: (
+                  <div>
+                    <B_14_WHITE>Tips</B_14_WHITE>
+                  </div>
+                )
               },
               {
                 leftText: "Holder Name",
@@ -1569,35 +1574,16 @@ class Sprint1 extends Component<Props, State> {
 
         <Title>Checkbox</Title>
         <Checkbox
-          // testId="testId"
-          // isChecked={isCheckboxChecked}
-          // name="checkBox"
-          // onCheckClick={(event, testId) => {
-          //   this.setState({
-          //     isCheckboxChecked: !isCheckboxChecked
-          //   });
-          //   alert(`${event.target.checked} ${event.target.name} ${testId}`);
-          // }}
-          children={
-            <div>
-              <p style={{ fontSize: 13 }}>
-                I have read and agree to the
-                <a
-                  href="https://www.ambank.com.my/eng/"
-                  style={{
-                    fontSize: 13,
-                    fontWeight: 700,
-                    color: "#ffa463",
-                    paddingRight: 5,
-                    paddingLeft: 5
-                  }}
-                >
-                  Terms & Conditions
-                </a>
-                of AmOnline
-              </p>
-            </div>
-          }
+          testId="testId"
+          isChecked={isCheckboxChecked}
+          name="checkBox"
+          onCheckClick={(event, testId) => {
+            this.setState({
+              isCheckboxChecked: !isCheckboxChecked
+            });
+            alert(`${event.target.checked} ${event.target.name} ${testId}`);
+          }}
+          children={<p> I have read and agree to the</p>}
         />
 
         <Title>FooterLogo</Title>
@@ -1770,11 +1756,27 @@ class Sprint1 extends Component<Props, State> {
                 text: "Cash Advance"
               },
               {
-                name: "Health",
+                name: "AmSecure",
                 color: "#ffffff",
                 backgroundColor: {
-                  top: "#FFC5A2",
-                  bottom: "#EA5702"
+                  top: "#FD8585",
+                  bottom: "#FF2222"
+                }
+              },
+              {
+                name: "Apply",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#798E96",
+                  bottom: "#31434A"
+                }
+              },
+              {
+                name: "Apply",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#DCEAEA",
+                  bottom: "#7FA2A2"
                 },
                 text: "Cash Advance"
               },
@@ -1788,13 +1790,68 @@ class Sprint1 extends Component<Props, State> {
                 text: "Cash Advance"
               },
               {
+                name: "Bank",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#FD8585",
+                  bottom: "#FF2222"
+                },
+                text: "Bank"
+              },
+              {
+                name: "Card",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#798E96",
+                  bottom: "#31434A"
+                },
+                text: "Card"
+              },
+              {
+                name: "Apply",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#DCEAEA",
+                  bottom: "#7FA2A2"
+                },
+                text: "Cash Advance"
+              }
+            ]}
+          />
+          <Dock
+            tagText="How may I help you?"
+            list={[
+              {
                 name: "Health",
                 color: "#ffffff",
                 backgroundColor: {
                   top: "#FFC5A2",
                   bottom: "#EA5702"
-                },
-                text: "Cash Advance"
+                }
+              },
+              {
+                name: "AmSecure",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#FD8585",
+                  bottom: "#FF2222"
+                }
+              },
+              {
+                name: "Apply",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#798E96",
+                  bottom: "#31434A"
+                }
+              },
+              {
+                name: "Apply",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#DCEAEA",
+                  bottom: "#7FA2A2"
+                }
               },
               {
                 name: "Health",
@@ -1802,35 +1859,31 @@ class Sprint1 extends Component<Props, State> {
                 backgroundColor: {
                   top: "#FFC5A2",
                   bottom: "#EA5702"
-                },
-                text: "Cash Advance"
+                }
               },
               {
-                name: "Health",
+                name: "Bank",
                 color: "#ffffff",
                 backgroundColor: {
-                  top: "#FFC5A2",
-                  bottom: "#EA5702"
-                },
-                text: "Cash Advance"
+                  top: "#FD8585",
+                  bottom: "#FF2222"
+                }
               },
               {
-                name: "Health",
+                name: "Card",
                 color: "#ffffff",
                 backgroundColor: {
-                  top: "#FFC5A2",
-                  bottom: "#EA5702"
-                },
-                text: "Cash Advance"
+                  top: "#798E96",
+                  bottom: "#31434A"
+                }
               },
               {
-                name: "Health",
+                name: "Apply",
                 color: "#ffffff",
                 backgroundColor: {
-                  top: "#FFC5A2",
-                  bottom: "#EA5702"
-                },
-                text: "Cash Advance"
+                  top: "#DCEAEA",
+                  bottom: "#7FA2A2"
+                }
               }
             ]}
           />

@@ -22,7 +22,6 @@
 
 .KK {
   background-color: transparent;
-  font-weight: bold;
   border: 0 !important;
-  border-bottom: 3px solid #ff2626 !important;
+  border-bottom: 2px solid #ff2626 !important;
 }

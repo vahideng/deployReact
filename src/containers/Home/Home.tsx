@@ -4,10 +4,10 @@ import BackgroundSingle from "src/components/wrappers/backgroundSingle/Backgroun
 import Header from "src/components/headers/header/Header";
 import Box from "src/components/wrappers/box/Box";
 import ZeroResult from "src/components/infographic/zeroResault/ZeroResult";
-import InputField from "src/components/inputs/checkBox/inputFields/InputFields";
+import InputField from "src/components/inputs/inputFields/InputFields";
 import TextButton from "src/components/buttons/textButton/TextButton";
 import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTransparent";
-import TextDropdown from "src/components/inputs/checkBox/textDropdown /TextDropdown";
+import TextDropdown from "src/components/inputs/textDropdown /TextDropdown";
 
 interface Props {}
 
