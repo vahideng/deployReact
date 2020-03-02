@@ -92,10 +92,10 @@ const dataTransactionList = [
   {
     leftLabel: "DoItNow tr DF",
     middle: {
-      title: "this is saample long data fot testing purposes only",
+      title: "this is sample long data fot testing purposes only",
       content: [
         {
-          leftLabel: "this is saample long data fot testing purposes",
+          leftLabel: "this is sample long data fot testing purposes",
           rightLabel: "16 Augest 1998"
         },
         {
@@ -112,14 +112,14 @@ const dataTransactionList = [
   {
     leftLabel: "doLaterNow tr DF",
     middle: {
-      title: "this is saample long data fot testing purposes only",
+      title: "this is sample long data fot testing purposes only",
       content: [
         {
-          leftLabel: "this is saample long data fot testing purposes",
+          leftLabel: "this is sample long data fot testing purposes",
           rightLabel: "16 Jul 2020"
         },
         {
-          leftLabel: "KhiarShore Sanati",
+          leftLabel: "HairShore Shanti",
           rightLabel: "10 Jul 2018"
         }
       ]
@@ -157,7 +157,7 @@ class Sprint1 extends Component<Props, State> {
     } = this.state;
     return (
       <div style={{ paddingTop: "4rem" }}>
-        <Title>List with Header inside FormContainer with statusIcon</Title>
+        <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
           <TransactionList data={dataTransactionList} title="Today" />
         </CenteredDiv>
@@ -185,7 +185,50 @@ class Sprint1 extends Component<Props, State> {
             }
           ]}
         />
+
         <Title>LinkList</Title>
+        <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
+          <FormContainer
+            children={
+              <div style={{ paddingTop: "2rem" }}>
+                <LinkList
+                  list={[
+                    {
+                      label: "Jan 2020 eStatement",
+                      link: "/"
+                    },
+                    {
+                      label: "Dec 2019 eStatement",
+                      link: "/sprint-1"
+                    },
+                    {
+                      label: "Nov 2019 eStatement",
+                      link: "/sprint-1"
+                    },
+                    {
+                      label: "Oct 2019 eStatement",
+                      rightItem: (
+                        <ToggleButton
+                          value={true}
+                          onTogglePress={() => alert("Toggle pressed")}
+                          toggleOffLabel="NO"
+                          toggleOnLabel="YES"
+                          disabled={false}
+                        />
+                      ),
+                      link: "/sprint-1"
+                    },
+                    {
+                      label: "Sep 2019 eStatement",
+                      link: "/sprint-1"
+                    }
+                  ]}
+                />
+              </div>
+            }
+          />
+        </CenteredDiv>
+        <Title>LinkList no container</Title>
         <>
           <LinkList
             list={[
@@ -203,7 +246,15 @@ class Sprint1 extends Component<Props, State> {
               },
               {
                 label: "Oct 2019 eStatement",
-                rightItem: "|Compo|",
+                rightItem: (
+                  <ToggleButton
+                    value={true}
+                    onTogglePress={() => alert("Toggle pressed")}
+                    toggleOffLabel="NO"
+                    toggleOnLabel="YES"
+                    disabled={false}
+                  />
+                ),
                 link: "/sprint-1"
               },
               {
@@ -213,7 +264,6 @@ class Sprint1 extends Component<Props, State> {
             ]}
           />
         </>
-
         <Title>List with Header inside FormContainer with statusIcon</Title>
         <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
           <FormContainer
@@ -288,35 +338,6 @@ class Sprint1 extends Component<Props, State> {
           </div>
         </CenteredDiv>
 
-        <Title>LinkList</Title>
-        <>
-          <LinkList
-            list={[
-              {
-                label: "Jan 2020 eStatement",
-                link: "/"
-              },
-              {
-                label: "Dec 2019 eStatement",
-                link: "/sprint-1"
-              },
-              {
-                label: "Nov 2019 eStatement",
-                link: "/sprint-1"
-              },
-              {
-                label: "Oct 2019 eStatement",
-                rightItem: "|Compo|",
-                link: "/sprint-1"
-              },
-              {
-                label: "Sep 2019 eStatement",
-                link: "/sprint-1"
-              }
-            ]}
-          />
-        </>
-
         <Title>List</Title>
 
         <CenteredDiv>
@@ -371,8 +392,94 @@ class Sprint1 extends Component<Props, State> {
             curvedTab={{
               leftTab: "New Recipient",
               rightTab: "Own/Favorite",
-              leftContent: <p>left content</p>,
-              rightContent: <p>right content</p>
+              leftContent: (
+                <div>
+                  <List
+                    header={{
+                      icon: {
+                        name: "LOGO",
+                        color: "#ff2626",
+                        iconText: "Review & Confirm"
+                      }
+                    }}
+                    list={[
+                      {
+                        leftLabel: "To",
+                        rightLabel: "Saving Account A",
+                        details: ["8881019596535 | AmBank"]
+                      },
+                      {
+                        leftLabel: "Amount",
+                        rightLabel: "RM 500.00",
+                        details: ["Fees & Charges: RM 0.00"]
+                      },
+                      {
+                        leftLabel: "Date",
+                        rightLabel: "Transfer Now",
+                        details: ["Today, 5 January 2019"]
+                      },
+                      {
+                        leftLabel: "Reference",
+                        rightLabel: "House Rental"
+                      },
+                      {
+                        leftLabel: "From",
+                        rightLabel: "Savings Account",
+                        details: [
+                          "2998202013",
+                          "Available Balance: RM 10,301.50"
+                        ]
+                      }
+                    ]}
+                  />
+                </div>
+              ),
+              rightContent: (
+                <div>
+                  {" "}
+                  <LinkList
+                    list={[
+                      {
+                        label: "Jan 2020 eStatement",
+                        link: "/"
+                      },
+                      {
+                        label: "Dec 2019 eStatement",
+                        link: "/sprint-1"
+                      },
+                      {
+                        label: "Nov 2019 eStatement",
+                        link: "/sprint-1"
+                      },
+                      {
+                        label: "Oct 2019 eStatement",
+                        rightItem: (
+                          <ToggleButton
+                            value={true}
+                            onTogglePress={() => alert("Toggle pressed")}
+                            toggleOffLabel="NO"
+                            toggleOnLabel="YES"
+                            disabled={false}
+                          />
+                        ),
+                        link: "/sprint-1"
+                      },
+                      {
+                        label: "Sep 2019 eStatement",
+                        link: "/sprint-1"
+                      },
+                      {
+                        label: "Dec 2019 eStatement",
+                        link: "/sprint-1"
+                      },
+                      {
+                        label: "Nov 2019 eStatement",
+                        link: "/sprint-1"
+                      }
+                    ]}
+                  />
+                </div>
+              )
             }}
           />
         </CenteredDiv>
@@ -384,7 +491,7 @@ class Sprint1 extends Component<Props, State> {
               <>
                 <InputField
                   type="text"
-                  clearClickHandler={() => alert("clear cliked")}
+                  clearClickHandler={() => alert("clear clicked")}
                   clearIcon={true}
                   label="input label"
                   icon={{ name: "Account-2" }}
@@ -431,45 +538,99 @@ class Sprint1 extends Component<Props, State> {
 
         <MenuBanner
           content={
-            <List
-              header={{
-                title: "Transfer Successful",
-                subTitle: (
-                  <div style={{ display: "flex" }}>
-                    <p>You have successfully transferred</p>
-                    <p style={{ fontWeight: 700 }}> RM 500.00 </p>
-                    <p> to </p>
-                    <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
-                  </div>
-                )
+            <div
+              style={{
+                paddingLeft: "2rem",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
               }}
-              list={[
-                {
-                  leftLabel: "To",
-                  rightLabel: "Saving Account A",
-                  details: ["8881019596535 | AmBank"]
-                },
-                {
-                  leftLabel: "Amount",
-                  rightLabel: "RM 500.00",
-                  details: ["Fees & Charges: RM 0.00"]
-                },
-                {
-                  leftLabel: "Date",
-                  rightLabel: "Transfer Now",
-                  details: ["Today, 5 January 2019"]
-                },
-                {
-                  leftLabel: "Reference",
-                  rightLabel: "House Rental"
-                },
-                {
-                  leftLabel: "From",
-                  rightLabel: "Savings Account",
-                  details: ["2998202013", "Available Balance: RM 10,301.50"]
-                }
-              ]}
-            />
+            >
+              <CardList
+                list={[
+                  {
+                    cardName: "AmBank World MasterCard",
+                    cardNumber: "2379 4793 4797 7493",
+                    amount: "RM 7,398",
+                    expiryDate: "EXP 12/21",
+                    colorLeft: "#5F73E9",
+                    colorRight: "#131E5B",
+                    active: false,
+                    activeLabel: "ACTIVE",
+                    selected: false
+                  },
+                  {
+                    cardName: "AmBank TRUE VISA (Supp)",
+                    cardNumber: "2379 4793 4797 7493",
+                    amount: "RM 13,356",
+                    expiryDate: "EXP 12/21",
+                    colorLeft: "#798E96",
+                    colorRight: "#31434A",
+                    active: false,
+                    activeLabel: "",
+                    selected: false
+                  },
+                  {
+                    cardName: "AmBank Platinum Card",
+                    cardNumber: "2379 4793 4797 7493",
+                    amount: "RM 50,293",
+                    expiryDate: "EXP 12/21",
+                    cardVendorLogo: UnionPay_logo,
+                    colorLeft: "#6C3F4F",
+                    colorRight: "#3D1A1A",
+                    active: true,
+                    activeLabel: "ACTIVE",
+                    selected: false
+                  },
+                  {
+                    cardName: "AmBank World MasterCard",
+                    cardNumber: "2379 4793 4797 7493",
+                    amount: "RM 7,398",
+                    expiryDate: "EXP 12/21",
+                    colorLeft: "#5F73E9",
+                    colorRight: "#131E5B",
+                    active: false,
+                    activeLabel: "ACTIVE",
+                    selected: false
+                  },
+                  {
+                    cardName: "AmBank TRUE VISA (Supp)",
+                    cardNumber: "2379 4793 4797 7493",
+                    amount: "RM 13,356",
+                    expiryDate: "EXP 12/21",
+                    colorLeft: "#798E96",
+                    colorRight: "#31434A",
+                    active: false,
+                    activeLabel: "",
+                    selected: false
+                  },
+                  {
+                    cardName: "AmBank Platinum Card",
+                    cardNumber: "2379 4793 4797 7493",
+                    amount: "RM 3,897,576",
+                    expiryDate: "EXP 12/21",
+                    cardVendorLogo: UnionPay_logo,
+                    colorLeft: "#989898",
+                    colorRight: "#000000",
+                    active: false,
+                    activeLabel: "",
+                    selected: false
+                  },
+                  {
+                    cardName: "AmBank TRUE VISA (Supp)",
+                    cardNumber: "2379 4793 4797 7493",
+                    amount: "RM 13,356",
+                    expiryDate: "EXP 12/21",
+                    colorLeft: "#798E96",
+                    colorRight: "#31434A",
+                    active: false,
+                    activeLabel: "",
+                    selected: false
+                  }
+                ]}
+                onCardTileClick={item => alert(JSON.stringify(item))}
+              />
+            </div>
           }
           notification={true}
         />
@@ -496,7 +657,7 @@ class Sprint1 extends Component<Props, State> {
         {console.log(this.state.StickyModalOpen)}
         <StickyTimer
           modalIsOpen={StickyModalOpen}
-          expirationTime={35}
+          expirationTime={10}
           text={
             "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
           }
@@ -578,18 +739,18 @@ class Sprint1 extends Component<Props, State> {
         <Title>NavigationButtons</Title>
         <CenteredDiv>
           <NavigationButtons
-            onLeftButtonPress={() => alert('Left Button Clicked')}
-            onRightButtonPress={() => alert('Right Button Clicked')}
+            onLeftButtonPress={() => alert("Left Button Clicked")}
+            onRightButtonPress={() => alert("Right Button Clicked")}
             leftButtonDisable={true}
             rightButtonDisable={false}
-            label={'1 of 5'}
+            label={"1 of 5"}
           />
         </CenteredDiv>
         <Title>ToggleButtons</Title>
         <CenteredDiv>
           <ToggleButton
             value={true}
-            onTogglePress={() => alert('Toggle pressed')}
+            onTogglePress={() => alert("Toggle pressed")}
             toggleOffLabel="NO"
             toggleOnLabel="YES"
             disabled={false}
@@ -600,7 +761,7 @@ class Sprint1 extends Component<Props, State> {
           <SearchBar
             clearClickHandler={() => alert("clear clicked")}
             searchIconClickHandler={() => alert("Search Icon clicked")}
-            placeholder={'Search'}
+            placeholder={"Search"}
             value={this.state.inputValue}
             handleChange={event => {
               this.setState({
@@ -608,19 +769,29 @@ class Sprint1 extends Component<Props, State> {
               });
             }}
             autoFocus={false}
-
             showFilter={true}
             filterOptions={[
-              { label: "Successful", value: "Succesful", selected: true },
-              { label: "Unsuccessful", value: "Unsuccesful", selected: true },
-              { label: "Pending Verification", value: "Pending Verification", selected: false }
+              { label: "Successful", value: "Successful", selected: true },
+              { label: "Unsuccessful", value: "Unsuccessful", selected: true },
+              {
+                label: "Pending Verification",
+                value: "Pending Verification",
+                selected: false
+              }
             ]}
-            onFilterOptionClick={(obj) => alert(JSON.stringify(obj))}
+            onFilterOptionClick={obj => alert(JSON.stringify(obj))}
             selectedFilters={[
-              { label: "Successful", value: "Succesful", closeIconClickHandler: () => alert('clear Succesful') },
-              { label: "Unsuccessful", value: "Unsuccesful", closeIconClickHandler: () => alert('clear Unsuccesful') },
+              {
+                label: "Successful",
+                value: "Successful",
+                closeIconClickHandler: () => alert("clear Successful")
+              },
+              {
+                label: "Unsuccessful",
+                value: "Unsuccessful",
+                closeIconClickHandler: () => alert("clear Unsuccessful")
+              }
             ]}
-
           />
         </CenteredDiv>
         <Title>CardList</Title>
@@ -628,53 +799,53 @@ class Sprint1 extends Component<Props, State> {
           <CardList
             list={[
               {
-                cardName: 'AmBank TRUE VISA (Supp)',
-                cardNumber: '2379 4793 4797 7493',
-                amount: 'RM 13,356',
-                expiryDate: 'EXP 12/21',
-                colorLeft: '#798E96',
-                colorRight: '#31434A',
+                cardName: "AmBank TRUE VISA (Supp)",
+                cardNumber: "2379 4793 4797 7493",
+                amount: "RM 13,356",
+                expiryDate: "EXP 12/21",
+                colorLeft: "#798E96",
+                colorRight: "#31434A",
                 active: false,
-                activeLabel: '',
-                selected: false,
+                activeLabel: "",
+                selected: false
               },
               {
-                cardName: 'AmBank Platinum Card',
-                cardNumber: '2379 4793 4797 7493',
-                amount: 'RM 50,293',
-                expiryDate: 'EXP 12/21',
+                cardName: "AmBank Platinum Card",
+                cardNumber: "2379 4793 4797 7493",
+                amount: "RM 50,293",
+                expiryDate: "EXP 12/21",
                 cardVendorLogo: UnionPay_logo,
-                colorLeft: '#6C3F4F',
-                colorRight: '#3D1A1A',
+                colorLeft: "#6C3F4F",
+                colorRight: "#3D1A1A",
                 active: true,
-                activeLabel: 'ACTIVE',
-                selected: true,
+                activeLabel: "ACTIVE",
+                selected: true
               },
               {
-                cardName: 'AmBank World MasterCard',
-                cardNumber: '2379 4793 4797 7493',
-                amount: 'RM 7,398',
-                expiryDate: 'EXP 12/21',
-                colorLeft: '#5F73E9',
-                colorRight: '#131E5B',
+                cardName: "AmBank World MasterCard",
+                cardNumber: "2379 4793 4797 7493",
+                amount: "RM 7,398",
+                expiryDate: "EXP 12/21",
+                colorLeft: "#5F73E9",
+                colorRight: "#131E5B",
                 active: false,
-                activeLabel: 'ACTIVE',
-                selected: false,
+                activeLabel: "ACTIVE",
+                selected: false
               },
               {
-                cardName: 'AmBank Platinum Card',
-                cardNumber: '2379 4793 4797 7493',
-                amount: 'RM 3,897,576',
-                expiryDate: 'EXP 12/21',
+                cardName: "AmBank Platinum Card",
+                cardNumber: "2379 4793 4797 7493",
+                amount: "RM 3,897,576",
+                expiryDate: "EXP 12/21",
                 cardVendorLogo: UnionPay_logo,
-                colorLeft: '#989898',
-                colorRight: '#000000',
+                colorLeft: "#989898",
+                colorRight: "#000000",
                 active: false,
-                activeLabel: '',
-                selected: false,
+                activeLabel: "",
+                selected: false
               }
             ]}
-            onCardTileClick={(item) => alert(JSON.stringify(item))}
+            onCardTileClick={item => alert(JSON.stringify(item))}
           />
         </CenteredDiv>
         <Title>AccountsList</Title>
@@ -682,37 +853,37 @@ class Sprint1 extends Component<Props, State> {
           <AccountsList
             list={[
               {
-                label1: 'Foreign Current Account',
-                label2: '79429284',
-                amount: 'RM 10,648.50',
+                label1: "Foreign Current Account",
+                label2: "79429284",
+                amount: "RM 10,648.50",
                 selected: false
               },
               {
-                label1: 'Foreign Current Account',
-                label2: '79429284',
-                amount: 'RM 10,648.50',
+                label1: "Foreign Current Account",
+                label2: "79429284",
+                amount: "RM 10,648.50",
                 selected: false
               },
               {
-                label1: 'Foreign Current Account',
-                label2: '79429284',
-                amount: 'RM 10,648.50',
-                defaultLabel: 'DEFAULT',
+                label1: "Foreign Current Account",
+                label2: "79429284",
+                amount: "RM 10,648.50",
+                defaultLabel: "DEFAULT",
                 default: true,
-                statusLabel: 'ACTIVE',
-                statusLabelColor: '#36A03E',
+                statusLabel: "ACTIVE",
+                statusLabelColor: "#36A03E",
                 selected: true
               },
               {
-                label1: 'Foreign Current Account',
-                label2: '79429284',
-                amount: 'RM 10,648.50',
-                statusLabel: 'ACTIVE',
-                statusLabelColor: '#36A03E',
+                label1: "Foreign Current Account",
+                label2: "79429284",
+                amount: "RM 10,648.50",
+                statusLabel: "ACTIVE",
+                statusLabelColor: "#36A03E",
                 selected: false
               }
             ]}
-            onAccountTileClick={(item) => alert(JSON.stringify(item))}
+            onAccountTileClick={item => alert(JSON.stringify(item))}
           />
         </CenteredDiv>
         <Title>secureImage</Title>
@@ -1585,57 +1756,84 @@ class Sprint1 extends Component<Props, State> {
             alert("link clicked");
           }}
         />
-
-        <Dock
-        // list={[
-        //   {
-        //     name: "Health",
-        //     color: "#ffffff",
-        //     backgroundColor: {
-        //       top: "#FFC5A2",
-        //       bottom: "#EA5702"
-        //     },
-        //     text: "Cash Advance"
-        //   },
-        //   {
-        //     name: "Health",
-        //     color: "#ffffff",
-        //     backgroundColor: {
-        //       top: "#FFC5A2",
-        //       bottom: "#EA5702"
-        //     },
-        //     text: "Cash Advance"
-        //   },
-        //   {
-        //     name: "Health",
-        //     color: "#ffffff",
-        //     backgroundColor: {
-        //       top: "#FFC5A2",
-        //       bottom: "#EA5702"
-        //     },
-        //     text: "Cash Advance"
-        //   },
-        //   {
-        //     name: "Health",
-        //     color: "#ffffff",
-        //     backgroundColor: {
-        //       top: "#FFC5A2",
-        //       bottom: "#EA5702"
-        //     },
-        //     text: "Cash Advance"
-        //   },
-        //   {
-        //     name: "Health",
-        //     color: "#ffffff",
-        //     backgroundColor: {
-        //       top: "#FFC5A2",
-        //       bottom: "#EA5702"
-        //     },
-        //     text: "Cash Advance"
-        //   }
-        // ]}
-        />
-
+        <CenteredDiv>
+          <Dock
+            list={[
+              {
+                name: "Health",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#FFC5A2",
+                  bottom: "#EA5702"
+                },
+                text: "Cash Advance"
+              },
+              {
+                name: "Health",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#FFC5A2",
+                  bottom: "#EA5702"
+                },
+                text: "Cash Advance"
+              },
+              {
+                name: "Health",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#FFC5A2",
+                  bottom: "#EA5702"
+                },
+                text: "Cash Advance"
+              },
+              {
+                name: "Health",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#FFC5A2",
+                  bottom: "#EA5702"
+                },
+                text: "Cash Advance"
+              },
+              {
+                name: "Health",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#FFC5A2",
+                  bottom: "#EA5702"
+                },
+                text: "Cash Advance"
+              },
+              {
+                name: "Health",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#FFC5A2",
+                  bottom: "#EA5702"
+                },
+                text: "Cash Advance"
+              },
+              {
+                name: "Health",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#FFC5A2",
+                  bottom: "#EA5702"
+                },
+                text: "Cash Advance"
+              },
+              {
+                name: "Health",
+                color: "#ffffff",
+                backgroundColor: {
+                  top: "#FFC5A2",
+                  bottom: "#EA5702"
+                },
+                text: "Cash Advance"
+              }
+            ]}
+          />
+        </CenteredDiv>
         {/* <AmModal /> */}
       </div>
     );

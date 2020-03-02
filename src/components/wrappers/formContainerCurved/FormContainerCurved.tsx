@@ -41,6 +41,7 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab }) => {
               )}
             </div>
           </div>
+
           <div
             className={classes.FormContainerCurvedSecondCurveWr}
             style={{
@@ -68,6 +69,7 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab }) => {
 
         <div className={classes.FormContainerCurvedRightCurve}></div>
       </div>
+
       <div className={classes.FormContainerCurvedMain}>
         <div className={classes.FormContainerCurvedContent}>
           {!!LeftSelected ? (
