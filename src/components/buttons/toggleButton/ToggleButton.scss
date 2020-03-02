@@ -1,0 +1,18 @@
+@import "../../assets/common/common.scss";
+
+.ToggleButtonContainer {
+  display: flex;
+  flex-direction: row;
+  background: #EAE8E8;
+  cursor: pointer;
+}
+.ToggleButton {
+  width: 2.1875em;
+  height: 1.375em;
+  background: #FF002B;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
