@@ -17,6 +17,7 @@ const Tag: React.FC<Props> = props => {
           <img
             src={!!image ? image.src : images.common.amyIcon}
             className={classes.TagImage}
+            alt={"amy-tag"}
           />
         </div>
 

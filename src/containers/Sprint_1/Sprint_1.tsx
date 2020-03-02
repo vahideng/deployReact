@@ -11,7 +11,7 @@ import AMTabs from "src/components/buttons/tabs/Tabs";
 import FooterLogo from "src/components/stickies/footerLogo/FooterLogo";
 import BannerHero from "src/components/banners/bannerHero/BannerHero";
 import BackButton from "src/components/buttons/backButton/BackButton";
-// import StickyTimer from "src/components/headers/stickyTimer/StickyTimer";
+
 import Profile from "src/components/headers/profile/Profile";
 import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
 import DetailSummary from "src/components/infographic/detailSummary/DetailSummary";
@@ -31,11 +31,22 @@ import DetailList from "src/components/lists/DetailList/DetailList";
 import DetailListMonthly from "src/components/lists/DetailListMonthly/DetailListMonthly";
 import Tooltip from "src/components/tooltip/Tooltip";
 import Navbar from "src/components/headers/navbar/Navbar";
+import VerticalTab from "src/components/verticalTabs/verticalTabs";
 // import TacModal from "src/components/tacModal/tacModal";
 
 import Tag from "src/components/tags/Tag";
 import Dock from "src/components/stickies/dock/Dock";
 import SecureImage from "src/components/secureImage/SecureImage";
+import FormContainer from "src/components/wrappers/formContainer/FormContainer";
+import FormContainerCurved from "src/components/wrappers/formContainerCurved/FormContainerCurved";
+import List from "src/components/lists/list/List";
+import LinkList from "src/components/lists/linkList/LinkList";
+import TacModal from "src/components/modals/tacModal/TacModal";
+import MenuBanner from "src/components/modals/menuBanner/MenuBanner";
+import FloatingButton from "src/components/buttons/floatingButton/FloatingButton";
+import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
+// import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
+import TransactionList from "src/components/transactionList/transactionList";
 // import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 import NavigationButtons from "src/components/buttons/navigationButtons/NavigationButtons";
 import ToggleButton from "src/components/buttons/toggleButton/ToggleButton";
@@ -53,9 +64,12 @@ const Title = styled(B_13_ORANGE_463)`
   border-top: 1px solid #ffa463;
   border-bottom: 1px solid #ffa463;
 `;
+
 const CenteredDiv = styled.div`
   display: flex;
   justify-content: center;
+
+  padding-top: 5rem;
 `;
 const RowDiv = styled.div`
   display: flex;
@@ -63,37 +77,90 @@ const RowDiv = styled.div`
 `;
 interface Props {}
 interface State {
-  isCheckboxChecked: boolean;
+  // isCheckboxChecked: boolean;
   hidden: boolean;
   inputValue: string;
   SelectionTileNum: number;
   SelectionTileNum1: number;
   SelectionTileNum2: number;
   IconButtonsNum: number;
+  TacModalOpen: boolean;
+  StickyModalOpen: boolean;
 }
+
+const dataTransactionList = [
+  {
+    leftLabel: "DoItNow tr DF",
+    middle: {
+      title: "this is saample long data fot testing purposes only",
+      content: [
+        {
+          leftLabel: "this is saample long data fot testing purposes",
+          rightLabel: "16 Augest 1998"
+        },
+        {
+          leftLabel: "DoItNow tr DF",
+          rightLabel: "12 March 2012"
+        }
+      ]
+    },
+    rightLabel: {
+      prefix: "RM",
+      content: "18.00000000000"
+    }
+  },
+  {
+    leftLabel: "doLaterNow tr DF",
+    middle: {
+      title: "this is saample long data fot testing purposes only",
+      content: [
+        {
+          leftLabel: "this is saample long data fot testing purposes",
+          rightLabel: "16 Jul 2020"
+        },
+        {
+          leftLabel: "KhiarShore Sanati",
+          rightLabel: "10 Jul 2018"
+        }
+      ]
+    },
+    rightLabel: {
+      prefix: "RM",
+      content: "38.00"
+    }
+  }
+];
 
 class Sprint1 extends Component<Props, State> {
   state = {
-    isCheckboxChecked: false,
+    // isCheckboxChecked: false,
     hidden: true,
     inputValue: "",
     SelectionTileNum: 2,
     SelectionTileNum1: 0,
     SelectionTileNum2: 3,
-    IconButtonsNum: 1
+    IconButtonsNum: 1,
+    TacModalOpen: false,
+    StickyModalOpen: false
   };
   render() {
     const {
-      isCheckboxChecked,
+      // isCheckboxChecked,
       hidden,
       inputValue,
       SelectionTileNum,
       SelectionTileNum1,
       SelectionTileNum2,
-      IconButtonsNum
+      IconButtonsNum,
+      TacModalOpen,
+      StickyModalOpen
     } = this.state;
     return (
-      <>
+      <div style={{ paddingTop: "4rem" }}>
+        <Title>List with Header inside FormContainer with statusIcon</Title>
+        <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
+          <TransactionList data={dataTransactionList} title="Today" />
+        </CenteredDiv>
         <Navbar
           icon={{ link: "/" }}
           profile={{
@@ -118,22 +185,358 @@ class Sprint1 extends Component<Props, State> {
             }
           ]}
         />
+        <Title>LinkList</Title>
+        <>
+          <LinkList
+            list={[
+              {
+                label: "Jan 2020 eStatement",
+                link: "/"
+              },
+              {
+                label: "Dec 2019 eStatement",
+                link: "/sprint-1"
+              },
+              {
+                label: "Nov 2019 eStatement",
+                link: "/sprint-1"
+              },
+              {
+                label: "Oct 2019 eStatement",
+                rightItem: "|Compo|",
+                link: "/sprint-1"
+              },
+              {
+                label: "Sep 2019 eStatement",
+                link: "/sprint-1"
+              }
+            ]}
+          />
+        </>
 
-        <Title>Security Image</Title>
-        <CenteredDiv>
-          <Title>Security Image</Title>
-
-          {/* <TacModal
-            onButtonClick={() => alert("TAC Submitted")}
-            buttonTitle="Continue"
-            modalIsOpen={true}
-            handleChange={(e: any) => console.log(e.target.value)}
-            label={"TAC verification"}
-            value={""}
-            content="TAC was sent to your registered mobile number (**** 6867). You should receive a TAC within 2 minutes."
-            buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
-          /> */}
+        <Title>List with Header inside FormContainer with statusIcon</Title>
+        <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
+          <FormContainer
+            statusIcon={{
+              backgroundColor: "#eeeeee",
+              icon: "Tick-1",
+              iconColor: { top: "#94EC9B", bottom: "#5BB362" }
+            }}
+            children={
+              <List
+                header={{
+                  title: "Transfer Successful",
+                  subTitle: (
+                    <div style={{ display: "flex" }}>
+                      <p>You have successfully transferred</p>
+                      <p style={{ fontWeight: 700 }}> RM 500.00 </p>
+                      <p> to </p>
+                      <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
+                    </div>
+                  )
+                }}
+                list={[
+                  {
+                    leftLabel: "To",
+                    rightLabel: "Saving Account A",
+                    details: ["8881019596535 | AmBank"]
+                  },
+                  {
+                    leftLabel: "Amount",
+                    rightLabel: "RM 500.00",
+                    details: ["Fees & Charges: RM 0.00"]
+                  },
+                  {
+                    leftLabel: "Date",
+                    rightLabel: "Transfer Now",
+                    details: ["Today, 5 January 2019"]
+                  },
+                  {
+                    leftLabel: "Reference",
+                    rightLabel: "House Rental"
+                  },
+                  {
+                    leftLabel: "From",
+                    rightLabel: "Savings Account",
+                    details: ["2998202013", "Available Balance: RM 10,301.50"]
+                  }
+                ]}
+              />
+            }
+          />
         </CenteredDiv>
+        <Title>FloatingButton</Title>
+        <CenteredDiv>
+          <div
+            style={{
+              backgroundColor: "#f1f1f1",
+              padding: "1rem",
+              display: "inline-block"
+            }}
+          >
+            <FloatingButton />
+          </div>
+
+          <div
+            style={{
+              backgroundColor: "black",
+              padding: "1rem",
+              display: "inline-block"
+            }}
+          >
+            <FloatingButton darkButton={true} />
+          </div>
+        </CenteredDiv>
+
+        <Title>LinkList</Title>
+        <>
+          <LinkList
+            list={[
+              {
+                label: "Jan 2020 eStatement",
+                link: "/"
+              },
+              {
+                label: "Dec 2019 eStatement",
+                link: "/sprint-1"
+              },
+              {
+                label: "Nov 2019 eStatement",
+                link: "/sprint-1"
+              },
+              {
+                label: "Oct 2019 eStatement",
+                rightItem: "|Compo|",
+                link: "/sprint-1"
+              },
+              {
+                label: "Sep 2019 eStatement",
+                link: "/sprint-1"
+              }
+            ]}
+          />
+        </>
+
+        <Title>List</Title>
+
+        <CenteredDiv>
+          <FormContainer
+            children={
+              <List
+                header={{
+                  icon: {
+                    name: "LOGO",
+                    color: "#ff2626",
+                    iconText: "Review & Confirm"
+                  }
+                }}
+                list={[
+                  {
+                    leftLabel: "To",
+                    rightLabel: "Saving Account A",
+                    details: ["8881019596535 | AmBank"]
+                  },
+                  {
+                    leftLabel: "Amount",
+                    rightLabel: "RM 500.00",
+                    details: ["Fees & Charges: RM 0.00"]
+                  },
+                  {
+                    leftLabel: "Date",
+                    rightLabel: "Transfer Now",
+                    details: ["Today, 5 January 2019"]
+                  },
+                  {
+                    leftLabel: "Reference",
+                    rightLabel: "House Rental"
+                  },
+                  {
+                    leftLabel: "From",
+                    rightLabel: "Savings Account",
+                    details: ["2998202013", "Available Balance: RM 10,301.50"]
+                  }
+                ]}
+              />
+            }
+          />
+        </CenteredDiv>
+
+        <Title>FormContainer curvedTab</Title>
+        <CenteredDiv
+          style={{
+            backgroundColor: "#eeeeee"
+          }}
+        >
+          <FormContainerCurved
+            curvedTab={{
+              leftTab: "New Recipient",
+              rightTab: "Own/Favorite",
+              leftContent: <p>left content</p>,
+              rightContent: <p>right content</p>
+            }}
+          />
+        </CenteredDiv>
+        <Title>FormContainer</Title>
+        <CenteredDiv>
+          <FormContainer
+            label={"Select your account/card type"}
+            children={
+              <>
+                <InputField
+                  type="text"
+                  clearClickHandler={() => alert("clear cliked")}
+                  clearIcon={true}
+                  label="input label"
+                  icon={{ name: "Account-2" }}
+                  value={inputValue}
+                  handleChange={event => {
+                    this.setState({
+                      inputValue: event.target.value
+                    });
+                  }}
+                />
+                <p style={{ fontSize: 13 }}>
+                  I have read and agree to the
+                  <a
+                    href="https://www.ambank.com.my/eng/"
+                    style={{
+                      fontSize: 13,
+                      fontWeight: 700,
+                      color: "#ffa463",
+                      paddingRight: 5,
+                      paddingLeft: 5
+                    }}
+                  >
+                    Terms & Conditions
+                  </a>
+                  of AmOnline
+                </p>
+                <InputField
+                  type="text"
+                  clearClickHandler={() => alert("clear clicked")}
+                  clearIcon={true}
+                  label="input label"
+                  icon={{ name: "Account-2" }}
+                  value={inputValue}
+                  handleChange={event => {
+                    this.setState({
+                      inputValue: event.target.value
+                    });
+                  }}
+                />
+              </>
+            }
+          />
+        </CenteredDiv>
+
+        <MenuBanner
+          content={
+            <List
+              header={{
+                title: "Transfer Successful",
+                subTitle: (
+                  <div style={{ display: "flex" }}>
+                    <p>You have successfully transferred</p>
+                    <p style={{ fontWeight: 700 }}> RM 500.00 </p>
+                    <p> to </p>
+                    <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
+                  </div>
+                )
+              }}
+              list={[
+                {
+                  leftLabel: "To",
+                  rightLabel: "Saving Account A",
+                  details: ["8881019596535 | AmBank"]
+                },
+                {
+                  leftLabel: "Amount",
+                  rightLabel: "RM 500.00",
+                  details: ["Fees & Charges: RM 0.00"]
+                },
+                {
+                  leftLabel: "Date",
+                  rightLabel: "Transfer Now",
+                  details: ["Today, 5 January 2019"]
+                },
+                {
+                  leftLabel: "Reference",
+                  rightLabel: "House Rental"
+                },
+                {
+                  leftLabel: "From",
+                  rightLabel: "Savings Account",
+                  details: ["2998202013", "Available Balance: RM 10,301.50"]
+                }
+              ]}
+            />
+          }
+          notification={true}
+        />
+
+        <TacModal
+          onButtonClick={() => alert("TAC Submitted")}
+          buttonTitle="Continue"
+          modalIsOpen={TacModalOpen}
+          handleChange={(e: any) => console.log(e.target.value)}
+          label={"TAC verification"}
+          value={""}
+          content="TAC was sent to your registered mobile number (**** 6867). You should receive a TAC within 2 minutes."
+          buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
+        />
+
+        <PrimaryButton
+          title="Open TacModal"
+          onButtonClick={() => {
+            this.setState({
+              TacModalOpen: true
+            });
+          }}
+        />
+        {console.log(this.state.StickyModalOpen)}
+        <StickyTimer
+          modalIsOpen={StickyModalOpen}
+          expirationTime={35}
+          text={
+            "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
+          }
+        />
+        <PrimaryButton
+          title="Open StickyTimer"
+          onButtonClick={() => {
+            this.setState({
+              StickyModalOpen: true
+            });
+          }}
+        />
+
+        <Title>Vertical tab</Title>
+        <VerticalTab
+          minimize={true}
+          data={[
+            {
+              selected: false,
+              onClick: (index: any) => console.log(index, "indedeede"),
+              icon: {
+                name: "Account-2",
+                color: "#ff2626"
+              },
+              accountTitle: "Service/Current-Account",
+              children: <p> its a first children </p>
+            },
+            {
+              selected: true,
+              onClick: (index: any) => console.log(index, "indedeede"),
+
+              icon: {
+                name: "Account-2",
+                color: "#ff2626"
+              },
+              accountTitle: "onYekii",
+              children: <p> its a second children </p>
+            }
+          ]}
+        />
 
         <Title>Tooltips</Title>
         <CenteredDiv>
@@ -995,15 +1398,15 @@ class Sprint1 extends Component<Props, State> {
 
         <Title>Checkbox</Title>
         <Checkbox
-          testId="testId"
-          isChecked={isCheckboxChecked}
-          name="checkBox"
-          onCheckClick={(event, testId) => {
-            this.setState({
-              isCheckboxChecked: !isCheckboxChecked
-            });
-            alert(`${event.target.checked} ${event.target.name} ${testId}`);
-          }}
+          // testId="testId"
+          // isChecked={isCheckboxChecked}
+          // name="checkBox"
+          // onCheckClick={(event, testId) => {
+          //   this.setState({
+          //     isCheckboxChecked: !isCheckboxChecked
+          //   });
+          //   alert(`${event.target.checked} ${event.target.name} ${testId}`);
+          // }}
           children={
             <div>
               <p style={{ fontSize: 13 }}>
@@ -1125,9 +1528,6 @@ class Sprint1 extends Component<Props, State> {
           }}
         />
 
-        {/* <Title>StickyTimer</Title>
-        <StickyTimer /> */}
-
         <Title>Profile</Title>
         <Profile
           greeting="Good Morning"
@@ -1237,7 +1637,7 @@ class Sprint1 extends Component<Props, State> {
         />
 
         {/* <AmModal /> */}
-      </>
+      </div>
     );
   }
 }

@@ -9,12 +9,6 @@ import TextButton from "src/components/buttons/textButton/TextButton";
 import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTransparent";
 import TextDropdown from "src/components/inputs/checkBox/textDropdown /TextDropdown";
 
-// import AMTabs from "src/components/buttons/tabs/Tabs";
-// import ZeroResult from "src/components/infographic/zeroResault/ZeroResult";
-// import InputField from "src/components/inputs/checkBox/inputFields/InputFields";
-// import FullButton from "src/components/buttons/fullButton/FullButton";
-// import TextButton from "src/components/buttons/textButton/TextButton";
-
 interface Props {}
 
 const Home: React.FC<Props> = () => {

@@ -1,0 +1,44 @@
+@import "../../assets/common/common.scss";
+
+.SelectionTileRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.SelectionTileWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  min-height: 5.31rem;
+  position: relative;
+
+  border-right: 0.37rem solid transparent;
+
+  border-bottom: 1px solid $greyEDE;
+}
+
+.WrapperContent {
+  width: 100%;
+  display: flex;
+  
+  align-items: center;
+}
+
+.Icon{
+ margin: auto;
+}
+.StickToTheRight {
+  height: 100%;
+}
+.SelectionTileTDiv {
+  max-width: 13rem;
+  width: 70%;
+}
+.SelectionTAmount {
+  padding-top: 1rem;
+}
+.SelectionTileTitle {
+  white-space: normal;
+  word-wrap: break-word;
+}

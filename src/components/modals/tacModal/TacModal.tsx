@@ -1,11 +1,10 @@
 import React from "react";
 
 import Modal from "react-modal";
-import classes from "./tacModal.module.css";
 
-import InputField from "../inputs/checkBox/inputFields/InputFields";
-import Paragraphs from "../assets/typography";
-import FullButton from "../../components/buttons/primaryButton/PrimaryButton";
+import InputField from "../../inputs/checkBox/inputFields/InputFields";
+import Paragraphs from "../../assets/typography";
+import FullButton from "../../buttons/primaryButton/PrimaryButton";
 
 const { R_15_GREY444 } = Paragraphs;
 const customStyles = {
@@ -54,11 +53,13 @@ const TacModal: React.FC<Props> = ({
   //     setIsOpen(false);
   //   }
 
+  console.log(modalIsOpen, "modalIsOpenmodalIsOpen");
+
   return (
     <div style={{ margin: "auto" }}>
       {/* <button onClick={openModal}>Open Modal</button> */}
       <Modal
-        overlayClassName={classes.OverLay}
+        // overlayClassName={classes.OverLay}
         isOpen={!!modalIsOpen && modalIsOpen}
         // onAfterOpen={afterOpenModal}
 

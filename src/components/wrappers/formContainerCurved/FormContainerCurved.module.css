@@ -1,0 +1,112 @@
+.FormContainerCurvedMain {
+  width: 52.18rem;
+  -webkit-box-shadow: 1px 1px 1px #dedede, -1px 1px 1px #dedede;
+          box-shadow: 1px 1px 1px #dedede, -1px 1px 1px #dedede;
+  border-radius: 0.7rem;
+  border-top-left-radius: 0;
+  background-color: #ffffff;
+}
+
+.FormContainerCurvedLabel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #474747;
+  height: 3.18rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding-left: 2rem;
+}
+
+.FormContainerCurvedContent {
+  padding: 2rem 0;
+}
+
+.FormContainerCurvedMainCurve {
+  height: 3.18rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #eeeeee;
+}
+
+.FormContainerCurvedLeftCurve {
+  border-top-left-radius: 1rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.FormContainerCurvedRightCurve {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+}
+
+.FormContainerCurvedFirstCurve {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 11rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1.5rem;
+  height: 3.18rem;
+}
+
+.FormContainerCurvedFirstCurveWr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top-left-radius: 1rem;
+}
+
+.FormContainerCurvedSecondCurveWr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top-right-radius: 1.5rem;
+}
+
+.FormContainerCurvedSecondCurve {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 11rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  height: 3.18rem;
+}

@@ -97,6 +97,24 @@ const B_17_BLACK = styled.p`
   font-size: 1.06rem;
   font-weight: 700;
 `;
+const R_17_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-size: 1.06rem;
+  font-weight: 400;
+`;
+const B_18_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-size: 1.12rem;
+  font-weight: 700;
+`;
+const B_24_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-size: 1.5rem;
+  font-weight: 700;
+`;
 
 const B_48_BLACK = styled.p`
   margin: 0;
@@ -170,7 +188,7 @@ const B_13_ORANGE_463 = styled.p`
   font-weight: 700;
   font-size: 0.81rem;
 `;
-const B_13_Red_626 = styled.p`
+const B_13_RED_626 = styled.p`
   margin: 0;
   color: #ff2626;
   font-weight: 700;
@@ -181,13 +199,6 @@ const B_20_BLACK = styled.p`
   margin: 0;
   color: #000000;
   font-size: 1.25rem;
-  font-weight: bold;
-`;
-
-const B_24_BLACK = styled.p`
-  margin: 0;
-  color: #000000;
-  font-size: 1.5rem;
   font-weight: bold;
 `;
 
@@ -210,7 +221,7 @@ export default {
   B_15_GREY969,
   SB_16_GREY444,
   R_17_GREY969,
-  B_13_Red_626,
+  B_13_RED_626,
   B_13_ORANGE_463,
   B_11_GREY393,
   B_11_WHITE,
@@ -219,7 +230,9 @@ export default {
   R_15_GREY444,
   B_17_WHITE,
   SB_11_WHITE,
-  B_20_BLACK,
+  B_18_BLACK,
   B_24_BLACK,
+  R_17_BLACK,
+  B_20_BLACK,
   R_18_GREY444
 };
