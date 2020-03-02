@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import onClickOutside from "react-onclickoutside";
 import Paragraphs from "../../assets/typography";
 import classes from "./SearchBar.module.css";
 import clearIcon from 'src/components/assets/common/clearIcone.svg';
@@ -50,6 +51,10 @@ class SearchBar extends Component<Props, State> {
       filterExpanded: false
     }
   }
+  handleClickOutside = (evt: any) => {
+      evt.preventDefault();
+      this.setState({filterExpanded: false })
+  };
   render() {
     const {
       testId,
@@ -168,4 +173,4 @@ class SearchBar extends Component<Props, State> {
   }
 }
 
-export default SearchBar;
+export default onClickOutside(SearchBar);
