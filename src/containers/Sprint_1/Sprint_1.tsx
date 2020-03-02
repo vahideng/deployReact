@@ -1758,6 +1758,7 @@ class Sprint1 extends Component<Props, State> {
         />
         <CenteredDiv>
           <Dock
+            tagText="How may I help you?"
             list={[
               {
                 name: "Health",

@@ -4,6 +4,7 @@ import Tag from "src/components/tags/Tag";
 import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 
 interface Props {
+  tagText?: string;
   list: {
     name: string;
     color: string;
@@ -15,9 +16,11 @@ interface Props {
 const Dock: React.FC<Props> = props => {
   return (
     <div>
-      <div className={classes.DockTag}>
-        <Tag text="How may I help you?" />
-      </div>
+      {!!props.tagText && (
+        <div className={classes.DockTag}>
+          <Tag text={props.tagText} />
+        </div>
+      )}
       <div className={classes.DockMainDiv}>
         <div className={classes.DockInnerDiv}>
           <ActionButtons list={props.list} />
