@@ -182,7 +182,7 @@ const B_13_ORANGE_463 = styled.p`
   font-weight: 700;
   font-size: 0.81rem;
 `;
-const B_13_Red_626 = styled.p`
+const B_13_RED_626 = styled.p`
   margin: 0;
   color: #ff2626;
   font-weight: 700;
@@ -207,7 +207,7 @@ export default {
   B_15_GREY969,
   SB_16_GREY444,
   R_17_GREY969,
-  B_13_Red_626,
+  B_13_RED_626,
   B_13_ORANGE_463,
   B_11_GREY393,
   B_11_WHITE,

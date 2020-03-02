@@ -46,6 +46,7 @@ import MenuBanner from "src/components/modals/menuBanner/MenuBanner";
 import FloatingButton from "src/components/buttons/floatingButton/FloatingButton";
 import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
 // import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
+import TransactionList from "src/components/transactionList/transactionList";
 // import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -79,6 +80,49 @@ interface State {
   StickyModalOpen: boolean;
 }
 
+const dataTransactionList = [
+  {
+    leftLabel: "DoItNow tr DF",
+    middle: {
+      title: "this is saample long data fot testing purposes only",
+      content: [
+        {
+          leftLabel: "this is saample long data fot testing purposes",
+          rightLabel: "16 Augest 1998"
+        },
+        {
+          leftLabel: "DoItNow tr DF",
+          rightLabel: "12 March 2012"
+        }
+      ]
+    },
+    rightLabel: {
+      prefix: "RM",
+      content: "18.00000000000"
+    }
+  },
+  {
+    leftLabel: "doLaterNow tr DF",
+    middle: {
+      title: "this is saample long data fot testing purposes only",
+      content: [
+        {
+          leftLabel: "this is saample long data fot testing purposes",
+          rightLabel: "16 Jul 2020"
+        },
+        {
+          leftLabel: "KhiarShore Sanati",
+          rightLabel: "10 Jul 2018"
+        }
+      ]
+    },
+    rightLabel: {
+      prefix: "RM",
+      content: "38.00"
+    }
+  }
+];
+
 class Sprint1 extends Component<Props, State> {
   state = {
     // isCheckboxChecked: false,
@@ -105,6 +149,10 @@ class Sprint1 extends Component<Props, State> {
     } = this.state;
     return (
       <div style={{ paddingTop: "4rem" }}>
+        <Title>List with Header inside FormContainer with statusIcon</Title>
+        <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
+          <TransactionList data={dataTransactionList} title="Today" />
+        </CenteredDiv>
         <Navbar
           icon={{ link: "/" }}
           profile={{
@@ -129,6 +177,35 @@ class Sprint1 extends Component<Props, State> {
             }
           ]}
         />
+        <Title>LinkList</Title>
+        <>
+          <LinkList
+            list={[
+              {
+                label: "Jan 2020 eStatement",
+                link: "/"
+              },
+              {
+                label: "Dec 2019 eStatement",
+                link: "/sprint-1"
+              },
+              {
+                label: "Nov 2019 eStatement",
+                link: "/sprint-1"
+              },
+              {
+                label: "Oct 2019 eStatement",
+                rightItem: "|Compo|",
+                link: "/sprint-1"
+              },
+              {
+                label: "Sep 2019 eStatement",
+                link: "/sprint-1"
+              }
+            ]}
+          />
+        </>
+
         <Title>List with Header inside FormContainer with statusIcon</Title>
         <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
           <FormContainer

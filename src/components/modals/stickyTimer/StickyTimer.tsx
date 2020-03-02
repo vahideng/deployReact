@@ -62,7 +62,7 @@ class StickyTimer extends Component<Props, State> {
         >
           <div>
             <div className={classes.StickyTimerTopDiv}>
-              <img src={LocalImages.common.amSecure} />
+              <img src={LocalImages.common.amSecure} alt="amSecure" />
               <div className={classes.StickyTimerExp}>
                 <R_17_BLACK>Transaction will expire in</R_17_BLACK>
                 <B_17_BLACK className={classes.StickyTimerExpTime}>
