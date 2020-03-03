@@ -3,7 +3,7 @@ import Select from "react-select";
 import arrowUp from "../../assets/common/arrowUp.svg";
 import arrowDown from "../../assets/common/arrowDown.svg";
 import classes from "./TextDropdown.module.css";
-import onClickOutside from "react-onclickoutside";
+
 interface Props {
   options: { value: string; label: string }[];
   selectedOption: any;
@@ -123,4 +123,4 @@ class TextDropdown extends Component<Props, State> {
   }
 }
 
-export default onClickOutside(TextDropdown);
+export default TextDropdown;

@@ -27,9 +27,9 @@ class Tooltip extends Component<TooltipProps, State> {
         <div className={classes.tooltip}>
           <div onClick={clickHandler}>
             <Icon
-              icon={!!clicked ? "system-info" : "system-close-grey"}
+              icon={!clicked ? "system-info" : "system-close-grey"}
               color={"#000000"}
-              size={25}
+              size={23}
             />
           </div>
 

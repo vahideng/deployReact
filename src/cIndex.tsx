@@ -51,6 +51,7 @@ import Icon from "./components/assets/icons/icon";
 import LabeledIcon from "./components/assets/icons/labeledIcon/LabeledIcon";
 import StatusIcon from "./components/assets/icons/statusIcon/StatusIcon";
 import Logo from "./components/assets/logo/Logo";
+import TileListView from "./components/lists/TileListView/TileListView";
 
 export {
   BannerHero,
@@ -105,5 +106,6 @@ export {
   Icon,
   Logo,
   LabeledIcon,
-  StatusIcon
+  StatusIcon,
+  TileListView
 };
