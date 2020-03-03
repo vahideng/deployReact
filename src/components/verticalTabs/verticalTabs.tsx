@@ -6,10 +6,11 @@ import classes from "./verticalTab.module.css";
 import "react-tabs/style/react-tabs.css";
 
 interface Props {
+  selectedBorderColor?: string;
   data: any;
   minimize: boolean;
 }
-const verticalTabs: React.FC<Props> = ({ data, minimize }) => (
+const verticalTabs: React.FC<Props> = ({ data, minimize, selectedBorderColor }) => (
   <Tab.Container id="verticalTabs" defaultActiveKey={1}>
     <Row className={classes.WholeWrapper}>
       <Col className={classes.LeftChild} sm={minimize ? 1 : 3}>
@@ -21,6 +22,7 @@ const verticalTabs: React.FC<Props> = ({ data, minimize }) => (
                   <Nav.Link eventKey={index} className={`${classes.NavLink}`}>
                     <VerticalTabs
                       selected={item.selected}
+                      selectedBorderColor={selectedBorderColor}
                       onTileClick={() => item.onClick(index)}
                       icon={{ name: item.icon.name, color: item.icon.color }}
                       accountTitle={`${minimize ? '' : item.accountTitle}`}
