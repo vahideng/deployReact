@@ -56,8 +56,9 @@ import CardList from "src/components/lists/CardList/CardList";
 import TileListView from "src/components/lists/TileListView/TileListView";
 
 import UnionPay_logo from "src/components/assets/common/UnionPay_logo.svg";
+import VisaLogo from "src/components/assets/common/visaLogo.svg";
 
-const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE } = Paragraphs;
+const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE, R_13_BLACK, B_24_BLACK, R_13_GREY444 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
   padding: 5px 0;
@@ -261,7 +262,38 @@ class Sprint1 extends Component<Props, State> {
                 accountNumber: "20717524",
                 statusLabel: "RESTRICTED ACCESS",
                 statusLabelColor: "#FF2626",
-                amount: "RM 0.00"               
+                amount: "RM 0.00"
+              },
+              {
+                cardLogo: VisaLogo,
+                accountName: "AmBank TRUE VISA (Supp)",
+                accountNumber: "5000 0220 5023 5678",
+                statusLabel: "ACTIVE",
+                statusLabelColor: "#36A03E",
+                amount: "RM 5,000"
+              },
+              {
+                icon: 'system-info',
+                iconColor: '#FF2626',
+                iconSize: 20,
+                accountName: "AmBank Advance Card",
+                accountNumber: "3062 2401 2019 5678",
+                statusLabel: "OVERDUE",
+                statusLabelColor: "#FF2626",
+                amount: "RM 50"
+              },
+              {
+                cardLogo: VisaLogo,
+                icon: 'system-info',
+                iconColor: '#FFA463',
+                iconSize: 20,
+                accountName: "AmBank Advance Card",
+                accountNumber: "3062 2401 2019 5678",
+                statusLabel: "ACTIVE",
+                statusLabelColor: "#36A03E",
+                statusLabel2: 'DUE SOON',
+                statusLabel2Color: '#FFA463',
+                amount: "RM 50"
               }
             ]}
             onTileClick={item => alert(JSON.stringify(item))}
@@ -711,32 +743,330 @@ class Sprint1 extends Component<Props, State> {
         />
 
         <Title>Vertical tab</Title>
-        <VerticalTab
-          minimize={true}
-          data={[
-            {
-              selected: false,
-              onClick: (index: any) => console.log(index, "indedeede"),
-              icon: {
-                name: "Account-2",
-                color: "#ff2626"
-              },
-              accountTitle: "Service/Current-Account",
-              children: <p> its a first children </p>
-            },
-            {
-              selected: true,
-              onClick: (index: any) => console.log(index, "indedeede"),
+        <CenteredDiv>
+          <div style={{ minHeight: '41.625em', display: 'flex', width: '57.1875em' }}>
+            <VerticalTab
+              selectedBorderColor="#FD8585"
+              minimize={false}
+              data={[
+                {
+                  selected: false,
+                  onClick: (index: any) => console.log(index, "indedeede"),
+                  icon: {
+                    name: "Account-2",
+                    color: "#ff2626"
+                  },
+                  accountTitle: "Savings/Current Accounts",
+                  children: (
+                    <div style={{ display: 'flex', paddingTop: 30, flexDirection: 'column' }}>
+                      <R_13_BLACK>
+                        Your outstanding
+                      </R_13_BLACK>
+                      <B_24_BLACK>
+                        RM 55,555.00
+                      </B_24_BLACK>
+                      <R_13_BLACK style={{ marginBottom: 16 }}>
+                        5 credit cards
+                      </R_13_BLACK>
+                      <TileListView
+                        list={[
+                          {
+                            accountName: "TRUE Savings Account-i",
+                            accountNumber: "123456890",
+                            statusLabel: "ACTIVE",
+                            statusLabelColor: "#36A03E",
+                            amount: "RM 10,135",
+                          },
+                          {
+                            accountName: "Foreign Currency Account",
+                            accountNumber: "79429284",
+                            statusLabel: "INQUIRY ONLY ALLOWED",
+                            statusLabelColor: "#FF2626",
+                            countryFlagImage: UnionPay_logo,
+                            amount: "AUD 1,392",
+                            equivalentAmount: "RM 4,583",
+                          },
+                          {
+                            accountName: "Conversion Account",
+                            accountNumber: "20717524",
+                            statusLabel: "ACTIVE",
+                            statusLabelColor: "#36A03E",
+                            amount: "- RM 2,000",
+                          },
+                          {
+                            accountName: "Conversion Account",
+                            accountNumber: "20717524",
+                            statusLabel: "RESTRICTED ACCESS",
+                            statusLabelColor: "#FF2626",
+                            amount: "RM 0.00"
+                          },
+                          {
+                            cardLogo: VisaLogo,
+                            accountName: "AmBank TRUE VISA (Supp)",
+                            accountNumber: "5000 0220 5023 5678",
+                            statusLabel: "ACTIVE",
+                            statusLabelColor: "#36A03E",
+                            amount: "RM 5,000"
+                          },
+                          {
+                            icon: 'system-info',
+                            iconColor: '#FF2626',
+                            iconSize: 20,
+                            accountName: "AmBank Advance Card",
+                            accountNumber: "3062 2401 2019 5678",
+                            statusLabel: "OVERDUE",
+                            statusLabelColor: "#FF2626",
+                            amount: "RM 50"
+                          },
+                          {
+                            cardLogo: VisaLogo,
+                            icon: 'system-info',
+                            iconColor: '#FFA463',
+                            iconSize: 20,
+                            accountName: "AmBank Advance Card",
+                            accountNumber: "3062 2401 2019 5678",
+                            statusLabel: "ACTIVE",
+                            statusLabelColor: "#36A03E",
+                            statusLabel2: 'DUE SOON',
+                            statusLabel2Color: '#FFA463',
+                            amount: "RM 50"
+                          }
+                        ]}
+                        onTileClick={item => alert(JSON.stringify(item))}
+                      />
+                    </div>
+                  )
+                },
+                {
+                  selected: true,
+                  onClick: (index: any) => console.log(index, "indedeede"),
 
-              icon: {
-                name: "Account-2",
-                color: "#ff2626"
-              },
-              accountTitle: "onYekii",
-              children: <p> its a second children </p>
-            }
-          ]}
-        />
+                  icon: {
+                    name: "Account-2",
+                    color: "#ff2626"
+                  },
+                  accountTitle: "Credit Cards",
+                  children: (
+                    <div style={{ display: 'flex', paddingTop: 30, flexDirection: 'column' }}>
+                      <R_13_BLACK>
+                        YOUR OUTSTANDING
+                      </R_13_BLACK>
+                      <B_24_BLACK>
+                        RM 55,555.00
+                      </B_24_BLACK>
+                      <R_13_BLACK style={{ marginBottom: 16 }}>
+                        5 credit cards
+                      </R_13_BLACK>
+                      <TileListView
+                        list={[
+                          {
+                            accountName: "TRUE Savings Account-i",
+                            accountNumber: "123456890",
+                            statusLabel: "ACTIVE",
+                            statusLabelColor: "#36A03E",
+                            amount: "RM 10,135",
+                          },
+                          {
+                            accountName: "Foreign Currency Account",
+                            accountNumber: "79429284",
+                            statusLabel: "INQUIRY ONLY ALLOWED",
+                            statusLabelColor: "#FF2626",
+                            countryFlagImage: UnionPay_logo,
+                            amount: "AUD 1,392",
+                            equivalentAmount: "RM 4,583",
+                          },
+                          {
+                            accountName: "Conversion Account",
+                            accountNumber: "20717524",
+                            statusLabel: "ACTIVE",
+                            statusLabelColor: "#36A03E",
+                            amount: "- RM 2,000",
+                          },
+                          {
+                            accountName: "Conversion Account",
+                            accountNumber: "20717524",
+                            statusLabel: "RESTRICTED ACCESS",
+                            statusLabelColor: "#FF2626",
+                            amount: "RM 0.00"
+                          },
+                          {
+                            cardLogo: VisaLogo,
+                            accountName: "AmBank TRUE VISA (Supp)",
+                            accountNumber: "5000 0220 5023 5678",
+                            statusLabel: "ACTIVE",
+                            statusLabelColor: "#36A03E",
+                            amount: "RM 5,000"
+                          },
+                          {
+                            icon: 'system-info',
+                            iconColor: '#FF2626',
+                            iconSize: 20,
+                            accountName: "AmBank Advance Card",
+                            accountNumber: "3062 2401 2019 5678",
+                            statusLabel: "OVERDUE",
+                            statusLabelColor: "#FF2626",
+                            amount: "RM 50"
+                          },
+                          {
+                            cardLogo: VisaLogo,
+                            icon: 'system-info',
+                            iconColor: '#FFA463',
+                            iconSize: 20,
+                            accountName: "AmBank Advance Card",
+                            accountNumber: "3062 2401 2019 5678",
+                            statusLabel: "ACTIVE",
+                            statusLabelColor: "#36A03E",
+                            statusLabel2: 'DUE SOON',
+                            statusLabel2Color: '#FFA463',
+                            amount: "RM 50"
+                          }
+                        ]}
+                        onTileClick={item => alert(JSON.stringify(item))}
+                      />
+                      <R_13_GREY444 style={{marginBottom: 38}}>
+                        *RM Amount is an indicative value and to be considered as reference only
+                      </R_13_GREY444>
+                    </div>
+                  )
+                },
+                {
+                  selected: false,
+                  onClick: (index: any) => console.log(index, "indedeede"),
+
+                  icon: {
+                    name: "Account-2",
+                    color: "#ff2626"
+                  },
+                  accountTitle: "Fixed/Term Deposits",
+                  children: (
+                    <div style={{ display: 'flex', paddingTop: 30, flexDirection: 'column' }}>
+                      <R_13_BLACK>
+                        Your outstanding
+                      </R_13_BLACK>
+                      <B_24_BLACK>
+                        RM 55,555.00
+                      </B_24_BLACK>
+                      <R_13_BLACK style={{ marginBottom: 16 }}>
+                        5 credit cards
+                      </R_13_BLACK>
+                      <TileListView
+                        list={[
+                          {
+                            accountName: "TRUE Savings Account-i",
+                            accountNumber: "123456890",
+                            statusLabel: "ACTIVE",
+                            statusLabelColor: "#36A03E",
+                            amount: "RM 10,135",
+                          },
+                          {
+                            accountName: "Foreign Currency Account",
+                            accountNumber: "79429284",
+                            statusLabel: "INQUIRY ONLY ALLOWED",
+                            statusLabelColor: "#FF2626",
+                            countryFlagImage: UnionPay_logo,
+                            amount: "AUD 1,392",
+                            equivalentAmount: "RM 4,583",
+                          },
+                          {
+                            accountName: "Conversion Account",
+                            accountNumber: "20717524",
+                            statusLabel: "ACTIVE",
+                            statusLabelColor: "#36A03E",
+                            amount: "- RM 2,000",
+                          },
+                          {
+                            accountName: "Conversion Account",
+                            accountNumber: "20717524",
+                            statusLabel: "RESTRICTED ACCESS",
+                            statusLabelColor: "#FF2626",
+                            amount: "RM 0.00"
+                          },
+                          {
+                            cardLogo: VisaLogo,
+                            accountName: "AmBank TRUE VISA (Supp)",
+                            accountNumber: "5000 0220 5023 5678",
+                            statusLabel: "ACTIVE",
+                            statusLabelColor: "#36A03E",
+                            amount: "RM 5,000"
+                          },
+                          {
+                            icon: 'system-info',
+                            iconColor: '#FF2626',
+                            iconSize: 20,
+                            accountName: "AmBank Advance Card",
+                            accountNumber: "3062 2401 2019 5678",
+                            statusLabel: "OVERDUE",
+                            statusLabelColor: "#FF2626",
+                            amount: "RM 50"
+                          },
+                          {
+                            cardLogo: VisaLogo,
+                            icon: 'system-info',
+                            iconColor: '#FFA463',
+                            iconSize: 20,
+                            accountName: "AmBank Advance Card",
+                            accountNumber: "3062 2401 2019 5678",
+                            statusLabel: "ACTIVE",
+                            statusLabelColor: "#36A03E",
+                            statusLabel2: 'DUE SOON',
+                            statusLabel2Color: '#FFA463',
+                            amount: "RM 50"
+                          }
+                        ]}
+                        onTileClick={item => alert(JSON.stringify(item))}
+                      />
+                    </div>
+                  )
+                },
+                {
+                  selected: false,
+                  onClick: (index: any) => console.log(index, "indedeede"),
+
+                  icon: {
+                    name: "Account-2",
+                    color: "#ff2626"
+                  },
+                  accountTitle: "Loans/ Financing",
+                  children: <p> its a second children </p>
+                },
+                {
+                  selected: false,
+                  onClick: (index: any) => console.log(index, "indedeede"),
+
+                  icon: {
+                    name: "Account-2",
+                    color: "#ff2626"
+                  },
+                  accountTitle: "Investment",
+                  children: <p> its a second children </p>
+                },
+                {
+                  selected: false,
+                  onClick: (index: any) => console.log(index, "indedeede"),
+
+                  icon: {
+                    name: "Account-2",
+                    color: "#ff2626"
+                  },
+                  accountTitle: "Insurance",
+                  children: <p> its a second children </p>
+                },
+                {
+                  selected: false,
+                  onClick: (index: any) => console.log(index, "indedeede"),
+
+                  icon: {
+                    name: "Account-2",
+                    color: "#ff2626"
+                  },
+                  accountTitle: "Debit Card",
+                  children: <p> its a second children </p>
+                }
+              ]}
+            />
+          </div>
+        </CenteredDiv>
+
 
         <Title>Tooltips</Title>
         <CenteredDiv>
