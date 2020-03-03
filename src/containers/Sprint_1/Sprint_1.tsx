@@ -53,6 +53,7 @@ import ToggleButton from "src/components/buttons/toggleButton/ToggleButton";
 import SearchBar from "src/components/inputs/searchBar/SearchBar";
 import AccountsList from "src/components/lists/AccountsList/AccountsList";
 import CardList from "src/components/lists/CardList/CardList";
+import TileListView from "src/components/lists/TileListView/TileListView";
 
 import UnionPay_logo from "src/components/assets/common/UnionPay_logo.svg";
 
@@ -75,7 +76,7 @@ const RowDiv = styled.div`
   display: flex;
   flex-direction: "row";
 `;
-interface Props {}
+interface Props { }
 interface State {
   // isCheckboxChecked: boolean;
   hidden: boolean;
@@ -226,6 +227,44 @@ class Sprint1 extends Component<Props, State> {
                 />
               </div>
             }
+          />
+        </CenteredDiv>
+        <Title>TileListView</Title>
+        <CenteredDiv>
+          <TileListView
+            list={[
+              {
+                accountName: "TRUE Savings Account-i",
+                accountNumber: "123456890",
+                statusLabel: "ACTIVE",
+                statusLabelColor: "#36A03E",
+                amount: "RM 10,135",
+              },
+              {
+                accountName: "Foreign Currency Account",
+                accountNumber: "79429284",
+                statusLabel: "INQUIRY ONLY ALLOWED",
+                statusLabelColor: "#FF2626",
+                countryFlagImage: UnionPay_logo,
+                amount: "AUD 1,392",
+                equivalentAmount: "RM 4,583",
+              },
+              {
+                accountName: "Conversion Account",
+                accountNumber: "20717524",
+                statusLabel: "ACTIVE",
+                statusLabelColor: "#36A03E",
+                amount: "- RM 2,000",
+              },
+              {
+                accountName: "Conversion Account",
+                accountNumber: "20717524",
+                statusLabel: "RESTRICTED ACCESS",
+                statusLabelColor: "#FF2626",
+                amount: "RM 0.00"               
+              }
+            ]}
+            onTileClick={item => alert(JSON.stringify(item))}
           />
         </CenteredDiv>
         <Title>LinkList no container</Title>
