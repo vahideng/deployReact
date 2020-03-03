@@ -21,7 +21,7 @@ import Prompt from "./components/infographic/prompt/Prompt";
 import ZeroResult from "./components/infographic/zeroResault/ZeroResult";
 import CheckBox from "./components/inputs/checkBox/CheckBox";
 import InputFields from "./components/inputs/inputFields/InputFields";
-import TextDropdown from "./components/inputs/textDropdown /TextDropdown";
+import TextDropdown from "./components/inputs/texDropdown/TextDropdown";
 import SearchBar from "./components/inputs/searchBar/SearchBar";
 import AccountsList from "./components/lists/AccountsList/AccountsList";
 import CardList from "./components/lists/CardList/CardList";

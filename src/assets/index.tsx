@@ -1,7 +1,10 @@
+import sampleLogo from "./images/duitnow.png";
+import amyIcon from "./images/amyIcon.png";
+
 const images: any = {
   common: {
-    sampleLogo: require("./images/duitnow.png"),
-    amyIcon: require("./images/amyIcon.png")
+    sampleLogo,
+    amyIcon
   }
 };
 

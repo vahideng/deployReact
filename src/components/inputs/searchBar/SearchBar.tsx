@@ -1,14 +1,12 @@
 import React, { Component } from "react";
-import onClickOutside from "react-onclickoutside";
 import Paragraphs from "../../assets/typography";
 import classes from "./SearchBar.module.css";
-import clearIcon from 'src/components/assets/common/clearIcone.svg';
-import searchIcon from 'src/components/assets/common/search.svg';
+import clearIcon from "src/components/assets/common/clearIcone.svg";
+import searchIcon from "src/components/assets/common/search.svg";
 import arrowUp from "src/components/assets/common/arrowUp.svg";
 import arrowDown from "src/components/assets/common/arrowDown.svg";
 import checkmark from "src/components/assets/common/checkmark.svg";
 import closeIconWhite from "src/components/assets/common/closeIconWhite.svg";
-
 
 const { R_13_BLACK } = Paragraphs;
 interface Props {
@@ -34,7 +32,7 @@ interface Props {
   selectedFilters?: {
     label: string;
     value: string | number;
-    closeIconClickHandler: () => void
+    closeIconClickHandler: () => void;
   }[];
 }
 
@@ -49,11 +47,11 @@ class SearchBar extends Component<Props, State> {
     this.state = {
       inputFocused: false,
       filterExpanded: false
-    }
+    };
   }
   handleClickOutside = (evt: any) => {
-      evt.preventDefault();
-      this.setState({filterExpanded: false })
+    evt.preventDefault();
+    this.setState({ filterExpanded: false });
   };
   render() {
     const {
@@ -77,24 +75,29 @@ class SearchBar extends Component<Props, State> {
     return (
       <div className={classes.SearchBar}>
         <div className={classes.SearchBarContainer}>
-
-          {
-            showFilter && (
-              <div className={this.state.filterExpanded ? classes.FilterContainerOpen : classes.FilterContainer}
-                onClick={() =>
-                  this.setState({ filterExpanded: !this.state.filterExpanded })
-                } >
-                <R_13_BLACK style={{ fontWeight: 600, marginRight: 5 }}>Filter</R_13_BLACK>
-                <div>
-                  {this.state.filterExpanded ? (
-                    <img src={arrowUp} alt="arrowUp" />
-                  ) : (
-                      <img src={arrowDown} alt="arrowUp" />
-                    )}
-                </div>
+          {showFilter && (
+            <div
+              className={
+                this.state.filterExpanded
+                  ? classes.FilterContainerOpen
+                  : classes.FilterContainer
+              }
+              onClick={() =>
+                this.setState({ filterExpanded: !this.state.filterExpanded })
+              }
+            >
+              <R_13_BLACK style={{ fontWeight: 600, marginRight: 5 }}>
+                Filter
+              </R_13_BLACK>
+              <div>
+                {this.state.filterExpanded ? (
+                  <img src={arrowUp} alt="arrowUp" />
+                ) : (
+                  <img src={arrowDown} alt="arrowUp" />
+                )}
               </div>
-            )
-          }
+            </div>
+          )}
 
           <input
             className={classes.InputField}
@@ -109,11 +112,8 @@ class SearchBar extends Component<Props, State> {
           />
 
           <div className={classes.IconContainer}>
-            {value !== '' && (
-              <span
-                onClick={clearClickHandler}
-                className={classes.ClearIcon}
-              >
+            {value !== "" && (
+              <span onClick={clearClickHandler} className={classes.ClearIcon}>
                 <img src={clearIcon} alt="clear" />
               </span>
             )}
@@ -124,31 +124,38 @@ class SearchBar extends Component<Props, State> {
               <img src={searchIcon} alt="search" />
             </span>
           </div>
-
         </div>
 
         {this.state.filterExpanded && (
-          <div style={{ position: 'relative' }}>
+          <div style={{ position: "relative" }}>
             <div className={classes.FilterDropdownContainer}>
-              {
-                filterOptions && filterOptions.map((item) =>
-                  <div className={classes.FilterOptionContainer} onClick={()=> onFilterOptionClick && onFilterOptionClick(item)}>
-                    <R_13_BLACK style={{ marginRight: 16 }}>{item.label}</R_13_BLACK>
-                    <span className={classes.FilterOptionSelectedContainer} style={{ opacity: item.selected ? 1 : 0 }}>
+              {filterOptions &&
+                filterOptions.map(item => (
+                  <div
+                    className={classes.FilterOptionContainer}
+                    onClick={() =>
+                      onFilterOptionClick && onFilterOptionClick(item)
+                    }
+                  >
+                    <R_13_BLACK style={{ marginRight: 16 }}>
+                      {item.label}
+                    </R_13_BLACK>
+                    <span
+                      className={classes.FilterOptionSelectedContainer}
+                      style={{ opacity: item.selected ? 1 : 0 }}
+                    >
                       <img src={checkmark} alt="checkmark" />
                     </span>
                   </div>
-                )
-              }
+                ))}
             </div>
           </div>
         )}
 
-        {
-          showFilter &&
+        {showFilter && (
           <div className={classes.SelectedFiltersContainer}>
-            {
-              selectedFilters && selectedFilters.map((item) =>
+            {selectedFilters &&
+              selectedFilters.map(item => (
                 <div className={classes.SelectedFilter}>
                   <div className={classes.SelectedFilterLabel}>
                     <R_13_BLACK>{item.label}</R_13_BLACK>
@@ -160,17 +167,12 @@ class SearchBar extends Component<Props, State> {
                     <img src={closeIconWhite} alt="clear" />
                   </span>
                 </div>
-              )
-            }
-
+              ))}
           </div>
-        }
-
-
-
+        )}
       </div>
     );
   }
 }
 
-export default onClickOutside(SearchBar);
+export default SearchBar;

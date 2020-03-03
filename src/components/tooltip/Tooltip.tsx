@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import classes from "./Tooltip.module.css";
 import "../assets/common.css";
 import Icon from "../assets/icons/icon";
-import ReactTooltip from "react-tooltip";
 
 interface TooltipProps {
   tipChildren?: any;
@@ -21,13 +20,8 @@ class Tooltip extends Component<TooltipProps, State> {
     const { tipChildren } = this.props;
     const clickHandler = () => {
       this.setState({ clicked: !clicked });
-      if (!!clicked) {
-        ReactTooltip.show(fooRef);
-      } else {
-        ReactTooltip.hide(fooRef);
-      }
     };
-    let fooRef: any;
+
     return (
       <>
         <div className={classes.tooltip}>

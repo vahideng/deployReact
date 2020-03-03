@@ -7,7 +7,7 @@ import ZeroResult from "src/components/infographic/zeroResault/ZeroResult";
 import InputField from "src/components/inputs/inputFields/InputFields";
 import TextButton from "src/components/buttons/textButton/TextButton";
 import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTransparent";
-import TextDropdown from "src/components/inputs/textDropdown /TextDropdown";
+import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
 
 interface Props {}
 

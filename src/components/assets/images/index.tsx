@@ -1,6 +1,8 @@
+import amSecure from "./amSecure.png";
+
 const LocalImages: any = {
   common: {
-    amSecure: require("./amSecure.png")
+    amSecure
   }
 };
 
