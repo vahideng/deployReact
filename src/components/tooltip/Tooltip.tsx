@@ -8,15 +8,17 @@ import ReactTooltip from "react-tooltip";
 interface TooltipProps {
   tipChildren?: any;
 }
-interface State {}
+interface State {
+  clicked: boolean;
+}
 
 class Tooltip extends Component<TooltipProps, State> {
   state = {
-    clicked: true
+    clicked: false
   };
   render() {
     const { clicked } = this.state;
-    const { children, tipChildren } = this.props;
+    const { tipChildren } = this.props;
     const clickHandler = () => {
       this.setState({ clicked: !clicked });
       if (!!clicked) {
@@ -27,22 +29,24 @@ class Tooltip extends Component<TooltipProps, State> {
     };
     let fooRef: any;
     return (
-      <div className={classes.TooltipMainDiv}>
-        <p ref={ref => (fooRef = ref)} data-tip={`${children}`}></p>
-
-        <div onClick={clickHandler}>
-          <Icon
-            icon={!!clicked ? "system-info" : "system-close-grey"}
-            color={"#000000"}
-            size={25}
-          />
-        </div>
-        <ReactTooltip place={"left"}>
-          <div className={classes.TooltipContent}>
-            <>{tipChildren}</>
+      <>
+        <div className={classes.tooltip}>
+          <div onClick={clickHandler}>
+            <Icon
+              icon={!!clicked ? "system-info" : "system-close-grey"}
+              color={"#000000"}
+              size={25}
+            />
           </div>
-        </ReactTooltip>
-      </div>
+
+          <div
+            className={classes.TooltipContent}
+            style={{ visibility: !!clicked ? "visible" : "hidden" }}
+          >
+            {tipChildren}
+          </div>
+        </div>
+      </>
     );
   }
 }
