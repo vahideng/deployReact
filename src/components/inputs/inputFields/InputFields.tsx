@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Paragraphs from "../../assets/typography";
 import classes from "./InputField.module.css";
 import Icon from "src/components/assets/icons/icon";
-import clearIcone from 'src/components/assets/common/clearIcone.svg'
+import clearIcone from "src/components/assets/common/clearIcone.svg";
 const { B_13_BLACK } = Paragraphs;
 interface Props {
   testId?: string;
@@ -15,7 +15,7 @@ interface Props {
   onSecureClick?: () => void;
   handleChange: (event: any, testId?: string | undefined) => void;
   clearIcon?: boolean;
-  clearClickHandler ?: () => void;
+  clearClickHandler?: () => void;
 }
 
 class InputField extends Component<Props, {}> {
@@ -64,35 +64,31 @@ class InputField extends Component<Props, {}> {
             }}
           />
           <div className={`${classes.IconContainer}`}>
-          {!!isSecure && !!value && (
-            <span
-              className={classes.InputFieldPassword}
-              onClick={onSecureClick}
-            >
-              <Icon
-                icon={
-                  type === "password" ? "field-close-eye" : "field-open-eye"
-                }
-                color={"#444444"}
-                size={25}
-              />
-            </span>
-          )}
-          {!!clearIcon && (
-            <span
-            onClick = {clearClickHandler}
-              className={classes.InputFieldClear}
-              
-            >
-            <img src={clearIcone} alt="clear"/>
-            </span>
-          )}
-
-
+            {!!isSecure && !!value ? (
+              <span
+                className={classes.InputFieldPassword}
+                onClick={onSecureClick}
+              >
+                <Icon
+                  icon={
+                    type === "password" ? "field-close-eye" : "field-open-eye"
+                  }
+                  color={"#444444"}
+                  size={25}
+                />
+              </span>
+            ) : (
+              <span></span>
+            )}
+            {!!clearIcon && (
+              <span
+                onClick={clearClickHandler}
+                className={classes.InputFieldClear}
+              >
+                <img src={clearIcone} alt="clear" />
+              </span>
+            )}
           </div>
-
-          
-      
         </div>
       </div>
     );

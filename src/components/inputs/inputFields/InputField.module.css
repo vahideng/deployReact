@@ -42,12 +42,22 @@
 }
 
 .IconContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
-  left: -4rem;
+  left: -5rem;
+  width: 4rem;
 }
 
-.InputFieldPassword {
-  padding-right: 2px;
+.InputFieldClear {
+  margin-bottom: 3px;
 }
 
 @media (max-width: 400px) {

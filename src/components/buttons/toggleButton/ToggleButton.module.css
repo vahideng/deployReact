@@ -6,14 +6,14 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background: #EAE8E8;
+  background: #eae8e8;
   cursor: pointer;
 }
 
 .ToggleButton {
   width: 2.1875em;
   height: 1.375em;
-  background: #FF002B;
+  background: #ff002b;
   border-radius: 15px;
   display: -webkit-box;
   display: -ms-flexbox;

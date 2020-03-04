@@ -1,4 +1,4 @@
-@import "../../../assets/common/common.scss";
+@import "./../../assets/common/common.scss";
 
 .InputFieldMain {
   display: flex;
@@ -29,22 +29,16 @@
   padding: 0 0 0.62rem 1rem;
 }
 
-.IconContainer{
-
+.IconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
-
-  left: -4rem;
+  left: -5rem;
+  width: 4rem;
 }
-.InputFieldPassword {
-  padding-right: 2px;
-  // position: relative;
-  // left: -4rem;
-}
-
-.InputFieldClear{
-  // position: relative;
-  // left: -2rem;
-
+.InputFieldClear {
+  margin-bottom: 3px;
 }
 @media (max-width: 400px) {
   .InputFieldIconDiv input {

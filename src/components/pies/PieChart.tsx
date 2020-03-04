@@ -1,6 +1,8 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
-
+import classes from "./PieChart.module.css";
+import Paragraphs from "../assets/typography";
+const { R_13_BLACK } = Paragraphs;
 interface Props {
   pieLabels?: string[];
   pieDataSets: { data: number[]; backgroundColor: string[] };
@@ -8,9 +10,11 @@ interface Props {
 
 const PieChart: React.FC<Props> = ({ pieLabels, pieDataSets }) => {
   return (
-    <div>
-      <div style={{ width: 280 }}>
+    <div className={classes.PieChartMain}>
+      <div className={classes.PieChartDoughnut}>
         <Doughnut
+          width={90}
+          height={90}
           data={{
             labels: pieLabels,
             datasets: [pieDataSets]
@@ -19,19 +23,36 @@ const PieChart: React.FC<Props> = ({ pieLabels, pieDataSets }) => {
             tooltips: { enabled: false },
             hover: { mode: null },
             defaultFontSize: "16px",
-
+            maintainAspectRatio: false,
             legend: {
-              display: true,
-              position: "right",
-              labels: {
-                boxWidth: 13,
-                boxBorderRadius: 7,
-                fontFamily: "Nunito Sans",
-                fontColor: "#000000"
-              }
+              display: false
             }
           }}
         />
+      </div>
+      <div className={classes.PieChartLabelDiv}>
+        <div>
+          {!!pieDataSets &&
+            pieDataSets.backgroundColor.map((bg, index) => {
+              return (
+                <div
+                  className={classes.PieChartLegend}
+                  key={index}
+                  style={{ backgroundColor: bg }}
+                ></div>
+              );
+            })}
+        </div>
+        <div>
+          {!!pieLabels &&
+            pieLabels.map((label, index) => {
+              return (
+                <div className={classes.PieChartLabel}>
+                  <R_13_BLACK key={index}>{label}</R_13_BLACK>
+                </div>
+              );
+            })}
+        </div>
       </div>
     </div>
   );

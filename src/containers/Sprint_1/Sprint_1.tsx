@@ -58,7 +58,14 @@ import TileListView from "src/components/lists/TileListView/TileListView";
 import UnionPay_logo from "src/components/assets/common/UnionPay_logo.svg";
 import VisaLogo from "src/components/assets/common/visaLogo.svg";
 
-const { B_13_ORANGE_463, B_14_WHITE, R_11_WHITE, R_13_BLACK, B_24_BLACK, R_13_GREY444 } = Paragraphs;
+const {
+  B_13_ORANGE_463,
+  B_14_WHITE,
+  R_11_WHITE,
+  R_13_BLACK,
+  B_24_BLACK,
+  R_13_GREY444
+} = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
   padding: 5px 0;
@@ -77,7 +84,7 @@ const RowDiv = styled.div`
   display: flex;
   flex-direction: "row";
 `;
-interface Props { }
+interface Props {}
 interface State {
   isCheckboxChecked: boolean;
   hidden: boolean;
@@ -239,7 +246,7 @@ class Sprint1 extends Component<Props, State> {
                 accountNumber: "123456890",
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
-                amount: "RM 10,135",
+                amount: "RM 10,135"
               },
               {
                 accountName: "Foreign Currency Account",
@@ -248,14 +255,14 @@ class Sprint1 extends Component<Props, State> {
                 statusLabelColor: "#FF2626",
                 countryFlagImage: UnionPay_logo,
                 amount: "AUD 1,392",
-                equivalentAmount: "RM 4,583",
+                equivalentAmount: "RM 4,583"
               },
               {
                 accountName: "Conversion Account",
                 accountNumber: "20717524",
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
-                amount: "- RM 2,000",
+                amount: "- RM 2,000"
               },
               {
                 accountName: "Conversion Account",
@@ -273,8 +280,8 @@ class Sprint1 extends Component<Props, State> {
                 amount: "RM 5,000"
               },
               {
-                icon: 'system-info',
-                iconColor: '#FF2626',
+                icon: "system-info",
+                iconColor: "#FF2626",
                 iconSize: 20,
                 accountName: "AmBank Advance Card",
                 accountNumber: "3062 2401 2019 5678",
@@ -284,15 +291,15 @@ class Sprint1 extends Component<Props, State> {
               },
               {
                 cardLogo: VisaLogo,
-                icon: 'system-info',
-                iconColor: '#FFA463',
+                icon: "system-info",
+                iconColor: "#FFA463",
                 iconSize: 20,
                 accountName: "AmBank Advance Card",
                 accountNumber: "3062 2401 2019 5678",
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
-                statusLabel2: 'DUE SOON',
-                statusLabel2Color: '#FFA463',
+                statusLabel2: "DUE SOON",
+                statusLabel2Color: "#FFA463",
                 amount: "RM 50"
               }
             ]}
@@ -558,8 +565,15 @@ class Sprint1 extends Component<Props, State> {
         <CenteredDiv>
           <FormContainer
             label={"Select your account/card type"}
+            tooltip={
+              <div>
+                <p style={{ color: "#ffffff" }}>
+                  Select your account/card type
+                </p>
+              </div>
+            }
             children={
-              <>
+              <div style={{ padding: "2rem" }}>
                 <InputField
                   type="text"
                   clearClickHandler={() => alert("clear clicked")}
@@ -602,7 +616,7 @@ class Sprint1 extends Component<Props, State> {
                     });
                   }}
                 />
-              </>
+              </div>
             }
           />
         </CenteredDiv>
@@ -744,7 +758,13 @@ class Sprint1 extends Component<Props, State> {
 
         <Title>Vertical tab</Title>
         <CenteredDiv>
-          <div style={{ minHeight: '41.625em', display: 'flex', width: '57.1875em' }}>
+          <div
+            style={{
+              minHeight: "41.625em",
+              display: "flex",
+              width: "57.1875em"
+            }}
+          >
             <VerticalTab
               selectedBorderColor="#FD8585"
               minimize={false}
@@ -758,13 +778,15 @@ class Sprint1 extends Component<Props, State> {
                   },
                   accountTitle: "Savings/Current Accounts",
                   children: (
-                    <div style={{ display: 'flex', paddingTop: 30, flexDirection: 'column' }}>
-                      <R_13_BLACK>
-                        Your outstanding
-                      </R_13_BLACK>
-                      <B_24_BLACK>
-                        RM 55,555.00
-                      </B_24_BLACK>
+                    <div
+                      style={{
+                        display: "flex",
+                        paddingTop: 30,
+                        flexDirection: "column"
+                      }}
+                    >
+                      <R_13_BLACK>Your outstanding</R_13_BLACK>
+                      <B_24_BLACK>RM 55,555.00</B_24_BLACK>
                       <R_13_BLACK style={{ marginBottom: 16 }}>
                         5 credit cards
                       </R_13_BLACK>
@@ -775,7 +797,7 @@ class Sprint1 extends Component<Props, State> {
                             accountNumber: "123456890",
                             statusLabel: "ACTIVE",
                             statusLabelColor: "#36A03E",
-                            amount: "RM 10,135",
+                            amount: "RM 10,135"
                           },
                           {
                             accountName: "Foreign Currency Account",
@@ -784,14 +806,14 @@ class Sprint1 extends Component<Props, State> {
                             statusLabelColor: "#FF2626",
                             countryFlagImage: UnionPay_logo,
                             amount: "AUD 1,392",
-                            equivalentAmount: "RM 4,583",
+                            equivalentAmount: "RM 4,583"
                           },
                           {
                             accountName: "Conversion Account",
                             accountNumber: "20717524",
                             statusLabel: "ACTIVE",
                             statusLabelColor: "#36A03E",
-                            amount: "- RM 2,000",
+                            amount: "- RM 2,000"
                           },
                           {
                             accountName: "Conversion Account",
@@ -809,8 +831,8 @@ class Sprint1 extends Component<Props, State> {
                             amount: "RM 5,000"
                           },
                           {
-                            icon: 'system-info',
-                            iconColor: '#FF2626',
+                            icon: "system-info",
+                            iconColor: "#FF2626",
                             iconSize: 20,
                             accountName: "AmBank Advance Card",
                             accountNumber: "3062 2401 2019 5678",
@@ -820,15 +842,15 @@ class Sprint1 extends Component<Props, State> {
                           },
                           {
                             cardLogo: VisaLogo,
-                            icon: 'system-info',
-                            iconColor: '#FFA463',
+                            icon: "system-info",
+                            iconColor: "#FFA463",
                             iconSize: 20,
                             accountName: "AmBank Advance Card",
                             accountNumber: "3062 2401 2019 5678",
                             statusLabel: "ACTIVE",
                             statusLabelColor: "#36A03E",
-                            statusLabel2: 'DUE SOON',
-                            statusLabel2Color: '#FFA463',
+                            statusLabel2: "DUE SOON",
+                            statusLabel2Color: "#FFA463",
                             amount: "RM 50"
                           }
                         ]}
@@ -847,13 +869,15 @@ class Sprint1 extends Component<Props, State> {
                   },
                   accountTitle: "Credit Cards",
                   children: (
-                    <div style={{ display: 'flex', paddingTop: 30, flexDirection: 'column' }}>
-                      <R_13_BLACK>
-                        YOUR OUTSTANDING
-                      </R_13_BLACK>
-                      <B_24_BLACK>
-                        RM 55,555.00
-                      </B_24_BLACK>
+                    <div
+                      style={{
+                        display: "flex",
+                        paddingTop: 30,
+                        flexDirection: "column"
+                      }}
+                    >
+                      <R_13_BLACK>YOUR OUTSTANDING</R_13_BLACK>
+                      <B_24_BLACK>RM 55,555.00</B_24_BLACK>
                       <R_13_BLACK style={{ marginBottom: 16 }}>
                         5 credit cards
                       </R_13_BLACK>
@@ -864,7 +888,7 @@ class Sprint1 extends Component<Props, State> {
                             accountNumber: "123456890",
                             statusLabel: "ACTIVE",
                             statusLabelColor: "#36A03E",
-                            amount: "RM 10,135",
+                            amount: "RM 10,135"
                           },
                           {
                             accountName: "Foreign Currency Account",
@@ -873,14 +897,14 @@ class Sprint1 extends Component<Props, State> {
                             statusLabelColor: "#FF2626",
                             countryFlagImage: UnionPay_logo,
                             amount: "AUD 1,392",
-                            equivalentAmount: "RM 4,583",
+                            equivalentAmount: "RM 4,583"
                           },
                           {
                             accountName: "Conversion Account",
                             accountNumber: "20717524",
                             statusLabel: "ACTIVE",
                             statusLabelColor: "#36A03E",
-                            amount: "- RM 2,000",
+                            amount: "- RM 2,000"
                           },
                           {
                             accountName: "Conversion Account",
@@ -898,8 +922,8 @@ class Sprint1 extends Component<Props, State> {
                             amount: "RM 5,000"
                           },
                           {
-                            icon: 'system-info',
-                            iconColor: '#FF2626',
+                            icon: "system-info",
+                            iconColor: "#FF2626",
                             iconSize: 20,
                             accountName: "AmBank Advance Card",
                             accountNumber: "3062 2401 2019 5678",
@@ -909,22 +933,23 @@ class Sprint1 extends Component<Props, State> {
                           },
                           {
                             cardLogo: VisaLogo,
-                            icon: 'system-info',
-                            iconColor: '#FFA463',
+                            icon: "system-info",
+                            iconColor: "#FFA463",
                             iconSize: 20,
                             accountName: "AmBank Advance Card",
                             accountNumber: "3062 2401 2019 5678",
                             statusLabel: "ACTIVE",
                             statusLabelColor: "#36A03E",
-                            statusLabel2: 'DUE SOON',
-                            statusLabel2Color: '#FFA463',
+                            statusLabel2: "DUE SOON",
+                            statusLabel2Color: "#FFA463",
                             amount: "RM 50"
                           }
                         ]}
                         onTileClick={item => alert(JSON.stringify(item))}
                       />
-                      <R_13_GREY444 style={{marginBottom: 38}}>
-                        *RM Amount is an indicative value and to be considered as reference only
+                      <R_13_GREY444 style={{ marginBottom: 38 }}>
+                        *RM Amount is an indicative value and to be considered
+                        as reference only
                       </R_13_GREY444>
                     </div>
                   )
@@ -939,13 +964,15 @@ class Sprint1 extends Component<Props, State> {
                   },
                   accountTitle: "Fixed/Term Deposits",
                   children: (
-                    <div style={{ display: 'flex', paddingTop: 30, flexDirection: 'column' }}>
-                      <R_13_BLACK>
-                        Your outstanding
-                      </R_13_BLACK>
-                      <B_24_BLACK>
-                        RM 55,555.00
-                      </B_24_BLACK>
+                    <div
+                      style={{
+                        display: "flex",
+                        paddingTop: 30,
+                        flexDirection: "column"
+                      }}
+                    >
+                      <R_13_BLACK>Your outstanding</R_13_BLACK>
+                      <B_24_BLACK>RM 55,555.00</B_24_BLACK>
                       <R_13_BLACK style={{ marginBottom: 16 }}>
                         5 credit cards
                       </R_13_BLACK>
@@ -956,7 +983,7 @@ class Sprint1 extends Component<Props, State> {
                             accountNumber: "123456890",
                             statusLabel: "ACTIVE",
                             statusLabelColor: "#36A03E",
-                            amount: "RM 10,135",
+                            amount: "RM 10,135"
                           },
                           {
                             accountName: "Foreign Currency Account",
@@ -965,14 +992,14 @@ class Sprint1 extends Component<Props, State> {
                             statusLabelColor: "#FF2626",
                             countryFlagImage: UnionPay_logo,
                             amount: "AUD 1,392",
-                            equivalentAmount: "RM 4,583",
+                            equivalentAmount: "RM 4,583"
                           },
                           {
                             accountName: "Conversion Account",
                             accountNumber: "20717524",
                             statusLabel: "ACTIVE",
                             statusLabelColor: "#36A03E",
-                            amount: "- RM 2,000",
+                            amount: "- RM 2,000"
                           },
                           {
                             accountName: "Conversion Account",
@@ -990,8 +1017,8 @@ class Sprint1 extends Component<Props, State> {
                             amount: "RM 5,000"
                           },
                           {
-                            icon: 'system-info',
-                            iconColor: '#FF2626',
+                            icon: "system-info",
+                            iconColor: "#FF2626",
                             iconSize: 20,
                             accountName: "AmBank Advance Card",
                             accountNumber: "3062 2401 2019 5678",
@@ -1001,15 +1028,15 @@ class Sprint1 extends Component<Props, State> {
                           },
                           {
                             cardLogo: VisaLogo,
-                            icon: 'system-info',
-                            iconColor: '#FFA463',
+                            icon: "system-info",
+                            iconColor: "#FFA463",
                             iconSize: 20,
                             accountName: "AmBank Advance Card",
                             accountNumber: "3062 2401 2019 5678",
                             statusLabel: "ACTIVE",
                             statusLabelColor: "#36A03E",
-                            statusLabel2: 'DUE SOON',
-                            statusLabel2Color: '#FFA463',
+                            statusLabel2: "DUE SOON",
+                            statusLabel2Color: "#FFA463",
                             amount: "RM 50"
                           }
                         ]}
@@ -1067,7 +1094,144 @@ class Sprint1 extends Component<Props, State> {
           </div>
         </CenteredDiv>
 
-
+        <Title>VerticalTab with background image</Title>
+        <CenteredDiv>
+          <VerticalTab
+            selectedBorderColor="#FD8585"
+            minimize={false}
+            data={[
+              {
+                selected: true,
+                onClick: (index: any) => console.log(index, "indedeede"),
+                icon: {
+                  name: "Card",
+                  color: "#ff2626"
+                },
+                accountTitle: "Credit Cards",
+                bgImage: {
+                  background:
+                    "https://images.unsplash.com/photo-1502101872923-d48509bff386?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
+                  title: "INVESTMENT",
+                  subTitle: "Freedom to invest in Unit Trust is now yours"
+                },
+                children: (
+                  <div style={{ padding: "1rem" }}>
+                    <p>
+                      Its hands were holograms that altered to match the
+                      convolutions of the car’s floor. The semiotics of the room
+                      where Case waited. Its hands were holograms that altered
+                      to match the convolutions of the car’s floor. The
+                      semiotics of the room where Case waited. Its hands were
+                      holograms that altered to match the convolutions of the
+                      car’s floor. The semiotics of the room where Case waited.
+                      Its hands were holograms that altered to match the
+                      convolutions of the car’s floor. The semiotics of the room
+                      where Case waited. Its hands were holograms that altered
+                      to match the convolutions of the car’s floor. The
+                      semiotics of the room where Case waited. car’s floor. The
+                      semiotics of the room where Case waited. Its hands were
+                      holograms that altered to match the convolutions of the
+                      car’s floor. The semiotics of the room where Case waited.
+                      Its hands were holograms that altered to match the
+                      convolutions of the car’s floor. The semiotics of the room
+                      where Case waited.
+                    </p>
+                  </div>
+                )
+              },
+              {
+                selected: false,
+                onClick: (index: any) => console.log(index, "indedeede"),
+                icon: {
+                  name: "Account-2",
+                  color: "green"
+                },
+                accountTitle: "Savings/Current Accounts",
+                children: (
+                  <div
+                    style={{
+                      display: "flex",
+                      paddingTop: 30,
+                      flexDirection: "column"
+                    }}
+                  >
+                    <R_13_BLACK>Your outstanding</R_13_BLACK>
+                    <B_24_BLACK>RM 55,555.00</B_24_BLACK>
+                    <R_13_BLACK style={{ marginBottom: 16 }}>
+                      5 credit cards
+                    </R_13_BLACK>
+                    <TileListView
+                      list={[
+                        {
+                          accountName: "TRUE Savings Account-i",
+                          accountNumber: "123456890",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          amount: "RM 10,135"
+                        },
+                        {
+                          accountName: "Foreign Currency Account",
+                          accountNumber: "79429284",
+                          statusLabel: "INQUIRY ONLY ALLOWED",
+                          statusLabelColor: "#FF2626",
+                          countryFlagImage: UnionPay_logo,
+                          amount: "AUD 1,392",
+                          equivalentAmount: "RM 4,583"
+                        },
+                        {
+                          accountName: "Conversion Account",
+                          accountNumber: "20717524",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          amount: "- RM 2,000"
+                        },
+                        {
+                          accountName: "Conversion Account",
+                          accountNumber: "20717524",
+                          statusLabel: "RESTRICTED ACCESS",
+                          statusLabelColor: "#FF2626",
+                          amount: "RM 0.00"
+                        },
+                        {
+                          cardLogo: VisaLogo,
+                          accountName: "AmBank TRUE VISA (Supp)",
+                          accountNumber: "5000 0220 5023 5678",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          amount: "RM 5,000"
+                        },
+                        {
+                          icon: "system-info",
+                          iconColor: "#FF2626",
+                          iconSize: 20,
+                          accountName: "AmBank Advance Card",
+                          accountNumber: "3062 2401 2019 5678",
+                          statusLabel: "OVERDUE",
+                          statusLabelColor: "#FF2626",
+                          amount: "RM 50"
+                        },
+                        {
+                          cardLogo: VisaLogo,
+                          icon: "system-info",
+                          iconColor: "#FFA463",
+                          iconSize: 20,
+                          accountName: "AmBank Advance Card",
+                          accountNumber: "3062 2401 2019 5678",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          statusLabel2: "DUE SOON",
+                          statusLabel2Color: "#FFA463",
+                          amount: "RM 50"
+                        }
+                      ]}
+                      onTileClick={item => alert(JSON.stringify(item))}
+                    />
+                  </div>
+                )
+              }
+            ]}
+          />
+        </CenteredDiv>
         <Title>Tooltips</Title>
         <CenteredDiv>
           <Tooltip
@@ -1746,7 +1910,11 @@ class Sprint1 extends Component<Props, State> {
             console.log(inputValue);
           }}
           isSecure
-          clearClickHandler={() => alert("clear cliked")}
+          clearClickHandler={() => {
+            this.setState({
+              inputValue: ""
+            });
+          }}
           clearIcon={true}
           type={!!hidden ? "password" : "text"}
           label="input label"
@@ -1769,10 +1937,10 @@ class Sprint1 extends Component<Props, State> {
               “Damansara Heights”`}
               />,
               <PieChart
-                pieLabels={["Red", "Green", "Yellow"]}
+                pieLabels={["Fixed Income 60%", "Equity 10%"]}
                 pieDataSets={{
-                  data: [300, 50, 100],
-                  backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"]
+                  data: [60, 10],
+                  backgroundColor: ["#7AB497", "#FFA463"]
                 }}
               />,
               "Contact Us"
@@ -1781,10 +1949,10 @@ class Sprint1 extends Component<Props, State> {
         </CenteredDiv>
         <Title>PieChart</Title>
         <PieChart
-          pieLabels={["Red", "Green", "Yellow"]}
+          pieLabels={["Fixed Income 60%", "Equity 40%"]}
           pieDataSets={{
-            data: [300, 50, 100],
-            backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"]
+            data: [60, 40],
+            backgroundColor: ["#7AB497", "#FFA463"]
           }}
         />
 
