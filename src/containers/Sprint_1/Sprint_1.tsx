@@ -52,6 +52,7 @@ import NavigationButtons from "src/components/buttons/navigationButtons/Navigati
 import ToggleButton from "src/components/buttons/toggleButton/ToggleButton";
 import SearchBar from "src/components/inputs/searchBar/SearchBar";
 import AccountsList from "src/components/lists/AccountsList/AccountsList";
+import TransactionIconList from "src/components/lists/TransactionIconList/TransactionIconList";
 import CardList from "src/components/lists/CardList/CardList";
 import TileListView from "src/components/lists/TileListView/TileListView";
 
@@ -229,6 +230,131 @@ class Sprint1 extends Component<Props, State> {
               </div>
             }
           />
+        </CenteredDiv>
+        <Title>TransactionIconList</Title>
+        <CenteredDiv>
+          <div style={{ width: '57.1875em' }}>
+            <TransactionIconList
+              list={
+                [
+                  {
+                    date: 'Today',
+                    expandedIndexes: [0],
+                    transactions: [
+                      {
+                        icon: 'Transfer',
+                        iconBgColor: 'orange',
+                        iconColor: 'white',
+                        iconSize: 28,
+                        label1: 'TRANSFER TO',
+                        label2: 'SEEN OPTICS ',
+                        statusLabel: 'SUCCESSFUL',
+                        statusLabelColor: '#36A03E',
+                        changeLabel: '-',
+                        changeLabelColor: '#F73C4A',
+                        amount: 'RM 236.78',
+                        actionLabel: 'Repeat',
+                        actionIcon: 'Repeat',
+                        onActionButtonClick: () => alert('Repeat'),
+                        details: [
+                          {
+                            label1: 'From Account',
+                            value1: '15806389266 - Savings Account A',
+                            label2: 'Recipient Reference',
+                            value2: 'May - Rental',
+                            actionLabel: 'Add to Fav',
+                            actionIcon: 'Love',
+                            onActionButtonClick: () => alert('Fav')
+                          },
+                          {
+                            label1: '',
+                            value1: '',
+                            label2: 'Other Details',
+                            value2: '-',
+                            // actionLabel: 'View Receipt',
+                            // actionIcon: ''
+                          }
+                        ]
+                      },
+                      {
+                        icon: 'Transfer',
+                        iconBgColor: 'blue',
+                        iconColor: 'white',
+                        iconSize: 28,
+                        label1: 'TRANSFER TO',
+                        label2: 'SEEN OPTICS ',
+                        statusLabel: 'SUCCESSFUL',
+                        statusLabelColor: '#36A03E',
+                        changeLabel: '-',
+                        changeLabelColor: '#F73C4A',
+                        amount: 'RM 236.78',
+                        actionLabel: 'Repeat',
+                        actionIcon: 'Repeat',
+                        details: [
+                          {
+                            label1: 'From Account',
+                            value1: '15806389266 - Savings Account A',
+                            label2: 'Recipient Reference',
+                            value2: 'May - Rental',
+                            actionLabel: 'Add to Fav',
+                            actionIcon: ''
+                          },
+                          {
+                            label1: '',
+                            value1: '',
+                            label2: 'Other Details',
+                            value2: '-',
+                            actionLabel: 'View Receipt',
+                            actionIcon: ''
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    date: '12 Jan 2020',
+                    expandedIndexes: [],
+                    transactions: [
+                      {
+                        icon: 'Loan',
+                        iconBgColor: 'red',
+                        iconColor: 'white',
+                        iconSize: 28,
+                        label1: 'TRANSFER TO',
+                        label2: 'LOREM IPSUM SIT DOLOR AMET DAMANSARA PERDANA ',
+                        statusLabel: 'SUCCESSFUL',
+                        statusLabelColor: '#36A03E',
+                        changeLabel: '+',
+                        changeLabelColor: '#36A03E',
+                        amount: 'RM 1,236.78',
+                        actionLabel: 'Repeat',
+                        actionIcon: 'Repeat',
+                        details: [
+                          {
+                            label1: 'From Account',
+                            value1: '15806389266 - Savings Account A',
+                            label2: 'Recipient Reference',
+                            value2: 'May - Rental',
+                            actionLabel: 'Add to Fav',
+                            actionIcon: ''
+                          },
+                          {
+                            label1: '',
+                            value1: '',
+                            label2: 'Other Details',
+                            value2: '-',
+                            actionLabel: 'View Receipt',
+                            actionIcon: ''
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+              onTransactionClick={(item, sectionIndex, itemIndex)=> { console.log(item); alert(`${sectionIndex} - ${itemIndex}`); }}
+            />
+          </div>
         </CenteredDiv>
         <Title>TileListView</Title>
         <CenteredDiv>
@@ -923,7 +1049,7 @@ class Sprint1 extends Component<Props, State> {
                         ]}
                         onTileClick={item => alert(JSON.stringify(item))}
                       />
-                      <R_13_GREY444 style={{marginBottom: 38}}>
+                      <R_13_GREY444 style={{ marginBottom: 38 }}>
                         *RM Amount is an indicative value and to be considered as reference only
                       </R_13_GREY444>
                     </div>
