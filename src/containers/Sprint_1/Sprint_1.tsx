@@ -96,6 +96,7 @@ interface State {
   IconButtonsNum: number;
   TacModalOpen: boolean;
   StickyModalOpen: boolean;
+  verticalActiveTab: any;
 }
 
 const dataTransactionList = [
@@ -151,7 +152,8 @@ class Sprint1 extends Component<Props, State> {
     SelectionTileNum2: 3,
     IconButtonsNum: 1,
     TacModalOpen: false,
-    StickyModalOpen: false
+    StickyModalOpen: false,
+    verticalActiveTab: 0
   };
   render() {
     const {
@@ -163,7 +165,8 @@ class Sprint1 extends Component<Props, State> {
       SelectionTileNum2,
       IconButtonsNum,
       TacModalOpen,
-      StickyModalOpen
+      StickyModalOpen,
+      verticalActiveTab
     } = this.state;
     return (
       <div style={{ paddingTop: "4rem" }}>
@@ -896,8 +899,8 @@ class Sprint1 extends Component<Props, State> {
               minimize={false}
               data={[
                 {
-                  selected: false,
-                  onClick: (index: any) => console.log(index, "indedeede"),
+                  selected: verticalActiveTab === 0 ? true : false,
+                  onClick: (index: any) => this.setState({ verticalActiveTab: index }),
                   icon: {
                     name: "Account-2",
                     color: "#ff2626"
@@ -986,9 +989,8 @@ class Sprint1 extends Component<Props, State> {
                   )
                 },
                 {
-                  selected: true,
-                  onClick: (index: any) => console.log(index, "indedeede"),
-
+                  selected: verticalActiveTab === 1 ? true : false,
+                  onClick: (index: any) => this.setState({ verticalActiveTab: index }),
                   icon: {
                     name: "Account-2",
                     color: "#ff2626"
@@ -1081,8 +1083,8 @@ class Sprint1 extends Component<Props, State> {
                   )
                 },
                 {
-                  selected: false,
-                  onClick: (index: any) => console.log(index, "indedeede"),
+                  selected: verticalActiveTab === 2 ? true : false,
+                  onClick: (index: any) => this.setState({ verticalActiveTab: index }),
 
                   icon: {
                     name: "Account-2",
@@ -1172,8 +1174,8 @@ class Sprint1 extends Component<Props, State> {
                   )
                 },
                 {
-                  selected: false,
-                  onClick: (index: any) => console.log(index, "indedeede"),
+                  selected: verticalActiveTab === 3 ? true : false,
+                  onClick: (index: any) => this.setState({ verticalActiveTab: index }),
 
                   icon: {
                     name: "Account-2",
@@ -1183,8 +1185,8 @@ class Sprint1 extends Component<Props, State> {
                   children: <p> its a second children </p>
                 },
                 {
-                  selected: false,
-                  onClick: (index: any) => console.log(index, "indedeede"),
+                  selected: verticalActiveTab === 4 ? true : false,
+                  onClick: (index: any) => this.setState({ verticalActiveTab: index }),
 
                   icon: {
                     name: "Account-2",
@@ -1194,8 +1196,8 @@ class Sprint1 extends Component<Props, State> {
                   children: <p> its a second children </p>
                 },
                 {
-                  selected: false,
-                  onClick: (index: any) => console.log(index, "indedeede"),
+                  selected: verticalActiveTab === 5 ? true : false,
+                  onClick: (index: any) => this.setState({ verticalActiveTab: index }),
 
                   icon: {
                     name: "Account-2",
@@ -1205,8 +1207,8 @@ class Sprint1 extends Component<Props, State> {
                   children: <p> its a second children </p>
                 },
                 {
-                  selected: false,
-                  onClick: (index: any) => console.log(index, "indedeede"),
+                  selected: verticalActiveTab === 6 ? true : false,
+                  onClick: (index: any) => this.setState({ verticalActiveTab: index }),
 
                   icon: {
                     name: "Account-2",
