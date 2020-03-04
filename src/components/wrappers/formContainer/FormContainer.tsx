@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import classes from "./FormContainer.module.css";
 import Paragraphs from "../../assets/typography";
 import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
+import Tooltip from "src/components/tooltip/Tooltip";
 const { B_14_WHITE } = Paragraphs;
 interface Props {
   statusIcon?: {
@@ -15,10 +16,16 @@ interface Props {
     image?: any;
   };
   label?: string;
+  tooltip?: ReactNode;
   children?: ReactNode;
 }
 
-const FormContainer: React.FC<Props> = ({ children, label, statusIcon }) => {
+const FormContainer: React.FC<Props> = ({
+  children,
+  label,
+  statusIcon,
+  tooltip
+}) => {
   return (
     <div
       className={classes.FormContainerMain}
@@ -44,6 +51,11 @@ const FormContainer: React.FC<Props> = ({ children, label, statusIcon }) => {
       {!!label && (
         <div className={classes.FormContainerLabel}>
           <B_14_WHITE>{label}</B_14_WHITE>
+          {!!tooltip && (
+            <span className={classes.FormContainerTooltip}>
+              <Tooltip tipChildren={tooltip} color="#FFFFFF" />
+            </span>
+          )}
         </div>
       )}
 

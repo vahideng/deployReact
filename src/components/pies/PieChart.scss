@@ -1,0 +1,18 @@
+.PieChartMain {
+  display: flex;
+}
+
+.PieChartLabelDiv {
+  display: flex;
+  align-items: center;
+}
+
+.PieChartLabel {
+  margin: 0.7rem 0 0.7rem 0;
+}
+.PieChartLegend {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  margin: 1.3rem;
+}
