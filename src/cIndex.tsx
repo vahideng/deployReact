@@ -41,7 +41,7 @@ import Dock from "./components/stickies/dock/Dock";
 import FooterLogo from "./components/stickies/footerLogo/FooterLogo";
 import Tag from "./components/tags/Tag";
 import Tooltip from "./components/tooltip/Tooltip";
-import TransactionList from "./components/transactionList/TransactionList";
+import TransactionList from "./components/transactionList/FixTransactionList";
 import VerticalTabs from "./components/verticalTabs/VerticalTabs";
 import BackgroundSingle from "./components/wrappers/backgroundSingle/BackgroundSingle";
 import Box from "./components/wrappers/box/Box";
