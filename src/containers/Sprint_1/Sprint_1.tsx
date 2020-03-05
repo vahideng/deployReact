@@ -42,7 +42,7 @@ import TacModal from "src/components/modals/tacModal/TacModal";
 import MenuBanner from "src/components/modals/menuBanner/MenuBanner";
 import FloatingButton from "src/components/buttons/floatingButton/FloatingButton";
 import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
-import TransactionList from "src/components/transactionList/FixTransactionList";
+import TransactionList from "src/components/transactionList/TransactionList";
 // import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 import NavigationButtons from "src/components/buttons/navigationButtons/NavigationButtons";
 import ToggleButton from "src/components/buttons/toggleButton/ToggleButton";
