@@ -7,7 +7,7 @@ import FullButton from "./components/buttons/fullButton/FullButton";
 import IconButtons from "./components/buttons/iconButtons/IconButtons";
 import NavigationButtons from "./components/buttons/navigationButtons/NavigationButtons";
 import PrimaryButton from "./components/buttons/primaryButton/PrimaryButton";
-import Tabs from "./components/buttons/tabs/Tabs";
+import AmTabs from "./components/buttons/tabs/Tabs";
 import TextButton from "./components/buttons/textButton/TextButton";
 import TextButtonList from "./components/buttons/textButtonList/TextButtonList";
 import ToggleButton from "./components/buttons/toggleButton/ToggleButton";
@@ -63,7 +63,7 @@ export {
   IconButtons,
   NavigationButtons,
   PrimaryButton,
-  Tabs,
+  AmTabs,
   TextButton,
   TextButtonList,
   ToggleButton,

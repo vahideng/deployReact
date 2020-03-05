@@ -53,7 +53,7 @@ const TacModal: React.FC<Props> = ({
   //     setIsOpen(false);
   //   }
 
-  console.log(modalIsOpen, "modalIsOpenmodalIsOpen");
+  // console.log(modalIsOpen, "modalIsOpenmodalIsOpen");
 
   return (
     <div style={{ margin: "auto" }}>

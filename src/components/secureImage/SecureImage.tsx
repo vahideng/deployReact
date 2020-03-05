@@ -19,11 +19,10 @@ const SecureImage: React.FC<Props> = props => {
           }}
           className={classes.SecureImageBG}
         ></div>
-        <div>
-          {!!image && (
-            <img src={image} alt="Logo" className={classes.SecureImageImg} />
-          )}
-        </div>
+
+        {!!image && (
+          <img src={image} alt="Logo" className={classes.SecureImageImg} />
+        )}
       </div>
     </div>
   );

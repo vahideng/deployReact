@@ -24,7 +24,6 @@
   display: flex;
   align-items: center;
   background-color: transparent;
-
   height: 100vh;
 }
 .MenuBannerInsideButton {
@@ -43,4 +42,12 @@
   flex: 1;
   margin-left: -17rem;
   width: 100%;
+}
+
+.MenuBannerNotify {
+  margin: 0 0 -0.3rem 1.3rem;
+}
+.MenuBannerNotifyIn {
+  position: absolute;
+  left: 2.6rem;
 }

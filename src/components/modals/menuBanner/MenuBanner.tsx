@@ -3,7 +3,7 @@ import React, { useState, ReactNode } from "react";
 import Modal from "react-modal";
 import classes from "./MenuBanner.module.css";
 import Icon from "src/components/assets/icons/icon";
-
+import { Notify } from "../../assets/common/notification";
 const customStyles = {
   content: {
     top: "0",
@@ -22,15 +22,11 @@ interface Props {
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 
-const MenuBanner: React.FC<Props> = ({ content }) => {
+const MenuBanner: React.FC<Props> = ({ content, notification }) => {
   const [isModalIsOpen, setIsModalIsOpen] = useState(false);
   return (
     <div>
-      <Modal
-        isOpen={isModalIsOpen}
-        style={customStyles}
-        // contentLabel="Example Modal"
-      >
+      <Modal isOpen={isModalIsOpen} style={customStyles}>
         <div className={classes.MenuBannerMainDiv}>
           <div className={classes.MenuBannerInsideButtonDiv}>
             <div
@@ -39,7 +35,13 @@ const MenuBanner: React.FC<Props> = ({ content }) => {
                 setIsModalIsOpen(!isModalIsOpen);
               }}
             >
-              <Icon icon="Vector" size={20} />
+              <span>
+                {!!notification && (
+                  <Notify className={classes.MenuBannerNotifyIn} />
+                )}
+
+                <Icon icon="Vector" size={20} />
+              </span>
             </div>
           </div>
           <div className={classes.MenuBannerContentDiv}>{content}</div>
@@ -51,6 +53,8 @@ const MenuBanner: React.FC<Props> = ({ content }) => {
           setIsModalIsOpen(!isModalIsOpen);
         }}
       >
+        {!!notification && <Notify className={classes.MenuBannerNotify} />}
+
         <div>
           <Icon icon="Vector" size={20} />
         </div>

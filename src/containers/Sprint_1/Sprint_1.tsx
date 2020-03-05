@@ -11,7 +11,6 @@ import AMTabs from "src/components/buttons/tabs/Tabs";
 import FooterLogo from "src/components/stickies/footerLogo/FooterLogo";
 import BannerHero from "src/components/banners/bannerHero/BannerHero";
 import BackButton from "src/components/buttons/backButton/BackButton";
-
 import Profile from "src/components/headers/profile/Profile";
 import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
 import DetailSummary from "src/components/infographic/detailSummary/DetailSummary";
@@ -32,8 +31,6 @@ import DetailListMonthly from "src/components/lists/DetailListMonthly/DetailList
 import Tooltip from "src/components/tooltip/Tooltip";
 import Navbar from "src/components/headers/navbar/Navbar";
 import VerticalTab from "src/components/verticalTabs/verticalTabs";
-// import TacModal from "src/components/tacModal/tacModal";
-
 import Tag from "src/components/tags/Tag";
 import Dock from "src/components/stickies/dock/Dock";
 import SecureImage from "src/components/secureImage/SecureImage";
@@ -45,7 +42,6 @@ import TacModal from "src/components/modals/tacModal/TacModal";
 import MenuBanner from "src/components/modals/menuBanner/MenuBanner";
 import FloatingButton from "src/components/buttons/floatingButton/FloatingButton";
 import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
-// import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
 import TransactionList from "src/components/transactionList/transactionList";
 // import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 import NavigationButtons from "src/components/buttons/navigationButtons/NavigationButtons";
@@ -55,7 +51,6 @@ import AccountsList from "src/components/lists/AccountsList/AccountsList";
 import TransactionIconList from "src/components/lists/TransactionIconList/TransactionIconList";
 import CardList from "src/components/lists/CardList/CardList";
 import TileListView from "src/components/lists/TileListView/TileListView";
-
 import UnionPay_logo from "src/components/assets/common/UnionPay_logo.svg";
 import VisaLogo from "src/components/assets/common/visaLogo.svg";
 
@@ -169,7 +164,12 @@ class Sprint1 extends Component<Props, State> {
       verticalActiveTab
     } = this.state;
     return (
-      <div style={{ paddingTop: "4rem" }}>
+      <div
+        style={{ paddingTop: "4rem" }}
+        onScroll={() => {
+          console.log("scrolling");
+        }}
+      >
         <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
           <TransactionList data={dataTransactionList} title="Today" />
@@ -243,126 +243,127 @@ class Sprint1 extends Component<Props, State> {
         </CenteredDiv>
         <Title>TransactionIconList</Title>
         <CenteredDiv>
-          <div style={{ width: '57.1875em' }}>
+          <div style={{ width: "57.1875em" }}>
             <TransactionIconList
-              list={
-                [
-                  {
-                    date: 'Today',
-                    expandedIndexes: [0],
-                    transactions: [
-                      {
-                        icon: 'Transfer',
-                        iconBgColor: 'orange',
-                        iconColor: 'white',
-                        iconSize: 28,
-                        label1: 'TRANSFER TO',
-                        label2: 'SEEN OPTICS ',
-                        statusLabel: 'SUCCESSFUL',
-                        statusLabelColor: '#36A03E',
-                        changeLabel: '-',
-                        changeLabelColor: '#F73C4A',
-                        amount: 'RM 236.78',
-                        actionLabel: 'Repeat',
-                        actionIcon: 'Repeat',
-                        onActionButtonClick: () => alert('Repeat'),
-                        details: [
-                          {
-                            label1: 'From Account',
-                            value1: '15806389266 - Savings Account A',
-                            label2: 'Recipient Reference',
-                            value2: 'May - Rental',
-                            actionLabel: 'Add to Fav',
-                            actionIcon: 'Love',
-                            onActionButtonClick: () => alert('Fav')
-                          },
-                          {
-                            label1: '',
-                            value1: '',
-                            label2: 'Other Details',
-                            value2: '-',
-                            // actionLabel: 'View Receipt',
-                            // actionIcon: ''
-                          }
-                        ]
-                      },
-                      {
-                        icon: 'Transfer',
-                        iconBgColor: 'blue',
-                        iconColor: 'white',
-                        iconSize: 28,
-                        label1: 'TRANSFER TO',
-                        label2: 'SEEN OPTICS ',
-                        statusLabel: 'SUCCESSFUL',
-                        statusLabelColor: '#36A03E',
-                        changeLabel: '-',
-                        changeLabelColor: '#F73C4A',
-                        amount: 'RM 236.78',
-                        actionLabel: 'Repeat',
-                        actionIcon: 'Repeat',
-                        details: [
-                          {
-                            label1: 'From Account',
-                            value1: '15806389266 - Savings Account A',
-                            label2: 'Recipient Reference',
-                            value2: 'May - Rental',
-                            actionLabel: 'Add to Fav',
-                            actionIcon: ''
-                          },
-                          {
-                            label1: '',
-                            value1: '',
-                            label2: 'Other Details',
-                            value2: '-',
-                            actionLabel: 'View Receipt',
-                            actionIcon: ''
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    date: '12 Jan 2020',
-                    expandedIndexes: [],
-                    transactions: [
-                      {
-                        icon: 'Loan',
-                        iconBgColor: 'red',
-                        iconColor: 'white',
-                        iconSize: 28,
-                        label1: 'TRANSFER TO',
-                        label2: 'LOREM IPSUM SIT DOLOR AMET DAMANSARA PERDANA ',
-                        statusLabel: 'SUCCESSFUL',
-                        statusLabelColor: '#36A03E',
-                        changeLabel: '+',
-                        changeLabelColor: '#36A03E',
-                        amount: 'RM 1,236.78',
-                        actionLabel: 'Repeat',
-                        actionIcon: 'Repeat',
-                        details: [
-                          {
-                            label1: 'From Account',
-                            value1: '15806389266 - Savings Account A',
-                            label2: 'Recipient Reference',
-                            value2: 'May - Rental',
-                            actionLabel: 'Add to Fav',
-                            actionIcon: ''
-                          },
-                          {
-                            label1: '',
-                            value1: '',
-                            label2: 'Other Details',
-                            value2: '-',
-                            actionLabel: 'View Receipt',
-                            actionIcon: ''
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-              onTransactionClick={(item, sectionIndex, itemIndex)=> { console.log(item); alert(`${sectionIndex} - ${itemIndex}`); }}
+              list={[
+                {
+                  date: "Today",
+                  expandedIndexes: [0],
+                  transactions: [
+                    {
+                      icon: "Transfer",
+                      iconBgColor: "orange",
+                      iconColor: "white",
+                      iconSize: 28,
+                      label1: "TRANSFER TO",
+                      label2: "SEEN OPTICS ",
+                      statusLabel: "SUCCESSFUL",
+                      statusLabelColor: "#36A03E",
+                      changeLabel: "-",
+                      changeLabelColor: "#F73C4A",
+                      amount: "RM 236.78",
+                      actionLabel: "Repeat",
+                      actionIcon: "Repeat",
+                      onActionButtonClick: () => alert("Repeat"),
+                      details: [
+                        {
+                          label1: "From Account",
+                          value1: "15806389266 - Savings Account A",
+                          label2: "Recipient Reference",
+                          value2: "May - Rental",
+                          actionLabel: "Add to Fav",
+                          actionIcon: "Love",
+                          onActionButtonClick: () => alert("Fav")
+                        },
+                        {
+                          label1: "",
+                          value1: "",
+                          label2: "Other Details",
+                          value2: "-"
+                          // actionLabel: 'View Receipt',
+                          // actionIcon: ''
+                        }
+                      ]
+                    },
+                    {
+                      icon: "Transfer",
+                      iconBgColor: "blue",
+                      iconColor: "white",
+                      iconSize: 28,
+                      label1: "TRANSFER TO",
+                      label2: "SEEN OPTICS ",
+                      statusLabel: "SUCCESSFUL",
+                      statusLabelColor: "#36A03E",
+                      changeLabel: "-",
+                      changeLabelColor: "#F73C4A",
+                      amount: "RM 236.78",
+                      actionLabel: "Repeat",
+                      actionIcon: "Repeat",
+                      details: [
+                        {
+                          label1: "From Account",
+                          value1: "15806389266 - Savings Account A",
+                          label2: "Recipient Reference",
+                          value2: "May - Rental",
+                          actionLabel: "Add to Fav",
+                          actionIcon: ""
+                        },
+                        {
+                          label1: "",
+                          value1: "",
+                          label2: "Other Details",
+                          value2: "-",
+                          actionLabel: "View Receipt",
+                          actionIcon: ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  date: "12 Jan 2020",
+                  expandedIndexes: [],
+                  transactions: [
+                    {
+                      icon: "Loan",
+                      iconBgColor: "red",
+                      iconColor: "white",
+                      iconSize: 28,
+                      label1: "TRANSFER TO",
+                      label2: "LOREM IPSUM SIT DOLOR AMET DAMANSARA PERDANA ",
+                      statusLabel: "SUCCESSFUL",
+                      statusLabelColor: "#36A03E",
+                      changeLabel: "+",
+                      changeLabelColor: "#36A03E",
+                      amount: "RM 1,236.78",
+                      actionLabel: "Repeat",
+                      actionIcon: "Repeat",
+                      details: [
+                        {
+                          label1: "From Account",
+                          value1: "15806389266 - Savings Account A",
+                          label2: "Recipient Reference",
+                          value2: "May - Rental",
+                          actionLabel: "Add to Fav",
+                          actionIcon: ""
+                        },
+                        {
+                          label1: "",
+                          value1: "",
+                          label2: "Other Details",
+                          value2: "-",
+                          actionLabel: "View Receipt",
+                          actionIcon: ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]}
+              onTransactionClick={(item, sectionIndex, itemIndex) => {
+                alert(item);
+                alert(`${sectionIndex} - ${itemIndex}`);
+              }}
             />
           </div>
         </CenteredDiv>
@@ -853,7 +854,7 @@ class Sprint1 extends Component<Props, State> {
           onButtonClick={() => alert("TAC Submitted")}
           buttonTitle="Continue"
           modalIsOpen={TacModalOpen}
-          handleChange={(e: any) => console.log(e.target.value)}
+          handleChange={(e: any) => alert(e.target.value)}
           label={"TAC verification"}
           value={""}
           content="TAC was sent to your registered mobile number (**** 6867). You should receive a TAC within 2 minutes."
@@ -868,7 +869,7 @@ class Sprint1 extends Component<Props, State> {
             });
           }}
         />
-        {console.log(this.state.StickyModalOpen)}
+        {/* {console.log(this.state.StickyModalOpen)} */}
         <StickyTimer
           modalIsOpen={StickyModalOpen}
           expirationTime={10}
@@ -900,7 +901,8 @@ class Sprint1 extends Component<Props, State> {
               data={[
                 {
                   selected: verticalActiveTab === 0 ? true : false,
-                  onClick: (index: any) => this.setState({ verticalActiveTab: index }),
+                  onClick: (index: any) =>
+                    this.setState({ verticalActiveTab: index }),
                   icon: {
                     name: "Account-2",
                     color: "#ff2626"
@@ -990,7 +992,8 @@ class Sprint1 extends Component<Props, State> {
                 },
                 {
                   selected: verticalActiveTab === 1 ? true : false,
-                  onClick: (index: any) => this.setState({ verticalActiveTab: index }),
+                  onClick: (index: any) =>
+                    this.setState({ verticalActiveTab: index }),
                   icon: {
                     name: "Account-2",
                     color: "#ff2626"
@@ -1084,7 +1087,8 @@ class Sprint1 extends Component<Props, State> {
                 },
                 {
                   selected: verticalActiveTab === 2 ? true : false,
-                  onClick: (index: any) => this.setState({ verticalActiveTab: index }),
+                  onClick: (index: any) =>
+                    this.setState({ verticalActiveTab: index }),
 
                   icon: {
                     name: "Account-2",
@@ -1175,7 +1179,8 @@ class Sprint1 extends Component<Props, State> {
                 },
                 {
                   selected: verticalActiveTab === 3 ? true : false,
-                  onClick: (index: any) => this.setState({ verticalActiveTab: index }),
+                  onClick: (index: any) =>
+                    this.setState({ verticalActiveTab: index }),
 
                   icon: {
                     name: "Account-2",
@@ -1186,7 +1191,8 @@ class Sprint1 extends Component<Props, State> {
                 },
                 {
                   selected: verticalActiveTab === 4 ? true : false,
-                  onClick: (index: any) => this.setState({ verticalActiveTab: index }),
+                  onClick: (index: any) =>
+                    this.setState({ verticalActiveTab: index }),
 
                   icon: {
                     name: "Account-2",
@@ -1197,7 +1203,8 @@ class Sprint1 extends Component<Props, State> {
                 },
                 {
                   selected: verticalActiveTab === 5 ? true : false,
-                  onClick: (index: any) => this.setState({ verticalActiveTab: index }),
+                  onClick: (index: any) =>
+                    this.setState({ verticalActiveTab: index }),
 
                   icon: {
                     name: "Account-2",
@@ -1208,7 +1215,8 @@ class Sprint1 extends Component<Props, State> {
                 },
                 {
                   selected: verticalActiveTab === 6 ? true : false,
-                  onClick: (index: any) => this.setState({ verticalActiveTab: index }),
+                  onClick: (index: any) =>
+                    this.setState({ verticalActiveTab: index }),
 
                   icon: {
                     name: "Account-2",
@@ -1230,7 +1238,7 @@ class Sprint1 extends Component<Props, State> {
             data={[
               {
                 selected: true,
-                onClick: (index: any) => console.log(index, "indedeede"),
+                onClick: (index: any) => alert(index),
                 icon: {
                   name: "Card",
                   color: "#ff2626"
@@ -1269,7 +1277,7 @@ class Sprint1 extends Component<Props, State> {
               },
               {
                 selected: false,
-                onClick: (index: any) => console.log(index, "indedeede"),
+                onClick: (index: any) => alert(index),
                 icon: {
                   name: "Account-2",
                   color: "green"
@@ -1548,14 +1556,14 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
         <Title>secureImage</Title>
-        <CenteredDiv>
+        <>
           <SecureImage
             label="Hi Adam3011, is this your security image?"
             image={
               "https://images.unsplash.com/photo-1520167112707-56e25f2d7d6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
             }
           />
-        </CenteredDiv>
+        </>
         <Title>Tags</Title>
         <Tag
           text="How may I help you?"
@@ -2035,7 +2043,7 @@ class Sprint1 extends Component<Props, State> {
             this.setState({
               inputValue: event.target.value
             });
-            console.log(inputValue);
+            // console.log(inputValue);
           }}
           isSecure
           clearClickHandler={() => {
@@ -2553,7 +2561,6 @@ class Sprint1 extends Component<Props, State> {
             ]}
           />
         </CenteredDiv>
-        {/* <AmModal /> */}
       </div>
     );
   }
