@@ -30,7 +30,7 @@ import DetailList from "src/components/lists/DetailList/DetailList";
 import DetailListMonthly from "src/components/lists/DetailListMonthly/DetailListMonthly";
 import Tooltip from "src/components/tooltip/Tooltip";
 import Navbar from "src/components/headers/navbar/Navbar";
-import VerticalTab from "src/components/verticalTabs/verticalTabs";
+import VerticalTab from "src/components/verticalTabs/VerticalTabs";
 import Tag from "src/components/tags/Tag";
 import Dock from "src/components/stickies/dock/Dock";
 import SecureImage from "src/components/secureImage/SecureImage";
@@ -42,7 +42,7 @@ import TacModal from "src/components/modals/tacModal/TacModal";
 import MenuBanner from "src/components/modals/menuBanner/MenuBanner";
 import FloatingButton from "src/components/buttons/floatingButton/FloatingButton";
 import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
-import TransactionList from "src/components/transactionList/transactionList";
+import TransactionList from "src/components/transactionList/TransactionList";
 // import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 import NavigationButtons from "src/components/buttons/navigationButtons/NavigationButtons";
 import ToggleButton from "src/components/buttons/toggleButton/ToggleButton";
@@ -164,12 +164,7 @@ class Sprint1 extends Component<Props, State> {
       verticalActiveTab
     } = this.state;
     return (
-      <div
-        style={{ paddingTop: "4rem" }}
-        onScroll={() => {
-          console.log("scrolling");
-        }}
-      >
+      <div style={{ paddingTop: "4rem" }}>
         <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
           <TransactionList data={dataTransactionList} title="Today" />
@@ -752,6 +747,7 @@ class Sprint1 extends Component<Props, State> {
         </CenteredDiv>
 
         <MenuBanner
+          notification={true}
           content={
             <div
               style={{
@@ -847,7 +843,6 @@ class Sprint1 extends Component<Props, State> {
               />
             </div>
           }
-          notification={true}
         />
 
         <TacModal

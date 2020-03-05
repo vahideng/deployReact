@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Accordion, useAccordionToggle, Col } from "react-bootstrap";
 
-import classes from "./transactionList.module.css";
+import classes from "./TransactionList.module.css";
 import "react-tabs/style/react-tabs.css";
 import arrowUp from "../../components/assets/common/arrowUp.svg";
 import arrowDown from "../../components/assets/common/arrowDown.svg";
@@ -35,7 +35,7 @@ const CustomToggle: React.FC<Props> = ({ eventKey, content }) => {
   );
 };
 
-const transactionList: React.FC<Props> = ({ title, data }) => {
+const TransactionList: React.FC<Props> = ({ title, data }) => {
   return (
     <Card className={classes.ContainerWhole}>
       <Card.Header className={classes.CardHeader}>{title}</Card.Header>
@@ -61,7 +61,7 @@ const transactionList: React.FC<Props> = ({ title, data }) => {
                     <Col style={{ paddingLeft: 0 }} md={3}>
                       <div
                         style={{ whiteSpace: "nowrap", float: "right" }}
-                        className="p-2 "
+                        className="p-2"
                       >
                         <span style={{ color: "#FF2222" }}> - </span>{" "}
                         <span style={{ paddingRight: "4px" }}>
@@ -85,7 +85,7 @@ const transactionList: React.FC<Props> = ({ title, data }) => {
                           <div className={classes.RightBody}>
                             <div
                               style={{ whiteSpace: "nowrap" }}
-                              className="p-2 "
+                              className="p-2"
                             >
                               {item.rightLabel}
                             </div>
@@ -102,4 +102,4 @@ const transactionList: React.FC<Props> = ({ title, data }) => {
     </Card>
   );
 };
-export default transactionList;
+export default TransactionList;

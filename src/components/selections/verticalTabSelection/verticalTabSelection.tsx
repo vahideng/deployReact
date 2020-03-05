@@ -23,12 +23,20 @@ const VerticalTabSelection: React.FC<Props> = ({
     <div
       onClick={onTileClick}
       className={classes.SelectionTileWrapper}
-      style={selected ? { borderRightColor: selectedBorderColor ? selectedBorderColor : "#ff2626" } : {}}
+      style={
+        selected
+          ? {
+              borderRightColor: selectedBorderColor
+                ? selectedBorderColor
+                : "#ff2626"
+            }
+          : {}
+      }
     >
       {!!icon ? (
         <div className={classes.WrapperContent}>
           <Icon
-          className={classes.Icon}
+            className={classes.Icon}
             icon={!!icon.name ? icon.name : "Alert"}
             size={40}
             color={!!icon.color ? icon.color : "#ff2626"}

@@ -36,13 +36,13 @@ import TacModal from "./components/modals/tacModal/TacModal";
 import PieChart from "./components/pies/PieChart";
 import SecureImage from "./components/secureImage/SecureImage";
 import SelectionTile from "./components/selections/selectionTile/SelectionTile";
-import verticalTabSelection from "./components/selections/verticalTabSelection/verticalTabSelection";
+import VerticalTabSelection from "./components/selections/verticalTabSelection/VerticalTabSelection";
 import Dock from "./components/stickies/dock/Dock";
 import FooterLogo from "./components/stickies/footerLogo/FooterLogo";
 import Tag from "./components/tags/Tag";
 import Tooltip from "./components/tooltip/Tooltip";
-import transactionList from "./components/transactionList/transactionList";
-import verticalTabs from "./components/verticalTabs/verticalTabs";
+import TransactionList from "./components/transactionList/TransactionList";
+import VerticalTabs from "./components/verticalTabs/VerticalTabs";
 import BackgroundSingle from "./components/wrappers/backgroundSingle/BackgroundSingle";
 import Box from "./components/wrappers/box/Box";
 import FormContainer from "./components/wrappers/formContainer/FormContainer";
@@ -92,13 +92,13 @@ export {
   PieChart,
   SecureImage,
   SelectionTile,
-  verticalTabSelection,
+  VerticalTabSelection,
   Dock,
   FooterLogo,
   Tag,
   Tooltip,
-  transactionList,
-  verticalTabs,
+  TransactionList,
+  VerticalTabs,
   BackgroundSingle,
   Box,
   FormContainer,

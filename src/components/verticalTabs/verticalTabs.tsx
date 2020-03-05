@@ -1,8 +1,8 @@
 import React from "react";
 import { Tab, Row, Col, Nav } from "react-bootstrap";
-import VerticalTabs from "src/components/selections/verticalTabSelection/verticalTabSelection";
+import VerticalTabSelection from "src/components/selections/verticalTabSelection/VerticalTabSelection";
 import Paragraphs from "../assets/typography";
-import classes from "./verticalTab.module.css";
+import classes from "./VerticalTab.module.css";
 import "react-tabs/style/react-tabs.css";
 const { SB_16_WHITE, B_32_WHITE } = Paragraphs;
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
   data: any;
   minimize: boolean;
 }
-const verticalTabs: React.FC<Props> = ({
+const VerticalTabs: React.FC<Props> = ({
   data,
   minimize,
   selectedBorderColor
@@ -24,7 +24,7 @@ const verticalTabs: React.FC<Props> = ({
               return (
                 <Nav.Item key={index} className={`${classes.Wrapper}`}>
                   <Nav.Link eventKey={index} className={`${classes.NavLink}`}>
-                    <VerticalTabs
+                    <VerticalTabSelection
                       selected={item.selected}
                       selectedBorderColor={selectedBorderColor}
                       onTileClick={() => item.onClick(index)}
@@ -65,4 +65,4 @@ const verticalTabs: React.FC<Props> = ({
     </Row>
   </Tab.Container>
 );
-export default verticalTabs;
+export default VerticalTabs;
