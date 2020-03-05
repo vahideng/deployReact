@@ -1,6 +1,6 @@
 import React from "react";
 import { Tab, Row, Col, Nav } from "react-bootstrap";
-import VerticalTabSelection from "src/components/selections/verticalTabSelection/FixVerticalTabSelection";
+import VerticalTabSelection from "src/components/selections/verticalTabSelection/VerticalTabSelection";
 import Paragraphs from "../assets/typography";
 import classes from "./VerticalTab.module.css";
 import "react-tabs/style/react-tabs.css";
