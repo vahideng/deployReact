@@ -165,7 +165,7 @@ class Sprint1 extends Component<Props, State> {
     } = this.state;
     return (
       <div style={{ paddingTop: "4rem" }}>
-        <Titlse>TransactionList</Titlse>
+        <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
           <TransactionList data={dataTransactionList} title="Today" />
         </CenteredDiv>
