@@ -36,7 +36,7 @@ import TacModal from "./components/modals/tacModal/TacModal";
 import PieChart from "./components/pies/PieChart";
 import SecureImage from "./components/secureImage/SecureImage";
 import SelectionTile from "./components/selections/selectionTile/SelectionTile";
-import VerticalTabSelection from "./components/selections/verticalTabSelection/VerticalTabSelection";
+import VerticalTabSelection from "./components/selections/verticalTabSelection/FixVerticalTabSelection";
 import Dock from "./components/stickies/dock/Dock";
 import FooterLogo from "./components/stickies/footerLogo/FooterLogo";
 import Tag from "./components/tags/Tag";
