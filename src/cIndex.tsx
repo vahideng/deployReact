@@ -42,7 +42,7 @@ import FooterLogo from "./components/stickies/footerLogo/FooterLogo";
 import Tag from "./components/tags/Tag";
 import Tooltip from "./components/tooltip/Tooltip";
 import TransactionList from "./components/transactionList/TransactionList";
-import VerticalTabs from "./components/verticalTabs/VerticalTabs";
+import VerticalTabs from "./components/verticalTabs/FixVerticalTabs";
 import BackgroundSingle from "./components/wrappers/backgroundSingle/BackgroundSingle";
 import Box from "./components/wrappers/box/Box";
 import FormContainer from "./components/wrappers/formContainer/FormContainer";

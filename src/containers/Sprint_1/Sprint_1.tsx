@@ -30,7 +30,7 @@ import DetailList from "src/components/lists/DetailList/DetailList";
 import DetailListMonthly from "src/components/lists/DetailListMonthly/DetailListMonthly";
 import Tooltip from "src/components/tooltip/Tooltip";
 import Navbar from "src/components/headers/navbar/Navbar";
-import VerticalTab from "src/components/verticalTabs/VerticalTabs";
+import VerticalTab from "src/components/verticalTabs/FixVerticalTabs";
 import Tag from "src/components/tags/Tag";
 import Dock from "src/components/stickies/dock/Dock";
 import SecureImage from "src/components/secureImage/SecureImage";
