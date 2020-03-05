@@ -34,3 +34,7 @@
 .navbarIcons {
   padding-left: 2rem;
 }
+
+.NavbarOnClick {
+  cursor: pointer;
+}

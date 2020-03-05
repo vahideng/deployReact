@@ -170,7 +170,7 @@ class Sprint1 extends Component<Props, State> {
           <TransactionList data={dataTransactionList} title="Today" />
         </CenteredDiv>
         <Navbar
-          icon={{ link: "/" }}
+          icon={{ onIconClick: () => alert("iconClicked") }}
           profile={{
             greeting: "Good Morning",
             name: "Adam Constantine",
@@ -181,15 +181,15 @@ class Sprint1 extends Component<Props, State> {
           rightButtons={[
             {
               iconName: "Time",
-              link: "/sprint-1"
+              onButtonClick: () => alert("button-1-Clicked")
             },
             {
               iconName: "Settings",
-              link: ""
+              onButtonClick: () => alert("button-2-Clicked")
             },
             {
               iconName: "Share",
-              link: ""
+              onButtonClick: () => alert("button-3-Clicked")
             }
           ]}
         />
@@ -203,15 +203,15 @@ class Sprint1 extends Component<Props, State> {
                   list={[
                     {
                       label: "Jan 2020 eStatement",
-                      link: "/"
+                      onListClick: () => alert("item-1-clicked")
                     },
                     {
                       label: "Dec 2019 eStatement",
-                      link: "/sprint-1"
+                      onListClick: () => alert("item-2-clicked")
                     },
                     {
                       label: "Nov 2019 eStatement",
-                      link: "/sprint-1"
+                      onListClick: () => alert("item-3-clicked")
                     },
                     {
                       label: "Oct 2019 eStatement",
@@ -223,12 +223,11 @@ class Sprint1 extends Component<Props, State> {
                           toggleOnLabel="YES"
                           disabled={false}
                         />
-                      ),
-                      link: "/sprint-1"
+                      )
                     },
                     {
                       label: "Sep 2019 eStatement",
-                      link: "/sprint-1"
+                      onListClick: () => alert("item-5-clicked")
                     }
                   ]}
                 />
@@ -437,15 +436,15 @@ class Sprint1 extends Component<Props, State> {
             list={[
               {
                 label: "Jan 2020 eStatement",
-                link: "/"
+                onListClick: () => alert("item-1-clicked")
               },
               {
                 label: "Dec 2019 eStatement",
-                link: "/sprint-1"
+                onListClick: () => alert("item-2-clicked")
               },
               {
                 label: "Nov 2019 eStatement",
-                link: "/sprint-1"
+                onListClick: () => alert("item-3-clicked")
               },
               {
                 label: "Oct 2019 eStatement",
@@ -457,12 +456,11 @@ class Sprint1 extends Component<Props, State> {
                     toggleOnLabel="YES"
                     disabled={false}
                   />
-                ),
-                link: "/sprint-1"
+                )
               },
               {
                 label: "Sep 2019 eStatement",
-                link: "/sprint-1"
+                onListClick: () => alert("item-5-clicked")
               }
             ]}
           />
@@ -639,20 +637,19 @@ class Sprint1 extends Component<Props, State> {
               ),
               rightContent: (
                 <div>
-                  {" "}
                   <LinkList
                     list={[
                       {
                         label: "Jan 2020 eStatement",
-                        link: "/"
+                        onListClick: () => alert("item-1-clicked")
                       },
                       {
                         label: "Dec 2019 eStatement",
-                        link: "/sprint-1"
+                        onListClick: () => alert("item-2-clicked")
                       },
                       {
                         label: "Nov 2019 eStatement",
-                        link: "/sprint-1"
+                        onListClick: () => alert("item-3-clicked")
                       },
                       {
                         label: "Oct 2019 eStatement",
@@ -664,20 +661,11 @@ class Sprint1 extends Component<Props, State> {
                             toggleOnLabel="YES"
                             disabled={false}
                           />
-                        ),
-                        link: "/sprint-1"
+                        )
                       },
                       {
                         label: "Sep 2019 eStatement",
-                        link: "/sprint-1"
-                      },
-                      {
-                        label: "Dec 2019 eStatement",
-                        link: "/sprint-1"
-                      },
-                      {
-                        label: "Nov 2019 eStatement",
-                        link: "/sprint-1"
+                        onListClick: () => alert("item-5-clicked")
                       }
                     ]}
                   />
