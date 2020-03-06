@@ -18,10 +18,12 @@ const customStyles = {
     ...provided,
     border: "hidden",
     backgroundColor: "transparent",
+
     "&:hover": {
       borderColor: "red"
     },
-    boxShadow: "none"
+    boxShadow: "none",
+    cursor: "pointer"
   }),
 
   placeholder: () => ({
@@ -90,7 +92,10 @@ class TextDropdown extends Component<Props, State> {
   render() {
     const { options, selectedOption, placeHolder } = this.props;
     return (
-      <div className={`row ${classes.Container}`}>
+      <div
+        className={`row ${classes.Container}`}
+        onClick={() => this.setState({ menuIsOpen: !this.state.menuIsOpen })}
+      >
         <div className={`col-sm-8 ${classes.LeftSide}`}>
           <Select
             components={{ DropdownIndicator: () => null }}
@@ -105,12 +110,7 @@ class TextDropdown extends Component<Props, State> {
         </div>
 
         <div className={`col-sm-4 ${classes.RightSide}`}>
-          <div
-            className={classes.Content}
-            onClick={() =>
-              this.setState({ menuIsOpen: !this.state.menuIsOpen })
-            }
-          >
+          <div className={classes.Content}>
             {this.state.menuIsOpen ? (
               <img src={arrowUp} alt="arrowUp" />
             ) : (

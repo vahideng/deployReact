@@ -9,30 +9,21 @@
   border-bottom: 2px solid #ff2626 !important;
 }
 
-
-.ReactModal__Overlay--after-open{
-
-  background : rgba(0, 0, 0, 0.5) !important;
+.ReactModal__Overlay--after-open {
+  background: rgba(0, 0, 0, 0.5) !important;
   background-blend-mode: multiply !important;
 }
 
-.ReactModal__Content--after-open{
+.ReactModal__Content--after-open {
   left: 0 !important ;
-  margin-right:0 !important;
-    right: auto;
-    width: -webkit-fill-available !important;
-
+  margin-right: 0 !important;
+  right: auto;
+  width: -webkit-fill-available !important;
 }
-
-
-.nav-link{
+.nav-link {
   padding: 0;
- 
 }
-
-
 
 .nav-link.active {
   background-color: transparent !important;
 }
-

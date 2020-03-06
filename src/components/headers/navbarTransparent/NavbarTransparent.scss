@@ -15,7 +15,9 @@
   align-items: center;
   justify-content: space-between;
 }
-
-.NavbarTransparentIcons {
+.NavbarTransparentIcon {
+  cursor: pointer;
+}
+.NavbarTransparentButtons {
   margin-left: 2rem;
 }

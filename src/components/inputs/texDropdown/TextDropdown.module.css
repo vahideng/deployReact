@@ -1,7 +1,8 @@
 .Container {
-  width: 150px;
+  width: 8rem;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  cursor: pointer;
 }
 
 .LeftSide {
@@ -9,7 +10,7 @@
 }
 
 .RightSide {
-  padding-left: 0;
+  padding: 0;
 }
 
 .Content {

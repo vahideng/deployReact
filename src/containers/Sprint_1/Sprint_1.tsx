@@ -54,6 +54,8 @@ import TileListView from "src/components/lists/TileListView/TileListView";
 import UnionPay_logo from "src/components/assets/common/UnionPay_logo.svg";
 import VisaLogo from "src/components/assets/common/visaLogo.svg";
 
+import { Redirect } from "react-router-dom";
+
 const {
   B_13_ORANGE_463,
   B_14_WHITE,
@@ -73,7 +75,6 @@ const Title = styled(B_13_ORANGE_463)`
 const CenteredDiv = styled.div`
   display: flex;
   justify-content: center;
-
   padding-top: 5rem;
 `;
 const RowDiv = styled.div`
@@ -92,50 +93,8 @@ interface State {
   TacModalOpen: boolean;
   StickyModalOpen: boolean;
   verticalActiveTab: any;
+  homRedirect: boolean;
 }
-
-const dataTransactionList = [
-  {
-    leftLabel: "DoItNow tr DF",
-    middle: {
-      title: "this is sample long data fot testing purposes only",
-      content: [
-        {
-          leftLabel: "this is sample long data fot testing purposes",
-          rightLabel: "16 Augest 1998"
-        },
-        {
-          leftLabel: "DoItNow tr DF",
-          rightLabel: "12 March 2012"
-        }
-      ]
-    },
-    rightLabel: {
-      prefix: "RM",
-      content: "18.00000000000"
-    }
-  },
-  {
-    leftLabel: "doLaterNow tr DF",
-    middle: {
-      title: "this is sample long data fot testing purposes only",
-      content: [
-        {
-          leftLabel: "this is sample long data fot testing purposes",
-          rightLabel: "16 Jul 2020"
-        },
-        {
-          leftLabel: "HairShore Shanti",
-          rightLabel: "10 Jul 2018"
-        }
-      ]
-    },
-    rightLabel: {
-      prefix: "RM",
-      content: "38.00"
-    }
-  }
-];
 
 class Sprint1 extends Component<Props, State> {
   state = {
@@ -148,7 +107,8 @@ class Sprint1 extends Component<Props, State> {
     IconButtonsNum: 1,
     TacModalOpen: false,
     StickyModalOpen: false,
-    verticalActiveTab: 0
+    verticalActiveTab: 0,
+    homRedirect: false
   };
   render() {
     const {
@@ -161,16 +121,73 @@ class Sprint1 extends Component<Props, State> {
       IconButtonsNum,
       TacModalOpen,
       StickyModalOpen,
-      verticalActiveTab
+      verticalActiveTab,
+      homRedirect
     } = this.state;
+
+    if (homRedirect === true) {
+      return <Redirect to="/" />;
+    }
     return (
       <div style={{ paddingTop: "4rem" }}>
         <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
-          <TransactionList data={dataTransactionList} title="Today" />
+          <TransactionList
+            data={[
+              {
+                leftLabel: "DoItNow tr DF",
+                middle: {
+                  title: "this is sample long data fot testing purposes only",
+                  content: [
+                    {
+                      leftLabel:
+                        "this is sample long data fot testing purposes",
+                      rightLabel: "16 Augest 1998"
+                    },
+                    {
+                      leftLabel: "DoItNow tr DF",
+                      rightLabel: "12 March 2012"
+                    }
+                  ]
+                },
+                rightLabel: {
+                  prefix: "RM",
+                  content: "18.00000000000"
+                }
+              },
+              {
+                leftLabel: "doLaterNow tr DF",
+                middle: {
+                  title: "this is sample long data fot testing purposes only",
+                  content: [
+                    {
+                      leftLabel:
+                        "this is sample long data fot testing purposes",
+                      rightLabel: "16 Jul 2020"
+                    },
+                    {
+                      leftLabel: "HairShore Shanti",
+                      rightLabel: "10 Jul 2018"
+                    }
+                  ]
+                },
+                rightLabel: {
+                  prefix: "RM",
+                  content: "38.00"
+                }
+              }
+            ]}
+            title="Today"
+          />
         </CenteredDiv>
         <Navbar
-          icon={{ onIconClick: () => alert("iconClicked") }}
+          icon={{
+            onIconClick: () => {
+              this.setState({
+                homRedirect: true
+              });
+            }
+          }}
           profile={{
             greeting: "Good Morning",
             name: "Adam Constantine",
@@ -1351,6 +1368,190 @@ class Sprint1 extends Component<Props, State> {
             ]}
           />
         </CenteredDiv>
+
+        <div style={{ width: 1200, marginLeft: 220 }}>
+          <VerticalTab
+            selectedBorderColor="#FD8585"
+            minimize={true}
+            data={[
+              {
+                selected: true,
+                onClick: (index: any) => alert(index),
+                icon: {
+                  name: "Card",
+                  color: "#ff2626"
+                },
+                accountTitle: "Credit Cards",
+
+                children: (
+                  <div style={{ display: "flex" }}>
+                    <AccountsList
+                      list={[
+                        {
+                          label1: "Foreign Current Account",
+                          label2: "79429284",
+                          amount: "RM 10,648.50",
+                          selected: false
+                        },
+                        {
+                          label1: "Foreign Current Account",
+                          label2: "79429284",
+                          amount: "RM 10,648.50",
+                          selected: false
+                        },
+                        {
+                          label1: "Foreign Current Account",
+                          label2: "79429284",
+                          amount: "RM 10,648.50",
+                          defaultLabel: "DEFAULT",
+                          default: true,
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          selected: true
+                        },
+                        {
+                          label1: "Foreign Current Account",
+                          label2: "79429284",
+                          amount: "RM 10,648.50",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          selected: false
+                        }
+                      ]}
+                      onAccountTileClick={item => alert(JSON.stringify(item))}
+                    />
+                    <div style={{ width: 700, padding: "2rem" }}>
+                      <AMTabs
+                        defaultIndex={0}
+                        titles={[
+                          "Transactions",
+                          "Settings",
+                          "Security",
+                          "Contact Us"
+                        ]}
+                        contents={[
+                          <SearchBar
+                            clearClickHandler={() => alert("clear clicked")}
+                            searchIconClickHandler={() =>
+                              alert("Search Icon clicked")
+                            }
+                            placeholder={"Search"}
+                            value={this.state.inputValue}
+                            handleChange={event => {
+                              this.setState({
+                                inputValue: event.target.value
+                              });
+                            }}
+                          />,
+                          <ZeroResult
+                            text={`We can’t seem to find any result for 
+              “Damansara Heights”`}
+                          />,
+                          <PieChart
+                            pieLabels={["Fixed Income 60%", "Equity 10%"]}
+                            pieDataSets={{
+                              data: [60, 10],
+                              backgroundColor: ["#7AB497", "#FFA463"]
+                            }}
+                          />,
+                          "Contact Us"
+                        ]}
+                      />
+                    </div>
+                  </div>
+                )
+              },
+              {
+                selected: false,
+                onClick: (index: any) => alert(index),
+                icon: {
+                  name: "Card",
+                  color: "#ff2626"
+                },
+                accountTitle: "Credit Cards",
+
+                children: (
+                  <div style={{ display: "flex" }}>
+                    <p>second</p>
+                    <AccountsList
+                      list={[
+                        {
+                          label1: "Foreign Current Account",
+                          label2: "79429284",
+                          amount: "RM 10,648.50",
+                          selected: false
+                        },
+                        {
+                          label1: "Foreign Current Account",
+                          label2: "79429284",
+                          amount: "RM 10,648.50",
+                          selected: false
+                        },
+                        {
+                          label1: "Foreign Current Account",
+                          label2: "79429284",
+                          amount: "RM 10,648.50",
+                          defaultLabel: "DEFAULT",
+                          default: true,
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          selected: true
+                        },
+                        {
+                          label1: "Foreign Current Account",
+                          label2: "79429284",
+                          amount: "RM 10,648.50",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          selected: false
+                        }
+                      ]}
+                      onAccountTileClick={item => alert(JSON.stringify(item))}
+                    />
+                    <div style={{ width: 700, padding: "2rem" }}>
+                      <AMTabs
+                        defaultIndex={0}
+                        titles={[
+                          "Transactions",
+                          "Settings",
+                          "Security",
+                          "Contact Us"
+                        ]}
+                        contents={[
+                          <SearchBar
+                            clearClickHandler={() => alert("clear clicked")}
+                            searchIconClickHandler={() =>
+                              alert("Search Icon clicked")
+                            }
+                            placeholder={"Search"}
+                            value={this.state.inputValue}
+                            handleChange={event => {
+                              this.setState({
+                                inputValue: event.target.value
+                              });
+                            }}
+                          />,
+                          <ZeroResult
+                            text={`We can’t seem to find any result for
+              “Damansara Heights”`}
+                          />,
+                          <PieChart
+                            pieLabels={["Fixed Income 60%", "Equity 10%"]}
+                            pieDataSets={{
+                              data: [60, 10],
+                              backgroundColor: ["#7AB497", "#FFA463"]
+                            }}
+                          />,
+                          "Contact Us"
+                        ]}
+                      />
+                    </div>
+                  </div>
+                )
+              }
+            ]}
+          />
+        </div>
         <Title>Tooltips</Title>
         <CenteredDiv>
           <Tooltip
