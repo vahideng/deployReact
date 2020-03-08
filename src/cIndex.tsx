@@ -1,3 +1,4 @@
+import BoxContent from "./components/boxContent/BoxContent";
 import BannerHero from "./components/banners/bannerHero/BannerHero";
 import ActionButtons from "./components/buttons/actionButtons/ActionButtons";
 import BackButton from "./components/buttons/backButton/BackButton";
@@ -54,6 +55,7 @@ import Logo from "./components/assets/logo/Logo";
 import TileListView from "./components/lists/TileListView/TileListView";
 
 export {
+  BoxContent,
   BannerHero,
   ActionButtons,
   BackButton,
