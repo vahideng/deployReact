@@ -57,6 +57,7 @@ const BannerHero: React.FC<Props> = ({
             <div style={{ paddingTop: "72px" }}>
               <Col xs={12} sm={6}>
                 <PrimaryButton
+                  testId={`${testId}-0`}
                   buttonColor={!!buttonColor}
                   title={buttonText}
                   onButtonClick={buttonClick}

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import BackgroundSingle from "src/components/wrappers/backgroundSingle/BackgroundSingle";
 import Header from "src/components/headers/header/Header";
 import Box from "src/components/wrappers/box/Box";
@@ -8,16 +7,20 @@ import TextButton from "src/components/buttons/textButton/TextButton";
 import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTransparent";
 import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
 import { Redirect } from "react-router-dom";
-import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
+import ZeroResult from "src/components/infographic/zeroResault/ZeroResult";
 
 interface Props {}
 
 const Home: React.FC<Props> = () => {
   const [selectedItem, setSelectedOption] = useState(null);
   const [split, setsSplit] = useState(false);
-  const [NavClick, setNavClick] = useState(false);
-  if (NavClick === true) {
+  const [sprint1, setSprint1] = useState(false);
+  const [sprint2, setSprint2] = useState(false);
+  if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
+  }
+  if (sprint2 === true) {
+    return <Redirect to="/sprint-2" />;
   }
   return (
     <>
@@ -31,14 +34,25 @@ const Home: React.FC<Props> = () => {
             <NavbarTransparent
               icon={{
                 onIconClick: () => {
-                  setNavClick(true);
+                  setSprint1(true);
                 }
               }}
               rightButtons={[
                 <TextButton
-                  buttonText="FAQ"
+                  buttonText="Sprint-1"
                   onTextClick={() => {
-                    alert(`clicked`);
+                    setSprint1(true);
+                  }}
+                  buttonStyles={{
+                    color: "#000000",
+                    fontWeight: 400,
+                    fontSize: 15
+                  }}
+                />,
+                <TextButton
+                  buttonText="Sprint-2"
+                  onTextClick={() => {
+                    setSprint2(true);
                   }}
                   buttonStyles={{
                     color: "#000000",
@@ -91,28 +105,11 @@ const Home: React.FC<Props> = () => {
                 rightTitle={"rightTitle"}
                 onSelect={(obj: any) => console.log(obj)}
                 content={[
-                  <div
-                    style={{
-                      display: "flex",
-                      minHeight: "10rem",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "space-between"
-                    }}
-                  >
-                    <PrimaryButton
-                      onButtonClick={() => {
-                        setNavClick(true);
-                      }}
-                      title="Sprint-1 Components"
-                    />
-                    <PrimaryButton
-                      onButtonClick={() => {
-                        setNavClick(true);
-                      }}
-                      title="Sprint-2 Components"
-                    />
-                  </div>,
+                  <ZeroResult
+                    text={`We can’t seem to find any result for 
+              “Damansara Heights”`}
+                  />,
+
                   <>
                     <InputField
                       type="text"

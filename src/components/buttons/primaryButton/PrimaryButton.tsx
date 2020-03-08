@@ -4,6 +4,7 @@ import Paragraphs from "../../assets/typography";
 import Icon from "src/components/assets/icons/icon";
 const { B_15_WHITE } = Paragraphs;
 interface Props {
+  testId?: string;
   title?: string;
   titleColor?: string;
   buttonColor?: any;
@@ -14,6 +15,7 @@ interface Props {
 }
 
 const PrimaryButton: React.FC<Props> = ({
+  testId,
   title = "",
   buttonColor,
   titleColor,
@@ -25,6 +27,7 @@ const PrimaryButton: React.FC<Props> = ({
   return !small ? (
     <div>
       <button
+        id={testId}
         onClick={onButtonClick}
         className={classes.PrimaryButton}
         style={
@@ -45,6 +48,7 @@ const PrimaryButton: React.FC<Props> = ({
     <>
       <div>
         <button
+          id={testId}
           onClick={onButtonClick}
           className={classes.PrimaryButtonSmall}
           style={
