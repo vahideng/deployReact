@@ -7,6 +7,8 @@ import BannerHero from "src/components/banners/bannerHero/BannerHero";
 
 import { Redirect } from "react-router-dom";
 import Navbar from "src/components/headers/navbar/Navbar";
+import BoxContent from "src/components/boxContent/BoxContent";
+import { Row, Col } from "react-bootstrap";
 
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -86,6 +88,43 @@ class Sprint2 extends Component<Props, State> {
           testId="testId"
           title="Grand Prize RM 1 Million Cash"
         />
+        <Title>BoxContent</Title>
+        <Row>
+          <Col xs={0} md={7} style={{ backgroundColor: "#FAFAFA" }} />
+          <Col xs={12} md={5}>
+            <BoxContent
+              content={[
+                {
+                  title: "Phone Scam",
+                  content:
+                    "Never respond to phone calls asking for your sensitive banking information.",
+                  icon: "Call"
+                },
+                {
+                  title: "SMS Scam",
+                  content:
+                    "Never respond to SMS-es informing you have won a contest/reward that you did not participate in",
+                  icon: "Inbox"
+                },
+                {
+                  title: "Malware",
+                  content: "Never “jailbreak” or “root” your smart phones.",
+                  icon: "Hold"
+                },
+                {
+                  title: "Email Scam",
+                  content:
+                    "Never click website links from unknown and suspicious senders",
+                  icon: "Target"
+                }
+              ]}
+              tag="Security Alerts"
+              testId="testId"
+              title="Always be vigilant against scam threats."
+              link={{ label: "Learn more", url: "#" }}
+            />
+          </Col>
+        </Row>
       </div>
     );
   }
