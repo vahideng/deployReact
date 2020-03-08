@@ -5,7 +5,7 @@ const { B_15_WHITE } = Paragraphs;
 interface Props {
   title?: string;
   titleColor?: string;
-  buttonColor?: any;
+  buttonColor?: { top: string; bottom: string };
   onButtonClick?: () => void;
   onLeftButton?: () => void;
   onRightButton?: () => void;

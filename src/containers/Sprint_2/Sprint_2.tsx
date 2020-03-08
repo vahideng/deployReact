@@ -46,6 +46,7 @@ class Sprint2 extends Component<Props, State> {
     return (
       <div style={{ paddingTop: 100 }}>
         <Navbar
+          scrolled
           icon={{
             onIconClick: () => {
               this.setState({
