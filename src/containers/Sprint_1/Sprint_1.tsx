@@ -2532,8 +2532,18 @@ class Sprint1 extends Component<Props, State> {
         />
 
         <Title>BannerHero</Title>
-        <BannerHero />
-
+        <BannerHero
+          buttonClick={() => {
+            alert("Clicked");
+          }}
+          buttonText="Learn More"
+          content="Total of RM2.5 Million to be won. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab."
+          label="Hero Promotion"
+          leftImage="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1390&q=80"
+          showButton={true}
+          testId="testId"
+          title="Grand Prize RM 1 Million Cash"
+        />
         <Title>BackButton</Title>
         <BackButton
           buttonText="Forgot Username/Password"
