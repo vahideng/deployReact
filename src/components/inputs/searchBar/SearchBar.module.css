@@ -1,0 +1,187 @@
+.SearchBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.SearchBarContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 2.625rem;
+  max-width: 53.12rem;
+  min-width: 32.31rem;
+  border-radius: 25px;
+  border: 1px solid #dedede;
+  overflow: hidden;
+}
+
+.FilterContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  height: 2.625rem;
+  width: 6.3rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f6f6f3), to(#eae9e3));
+  background: linear-gradient(180deg, #f6f6f3 0%, #eae9e3 100%);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.FilterContainerOpen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  height: 2.625rem;
+  width: 6.3rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eae9e3), to(#f6f6f3));
+  background: linear-gradient(180deg, #eae9e3 0%, #f6f6f3 100%);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.FilterDropdownContainer {
+  position: absolute;
+  top: 16;
+  margin-top: 16px;
+  background: #ffffff;
+  z-index: 299;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  left: 0;
+  -webkit-box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
+          box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
+  padding: 1.25rem 1.25rem 0 1.25rem;
+}
+
+.FilterOptionContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-bottom: 16px;
+}
+
+.FilterOptionSelectedContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.SelectedFiltersContainer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 16px;
+  max-width: 53.12rem;
+}
+
+.SelectedFilter {
+  background: #dedede;
+  border-radius: 13px;
+  padding-left: 9px;
+  padding-right: 6px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 8px;
+  height: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.SelectedFilterLabel {
+  margin-right: 8px;
+}
+
+.SelectedFilterClearIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+}
+
+.InputField {
+  margin-left: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  outline: none;
+  padding-right: 0.3rem;
+  border: none;
+}
+
+.IconContainer {
+  margin-right: 1.5rem;
+}
+
+.InputFieldPassword {
+  padding-right: 2px;
+}
+
+.ClearIcon {
+  margin-right: 1.05rem;
+}
+
+@media (max-width: 400px) {
+  .SearchBarContainer {
+    width: 90vw;
+  }
+}

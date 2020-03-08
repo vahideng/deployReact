@@ -1,0 +1,36 @@
+.DetailListMainDiv {
+  width: auto;
+  height: 100vh;
+  background-color: #e5e5e5;
+}
+
+.DetailListTitle {
+  padding-top: 2rem;
+}
+
+.DetailListTitle #title {
+  text-align: center;
+}
+
+.DetailListRows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.5rem 2rem;
+}
+
+.DetailListTool {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.DetailListToolIcon {
+  padding-left: 0.4rem;
+}

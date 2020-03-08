@@ -1,0 +1,21 @@
+.Container {
+  width: 8rem;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  cursor: pointer;
+}
+
+.LeftSide {
+  padding-right: 0;
+}
+
+.RightSide {
+  padding: 0;
+}
+
+.Content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}

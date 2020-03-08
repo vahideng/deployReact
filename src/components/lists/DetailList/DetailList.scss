@@ -1,0 +1,27 @@
+@import "../../assets/common/common.scss";
+
+.DetailListMainDiv {
+  width: auto;
+  height: 100vh;
+  background-color: $grey5E5;
+}
+
+.DetailListTitle {
+  padding-top: 2rem;
+}
+.DetailListTitle #title {
+  text-align: center;
+}
+.DetailListRows {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+}
+
+.DetailListTool {
+  display: flex;
+  align-items: center;
+}
+.DetailListToolIcon {
+  padding-left: 0.4rem;
+}

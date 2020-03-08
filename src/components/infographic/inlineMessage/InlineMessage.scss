@@ -1,0 +1,10 @@
+@import "../../assets/common/common.scss";
+
+.InlineMessageDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0.81rem;
+  min-height: 2.56rem;
+  border-left: 1px solid $primaryRed;
+}

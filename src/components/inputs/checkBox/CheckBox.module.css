@@ -1,0 +1,29 @@
+div.checkboxRow input {
+  display: none;
+}
+
+.checkboxRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+div.checkboxRow label {
+  padding: O;
+  margin: 0;
+  cursor: pointer;
+}
+
+.boxChildren {
+  padding: 3px 0 0 5px;
+}
+
+@media (max-width: 400px) {
+  .boxChildren {
+    max-width: 350px;
+  }
+}

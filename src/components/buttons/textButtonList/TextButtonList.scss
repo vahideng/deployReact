@@ -1,4 +1,4 @@
-@import "../../assets/colors/colors.scss";
+@import "../../assets/common/common.scss";
 
 .rowWrapper {
   display: flex;
@@ -15,4 +15,5 @@
   padding-left: 5px;
   line-height: 12px;
   text-align: center;
+  cursor: pointer;
 }

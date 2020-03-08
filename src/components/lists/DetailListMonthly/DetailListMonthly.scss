@@ -1,0 +1,36 @@
+@import "../../assets/common/common.scss";
+
+.DetailListMonthDiv {
+  width: auto;
+  height: 100vh;
+  background-color: $grey5E5;
+}
+
+.DetailListMonthTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#title {
+  margin: 0 0.5rem;
+}
+.DetailListRows {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 2rem;
+
+  align-items: center;
+}
+.DetailListMonthTopTool {
+  display: flex;
+  padding: 0 2rem 0 0;
+  justify-content: flex-end;
+  margin-top: -1.7rem;
+}
+.DetailListMonthTool {
+  display: flex;
+  align-items: center;
+}
+.DetailListToolIcon {
+  padding-left: 0.4rem;
+}

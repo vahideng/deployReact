@@ -1,0 +1,23 @@
+@import "../../assets/common/common.scss";
+
+.NavbarTransparentMainDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  height: 4.31rem;
+  z-index: 1;
+  padding: $HorizontalPadding;
+}
+
+.NavbarTransparentIconDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.NavbarTransparentIcon {
+  cursor: pointer;
+}
+.NavbarTransparentButtons {
+  margin-left: 2rem;
+}

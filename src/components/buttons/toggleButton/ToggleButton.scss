@@ -1,0 +1,15 @@
+.ToggleButtonContainer {
+  display: flex;
+  flex-direction: row;
+  background: #eae8e8;
+  cursor: pointer;
+}
+.ToggleButton {
+  width: 2.1875em;
+  height: 1.375em;
+  background: #ff002b;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

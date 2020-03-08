@@ -1,0 +1,18 @@
+.Container {
+  width: 8rem;
+  flex-wrap: nowrap;
+  cursor: pointer;
+}
+
+.LeftSide {
+  padding-right: 0;
+}
+
+.RightSide {
+  padding: 0;
+}
+
+.Content {
+  display: flex;
+  height: 100%;
+}

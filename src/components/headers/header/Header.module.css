@@ -1,0 +1,13 @@
+.main {
+  width: 500px;
+}
+
+@media (max-width: 400px) {
+  .main {
+    width: 290px;
+  }
+}
+
+.Title {
+  padding-bottom: 16px;
+}

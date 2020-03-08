@@ -1,0 +1,44 @@
+.dsMainTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.dsIconRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dsIconTitle {
+  padding: 1rem 1rem 1rem 0;
+}
+
+.dsMainLogoDiv {
+  padding-left: 1rem;
+}
+
+.dsDetail {
+  padding: 1rem 0;
+}
+
+.dsLink {
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .dsIconTitle {
+    padding-top: 0;
+  }
+}

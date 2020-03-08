@@ -1,0 +1,27 @@
+.AMTabsContents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+
+.TT {
+  padding: 0 !important;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.TT:active {
+  background-color: transparent;
+}
+
+.KK {
+  background-color: transparent;
+  border: 0 !important;
+  border-bottom: 2px solid #ff2626 !important;
+}

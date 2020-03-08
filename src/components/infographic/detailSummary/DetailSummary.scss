@@ -1,0 +1,28 @@
+.dsMainTitle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.dsIconRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.dsIconTitle {
+  padding: 1rem 1rem 1rem 0;
+}
+.dsMainLogoDiv {
+  padding-left: 1rem;
+}
+.dsDetail {
+  padding: 1rem 0;
+}
+.dsLink {
+  cursor: pointer;
+}
+@media (max-width: 400px) {
+  .dsIconTitle {
+    padding-top: 0;
+  }
+}

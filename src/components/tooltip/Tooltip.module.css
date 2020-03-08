@@ -1,0 +1,16 @@
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .TooltipContent {
+  background-color: #000000;
+  width: 17.75rem;
+  padding: 1rem;
+  border-radius: 18px 0px 18px 18px;
+  border-radius: 18px 0px 18px 18px;
+  position: absolute;
+  z-index: 1;
+  top: 0rem;
+  right: 2rem;
+}

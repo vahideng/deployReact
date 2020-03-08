@@ -1,0 +1,20 @@
+@import "../../assets/common/common.scss";
+
+.BoxMainDiv {
+  width: 25.31rem;
+  background-color: $white7F7;
+  border-radius: 1rem;
+  z-index: 10;
+  position: relative;
+  min-height: 19.68rem;
+}
+
+.Container {
+  padding: 1.5rem 1.5rem 0rem 1.5rem;
+}
+
+.Wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

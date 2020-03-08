@@ -1,0 +1,20 @@
+$primaryBlack: #000000;
+$primaryRed: #ff2626;
+$red585: #fd8585;
+$grey444: #444444;
+$grey5E5: #e5e5e5;
+$greyEDE: #dedede;
+$white7F7: #f7f7f7;
+$green03e: #36a03e;
+$green988: #81d988;
+
+$mainBoxShadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede,
+  0px 1px 5px #dedede;
+
+%truncatedText {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+$HorizontalPadding: 0 18vw;

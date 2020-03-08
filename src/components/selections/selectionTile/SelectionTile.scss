@@ -1,0 +1,29 @@
+@import "../../assets/common/common.scss";
+
+.SelectionTileRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.SelectionTileWrapper {
+  display: flex;
+  align-items: center;
+  width: 15.06rem;
+  min-height: 5.31rem;
+  border: 1px solid $greyEDE;
+  border-radius: 0.75rem;
+  border-bottom: 0.37rem solid $greyEDE;
+  padding: 1rem;
+
+  margin: 0 2rem 1.5rem 0;
+}
+
+.SelectionTileTDiv {
+  max-width: 13rem;
+}
+.SelectionTAmount {
+  padding-top: 1rem;
+}
+.SelectionTileTitle {
+  @extend %truncatedText;
+}

@@ -1,0 +1,28 @@
+@import "../../assets/common/common.scss";
+
+.NavbarMainDiv {
+  display: flex;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  background-color: #ffffff;
+  height: 4.31rem;
+  box-shadow: $mainBoxShadow;
+  padding: $HorizontalPadding;
+  z-index: 1000;
+}
+
+.navbarIconDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbarIcons {
+  padding-left: 2rem;
+}
+.NavbarOnClick {
+  cursor: pointer;
+}

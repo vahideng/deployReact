@@ -1,0 +1,53 @@
+.MenuBannerMainDiv {
+  display: flex;
+
+  padding-top: 3rem;
+  background-color: #ffffff;
+  margin-left: 2rem;
+  height: 100vh;
+}
+
+.MenuBannerButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 16rem;
+  right: -16.5rem;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 10rem;
+  padding-left: 1rem;
+  background-color: #ffffff;
+}
+.MenuBannerInsideButtonDiv {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  height: 100vh;
+}
+.MenuBannerInsideButton {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  margin-left: -3rem;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 10rem;
+  padding-left: 1rem;
+  margin-top: -8rem;
+}
+.MenuBannerContentDiv {
+  display: flex;
+  flex: 1;
+  margin-left: -17rem;
+  width: 100%;
+}
+
+.MenuBannerNotify {
+  margin: 0 0 -0.3rem 1.3rem;
+}
+.MenuBannerNotifyIn {
+  position: absolute;
+  left: 2.6rem;
+}
