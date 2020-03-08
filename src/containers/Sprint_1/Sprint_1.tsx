@@ -1228,7 +1228,7 @@ class Sprint1 extends Component<Props, State> {
             minimize={false}
             data={[
               {
-                selected: true,
+                selected: false,
                 onClick: (index: any) => alert(index),
                 icon: {
                   name: "Card",
@@ -1267,7 +1267,7 @@ class Sprint1 extends Component<Props, State> {
                 )
               },
               {
-                selected: false,
+                selected: true,
                 onClick: (index: any) => alert(index),
                 icon: {
                   name: "Account-2",
