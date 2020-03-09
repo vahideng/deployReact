@@ -90,8 +90,12 @@ class Sprint2 extends Component<Props, State> {
         />
         <Title>BoxContent</Title>
         <Row>
-          <Col xs={0} md={7} style={{ backgroundColor: "#FAFAFA" }} />
-          <Col xs={12} md={5}>
+          <Col
+            xs={0}
+            md={7}
+            style={{ backgroundColor: "#FAFAFA", padding: "0" }}
+          />
+          <Col xs={12} md={5} style={{ padding: "0" }}>
             <BoxContent
               content={[
                 {
