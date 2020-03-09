@@ -144,7 +144,7 @@ export default {
         isMulticolor: false,
         isMulticolor2: false,
         grid: 0,
-        tags: ["amonline"],
+        tags: ["amonline-white"],
         colorPermutations: {
           "114714714711511511511255061255255255154160621861532421": [],
           "110510510511471471471151151151118918918912552552551541606217474741861532421": []
@@ -154,7 +154,7 @@ export default {
       properties: {
         order: 168,
         id: 106,
-        name: "amonline",
+        name: "amonline-white",
         prevSize: 32,
         code: 59651
       },
