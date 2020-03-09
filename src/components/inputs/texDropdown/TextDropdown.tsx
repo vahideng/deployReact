@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Select from "react-select";
-import arrowUp from "../../assets/common/arrowUp.svg";
-import arrowDown from "../../assets/common/arrowDown.svg";
+
 import classes from "./TextDropdown.module.css";
+import Icon from "src/components/assets/icons/icon";
 
 interface Props {
   options: { value: string; label: string }[];
@@ -112,9 +112,13 @@ class TextDropdown extends Component<Props, State> {
         <div className={`col-sm-4 ${classes.RightSide}`}>
           <div className={classes.Content}>
             {this.state.menuIsOpen ? (
-              <img src={arrowUp} alt="arrowUp" />
+              <span className={classes.TextDropdownIcons}>
+                <Icon icon="arrowDown" size={18} />
+              </span>
             ) : (
-              <img src={arrowDown} alt="arrowUp" />
+              <span className={classes.TextDropdownIcons}>
+                <Icon icon="arrowUp" size={18} />
+              </span>
             )}
           </div>
         </div>

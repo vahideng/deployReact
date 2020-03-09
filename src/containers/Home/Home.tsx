@@ -23,6 +23,7 @@ const Home: React.FC<Props> = () => {
   return (
     <>
       <BackgroundSingle
+        testId={"testId"}
         image={
           "https://static.vecteezy.com/system/resources/previews/000/547/469/large_2x/abstract-blurred-background-with-bokeh-sparkling-lights-vector.jpg"
         }

@@ -1,8 +1,8 @@
 .FormContainerMain {
   position: relative;
   width: 52.18rem;
-  -webkit-box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
-          box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
+  -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+          box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
   border-radius: 0.7rem;
   background-color: #ffffff;
 }

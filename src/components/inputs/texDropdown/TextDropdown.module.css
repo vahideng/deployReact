@@ -19,3 +19,11 @@
   display: flex;
   height: 100%;
 }
+
+.TextDropdownIcons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
