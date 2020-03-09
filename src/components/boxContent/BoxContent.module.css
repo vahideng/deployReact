@@ -1,5 +1,5 @@
 .Container {
-  padding: 40px 0px 52px 40px;
+  padding: 40px 64px 36px 48px;
 }
 
 .Content {
@@ -7,22 +7,22 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-top: 1rem;
 }
 
 .Item {
   margin: 0;
   -webkit-box-flex: 0;
-  -ms-flex: 0 50%;
-  flex: 0 50%;
+      -ms-flex: 0 50%;
+          flex: 0 50%;
   padding-bottom: 1rem;
 }
 
 .Tag {
   -webkit-box-align: center !important;
-  -ms-flex-align: center !important;
-  align-items: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
   background-color: #333333 !important;
   border-radius: 20px !important;
   display: -webkit-box !important;
@@ -30,8 +30,8 @@
   display: flex !important;
   height: 23px !important;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 141px !important;
   margin-bottom: 1rem !important;
 }
@@ -61,8 +61,8 @@ a.Link:hover {
 
 .OuterColor {
   -webkit-box-align: center !important;
-  -ms-flex-align: center !important;
-  align-items: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
   background-color: #fff2e9 !important;
   border-radius: 50% !important;
   display: -webkit-box !important;
@@ -70,22 +70,16 @@ a.Link:hover {
   display: flex !important;
   height: 40px !important;
   -webkit-box-pack: center !important;
-  -ms-flex-pack: center !important;
-  justify-content: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
   width: 40px !important;
 }
 
 .InnerColor {
   -webkit-box-align: center !important;
-  -ms-flex-align: center !important;
-  align-items: center !important;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#ffba5b),
-    to(#ff842e)
-  ) !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffba5b), to(#ff842e)) !important;
   background: linear-gradient(180deg, #ffba5b 0%, #ff842e 100%) !important;
   border-radius: 50% !important;
   display: -webkit-box !important;
@@ -93,7 +87,7 @@ a.Link:hover {
   display: flex !important;
   height: 28.57px !important;
   -webkit-box-pack: center !important;
-  -ms-flex-pack: center !important;
-  justify-content: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
   width: 28.57px !important;
 }
