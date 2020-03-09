@@ -1,7 +1,10 @@
-import React from "react";
+import React, { ReactNode, useState, useEffect } from "react";
 import Modal from "react-modal";
 
-interface Props {}
+interface Props {
+  modalChildren: ReactNode;
+  modalIsOpen: boolean;
+}
 const customStyles = {
   content: {
     top: "50%",
@@ -9,30 +12,33 @@ const customStyles = {
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
-    transform: "translate(-50%, -50%)"
+    transform: "translate(-50%, -50%)",
+    background: "transparent",
+    border: "none"
+  },
+  overlay: {
+    background: "rgba(0, 0, 0, 0.5)",
+    backgroundBlendMode: "multiply"
   }
 };
 
-const AmModal: React.FC<Props> = () => {
+const AmModal: React.FC<Props> = ({ modalChildren, modalIsOpen }) => {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    setShow(modalIsOpen);
+  }, [modalIsOpen]);
+
+  const handleCloseModal = () => {
+    setShow(false);
+  };
   return (
     <div>
       <Modal
-        isOpen={false}
-        //   onAfterOpen={this.afterOpenModal}
-        //   onRequestClose={this.closeModal}
+        isOpen={show}
+        onRequestClose={handleCloseModal}
         style={customStyles}
-        contentLabel="Example Modal"
       >
-        <h2>Hello</h2>
-        <button>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
+        {modalChildren}
       </Modal>
     </div>
   );

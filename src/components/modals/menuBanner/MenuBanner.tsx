@@ -6,12 +6,18 @@ import Icon from "src/components/assets/icons/icon";
 import { Notify } from "../../assets/common/notification";
 const customStyles = {
   content: {
-    top: "0",
+    top: "auto",
+    right: "auto",
     bottom: "0",
     marginRight: "-50%",
-    transform: "translate(71.5%, 0)",
+    width: "100%",
+    left: "73vw",
     backgroundColor: "transparent",
     border: 0
+  },
+  overlay: {
+    background: "rgba(0, 0, 0, 0.5)",
+    backgroundBlendMode: "multiply"
   }
 };
 

@@ -130,8 +130,10 @@ class SearchBar extends Component<Props, State> {
           <div style={{ position: "relative" }}>
             <div className={classes.FilterDropdownContainer}>
               {filterOptions &&
-                filterOptions.map(item => (
+                filterOptions.map((item, index) => (
                   <div
+                    key={index}
+                    id={`${testId}-0${index}`}
                     className={classes.FilterOptionContainer}
                     onClick={() =>
                       onFilterOptionClick && onFilterOptionClick(item)
@@ -155,8 +157,12 @@ class SearchBar extends Component<Props, State> {
         {showFilter && (
           <div className={classes.SelectedFiltersContainer}>
             {selectedFilters &&
-              selectedFilters.map(item => (
-                <div className={classes.SelectedFilter}>
+              selectedFilters.map((item, index) => (
+                <div
+                  className={classes.SelectedFilter}
+                  key={index}
+                  id={`${testId}-1${index}`}
+                >
                   <div className={classes.SelectedFilterLabel}>
                     <R_13_BLACK>{item.label}</R_13_BLACK>
                   </div>

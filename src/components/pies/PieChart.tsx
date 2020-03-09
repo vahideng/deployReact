@@ -47,8 +47,8 @@ const PieChart: React.FC<Props> = ({ pieLabels, pieDataSets }) => {
           {!!pieLabels &&
             pieLabels.map((label, index) => {
               return (
-                <div className={classes.PieChartLabel}>
-                  <R_13_BLACK key={index}>{label}</R_13_BLACK>
+                <div className={classes.PieChartLabel} key={index}>
+                  <R_13_BLACK>{label}</R_13_BLACK>
                 </div>
               );
             })}

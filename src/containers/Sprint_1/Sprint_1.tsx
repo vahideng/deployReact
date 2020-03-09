@@ -20,7 +20,7 @@ import InlineMessage from "src/components/infographic/inlineMessage/InlineMessag
 import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
 import ZeroResult from "src/components/infographic/zeroResault/ZeroResult";
 import PieChart from "src/components/pies/PieChart";
-// import AmModal from "src/components/modals/Modal";
+import AmModal from "src/components/modals/Modal";
 import InputField from "src/components/inputs/inputFields/InputFields";
 import IconButtons from "src/components/buttons/iconButtons/IconButtons";
 import DescriptionButton from "src/components/buttons/descriptionButton/DescriptionButton";
@@ -91,6 +91,7 @@ interface State {
   IconButtonsNum: number;
   TacModalOpen: boolean;
   StickyModalOpen: boolean;
+  generalModalOpen: boolean;
   verticalActiveTab: any;
   homRedirect: boolean;
 }
@@ -106,6 +107,7 @@ class Sprint1 extends Component<Props, State> {
     IconButtonsNum: 1,
     TacModalOpen: false,
     StickyModalOpen: false,
+    generalModalOpen: false,
     verticalActiveTab: 3,
     homRedirect: false
   };
@@ -120,6 +122,7 @@ class Sprint1 extends Component<Props, State> {
       IconButtonsNum,
       TacModalOpen,
       StickyModalOpen,
+      generalModalOpen,
       verticalActiveTab,
       homRedirect
     } = this.state;
@@ -127,11 +130,61 @@ class Sprint1 extends Component<Props, State> {
     if (homRedirect === true) {
       return <Redirect to="/" />;
     }
+
     return (
       <div style={{ paddingTop: "4rem" }}>
+        <AmModal
+          modalIsOpen={generalModalOpen}
+          modalChildren={
+            <FormContainer
+              children={
+                <List
+                  header={{
+                    title: "Transfer Successful",
+                    subTitle: (
+                      <div style={{ display: "flex" }}>
+                        <span>You have successfully transferred</span>
+                        <p style={{ fontWeight: 700 }}> RM 500.00 </p>
+                        <span> to </span>
+                        <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
+                      </div>
+                    )
+                  }}
+                  list={[
+                    {
+                      leftLabel: "To",
+                      rightLabel: "Saving Account A",
+                      details: ["8881019596535 | AmBank"]
+                    },
+                    {
+                      leftLabel: "Amount",
+                      rightLabel: "RM 500.00",
+                      details: ["Fees & Charges: RM 0.00"]
+                    },
+                    {
+                      leftLabel: "Date",
+                      rightLabel: "Transfer Now",
+                      details: ["Today, 5 January 2019"]
+                    },
+                    {
+                      leftLabel: "Reference",
+                      rightLabel: "House Rental"
+                    },
+                    {
+                      leftLabel: "From",
+                      rightLabel: "Savings Account",
+                      details: ["2998202013", "Available Balance: RM 10,301.50"]
+                    }
+                  ]}
+                />
+              }
+            />
+          }
+        />
         <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
           <TransactionList
+            testId={"testId"}
             data={[
               {
                 leftLabel: "DoItNow tr DF",
@@ -380,6 +433,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>TileListView</Title>
         <CenteredDiv>
           <TileListView
+            testId={"testId"}
             list={[
               {
                 accountName: "TRUE Savings Account-i",
@@ -495,9 +549,9 @@ class Sprint1 extends Component<Props, State> {
                   title: "Transfer Successful",
                   subTitle: (
                     <div style={{ display: "flex" }}>
-                      <p>You have successfully transferred</p>
+                      <span>You have successfully transferred</span>
                       <p style={{ fontWeight: 700 }}> RM 500.00 </p>
-                      <p> to </p>
+                      <span> to </span>
                       <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
                     </div>
                   )
@@ -871,7 +925,7 @@ class Sprint1 extends Component<Props, State> {
         {/* {console.log(this.state.StickyModalOpen)} */}
         <StickyTimer
           modalIsOpen={StickyModalOpen}
-          expirationTime={10}
+          expirationTime={20}
           text={
             "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
           }
@@ -881,6 +935,14 @@ class Sprint1 extends Component<Props, State> {
           onButtonClick={() => {
             this.setState({
               StickyModalOpen: true
+            });
+          }}
+        />
+        <PrimaryButton
+          title="Open GeneralModal"
+          onButtonClick={() => {
+            this.setState({
+              generalModalOpen: true
             });
           }}
         />
@@ -1377,6 +1439,7 @@ class Sprint1 extends Component<Props, State> {
                 children: (
                   <div style={{ display: "flex" }}>
                     <AccountsList
+                      testId={"testId"}
                       list={[
                         {
                           label1: "Foreign Current Account",
@@ -1549,31 +1612,31 @@ class Sprint1 extends Component<Props, State> {
               <div>
                 <B_14_WHITE>Tips</B_14_WHITE>
                 <RowDiv style={{ paddingTop: 10 }}>
-                  <B_14_WHITE>
+                  <span>
                     Value:
                     <R_11_WHITE>
                       Accumulation of fund’s market value based on current NAV.
                       Current value is an indicative value and is to be
                       considered as reference only.
                     </R_11_WHITE>
-                  </B_14_WHITE>
+                  </span>
                 </RowDiv>
                 <RowDiv style={{ paddingTop: 10 }}>
-                  <B_14_WHITE>
+                  <span>
                     Invested:
                     <R_11_WHITE>
                       Accumulation of fund’s initial book value
                     </R_11_WHITE>
-                  </B_14_WHITE>
+                  </span>
                 </RowDiv>
                 <RowDiv style={{ paddingTop: 10 }}>
-                  <B_14_WHITE>
+                  <span>
                     P/L:
                     <R_11_WHITE>
                       Profit or loss is the difference between Market Value and
                       Book Value
                     </R_11_WHITE>
-                  </B_14_WHITE>
+                  </span>
                 </RowDiv>
               </div>
             }

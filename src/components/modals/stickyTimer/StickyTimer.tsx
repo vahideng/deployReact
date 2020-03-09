@@ -8,11 +8,20 @@ import LocalImages from "src/components/assets/images";
 const { R_17_BLACK, B_17_BLACK, R_15_BLACK } = Paragraphs;
 
 let myTimer: any;
+
 const customStyles = {
   content: {
     top: "auto",
-    padding: 0,
-    bottom: "0"
+    right: "auto",
+    bottom: "0",
+    marginRight: "-50%",
+    width: "100%",
+    left: " 0px",
+    padding: "0px"
+  },
+  overlay: {
+    background: "rgba(0, 0, 0, 0.5)",
+    backgroundBlendMode: "multiply"
   }
 };
 interface Props {
