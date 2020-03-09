@@ -5,7 +5,13 @@
 }
 
 .Container {
-  padding: 72px 32px 8px 32px;
+  padding: 72px 108px 56px 56px;
+}
+
+.ImageContainer {
+  width: 100%;
+  height: 26.75rem;
+  object-fit: cover;
 }
 
 @media (max-width: 575px) {
@@ -16,6 +22,6 @@
   }
 
   .Container {
-    padding: 0px 24 8px 24;
+    padding: 0px 24px 8px 24px;
   }
 }
