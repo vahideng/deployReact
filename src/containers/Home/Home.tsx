@@ -38,6 +38,7 @@ const Home: React.FC<Props> = () => {
               }}
               rightButtons={[
                 <TextButton
+                  testId={"testId"}
                   buttonText="Sprint-1"
                   onTextClick={() => {
                     setSprint1(true);

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import classes from "./Tooltip.module.css";
-import "../assets/common.css";
+
 import Icon from "../assets/icons/icon";
 
 interface TooltipProps {

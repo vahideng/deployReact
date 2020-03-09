@@ -5,6 +5,7 @@ import classes from "./TextDropdown.module.css";
 import Icon from "src/components/assets/icons/icon";
 
 interface Props {
+  testId?: string;
   options: { value: string; label: string }[];
   selectedOption: any;
   handleChange: any;
@@ -90,13 +91,14 @@ class TextDropdown extends Component<Props, State> {
   };
 
   render() {
-    const { options, selectedOption, placeHolder } = this.props;
+    const { options, selectedOption, placeHolder, testId } = this.props;
     return (
       <div
         className={`row ${classes.Container}`}
         onClick={() => this.setState({ menuIsOpen: !this.state.menuIsOpen })}
+        id={`${testId}`}
       >
-        <div className={`col-sm-8 ${classes.LeftSide}`}>
+        <div className={`col-sm-8 ${classes.LeftSide}`} id={`${testId}-0`}>
           <Select
             components={{ DropdownIndicator: () => null }}
             placeholder={placeHolder}
@@ -109,7 +111,7 @@ class TextDropdown extends Component<Props, State> {
           />
         </div>
 
-        <div className={`col-sm-4 ${classes.RightSide}`}>
+        <div className={`col-sm-4 ${classes.RightSide}`} id={`${testId}-1`}>
           <div className={classes.Content}>
             {this.state.menuIsOpen ? (
               <span className={classes.TextDropdownIcons}>

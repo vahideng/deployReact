@@ -1,5 +1,4 @@
 @import "../assets/common/common.scss";
-@import "../assets/common.css";
 
 .Container {
   width: 100%;
@@ -23,6 +22,10 @@
 }
 .Wrapper {
   width: 100%;
+
+  & a {
+    background-color: transparent !important;
+  }
 }
 .RightChildBG {
   display: flex;

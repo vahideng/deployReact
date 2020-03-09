@@ -1,9 +1,5 @@
-.__react_component_tooltip {
-  background-color: transparent !important;
-}
-.__react_component_tooltip::after {
-  display: none !important;
-}
+
+
 .react-tabs__tab--selected {
   border: 0 !important;
   border-bottom: 2px solid #ff2626 !important;
@@ -24,6 +20,6 @@
   padding: 0;
 }
 
-.nav-link.active {
+/* .nav-link.active {
   background-color: transparent !important;
-}
+} */
