@@ -32,9 +32,6 @@ const VerticalTabs: React.FC<Props> = ({
     }
   })
 
-  console.log(defaultActiveKey, "defaultActiveKey");
-  
-
   return(
     <Tab.Container id="verticalTabs" defaultActiveKey={defaultActiveKey}>
       <Row className={classes.WholeWrapper}>

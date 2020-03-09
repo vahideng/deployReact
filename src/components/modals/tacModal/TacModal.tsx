@@ -7,15 +7,7 @@ import Paragraphs from "../../assets/typography";
 import FullButton from "../../buttons/primaryButton/PrimaryButton";
 
 const { R_15_GREY444 } = Paragraphs;
-const customStyles = {
-  content: {
-    top: "auto",
-    left: "50%",
-    right: "auto",
-    bottom: "0",
-    marginRight: "-50%"
-  }
-};
+
 
 interface Props {
   content?: string;
@@ -30,7 +22,20 @@ interface Props {
 }
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
-
+const customStyles = {
+  content: {
+    top: "auto",
+    right: "auto",
+    bottom: "0",
+    marginRight: "-50%",
+    width: "100%",
+    left: " 0px"
+  },
+  overlay: {
+    background: "rgba(0, 0, 0, 0.5)",
+    backgroundBlendMode: "multiply"
+  }
+};
 const TacModal: React.FC<Props> = ({
   modalIsOpen,
   handleChange,
@@ -41,6 +46,8 @@ const TacModal: React.FC<Props> = ({
   onButtonClick,
   buttonColor
 }) => {
+
+ 
   // let subtitle: any;
   // const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -56,13 +63,15 @@ const TacModal: React.FC<Props> = ({
   // console.log(modalIsOpen, "modalIsOpenmodalIsOpen");
 
   return (
-    <div style={{ margin: "auto" }}>
+    <div>
       {/* <button onClick={openModal}>Open Modal</button> */}
       <Modal
+        //  className={classes.Modal}
+        //  overlayClassName={classes.Overlay}
         // overlayClassName={classes.OverLay}
         isOpen={!!modalIsOpen && modalIsOpen}
         // onAfterOpen={afterOpenModal}
-
+        // bodyOpenClassName={classes.Open}
         style={customStyles}
         contentLabel="Example Modal"
       >
