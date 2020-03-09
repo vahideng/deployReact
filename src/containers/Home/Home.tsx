@@ -15,13 +15,11 @@ const Home: React.FC<Props> = () => {
   const [selectedItem, setSelectedOption] = useState(null);
   const [split, setsSplit] = useState(false);
   const [sprint1, setSprint1] = useState(false);
-  const [sprint2, setSprint2] = useState(false);
+
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
-  if (sprint2 === true) {
-    return <Redirect to="/sprint-2" />;
-  }
+
   return (
     <>
       <BackgroundSingle
@@ -49,17 +47,7 @@ const Home: React.FC<Props> = () => {
                     fontSize: 15
                   }}
                 />,
-                <TextButton
-                  buttonText="Sprint-2"
-                  onTextClick={() => {
-                    setSprint2(true);
-                  }}
-                  buttonStyles={{
-                    color: "#000000",
-                    fontWeight: 400,
-                    fontSize: 15
-                  }}
-                />,
+
                 <TextDropdown
                   handleChange={(selectedOption: any) => {
                     setSelectedOption(selectedOption);
