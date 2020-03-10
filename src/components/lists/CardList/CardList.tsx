@@ -87,7 +87,11 @@ const CardList: React.FC<Props> = ({ list, onCardTileClick, testId }) => {
                         {item.cardName}
                       </R_18_GREY444>
                       {item.cardVendorLogo && (
-                        <img src={item.cardVendorLogo} alt="checkmark" />
+                        <img
+                          src={item.cardVendorLogo}
+                          alt="cardVendorLogo"
+                          width={"30rem"}
+                        />
                       )}
                     </div>
                     <div
@@ -200,7 +204,11 @@ const CardList: React.FC<Props> = ({ list, onCardTileClick, testId }) => {
                         {item.cardName}
                       </R_15_BLACK>
                       {item.cardVendorLogo && (
-                        <img src={item.cardVendorLogo} alt="checkmark" />
+                        <img
+                          src={item.cardVendorLogo}
+                          alt="cardVendorLogo"
+                          width={"30rem"}
+                        />
                       )}
                     </div>
                     <div

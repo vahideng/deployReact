@@ -51,7 +51,9 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
             id={testId}
           >
             <div style={{ display: "flex", flex: 1.5, flexDirection: "row" }}>
-              {item.cardLogo && <img src={item.cardLogo} alt="Image" />}
+              {item.cardLogo && (
+                <img src={item.cardLogo} alt="Image" width="40rem" />
+              )}
               <div
                 style={{
                   display: "flex",
@@ -105,11 +107,16 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                   display: "flex",
                   flex: 1,
                   flexDirection: "row",
-                  alignItems: "flex-end"
+                  alignItems: "center"
                 }}
               >
                 {item.countryFlagImage && (
-                  <img src={item.countryFlagImage} alt="Image" />
+                  <img
+                    src={item.countryFlagImage}
+                    alt="Image"
+                    width={"20rem"}
+                    height={"15rem"}
+                  />
                 )}
                 {item.icon && item.iconColor && item.iconSize && (
                   <Icon

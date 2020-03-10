@@ -50,8 +50,6 @@ import AccountsList from "src/components/lists/AccountsList/AccountsList";
 import TransactionIconList from "src/components/lists/TransactionIconList/TransactionIconList";
 import CardList from "src/components/lists/CardList/CardList";
 import TileListView from "src/components/lists/TileListView/TileListView";
-import UnionPay_logo from "src/components/assets/common/UnionPay_logo.svg";
-import VisaLogo from "src/components/assets/common/visaLogo.svg";
 
 import { Redirect } from "react-router-dom";
 
@@ -94,6 +92,7 @@ interface State {
   generalModalOpen: boolean;
   verticalActiveTab: any;
   homRedirect: boolean;
+  toggled: boolean;
 }
 
 class Sprint1 extends Component<Props, State> {
@@ -109,7 +108,8 @@ class Sprint1 extends Component<Props, State> {
     StickyModalOpen: false,
     generalModalOpen: false,
     verticalActiveTab: 3,
-    homRedirect: false
+    homRedirect: false,
+    toggled: false
   };
   render() {
     const {
@@ -124,7 +124,8 @@ class Sprint1 extends Component<Props, State> {
       StickyModalOpen,
       generalModalOpen,
       verticalActiveTab,
-      homRedirect
+      homRedirect,
+      toggled
     } = this.state;
 
     if (homRedirect === true) {
@@ -286,9 +287,9 @@ class Sprint1 extends Component<Props, State> {
                       label: "Oct 2019 eStatement",
                       rightItem: (
                         <ToggleButton
-                          value={hidden}
+                          value={toggled}
                           onTogglePress={() => {
-                            this.setState({ hidden: !hidden });
+                            this.setState({ toggled: !toggled });
                           }}
                           toggleOffLabel="NO"
                           toggleOnLabel="YES"
@@ -449,7 +450,7 @@ class Sprint1 extends Component<Props, State> {
                 accountNumber: "79429284",
                 statusLabel: "INQUIRY ONLY ALLOWED",
                 statusLabelColor: "#FF2626",
-                countryFlagImage: UnionPay_logo,
+                countryFlagImage: images.common.countryFlag,
                 amount: "AUD 1,392",
                 equivalentAmount: "RM 4,583"
               },
@@ -468,7 +469,7 @@ class Sprint1 extends Component<Props, State> {
                 amount: "RM 0.00"
               },
               {
-                cardLogo: VisaLogo,
+                cardLogo: images.common.masterCard,
                 accountName: "AmBank TRUE VISA (Supp)",
                 accountNumber: "5000 0220 5023 5678",
                 statusLabel: "ACTIVE",
@@ -486,7 +487,7 @@ class Sprint1 extends Component<Props, State> {
                 amount: "RM 50"
               },
               {
-                cardLogo: VisaLogo,
+                cardLogo: images.common.masterCard,
                 icon: "system-info",
                 iconColor: "#FFA463",
                 iconSize: 20,
@@ -525,9 +526,9 @@ class Sprint1 extends Component<Props, State> {
                 label: "Oct 2019 eStatement",
                 rightItem: (
                   <ToggleButton
-                    value={hidden}
+                    value={toggled}
                     onTogglePress={() => {
-                      this.setState({ hidden: !hidden });
+                      this.setState({ toggled: !toggled });
                     }}
                     toggleOffLabel="NO"
                     toggleOnLabel="YES"
@@ -732,9 +733,9 @@ class Sprint1 extends Component<Props, State> {
                         label: "Oct 2019 eStatement",
                         rightItem: (
                           <ToggleButton
-                            value={hidden}
+                            value={toggled}
                             onTogglePress={() => {
-                              this.setState({ hidden: !hidden });
+                              this.setState({ toggled: !toggled });
                             }}
                             toggleOffLabel="NO"
                             toggleOnLabel="YES"
@@ -853,7 +854,7 @@ class Sprint1 extends Component<Props, State> {
                     cardNumber: "2379 4793 4797 7493",
                     amount: "RM 50,293",
                     expiryDate: "EXP 12/21",
-                    cardVendorLogo: UnionPay_logo,
+                    cardVendorLogo: images.common.UnionPay_logo,
                     colorLeft: "#6C3F4F",
                     colorRight: "#3D1A1A",
                     active: true,
@@ -887,7 +888,7 @@ class Sprint1 extends Component<Props, State> {
                     cardNumber: "2379 4793 4797 7493",
                     amount: "RM 3,897,576",
                     expiryDate: "EXP 12/21",
-                    cardVendorLogo: UnionPay_logo,
+                    cardVendorLogo: images.common.UnionPay_logo,
                     colorLeft: "#989898",
                     colorRight: "#000000",
                     active: false,
@@ -1001,7 +1002,7 @@ class Sprint1 extends Component<Props, State> {
                           accountNumber: "79429284",
                           statusLabel: "INQUIRY ONLY ALLOWED",
                           statusLabelColor: "#FF2626",
-                          countryFlagImage: UnionPay_logo,
+                          countryFlagImage: images.common.countryFlag,
                           amount: "AUD 1,392",
                           equivalentAmount: "RM 4,583"
                         },
@@ -1020,7 +1021,7 @@ class Sprint1 extends Component<Props, State> {
                           amount: "RM 0.00"
                         },
                         {
-                          cardLogo: VisaLogo,
+                          cardLogo: images.common.masterCard,
                           accountName: "AmBank TRUE VISA (Supp)",
                           accountNumber: "5000 0220 5023 5678",
                           statusLabel: "ACTIVE",
@@ -1038,7 +1039,7 @@ class Sprint1 extends Component<Props, State> {
                           amount: "RM 50"
                         },
                         {
-                          cardLogo: VisaLogo,
+                          cardLogo: images.common.masterCard,
                           icon: "system-info",
                           iconColor: "#FFA463",
                           iconSize: 20,
@@ -1092,7 +1093,7 @@ class Sprint1 extends Component<Props, State> {
                           accountNumber: "79429284",
                           statusLabel: "INQUIRY ONLY ALLOWED",
                           statusLabelColor: "#FF2626",
-                          countryFlagImage: UnionPay_logo,
+                          countryFlagImage: images.common.countryFlag,
                           amount: "AUD 1,392",
                           equivalentAmount: "RM 4,583"
                         },
@@ -1111,7 +1112,7 @@ class Sprint1 extends Component<Props, State> {
                           amount: "RM 0.00"
                         },
                         {
-                          cardLogo: VisaLogo,
+                          cardLogo: images.common.masterCard,
                           accountName: "AmBank TRUE VISA (Supp)",
                           accountNumber: "5000 0220 5023 5678",
                           statusLabel: "ACTIVE",
@@ -1129,7 +1130,7 @@ class Sprint1 extends Component<Props, State> {
                           amount: "RM 50"
                         },
                         {
-                          cardLogo: VisaLogo,
+                          cardLogo: images.common.masterCard,
                           icon: "system-info",
                           iconColor: "#FFA463",
                           iconSize: 20,
@@ -1188,7 +1189,7 @@ class Sprint1 extends Component<Props, State> {
                           accountNumber: "79429284",
                           statusLabel: "INQUIRY ONLY ALLOWED",
                           statusLabelColor: "#FF2626",
-                          countryFlagImage: UnionPay_logo,
+                          countryFlagImage: images.common.countryFlag,
                           amount: "AUD 1,392",
                           equivalentAmount: "RM 4,583"
                         },
@@ -1207,7 +1208,7 @@ class Sprint1 extends Component<Props, State> {
                           amount: "RM 0.00"
                         },
                         {
-                          cardLogo: VisaLogo,
+                          cardLogo: images.common.masterCard,
                           accountName: "AmBank TRUE VISA (Supp)",
                           accountNumber: "5000 0220 5023 5678",
                           statusLabel: "ACTIVE",
@@ -1225,7 +1226,7 @@ class Sprint1 extends Component<Props, State> {
                           amount: "RM 50"
                         },
                         {
-                          cardLogo: VisaLogo,
+                          cardLogo: images.common.masterCard,
                           icon: "system-info",
                           iconColor: "#FFA463",
                           iconSize: 20,
@@ -1375,7 +1376,7 @@ class Sprint1 extends Component<Props, State> {
                           accountNumber: "79429284",
                           statusLabel: "INQUIRY ONLY ALLOWED",
                           statusLabelColor: "#FF2626",
-                          countryFlagImage: UnionPay_logo,
+                          countryFlagImage: images.common.countryFlag,
                           amount: "AUD 1,392",
                           equivalentAmount: "RM 4,583"
                         },
@@ -1394,7 +1395,7 @@ class Sprint1 extends Component<Props, State> {
                           amount: "RM 0.00"
                         },
                         {
-                          cardLogo: VisaLogo,
+                          cardLogo: images.common.masterCard,
                           accountName: "AmBank TRUE VISA (Supp)",
                           accountNumber: "5000 0220 5023 5678",
                           statusLabel: "ACTIVE",
@@ -1412,7 +1413,7 @@ class Sprint1 extends Component<Props, State> {
                           amount: "RM 50"
                         },
                         {
-                          cardLogo: VisaLogo,
+                          cardLogo: images.common.masterCard,
                           icon: "system-info",
                           iconColor: "#FFA463",
                           iconSize: 20,
@@ -1673,9 +1674,9 @@ class Sprint1 extends Component<Props, State> {
         <Title>ToggleButtons</Title>
         <CenteredDiv>
           <ToggleButton
-            value={hidden}
+            value={toggled}
             onTogglePress={() => {
-              this.setState({ hidden: !hidden });
+              this.setState({ toggled: !toggled });
             }}
             toggleOffLabel="NO"
             toggleOnLabel="YES"
@@ -1740,7 +1741,7 @@ class Sprint1 extends Component<Props, State> {
                 cardNumber: "2379 4793 4797 7493",
                 amount: "RM 50,293",
                 expiryDate: "EXP 12/21",
-                cardVendorLogo: UnionPay_logo,
+                cardVendorLogo: images.common.UnionPay_logo,
                 colorLeft: "#6C3F4F",
                 colorRight: "#3D1A1A",
                 active: true,
@@ -1763,7 +1764,7 @@ class Sprint1 extends Component<Props, State> {
                 cardNumber: "2379 4793 4797 7493",
                 amount: "RM 3,897,576",
                 expiryDate: "EXP 12/21",
-                cardVendorLogo: UnionPay_logo,
+                cardVendorLogo: images.common.UnionPay_logo,
                 colorLeft: "#989898",
                 colorRight: "#000000",
                 active: false,

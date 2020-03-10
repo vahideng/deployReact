@@ -3,8 +3,8 @@ import { Card, Accordion, useAccordionToggle, Col } from "react-bootstrap";
 
 import classes from "./TransactionList.module.css";
 import "react-tabs/style/react-tabs.css";
-import arrowUp from "../../components/assets/common/arrowUp.svg";
-import arrowDown from "../../components/assets/common/arrowDown.svg";
+
+import Icon from "../assets/icons/icon";
 
 interface Props {
   testId?: string;
@@ -32,9 +32,13 @@ const CustomToggle: React.FC<Props> = ({ eventKey, content, testId }) => {
       {content}
 
       {isOpen ? (
-        <img src={arrowUp} alt="arrowUp" />
+        <span className={classes.TransListIcon}>
+          <Icon icon="arrowUp" size={14} />
+        </span>
       ) : (
-        <img src={arrowDown} alt="arrowUp" />
+        <span className={classes.TransListIcon}>
+          <Icon icon="arrowDown" size={14} />
+        </span>
       )}
     </div>
   );

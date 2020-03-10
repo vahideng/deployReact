@@ -54,6 +54,7 @@
 .FilterOptionContainer {
   display: flex;
   flex-direction: row;
+  align-items: center;
   flex: 1;
   margin-bottom: 16px;
 }
@@ -92,6 +93,7 @@
 
 .SelectedFilterClearIcon {
   display: flex;
+  padding-bottom: 0.3rem;
   cursor: pointer;
 }
 
@@ -114,6 +116,10 @@
 
 .ClearIcon {
   margin-right: 1.05rem;
+}
+
+.SearchBarArrow {
+  margin-left: 0.2rem;
 }
 
 @media (max-width: 400px) {
