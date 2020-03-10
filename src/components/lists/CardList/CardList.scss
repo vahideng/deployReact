@@ -1,17 +1,8 @@
-@import "../../assets/common/common.scss";
-
 .CardListMainDiv {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-
 .CardTile {
   width: 21.375em;
   height: 5.375em;
@@ -38,4 +29,3 @@
   margin-right: 26px;
   cursor: pointer;
 }
-

@@ -18,13 +18,23 @@ const ToggleButton: React.FC<Props> = ({
 }) => {
   return (
     <>
-      <div 
-        className={classes.ToggleButtonContainer} 
-        style={{ justifyContent: value ? 'flex-end' : 'flex-start', pointerEvents: disabled ? 'none' : 'all' }} 
+      <div
+        className={classes.ToggleButtonContainer}
+        style={{
+          pointerEvents: disabled ? "none" : "all"
+        }}
         onClick={onTogglePress && onTogglePress}
+      >
+        <div
+          className={classes.ToggleButton}
+          style={{
+            backgroundColor: value ? " #FF2626" : "#c4c4c4",
+            left: !!value ? "1.3rem" : ".2rem"
+          }}
         >
-        <div className={classes.ToggleButton} style={{ backgroundColor: value ? " #FF2626" : "#c4c4c4" }}>
-          <B_11_WHITE style={{ fontWeight: 'normal' }}>{value ? toggleOnLabel : toggleOffLabel}</B_11_WHITE>
+          <B_11_WHITE style={{ fontWeight: "normal" }}>
+            {value ? toggleOnLabel : toggleOffLabel}
+          </B_11_WHITE>
         </div>
       </div>
     </>

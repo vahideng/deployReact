@@ -17,7 +17,12 @@ const LinkList: React.FC<Props> = ({ testId, list }) => {
     <div id={testId}>
       {!!list &&
         list.map((item, index) => {
-          return (
+          return !!item.rightItem ? (
+            <div key={index} className={classes.LinkListItemsDiv}>
+              <SB_15_BLACK>{item.label}</SB_15_BLACK>
+              <div>{item.rightItem}</div>
+            </div>
+          ) : (
             <div
               key={index}
               className={classes.LinkListItemsDiv}
@@ -25,13 +30,9 @@ const LinkList: React.FC<Props> = ({ testId, list }) => {
             >
               <SB_15_BLACK>{item.label}</SB_15_BLACK>
               <div>
-                {!!item.rightItem ? (
-                  item.rightItem
-                ) : (
-                  <div key={index} className={classes.LinkListIcon}>
-                    <Icon icon="Right1" color="#000000" size={27} />
-                  </div>
-                )}
+                <div key={index} className={classes.LinkListIcon}>
+                  <Icon icon="Right1" color="#000000" size={27} />
+                </div>
               </div>
             </div>
           );

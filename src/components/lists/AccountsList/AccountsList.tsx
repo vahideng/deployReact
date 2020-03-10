@@ -21,16 +21,19 @@ interface Props {
     statusLabelColor?: string;
     selected: boolean;
   }[];
-  onAccountTileClick: (item: {
-    label1: string;
-    label2: string;
-    amount: string;
-    defaultLabel?: string;
-    default?: boolean;
-    statusLabel?: string;
-    statusLabelColor?: string;
-    selected: boolean;
-  }) => void;
+  onAccountTileClick: (
+    item: {
+      label1: string;
+      label2: string;
+      amount: string;
+      defaultLabel?: string;
+      default?: boolean;
+      statusLabel?: string;
+      statusLabelColor?: string;
+      selected: boolean;
+    },
+    index: number
+  ) => void;
 }
 
 const AccountsList: React.FC<Props> = ({
@@ -48,7 +51,7 @@ const AccountsList: React.FC<Props> = ({
                 key={index}
                 id={`${testId}-0${index}`}
                 className={classes.AccountsTileSelected}
-                onClick={() => onAccountTileClick(item)}
+                onClick={() => onAccountTileClick(item, index)}
               >
                 <div
                   style={{ display: "flex", flex: 1, flexDirection: "column" }}
@@ -105,7 +108,7 @@ const AccountsList: React.FC<Props> = ({
                 key={index}
                 id={`${testId}-1${index}`}
                 className={classes.AccountsTile}
-                onClick={() => onAccountTileClick(item)}
+                onClick={() => onAccountTileClick(item, index)}
               >
                 <div
                   style={{ display: "flex", flex: 1, flexDirection: "column" }}

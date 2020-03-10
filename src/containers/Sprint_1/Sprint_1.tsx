@@ -286,8 +286,10 @@ class Sprint1 extends Component<Props, State> {
                       label: "Oct 2019 eStatement",
                       rightItem: (
                         <ToggleButton
-                          value={true}
-                          onTogglePress={() => alert("Toggle pressed")}
+                          value={hidden}
+                          onTogglePress={() => {
+                            this.setState({ hidden: !hidden });
+                          }}
                           toggleOffLabel="NO"
                           toggleOnLabel="YES"
                           disabled={false}
@@ -497,7 +499,10 @@ class Sprint1 extends Component<Props, State> {
                 amount: "RM 50"
               }
             ]}
-            onTileClick={item => alert(JSON.stringify(item))}
+            onTileClick={(item, index) => {
+              alert(JSON.stringify(item));
+              alert(index);
+            }}
           />
         </CenteredDiv>
         <Title>LinkList no container</Title>
@@ -520,8 +525,10 @@ class Sprint1 extends Component<Props, State> {
                 label: "Oct 2019 eStatement",
                 rightItem: (
                   <ToggleButton
-                    value={true}
-                    onTogglePress={() => alert("Toggle pressed")}
+                    value={hidden}
+                    onTogglePress={() => {
+                      this.setState({ hidden: !hidden });
+                    }}
                     toggleOffLabel="NO"
                     toggleOnLabel="YES"
                     disabled={false}
@@ -725,8 +732,10 @@ class Sprint1 extends Component<Props, State> {
                         label: "Oct 2019 eStatement",
                         rightItem: (
                           <ToggleButton
-                            value={true}
-                            onTogglePress={() => alert("Toggle pressed")}
+                            value={hidden}
+                            onTogglePress={() => {
+                              this.setState({ hidden: !hidden });
+                            }}
                             toggleOffLabel="NO"
                             toggleOnLabel="YES"
                             disabled={false}
@@ -897,7 +906,10 @@ class Sprint1 extends Component<Props, State> {
                     selected: false
                   }
                 ]}
-                onCardTileClick={item => alert(JSON.stringify(item))}
+                onCardTileClick={(item, index) => {
+                  alert(JSON.stringify(item));
+                  alert(index);
+                }}
               />
             </div>
           }
@@ -1472,7 +1484,10 @@ class Sprint1 extends Component<Props, State> {
                           selected: false
                         }
                       ]}
-                      onAccountTileClick={item => alert(JSON.stringify(item))}
+                      onAccountTileClick={(item, index) => {
+                        alert(JSON.stringify(item));
+                        alert(index);
+                      }}
                     />
                     <div style={{ width: 700, padding: "2rem" }}>
                       <AMTabs
@@ -1559,7 +1574,10 @@ class Sprint1 extends Component<Props, State> {
                           selected: false
                         }
                       ]}
-                      onAccountTileClick={item => alert(JSON.stringify(item))}
+                      onAccountTileClick={(item, index) => {
+                        alert(JSON.stringify(item));
+                        alert(index);
+                      }}
                     />
                     <div style={{ width: 700, padding: "2rem" }}>
                       <AMTabs
@@ -1655,8 +1673,10 @@ class Sprint1 extends Component<Props, State> {
         <Title>ToggleButtons</Title>
         <CenteredDiv>
           <ToggleButton
-            value={true}
-            onTogglePress={() => alert("Toggle pressed")}
+            value={hidden}
+            onTogglePress={() => {
+              this.setState({ hidden: !hidden });
+            }}
             toggleOffLabel="NO"
             toggleOnLabel="YES"
             disabled={false}
@@ -1751,7 +1771,10 @@ class Sprint1 extends Component<Props, State> {
                 selected: false
               }
             ]}
-            onCardTileClick={item => alert(JSON.stringify(item))}
+            onCardTileClick={(item, index) => {
+              alert(JSON.stringify(item));
+              alert(index);
+            }}
           />
         </CenteredDiv>
         <Title>AccountsList</Title>
@@ -1789,7 +1812,10 @@ class Sprint1 extends Component<Props, State> {
                 selected: false
               }
             ]}
-            onAccountTileClick={item => alert(JSON.stringify(item))}
+            onAccountTileClick={(item, index) => {
+              alert(JSON.stringify(item));
+              alert(index);
+            }}
           />
         </CenteredDiv>
         <Title>secureImage</Title>

@@ -24,16 +24,19 @@ interface Props {
     activeLabel?: string;
     selected: boolean;
   }[];
-  onCardTileClick: (item: {
-    cardName: string;
-    cardNumber: string;
-    amount: string;
-    expiryDate?: string;
-    cardVendorLogo?: any;
-    active?: boolean;
-    activeLabel?: string;
-    selected: boolean;
-  }) => void;
+  onCardTileClick: (
+    item: {
+      cardName: string;
+      cardNumber: string;
+      amount: string;
+      expiryDate?: string;
+      cardVendorLogo?: any;
+      active?: boolean;
+      activeLabel?: string;
+      selected: boolean;
+    },
+    index: number
+  ) => void;
 }
 
 const CardList: React.FC<Props> = ({ list, onCardTileClick, testId }) => {
@@ -57,7 +60,7 @@ const CardList: React.FC<Props> = ({ list, onCardTileClick, testId }) => {
                   style={{
                     background: `linear-gradient(to left top, ${item.colorLeft}, ${item.colorRight})`
                   }}
-                  onClick={() => onCardTileClick(item)}
+                  onClick={() => onCardTileClick(item, index)}
                 >
                   <div
                     style={{
@@ -170,7 +173,7 @@ const CardList: React.FC<Props> = ({ list, onCardTileClick, testId }) => {
                   style={{
                     background: `linear-gradient(to left top, ${item.colorLeft}, ${item.colorRight})`
                   }}
-                  onClick={() => onCardTileClick(item)}
+                  onClick={() => onCardTileClick(item, index)}
                 >
                   <div
                     style={{

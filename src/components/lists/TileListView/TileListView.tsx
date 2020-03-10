@@ -21,19 +21,22 @@ interface Props {
     amount: string;
     equivalentAmount?: string;
   }[];
-  onTileClick: (item: {
-    cardLogo?: any;
-    accountName: string;
-    accountNumber: string;
-    statusLabel: string;
-    statusLabelColor: string;
-    countryFlagImage?: any;
-    icon?: string;
-    iconSize?: number;
-    iconColor?: string;
-    amount: string;
-    equivalentAmount?: string;
-  }) => void;
+  onTileClick: (
+    item: {
+      cardLogo?: any;
+      accountName: string;
+      accountNumber: string;
+      statusLabel: string;
+      statusLabelColor: string;
+      countryFlagImage?: any;
+      icon?: string;
+      iconSize?: number;
+      iconColor?: string;
+      amount: string;
+      equivalentAmount?: string;
+    },
+    index: number
+  ) => void;
 }
 
 const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
@@ -43,7 +46,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
         list.map((item, index) => (
           <div
             className={classes.ListTile}
-            onClick={() => onTileClick(item)}
+            onClick={() => onTileClick(item, index)}
             key={index}
             id={testId}
           >
