@@ -9,6 +9,7 @@ import { Redirect } from "react-router-dom";
 import Navbar from "src/components/headers/navbar/Navbar";
 import BoxContent from "src/components/boxContent/BoxContent";
 import { Row, Col } from "react-bootstrap";
+import TransactionLimitList from "src/components/lists/TransactionLimitList/TransactionLimitList";
 
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -126,6 +127,50 @@ class Sprint2 extends Component<Props, State> {
               testId="testId"
               title="Always be vigilant against scam threats."
               link={{ label: "Learn more", url: "#" }}
+            />
+          </Col>
+        </Row>
+        <Title>Transaction Limit List</Title>
+        <Row
+          style={{
+            background: "#FFFFFF",
+            boxShadow: "0px 2px 7px rgba(0, 0, 0, 0.123279)",
+            borderRadius: "20px 20px 0px 0px",
+            margin: "24px 20% auto"
+          }}
+        >
+          <Col
+            sm={3}
+            style={{
+              borderRight: "1px solid #DEDEDE",
+              padding: "0"
+            }}
+          ></Col>
+          <Col sm={9} style={{ padding: "0" }}>
+            <TransactionLimitList
+              list={[
+                {
+                  label: "Transfers",
+                  onClick: () => alert("click")
+                },
+                {
+                  label: "Payments",
+                  onClick: () => alert("click")
+                },
+                {
+                  label: "Investments",
+                  onClick: () => alert("click")
+                },
+                {
+                  label: "Online Shopping",
+                  onClick: () => alert("click")
+                },
+                {
+                  label: "FPX Specific Merchant",
+                  onClick: () => alert("click")
+                }
+              ]}
+              testId="testId"
             />
           </Col>
         </Row>

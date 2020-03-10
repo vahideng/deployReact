@@ -1,5 +1,5 @@
 .Container {
-  padding: 40px 64px 36px 48px;
+  padding: 2.5rem 4rem 2.25rem 4rem;
 }
 
 .Content {
@@ -24,15 +24,15 @@
       -ms-flex-align: center !important;
           align-items: center !important;
   background-color: #333333 !important;
-  border-radius: 20px !important;
+  border-radius: 1.25rem !important;
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
-  height: 23px !important;
+  height: 1.4375rem !important;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 141px !important;
+  width: 8.8125rem !important;
   margin-bottom: 1rem !important;
 }
 
@@ -68,11 +68,11 @@ a.Link:hover {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
-  height: 40px !important;
+  height: 2.5rem !important;
   -webkit-box-pack: center !important;
       -ms-flex-pack: center !important;
           justify-content: center !important;
-  width: 40px !important;
+  width: 2.5rem !important;
 }
 
 .InnerColor {
@@ -85,9 +85,9 @@ a.Link:hover {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
-  height: 28.57px !important;
+  height: 1.785625rem !important;
   -webkit-box-pack: center !important;
       -ms-flex-pack: center !important;
           justify-content: center !important;
-  width: 28.57px !important;
+  width: 1.785625rem !important;
 }

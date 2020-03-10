@@ -1,0 +1,16 @@
+.ListContainer {
+  padding: 1.5rem;
+}
+
+.ItemContainer {
+  align-items: center;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  border: 1px solid #dedede;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer !important;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 1.25rem;
+}
