@@ -6,6 +6,7 @@ import Icon from "src/components/assets/icons/icon";
 
 interface Props {
   testId?: string;
+  defaultValue?: string;
   options: { value: string; label: string }[];
   selectedOption: any;
   handleChange: any;
@@ -91,7 +92,13 @@ class TextDropdown extends Component<Props, State> {
   };
 
   render() {
-    const { options, selectedOption, placeHolder, testId } = this.props;
+    const {
+      options,
+      selectedOption,
+      placeHolder,
+      testId,
+      defaultValue
+    } = this.props;
     return (
       <div
         className={`row ${classes.Container}`}
@@ -100,6 +107,7 @@ class TextDropdown extends Component<Props, State> {
       >
         <div className={`col-sm-8 ${classes.LeftSide}`} id={`${testId}-0`}>
           <Select
+            defaultValue={defaultValue}
             components={{ DropdownIndicator: () => null }}
             placeholder={placeHolder}
             value={selectedOption}

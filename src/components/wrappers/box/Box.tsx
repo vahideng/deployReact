@@ -6,8 +6,8 @@ interface Props {
   content: any;
   fullButton?: boolean;
   onSelect?: any;
+  tabTitles?: string[];
   tabIndex?: number;
-
   title?: string;
   titleColor?: string;
   buttonColor?: any;
@@ -23,6 +23,7 @@ const Box: React.FC<Props> = ({
   content,
   tabIndex,
   onSelect,
+  tabTitles,
   split,
   title,
   titleColor,
@@ -39,7 +40,7 @@ const Box: React.FC<Props> = ({
         <AMTabs
           onSelect={onSelect}
           defaultIndex={tabIndex}
-          titles={["Login", "Security", "Contact Us"]}
+          titles={tabTitles ? tabTitles : []}
           contents={content}
         />
       </div>

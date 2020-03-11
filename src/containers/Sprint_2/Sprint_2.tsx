@@ -23,7 +23,7 @@ const Title = styled(B_13_ORANGE_463)`
 interface Props {}
 
 const Sprint2: React.FC<Props> = () => {
-  const [selectedItem, setSelectedOption] = useState(null);
+  const [selectedItem, setSelectedOption] = useState("Persian");
   const [sprint1, setSprint1] = useState(false);
   const [sprint2, setSprint2] = useState(false);
   const [homeRedirect, setHomeRedirect] = useState(false);
@@ -100,6 +100,7 @@ const Sprint2: React.FC<Props> = () => {
           />,
           <TextDropdown
             menuIsOpen
+            defaultValue={"Persian"}
             handleChange={(selectedOption: any) => {
               setSelectedOption(selectedOption);
               console.log(`Option:`, selectedOption);
