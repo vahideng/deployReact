@@ -1,12 +1,11 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Icon from "src/components/assets/icons/icon";
 import classes from "./NavbarTransparent.module.css";
 
 interface Props {
   testId?: string;
   icon?: { name?: string; color?: string; onIconClick?: () => void };
-  rightButtons?: any;
-  menuIsOpen?: boolean;
+  rightButtons?: ReactNode[];
 }
 
 const NavbarTransparent: React.FC<Props> = ({ rightButtons, icon, testId }) => {
@@ -24,7 +23,7 @@ const NavbarTransparent: React.FC<Props> = ({ rightButtons, icon, testId }) => {
       <div className={classes.NavbarTransparentIconDiv}>
         {!!rightButtons &&
           rightButtons.map(
-            (button: React.ReactNode, index: string | number | undefined) => {
+            (button: ReactNode, index: string | number | undefined) => {
               return (
                 <div
                   key={index}
