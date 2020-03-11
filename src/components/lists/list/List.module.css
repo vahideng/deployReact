@@ -50,3 +50,7 @@
 .ListTextRight {
   text-align: right;
 }
+
+.ListTextRightIcon {
+  padding-right: 0.5rem;
+}

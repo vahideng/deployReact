@@ -6,6 +6,7 @@ import Paragraphs from "../../assets/typography";
 const { B_18_BLACK, R_13_GREY444, B_15_BLACK, B_24_BLACK } = Paragraphs;
 interface Props {
   testId?: string;
+
   header?: {
     icon?: { name: string; color?: string; iconText: string };
     title?: string;
@@ -14,6 +15,7 @@ interface Props {
   list?: {
     leftLabel: string;
     rightLabel?: string;
+    approved?: boolean;
     details?: string[];
   }[];
 }
@@ -56,8 +58,15 @@ const List: React.FC<Props> = ({ header, testId, list }) => {
               <R_13_GREY444>{item.leftLabel}</R_13_GREY444>
               <div>
                 <B_15_BLACK className={classes.ListTextRight}>
+                  {item.approved && (
+                    <span className={classes.ListTextRightIcon}>
+                      <Icon icon="accent-tick" size={13} />
+                    </span>
+                  )}
+
                   {item.rightLabel}
                 </B_15_BLACK>
+
                 {!!item.details &&
                   item.details.map((detail, index) => {
                     return (

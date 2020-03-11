@@ -12,6 +12,7 @@ import { Row, Col } from "react-bootstrap";
 import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTransparent";
 import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
 import TextButton from "src/components/buttons/textButton/TextButton";
+import List from "src/components/lists/list/List";
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -68,7 +69,7 @@ const Sprint2: React.FC<Props> = () => {
           }
         ]}
       />
-      <Title>BannerHero</Title>
+      <Title>Navbar Transparent</Title>
       <NavbarTransparent
         icon={{
           onIconClick: () => {
@@ -114,6 +115,43 @@ const Sprint2: React.FC<Props> = () => {
               { label: "中文", value: "中文" }
             ]}
           />
+        ]}
+      />
+      <Title>List</Title>
+      <List
+        header={{
+          icon: {
+            name: "LOGO",
+            color: "#ff2626",
+            iconText: "Review & Confirm"
+          }
+        }}
+        list={[
+          {
+            leftLabel: "To",
+            rightLabel: "Saving Account A",
+            details: ["8881019596535 | AmBank"]
+          },
+          {
+            leftLabel: "Amount",
+            rightLabel: "RM 500.00",
+            approved: true,
+            details: ["Fees & Charges: RM 0.00"]
+          },
+          {
+            leftLabel: "Date",
+            rightLabel: "Transfer Now",
+            details: ["Today, 5 January 2019"]
+          },
+          {
+            leftLabel: "Reference",
+            rightLabel: "House Rental"
+          },
+          {
+            leftLabel: "From",
+            rightLabel: "Savings Account",
+            details: ["2998202013", "Available Balance: RM 10,301.50"]
+          }
         ]}
       />
       <Title>BannerHero</Title>

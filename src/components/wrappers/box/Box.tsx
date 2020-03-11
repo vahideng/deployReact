@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import classes from "./Box.module.css";
 import AMTabs from "src/components/buttons/tabs/Tabs";
 import FullButton from "src/components/buttons/fullButton/FullButton";
 interface Props {
-  content: any;
+  content?: ReactNode[];
   fullButton?: boolean;
   onSelect?: any;
   tabTitles?: string[];
@@ -17,6 +17,7 @@ interface Props {
   split?: boolean;
   leftTitle?: string;
   rightTitle?: string;
+  boxChildren?: ReactNode;
 }
 
 const Box: React.FC<Props> = ({
@@ -32,19 +33,22 @@ const Box: React.FC<Props> = ({
   leftTitle,
   rightTitle,
   onRightButton,
-  buttonColor
+  buttonColor,
+  boxChildren
 }) => {
   return (
     <div className={classes.BoxMainDiv}>
-      <div className={classes.Container}>
-        <AMTabs
-          onSelect={onSelect}
-          defaultIndex={tabIndex}
-          titles={tabTitles ? tabTitles : []}
-          contents={content}
-        />
-      </div>
-
+      {!!content && (
+        <div className={classes.Container}>
+          <AMTabs
+            onSelect={onSelect}
+            defaultIndex={tabIndex}
+            titles={tabTitles ? tabTitles : []}
+            contents={content ? content : []}
+          />
+        </div>
+      )}
+      {!!boxChildren && <div>{boxChildren}</div>}
       <div className={classes.Wrapper}>
         <FullButton
           title={title}
