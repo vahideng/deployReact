@@ -113,7 +113,7 @@ class TextDropdown extends Component<Props, State> {
 
         <div className={`col-sm-4 ${classes.RightSide}`} id={`${testId}-1`}>
           <div className={classes.Content}>
-            {this.state.menuIsOpen ? (
+            {!this.state.menuIsOpen ? (
               <span className={classes.TextDropdownIcons}>
                 <Icon icon="arrowDown" size={18} />
               </span>
