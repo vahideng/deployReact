@@ -48,7 +48,11 @@ const List: React.FC<Props> = ({ header, testId, list }) => {
       {!!list &&
         list.map((item, index) => {
           return (
-            <div key={index} className={classes.ListItemsDiv}>
+            <div
+              key={index}
+              className={classes.ListItemsDiv}
+              id={`${testId}-${index}`}
+            >
               <R_13_GREY444>{item.leftLabel}</R_13_GREY444>
               <div>
                 <B_15_BLACK className={classes.ListTextRight}>
@@ -60,6 +64,7 @@ const List: React.FC<Props> = ({ header, testId, list }) => {
                       <R_13_GREY444
                         className={classes.ListTextRight}
                         key={index}
+                        id={`${testId}-0-${index}`}
                       >
                         {detail}
                       </R_13_GREY444>

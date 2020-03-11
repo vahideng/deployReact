@@ -4,13 +4,14 @@ import classes from "./ZeroResult.module.css";
 import Icon from "src/components/assets/icons/icon";
 const { SB_16_GREY444 } = Paragraphs;
 interface Props {
+  testId?: string;
   text: string;
 }
 
-const ZeroResult: React.FC<Props> = ({ text }) => {
+const ZeroResult: React.FC<Props> = ({ text, testId }) => {
   return (
-    <div className={classes.ZeroResultMain}>
-      <div className={classes.ZeroResultDiv}>
+    <div className={classes.ZeroResultMain} id={testId}>
+      <div className={classes.ZeroResultDiv} id={`${testId}-0`}>
         <Icon icon="Amy1" size={60} color="#939393" />
         <SB_16_GREY444 className={classes.ZeroResultText}>{text}</SB_16_GREY444>
       </div>

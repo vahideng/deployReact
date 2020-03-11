@@ -20,7 +20,7 @@ import InlineMessage from "src/components/infographic/inlineMessage/InlineMessag
 import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
 import ZeroResult from "src/components/infographic/zeroResault/ZeroResult";
 import PieChart from "src/components/pies/PieChart";
-// import AmModal from "src/components/modals/Modal";
+import AmModal from "src/components/modals/Modal";
 import InputField from "src/components/inputs/inputFields/InputFields";
 import IconButtons from "src/components/buttons/iconButtons/IconButtons";
 import DescriptionButton from "src/components/buttons/descriptionButton/DescriptionButton";
@@ -42,7 +42,6 @@ import MenuBanner from "src/components/modals/menuBanner/MenuBanner";
 import FloatingButton from "src/components/buttons/floatingButton/FloatingButton";
 import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
 import TransactionList from "src/components/transactionList/TransactionList";
-// import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 import NavigationButtons from "src/components/buttons/navigationButtons/NavigationButtons";
 import ToggleButton from "src/components/buttons/toggleButton/ToggleButton";
 import SearchBar from "src/components/inputs/searchBar/SearchBar";
@@ -50,8 +49,6 @@ import AccountsList from "src/components/lists/AccountsList/AccountsList";
 import TransactionIconList from "src/components/lists/TransactionIconList/TransactionIconList";
 import CardList from "src/components/lists/CardList/CardList";
 import TileListView from "src/components/lists/TileListView/TileListView";
-import UnionPay_logo from "src/components/assets/common/UnionPay_logo.svg";
-import VisaLogo from "src/components/assets/common/visaLogo.svg";
 
 import { Redirect } from "react-router-dom";
 
@@ -91,8 +88,10 @@ interface State {
   IconButtonsNum: number;
   TacModalOpen: boolean;
   StickyModalOpen: boolean;
+  generalModalOpen: boolean;
   verticalActiveTab: any;
   homRedirect: boolean;
+  toggled: boolean;
 }
 
 class Sprint1 extends Component<Props, State> {
@@ -106,8 +105,10 @@ class Sprint1 extends Component<Props, State> {
     IconButtonsNum: 1,
     TacModalOpen: false,
     StickyModalOpen: false,
-    verticalActiveTab: 0,
-    homRedirect: false
+    generalModalOpen: false,
+    verticalActiveTab: 3,
+    homRedirect: false,
+    toggled: false
   };
   render() {
     const {
@@ -120,18 +121,73 @@ class Sprint1 extends Component<Props, State> {
       IconButtonsNum,
       TacModalOpen,
       StickyModalOpen,
+      generalModalOpen,
       verticalActiveTab,
-      homRedirect
+      homRedirect,
+      toggled
     } = this.state;
 
     if (homRedirect === true) {
       return <Redirect to="/" />;
     }
+
     return (
       <div style={{ paddingTop: "4rem" }}>
+        <AmModal
+          testId={"testId"}
+          modalIsOpen={generalModalOpen}
+          modalChildren={
+            <FormContainer
+              testId={"testId"}
+              children={
+                <List
+                  testId={"testId"}
+                  header={{
+                    title: "Transfer Successful",
+                    subTitle: (
+                      <div style={{ display: "flex" }}>
+                        <span>You have successfully transferred</span>
+                        <p style={{ fontWeight: 700 }}> RM 500.00 </p>
+                        <span> to </span>
+                        <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
+                      </div>
+                    )
+                  }}
+                  list={[
+                    {
+                      leftLabel: "To",
+                      rightLabel: "Saving Account A",
+                      details: ["8881019596535 | AmBank"]
+                    },
+                    {
+                      leftLabel: "Amount",
+                      rightLabel: "RM 500.00",
+                      details: ["Fees & Charges: RM 0.00"]
+                    },
+                    {
+                      leftLabel: "Date",
+                      rightLabel: "Transfer Now",
+                      details: ["Today, 5 January 2019"]
+                    },
+                    {
+                      leftLabel: "Reference",
+                      rightLabel: "House Rental"
+                    },
+                    {
+                      leftLabel: "From",
+                      rightLabel: "Savings Account",
+                      details: ["2998202013", "Available Balance: RM 10,301.50"]
+                    }
+                  ]}
+                />
+              }
+            />
+          }
+        />
         <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
           <TransactionList
+            testId={"testId"}
             data={[
               {
                 leftLabel: "DoItNow tr DF",
@@ -180,6 +236,7 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
         <Navbar
+          testId={"testId"}
           icon={{
             onIconClick: () => {
               this.setState({
@@ -216,6 +273,7 @@ class Sprint1 extends Component<Props, State> {
             children={
               <div style={{ paddingTop: "2rem" }}>
                 <LinkList
+                  testId={"testId"}
                   list={[
                     {
                       label: "Jan 2020 eStatement",
@@ -233,8 +291,11 @@ class Sprint1 extends Component<Props, State> {
                       label: "Oct 2019 eStatement",
                       rightItem: (
                         <ToggleButton
-                          value={true}
-                          onTogglePress={() => alert("Toggle pressed")}
+                          testId={"testId"}
+                          value={toggled}
+                          onTogglePress={() => {
+                            this.setState({ toggled: !toggled });
+                          }}
                           toggleOffLabel="NO"
                           toggleOnLabel="YES"
                           disabled={false}
@@ -255,6 +316,7 @@ class Sprint1 extends Component<Props, State> {
         <CenteredDiv>
           <div style={{ width: "57.1875em" }}>
             <TransactionIconList
+              testId={"testId"}
               list={[
                 {
                   date: "Today",
@@ -380,6 +442,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>TileListView</Title>
         <CenteredDiv>
           <TileListView
+            testId={"testId"}
             list={[
               {
                 accountName: "TRUE Savings Account-i",
@@ -393,7 +456,7 @@ class Sprint1 extends Component<Props, State> {
                 accountNumber: "79429284",
                 statusLabel: "INQUIRY ONLY ALLOWED",
                 statusLabelColor: "#FF2626",
-                countryFlagImage: UnionPay_logo,
+                countryFlagImage: images.common.countryFlag,
                 amount: "AUD 1,392",
                 equivalentAmount: "RM 4,583"
               },
@@ -412,7 +475,7 @@ class Sprint1 extends Component<Props, State> {
                 amount: "RM 0.00"
               },
               {
-                cardLogo: VisaLogo,
+                cardLogo: images.common.masterCard,
                 accountName: "AmBank TRUE VISA (Supp)",
                 accountNumber: "5000 0220 5023 5678",
                 statusLabel: "ACTIVE",
@@ -430,7 +493,7 @@ class Sprint1 extends Component<Props, State> {
                 amount: "RM 50"
               },
               {
-                cardLogo: VisaLogo,
+                cardLogo: images.common.masterCard,
                 icon: "system-info",
                 iconColor: "#FFA463",
                 iconSize: 20,
@@ -443,7 +506,10 @@ class Sprint1 extends Component<Props, State> {
                 amount: "RM 50"
               }
             ]}
-            onTileClick={item => alert(JSON.stringify(item))}
+            onTileClick={(item, index) => {
+              alert(JSON.stringify(item));
+              alert(index);
+            }}
           />
         </CenteredDiv>
         <Title>LinkList no container</Title>
@@ -466,8 +532,10 @@ class Sprint1 extends Component<Props, State> {
                 label: "Oct 2019 eStatement",
                 rightItem: (
                   <ToggleButton
-                    value={true}
-                    onTogglePress={() => alert("Toggle pressed")}
+                    value={toggled}
+                    onTogglePress={() => {
+                      this.setState({ toggled: !toggled });
+                    }}
                     toggleOffLabel="NO"
                     toggleOnLabel="YES"
                     disabled={false}
@@ -495,9 +563,9 @@ class Sprint1 extends Component<Props, State> {
                   title: "Transfer Successful",
                   subTitle: (
                     <div style={{ display: "flex" }}>
-                      <p>You have successfully transferred</p>
+                      <span>You have successfully transferred</span>
                       <p style={{ fontWeight: 700 }}> RM 500.00 </p>
-                      <p> to </p>
+                      <span> to </span>
                       <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
                     </div>
                   )
@@ -551,7 +619,7 @@ class Sprint1 extends Component<Props, State> {
               display: "inline-block"
             }}
           >
-            <FloatingButton darkButton={true} />
+            <FloatingButton darkButton={true} testId={"testId"} />
           </div>
         </CenteredDiv>
 
@@ -606,6 +674,7 @@ class Sprint1 extends Component<Props, State> {
           }}
         >
           <FormContainerCurved
+            testId={"testId"}
             curvedTab={{
               leftTab: "New Recipient",
               rightTab: "Own/Favorite",
@@ -671,8 +740,10 @@ class Sprint1 extends Component<Props, State> {
                         label: "Oct 2019 eStatement",
                         rightItem: (
                           <ToggleButton
-                            value={true}
-                            onTogglePress={() => alert("Toggle pressed")}
+                            value={toggled}
+                            onTogglePress={() => {
+                              this.setState({ toggled: !toggled });
+                            }}
                             toggleOffLabel="NO"
                             toggleOnLabel="YES"
                             disabled={false}
@@ -751,6 +822,7 @@ class Sprint1 extends Component<Props, State> {
         </CenteredDiv>
 
         <MenuBanner
+          testId={"testId"}
           notification={true}
           content={
             <div
@@ -790,7 +862,7 @@ class Sprint1 extends Component<Props, State> {
                     cardNumber: "2379 4793 4797 7493",
                     amount: "RM 50,293",
                     expiryDate: "EXP 12/21",
-                    cardVendorLogo: UnionPay_logo,
+                    cardVendorLogo: images.common.UnionPay_logo,
                     colorLeft: "#6C3F4F",
                     colorRight: "#3D1A1A",
                     active: true,
@@ -824,7 +896,7 @@ class Sprint1 extends Component<Props, State> {
                     cardNumber: "2379 4793 4797 7493",
                     amount: "RM 3,897,576",
                     expiryDate: "EXP 12/21",
-                    cardVendorLogo: UnionPay_logo,
+                    cardVendorLogo: images.common.UnionPay_logo,
                     colorLeft: "#989898",
                     colorRight: "#000000",
                     active: false,
@@ -843,13 +915,17 @@ class Sprint1 extends Component<Props, State> {
                     selected: false
                   }
                 ]}
-                onCardTileClick={item => alert(JSON.stringify(item))}
+                onCardTileClick={(item, index) => {
+                  alert(JSON.stringify(item));
+                  alert(index);
+                }}
               />
             </div>
           }
         />
 
         <TacModal
+          testId={"testId"}
           onButtonClick={() => alert("TAC Submitted")}
           buttonTitle="Continue"
           modalIsOpen={TacModalOpen}
@@ -870,8 +946,9 @@ class Sprint1 extends Component<Props, State> {
         />
         {/* {console.log(this.state.StickyModalOpen)} */}
         <StickyTimer
+          testId={"testId"}
           modalIsOpen={StickyModalOpen}
-          expirationTime={10}
+          expirationTime={20}
           text={
             "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
           }
@@ -884,349 +961,350 @@ class Sprint1 extends Component<Props, State> {
             });
           }}
         />
+        <PrimaryButton
+          title="Open GeneralModal"
+          onButtonClick={() => {
+            this.setState({
+              generalModalOpen: true
+            });
+          }}
+        />
 
         <Title>Vertical tab</Title>
         <CenteredDiv>
-          <div
-            style={{
-              minHeight: "41.625em",
-              display: "flex",
-              width: "57.1875em"
-            }}
-          >
-            <VerticalTab
-              selectedBorderColor="#FD8585"
-              minimize={false}
-              data={[
-                {
-                  selected: verticalActiveTab === 0 ? true : false,
-                  onClick: (index: any) =>
-                    this.setState({ verticalActiveTab: index }),
-                  icon: {
-                    name: "Account-2",
-                    color: "#ff2626"
-                  },
-                  accountTitle: "Savings/Current Accounts",
-                  children: (
-                    <div
-                      style={{
-                        display: "flex",
-                        paddingTop: 30,
-                        flexDirection: "column"
-                      }}
-                    >
-                      <R_13_BLACK>Your outstanding</R_13_BLACK>
-                      <B_24_BLACK>RM 55,555.00</B_24_BLACK>
-                      <R_13_BLACK style={{ marginBottom: 16 }}>
-                        5 credit cards
-                      </R_13_BLACK>
-                      <TileListView
-                        list={[
-                          {
-                            accountName: "TRUE Savings Account-i",
-                            accountNumber: "123456890",
-                            statusLabel: "ACTIVE",
-                            statusLabelColor: "#36A03E",
-                            amount: "RM 10,135"
-                          },
-                          {
-                            accountName: "Foreign Currency Account",
-                            accountNumber: "79429284",
-                            statusLabel: "INQUIRY ONLY ALLOWED",
-                            statusLabelColor: "#FF2626",
-                            countryFlagImage: UnionPay_logo,
-                            amount: "AUD 1,392",
-                            equivalentAmount: "RM 4,583"
-                          },
-                          {
-                            accountName: "Conversion Account",
-                            accountNumber: "20717524",
-                            statusLabel: "ACTIVE",
-                            statusLabelColor: "#36A03E",
-                            amount: "- RM 2,000"
-                          },
-                          {
-                            accountName: "Conversion Account",
-                            accountNumber: "20717524",
-                            statusLabel: "RESTRICTED ACCESS",
-                            statusLabelColor: "#FF2626",
-                            amount: "RM 0.00"
-                          },
-                          {
-                            cardLogo: VisaLogo,
-                            accountName: "AmBank TRUE VISA (Supp)",
-                            accountNumber: "5000 0220 5023 5678",
-                            statusLabel: "ACTIVE",
-                            statusLabelColor: "#36A03E",
-                            amount: "RM 5,000"
-                          },
-                          {
-                            icon: "system-info",
-                            iconColor: "#FF2626",
-                            iconSize: 20,
-                            accountName: "AmBank Advance Card",
-                            accountNumber: "3062 2401 2019 5678",
-                            statusLabel: "OVERDUE",
-                            statusLabelColor: "#FF2626",
-                            amount: "RM 50"
-                          },
-                          {
-                            cardLogo: VisaLogo,
-                            icon: "system-info",
-                            iconColor: "#FFA463",
-                            iconSize: 20,
-                            accountName: "AmBank Advance Card",
-                            accountNumber: "3062 2401 2019 5678",
-                            statusLabel: "ACTIVE",
-                            statusLabelColor: "#36A03E",
-                            statusLabel2: "DUE SOON",
-                            statusLabel2Color: "#FFA463",
-                            amount: "RM 50"
-                          }
-                        ]}
-                        onTileClick={item => alert(JSON.stringify(item))}
-                      />
-                    </div>
-                  )
+          <VerticalTab
+            testId={"testId"}
+            selectedBorderColor="#FD8585"
+            minimize={false}
+            data={[
+              {
+                selected: verticalActiveTab === 0 ? true : false,
+                onClick: (index: any) =>
+                  this.setState({ verticalActiveTab: index }),
+                icon: {
+                  name: "Account-2",
+                  color: "#ff2626"
                 },
-                {
-                  selected: verticalActiveTab === 1 ? true : false,
-                  onClick: (index: any) =>
-                    this.setState({ verticalActiveTab: index }),
-                  icon: {
-                    name: "Account-2",
-                    color: "#ff2626"
-                  },
-                  accountTitle: "Credit Cards",
-                  children: (
-                    <div
-                      style={{
-                        display: "flex",
-                        paddingTop: 30,
-                        flexDirection: "column"
-                      }}
-                    >
-                      <R_13_BLACK>YOUR OUTSTANDING</R_13_BLACK>
-                      <B_24_BLACK>RM 55,555.00</B_24_BLACK>
-                      <R_13_BLACK style={{ marginBottom: 16 }}>
-                        5 credit cards
-                      </R_13_BLACK>
-                      <TileListView
-                        list={[
-                          {
-                            accountName: "TRUE Savings Account-i",
-                            accountNumber: "123456890",
-                            statusLabel: "ACTIVE",
-                            statusLabelColor: "#36A03E",
-                            amount: "RM 10,135"
-                          },
-                          {
-                            accountName: "Foreign Currency Account",
-                            accountNumber: "79429284",
-                            statusLabel: "INQUIRY ONLY ALLOWED",
-                            statusLabelColor: "#FF2626",
-                            countryFlagImage: UnionPay_logo,
-                            amount: "AUD 1,392",
-                            equivalentAmount: "RM 4,583"
-                          },
-                          {
-                            accountName: "Conversion Account",
-                            accountNumber: "20717524",
-                            statusLabel: "ACTIVE",
-                            statusLabelColor: "#36A03E",
-                            amount: "- RM 2,000"
-                          },
-                          {
-                            accountName: "Conversion Account",
-                            accountNumber: "20717524",
-                            statusLabel: "RESTRICTED ACCESS",
-                            statusLabelColor: "#FF2626",
-                            amount: "RM 0.00"
-                          },
-                          {
-                            cardLogo: VisaLogo,
-                            accountName: "AmBank TRUE VISA (Supp)",
-                            accountNumber: "5000 0220 5023 5678",
-                            statusLabel: "ACTIVE",
-                            statusLabelColor: "#36A03E",
-                            amount: "RM 5,000"
-                          },
-                          {
-                            icon: "system-info",
-                            iconColor: "#FF2626",
-                            iconSize: 20,
-                            accountName: "AmBank Advance Card",
-                            accountNumber: "3062 2401 2019 5678",
-                            statusLabel: "OVERDUE",
-                            statusLabelColor: "#FF2626",
-                            amount: "RM 50"
-                          },
-                          {
-                            cardLogo: VisaLogo,
-                            icon: "system-info",
-                            iconColor: "#FFA463",
-                            iconSize: 20,
-                            accountName: "AmBank Advance Card",
-                            accountNumber: "3062 2401 2019 5678",
-                            statusLabel: "ACTIVE",
-                            statusLabelColor: "#36A03E",
-                            statusLabel2: "DUE SOON",
-                            statusLabel2Color: "#FFA463",
-                            amount: "RM 50"
-                          }
-                        ]}
-                        onTileClick={item => alert(JSON.stringify(item))}
-                      />
-                      <R_13_GREY444 style={{ marginBottom: 38 }}>
-                        *RM Amount is an indicative value and to be considered
-                        as reference only
-                      </R_13_GREY444>
-                    </div>
-                  )
+                accountTitle: "Savings/Current Accounts",
+                children: (
+                  <div
+                    style={{
+                      display: "flex",
+                      paddingTop: 30,
+                      flexDirection: "column"
+                    }}
+                  >
+                    <R_13_BLACK>Your outstanding</R_13_BLACK>
+                    <B_24_BLACK>RM 55,555.00</B_24_BLACK>
+                    <R_13_BLACK style={{ marginBottom: 16 }}>
+                      5 credit cards
+                    </R_13_BLACK>
+                    <TileListView
+                      list={[
+                        {
+                          accountName: "TRUE Savings Account-i",
+                          accountNumber: "123456890",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          amount: "RM 10,135"
+                        },
+                        {
+                          accountName: "Foreign Currency Account",
+                          accountNumber: "79429284",
+                          statusLabel: "INQUIRY ONLY ALLOWED",
+                          statusLabelColor: "#FF2626",
+                          countryFlagImage: images.common.countryFlag,
+                          amount: "AUD 1,392",
+                          equivalentAmount: "RM 4,583"
+                        },
+                        {
+                          accountName: "Conversion Account",
+                          accountNumber: "20717524",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          amount: "- RM 2,000"
+                        },
+                        {
+                          accountName: "Conversion Account",
+                          accountNumber: "20717524",
+                          statusLabel: "RESTRICTED ACCESS",
+                          statusLabelColor: "#FF2626",
+                          amount: "RM 0.00"
+                        },
+                        {
+                          cardLogo: images.common.masterCard,
+                          accountName: "AmBank TRUE VISA (Supp)",
+                          accountNumber: "5000 0220 5023 5678",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          amount: "RM 5,000"
+                        },
+                        {
+                          icon: "system-info",
+                          iconColor: "#FF2626",
+                          iconSize: 20,
+                          accountName: "AmBank Advance Card",
+                          accountNumber: "3062 2401 2019 5678",
+                          statusLabel: "OVERDUE",
+                          statusLabelColor: "#FF2626",
+                          amount: "RM 50"
+                        },
+                        {
+                          cardLogo: images.common.masterCard,
+                          icon: "system-info",
+                          iconColor: "#FFA463",
+                          iconSize: 20,
+                          accountName: "AmBank Advance Card",
+                          accountNumber: "3062 2401 2019 5678",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          statusLabel2: "DUE SOON",
+                          statusLabel2Color: "#FFA463",
+                          amount: "RM 50"
+                        }
+                      ]}
+                      onTileClick={item => alert(JSON.stringify(item))}
+                    />
+                  </div>
+                )
+              },
+              {
+                selected: verticalActiveTab === 1 ? true : false,
+                onClick: (index: any) =>
+                  this.setState({ verticalActiveTab: index }),
+                icon: {
+                  name: "Account-2",
+                  color: "#ff2626"
                 },
-                {
-                  selected: verticalActiveTab === 2 ? true : false,
-                  onClick: (index: any) =>
-                    this.setState({ verticalActiveTab: index }),
+                accountTitle: "Credit Cards",
+                children: (
+                  <div
+                    style={{
+                      display: "flex",
+                      paddingTop: 30,
+                      flexDirection: "column"
+                    }}
+                  >
+                    <R_13_BLACK>YOUR OUTSTANDING</R_13_BLACK>
+                    <B_24_BLACK>RM 55,555.00</B_24_BLACK>
+                    <R_13_BLACK style={{ marginBottom: 16 }}>
+                      5 credit cards
+                    </R_13_BLACK>
+                    <TileListView
+                      list={[
+                        {
+                          accountName: "TRUE Savings Account-i",
+                          accountNumber: "123456890",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          amount: "RM 10,135"
+                        },
+                        {
+                          accountName: "Foreign Currency Account",
+                          accountNumber: "79429284",
+                          statusLabel: "INQUIRY ONLY ALLOWED",
+                          statusLabelColor: "#FF2626",
+                          countryFlagImage: images.common.countryFlag,
+                          amount: "AUD 1,392",
+                          equivalentAmount: "RM 4,583"
+                        },
+                        {
+                          accountName: "Conversion Account",
+                          accountNumber: "20717524",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          amount: "- RM 2,000"
+                        },
+                        {
+                          accountName: "Conversion Account",
+                          accountNumber: "20717524",
+                          statusLabel: "RESTRICTED ACCESS",
+                          statusLabelColor: "#FF2626",
+                          amount: "RM 0.00"
+                        },
+                        {
+                          cardLogo: images.common.masterCard,
+                          accountName: "AmBank TRUE VISA (Supp)",
+                          accountNumber: "5000 0220 5023 5678",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          amount: "RM 5,000"
+                        },
+                        {
+                          icon: "system-info",
+                          iconColor: "#FF2626",
+                          iconSize: 20,
+                          accountName: "AmBank Advance Card",
+                          accountNumber: "3062 2401 2019 5678",
+                          statusLabel: "OVERDUE",
+                          statusLabelColor: "#FF2626",
+                          amount: "RM 50"
+                        },
+                        {
+                          cardLogo: images.common.masterCard,
+                          icon: "system-info",
+                          iconColor: "#FFA463",
+                          iconSize: 20,
+                          accountName: "AmBank Advance Card",
+                          accountNumber: "3062 2401 2019 5678",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          statusLabel2: "DUE SOON",
+                          statusLabel2Color: "#FFA463",
+                          amount: "RM 50"
+                        }
+                      ]}
+                      onTileClick={item => alert(JSON.stringify(item))}
+                    />
+                    <R_13_GREY444 style={{ marginBottom: 38 }}>
+                      *RM Amount is an indicative value and to be considered as
+                      reference only
+                    </R_13_GREY444>
+                  </div>
+                )
+              },
+              {
+                selected: verticalActiveTab === 2 ? true : false,
+                onClick: (index: any) =>
+                  this.setState({ verticalActiveTab: index }),
 
-                  icon: {
-                    name: "Account-2",
-                    color: "#ff2626"
-                  },
-                  accountTitle: "Fixed/Term Deposits",
-                  children: (
-                    <div
-                      style={{
-                        display: "flex",
-                        paddingTop: 30,
-                        flexDirection: "column"
-                      }}
-                    >
-                      <R_13_BLACK>Your outstanding</R_13_BLACK>
-                      <B_24_BLACK>RM 55,555.00</B_24_BLACK>
-                      <R_13_BLACK style={{ marginBottom: 16 }}>
-                        5 credit cards
-                      </R_13_BLACK>
-                      <TileListView
-                        list={[
-                          {
-                            accountName: "TRUE Savings Account-i",
-                            accountNumber: "123456890",
-                            statusLabel: "ACTIVE",
-                            statusLabelColor: "#36A03E",
-                            amount: "RM 10,135"
-                          },
-                          {
-                            accountName: "Foreign Currency Account",
-                            accountNumber: "79429284",
-                            statusLabel: "INQUIRY ONLY ALLOWED",
-                            statusLabelColor: "#FF2626",
-                            countryFlagImage: UnionPay_logo,
-                            amount: "AUD 1,392",
-                            equivalentAmount: "RM 4,583"
-                          },
-                          {
-                            accountName: "Conversion Account",
-                            accountNumber: "20717524",
-                            statusLabel: "ACTIVE",
-                            statusLabelColor: "#36A03E",
-                            amount: "- RM 2,000"
-                          },
-                          {
-                            accountName: "Conversion Account",
-                            accountNumber: "20717524",
-                            statusLabel: "RESTRICTED ACCESS",
-                            statusLabelColor: "#FF2626",
-                            amount: "RM 0.00"
-                          },
-                          {
-                            cardLogo: VisaLogo,
-                            accountName: "AmBank TRUE VISA (Supp)",
-                            accountNumber: "5000 0220 5023 5678",
-                            statusLabel: "ACTIVE",
-                            statusLabelColor: "#36A03E",
-                            amount: "RM 5,000"
-                          },
-                          {
-                            icon: "system-info",
-                            iconColor: "#FF2626",
-                            iconSize: 20,
-                            accountName: "AmBank Advance Card",
-                            accountNumber: "3062 2401 2019 5678",
-                            statusLabel: "OVERDUE",
-                            statusLabelColor: "#FF2626",
-                            amount: "RM 50"
-                          },
-                          {
-                            cardLogo: VisaLogo,
-                            icon: "system-info",
-                            iconColor: "#FFA463",
-                            iconSize: 20,
-                            accountName: "AmBank Advance Card",
-                            accountNumber: "3062 2401 2019 5678",
-                            statusLabel: "ACTIVE",
-                            statusLabelColor: "#36A03E",
-                            statusLabel2: "DUE SOON",
-                            statusLabel2Color: "#FFA463",
-                            amount: "RM 50"
-                          }
-                        ]}
-                        onTileClick={item => alert(JSON.stringify(item))}
-                      />
-                    </div>
-                  )
+                icon: {
+                  name: "Account-2",
+                  color: "#ff2626"
                 },
-                {
-                  selected: verticalActiveTab === 3 ? true : false,
-                  onClick: (index: any) =>
-                    this.setState({ verticalActiveTab: index }),
+                accountTitle: "Fixed/Term Deposits",
+                children: (
+                  <div
+                    style={{
+                      display: "flex",
+                      paddingTop: 30,
+                      flexDirection: "column"
+                    }}
+                  >
+                    <R_13_BLACK>Your outstanding</R_13_BLACK>
+                    <B_24_BLACK>RM 55,555.00</B_24_BLACK>
+                    <R_13_BLACK style={{ marginBottom: 16 }}>
+                      5 credit cards
+                    </R_13_BLACK>
+                    <TileListView
+                      list={[
+                        {
+                          accountName: "TRUE Savings Account-i",
+                          accountNumber: "123456890",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          amount: "RM 10,135"
+                        },
+                        {
+                          accountName: "Foreign Currency Account",
+                          accountNumber: "79429284",
+                          statusLabel: "INQUIRY ONLY ALLOWED",
+                          statusLabelColor: "#FF2626",
+                          countryFlagImage: images.common.countryFlag,
+                          amount: "AUD 1,392",
+                          equivalentAmount: "RM 4,583"
+                        },
+                        {
+                          accountName: "Conversion Account",
+                          accountNumber: "20717524",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          amount: "- RM 2,000"
+                        },
+                        {
+                          accountName: "Conversion Account",
+                          accountNumber: "20717524",
+                          statusLabel: "RESTRICTED ACCESS",
+                          statusLabelColor: "#FF2626",
+                          amount: "RM 0.00"
+                        },
+                        {
+                          cardLogo: images.common.masterCard,
+                          accountName: "AmBank TRUE VISA (Supp)",
+                          accountNumber: "5000 0220 5023 5678",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          amount: "RM 5,000"
+                        },
+                        {
+                          icon: "system-info",
+                          iconColor: "#FF2626",
+                          iconSize: 20,
+                          accountName: "AmBank Advance Card",
+                          accountNumber: "3062 2401 2019 5678",
+                          statusLabel: "OVERDUE",
+                          statusLabelColor: "#FF2626",
+                          amount: "RM 50"
+                        },
+                        {
+                          cardLogo: images.common.masterCard,
+                          icon: "system-info",
+                          iconColor: "#FFA463",
+                          iconSize: 20,
+                          accountName: "AmBank Advance Card",
+                          accountNumber: "3062 2401 2019 5678",
+                          statusLabel: "ACTIVE",
+                          statusLabelColor: "#36A03E",
+                          statusLabel2: "DUE SOON",
+                          statusLabel2Color: "#FFA463",
+                          amount: "RM 50"
+                        }
+                      ]}
+                      onTileClick={item => alert(JSON.stringify(item))}
+                    />
+                  </div>
+                )
+              },
+              {
+                selected: verticalActiveTab === 3 ? true : false,
+                onClick: (index: any) =>
+                  this.setState({ verticalActiveTab: index }),
 
-                  icon: {
-                    name: "Account-2",
-                    color: "#ff2626"
-                  },
-                  accountTitle: "Loans/ Financing",
-                  children: <p> its a second children </p>
+                icon: {
+                  name: "Account-2",
+                  color: "#ff2626"
                 },
-                {
-                  selected: verticalActiveTab === 4 ? true : false,
-                  onClick: (index: any) =>
-                    this.setState({ verticalActiveTab: index }),
+                accountTitle: "Loans/ Financing",
+                children: <p> its a second children </p>
+              },
+              {
+                selected: verticalActiveTab === 4 ? true : false,
+                onClick: (index: any) =>
+                  this.setState({ verticalActiveTab: index }),
 
-                  icon: {
-                    name: "Account-2",
-                    color: "#ff2626"
-                  },
-                  accountTitle: "Investment",
-                  children: <p> its a second children </p>
+                icon: {
+                  name: "Account-2",
+                  color: "#ff2626"
                 },
-                {
-                  selected: verticalActiveTab === 5 ? true : false,
-                  onClick: (index: any) =>
-                    this.setState({ verticalActiveTab: index }),
+                accountTitle: "Investment",
+                children: <p> its a second children </p>
+              },
+              {
+                selected: verticalActiveTab === 5 ? true : false,
+                onClick: (index: any) =>
+                  this.setState({ verticalActiveTab: index }),
 
-                  icon: {
-                    name: "Account-2",
-                    color: "#ff2626"
-                  },
-                  accountTitle: "Insurance",
-                  children: <p> its a second children </p>
+                icon: {
+                  name: "Account-2",
+                  color: "#ff2626"
                 },
-                {
-                  selected: verticalActiveTab === 6 ? true : false,
-                  onClick: (index: any) =>
-                    this.setState({ verticalActiveTab: index }),
+                accountTitle: "Insurance",
+                children: <p> its a second children </p>
+              },
+              {
+                selected: verticalActiveTab === 6 ? true : false,
+                onClick: (index: any) =>
+                  this.setState({ verticalActiveTab: index }),
 
-                  icon: {
-                    name: "Account-2",
-                    color: "#ff2626"
-                  },
-                  accountTitle: "Debit Card",
-                  children: <p> its a second children </p>
-                }
-              ]}
-            />
-          </div>
+                icon: {
+                  name: "Account-2",
+                  color: "#ff2626"
+                },
+                accountTitle: "Debit Card",
+                children: <p> its a second children </p>
+              }
+            ]}
+          />
         </CenteredDiv>
 
         <Title>VerticalTab with background image</Title>
@@ -1236,7 +1314,7 @@ class Sprint1 extends Component<Props, State> {
             minimize={false}
             data={[
               {
-                selected: true,
+                selected: false,
                 onClick: (index: any) => alert(index),
                 icon: {
                   name: "Card",
@@ -1250,7 +1328,7 @@ class Sprint1 extends Component<Props, State> {
                   subTitle: "Freedom to invest in Unit Trust is now yours"
                 },
                 children: (
-                  <div style={{ padding: "1rem" }}>
+                  <div style={{ padding: "1rem", width: "42.68rem" }}>
                     <p>
                       Its hands were holograms that altered to match the
                       convolutions of the car’s floor. The semiotics of the room
@@ -1275,7 +1353,7 @@ class Sprint1 extends Component<Props, State> {
                 )
               },
               {
-                selected: false,
+                selected: true,
                 onClick: (index: any) => alert(index),
                 icon: {
                   name: "Account-2",
@@ -1309,7 +1387,7 @@ class Sprint1 extends Component<Props, State> {
                           accountNumber: "79429284",
                           statusLabel: "INQUIRY ONLY ALLOWED",
                           statusLabelColor: "#FF2626",
-                          countryFlagImage: UnionPay_logo,
+                          countryFlagImage: images.common.countryFlag,
                           amount: "AUD 1,392",
                           equivalentAmount: "RM 4,583"
                         },
@@ -1328,7 +1406,7 @@ class Sprint1 extends Component<Props, State> {
                           amount: "RM 0.00"
                         },
                         {
-                          cardLogo: VisaLogo,
+                          cardLogo: images.common.masterCard,
                           accountName: "AmBank TRUE VISA (Supp)",
                           accountNumber: "5000 0220 5023 5678",
                           statusLabel: "ACTIVE",
@@ -1346,7 +1424,7 @@ class Sprint1 extends Component<Props, State> {
                           amount: "RM 50"
                         },
                         {
-                          cardLogo: VisaLogo,
+                          cardLogo: images.common.masterCard,
                           icon: "system-info",
                           iconColor: "#FFA463",
                           iconSize: 20,
@@ -1368,7 +1446,7 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
 
-        <div style={{ width: 1200, marginLeft: 220 }}>
+        <CenteredDiv>
           <VerticalTab
             selectedBorderColor="#FD8585"
             minimize={true}
@@ -1385,6 +1463,7 @@ class Sprint1 extends Component<Props, State> {
                 children: (
                   <div style={{ display: "flex" }}>
                     <AccountsList
+                      testId={"testId"}
                       list={[
                         {
                           label1: "Foreign Current Account",
@@ -1417,7 +1496,10 @@ class Sprint1 extends Component<Props, State> {
                           selected: false
                         }
                       ]}
-                      onAccountTileClick={item => alert(JSON.stringify(item))}
+                      onAccountTileClick={(item, index) => {
+                        alert(JSON.stringify(item));
+                        alert(index);
+                      }}
                     />
                     <div style={{ width: 700, padding: "2rem" }}>
                       <AMTabs
@@ -1430,6 +1512,7 @@ class Sprint1 extends Component<Props, State> {
                         ]}
                         contents={[
                           <SearchBar
+                            testId={"testId"}
                             clearClickHandler={() => alert("clear clicked")}
                             searchIconClickHandler={() =>
                               alert("Search Icon clicked")
@@ -1443,6 +1526,7 @@ class Sprint1 extends Component<Props, State> {
                             }}
                           />,
                           <ZeroResult
+                            testId={"testId"}
                             text={`We can’t seem to find any result for 
               “Damansara Heights”`}
                           />,
@@ -1471,7 +1555,6 @@ class Sprint1 extends Component<Props, State> {
 
                 children: (
                   <div style={{ display: "flex" }}>
-                    <p>second</p>
                     <AccountsList
                       list={[
                         {
@@ -1505,7 +1588,10 @@ class Sprint1 extends Component<Props, State> {
                           selected: false
                         }
                       ]}
-                      onAccountTileClick={item => alert(JSON.stringify(item))}
+                      onAccountTileClick={(item, index) => {
+                        alert(JSON.stringify(item));
+                        alert(index);
+                      }}
                     />
                     <div style={{ width: 700, padding: "2rem" }}>
                       <AMTabs
@@ -1535,6 +1621,7 @@ class Sprint1 extends Component<Props, State> {
               “Damansara Heights”`}
                           />,
                           <PieChart
+                            testId={"testId"}
                             pieLabels={["Fixed Income 60%", "Equity 10%"]}
                             pieDataSets={{
                               data: [60, 10],
@@ -1550,39 +1637,40 @@ class Sprint1 extends Component<Props, State> {
               }
             ]}
           />
-        </div>
+        </CenteredDiv>
         <Title>Tooltips</Title>
         <CenteredDiv>
           <Tooltip
+            testId={"testId"}
             tipChildren={
               <div>
                 <B_14_WHITE>Tips</B_14_WHITE>
                 <RowDiv style={{ paddingTop: 10 }}>
-                  <B_14_WHITE>
+                  <span>
                     Value:
                     <R_11_WHITE>
                       Accumulation of fund’s market value based on current NAV.
                       Current value is an indicative value and is to be
                       considered as reference only.
                     </R_11_WHITE>
-                  </B_14_WHITE>
+                  </span>
                 </RowDiv>
                 <RowDiv style={{ paddingTop: 10 }}>
-                  <B_14_WHITE>
+                  <span>
                     Invested:
                     <R_11_WHITE>
                       Accumulation of fund’s initial book value
                     </R_11_WHITE>
-                  </B_14_WHITE>
+                  </span>
                 </RowDiv>
                 <RowDiv style={{ paddingTop: 10 }}>
-                  <B_14_WHITE>
+                  <span>
                     P/L:
                     <R_11_WHITE>
                       Profit or loss is the difference between Market Value and
                       Book Value
                     </R_11_WHITE>
-                  </B_14_WHITE>
+                  </span>
                 </RowDiv>
               </div>
             }
@@ -1591,6 +1679,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>NavigationButtons</Title>
         <CenteredDiv>
           <NavigationButtons
+            testId={"testId"}
             onLeftButtonPress={() => alert("Left Button Clicked")}
             onRightButtonPress={() => alert("Right Button Clicked")}
             leftButtonDisable={true}
@@ -1601,8 +1690,10 @@ class Sprint1 extends Component<Props, State> {
         <Title>ToggleButtons</Title>
         <CenteredDiv>
           <ToggleButton
-            value={true}
-            onTogglePress={() => alert("Toggle pressed")}
+            value={toggled}
+            onTogglePress={() => {
+              this.setState({ toggled: !toggled });
+            }}
             toggleOffLabel="NO"
             toggleOnLabel="YES"
             disabled={false}
@@ -1666,7 +1757,7 @@ class Sprint1 extends Component<Props, State> {
                 cardNumber: "2379 4793 4797 7493",
                 amount: "RM 50,293",
                 expiryDate: "EXP 12/21",
-                cardVendorLogo: UnionPay_logo,
+                cardVendorLogo: images.common.UnionPay_logo,
                 colorLeft: "#6C3F4F",
                 colorRight: "#3D1A1A",
                 active: true,
@@ -1689,7 +1780,7 @@ class Sprint1 extends Component<Props, State> {
                 cardNumber: "2379 4793 4797 7493",
                 amount: "RM 3,897,576",
                 expiryDate: "EXP 12/21",
-                cardVendorLogo: UnionPay_logo,
+                cardVendorLogo: images.common.UnionPay_logo,
                 colorLeft: "#989898",
                 colorRight: "#000000",
                 active: false,
@@ -1697,7 +1788,10 @@ class Sprint1 extends Component<Props, State> {
                 selected: false
               }
             ]}
-            onCardTileClick={item => alert(JSON.stringify(item))}
+            onCardTileClick={(item, index) => {
+              alert(JSON.stringify(item));
+              alert(index);
+            }}
           />
         </CenteredDiv>
         <Title>AccountsList</Title>
@@ -1735,12 +1829,16 @@ class Sprint1 extends Component<Props, State> {
                 selected: false
               }
             ]}
-            onAccountTileClick={item => alert(JSON.stringify(item))}
+            onAccountTileClick={(item, index) => {
+              alert(JSON.stringify(item));
+              alert(index);
+            }}
           />
         </CenteredDiv>
         <Title>secureImage</Title>
         <>
           <SecureImage
+            testId={"testId"}
             label="Hi Adam3011, is this your security image?"
             image={
               "https://images.unsplash.com/photo-1520167112707-56e25f2d7d6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
@@ -1749,6 +1847,7 @@ class Sprint1 extends Component<Props, State> {
         </>
         <Title>Tags</Title>
         <Tag
+          testId={"testId"}
           text="How may I help you?"
           image={{
             src:
@@ -1759,6 +1858,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>DetailList</Title>
         <div style={{ height: 500 }}>
           <DetailList
+            testId={"testId"}
             title="Protected by PIDM up to RM 250,000 for each depositor"
             list={[
               {
@@ -1792,6 +1892,7 @@ class Sprint1 extends Component<Props, State> {
         <div>
           <Title>DetailList Monthly</Title>
           <DetailListMonthly
+            testId={"testId"}
             tipChildren={
               <div>
                 <B_14_WHITE>Tips</B_14_WHITE>
@@ -2016,6 +2117,7 @@ class Sprint1 extends Component<Props, State> {
           />
         </div>
         <SelectionTile
+          testId={"testId"}
           onTileClick={(item, index) => {
             this.setState({ SelectionTileNum: index });
             alert(`${item.accountTitle} with indexOf ${index} clicked`);
@@ -2128,6 +2230,7 @@ class Sprint1 extends Component<Props, State> {
         />
         <Title>DescriptionButton</Title>
         <DescriptionButton
+          testId={"testId"}
           onButtonClick={(item, index) => {
             alert(`${item.title} with indexOf ${index} clicked`);
           }}
@@ -2143,6 +2246,7 @@ class Sprint1 extends Component<Props, State> {
         />
         <Title>IconButtons</Title>
         <IconButtons
+          testId={"testId"}
           onButtonClick={(item, index) => {
             this.setState({
               IconButtonsNum: index
@@ -2248,6 +2352,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>AMTabs</Title>
         <CenteredDiv>
           <AMTabs
+            testId={"testId"}
             defaultIndex={1}
             titles={["Login", "Security", "Contact Us"]}
             contents={[
@@ -2295,6 +2400,7 @@ class Sprint1 extends Component<Props, State> {
 
         <CenteredDiv>
           <InlineMessage
+            testId={"testId"}
             errorText="The TAC is incorrect"
             subText="Please try again."
           />
@@ -2339,6 +2445,14 @@ class Sprint1 extends Component<Props, State> {
           <Title>FullButton</Title>
           <FullButton
             title="Login"
+            onButtonClick={() => {
+              alert("Button Clicked");
+            }}
+          />
+          <FullButton
+            title="Color"
+            titleColor="#ff2727"
+            buttonColor={{ top: "#f7f7f7", bottom: "#dedede" }}
             onButtonClick={() => {
               alert("Button Clicked");
             }}
@@ -2451,87 +2565,88 @@ class Sprint1 extends Component<Props, State> {
             {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "idTest-0"
+              id: "Id-0"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1554463529-e27854014799?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
-              id: "idTest-1"
+              id: "Id-1"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1554463529-e27854014799?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
-              id: "idTest-2"
+              id: "Id-2"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1522827130596-971a53beeadc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-              id: "idTest-3"
+              id: "Id-3"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1554463529-e27854014799?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
-              id: "idTest-4"
+              id: "Id-4"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "idTest-5"
+              id: "Id-5"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "idTest-6"
+              id: "Id-6"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1522827130596-971a53beeadc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-              id: "idTest-7"
+              id: "Id-7"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
-              id: "idTest-8"
+              id: "Id-8"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "idTest-9"
+              id: "Id-9"
             },
             {
               src: images.common.sampleLogo,
-              id: "idTest-10"
+              id: "Id-10"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1557053964-937650b63311?ixlib=rb-1.2.1&auto=format&fit=crop&w=2359&q=80",
-              id: "idTest-11"
+              id: "Id-11"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "idTest-12"
+              id: "Id-12"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "idTest-13"
+              id: "Id-13"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "idTest-14"
+              id: "Id-14"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "idTest-15"
+              id: "Id-15"
             }
           ]}
         />
 
         <Title>BackButton</Title>
         <BackButton
+          testId={"testId"}
           buttonText="Forgot Username/Password"
           onButtonClick={() => {
             alert("BackButton clicked");
@@ -2540,6 +2655,7 @@ class Sprint1 extends Component<Props, State> {
 
         <Title>Profile</Title>
         <Profile
+          testId={"testId"}
           greeting="Good Morning"
           name="Adam Constantine"
           alt="AVATAR"
@@ -2553,6 +2669,7 @@ class Sprint1 extends Component<Props, State> {
         <RowDiv>
           <StatusIcon icon={{ name: "Tick-1" }} />
           <StatusIcon
+            testId={"testId"}
             iconColor={{ top: "#FD8585", bottom: "#FF2222" }}
             icon={{ name: "Fail", color: "#ff3" }}
           />
@@ -2574,6 +2691,7 @@ class Sprint1 extends Component<Props, State> {
 
         <Title>Prompt</Title>
         <Prompt
+          testId={"testId"}
           iconColor={{ top: "#DCEAEA", bottom: "#7FA2A2" }}
           icon={{ name: "Tick-1", color: "#ffffff" }}
           text="Your profile is successfully activated."
@@ -2597,6 +2715,7 @@ class Sprint1 extends Component<Props, State> {
         />
         <CenteredDiv>
           <Dock
+            testId={"testId"}
             tagText="How may I help you?"
             list={[
               {

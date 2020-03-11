@@ -27,9 +27,9 @@ const PrimaryButton: React.FC<Props> = ({
   icon = { name: "", color: "" }
 }) => {
   return !small ? (
-    <div>
+    <div id={testId}>
       <button
-        id={testId}
+        id={`${testId}-0`}
         onClick={onButtonClick}
         className={classes.PrimaryButton}
         style={
@@ -48,29 +48,27 @@ const PrimaryButton: React.FC<Props> = ({
       </button>
     </div>
   ) : (
-    <>
-      <div>
-        <button
-          id={testId}
-          onClick={onButtonClick}
-          className={classes.PrimaryButtonSmall}
-          style={
-            !!buttonColor || width
-              ? {
-                  background: `linear-gradient(180deg, ${buttonColor.top} 0%,  ${buttonColor.bottom} 100%)`,
-                  width: width
-                }
-              : {}
-          }
-        >
-          <Icon
-            icon={icon.name ? icon.name : "Download"}
-            color={icon.color}
-            size={15}
-          />
-        </button>
-      </div>
-    </>
+    <div id={`${testId}-1`}>
+      <button
+        id={testId}
+        onClick={onButtonClick}
+        className={classes.PrimaryButtonSmall}
+        style={
+          !!buttonColor || width
+            ? {
+                background: `linear-gradient(180deg, ${buttonColor.top} 0%,  ${buttonColor.bottom} 100%)`,
+                width: width
+              }
+            : {}
+        }
+      >
+        <Icon
+          icon={icon.name ? icon.name : "Download"}
+          color={icon.color}
+          size={15}
+        />
+      </button>
+    </div>
   );
 };
 

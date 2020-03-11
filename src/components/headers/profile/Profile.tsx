@@ -7,7 +7,7 @@ interface Props {
   src?: string;
   initials?: string;
   initialsBg?: string;
-  greeting: string;
+  greeting?: string;
   name?: string;
   alt?: string;
 }
@@ -35,7 +35,9 @@ const Profile: React.FC<Props> = ({
           </div>
         )}
         <div className={classes.textContainer}>
-          <B_15_BLACK className={classes.greeting}>{greeting}</B_15_BLACK>
+          {!!greeting && (
+            <B_15_BLACK className={classes.greeting}>{greeting}</B_15_BLACK>
+          )}
           {!!name && <B_15_GREY969>{name}</B_15_GREY969>}
         </div>
       </div>

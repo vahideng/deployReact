@@ -4,6 +4,7 @@ import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../../assets/typography";
 const { SB_11_WHITE } = Paragraphs;
 interface Props {
+  testId?: string;
   list: {
     name: string;
     color?: string;
@@ -12,14 +13,14 @@ interface Props {
   }[];
 }
 
-const ActionButtons: React.FC<Props> = ({ list }) => {
+const ActionButtons: React.FC<Props> = ({ list, testId }) => {
   return (
-    <div className={classes.ActionButtonsMain}>
+    <div className={classes.ActionButtonsMain} id={testId}>
       <>
         {!!list &&
           list.map((item, index) => {
             return (
-              <div key={index}>
+              <div key={index} id={`${testId}-${index}`}>
                 <div
                   className={classes.ActionButtonsIcon}
                   style={{

@@ -7,17 +7,9 @@ import Paragraphs from "../../assets/typography";
 import FullButton from "../../buttons/primaryButton/PrimaryButton";
 
 const { R_15_GREY444 } = Paragraphs;
-const customStyles = {
-  content: {
-    top: "auto",
-    left: "50%",
-    right: "auto",
-    bottom: "0",
-    marginRight: "-50%"
-  }
-};
 
 interface Props {
+  testId?: string;
   content?: string;
   modalIsOpen?: boolean;
   handleChange?: any;
@@ -30,7 +22,20 @@ interface Props {
 }
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
-
+const customStyles = {
+  content: {
+    top: "auto",
+    right: "auto",
+    bottom: "0",
+    marginRight: "-50%",
+    width: "100%",
+    left: " 0px"
+  },
+  overlay: {
+    background: "rgba(0, 0, 0, 0.5)",
+    backgroundBlendMode: "multiply"
+  }
+};
 const TacModal: React.FC<Props> = ({
   modalIsOpen,
   handleChange,
@@ -39,40 +44,24 @@ const TacModal: React.FC<Props> = ({
   content,
   buttonTitle,
   onButtonClick,
-  buttonColor
+  buttonColor,
+  testId
 }) => {
-  // let subtitle: any;
-  // const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  //   function afterOpenModal() {
-  //     // references are now sync'd and can be accessed.
-  //     subtitle.style.color = "#f00";
-  //   }
-
-  //   function closeModal() {
-  //     setIsOpen(false);
-  //   }
-
-  // console.log(modalIsOpen, "modalIsOpenmodalIsOpen");
-
   return (
-    <div style={{ margin: "auto" }}>
-      {/* <button onClick={openModal}>Open Modal</button> */}
+    <div>
       <Modal
-        // overlayClassName={classes.OverLay}
         isOpen={!!modalIsOpen && modalIsOpen}
-        // onAfterOpen={afterOpenModal}
-
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <div className="row">
+        <div className="row" id={testId}>
           <div
             style={{ display: "flex", justifyContent: "center", width: "80%" }}
             className="col-lg-8"
           >
             <form>
               <InputField
+                testId={`${testId}-0`}
                 handleChange={handleChange}
                 type="text"
                 label={label}
@@ -95,6 +84,7 @@ const TacModal: React.FC<Props> = ({
             className="col-lg-4"
           >
             <FullButton
+              testId={`${testId}-1`}
               buttonColor={{ top: buttonColor.top, bottom: buttonColor.bottom }}
               title={buttonTitle}
               onButtonClick={!!onButtonClick && onButtonClick}

@@ -6,6 +6,7 @@ const { B_15_BLACK } = Paragraphs;
 
 interface Props {
   onButtonClick: (item: any, index: number) => void;
+  testId?: string;
   list: {
     title: string;
     amount?: string;
@@ -13,12 +14,17 @@ interface Props {
   }[];
 }
 
-const DescriptionButton: React.FC<Props> = ({ list, onButtonClick }) => {
+const DescriptionButton: React.FC<Props> = ({
+  list,
+  onButtonClick,
+  testId
+}) => {
   return (
-    <div>
+    <div id={testId}>
       {list.map((item, index) => {
         return (
           <div
+            id={`${testId}-${index}`}
             key={index}
             className={classes.DescriptionButtonRow}
             onClick={() => onButtonClick(item, index)}

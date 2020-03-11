@@ -1,4 +1,4 @@
-
+@import "../../assets/common/common.scss";
 
 .SelectionTileRow {
   display: flex;
@@ -21,12 +21,12 @@
 .WrapperContent {
   width: 100%;
   display: flex;
-  
   align-items: center;
+  justify-content: center;
 }
 
-.Icon{
- margin: auto;
+.Icon {
+  margin: auto;
 }
 .StickToTheRight {
   height: 100%;

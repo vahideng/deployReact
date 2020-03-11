@@ -17,8 +17,8 @@
   padding: 0 1rem;
   border: 1px solid #dedede;
   border-radius: 0.95rem;
-  -webkit-box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
-          box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
+  -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+          box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
   margin-bottom: 1rem;
 }
 

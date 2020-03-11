@@ -4,6 +4,7 @@ import Tag from "src/components/tags/Tag";
 import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 
 interface Props {
+  testId?: string;
   tagText?: string;
   list: {
     name: string;
@@ -15,15 +16,15 @@ interface Props {
 
 const Dock: React.FC<Props> = props => {
   return (
-    <div>
+    <div id={props.testId}>
       {!!props.tagText && (
         <div className={classes.DockTag}>
-          <Tag text={props.tagText} />
+          <Tag text={props.tagText} testId={`${props.testId}-1`} />
         </div>
       )}
       <div className={classes.DockMainDiv}>
         <div className={classes.DockInnerDiv}>
-          <ActionButtons list={props.list} />
+          <ActionButtons list={props.list} testId={`${props.testId}-2`} />
         </div>
       </div>
     </div>

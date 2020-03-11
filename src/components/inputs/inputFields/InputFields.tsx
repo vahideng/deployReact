@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Paragraphs from "../../assets/typography";
 import classes from "./InputField.module.css";
 import Icon from "src/components/assets/icons/icon";
-import clearIcone from "src/components/assets/common/clearIcone.svg";
 const { B_13_BLACK } = Paragraphs;
 interface Props {
   testId?: string;
@@ -66,6 +65,7 @@ class InputField extends Component<Props, {}> {
           <div className={`${classes.IconContainer}`}>
             {!!isSecure && !!value ? (
               <span
+                id={`${testId}-0`}
                 className={classes.InputFieldPassword}
                 onClick={onSecureClick}
               >
@@ -82,10 +82,11 @@ class InputField extends Component<Props, {}> {
             )}
             {!!clearIcon && (
               <span
+                id={`${testId}-1`}
                 onClick={clearClickHandler}
                 className={classes.InputFieldClear}
               >
-                <img src={clearIcone} alt="clear" />
+                <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
               </span>
             )}
           </div>

@@ -3,14 +3,15 @@ import classes from "./SecureImage.module.css";
 import Paragraphs from "../../components/assets/typography";
 const { B_15_BLACK } = Paragraphs;
 interface Props {
+  testId?: string;
   image: string;
   label?: string;
 }
 
 const SecureImage: React.FC<Props> = props => {
-  const { image, label } = props;
+  const { image, label, testId } = props;
   return (
-    <div>
+    <div id={testId}>
       <B_15_BLACK className={classes.SecureImageTitle}>{label}</B_15_BLACK>
       <div className={classes.SecureImageMain}>
         <div

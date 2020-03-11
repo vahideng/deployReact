@@ -5,6 +5,7 @@ import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
 import Tooltip from "src/components/tooltip/Tooltip";
 const { B_14_WHITE } = Paragraphs;
 interface Props {
+  testId?: string;
   statusIcon?: {
     backgroundColor: string;
     testId?: string;
@@ -24,12 +25,14 @@ const FormContainer: React.FC<Props> = ({
   children,
   label,
   statusIcon,
-  tooltip
+  tooltip,
+  testId
 }) => {
   return (
     <div
       className={classes.FormContainerMain}
       style={statusIcon ? { paddingTop: "3rem" } : {}}
+      id={testId}
     >
       {!!statusIcon && (
         <div
@@ -39,6 +42,7 @@ const FormContainer: React.FC<Props> = ({
           }
         >
           <StatusIcon
+            testId={statusIcon.testId}
             icon={!!statusIcon ? statusIcon.icon : ""}
             iconColor={{
               top: statusIcon.iconColor.top,
@@ -49,11 +53,15 @@ const FormContainer: React.FC<Props> = ({
         </div>
       )}
       {!!label && (
-        <div className={classes.FormContainerLabel}>
+        <div className={classes.FormContainerLabel} id={`${testId}-0`}>
           <B_14_WHITE>{label}</B_14_WHITE>
           {!!tooltip && (
             <span className={classes.FormContainerTooltip}>
-              <Tooltip tipChildren={tooltip} color="#FFFFFF" />
+              <Tooltip
+                tipChildren={tooltip}
+                color="#FFFFFF"
+                testId={`${testId}-1`}
+              />
             </span>
           )}
         </div>

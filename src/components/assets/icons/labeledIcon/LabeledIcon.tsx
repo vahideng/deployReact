@@ -4,6 +4,7 @@ import Paragraphs from "../../typography";
 import classes from "./LabeledIcon.module.css";
 const { R_13_BLACK, B_16_BLACK } = Paragraphs;
 interface Props {
+  testId?: string;
   leftLabel?: string;
   rightLabel?: string;
   imageIcon?: { src: string; size?: number; alt?: string };
@@ -18,10 +19,11 @@ const LabeledIcon: React.FC<Props> = ({
   icon = {},
   imageIcon = {},
   leftLabel,
-  rightLabel
+  rightLabel,
+  testId
 }) => {
   return (
-    <div>
+    <div id={testId}>
       {!!icon && (
         <div className={classes.LabeledIconRow}>
           <Icon
@@ -37,7 +39,7 @@ const LabeledIcon: React.FC<Props> = ({
         </div>
       )}
       {!!imageIcon && (
-        <div className={classes.LabeledIconRow}>
+        <div className={classes.LabeledIconRow} id={`${testId}-0`}>
           {!!leftLabel && (
             <R_13_BLACK className={classes.LabeledIconImg}>
               {leftLabel}

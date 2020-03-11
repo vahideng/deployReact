@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import Paragraphs from "../../assets/typography";
 import classes from "./SearchBar.module.css";
-import clearIcon from "src/components/assets/common/clearIcone.svg";
-import searchIcon from "src/components/assets/common/search.svg";
-import arrowUp from "src/components/assets/common/arrowUp.svg";
-import arrowDown from "src/components/assets/common/arrowDown.svg";
-import checkmark from "src/components/assets/common/checkmark.svg";
-import closeIconWhite from "src/components/assets/common/closeIconWhite.svg";
+import Icon from "src/components/assets/icons/icon";
 
 const { R_13_BLACK } = Paragraphs;
 interface Props {
@@ -91,9 +86,13 @@ class SearchBar extends Component<Props, State> {
               </R_13_BLACK>
               <div>
                 {this.state.filterExpanded ? (
-                  <img src={arrowUp} alt="arrowUp" />
+                  <span className={classes.SearchBarArrow}>
+                    <Icon icon="arrowUp" size={10} />
+                  </span>
                 ) : (
-                  <img src={arrowDown} alt="arrowUp" />
+                  <span className={classes.SearchBarArrow}>
+                    <Icon icon="arrowDown" size={10} />
+                  </span>
                 )}
               </div>
             </div>
@@ -114,14 +113,14 @@ class SearchBar extends Component<Props, State> {
           <div className={classes.IconContainer}>
             {value !== "" && (
               <span onClick={clearClickHandler} className={classes.ClearIcon}>
-                <img src={clearIcon} alt="clear" />
+                <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
               </span>
             )}
             <span
               className={classes.InputFieldPassword}
               onClick={searchIconClickHandler}
             >
-              <img src={searchIcon} alt="search" />
+              <Icon icon="search" color="#DEDEDE" size={18} />
             </span>
           </div>
         </div>
@@ -130,8 +129,10 @@ class SearchBar extends Component<Props, State> {
           <div style={{ position: "relative" }}>
             <div className={classes.FilterDropdownContainer}>
               {filterOptions &&
-                filterOptions.map(item => (
+                filterOptions.map((item, index) => (
                   <div
+                    key={index}
+                    id={`${testId}-0${index}`}
                     className={classes.FilterOptionContainer}
                     onClick={() =>
                       onFilterOptionClick && onFilterOptionClick(item)
@@ -144,7 +145,7 @@ class SearchBar extends Component<Props, State> {
                       className={classes.FilterOptionSelectedContainer}
                       style={{ opacity: item.selected ? 1 : 0 }}
                     >
-                      <img src={checkmark} alt="checkmark" />
+                      <Icon icon="Tick-1" size={22} color="36A03E" />
                     </span>
                   </div>
                 ))}
@@ -155,8 +156,12 @@ class SearchBar extends Component<Props, State> {
         {showFilter && (
           <div className={classes.SelectedFiltersContainer}>
             {selectedFilters &&
-              selectedFilters.map(item => (
-                <div className={classes.SelectedFilter}>
+              selectedFilters.map((item, index) => (
+                <div
+                  className={classes.SelectedFilter}
+                  key={index}
+                  id={`${testId}-1${index}`}
+                >
                   <div className={classes.SelectedFilterLabel}>
                     <R_13_BLACK>{item.label}</R_13_BLACK>
                   </div>
@@ -164,7 +169,7 @@ class SearchBar extends Component<Props, State> {
                     onClick={item.closeIconClickHandler}
                     className={classes.SelectedFilterClearIcon}
                   >
-                    <img src={closeIconWhite} alt="clear" />
+                    <Icon icon="system-close-grey" size={18} color="#FFFFFF" />
                   </span>
                 </div>
               ))}

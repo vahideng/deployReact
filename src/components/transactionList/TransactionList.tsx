@@ -3,10 +3,11 @@ import { Card, Accordion, useAccordionToggle, Col } from "react-bootstrap";
 
 import classes from "./TransactionList.module.css";
 import "react-tabs/style/react-tabs.css";
-import arrowUp from "../../components/assets/common/arrowUp.svg";
-import arrowDown from "../../components/assets/common/arrowDown.svg";
+
+import Icon from "../assets/icons/icon";
 
 interface Props {
+  testId?: string;
   data?: any;
   minimize?: boolean;
   eventKey?: any;
@@ -14,7 +15,7 @@ interface Props {
   title?: string;
 }
 
-const CustomToggle: React.FC<Props> = ({ eventKey, content }) => {
+const CustomToggle: React.FC<Props> = ({ eventKey, content, testId }) => {
   const decoratedOnClick = useAccordionToggle(eventKey, () => null);
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -23,26 +24,34 @@ const CustomToggle: React.FC<Props> = ({ eventKey, content }) => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className={classes.Content} onClick={e => accordianClickHandler(e)}>
+    <div
+      className={classes.Content}
+      onClick={e => accordianClickHandler(e)}
+      id={testId}
+    >
       {content}
 
       {isOpen ? (
-        <img src={arrowUp} alt="arrowUp" />
+        <span className={classes.TransListIcon}>
+          <Icon icon="arrowUp" size={14} />
+        </span>
       ) : (
-        <img src={arrowDown} alt="arrowUp" />
+        <span className={classes.TransListIcon}>
+          <Icon icon="arrowDown" size={14} />
+        </span>
       )}
     </div>
   );
 };
 
-const TransactionList: React.FC<Props> = ({ title, data }) => {
+const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
   return (
     <Card className={classes.ContainerWhole}>
       <Card.Header className={classes.CardHeader}>{title}</Card.Header>
       <Card.Body className={classes.CardBody}>
         {data.map((item: any, index: any) => {
           return (
-            <Accordion>
+            <Accordion key={index} id={`${testId}-0-${index}`}>
               <Card>
                 <Card.Header className={classes.HeaderInside}>
                   <div
@@ -74,26 +83,34 @@ const TransactionList: React.FC<Props> = ({ title, data }) => {
                 </Card.Header>
 
                 {!!item.middle.content &&
-                  item.middle.content.map((item: any) => {
-                    return (
-                      <Accordion.Collapse eventKey={`${index}`}>
-                        <Card.Body className={classes.CardBodyContent}>
-                          <div className={classes.LeftBody}>
-                            {item.leftLabel}
-                          </div>
-
-                          <div className={classes.RightBody}>
+                  item.middle.content.map(
+                    (item: any, index: string | number | undefined) => {
+                      return (
+                        <Accordion.Collapse eventKey={`${index}`} key={index}>
+                          <Card.Body className={classes.CardBodyContent}>
                             <div
-                              style={{ whiteSpace: "nowrap" }}
-                              className="p-2"
+                              className={classes.LeftBody}
+                              id={`${testId}-1-${index}`}
                             >
-                              {item.rightLabel}
+                              {item.leftLabel}
                             </div>
-                          </div>
-                        </Card.Body>
-                      </Accordion.Collapse>
-                    );
-                  })}
+
+                            <div
+                              className={classes.RightBody}
+                              id={`${testId}-2-${index}`}
+                            >
+                              <div
+                                style={{ whiteSpace: "nowrap" }}
+                                className="p-2"
+                              >
+                                {item.rightLabel}
+                              </div>
+                            </div>
+                          </Card.Body>
+                        </Accordion.Collapse>
+                      );
+                    }
+                  )}
               </Card>
             </Accordion>
           );

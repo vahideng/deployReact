@@ -3,19 +3,21 @@ import Icon from "src/components/assets/icons/icon";
 import classes from "./NavbarTransparent.module.css";
 
 interface Props {
-  icon: { name?: string; color?: string; onIconClick?: () => void };
+  testId?: string;
+  icon?: { name?: string; color?: string; onIconClick?: () => void };
   rightButtons?: any;
   menuIsOpen?: boolean;
 }
 
-const NavbarTransparent: React.FC<Props> = ({ rightButtons, icon }) => {
+const NavbarTransparent: React.FC<Props> = ({ rightButtons, icon, testId }) => {
   return (
-    <div className={classes.NavbarTransparentMainDiv}>
-      <div onClick={icon.onIconClick}>
+    <div className={classes.NavbarTransparentMainDiv} id={testId}>
+      <div onClick={icon?.onIconClick}>
         <Icon
+          testId={`${testId}-0`}
           className={classes.NavbarTransparentIcon}
-          icon={!!icon.name ? icon.name : "amonline"}
-          color={icon.color ? icon.color : "#ff2626"}
+          icon={!!icon?.name ? icon.name : "amonline-white"}
+          color={icon?.color ? icon.color : "#ff2626"}
           size={150}
         />
       </div>
@@ -24,7 +26,11 @@ const NavbarTransparent: React.FC<Props> = ({ rightButtons, icon }) => {
           rightButtons.map(
             (button: React.ReactNode, index: string | number | undefined) => {
               return (
-                <div key={index} className={classes.NavbarTransparentButtons}>
+                <div
+                  key={index}
+                  className={classes.NavbarTransparentButtons}
+                  id={`${testId}-1${index}`}
+                >
                   {button}
                 </div>
               );

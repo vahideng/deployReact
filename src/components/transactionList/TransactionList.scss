@@ -7,17 +7,17 @@
 }
 
 .CardHeader {
-    background: rgba(196, 196, 196, 0.3);
-    font-family: Nunito Sans;
-    font-style: normal;
-    min-height: 54px;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 20px;
-    color: #000000;
-    padding-left: 15px;
+  background: rgba(196, 196, 196, 0.3);
+  font-family: Nunito Sans;
+  font-style: normal;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  color: #000000;
+  padding-left: 15px;
 }
 
 .HeaderInside {
@@ -56,12 +56,14 @@
   color: #696969;
 }
 
-
 .RightBody {
   display: flex;
   align-items: center;
   text-align: right;
-font-weight: bold;
-font-size: 13px;
+  font-weight: bold;
+  font-size: 13px;
   color: #000000;
+}
+.TransListIcon {
+  margin-left: 0.5rem;
 }

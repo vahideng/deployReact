@@ -8,8 +8,8 @@ $white7F7: #f7f7f7;
 $green03e: #36a03e;
 $green988: #81d988;
 
-$mainBoxShadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede,
-  0px 1px 5px #dedede;
+$mainBoxShadow: 1px 0px 5px $grey5E5, -1px 0px 5px $grey5E5,
+  0px -1px 5px $grey5E5, 0px 1px 5px $grey5E5;
 
 %truncatedText {
   text-overflow: ellipsis;
