@@ -775,6 +775,12 @@ class Sprint1 extends Component<Props, State> {
             children={
               <div style={{ padding: "2rem" }}>
                 <InputField
+                  // notValid={true}
+                  errorMessage={{
+                    testId: "testId",
+                    errorText: "The TAC is incorrect",
+                    subText: "Please try again."
+                  }}
                   type="text"
                   clearClickHandler={() => alert("clear clicked")}
                   clearIcon={true}

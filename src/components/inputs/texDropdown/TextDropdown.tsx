@@ -78,7 +78,7 @@ const customStyles = {
 
 class TextDropdown extends Component<Props, State> {
   state = {
-    menuIsOpen: false
+    menuIsOpen: !!this.props.menuIsOpen ? this.props.menuIsOpen : false
   };
 
   onchangeHandler = (object: any) => {

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Paragraphs from "../../assets/typography";
 import classes from "./InputField.module.css";
 import Icon from "src/components/assets/icons/icon";
+import InlineMessage from "src/components/infographic/inlineMessage/InlineMessage";
 const { B_13_BLACK } = Paragraphs;
 interface Props {
   testId?: string;
@@ -15,6 +16,12 @@ interface Props {
   handleChange: (event: any, testId?: string | undefined) => void;
   clearIcon?: boolean;
   clearClickHandler?: () => void;
+  // notValid?: boolean;
+  errorMessage?: {
+    testId?: string;
+    errorText: string;
+    subText: string;
+  };
 }
 
 class InputField extends Component<Props, {}> {
@@ -30,8 +37,12 @@ class InputField extends Component<Props, {}> {
       isSecure,
       onSecureClick,
       clearIcon,
-      clearClickHandler
+      clearClickHandler,
+      // notValid,
+      errorMessage
     } = this.props;
+    console.log(errorMessage, "errorMessage");
+
     return (
       <div className={classes.InputFieldMain}>
         {!!label && (
@@ -91,6 +102,15 @@ class InputField extends Component<Props, {}> {
             )}
           </div>
         </div>
+        {/* {!!notValid && ( */}
+        <div className={classes.InputFieldError}>
+          <InlineMessage
+            testId={errorMessage?.testId}
+            errorText={errorMessage?.errorText ? errorMessage.errorText : ""}
+            subText={errorMessage?.subText ? errorMessage.subText : ""}
+          />
+        </div>
+        {/* )} */}
       </div>
     );
   }

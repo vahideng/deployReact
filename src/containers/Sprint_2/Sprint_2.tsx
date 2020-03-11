@@ -99,6 +99,7 @@ const Sprint2: React.FC<Props> = () => {
             }}
           />,
           <TextDropdown
+            menuIsOpen
             handleChange={(selectedOption: any) => {
               setSelectedOption(selectedOption);
               console.log(`Option:`, selectedOption);
