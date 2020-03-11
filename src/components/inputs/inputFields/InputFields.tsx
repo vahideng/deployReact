@@ -41,8 +41,6 @@ class InputField extends Component<Props, {}> {
       notValid,
       errorMessage
     } = this.props;
-    console.log(errorMessage, "errorMessage");
-
     return (
       <div className={classes.InputFieldMain}>
         {!!label && (
