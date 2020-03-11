@@ -775,7 +775,7 @@ class Sprint1 extends Component<Props, State> {
             children={
               <div style={{ padding: "2rem" }}>
                 <InputField
-                  // notValid={true}
+                  notValid={true}
                   errorMessage={{
                     testId: "testId",
                     errorText: "The TAC is incorrect",

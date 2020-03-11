@@ -16,7 +16,7 @@ interface Props {
   handleChange: (event: any, testId?: string | undefined) => void;
   clearIcon?: boolean;
   clearClickHandler?: () => void;
-  // notValid?: boolean;
+  notValid?: boolean;
   errorMessage?: {
     testId?: string;
     errorText: string;
@@ -38,7 +38,7 @@ class InputField extends Component<Props, {}> {
       onSecureClick,
       clearIcon,
       clearClickHandler,
-      // notValid,
+      notValid,
       errorMessage
     } = this.props;
     console.log(errorMessage, "errorMessage");
@@ -102,15 +102,15 @@ class InputField extends Component<Props, {}> {
             )}
           </div>
         </div>
-        {/* {!!notValid && ( */}
-        <div className={classes.InputFieldError}>
-          <InlineMessage
-            testId={errorMessage?.testId}
-            errorText={errorMessage?.errorText ? errorMessage.errorText : ""}
-            subText={errorMessage?.subText ? errorMessage.subText : ""}
-          />
-        </div>
-        {/* )} */}
+        {!!notValid && (
+          <div className={classes.InputFieldError}>
+            <InlineMessage
+              testId={errorMessage?.testId}
+              errorText={errorMessage?.errorText ? errorMessage.errorText : ""}
+              subText={errorMessage?.subText ? errorMessage.subText : ""}
+            />
+          </div>
+        )}
       </div>
     );
   }
