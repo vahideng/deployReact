@@ -1,3 +1,4 @@
+/// below are sprint-1 components
 import ActionButtons from "./components/buttons/actionButtons/ActionButtons";
 import BackButton from "./components/buttons/backButton/BackButton";
 import DescriptionButton from "./components/buttons/descriptionButton/DescriptionButton";
@@ -51,8 +52,17 @@ import StatusIcon from "./components/assets/icons/statusIcon/StatusIcon";
 import Logo from "./components/assets/logo/Logo";
 import TileListView from "./components/lists/TileListView/TileListView";
 import AmModal from "./components/modals/Modal";
-
+/// below are sprint-2 components
+import BannerHero from "./components/banners/bannerHero/BannerHero";
+import TransactionLimitList from "./components/lists/TransactionLimitList/TransactionLimitList";
+import BoxContent from "./components/boxContent/BoxContent";
+/// exports
 export {
+  /// below are sprint-2 components
+  BoxContent,
+  TransactionLimitList,
+  BannerHero,
+  /// below are sprint-1 components
   AmModal,
   ActionButtons,
   BackButton,

@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import Paragraphs from "../../components/assets/typography";
 import styled from "styled-components";
+import Navbar from "src/components/headers/navbar/Navbar";
+import BannerHero from "src/components/banners/bannerHero/BannerHero";
+import TransactionLimitList from "src/components/lists/TransactionLimitList/TransactionLimitList";
+import BoxContent from "src/components/boxContent/BoxContent";
 // import images from "src/assets";
 
-import BannerHero from "src/components/banners/bannerHero/BannerHero";
-
 import { Redirect } from "react-router-dom";
-import Navbar from "src/components/headers/navbar/Navbar";
-import BoxContent from "src/components/boxContent/BoxContent";
 import { Row, Col } from "react-bootstrap";
-import TransactionLimitList from "src/components/lists/TransactionLimitList/TransactionLimitList";
-
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -19,16 +17,6 @@ const Title = styled(B_13_ORANGE_463)`
   border-top: 1px solid #ffa463;
   border-bottom: 1px solid #ffa463;
 `;
-
-// const CenteredDiv = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   padding-top: 5rem;
-// `;
-// const RowDiv = styled.div`
-//   display: flex;
-//   flex-direction: "row";
-// `;
 interface Props {}
 interface State {
   homeRedirect: boolean;
