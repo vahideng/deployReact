@@ -40,19 +40,20 @@
 
   // width: 9rem;
   // height: 9rem;
-  padding: 1.2rem;
+  padding: 1rem;
   border-radius: 50%;
   position: absolute;
-  left: 41.6%;
-  top: -5rem;
+  left: 38.3%;
+  top: -5.63rem;
 }
 .FormContainerStatusLeft {
   background-color: #ffffff;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
-  width: 22.4rem;
+  width: 15.1em;
 }
 .FormContainerStatusCenter {
+  background-color: #ffffff;
   // border-radius: 50%;
   // background-color: red;
   // padding: 1rem;
@@ -61,10 +62,10 @@
 }
 .FormContainerStatusRight {
   background-color: #ffffff;
-
+  width: 15em;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
-  width: 22.4rem;
+  // width: 15rem;
 }
 
 .FormContainerTooltip {

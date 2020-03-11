@@ -550,7 +550,7 @@ class Sprint1 extends Component<Props, State> {
           />
         </>
         <Title>List with Header inside FormContainer with statusIcon</Title>
-        <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
+        <CenteredDiv style={{ backgroundColor: "#EEEEEE", paddingTop: 100 }}>
           <FormContainer
             statusIcon={{
               backgroundColor: "#eeeeee",

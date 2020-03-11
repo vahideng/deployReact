@@ -32,7 +32,7 @@ const FormContainer: React.FC<Props> = ({
     <div
       className={classes.FormContainerMain}
       id={testId}
-      style={!statusIcon ? { borderRadius: "1rem" } : {}}
+      style={!statusIcon ? { borderRadius: "1rem" } : { width: "36.31rem" }}
     >
       {!!statusIcon && (
         <>
@@ -82,7 +82,7 @@ const FormContainer: React.FC<Props> = ({
 
       <div
         className={classes.FormContainerContent}
-        style={statusIcon ? { marginTop: "3rem" } : {}}
+        style={statusIcon ? { marginTop: "2rem" } : {}}
       >
         {children}
       </div>
