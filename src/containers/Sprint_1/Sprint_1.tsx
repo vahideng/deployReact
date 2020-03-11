@@ -775,6 +775,12 @@ class Sprint1 extends Component<Props, State> {
             children={
               <div style={{ padding: "2rem" }}>
                 <InputField
+                  notValid={true}
+                  errorMessage={{
+                    testId: "testId",
+                    errorText: "The TAC is incorrect",
+                    subText: "Please try again."
+                  }}
                   type="text"
                   clearClickHandler={() => alert("clear clicked")}
                   clearIcon={true}
@@ -2563,18 +2569,15 @@ class Sprint1 extends Component<Props, State> {
           }}
           logos={[
             {
-              src:
-                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
+              src: images.common.bankingInfo_1,
               id: "Id-0"
             },
             {
-              src:
-                "https://images.unsplash.com/photo-1554463529-e27854014799?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
+              src: images.common.bankingInfo_2,
               id: "Id-1"
             },
             {
-              src:
-                "https://images.unsplash.com/photo-1554463529-e27854014799?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
+              src: images.common.bankingInfo_3,
               id: "Id-2"
             },
             {
