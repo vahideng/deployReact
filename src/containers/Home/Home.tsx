@@ -93,6 +93,7 @@ const Home: React.FC<Props> = () => {
                 }}
                 leftTitle={"LeftTitle"}
                 rightTitle={"rightTitle"}
+                tabTitles={["Security", "Login", "Contact Us"]}
                 onSelect={(obj: any) => console.log(obj)}
                 content={[
                   <ZeroResult
