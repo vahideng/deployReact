@@ -3,7 +3,7 @@
   width: 52.18rem;
   -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
           box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
-  border-radius: 0.7rem;
+  border-radius: 2rem;
   background-color: #ffffff;
 }
 
@@ -16,8 +16,8 @@
           align-items: center;
   background-color: #474747;
   height: 3.18rem;
-  border-top-left-radius: 0.7rem;
-  border-top-right-radius: 0.7rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
   padding-left: 2rem;
 }
 
@@ -26,12 +26,43 @@
 }
 
 .FormContainerStatus {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5fr 2fr 5fr;
+      grid-template-columns: 5fr 2fr 5fr;
+  height: 2rem;
+}
+
+.FormContainerStatusIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-self: center;
+  padding: 1.2rem;
+  border-radius: 50%;
   position: absolute;
-  top: -4.3rem;
-  left: 22rem;
-  padding: 1rem;
-  border-radius: 4rem;
-  margin-bottom: 2rem;
+  left: 41.6%;
+  top: -5rem;
+}
+
+.FormContainerStatusLeft {
+  background-color: #ffffff;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  width: 22.4rem;
+}
+
+.FormContainerStatusRight {
+  background-color: #ffffff;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  width: 22.4rem;
 }
 
 .FormContainerTooltip {
