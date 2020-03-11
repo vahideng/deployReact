@@ -5,6 +5,7 @@ import Icon from "src/components/assets/icons/icon";
 import Tooltip from "src/components/tooltip/Tooltip";
 const { R_15_BLACK, B_15_BLACK, B_16_BLACK } = Paragraphs;
 interface Props {
+  testId?: string;
   selected?: number;
   tipChildren?: any;
   list?: {
@@ -16,15 +17,16 @@ interface Props {
 const DetailListMonthly: React.FC<Props> = ({
   list,
   selected,
-  tipChildren
+  tipChildren,
+  testId
 }) => {
   const [click, setClick] = useState(!!selected ? selected : 0);
   return (
-    <div className={classes.DetailListMonthDiv}>
+    <div className={classes.DetailListMonthDiv} id={testId}>
       {!!list &&
         list.map((item, index) => {
           return (
-            <div key={index}>
+            <div key={index} id={`${testId}-${index}`}>
               {index === click && (
                 <div className={classes.DetailListMonthTitle} key={index}>
                   <div
@@ -63,16 +65,26 @@ const DetailListMonthly: React.FC<Props> = ({
         list.map((item, index) => {
           return (
             index === click && (
-              <div key={index}>
+              <div key={index} id={`${testId}-0-${index}`}>
                 {item.content.map((contentList, index) => {
                   return (
-                    <div key={index} className={classes.DetailListRows}>
+                    <div
+                      key={index}
+                      className={classes.DetailListRows}
+                      id={`${testId}-1-${index}`}
+                    >
                       <R_15_BLACK>{contentList.leftText}</R_15_BLACK>
                       <div className={classes.DetailListMonthTool}>
                         <B_15_BLACK>{contentList.rightText}</B_15_BLACK>
                         {!!contentList.tipChildren && (
-                          <div className={classes.DetailListToolIcon}>
-                            <Tooltip tipChildren={contentList.tipChildren} />
+                          <div
+                            className={classes.DetailListToolIcon}
+                            id={`${testId}-2-${index}`}
+                          >
+                            <Tooltip
+                              tipChildren={contentList.tipChildren}
+                              testId={testId}
+                            />
                           </div>
                         )}
                       </div>

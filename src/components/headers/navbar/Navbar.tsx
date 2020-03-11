@@ -4,6 +4,7 @@ import classes from "./Navbar.module.css";
 import Profile from "../profile/Profile";
 
 interface Props {
+  testId?: string;
   scrolled?: boolean;
   icon?: { name?: string; color?: string; onIconClick?: () => void };
   scrolledIcon?: { name?: string; color?: string; onIconClick?: () => void };
@@ -24,13 +25,15 @@ const Navbar: React.FC<Props> = ({
   scrolledIcon = {},
   profile = {},
   rightButtons,
-  scrolled
+  scrolled,
+  testId
 }) => {
   return (
-    <div className={classes.NavbarMainDiv}>
+    <div className={classes.NavbarMainDiv} id={testId}>
       <div>
         {!!scrolled ? (
           <div
+            id={`${testId}-0`}
             onClick={scrolledIcon.onIconClick}
             className={classes.NavbarOnClick}
           >
@@ -41,7 +44,11 @@ const Navbar: React.FC<Props> = ({
             />
           </div>
         ) : (
-          <div onClick={icon.onIconClick} className={classes.NavbarOnClick}>
+          <div
+            onClick={icon.onIconClick}
+            className={classes.NavbarOnClick}
+            id={`${testId}-1`}
+          >
             <Icon
               icon={icon.name ? icon.name : "amonline-white"}
               color={icon.color ? icon.color : "#ff2626"}
@@ -54,11 +61,13 @@ const Navbar: React.FC<Props> = ({
         {!!profile &&
           (!!scrolled ? (
             <Profile
+              testId={`${testId}-2`}
               alt={!!profile.alt ? profile.alt : ""}
               src={!!profile.src ? profile.src : ""}
             />
           ) : (
             <Profile
+              testId={`${testId}-3`}
               greeting={!!profile.greeting ? profile.greeting : ""}
               name={!!profile.name ? profile.name : ""}
               alt={!!profile.alt ? profile.alt : ""}
@@ -68,8 +77,13 @@ const Navbar: React.FC<Props> = ({
         {!!rightButtons &&
           rightButtons.map((button, index) => {
             return (
-              <div key={index} className={classes.navbarIcons}>
+              <div
+                key={index}
+                className={classes.navbarIcons}
+                id={`${testId}-${index}`}
+              >
                 <div
+                  id={`${testId}-4`}
                   onClick={button.onButtonClick}
                   className={classes.NavbarOnClick}
                 >

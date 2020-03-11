@@ -25,6 +25,7 @@ const customStyles = {
   }
 };
 interface Props {
+  testId?: string;
   modalIsOpen: boolean;
   expirationTime: number;
   text?: string;
@@ -59,7 +60,7 @@ class StickyTimer extends Component<Props, State> {
   }
 
   render() {
-    const { text } = this.props;
+    const { text, testId } = this.props;
     const { seconds, closeModal } = this.state;
     return (
       <>
@@ -69,7 +70,7 @@ class StickyTimer extends Component<Props, State> {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <div>
+          <div id={testId}>
             <div className={classes.StickyTimerTopDiv}>
               <img src={LocalImages.common.amSecure} alt="amSecure" />
               <div className={classes.StickyTimerExp}>

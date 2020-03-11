@@ -2,6 +2,7 @@ import React, { ReactNode, useState, useEffect } from "react";
 import Modal from "react-modal";
 
 interface Props {
+  testId?: string;
   modalChildren: ReactNode;
   modalIsOpen: boolean;
 }
@@ -22,7 +23,7 @@ const customStyles = {
   }
 };
 
-const AmModal: React.FC<Props> = ({ modalChildren, modalIsOpen }) => {
+const AmModal: React.FC<Props> = ({ modalChildren, modalIsOpen, testId }) => {
   const [show, setShow] = useState(false);
   useEffect(() => {
     setShow(modalIsOpen);
@@ -32,7 +33,7 @@ const AmModal: React.FC<Props> = ({ modalChildren, modalIsOpen }) => {
     setShow(false);
   };
   return (
-    <div>
+    <div id={testId}>
       <Modal
         isOpen={show}
         onRequestClose={handleCloseModal}

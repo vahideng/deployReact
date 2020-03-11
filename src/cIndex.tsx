@@ -28,7 +28,6 @@ import DetailList from "./components/lists/DetailList/DetailList";
 import DetailListMonthly from "./components/lists/DetailListMonthly/DetailListMonthly";
 import LinkList from "./components/lists/linkList/LinkList";
 import List from "./components/lists/list/List";
-import Modal from "./components/modals/Modal";
 import MenuBanner from "./components/modals/menuBanner/MenuBanner";
 import StickyTimer from "./components/modals/stickyTimer/StickyTimer";
 import TacModal from "./components/modals/tacModal/TacModal";
@@ -51,8 +50,10 @@ import LabeledIcon from "./components/assets/icons/labeledIcon/LabeledIcon";
 import StatusIcon from "./components/assets/icons/statusIcon/StatusIcon";
 import Logo from "./components/assets/logo/Logo";
 import TileListView from "./components/lists/TileListView/TileListView";
+import AmModal from "./components/modals/Modal";
 
 export {
+  AmModal,
   ActionButtons,
   BackButton,
   DescriptionButton,
@@ -83,7 +84,6 @@ export {
   DetailListMonthly,
   LinkList,
   List,
-  Modal,
   MenuBanner,
   StickyTimer,
   TacModal,

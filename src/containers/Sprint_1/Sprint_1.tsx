@@ -42,7 +42,6 @@ import MenuBanner from "src/components/modals/menuBanner/MenuBanner";
 import FloatingButton from "src/components/buttons/floatingButton/FloatingButton";
 import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
 import TransactionList from "src/components/transactionList/TransactionList";
-// import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 import NavigationButtons from "src/components/buttons/navigationButtons/NavigationButtons";
 import ToggleButton from "src/components/buttons/toggleButton/ToggleButton";
 import SearchBar from "src/components/inputs/searchBar/SearchBar";
@@ -135,11 +134,14 @@ class Sprint1 extends Component<Props, State> {
     return (
       <div style={{ paddingTop: "4rem" }}>
         <AmModal
+          testId={"testId"}
           modalIsOpen={generalModalOpen}
           modalChildren={
             <FormContainer
+              testId={"testId"}
               children={
                 <List
+                  testId={"testId"}
                   header={{
                     title: "Transfer Successful",
                     subTitle: (
@@ -234,6 +236,7 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
         <Navbar
+          testId={"testId"}
           icon={{
             onIconClick: () => {
               this.setState({
@@ -270,6 +273,7 @@ class Sprint1 extends Component<Props, State> {
             children={
               <div style={{ paddingTop: "2rem" }}>
                 <LinkList
+                  testId={"testId"}
                   list={[
                     {
                       label: "Jan 2020 eStatement",
@@ -287,6 +291,7 @@ class Sprint1 extends Component<Props, State> {
                       label: "Oct 2019 eStatement",
                       rightItem: (
                         <ToggleButton
+                          testId={"testId"}
                           value={toggled}
                           onTogglePress={() => {
                             this.setState({ toggled: !toggled });
@@ -311,6 +316,7 @@ class Sprint1 extends Component<Props, State> {
         <CenteredDiv>
           <div style={{ width: "57.1875em" }}>
             <TransactionIconList
+              testId={"testId"}
               list={[
                 {
                   date: "Today",
@@ -613,7 +619,7 @@ class Sprint1 extends Component<Props, State> {
               display: "inline-block"
             }}
           >
-            <FloatingButton darkButton={true} />
+            <FloatingButton darkButton={true} testId={"testId"} />
           </div>
         </CenteredDiv>
 
@@ -668,6 +674,7 @@ class Sprint1 extends Component<Props, State> {
           }}
         >
           <FormContainerCurved
+            testId={"testId"}
             curvedTab={{
               leftTab: "New Recipient",
               rightTab: "Own/Favorite",
@@ -815,6 +822,7 @@ class Sprint1 extends Component<Props, State> {
         </CenteredDiv>
 
         <MenuBanner
+          testId={"testId"}
           notification={true}
           content={
             <div
@@ -917,6 +925,7 @@ class Sprint1 extends Component<Props, State> {
         />
 
         <TacModal
+          testId={"testId"}
           onButtonClick={() => alert("TAC Submitted")}
           buttonTitle="Continue"
           modalIsOpen={TacModalOpen}
@@ -937,6 +946,7 @@ class Sprint1 extends Component<Props, State> {
         />
         {/* {console.log(this.state.StickyModalOpen)} */}
         <StickyTimer
+          testId={"testId"}
           modalIsOpen={StickyModalOpen}
           expirationTime={20}
           text={
@@ -963,6 +973,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>Vertical tab</Title>
         <CenteredDiv>
           <VerticalTab
+            testId={"testId"}
             selectedBorderColor="#FD8585"
             minimize={false}
             data={[
@@ -1501,6 +1512,7 @@ class Sprint1 extends Component<Props, State> {
                         ]}
                         contents={[
                           <SearchBar
+                            testId={"testId"}
                             clearClickHandler={() => alert("clear clicked")}
                             searchIconClickHandler={() =>
                               alert("Search Icon clicked")
@@ -1514,6 +1526,7 @@ class Sprint1 extends Component<Props, State> {
                             }}
                           />,
                           <ZeroResult
+                            testId={"testId"}
                             text={`We can’t seem to find any result for 
               “Damansara Heights”`}
                           />,
@@ -1608,6 +1621,7 @@ class Sprint1 extends Component<Props, State> {
               “Damansara Heights”`}
                           />,
                           <PieChart
+                            testId={"testId"}
                             pieLabels={["Fixed Income 60%", "Equity 10%"]}
                             pieDataSets={{
                               data: [60, 10],
@@ -1627,6 +1641,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>Tooltips</Title>
         <CenteredDiv>
           <Tooltip
+            testId={"testId"}
             tipChildren={
               <div>
                 <B_14_WHITE>Tips</B_14_WHITE>
@@ -1664,6 +1679,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>NavigationButtons</Title>
         <CenteredDiv>
           <NavigationButtons
+            testId={"testId"}
             onLeftButtonPress={() => alert("Left Button Clicked")}
             onRightButtonPress={() => alert("Right Button Clicked")}
             leftButtonDisable={true}
@@ -1822,6 +1838,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>secureImage</Title>
         <>
           <SecureImage
+            testId={"testId"}
             label="Hi Adam3011, is this your security image?"
             image={
               "https://images.unsplash.com/photo-1520167112707-56e25f2d7d6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
@@ -1830,6 +1847,7 @@ class Sprint1 extends Component<Props, State> {
         </>
         <Title>Tags</Title>
         <Tag
+          testId={"testId"}
           text="How may I help you?"
           image={{
             src:
@@ -1840,6 +1858,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>DetailList</Title>
         <div style={{ height: 500 }}>
           <DetailList
+            testId={"testId"}
             title="Protected by PIDM up to RM 250,000 for each depositor"
             list={[
               {
@@ -1873,6 +1892,7 @@ class Sprint1 extends Component<Props, State> {
         <div>
           <Title>DetailList Monthly</Title>
           <DetailListMonthly
+            testId={"testId"}
             tipChildren={
               <div>
                 <B_14_WHITE>Tips</B_14_WHITE>
@@ -2097,6 +2117,7 @@ class Sprint1 extends Component<Props, State> {
           />
         </div>
         <SelectionTile
+          testId={"testId"}
           onTileClick={(item, index) => {
             this.setState({ SelectionTileNum: index });
             alert(`${item.accountTitle} with indexOf ${index} clicked`);
@@ -2209,6 +2230,7 @@ class Sprint1 extends Component<Props, State> {
         />
         <Title>DescriptionButton</Title>
         <DescriptionButton
+          testId={"testId"}
           onButtonClick={(item, index) => {
             alert(`${item.title} with indexOf ${index} clicked`);
           }}
@@ -2224,6 +2246,7 @@ class Sprint1 extends Component<Props, State> {
         />
         <Title>IconButtons</Title>
         <IconButtons
+          testId={"testId"}
           onButtonClick={(item, index) => {
             this.setState({
               IconButtonsNum: index
@@ -2329,6 +2352,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>AMTabs</Title>
         <CenteredDiv>
           <AMTabs
+            testId={"testId"}
             defaultIndex={1}
             titles={["Login", "Security", "Contact Us"]}
             contents={[
@@ -2376,6 +2400,7 @@ class Sprint1 extends Component<Props, State> {
 
         <CenteredDiv>
           <InlineMessage
+            testId={"testId"}
             errorText="The TAC is incorrect"
             subText="Please try again."
           />
@@ -2621,6 +2646,7 @@ class Sprint1 extends Component<Props, State> {
 
         <Title>BackButton</Title>
         <BackButton
+          testId={"testId"}
           buttonText="Forgot Username/Password"
           onButtonClick={() => {
             alert("BackButton clicked");
@@ -2629,6 +2655,7 @@ class Sprint1 extends Component<Props, State> {
 
         <Title>Profile</Title>
         <Profile
+          testId={"testId"}
           greeting="Good Morning"
           name="Adam Constantine"
           alt="AVATAR"
@@ -2642,6 +2669,7 @@ class Sprint1 extends Component<Props, State> {
         <RowDiv>
           <StatusIcon icon={{ name: "Tick-1" }} />
           <StatusIcon
+            testId={"testId"}
             iconColor={{ top: "#FD8585", bottom: "#FF2222" }}
             icon={{ name: "Fail", color: "#ff3" }}
           />
@@ -2663,6 +2691,7 @@ class Sprint1 extends Component<Props, State> {
 
         <Title>Prompt</Title>
         <Prompt
+          testId={"testId"}
           iconColor={{ top: "#DCEAEA", bottom: "#7FA2A2" }}
           icon={{ name: "Tick-1", color: "#ffffff" }}
           text="Your profile is successfully activated."
@@ -2686,6 +2715,7 @@ class Sprint1 extends Component<Props, State> {
         />
         <CenteredDiv>
           <Dock
+            testId={"testId"}
             tagText="How may I help you?"
             list={[
               {

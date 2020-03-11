@@ -24,18 +24,20 @@ const customStyles = {
 interface Props {
   content?: ReactNode;
   notification?: boolean;
+  testId?: string;
 }
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 
-const MenuBanner: React.FC<Props> = ({ content, notification }) => {
+const MenuBanner: React.FC<Props> = ({ content, notification, testId }) => {
   const [isModalIsOpen, setIsModalIsOpen] = useState(false);
   return (
-    <div>
+    <div id={testId}>
       <Modal isOpen={isModalIsOpen} style={customStyles}>
         <div className={classes.MenuBannerMainDiv}>
           <div className={classes.MenuBannerInsideButtonDiv}>
             <div
+              id={`${testId}-0`}
               className={classes.MenuBannerInsideButton}
               onClick={() => {
                 setIsModalIsOpen(!isModalIsOpen);
@@ -54,6 +56,7 @@ const MenuBanner: React.FC<Props> = ({ content, notification }) => {
         </div>
       </Modal>
       <div
+        id={`${testId}-1`}
         className={classes.MenuBannerButton}
         onClick={() => {
           setIsModalIsOpen(!isModalIsOpen);

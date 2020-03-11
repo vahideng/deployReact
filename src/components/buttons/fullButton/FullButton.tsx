@@ -3,6 +3,7 @@ import classes from "./FullButton.module.css";
 import Paragraphs from "../../assets/typography";
 const { B_15_WHITE } = Paragraphs;
 interface Props {
+  testId?: string;
   title?: string;
   titleColor?: string;
   buttonColor?: { top: string; bottom: string };
@@ -23,13 +24,15 @@ const FullButton: React.FC<Props> = ({
   split,
   onButtonClick,
   onLeftButton,
-  onRightButton
+  onRightButton,
+  testId
 }) => {
   return (
     <>
       {!split ? (
         <>
           <button
+            id={`${testId}`}
             onClick={onButtonClick}
             className={classes.FullButton}
             style={
@@ -46,8 +49,9 @@ const FullButton: React.FC<Props> = ({
           </button>
         </>
       ) : (
-        <div className={classes.fullButtonRow}>
+        <div className={classes.fullButtonRow} id={`${testId}-0`}>
           <button
+            id={`${testId}-1`}
             onClick={onLeftButton}
             className={`${classes.fullButtonSplit} ${classes.fullButtonLeft}`}
             style={
@@ -61,6 +65,7 @@ const FullButton: React.FC<Props> = ({
             <B_15_WHITE className={classes.leftText}>{leftTitle}</B_15_WHITE>
           </button>
           <button
+            id={`${testId}-2`}
             onClick={onRightButton}
             className={`${classes.fullButtonSplit} ${classes.fullButtonRight}`}
             style={

@@ -3,6 +3,7 @@ import classes from "./FormContainerCurved.module.css";
 import Paragraphs from "../../assets/typography";
 const { B_17_BLACK, B_17_WHITE } = Paragraphs;
 interface Props {
+  testId?: string;
   curvedTab: {
     leftTab: string;
     rightTab: string;
@@ -11,11 +12,11 @@ interface Props {
   };
 }
 
-const FormContainerCurved: React.FC<Props> = ({ curvedTab }) => {
+const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
   const [LeftSelected, setLeftSelected] = useState(true);
   const [RightSelected, setRightSelected] = useState(false);
   return (
-    <div>
+    <div id={testId}>
       <div className={classes.FormContainerCurvedMainCurve}>
         <div className={classes.FormContainerCurvedLeftCurve}>
           <div
@@ -70,12 +71,12 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab }) => {
         <div className={classes.FormContainerCurvedRightCurve}></div>
       </div>
 
-      <div className={classes.FormContainerCurvedMain}>
+      <div className={classes.FormContainerCurvedMain} id={`${testId}-0`}>
         <div className={classes.FormContainerCurvedContent}>
           {!!LeftSelected ? (
-            <>{curvedTab.leftContent}</>
+            <div id={`${testId}-1`}>{curvedTab.leftContent}</div>
           ) : (
-            <>{curvedTab.rightContent}</>
+            <div id={`${testId}-2`}>{curvedTab.rightContent}</div>
           )}
         </div>
       </div>

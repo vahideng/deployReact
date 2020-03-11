@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import classes from "./Tabs.module.css";
 interface Props {
+  testId?: string;
   defaultIndex?: number;
   titles: string[];
   contents: React.ReactNode[];
@@ -13,10 +14,11 @@ export const AMTabs: React.FC<Props> = ({
   titles,
   contents,
   defaultIndex,
-  onSelect
+  onSelect,
+  testId
 }) => {
   return (
-    <div className={classes.AMTabsMainDiv}>
+    <div className={classes.AMTabsMainDiv} id={testId}>
       <Tabs
         selectedTabClassName={classes.KK}
         defaultIndex={!!defaultIndex ? defaultIndex : 0}
@@ -26,7 +28,11 @@ export const AMTabs: React.FC<Props> = ({
           {!!titles &&
             titles.map((title, index: number) => {
               return (
-                <Tab className={classes.TT} key={index}>
+                <Tab
+                  className={classes.TT}
+                  key={index}
+                  id={`${testId} -0 ${index}`}
+                >
                   {title}
                 </Tab>
               );
@@ -35,7 +41,11 @@ export const AMTabs: React.FC<Props> = ({
 
         {!!contents &&
           contents.map((content, index: number) => {
-            return <TabPanel key={index}>{content}</TabPanel>;
+            return (
+              <TabPanel id={`${testId} -0 ${index}`} key={index}>
+                {content}
+              </TabPanel>
+            );
           })}
       </Tabs>
     </div>

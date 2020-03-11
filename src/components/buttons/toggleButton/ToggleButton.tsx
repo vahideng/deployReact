@@ -8,13 +8,15 @@ interface Props {
   toggleOffLabel: string;
   toggleOnLabel: string;
   value: boolean;
+  testId?: string;
 }
 const ToggleButton: React.FC<Props> = ({
   disabled,
   onTogglePress,
   toggleOffLabel,
   toggleOnLabel,
-  value
+  value,
+  testId
 }) => {
   return (
     <>
@@ -24,6 +26,7 @@ const ToggleButton: React.FC<Props> = ({
           pointerEvents: disabled ? "none" : "all"
         }}
         onClick={onTogglePress && onTogglePress}
+        id={testId}
       >
         <div
           className={classes.ToggleButton}

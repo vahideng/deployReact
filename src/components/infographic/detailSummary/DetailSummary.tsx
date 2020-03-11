@@ -50,7 +50,11 @@ const DetailSummary: React.FC<Props> = ({
           <div>
             <B_13_BLACK>{detailTitle}</B_13_BLACK>
             <R_13_BLACK className={classes.dsDetail}>{detail}</R_13_BLACK>
-            <B_13_ORANGE_463 className={classes.dsLink} onClick={onLinkClick}>
+            <B_13_ORANGE_463
+              className={classes.dsLink}
+              onClick={onLinkClick}
+              id={`${testId}-0`}
+            >
               {linkText}
             </B_13_ORANGE_463>
           </div>

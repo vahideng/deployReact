@@ -5,6 +5,7 @@ import Icon from "src/components/assets/icons/icon";
 
 const { R_13_BLACK, B_13_BLACK, B_11_WHITE, R_15_BLACK } = Paragraphs;
 interface Props {
+  testId?: string;
   list: {
     date: string;
     expandedIndexes: Array<number>;
@@ -37,12 +38,17 @@ interface Props {
   onTransactionClick: (item: any, sectionIndex: number, index: number) => void;
 }
 
-const AccountsList: React.FC<Props> = ({ list, onTransactionClick }) => {
+const AccountsList: React.FC<Props> = ({
+  list,
+  onTransactionClick,
+  testId
+}) => {
   return (
-    <div className={classes.TransactionIconListMainDiv}>
+    <div className={classes.TransactionIconListMainDiv} id={testId}>
       {!!list &&
         list.map((item, sectionIndex) => (
           <div
+            id={`${testId}-${sectionIndex}`}
             style={{
               display: "flex",
               flex: 1,
@@ -58,6 +64,7 @@ const AccountsList: React.FC<Props> = ({ list, onTransactionClick }) => {
             </R_15_BLACK>
             {item.transactions.map((transaction, index) => (
               <div
+                id={`${testId}-0-${index}`}
                 style={{
                   display: "flex",
                   flex: 1,
@@ -229,6 +236,7 @@ const AccountsList: React.FC<Props> = ({ list, onTransactionClick }) => {
                       transaction.details.map((transactionDetail, TDIndex) => (
                         <>
                           <div
+                            id={`${testId}-1-${TDIndex}`}
                             style={{
                               display: "flex",
                               flex: 1,

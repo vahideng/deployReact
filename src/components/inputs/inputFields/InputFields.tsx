@@ -65,6 +65,7 @@ class InputField extends Component<Props, {}> {
           <div className={`${classes.IconContainer}`}>
             {!!isSecure && !!value ? (
               <span
+                id={`${testId}-0`}
                 className={classes.InputFieldPassword}
                 onClick={onSecureClick}
               >
@@ -81,6 +82,7 @@ class InputField extends Component<Props, {}> {
             )}
             {!!clearIcon && (
               <span
+                id={`${testId}-1`}
                 onClick={clearClickHandler}
                 className={classes.InputFieldClear}
               >

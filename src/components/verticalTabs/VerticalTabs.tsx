@@ -6,6 +6,7 @@ import classes from "./VerticalTab.module.css";
 import "react-tabs/style/react-tabs.css";
 const { SB_16_WHITE, B_32_WHITE } = Paragraphs;
 interface Props {
+  testId?: string;
   selectedBorderColor?: string;
   data: any;
   minimize: boolean;
@@ -13,27 +14,26 @@ interface Props {
 const VerticalTabs: React.FC<Props> = ({
   data,
   minimize,
-  selectedBorderColor
+  selectedBorderColor,
+  testId
 }) => {
+  const [defaultActiveKey, setDefaultActiveKey] = React.useState(0);
 
-  const [defaultActiveKey, setDefaultActiveKey]= React.useState(0)
-
-  React.useEffect(()=>{
-
-
-    if(data){
-
-      data.map((item:any, index: number)=>{
-
-        if(item.selected){
-          setDefaultActiveKey(index)
+  React.useEffect(() => {
+    if (data) {
+      data.map((item: any, index: number) => {
+        if (item.selected) {
+          setDefaultActiveKey(index);
         }
-      })
+      });
     }
-  })
+  });
 
-  return(
-    <Tab.Container id="verticalTabs" defaultActiveKey={defaultActiveKey}>
+  return (
+    <Tab.Container
+      id={`verticalTabs ${testId}`}
+      defaultActiveKey={defaultActiveKey}
+    >
       <Row className={classes.WholeWrapper}>
         <Col className={classes.LeftChild} sm={minimize ? 1 : 3}>
           <Nav variant="pills" className={`${classes.Container} flex-column `}>
@@ -60,7 +60,7 @@ const VerticalTabs: React.FC<Props> = ({
             {!!data &&
               data.map((_item: any, index: number) => {
                 return (
-                  <Tab.Pane eventKey={index}>
+                  <Tab.Pane eventKey={index} id={`${testId}-1`}>
                     {!!_item.bgImage && (
                       <div
                         style={{
@@ -83,7 +83,6 @@ const VerticalTabs: React.FC<Props> = ({
       </Row>
     </Tab.Container>
   );
-}
-
+};
 
 export default VerticalTabs;

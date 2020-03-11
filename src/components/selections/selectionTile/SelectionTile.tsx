@@ -5,7 +5,7 @@ import Profile from "src/components/headers/profile/Profile";
 const { B_16_BLACK, R_14_BLACK } = Paragraphs;
 interface Props {
   onTileClick: (item: any, index: number) => void;
-
+  testId?: string;
   selected?: number;
   list: {
     avatar?: {
@@ -20,13 +20,19 @@ interface Props {
   }[];
 }
 
-const SelectionTile: React.FC<Props> = ({ list, selected, onTileClick }) => {
+const SelectionTile: React.FC<Props> = ({
+  list,
+  selected,
+  onTileClick,
+  testId
+}) => {
   return (
-    <div className={classes.SelectionTileRow}>
+    <div className={classes.SelectionTileRow} id={testId}>
       {!!list &&
         list.map((item, index) => {
           return (
             <div
+              id={`${testId}-${index}`}
               onClick={() => onTileClick(item, index)}
               className={classes.SelectionTileWrapper}
               key={index}
@@ -43,7 +49,7 @@ const SelectionTile: React.FC<Props> = ({ list, selected, onTileClick }) => {
                   />
                 </div>
               ) : (
-                <div>
+                <div id={`${testId}-0${index}`}>
                   {!!item.accountTitle && (
                     <div className={classes.SelectionTileTDiv}>
                       <B_16_BLACK className={classes.SelectionTileTitle}>

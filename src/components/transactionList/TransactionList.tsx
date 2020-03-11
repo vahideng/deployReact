@@ -51,7 +51,7 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
       <Card.Body className={classes.CardBody}>
         {data.map((item: any, index: any) => {
           return (
-            <Accordion key={index} id={`${testId}-0${index}`}>
+            <Accordion key={index} id={`${testId}-0-${index}`}>
               <Card>
                 <Card.Header className={classes.HeaderInside}>
                   <div
@@ -88,11 +88,17 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
                       return (
                         <Accordion.Collapse eventKey={`${index}`} key={index}>
                           <Card.Body className={classes.CardBodyContent}>
-                            <div className={classes.LeftBody}>
+                            <div
+                              className={classes.LeftBody}
+                              id={`${testId}-1-${index}`}
+                            >
                               {item.leftLabel}
                             </div>
 
-                            <div className={classes.RightBody}>
+                            <div
+                              className={classes.RightBody}
+                              id={`${testId}-2-${index}`}
+                            >
                               <div
                                 style={{ whiteSpace: "nowrap" }}
                                 className="p-2"

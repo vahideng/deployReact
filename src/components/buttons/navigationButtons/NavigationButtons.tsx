@@ -4,6 +4,7 @@ import classes from "./NavigationButtons.module.css";
 import Icon from "src/components/assets/icons/icon";
 const { R_13_GREY444 } = Paragraphs;
 interface Props {
+  testId?: string;
   leftButtonDisable?: boolean;
   onLeftButtonPress: () => void;
   rightButtonDisable?: boolean;
@@ -16,23 +17,22 @@ const NavigationButtons: React.FC<Props> = ({
   onLeftButtonPress,
   rightButtonDisable,
   onRightButtonPress,
-  label
+  label,
+  testId
 }) => {
   return (
     <>
-      <div className={classes.NavigationButtonsContainer} >
+      <div className={classes.NavigationButtonsContainer} id={testId}>
         <div
           className={classes.NavigationButtonLeft}
           style={{
             backgroundColor: leftButtonDisable ? "#c4c4c4" : " #FF2626",
-            pointerEvents: leftButtonDisable ? 'none' : 'all'
+            pointerEvents: leftButtonDisable ? "none" : "all"
           }}
-          onClick={onLeftButtonPress && onLeftButtonPress}>
-          <Icon
-            icon={"left"}
-            color={"#ffffff"}
-            size={18}
-          />
+          id={`${testId}-0`}
+          onClick={onLeftButtonPress && onLeftButtonPress}
+        >
+          <Icon icon={"left"} color={"#ffffff"} size={18} />
         </div>
         <div className={classes.NavigationButtonLabel}>
           <R_13_GREY444>{label}</R_13_GREY444>
@@ -41,14 +41,12 @@ const NavigationButtons: React.FC<Props> = ({
           className={classes.NavigationButtonRight}
           style={{
             backgroundColor: rightButtonDisable ? "#c4c4c4" : " #FF2626",
-            pointerEvents: rightButtonDisable ? 'none' : 'all'
+            pointerEvents: rightButtonDisable ? "none" : "all"
           }}
-          onClick={onRightButtonPress && onRightButtonPress}>
-          <Icon
-            icon={"Right1"}
-            color={"#ffffff"}
-            size={18}
-          />
+          id={`${testId}-1`}
+          onClick={onRightButtonPress && onRightButtonPress}
+        >
+          <Icon icon={"Right1"} color={"#ffffff"} size={18} />
         </div>
       </div>
     </>

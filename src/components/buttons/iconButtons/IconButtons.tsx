@@ -5,6 +5,7 @@ import Icon from "src/components/assets/icons/icon";
 const { B_14_BLACK, B_13_BLACK, R_13_GREY444 } = Paragraphs;
 interface Props {
   onButtonClick: (item: React.ReactNode, index: number) => void;
+  testId?: string;
   label?: string;
   selected?: number;
   list: {
@@ -21,15 +22,17 @@ const IconButtons: React.FC<Props> = ({
   label,
   list,
   selected,
-  onButtonClick
+  onButtonClick,
+  testId
 }) => {
   return (
-    <>
+    <div id={testId}>
       <B_14_BLACK className={classes.IconButtonsLabel}>{label}</B_14_BLACK>
       <div className={classes.IconButtonsRow}>
         {list.map((item, index) => {
           return (
             <div
+              id={`${testId}-0${index}`}
               className={classes.IconButtonsWrapper}
               key={index}
               onClick={() => onButtonClick(item, index)}
@@ -61,7 +64,7 @@ const IconButtons: React.FC<Props> = ({
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

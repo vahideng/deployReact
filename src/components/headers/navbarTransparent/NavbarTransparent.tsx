@@ -4,7 +4,7 @@ import classes from "./NavbarTransparent.module.css";
 
 interface Props {
   testId?: string;
-  icon: { name?: string; color?: string; onIconClick?: () => void };
+  icon?: { name?: string; color?: string; onIconClick?: () => void };
   rightButtons?: any;
   menuIsOpen?: boolean;
 }
@@ -12,12 +12,12 @@ interface Props {
 const NavbarTransparent: React.FC<Props> = ({ rightButtons, icon, testId }) => {
   return (
     <div className={classes.NavbarTransparentMainDiv} id={testId}>
-      <div onClick={icon.onIconClick}>
+      <div onClick={icon?.onIconClick}>
         <Icon
           testId={`${testId}-0`}
           className={classes.NavbarTransparentIcon}
-          icon={!!icon.name ? icon.name : "amonline-white"}
-          color={icon.color ? icon.color : "#ff2626"}
+          icon={!!icon?.name ? icon.name : "amonline-white"}
+          color={icon?.color ? icon.color : "#ff2626"}
           size={150}
         />
       </div>

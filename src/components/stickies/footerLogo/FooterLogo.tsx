@@ -10,11 +10,11 @@ interface Props {
 const FooterLogo: React.FC<Props> = props => {
   const { logos, onLogoClick, testId } = props;
   return (
-    <div className={`container ${classes.FooterContainer}`}>
+    <div className={`container ${classes.FooterContainer}`} id={testId}>
       {logos.map((logo: { src: any; id: string }, index: number) => {
         return (
           <div
-            id={`${testId}-${index}`}
+            id={`${testId}-0${index}`}
             className={classes.LogoContainer}
             key={index}
             onClick={() => onLogoClick(logo, index)}

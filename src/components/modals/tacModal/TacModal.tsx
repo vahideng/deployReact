@@ -8,8 +8,8 @@ import FullButton from "../../buttons/primaryButton/PrimaryButton";
 
 const { R_15_GREY444 } = Paragraphs;
 
-
 interface Props {
+  testId?: string;
   content?: string;
   modalIsOpen?: boolean;
   handleChange?: any;
@@ -44,44 +44,24 @@ const TacModal: React.FC<Props> = ({
   content,
   buttonTitle,
   onButtonClick,
-  buttonColor
+  buttonColor,
+  testId
 }) => {
-
- 
-  // let subtitle: any;
-  // const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  //   function afterOpenModal() {
-  //     // references are now sync'd and can be accessed.
-  //     subtitle.style.color = "#f00";
-  //   }
-
-  //   function closeModal() {
-  //     setIsOpen(false);
-  //   }
-
-  // console.log(modalIsOpen, "modalIsOpenmodalIsOpen");
-
   return (
     <div>
-      {/* <button onClick={openModal}>Open Modal</button> */}
       <Modal
-        //  className={classes.Modal}
-        //  overlayClassName={classes.Overlay}
-        // overlayClassName={classes.OverLay}
         isOpen={!!modalIsOpen && modalIsOpen}
-        // onAfterOpen={afterOpenModal}
-        // bodyOpenClassName={classes.Open}
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <div className="row">
+        <div className="row" id={testId}>
           <div
             style={{ display: "flex", justifyContent: "center", width: "80%" }}
             className="col-lg-8"
           >
             <form>
               <InputField
+                testId={`${testId}-0`}
                 handleChange={handleChange}
                 type="text"
                 label={label}
@@ -104,6 +84,7 @@ const TacModal: React.FC<Props> = ({
             className="col-lg-4"
           >
             <FullButton
+              testId={`${testId}-1`}
               buttonColor={{ top: buttonColor.top, bottom: buttonColor.bottom }}
               title={buttonTitle}
               onButtonClick={!!onButtonClick && onButtonClick}
