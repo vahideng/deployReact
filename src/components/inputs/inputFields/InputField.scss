@@ -40,6 +40,9 @@
 .InputFieldClear {
   margin-bottom: 3px;
 }
+.InputFieldError {
+  padding: 1rem 0 0 1rem;
+}
 @media (max-width: 400px) {
   .InputFieldIconDiv input {
     width: 90vw;
