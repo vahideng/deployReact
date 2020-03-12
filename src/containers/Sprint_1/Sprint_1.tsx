@@ -965,6 +965,7 @@ class Sprint1 extends Component<Props, State> {
           testId={"testId"}
           modalIsOpen={StickyModalOpen}
           expirationTime={20}
+          expirationText="Seconds"
           text={
             "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
           }

@@ -5,6 +5,7 @@ import Modal from "react-modal";
 import Paragraphs from "../../assets/typography";
 import classes from "./StickyTimer.module.css";
 import LocalImages from "src/components/assets/images";
+import Icon from "src/components/assets/icons/icon";
 const { R_17_BLACK, B_17_BLACK, R_15_BLACK } = Paragraphs;
 
 let myTimer: any;
@@ -28,6 +29,7 @@ interface Props {
   testId?: string;
   modalIsOpen: boolean;
   expirationTime: number;
+  expirationText?: string;
   text?: string;
 }
 interface State {
@@ -60,8 +62,9 @@ class StickyTimer extends Component<Props, State> {
   }
 
   render() {
-    const { text, testId } = this.props;
+    const { text, testId, expirationText } = this.props;
     const { seconds, closeModal } = this.state;
+
     return (
       <>
         <Modal
@@ -77,7 +80,20 @@ class StickyTimer extends Component<Props, State> {
                 <R_17_BLACK>Transaction will expire in</R_17_BLACK>
                 <B_17_BLACK className={classes.StickyTimerExpTime}>
                   {seconds}
+                  {"  "}
+                  {expirationText}
                 </B_17_BLACK>
+                <div
+                  style={{
+                    padding: "1rem",
+                    cursor: "pointer"
+                  }}
+                  onClick={() => {
+                    this.setState({ closeModal: false });
+                  }}
+                >
+                  <Icon icon="Fail" size={25} />
+                </div>
               </div>
             </div>
             <div className={classes.StickyTimerBottomDiv}>
