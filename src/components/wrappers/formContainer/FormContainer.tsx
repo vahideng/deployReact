@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 import classes from "./FormContainer.module.css";
 import Paragraphs from "../../assets/typography";
-import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
 import Tooltip from "src/components/tooltip/Tooltip";
 const { B_14_WHITE } = Paragraphs;
 interface Props {
@@ -41,17 +40,7 @@ const FormContainer: React.FC<Props> = ({
             style={
               statusIcon ? { backgroundColor: statusIcon.backgroundColor } : {}
             }
-          >
-            <StatusIcon
-              testId={statusIcon.testId}
-              icon={!!statusIcon ? statusIcon.icon : ""}
-              iconColor={{
-                top: statusIcon.iconColor.top,
-                bottom: statusIcon.iconColor.bottom
-              }}
-              image={!!statusIcon ? statusIcon.image : ""}
-            />
-          </div>
+          ></div>
 
           <div
             className={classes.FormContainerStatus}

@@ -90,8 +90,9 @@ interface State {
   StickyModalOpen: boolean;
   generalModalOpen: boolean;
   verticalActiveTab: any;
-  homRedirect: boolean;
   toggled: boolean;
+  homRedirect: boolean;
+  sprint_2Direct: boolean;
 }
 
 class Sprint1 extends Component<Props, State> {
@@ -107,8 +108,9 @@ class Sprint1 extends Component<Props, State> {
     StickyModalOpen: false,
     generalModalOpen: false,
     verticalActiveTab: 3,
+    toggled: false,
     homRedirect: false,
-    toggled: false
+    sprint_2Direct: false
   };
   render() {
     const {
@@ -123,12 +125,16 @@ class Sprint1 extends Component<Props, State> {
       StickyModalOpen,
       generalModalOpen,
       verticalActiveTab,
+      toggled,
       homRedirect,
-      toggled
+      sprint_2Direct
     } = this.state;
 
     if (homRedirect === true) {
       return <Redirect to="/" />;
+    }
+    if (sprint_2Direct === true) {
+      return <Redirect to="/sprint-2" />;
     }
 
     return (
@@ -254,7 +260,11 @@ class Sprint1 extends Component<Props, State> {
           rightButtons={[
             {
               iconName: "Time",
-              onButtonClick: () => alert("button-1-Clicked")
+              onButtonClick: () => {
+                this.setState({
+                  sprint_2Direct: true
+                });
+              }
             },
             {
               iconName: "Settings",
@@ -2670,7 +2680,10 @@ class Sprint1 extends Component<Props, State> {
         <Title>StatusIcon</Title>
 
         <RowDiv>
-          <StatusIcon icon={{ name: "Tick-1" }} />
+          <StatusIcon
+            icon={{ name: "Tick-1" }}
+            iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
+          />
           <StatusIcon
             testId={"testId"}
             iconColor={{ top: "#FD8585", bottom: "#FF2222" }}

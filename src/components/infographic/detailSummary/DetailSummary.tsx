@@ -16,10 +16,11 @@ interface Props {
   logoTitle?: string;
   detailTitle?: string;
   detail?: string;
-  linkText: string;
-  onLinkClick: () => void;
+  linkText?: string;
+  onLinkClick?: () => void;
   iconColor?: { top: string; bottom: string };
-  icon?: { name: string; color: string };
+  outerIconColor?: string;
+  icon?: { name: string; color?: string };
   image?: { src: string; alt?: string };
 }
 
@@ -32,6 +33,7 @@ const DetailSummary: React.FC<Props> = ({
   linkText,
   onLinkClick,
   iconColor,
+  outerIconColor,
   icon,
   image
 }) => {
@@ -44,10 +46,15 @@ const DetailSummary: React.FC<Props> = ({
         <B_16_BLACK>{logoTitle}</B_16_BLACK>
         <div className={classes.dsIconRow}>
           <div className={classes.dsIconTitle}>
-            <StatusIcon iconColor={iconColor} icon={icon} image={image} />
+            <StatusIcon
+              iconColor={iconColor}
+              icon={icon}
+              image={image}
+              outerIconColor={outerIconColor}
+            />
           </div>
 
-          <div>
+          <div className={classes.dsIconDetail}>
             <B_13_BLACK>{detailTitle}</B_13_BLACK>
             <R_13_BLACK className={classes.dsDetail}>{detail}</R_13_BLACK>
             <B_13_ORANGE_463

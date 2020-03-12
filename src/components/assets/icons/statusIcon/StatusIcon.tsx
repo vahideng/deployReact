@@ -5,17 +5,28 @@ import Icon from "../icon";
 interface Props {
   testId?: string;
   iconColor?: any;
+  outerIconColor?: string;
   icon?: any;
   image?: any;
 }
 
-const StatusIcon: React.FC<Props> = ({ iconColor, icon, image, testId }) => {
+const StatusIcon: React.FC<Props> = ({
+  iconColor,
+  icon,
+  image,
+  testId,
+  outerIconColor
+}) => {
   return (
     <>
       <div
         id={!!testId ? testId : ""}
         className={classes.outerRound}
-        style={!!iconColor ? { background: `${iconColor.top}70` } : {}}
+        style={{
+          backgroundColor: outerIconColor
+            ? outerIconColor
+            : `${iconColor.top}70`
+        }}
       >
         <div
           className={classes.innerRound}

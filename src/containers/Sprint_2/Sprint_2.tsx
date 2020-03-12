@@ -5,7 +5,7 @@ import Navbar from "src/components/headers/navbar/Navbar";
 import BannerHero from "src/components/banners/bannerHero/BannerHero";
 import TransactionLimitList from "src/components/lists/TransactionLimitList/TransactionLimitList";
 import BoxContent from "src/components/boxContent/BoxContent";
-// import images from "src/assets";
+// import images from "../../assets";
 
 import { Redirect } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
@@ -13,6 +13,13 @@ import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTr
 import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
 import TextButton from "src/components/buttons/textButton/TextButton";
 import List from "src/components/lists/list/List";
+import SettingModalCenter from "src/components/modals/settingModalCenter/SettingModalCenter";
+import FullButton from "src/components/buttons/fullButton/FullButton";
+import BottomModal from "src/components/modals/bottomModal/BottomModal";
+import SettingSummary from "src/components/infographic/settingSummary/SettingSummary";
+import StatusFormContainer from "src/components/wrappers/statusFormContainer/StatusFormContainer";
+import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
+
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -28,6 +35,8 @@ const Sprint2: React.FC<Props> = () => {
   const [sprint1, setSprint1] = useState(false);
   const [sprint2, setSprint2] = useState(false);
   const [homeRedirect, setHomeRedirect] = useState(false);
+  const [settingModalCenter, setSettingModalCenter] = useState(false);
+  const [settingModal, setSettingModal] = useState(false);
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -68,6 +77,83 @@ const Sprint2: React.FC<Props> = () => {
             onButtonClick: () => alert("button-3-Clicked")
           }
         ]}
+      />
+      <Title>BottomModal</Title>
+      <FullButton
+        title={"Open BottomModal"}
+        onButtonClick={() => {
+          setSettingModal(!settingModal);
+        }}
+      />
+      <BottomModal
+        testId={"testId"}
+        modalIsOpen={settingModal}
+        modalChildren={
+          <SettingSummary
+            icon={{ name: "Tick-1" }}
+            iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
+            detailTitle="Successfully Activated"
+            detail="Your account has been activated successfully."
+          />
+        }
+      />
+      <Title>SettingModalCenter</Title>
+      <FullButton
+        title={"Open SettingModalCenter"}
+        onButtonClick={() => {
+          setSettingModalCenter(!settingModalCenter);
+        }}
+      />
+      <SettingModalCenter
+        testId={"testId"}
+        modalIsOpen={settingModalCenter}
+        modalChildren={
+          <StatusFormContainer
+            statusIcon={{
+              icon: "Tick-1",
+              iconColor: { top: "#94EC9B", bottom: "#5BB362" },
+              outerIconColor: "#E5FCE6"
+            }}
+            children={
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  padding: "2rem"
+                }}
+              >
+                <p style={{ textAlign: "center" }}>
+                  The amount entered exceeds the transaction limit set in your
+                  settings. Would you like to change your limit now?
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    justifyContent: "space-between",
+                    padding: "1rem 0"
+                  }}
+                >
+                  <PrimaryButton
+                    title="No, thanks"
+                    onButtonClick={() => {
+                      alert("Button Clicked");
+                    }}
+                  />
+                  <PrimaryButton
+                    onButtonClick={() => {
+                      alert("Button Clicked");
+                    }}
+                    title="Change Limit"
+                    titleColor="#000000"
+                    buttonColor={{ top: "#F6F6F3", bottom: "#EAE9E3" }}
+                  />
+                </div>
+              </div>
+            }
+          />
+        }
       />
       <Title>Navbar Transparent</Title>
       <NavbarTransparent

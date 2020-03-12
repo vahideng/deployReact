@@ -1,35 +1,35 @@
-.dsMainTitle {
+.stMainTitle {
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
 }
 
-.dsIconRow {
+.stIconRow {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.dsIconTitle {
+.stIconTitle {
   padding: 1rem 1rem 1rem 0;
 }
-.dsMainLogoDiv {
+.stMainLogoDiv {
   padding-left: 1rem;
 }
-.dsDetail {
+.stDetail {
   padding-top: 1rem;
 }
-.dsLink {
+.stLink {
   padding-top: 1rem;
   cursor: pointer;
 }
-.dsIconDetail {
+.stIconDetail {
   padding-left: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 @media (max-width: 400px) {
-  .dsIconTitle {
+  .stIconTitle {
     padding-top: 0;
   }
 }

@@ -1,0 +1,24 @@
+@import "../../assets/common/common.scss";
+
+.StatusFormContainerMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.StatusFormContainerCurve {
+  width: 36.31rem;
+
+  background-color: transparent;
+}
+.StatusFormContainerStatusIcon {
+  margin-bottom: -2rem;
+}
+.StatusFormContainerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  margin-top: -2px;
+}
