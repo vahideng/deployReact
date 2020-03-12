@@ -16,7 +16,7 @@
   ],
   "editor.formatOnSave": true,
   "workbench.startupEditor": "newUntitledFile",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "workbench.editor.showTabs": false,
   "atlascode.jira.workingSite": {
     "baseUrlSuffix": "atlassian.net"
@@ -49,7 +49,7 @@
   "cSpell.userWords": ["Damansara", "whatsapp"],
   "loremWhatever.minWordCount": 15,
   "material-icon-theme.activeIconPack": "react_redux",
-  "workbench.colorTheme": "Horizon Italic",
-  "editor.fontFamily": "Fira Code",
+  // "workbench.colorTheme": "Horizon Italic",
+  // "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true
 }
