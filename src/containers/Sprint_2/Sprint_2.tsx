@@ -13,6 +13,7 @@ import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTr
 import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
 import TextButton from "src/components/buttons/textButton/TextButton";
 import List from "src/components/lists/list/List";
+<<<<<<< HEAD
 import SettingModalCenter from "src/components/modals/settingModalCenter/SettingModalCenter";
 import FullButton from "src/components/buttons/fullButton/FullButton";
 import BottomModal from "src/components/modals/bottomModal/BottomModal";
@@ -21,6 +22,9 @@ import StatusFormContainer from "src/components/wrappers/statusFormContainer/Sta
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import CustomCarousel from "src/components/carousel/Carousel";
 
+=======
+import FirstBanner from "src/components/banners/firstBanner/FirstBanner";
+>>>>>>> [FIRST BANNER] implemented first banner
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -380,6 +384,41 @@ const Sprint2: React.FC<Props> = () => {
           </Col>
         </Row>
         <CustomCarousel />
+      <Title>First Banner</Title>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          marginLeft: "58px",
+          marginRight: "58px"
+          // alignItems: "center"
+        }}
+      >
+        <div style={{ marginRight: "23px" }}>
+          <FirstBanner
+            content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
+            image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
+            tag="tempor incidunt"
+            title="Why pick between yield and liquidity? "
+          />
+        </div>
+        <div style={{ marginRight: "23px" }}>
+          <FirstBanner
+            content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
+            image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
+            tag="tempor incidunt"
+            title="Why pick between yield and liquidity? "
+          />
+        </div>
+        <div>
+          <FirstBanner
+            content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
+            image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
+            tag="tempor incidunt"
+            title="Why pick between yield and liquidity? "
+          />
+        </div>
+      </div>
     </div>
   );
 };
