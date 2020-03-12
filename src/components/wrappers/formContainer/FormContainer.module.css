@@ -16,8 +16,8 @@
           align-items: center;
   background-color: #474747;
   height: 3.18rem;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   padding-left: 2rem;
 }
 
@@ -55,7 +55,7 @@
   background-color: #ffffff;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
-  width: 15.1em;
+  width: 15.1rem;
 }
 
 .FormContainerStatusCenter {
@@ -64,7 +64,7 @@
 
 .FormContainerStatusRight {
   background-color: #ffffff;
-  width: 15em;
+  width: 15rem;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
 }
