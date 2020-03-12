@@ -4,7 +4,7 @@
   position: relative;
   width: 52.18rem;
   box-shadow: $mainBoxShadow;
-  border-radius: 0.7rem;
+  border-radius: 2rem;
   background-color: #ffffff;
 }
 .FormContainerLabel {
@@ -12,21 +12,45 @@
   align-items: center;
   background-color: #474747;
   height: 3.18rem;
-  border-top-left-radius: 0.7rem;
-  border-top-right-radius: 0.7rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   padding-left: 2rem;
 }
 .FormContainerContent {
   padding: 2rem 0;
 }
 .FormContainerStatus {
-  position: absolute;
-  top: -4.3rem;
-  left: 22rem;
-  padding: 1rem;
-  border-radius: 4rem;
-  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 5fr 2fr 5fr;
+  height: 2rem;
 }
+.FormContainerStatusIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  padding: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 38.3%;
+  top: -5.63rem;
+}
+.FormContainerStatusLeft {
+  background-color: #ffffff;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  width: 15.1rem;
+}
+.FormContainerStatusCenter {
+  background-color: #ffffff;
+}
+.FormContainerStatusRight {
+  background-color: #ffffff;
+  width: 15rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
 .FormContainerTooltip {
   margin-left: 1rem;
 }

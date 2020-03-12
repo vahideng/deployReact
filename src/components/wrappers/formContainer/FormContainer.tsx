@@ -31,26 +31,39 @@ const FormContainer: React.FC<Props> = ({
   return (
     <div
       className={classes.FormContainerMain}
-      style={statusIcon ? { paddingTop: "3rem" } : {}}
       id={testId}
+      style={!statusIcon ? { borderRadius: "1rem" } : { width: "36.31rem" }}
     >
       {!!statusIcon && (
-        <div
-          className={classes.FormContainerStatus}
-          style={
-            statusIcon ? { backgroundColor: statusIcon.backgroundColor } : {}
-          }
-        >
-          <StatusIcon
-            testId={statusIcon.testId}
-            icon={!!statusIcon ? statusIcon.icon : ""}
-            iconColor={{
-              top: statusIcon.iconColor.top,
-              bottom: statusIcon.iconColor.bottom
-            }}
-            image={!!statusIcon ? statusIcon.image : ""}
-          />
-        </div>
+        <>
+          <div
+            className={classes.FormContainerStatusIcon}
+            style={
+              statusIcon ? { backgroundColor: statusIcon.backgroundColor } : {}
+            }
+          >
+            <StatusIcon
+              testId={statusIcon.testId}
+              icon={!!statusIcon ? statusIcon.icon : ""}
+              iconColor={{
+                top: statusIcon.iconColor.top,
+                bottom: statusIcon.iconColor.bottom
+              }}
+              image={!!statusIcon ? statusIcon.image : ""}
+            />
+          </div>
+
+          <div
+            className={classes.FormContainerStatus}
+            style={
+              statusIcon ? { backgroundColor: statusIcon.backgroundColor } : {}
+            }
+          >
+            <div className={classes.FormContainerStatusLeft}></div>
+            <div className={classes.FormContainerStatusCenter}></div>
+            <div className={classes.FormContainerStatusRight}></div>
+          </div>
+        </>
       )}
       {!!label && (
         <div className={classes.FormContainerLabel} id={`${testId}-0`}>
@@ -67,7 +80,12 @@ const FormContainer: React.FC<Props> = ({
         </div>
       )}
 
-      <div className={classes.FormContainerContent}>{children}</div>
+      <div
+        className={classes.FormContainerContent}
+        style={statusIcon ? { marginTop: "2rem" } : {}}
+      >
+        {children}
+      </div>
     </div>
   );
 };
