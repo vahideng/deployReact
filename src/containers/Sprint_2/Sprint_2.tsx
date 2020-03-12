@@ -19,6 +19,7 @@ import BottomModal from "src/components/modals/bottomModal/BottomModal";
 import SettingSummary from "src/components/infographic/settingSummary/SettingSummary";
 import StatusFormContainer from "src/components/wrappers/statusFormContainer/StatusFormContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
+import SecondBanner from "src/components/banners/secondBanner/SecondBanner";
 
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -338,6 +339,68 @@ const Sprint2: React.FC<Props> = () => {
           />
         </Col>
       </Row>
+      <Title>BoxContent</Title>
+        <Row>
+          <Col xs={0} md={7} style={{ backgroundColor: "#FAFAFA" }} />
+          <Col xs={12} md={5}>
+            <BoxContent
+              content={[
+                {
+                  title: "Phone Scam",
+                  content:
+                    "Never respond to phone calls asking for your sensitive banking information.",
+                  icon: "Call"
+                },
+                {
+                  title: "SMS Scam",
+                  content:
+                    "Never respond to SMS-es informing you have won a contest/reward that you did not participate in",
+                  icon: "Inbox"
+                },
+                {
+                  title: "Malware",
+                  content: "Never “jailbreak” or “root” your smart phones.",
+                  icon: "Hold"
+                },
+                {
+                  title: "Email Scam",
+                  content:
+                    "Never click website links from unknown and suspicious senders",
+                  icon: "Target"
+                }
+              ]}
+              tag="Security Alerts"
+              testId="testId"
+              title="Always be vigilant against scam threats."
+              link={{ label: "Learn more", url: "#" }}
+            />
+          </Col>
+        </Row>
+
+        <Title>Second Banner</Title>
+        <div
+          style={{
+            marginLeft: "58px",
+            marginRight: "58px"
+            // alignItems: "center"
+          }}
+        >
+          <SecondBanner
+            content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
+            image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
+            title="Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
+          />
+          <SecondBanner
+            content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
+            image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
+            title="Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
+          />
+          <SecondBanner
+            content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
+            image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
+            title="Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
+          />
+        </div>
     </div>
   );
 };
