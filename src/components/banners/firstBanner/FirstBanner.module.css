@@ -1,0 +1,109 @@
+.Container {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
+  border: 1.5px solid #dedede !important;
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+}
+
+.ImageContainer {
+  width: 100% !important;
+  height: 15.125rem !important;
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+}
+
+.Overlay {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.Tag {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  background-color: #333333 !important;
+  border-radius: 1.25rem !important;
+  height: 1.4375rem !important;
+  width: 8.8125rem !important;
+  margin-bottom: 0.5rem !important;
+  position: relative !important;
+  bottom: calc(1.4375rem / 2) !important;
+}
+
+.TagText {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #ffffff !important;
+  font-family: Nunito Sans !important;
+  font-size: 0.68rem !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.8px !important;
+  line-height: 15px !important;
+  text-transform: uppercase !important;
+}
+
+.Details {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  z-index: 99 !important;
+}
+
+.Title {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #000000 !important;
+  font-family: Nunito Sans !important;
+  font-size: 22px !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  line-height: 25px !important;
+  margin-bottom: 0.5rem !important;
+  text-align: center !important;
+}
+
+.Content {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #444444 !important;
+  font-family: Nunito Sans !important;
+  font-size: 15px !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  line-height: 20px !important;
+  margin-bottom: 1.25rem !important;
+  text-align: center !important;
+}
+
+.Container:hover .Overlay {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.Container:hover .Title {
+  color: #ffa463 !important;
+}
+
+.Container:hover .Content {
+  color: #000000 !important;
+}
