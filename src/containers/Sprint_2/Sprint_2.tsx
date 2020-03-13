@@ -79,12 +79,20 @@ const Sprint2: React.FC<Props> = () => {
         ]}
       />
       <Title>BottomModal</Title>
-      <FullButton
-        title={"Open BottomModal"}
-        onButtonClick={() => {
-          setSettingModal(!settingModal);
-        }}
-      />
+      <div style={{ padding: ".5rem 30%", background: "#f5f5f5" }}>
+        <FullButton
+          split
+          leftTitle="Open BottomModal"
+          rightTitle="Open SettingModalCenter"
+          onLeftButton={() => {
+            setSettingModal(!settingModal);
+          }}
+          onRightButton={() => {
+            setSettingModalCenter(!settingModalCenter);
+          }}
+        />
+      </div>
+
       <BottomModal
         testId={"testId"}
         modalIsOpen={settingModal}
@@ -98,12 +106,7 @@ const Sprint2: React.FC<Props> = () => {
         }
       />
       <Title>SettingModalCenter</Title>
-      <FullButton
-        title={"Open SettingModalCenter"}
-        onButtonClick={() => {
-          setSettingModalCenter(!settingModalCenter);
-        }}
-      />
+
       <SettingModalCenter
         testId={"testId"}
         modalIsOpen={settingModalCenter}
