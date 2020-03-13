@@ -455,30 +455,46 @@ const Sprint2: React.FC<Props> = () => {
           </Col>
         </Row>
 
-        <Title>Second Banner</Title>
-        <div
-          style={{
-            marginLeft: "58px",
-            marginRight: "58px"
-            // alignItems: "center"
-          }}
-        >
-          <SecondBanner
-            content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
-            image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
-            title="Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
-          />
-          <SecondBanner
-            content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
-            image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
-            title="Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
-          />
-          <SecondBanner
-            content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
-            image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
-            title="Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
-          />
-        </div>
+      <Title>Second Banner</Title>
+      <div
+        style={{
+          marginLeft: "58px",
+          marginRight: "58px"
+        }}
+      >
+        <SecondBanner
+          data={[
+            {
+              onClick: () => alert("click"),
+              content:
+                "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+              video:
+                "https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80",
+              title:
+                "Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
+            },
+            {
+              content:
+                "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+              image:
+                "https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80",
+              title:
+                "Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
+            },
+            {
+              content:
+                "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+              image:
+                "https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80",
+              title:
+                "Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
+            }
+          ]}
+          linkText="View More"
+          title="Lorem Ipsum"
+          linkOnClick={() => alert("click")}
+        />
+      </div>
     </div>
   );
 };
