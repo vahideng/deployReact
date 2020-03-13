@@ -21,6 +21,7 @@ const FirstBanner: React.FC<Props> = ({
   return (
     <div className={classes.Container} id={`${testId}`}>
       <div className={classes.Overlay}>
+        <div className={classes.ImageOverlay} />
         <img className={classes.ImageContainer} src={image} />
         <div className={classes.Details}>
           <div className={classes.Tag}>

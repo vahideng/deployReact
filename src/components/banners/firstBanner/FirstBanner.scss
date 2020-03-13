@@ -1,18 +1,12 @@
 .Container {
   display: flex !important;
   flex-direction: column !important;
-  border: 1.5px solid #dedede !important;
-  box-sizing: border-box !important;
 }
 
 .ImageContainer {
   width: 100% !important;
   height: 15.125rem !important;
   object-fit: cover !important;
-}
-
-.Overlay {
-  background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .Tag {
@@ -48,6 +42,9 @@
   padding-left: 2rem !important;
   padding-right: 2rem !important;
   z-index: 99 !important;
+  border-bottom: 1.5px solid #dedede !important;
+  border-left: 1.5px solid #dedede !important;
+  border-right: 1.5px solid #dedede !important;
 }
 
 .Title {
@@ -78,7 +75,15 @@
 
 .Container:hover {
   .Overlay {
-    background-color: rgba(0, 0, 0, 0.05) !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+  }
+  .ImageOverlay {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100% !important;
+    height: 15.125rem !important;
+    position: relative;
+    top: 15.125rem;
+    margin-top: -15.125rem;
   }
   .Title {
     color: #ffa463 !important;
