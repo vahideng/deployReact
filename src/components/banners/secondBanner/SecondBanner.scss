@@ -1,14 +1,27 @@
 .Container {
   display: flex !important;
   flex-direction: row !important;
-  border-bottom: 1.5px solid #dedede !important;
-  padding-top: 1.5rem !important;
+  border-top: 1.5px solid #dedede !important;
 }
 
 .ImageContainer {
   width: 13.9375rem !important;
   height: 9.375rem !important;
   object-fit: cover !important;
+}
+
+.PlayVideoContainer {
+  position: absolute;
+  width: 13.9375rem !important;
+  height: 9.375rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.PlayVideo {
+  width: 3.5rem;
+  background-color: none;
 }
 
 .Overlay {
@@ -54,7 +67,14 @@
 
 .Container:hover {
   .Overlay {
-    background-color: rgba(0, 0, 0, 0.05) !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+  }
+  .ImageOverlay {
+    position: absolute;
+    width: 13.9375rem !important;
+    height: 9.375rem !important;
+    object-fit: cover !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
   }
   .Title {
     color: #ffa463 !important;
