@@ -11,6 +11,12 @@ const B_15_WHITE = styled.p`
   font-size: 0.93rem;
   font-weight: 700;
 `;
+const B_15_ORANGE = styled.p`
+  margin: 0;
+  color: #ffa463;
+  font-size: 0.93rem;
+  font-weight: 700;
+`;
 const SB_16_WHITE = styled.p`
   margin: 0;
   color: #ffffff;
@@ -229,6 +235,7 @@ const B_20_BLACK = styled.p`
 `;
 
 export default {
+  B_15_ORANGE,
   R_20_BLACK,
   B_32_BLACK,
   R_13_BLACK,
