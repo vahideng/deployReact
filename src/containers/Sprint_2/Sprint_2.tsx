@@ -13,7 +13,6 @@ import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTr
 import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
 import TextButton from "src/components/buttons/textButton/TextButton";
 import List from "src/components/lists/list/List";
-<<<<<<< HEAD
 import SettingModalCenter from "src/components/modals/settingModalCenter/SettingModalCenter";
 import FullButton from "src/components/buttons/fullButton/FullButton";
 import BottomModal from "src/components/modals/bottomModal/BottomModal";
@@ -21,10 +20,8 @@ import SettingSummary from "src/components/infographic/settingSummary/SettingSum
 import StatusFormContainer from "src/components/wrappers/statusFormContainer/StatusFormContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import CustomCarousel from "src/components/carousel/Carousel";
-
-=======
 import FirstBanner from "src/components/banners/firstBanner/FirstBanner";
->>>>>>> [FIRST BANNER] implemented first banner
+
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
