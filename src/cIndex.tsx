@@ -56,12 +56,14 @@ import AmModal from "./components/modals/Modal";
 import BannerHero from "./components/banners/bannerHero/BannerHero";
 import TransactionLimitList from "./components/lists/TransactionLimitList/TransactionLimitList";
 import BoxContent from "./components/boxContent/BoxContent";
+import FirstBanner from "./components/banners/firstBanner/FirstBanner";
 /// exports
 export {
   /// below are sprint-2 components
   BoxContent,
   TransactionLimitList,
   BannerHero,
+  FirstBanner,
   /// below are sprint-1 components
   AmModal,
   ActionButtons,
