@@ -8,8 +8,6 @@ const { B_32_BLACK, B_15_ORANGE } = Paragraphs;
 
 interface IItem {
   content: string;
-  hoverColorContent?: string;
-  hoverColorTitle?: string;
   image?: string;
   onClick?: () => void;
   title: string;
