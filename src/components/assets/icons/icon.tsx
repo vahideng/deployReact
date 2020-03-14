@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import IcomoonReact from "icomoon-react";
 import iconSet from "./iconSVG";
 
@@ -8,7 +8,7 @@ const Icon: React.FC<{
   size?: number;
   icon?: string;
   className?: string;
-  style?: {};
+  style?: CSSProperties;
 }> = ({
   testId,
   color = "#000000",

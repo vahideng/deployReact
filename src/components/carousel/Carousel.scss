@@ -1,3 +1,17 @@
-ol > .carousel-indicators > li {
-  background-color: red;
+.CarouselItem {
+  padding: 0 6rem;
+}
+.CarouselIndicDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.CarouselIndic {
+  width: 0.37rem;
+  height: 0.37rem;
+  margin: 0.75rem;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  background-color: transparent;
+  z-index: 11;
 }

@@ -1872,6 +1872,11 @@ class Sprint1 extends Component<Props, State> {
           }}
         />
         <Tag text="How may I help you?" />
+        <Tag
+          text={"Different styling"}
+          styles={{ background: "#444444" }}
+          textStyles={{ fontSize: "11px", fontWeight: 400 }}
+        />
         <Title>DetailList</Title>
         <div style={{ height: 500 }}>
           <DetailList
