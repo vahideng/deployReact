@@ -19,6 +19,7 @@ import BottomModal from "src/components/modals/bottomModal/BottomModal";
 import SettingSummary from "src/components/infographic/settingSummary/SettingSummary";
 import StatusFormContainer from "src/components/wrappers/statusFormContainer/StatusFormContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
+import FirstBanner from "src/components/banners/firstBanner/FirstBanner";
 
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -338,6 +339,41 @@ const Sprint2: React.FC<Props> = () => {
           />
         </Col>
       </Row>
+      <Title>First Banner</Title>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          marginLeft: "58px",
+          marginRight: "58px"
+          // alignItems: "center"
+        }}
+      >
+        <div style={{ marginRight: "23px" }}>
+          <FirstBanner
+            content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
+            image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
+            tag="tempor incidunt"
+            title="Why pick between yield and liquidity? "
+          />
+        </div>
+        <div style={{ marginRight: "23px" }}>
+          <FirstBanner
+            content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
+            image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
+            tag="tempor incidunt"
+            title="Why pick between yield and liquidity? "
+          />
+        </div>
+        <div>
+          <FirstBanner
+            content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
+            image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
+            tag="tempor incidunt"
+            title="Why pick between yield and liquidity? "
+          />
+        </div>
+      </div>
     </div>
   );
 };
