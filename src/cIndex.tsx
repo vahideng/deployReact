@@ -57,13 +57,26 @@ import BannerHero from "./components/banners/bannerHero/BannerHero";
 import TransactionLimitList from "./components/lists/TransactionLimitList/TransactionLimitList";
 import BoxContent from "./components/boxContent/BoxContent";
 import FirstBanner from "./components/banners/firstBanner/FirstBanner";
+import SecondBanner from "./components/banners/secondBanner/SecondBanner";
+import SettingModalCenter from "./components/modals/settingModalCenter/SettingModalCenter";
+import BottomModal from "./components/modals/bottomModal/BottomModal";
+import SettingSummary from "./components/infographic/settingSummary/SettingSummary";
+import StatusFormContainer from "./components/wrappers/statusFormContainer/StatusFormContainer";
+import BoxSlider from "./components/carousel/boxSlider/BoxSlider";
+
 /// exports
 export {
   /// below are sprint-2 components
+  BoxSlider,
+  StatusFormContainer,
+  SettingSummary,
+  BottomModal,
+  SettingModalCenter,
   BoxContent,
   TransactionLimitList,
   BannerHero,
   FirstBanner,
+  SecondBanner,
   /// below are sprint-1 components
   AmModal,
   ActionButtons,

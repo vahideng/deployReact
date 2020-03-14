@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
+import { Row, Col } from "react-bootstrap";
 import Paragraphs from "../../components/assets/typography";
 import styled from "styled-components";
 import Navbar from "src/components/headers/navbar/Navbar";
@@ -6,9 +8,6 @@ import BannerHero from "src/components/banners/bannerHero/BannerHero";
 import TransactionLimitList from "src/components/lists/TransactionLimitList/TransactionLimitList";
 import BoxContent from "src/components/boxContent/BoxContent";
 // import images from "../../assets";
-
-import { Redirect } from "react-router-dom";
-import { Row, Col } from "react-bootstrap";
 import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTransparent";
 import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
 import TextButton from "src/components/buttons/textButton/TextButton";
@@ -19,8 +18,9 @@ import BottomModal from "src/components/modals/bottomModal/BottomModal";
 import SettingSummary from "src/components/infographic/settingSummary/SettingSummary";
 import StatusFormContainer from "src/components/wrappers/statusFormContainer/StatusFormContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
-import FirstBanner from "src/components/banners/firstBanner/FirstBanner";
 import BoxSlider from "src/components/carousel/boxSlider/BoxSlider";
+import FirstBanner from "src/components/banners/firstBanner/FirstBanner";
+import SecondBanner from "src/components/banners/secondBanner/SecondBanner";
 
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -457,6 +457,47 @@ const Sprint2: React.FC<Props> = () => {
             title="Why pick between yield and liquidity? "
           />
         </div>
+      </div>
+
+      <Title>Second Banner</Title>
+      <div
+        style={{
+          marginLeft: "58px",
+          marginRight: "58px"
+        }}
+      >
+        <SecondBanner
+          data={[
+            {
+              onClick: () => alert("click"),
+              content:
+                "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+              video:
+                "https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80",
+              title:
+                "Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
+            },
+            {
+              content:
+                "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+              image:
+                "https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80",
+              title:
+                "Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
+            },
+            {
+              content:
+                "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+              image:
+                "https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80",
+              title:
+                "Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
+            }
+          ]}
+          linkText="View More"
+          title="Lorem Ipsum"
+          linkOnClick={() => alert("click")}
+        />
       </div>
     </div>
   );

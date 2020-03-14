@@ -629,7 +629,11 @@ class Sprint1 extends Component<Props, State> {
               display: "inline-block"
             }}
           >
-            <FloatingButton darkButton={true} testId={"testId"} />
+            <FloatingButton
+              darkButton={true}
+              testId={"testId"}
+              onButtonClick={() => alert("onButtonClick")}
+            />
           </div>
         </CenteredDiv>
 
