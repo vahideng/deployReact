@@ -58,6 +58,7 @@ import TransactionLimitList from "./components/lists/TransactionLimitList/Transa
 import BoxContent from "./components/boxContent/BoxContent";
 import FirstBanner from "./components/banners/firstBanner/FirstBanner";
 import SecondBanner from "./components/banners/secondBanner/SecondBanner";
+import CustomCarousel from "./components/carousel/Carousel";
 /// exports
 export {
   /// below are sprint-2 components
@@ -66,6 +67,7 @@ export {
   BannerHero,
   FirstBanner,
   SecondBanner,
+  CustomCarousel,
   /// below are sprint-1 components
   AmModal,
   ActionButtons,
