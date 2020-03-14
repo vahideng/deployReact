@@ -63,6 +63,7 @@ import BottomModal from "./components/modals/bottomModal/BottomModal";
 import SettingSummary from "./components/infographic/settingSummary/SettingSummary";
 import StatusFormContainer from "./components/wrappers/statusFormContainer/StatusFormContainer";
 import BoxSlider from "./components/carousel/boxSlider/BoxSlider";
+import ArticleDetails from "./components/articleDetails/ArticleDetails";
 
 /// exports
 export {
@@ -130,5 +131,6 @@ export {
   Logo,
   LabeledIcon,
   StatusIcon,
-  TileListView
+  TileListView,
+  ArticleDetails
 };

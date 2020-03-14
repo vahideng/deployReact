@@ -240,6 +240,27 @@ const B_20_BLACK = styled.p`
   font-weight: bold;
 `;
 
+const SB_32_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-weight: 600;
+  font-size: 2rem;
+`;
+const SB_22_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-weight: 600;
+  font-size: 1.37rem;
+`;
+
+const SB_17_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-size: 1.06rem;
+  font-weight: 600;
+  line-height: 20px;
+`;
+
 export default {
   B_15_ORANGE,
   R_20_BLACK,
@@ -278,5 +299,8 @@ export default {
   B_20_BLACK,
   R_18_GREY444,
   B_32_WHITE,
-  B_17_ORANGE_463
+  B_17_ORANGE_463,
+  SB_32_BLACK,
+  SB_22_BLACK,
+  SB_17_BLACK
 };
