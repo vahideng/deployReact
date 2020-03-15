@@ -14,17 +14,13 @@
     "plusplus",
     "webfonts"
   ],
-  "editor.formatOnSave": true,
-  "workbench.startupEditor": "newUntitledFile",
-  "window.zoomLevel": 1,
-  "workbench.editor.showTabs": false,
   "atlascode.jira.workingSite": {
     "baseUrlSuffix": "atlassian.net"
   },
   "yaml.schemas": {
     "file:///Users/aleph/.vscode/extensions/atlassian.atlascode-1.4.3/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
-  "editor.minimap.enabled": false,
+
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -35,21 +31,5 @@
       "savePath": null
     }
   ],
-  "liveSassCompile.settings.generateMap": false,
-  "files.autoSave": "off",
-  "terminal.integrated.shell.osx": "/bin/bash",
-  "beautify.language": {
-    "css": ["css", "scss"],
-    "html": ["htm", "html"]
-    // ^^ providing just an array sets the VS Code file type
-  },
-  "workbench.activityBar.visible": true,
-  "workbench.iconTheme": "material-icon-theme",
-  "terminal.integrated.rendererType": "dom",
-  "cSpell.userWords": ["Damansara", "whatsapp"],
-  "loremWhatever.minWordCount": 15,
-  "material-icon-theme.activeIconPack": "react_redux",
-  "workbench.colorTheme": "Horizon Italic",
-  "editor.fontFamily": "Fira Code",
-  "editor.fontLigatures": true
+  "liveSassCompile.settings.generateMap": false
 }
