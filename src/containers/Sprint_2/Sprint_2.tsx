@@ -192,7 +192,7 @@ const Sprint2: React.FC<Props> = () => {
             }}
           />,
           <TextDropdown
-            menuIsOpen
+            // menuIsOpen
             defaultValue={"Persian"}
             handleChange={(selectedOption: any) => {
               setSelectedOption(selectedOption);
@@ -259,47 +259,7 @@ const Sprint2: React.FC<Props> = () => {
         testId="testId"
         title="Grand Prize RM 1 Million Cash"
       />
-      <Title>BoxContent</Title>
-      <Row>
-        <Col
-          xs={0}
-          md={7}
-          style={{ backgroundColor: "#FAFAFA", padding: "0" }}
-        />
-        <Col xs={12} md={5} style={{ padding: "0" }}>
-          <BoxContent
-            content={[
-              {
-                title: "Phone Scam",
-                content:
-                  "Never respond to phone calls asking for your sensitive banking information.",
-                icon: "Call"
-              },
-              {
-                title: "SMS Scam",
-                content:
-                  "Never respond to SMS-es informing you have won a contest/reward that you did not participate in",
-                icon: "Inbox"
-              },
-              {
-                title: "Malware",
-                content: "Never “jailbreak” or “root” your smart phones.",
-                icon: "Hold"
-              },
-              {
-                title: "Email Scam",
-                content:
-                  "Never click website links from unknown and suspicious senders",
-                icon: "Target"
-              }
-            ]}
-            tag="Security Alerts"
-            testId="testId"
-            title="Always be vigilant against scam threats."
-            link={{ label: "Learn more", url: "#" }}
-          />
-        </Col>
-      </Row>
+
       <Title>Transaction Limit List</Title>
       <Row
         style={{
@@ -344,7 +304,7 @@ const Sprint2: React.FC<Props> = () => {
           />
         </Col>
       </Row>
-      <Title>BoxContent</Title>
+      <Title>BoxSlider &larr;---&rarr; BoxContent</Title>
 
       <Row>
         <Col xs={0} md={7}>
@@ -499,56 +459,6 @@ const Sprint2: React.FC<Props> = () => {
           title="Lorem Ipsum"
           linkOnClick={() => alert("click")}
         />
-        <Title>BannerHero</Title>
-        <BannerHero
-          buttonClick={() => {
-            alert("Clicked");
-          }}
-          buttonText="Learn More"
-          content="Total of RM2.5 Million to be won. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab."
-          label="Hero Promotion"
-          leftImage="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1390&q=80"
-          showButton={true}
-          testId="testId"
-          title="Grand Prize RM 1 Million Cash"
-        />
-        <Title>BoxContent</Title>
-        <Row>
-          <Col xs={0} md={7} style={{ backgroundColor: "#FAFAFA" }} />
-          <Col xs={12} md={5}>
-            <BoxContent
-              content={[
-                {
-                  title: "Phone Scam",
-                  content:
-                    "Never respond to phone calls asking for your sensitive banking information.",
-                  icon: "Call"
-                },
-                {
-                  title: "SMS Scam",
-                  content:
-                    "Never respond to SMS-es informing you have won a contest/reward that you did not participate in",
-                  icon: "Inbox"
-                },
-                {
-                  title: "Malware",
-                  content: "Never “jailbreak” or “root” your smart phones.",
-                  icon: "Hold"
-                },
-                {
-                  title: "Email Scam",
-                  content:
-                    "Never click website links from unknown and suspicious senders",
-                  icon: "Target"
-                }
-              ]}
-              tag="Security Alerts"
-              testId="testId"
-              title="Always be vigilant against scam threats."
-              link={{ label: "Learn more", url: "#" }}
-            />
-          </Col>
-        </Row>
 
         <div
           style={{

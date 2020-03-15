@@ -6,7 +6,6 @@ import Paragraphs from "../../assets/typography";
 const { B_18_BLACK, R_13_GREY444, B_15_BLACK, B_24_BLACK } = Paragraphs;
 interface Props {
   testId?: string;
-
   header?: {
     icon?: { name: string; color?: string; iconText: string };
     title?: string;
