@@ -935,9 +935,19 @@ class Sprint1 extends Component<Props, State> {
           onButtonClick={() => alert("TAC Submitted")}
           buttonTitle="Continue"
           modalIsOpen={TacModalOpen}
-          handleChange={(e: any) => alert(e.target.value)}
           label={"TAC verification"}
-          value={""}
+          value={inputValue}
+          handleChange={(e: any) => {
+            this.setState({
+              inputValue: e.target.value
+            });
+          }}
+          notValid={true}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The TAC is incorrect",
+            subText: "Please try again."
+          }}
           content="TAC was sent to your registered mobile number (**** 6867). You should receive a TAC within 2 minutes."
           buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
         />

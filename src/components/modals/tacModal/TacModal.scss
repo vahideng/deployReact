@@ -1,0 +1,17 @@
+.TacMainDiv {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+.TacMainInnerDiv {
+  display: flex;
+  justify-content: center;
+}
+.TacButton {
+  padding-top: 1.5rem;
+}
+.TacCrossButton {
+  margin-left: 2rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
