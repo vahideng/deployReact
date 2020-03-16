@@ -22,6 +22,8 @@ import BoxSlider from "src/components/carousel/boxSlider/BoxSlider";
 import FirstBanner from "src/components/banners/firstBanner/FirstBanner";
 import SecondBanner from "src/components/banners/secondBanner/SecondBanner";
 import ArticleDetails from "src/components/articleDetails/ArticleDetails";
+import InputField from "src/components/inputs/inputFields/InputFields";
+import Box_V2 from "src/components/wrappers/box_V2/Box_V2";
 
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -208,6 +210,31 @@ const Sprint2: React.FC<Props> = () => {
             ]}
           />
         ]}
+      />
+      <Title>Box_V2</Title>
+      <Box_V2
+        title={"Login"}
+        boxChildren={
+          <div style={{ padding: "3rem 1.5rem" }}>
+            <InputField
+              notValid={true}
+              errorMessage={{
+                testId: "testId",
+                errorText: "The TAC is incorrect",
+                subText: "Please try again."
+              }}
+              type="text"
+              clearClickHandler={() => alert("clear clicked")}
+              clearIcon={true}
+              label="input label"
+              icon={{ name: "Account-2" }}
+              value={""}
+              handleChange={event => {
+                console.log(event.target.value);
+              }}
+            />
+          </div>
+        }
       />
       <Title>List</Title>
       <List

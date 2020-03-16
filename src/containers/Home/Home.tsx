@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BackgroundSingle from "src/components/wrappers/backgroundSingle/BackgroundSingle";
 import Header from "src/components/headers/header/Header";
-import Box from "src/components/wrappers/box/Box";
+import Box_V2 from "src/components/wrappers/box_V2/Box_V2";
 import TextButton from "src/components/buttons/textButton/TextButton";
 import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTransparent";
 import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
@@ -88,7 +88,7 @@ const Home: React.FC<Props> = () => {
           What would you like
           to do today?"
               />
-              <Box
+              <Box_V2
                 title={"Login"}
                 split={split}
                 onButtonClick={() => {

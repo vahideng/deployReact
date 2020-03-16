@@ -43,7 +43,6 @@ import Tooltip from "./components/tooltip/Tooltip";
 import TransactionList from "./components/transactionList/TransactionList";
 import VerticalTabs from "./components/verticalTabs/VerticalTabs";
 import BackgroundSingle from "./components/wrappers/backgroundSingle/BackgroundSingle";
-import Box from "./components/wrappers/box/Box";
 import FormContainer from "./components/wrappers/formContainer/FormContainer";
 import FormContainerCurved from "./components/wrappers/formContainerCurved/FormContainerCurved";
 import Icon from "./components/assets/icons/icon";
@@ -52,7 +51,10 @@ import StatusIcon from "./components/assets/icons/statusIcon/StatusIcon";
 import Logo from "./components/assets/logo/Logo";
 import TileListView from "./components/lists/TileListView/TileListView";
 import AmModal from "./components/modals/Modal";
+
+///
 /// below are sprint-2 components
+
 import BannerHero from "./components/banners/bannerHero/BannerHero";
 import TransactionLimitList from "./components/lists/TransactionLimitList/TransactionLimitList";
 import BoxContent from "./components/boxContent/BoxContent";
@@ -64,10 +66,14 @@ import SettingSummary from "./components/infographic/settingSummary/SettingSumma
 import StatusFormContainer from "./components/wrappers/statusFormContainer/StatusFormContainer";
 import BoxSlider from "./components/carousel/boxSlider/BoxSlider";
 import ArticleDetails from "./components/articleDetails/ArticleDetails";
+import Box_V2 from "./components/wrappers/box_V2/Box_V2";
 
 /// exports
 export {
+  ////
   /// below are sprint-2 components
+
+  Box_V2,
   BoxSlider,
   StatusFormContainer,
   SettingSummary,
@@ -78,6 +84,7 @@ export {
   BannerHero,
   FirstBanner,
   SecondBanner,
+  ////
   /// below are sprint-1 components
   AmModal,
   ActionButtons,
@@ -124,7 +131,6 @@ export {
   TransactionList,
   VerticalTabs,
   BackgroundSingle,
-  Box,
   FormContainer,
   FormContainerCurved,
   Icon,
