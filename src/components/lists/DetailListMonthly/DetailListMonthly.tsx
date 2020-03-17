@@ -8,6 +8,7 @@ interface Props {
   testId?: string;
   selected?: number;
   tipChildren?: any;
+  divider?: number;
   list?: {
     date: string;
     content: { leftText: string; rightText: string; tipChildren?: any }[];
@@ -18,7 +19,8 @@ const DetailListMonthly: React.FC<Props> = ({
   list,
   selected,
   tipChildren,
-  testId
+  testId,
+  divider
 }) => {
   const [click, setClick] = useState(!!selected ? selected : 0);
   return (
@@ -37,7 +39,11 @@ const DetailListMonthly: React.FC<Props> = ({
                       index <= 0 ? { opacity: 0, pointerEvents: "none" } : {}
                     }
                   >
-                    <Icon icon="left" size={26} />
+                    <Icon
+                      icon="left"
+                      size={26}
+                      className={classes.DetailListArrows}
+                    />
                   </div>
                   <B_16_BLACK id={classes.title}>{item.date}</B_16_BLACK>
                   <div
@@ -50,7 +56,11 @@ const DetailListMonthly: React.FC<Props> = ({
                       setClick(click + 1);
                     }}
                   >
-                    <Icon icon="Right1" size={26} />
+                    <Icon
+                      icon="Right1"
+                      size={26}
+                      className={classes.DetailListArrows}
+                    />
                   </div>
                 </div>
               )}
@@ -68,27 +78,32 @@ const DetailListMonthly: React.FC<Props> = ({
               <div key={index} id={`${testId}-0-${index}`}>
                 {item.content.map((contentList, index) => {
                   return (
-                    <div
-                      key={index}
-                      className={classes.DetailListRows}
-                      id={`${testId}-1-${index}`}
-                    >
-                      <R_15_BLACK>{contentList.leftText}</R_15_BLACK>
-                      <div className={classes.DetailListMonthTool}>
-                        <B_15_BLACK>{contentList.rightText}</B_15_BLACK>
-                        {!!contentList.tipChildren && (
-                          <div
-                            className={classes.DetailListToolIcon}
-                            id={`${testId}-2-${index}`}
-                          >
-                            <Tooltip
-                              tipChildren={contentList.tipChildren}
-                              testId={testId}
-                            />
-                          </div>
-                        )}
+                    <>
+                      <div
+                        key={index}
+                        className={classes.DetailListRows}
+                        id={`${testId}-1-${index}`}
+                      >
+                        <R_15_BLACK>{contentList.leftText}</R_15_BLACK>
+                        <div className={classes.DetailListMonthTool}>
+                          <B_15_BLACK>{contentList.rightText}</B_15_BLACK>
+                          {!!contentList.tipChildren && (
+                            <div
+                              className={classes.DetailListToolIcon}
+                              id={`${testId}-2-${index}`}
+                            >
+                              <Tooltip
+                                tipChildren={contentList.tipChildren}
+                                testId={testId}
+                              />
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
+                      {index === divider && (
+                        <div className={classes.DetailListDivider}></div>
+                      )}
+                    </>
                   );
                 })}
               </div>

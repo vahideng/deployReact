@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import classes from "./SelectionTile.module.css";
 import Paragraphs from "../../assets/typography";
 import Profile from "src/components/headers/profile/Profile";
@@ -17,6 +17,7 @@ interface Props {
     accountTitle?: string;
     accountNumber?: string;
     amount?: string;
+    children?: ReactNode;
   }[];
 }
 
@@ -36,37 +37,50 @@ const SelectionTile: React.FC<Props> = ({
               onClick={() => onTileClick(item, index)}
               className={classes.SelectionTileWrapper}
               key={index}
-              style={selected === index ? { borderBottomColor: "#ff2626" } : {}}
+              style={
+                selected === index
+                  ? {
+                      borderBottomColor: "#ff2626",
+                      justifyContent: item.children ? "center" : "flex-start"
+                    }
+                  : { justifyContent: item.children ? "center" : "flex-start" }
+              }
             >
-              {!!item.avatar ? (
-                <div>
-                  <Profile
-                    initials={item.avatar.initials}
-                    initialsBg={item.avatar.initialsBg}
-                    greeting={item.avatar.name}
-                    alt="AVATAR"
-                    src={item.avatar.src}
-                  />
-                </div>
-              ) : (
-                <div id={`${testId}-0${index}`}>
-                  {!!item.accountTitle && (
-                    <div className={classes.SelectionTileTDiv}>
-                      <B_16_BLACK className={classes.SelectionTileTitle}>
-                        {item.accountTitle}
+              <div className={classes.SelectionTileSelector}>
+                {item.children ? (
+                  <div className={classes.SelectionTileChild}>
+                    {item.children}
+                  </div>
+                ) : !!item.avatar ? (
+                  <div>
+                    <Profile
+                      initials={item.avatar.initials}
+                      initialsBg={item.avatar.initialsBg}
+                      greeting={item.avatar.name}
+                      alt="AVATAR"
+                      src={item.avatar.src}
+                    />
+                  </div>
+                ) : (
+                  <div id={`${testId}-0${index}`}>
+                    {!!item.accountTitle && (
+                      <div className={classes.SelectionTileTDiv}>
+                        <B_16_BLACK className={classes.SelectionTileTitle}>
+                          {item.accountTitle}
+                        </B_16_BLACK>
+                      </div>
+                    )}
+                    {!!item.accountNumber && (
+                      <R_14_BLACK>{item.accountNumber}</R_14_BLACK>
+                    )}
+                    {!!item.amount && (
+                      <B_16_BLACK className={classes.SelectionTAmount}>
+                        {item.amount}
                       </B_16_BLACK>
-                    </div>
-                  )}
-                  {!!item.accountNumber && (
-                    <R_14_BLACK>{item.accountNumber}</R_14_BLACK>
-                  )}
-                  {!!item.amount && (
-                    <B_16_BLACK className={classes.SelectionTAmount}>
-                      {item.amount}
-                    </B_16_BLACK>
-                  )}
-                </div>
-              )}
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
           );
         })}

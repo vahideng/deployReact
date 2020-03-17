@@ -4,8 +4,8 @@
   border-radius: 1rem;
   position: relative;
   min-height: 19.68rem;
-  -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
-          box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+  -webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.123279);
+          box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.123279);
 }
 
 .Container {

@@ -1805,7 +1805,7 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
         <Title>SearchBar/Filter</Title>
-        <CenteredDiv>
+        <CenteredDiv style={{ backgroundColor: "#f5f5f5" }}>
           <SearchBar
             clearClickHandler={() => alert("clear clicked")}
             searchIconClickHandler={() => alert("Search Icon clicked")}
@@ -1997,6 +1997,7 @@ class Sprint1 extends Component<Props, State> {
         <div>
           <Title>DetailList Monthly</Title>
           <DetailListMonthly
+            divider={2}
             testId={"testId"}
             tipChildren={
               <div>
@@ -2221,6 +2222,7 @@ class Sprint1 extends Component<Props, State> {
             icon={{ name: "Account", color: "#000000", size: 30 }}
           />
         </div>
+
         <SelectionTile
           testId={"testId"}
           onTileClick={(item, index) => {
@@ -2274,10 +2276,7 @@ class Sprint1 extends Component<Props, State> {
               }
             },
             {
-              avatar: {
-                name: "Ahmad Kassim Azmi",
-                initials: "AK"
-              }
+              children: <img src={images.common.sampleLogo} width={150} />
             },
             {
               avatar: {
@@ -2334,21 +2333,23 @@ class Sprint1 extends Component<Props, State> {
           ]}
         />
         <Title>DescriptionButton</Title>
-        <DescriptionButton
-          testId={"testId"}
-          onButtonClick={(item, index) => {
-            alert(`${item.title} with indexOf ${index} clicked`);
-          }}
-          list={[
-            { title: "Pay Minimum Payment" },
-            { title: "Pay Minimum Payment", amount: "RM 1,000.00" },
-            {
-              title: "Pay Unpaid Statement Balance",
-              amount: "RM 2,000.00",
-              icon: { name: "Alert", color: "#ff2626" }
-            }
-          ]}
-        />
+        <CenteredDiv style={{ backgroundColor: "#f5f5f5" }}>
+          <DescriptionButton
+            testId={"testId"}
+            onButtonClick={(item, index) => {
+              alert(`${item.title} with indexOf ${index} clicked`);
+            }}
+            list={[
+              { title: "Pay Minimum Payment", disabled: true },
+              { title: "Pay Minimum Payment", amount: "RM 1,000.00" },
+              {
+                title: "Pay Unpaid Statement Balance",
+                amount: "RM 2,000.00",
+                icon: { name: "Alert", color: "#ff2626" }
+              }
+            ]}
+          />
+        </CenteredDiv>
         <Title>IconButtons</Title>
         <IconButtons
           testId={"testId"}
@@ -2757,6 +2758,17 @@ class Sprint1 extends Component<Props, State> {
 
         <Title>Profile</Title>
         <Profile
+          testId={"testId"}
+          greeting="Good Morning"
+          name="Adam Constantine"
+          alt="AVATAR"
+          src={
+            "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+          }
+        />
+        <Profile
+          greetingStyle={{ color: "#ff2626" }}
+          nameStyle={{ color: "#000" }}
           testId={"testId"}
           greeting="Good Morning"
           name="Adam Constantine"

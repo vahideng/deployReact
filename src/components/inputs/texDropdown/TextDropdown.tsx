@@ -70,6 +70,7 @@ const customStyles = (themColor: string | undefined) => ({
           ? "black"
           : "black"
         : "black",
+      fontWeight: isSelected ? "bold" : "normal",
       cursor: isDisabled ? "not-allowed" : "default",
 
       ":active": {
