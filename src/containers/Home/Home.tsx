@@ -25,107 +25,108 @@ const Home: React.FC<Props> = () => {
       <BackgroundSingle
         testId={"testId"}
         image={
-          "https://static.vecteezy.com/system/resources/previews/000/547/469/large_2x/abstract-blurred-background-with-bokeh-sparkling-lights-vector.jpg"
+          "https://images.unsplash.com/photo-1584275556625-162f54df05b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
         }
       >
-        <div style={{ padding: 50 }}>
-          <div>
-            <NavbarTransparent
-              icon={{
-                onIconClick: () => {
+        <div style={{ padding: 100 }}>
+          <NavbarTransparent
+            icon={{
+              color: "#FFFFFF",
+              onIconClick: () => {
+                setSprint1(true);
+              }
+            }}
+            rightButtons={[
+              <TextButton
+                testId={"testId"}
+                buttonText="Sprint-1"
+                onTextClick={() => {
                   setSprint1(true);
-                }
-              }}
-              rightButtons={[
-                <TextButton
-                  testId={"testId"}
-                  buttonText="Sprint-1"
-                  onTextClick={() => {
-                    setSprint1(true);
-                  }}
-                  buttonStyles={{
-                    color: "#000000",
-                    fontWeight: 400,
-                    fontSize: 15
-                  }}
-                />,
+                }}
+                buttonStyles={{
+                  color: "#FFFFFF",
+                  fontWeight: 400,
+                  fontSize: 15
+                }}
+              />,
 
-                <TextDropdown
-                  handleChange={(selectedOption: any) => {
-                    setSelectedOption(selectedOption);
-                    console.log(`Option:`, selectedOption);
-                  }}
-                  selectedOption={selectedItem}
-                  placeHolder={"English"}
-                  options={[
-                    { label: "English", value: "english" },
-                    { label: "Malay", value: "malay" },
-                    { label: "中文", value: "中文" }
-                  ]}
-                />
-              ]}
-            />
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                padding: "9rem"
-              }}
-            >
-              <Header
-                testId="testId"
-                title="good morning"
-                subTitle="Banking your way. 
+              <TextDropdown
+                themColor="#FFFFFF"
+                handleChange={(selectedOption: any) => {
+                  setSelectedOption(selectedOption);
+                  console.log(`Option:`, selectedOption);
+                }}
+                selectedOption={selectedItem}
+                placeHolder={"English"}
+                options={[
+                  { label: "English", value: "english" },
+                  { label: "Malay", value: "malay" },
+                  { label: "中文", value: "中文" }
+                ]}
+              />
+            ]}
+          />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              padding: "9rem"
+            }}
+          >
+            <Header
+              textColor="#FFFFFF"
+              testId="testId"
+              title="good morning"
+              subTitle="Banking your way. 
           What would you like
           to do today?"
-              />
-              <Box
-                title={"Login"}
-                split={split}
-                onButtonClick={() => {
-                  setsSplit(!split);
-                }}
-                onRightButton={() => {
-                  setsSplit(!split);
-                }}
-                onLeftButton={() => {
-                  setsSplit(!split);
-                }}
-                leftTitle={"LeftTitle"}
-                rightTitle={"rightTitle"}
-                tabTitles={["Security", "Login", "Contact Us"]}
-                onSelect={(obj: any) => console.log(obj)}
-                content={[
-                  <ZeroResult
-                    text={`We can’t seem to find any result for 
+            />
+            <Box
+              title={"Login"}
+              split={split}
+              onButtonClick={() => {
+                setsSplit(!split);
+              }}
+              onRightButton={() => {
+                setsSplit(!split);
+              }}
+              onLeftButton={() => {
+                setsSplit(!split);
+              }}
+              leftTitle={"LeftTitle"}
+              rightTitle={"rightTitle"}
+              tabTitles={["Security", "Login", "Contact Us"]}
+              onSelect={(obj: any) => console.log(obj)}
+              content={[
+                <ZeroResult
+                  text={`We can’t seem to find any result for 
               “Damansara Heights”`}
-                  />,
+                />,
 
-                  <>
-                    <InputField
-                      type="text"
-                      clearClickHandler={() => alert("clear")}
-                      clearIcon={false}
-                      label="Username"
-                      icon={{ name: "Account-2" }}
-                      value={""}
-                      handleChange={event => {
-                        alert(event);
+                <>
+                  <InputField
+                    type="text"
+                    clearClickHandler={() => alert("clear")}
+                    clearIcon={false}
+                    label="Username"
+                    icon={{ name: "Account-2" }}
+                    value={""}
+                    handleChange={event => {
+                      alert(event);
+                    }}
+                  />
+                  <div style={{ paddingTop: 30 }}>
+                    <TextButton
+                      testId="testId"
+                      buttonText="Forgot username/password?"
+                      onTextClick={id => {
+                        alert(`${id} clicked`);
                       }}
                     />
-                    <div style={{ paddingTop: 30 }}>
-                      <TextButton
-                        testId="testId"
-                        buttonText="Forgot username/password?"
-                        onTextClick={id => {
-                          alert(`${id} clicked`);
-                        }}
-                      />
-                    </div>
-                  </>
-                ]}
-              ></Box>
-            </div>
+                  </div>
+                </>
+              ]}
+            ></Box>
           </div>
         </div>
       </BackgroundSingle>

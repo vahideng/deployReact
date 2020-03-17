@@ -51,6 +51,7 @@ import CardList from "src/components/lists/CardList/CardList";
 import TileListView from "src/components/lists/TileListView/TileListView";
 
 import { Redirect } from "react-router-dom";
+import Box from "src/components/wrappers/box/Box";
 
 const {
   B_13_ORANGE_463,
@@ -92,6 +93,10 @@ interface State {
   verticalActiveTab: any;
   homRedirect: boolean;
   toggled: boolean;
+  tacInactive: boolean;
+  tacValid: boolean;
+  tacClear: boolean;
+  tacClearActiveStatus: boolean;
 }
 
 class Sprint1 extends Component<Props, State> {
@@ -108,7 +113,11 @@ class Sprint1 extends Component<Props, State> {
     generalModalOpen: false,
     verticalActiveTab: 3,
     homRedirect: false,
-    toggled: false
+    toggled: false,
+    tacInactive: true,
+    tacValid: false,
+    tacClear: false,
+    tacClearActiveStatus: false
   };
   render() {
     const {
@@ -124,7 +133,11 @@ class Sprint1 extends Component<Props, State> {
       generalModalOpen,
       verticalActiveTab,
       homRedirect,
-      toggled
+      toggled,
+      tacInactive,
+      tacValid,
+      tacClear,
+      tacClearActiveStatus
     } = this.state;
 
     if (homRedirect === true) {
@@ -929,11 +942,57 @@ class Sprint1 extends Component<Props, State> {
             </div>
           }
         />
+        <Title>Box</Title>
+        <Box
+          title={"Login"}
+          leftTitle={"LeftTitle"}
+          rightTitle={"rightTitle"}
+          tabTitles={["Security", "Login", "Contact Us"]}
+          onSelect={(obj: any) => console.log(obj)}
+          content={[
+            <ZeroResult
+              text={`We can’t seem to find any result for 
+              “Damansara Heights”`}
+            />,
 
+            <>
+              <InputField
+                type="text"
+                clearClickHandler={() => alert("clear")}
+                clearIcon={false}
+                label="Username"
+                icon={{ name: "Account-2" }}
+                value={""}
+                handleChange={event => {
+                  alert(event);
+                }}
+              />
+              <div style={{ paddingTop: 30 }}>
+                <TextButton
+                  testId="testId"
+                  buttonText="Forgot username/password?"
+                  onTextClick={id => {
+                    alert(`${id} clicked`);
+                  }}
+                />
+              </div>
+            </>
+          ]}
+        ></Box>
         <TacModal
+          clearIcon={inputValue === "" ? tacClear : !tacClear}
+          clearClickHandler={() => {
+            this.setState({ inputValue: "" });
+          }}
+          inActiveMessage={{
+            title: "Your profile is inactive.",
+            text: "TAC verification is required to activate your profile."
+          }}
+          inActive={tacInactive}
           testId={"testId"}
-          onButtonClick={() => alert("TAC Submitted")}
-          buttonTitle="Continue"
+          onButtonClick={() => {
+            this.setState({ tacInactive: !tacInactive });
+          }}
           modalIsOpen={TacModalOpen}
           label={"TAC verification"}
           value={inputValue}
@@ -942,14 +1001,35 @@ class Sprint1 extends Component<Props, State> {
               inputValue: e.target.value
             });
           }}
-          notValid={true}
+          notValid={tacValid}
           errorMessage={{
             testId: "testId",
             errorText: "The TAC is incorrect",
             subText: "Please try again."
           }}
-          content="TAC was sent to your registered mobile number (**** 6867). You should receive a TAC within 2 minutes."
-          buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
+          content="TAC was sent to your registered mobile number (**** 6867)"
+          link={{
+            text: "Did not receive TAC? Request new",
+            onLinkClick: () => {
+              alert("Tac link");
+            }
+          }}
+          buttonColor={{
+            top: !tacInactive ? "#BDBDBD" : "#FD8585",
+            bottom: !tacInactive ? "#BDBDBD" : "#FF2222"
+          }}
+          buttonTitle={tacInactive ? "Request TAC" : "Continue"}
+          activeStatus={tacClearActiveStatus}
+          activeStatusChild={
+            <div style={{ display: "flex" }}>
+              <Prompt
+                testId={"testId"}
+                iconColor={{ top: "#81D988", bottom: "#5BB362" }}
+                icon={{ name: "Tick-1", color: "#ffffff" }}
+                text="Your profile is successfully activated."
+              />
+            </div>
+          }
         />
 
         <PrimaryButton
@@ -957,6 +1037,15 @@ class Sprint1 extends Component<Props, State> {
           onButtonClick={() => {
             this.setState({
               TacModalOpen: true
+            });
+          }}
+        />
+        <PrimaryButton
+          title="Open TacModal Status"
+          onButtonClick={() => {
+            this.setState({
+              TacModalOpen: true,
+              tacClearActiveStatus: true
             });
           }}
         />

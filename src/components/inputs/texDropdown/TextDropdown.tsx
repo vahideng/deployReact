@@ -11,10 +11,11 @@ interface Props {
   handleChange: any;
   placeHolder?: string;
   menuIsOpen?: boolean;
+  themColor?: string;
 }
 interface State {}
 
-const customStyles = {
+const customStyles = (themColor: string | undefined) => ({
   control: (provided: any) => ({
     ...provided,
     border: "hidden",
@@ -28,9 +29,13 @@ const customStyles = {
   }),
 
   placeholder: () => ({
-    color: "black"
+    color: !!themColor ? themColor : "#000000"
   }),
 
+  singleValue: (base: any) => ({
+    ...base,
+    color: !!themColor ? themColor : "#000000"
+  }),
   menu: (provided: any) => ({
     ...provided,
     backgroundColor: "transparent",
@@ -74,7 +79,7 @@ const customStyles = {
       }
     };
   }
-};
+});
 
 class TextDropdown extends Component<Props, State> {
   state = {
@@ -91,7 +96,13 @@ class TextDropdown extends Component<Props, State> {
   };
 
   render() {
-    const { options, selectedOption, placeHolder, testId } = this.props;
+    const {
+      options,
+      selectedOption,
+      placeHolder,
+      testId,
+      themColor
+    } = this.props;
     return (
       <div
         className={`row ${classes.Container}`}
@@ -105,7 +116,7 @@ class TextDropdown extends Component<Props, State> {
             value={selectedOption}
             onChange={object => this.onchangeHandler(object)}
             options={options}
-            styles={customStyles}
+            styles={customStyles(themColor)}
             menuIsOpen={this.state.menuIsOpen}
             isSearchable={false}
           />
@@ -115,11 +126,19 @@ class TextDropdown extends Component<Props, State> {
           <div className={classes.Content}>
             {!this.state.menuIsOpen ? (
               <span className={classes.TextDropdownIcons}>
-                <Icon icon="arrowDown" size={18} />
+                <Icon
+                  icon="arrowDown"
+                  size={18}
+                  color={!!themColor ? themColor : "#000000"}
+                />
               </span>
             ) : (
               <span className={classes.TextDropdownIcons}>
-                <Icon icon="arrowUp" size={18} />
+                <Icon
+                  icon="arrowUp"
+                  size={18}
+                  color={!!themColor ? themColor : "#000000"}
+                />
               </span>
             )}
           </div>
