@@ -94,9 +94,10 @@ interface State {
   homRedirect: boolean;
   toggled: boolean;
   tacInactive: boolean;
-  tacValid: boolean;
+
   tacClear: boolean;
   tacClearActiveStatus: boolean;
+  navbarScrolled: boolean;
 }
 
 class Sprint1 extends Component<Props, State> {
@@ -115,9 +116,10 @@ class Sprint1 extends Component<Props, State> {
     homRedirect: false,
     toggled: false,
     tacInactive: true,
-    tacValid: false,
+
     tacClear: false,
-    tacClearActiveStatus: false
+    tacClearActiveStatus: false,
+    navbarScrolled: false
   };
   render() {
     const {
@@ -135,9 +137,10 @@ class Sprint1 extends Component<Props, State> {
       homRedirect,
       toggled,
       tacInactive,
-      tacValid,
+
       tacClear,
-      tacClearActiveStatus
+      tacClearActiveStatus,
+      navbarScrolled
     } = this.state;
 
     if (homRedirect === true) {
@@ -250,10 +253,20 @@ class Sprint1 extends Component<Props, State> {
         </CenteredDiv>
         <Navbar
           testId={"testId"}
+          scrolled={navbarScrolled}
+          scrolledIcon={{
+            name: "LOGO",
+            color: "#ff2626",
+            onIconClick: () => {
+              this.setState({
+                navbarScrolled: !navbarScrolled
+              });
+            }
+          }}
           icon={{
             onIconClick: () => {
               this.setState({
-                homRedirect: true
+                navbarScrolled: !navbarScrolled
               });
             }
           }}
@@ -266,7 +279,7 @@ class Sprint1 extends Component<Props, State> {
           }}
           rightButtons={[
             {
-              iconName: "Time",
+              iconName: "Inbox",
               onButtonClick: () => alert("button-1-Clicked")
             },
             {
@@ -274,7 +287,7 @@ class Sprint1 extends Component<Props, State> {
               onButtonClick: () => alert("button-2-Clicked")
             },
             {
-              iconName: "Share",
+              iconName: "logout",
               onButtonClick: () => alert("button-3-Clicked")
             }
           ]}
@@ -563,10 +576,9 @@ class Sprint1 extends Component<Props, State> {
           />
         </>
         <Title>List with Header inside FormContainer with statusIcon</Title>
-        <CenteredDiv style={{ backgroundColor: "#EEEEEE", paddingTop: 100 }}>
+        <div style={{ backgroundColor: "#EEEEEE", paddingTop: 100 }}>
           <FormContainer
             statusIcon={{
-              backgroundColor: "#eeeeee",
               icon: "Tick-1",
               iconColor: { top: "#94EC9B", bottom: "#5BB362" }
             }}
@@ -612,7 +624,7 @@ class Sprint1 extends Component<Props, State> {
               />
             }
           />
-        </CenteredDiv>
+        </div>
         <Title>FloatingButton</Title>
         <CenteredDiv>
           <div
@@ -980,6 +992,9 @@ class Sprint1 extends Component<Props, State> {
           ]}
         ></Box>
         <TacModal
+          onCloseClick={() => {
+            alert("Tac Closed");
+          }}
           clearIcon={inputValue === "" ? tacClear : !tacClear}
           clearClickHandler={() => {
             this.setState({ inputValue: "" });
@@ -1001,7 +1016,7 @@ class Sprint1 extends Component<Props, State> {
               inputValue: e.target.value
             });
           }}
-          notValid={tacValid}
+          notValid={inputValue === "" ? true : false}
           errorMessage={{
             testId: "testId",
             errorText: "The TAC is incorrect",
@@ -1574,6 +1589,7 @@ class Sprint1 extends Component<Props, State> {
                           label1: "Foreign Current Account",
                           label2: "79429284",
                           amount: "RM 10,648.50",
+
                           selected: false
                         },
                         {
@@ -1590,6 +1606,7 @@ class Sprint1 extends Component<Props, State> {
                           default: true,
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
+
                           selected: true
                         },
                         {
@@ -1913,7 +1930,8 @@ class Sprint1 extends Component<Props, State> {
                 label1: "Foreign Current Account",
                 label2: "79429284",
                 amount: "RM 10,648.50",
-                selected: false
+                selected: false,
+                convertedAmount: "RM 50.000.00"
               },
               {
                 label1: "Foreign Current Account",
@@ -1923,7 +1941,8 @@ class Sprint1 extends Component<Props, State> {
                 default: true,
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
-                selected: true
+                selected: true,
+                convertedAmount: "RM 100.000.00"
               },
               {
                 label1: "Foreign Current Account",
@@ -2829,6 +2848,9 @@ class Sprint1 extends Component<Props, State> {
         />
         <CenteredDiv>
           <Dock
+            onButtonClick={(item, index) => {
+              alert(`${item.name} with index of${index} clicked`);
+            }}
             testId={"testId"}
             tagText="How may I help you?"
             list={[
@@ -2847,7 +2869,8 @@ class Sprint1 extends Component<Props, State> {
                 backgroundColor: {
                   top: "#FD8585",
                   bottom: "#FF2222"
-                }
+                },
+                text: "PlaceFD/TD"
               },
               {
                 name: "Apply",
@@ -2855,7 +2878,8 @@ class Sprint1 extends Component<Props, State> {
                 backgroundColor: {
                   top: "#798E96",
                   bottom: "#31434A"
-                }
+                },
+                text: "Apply"
               },
               {
                 name: "Apply",
@@ -2864,7 +2888,7 @@ class Sprint1 extends Component<Props, State> {
                   top: "#DCEAEA",
                   bottom: "#7FA2A2"
                 },
-                text: "Cash Advance"
+                text: "BrowseFunds"
               },
               {
                 name: "Health",
@@ -2901,75 +2925,6 @@ class Sprint1 extends Component<Props, State> {
                   bottom: "#7FA2A2"
                 },
                 text: "Cash Advance"
-              }
-            ]}
-          />
-          <Dock
-            tagText="How may I help you?"
-            list={[
-              {
-                name: "Health",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#FFC5A2",
-                  bottom: "#EA5702"
-                }
-              },
-              {
-                name: "AmSecure",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#FD8585",
-                  bottom: "#FF2222"
-                }
-              },
-              {
-                name: "Apply",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#798E96",
-                  bottom: "#31434A"
-                }
-              },
-              {
-                name: "Apply",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#DCEAEA",
-                  bottom: "#7FA2A2"
-                }
-              },
-              {
-                name: "Health",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#FFC5A2",
-                  bottom: "#EA5702"
-                }
-              },
-              {
-                name: "Bank",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#FD8585",
-                  bottom: "#FF2222"
-                }
-              },
-              {
-                name: "Card",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#798E96",
-                  bottom: "#31434A"
-                }
-              },
-              {
-                name: "Apply",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#DCEAEA",
-                  bottom: "#7FA2A2"
-                }
               }
             ]}
           />

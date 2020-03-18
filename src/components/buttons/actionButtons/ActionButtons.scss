@@ -2,6 +2,7 @@
   display: flex;
   padding: 3.12rem 0.4rem 1.31rem 2.5rem;
 }
+
 .ActionButtonsWidth {
   width: 2.81rem;
 }
@@ -14,8 +15,14 @@
   height: 2.81rem;
   border-radius: 1rem;
   margin-right: 2.1rem;
+  cursor: pointer;
 }
 .ActionButtonsText {
+  word-wrap: break-word;
   text-align: center;
   padding-top: 0.6rem;
+  display: none;
+}
+.ActionButtonsMain:hover .ActionButtonsText {
+  display: block;
 }

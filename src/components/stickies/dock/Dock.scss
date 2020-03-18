@@ -1,4 +1,6 @@
 .DockMainDiv {
+  position: fixed;
+  bottom: 0;
   display: inline-block;
   min-height: 5rem;
   background-color: #44444490;
@@ -7,10 +9,10 @@
 .DockInnerDiv {
   display: flex;
   align-items: center;
+  justify-content: center;
   min-height: 5rem;
   border-radius: 1.3rem 1.3rem 0 0;
 }
 .DockTag {
-  position: relative;
-  margin: 0 0 -1.8rem 2rem;
+  margin: -1.5rem 0 -1.8rem 2rem;
 }

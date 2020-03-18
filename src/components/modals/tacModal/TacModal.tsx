@@ -32,6 +32,7 @@ interface Props {
   activeStatus?: boolean;
   activeStatusChild?: ReactNode;
   clearClickHandler?: () => void;
+  onCloseClick?: () => void;
 }
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
@@ -68,7 +69,8 @@ const TacModal: React.FC<Props> = ({
   clearClickHandler,
   activeStatus,
   activeStatusChild,
-  link
+  link,
+  onCloseClick
 }) => {
   const [modalStatus, setModalStatus] = useState(modalIsOpen);
   useEffect(() => {
@@ -144,6 +146,7 @@ const TacModal: React.FC<Props> = ({
                 className={classes.TacCrossButton}
                 onClick={() => {
                   setModalStatus(false);
+                  onCloseClick();
                 }}
               >
                 <Icon icon={"Fail-2"} size={15} />
