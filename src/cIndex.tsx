@@ -67,12 +67,13 @@ import StatusFormContainer from "./components/wrappers/statusFormContainer/Statu
 import BoxSlider from "./components/carousel/boxSlider/BoxSlider";
 import ArticleDetails from "./components/articleDetails/ArticleDetails";
 import Box_V2 from "./components/wrappers/box_V2/Box_V2";
+import CalendarBox from "./components/inputs/calendarBox/CalendarBox";
 
 /// exports
 export {
   ////
   /// below are sprint-2 components
-
+  CalendarBox,
   Box_V2,
   BoxSlider,
   StatusFormContainer,
