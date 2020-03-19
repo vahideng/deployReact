@@ -1,0 +1,79 @@
+.CardBody {
+  padding: 0;
+}
+
+.ContainerWhole {
+  // max-width: 615px;
+}
+
+.Header {
+  display: flex;
+  flex-grow: 1;
+}
+
+.CardHeader {
+  background: rgba(196, 196, 196, 0.3);
+  font-family: Nunito Sans;
+  font-style: normal;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  color: #000000;
+  padding-left: 15px;
+}
+
+.HeaderInside {
+  padding-left: 15px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  padding-right: 0;
+  background-color: #ffffff;
+}
+
+.Inverted {
+  background-color: #f1f1f1;
+}
+
+.Content {
+  img {
+    padding-left: 10px;
+  }
+
+  cursor: pointer;
+}
+
+.CardBodyContent {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 6px 0px 15px;
+  align-items: center;
+}
+
+.LeftBody {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  /* identical to box height */
+
+  color: #696969;
+}
+
+.RightBody {
+  display: flex;
+  align-items: center;
+  text-align: right;
+  font-weight: bold;
+  font-size: 13px;
+  color: #000000;
+}
+.TransListIcon {
+  margin-left: 0.5rem;
+}

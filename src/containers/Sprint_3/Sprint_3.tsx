@@ -14,6 +14,7 @@ import images from "src/assets";
 import LocalImages from "src/components/assets/images";
 import List from "src/components/lists/list/List";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
+import PortfolioList from "src/components/lists/PortfolioList/PortfolioList";
 
 import CenterMessage from "src/components/infographic/centerMessage/CenterMessage";
 import SettingModalCenter from "src/components/modals/settingModalCenter/SettingModalCenter";
@@ -54,6 +55,12 @@ const CenteredDiv = styled.div`
   padding: 2rem 0;
 `;
 interface Props {}
+
+const CenteredDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+`;
 
 const Sprint3: React.FC<Props> = () => {
   const [selectedItem, setSelectedOption] = useState("Persian");
@@ -1202,6 +1209,91 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         />
       </div>
+      <Title>TransactionList</Title>
+      <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
+        <PortfolioList
+          testId={"testId"}
+          data={[
+            {
+              left: {
+                title: "RM 406,318.98",
+                content: [
+                  {
+                    leftLabel: "Advantage Global Equity Volatility Focused",
+                    rightLabel: "16 Augest 1998"
+                  },
+                  {
+                    leftLabel: "Advantage Global Equity Volatility Focused",
+                    rightLabel: "12 March 2012"
+                  }
+                ]
+              },
+              middle: {
+                title: "RM 406,318.98",
+                content: [
+                  {
+                    leftLabel: "Advantage Global Equity Volatility Focused",
+                    rightLabel: "16 Augest 1998"
+                  },
+                  {
+                    leftLabel: "Advantage Global Equity Volatility Focused",
+                    rightLabel: "12 March 2012"
+                  }
+                ]
+              },
+              rightLabel: {
+                prefix: "RM",
+                content: "18.00000000000"
+              }
+            },
+            {
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              middle: {
+                title: "RM 406,318.98",
+                content: [
+                  {
+                    leftLabel: "Advantage Global Equity Volatility Focused",
+                    rightLabel: "16 Augest 1998"
+                  },
+                  {
+                    leftLabel: "Advantage Global Equity Volatility Focused",
+                    rightLabel: "12 March 2012"
+                  }
+                ]
+              },
+              rightLabel: {
+                prefix: "RM",
+                content: "18.00000000000"
+              }
+            },
+            {
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              middle: {
+                title: "RM 406,318.98",
+                content: [
+                  {
+                    leftLabel: "Advantage Global Equity Volatility Focused",
+                    rightLabel: "16 Jul 2020"
+                  },
+                  {
+                    leftLabel: "Advantage Global Equity Volatility Focused",
+                    rightLabel: "10 Jul 2018"
+                  }
+                ]
+              },
+              rightLabel: {
+                prefix: "RM",
+                content: "38.00"
+              }
+            }
+          ]}
+          header={[
+            { title: "Fund Name" },
+            { title: "Value" },
+            { title: "Profit/Loss" }
+          ]}
+        />
+      </CenteredDiv>
     </div>
   );
 };
