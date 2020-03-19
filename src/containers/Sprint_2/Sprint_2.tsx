@@ -24,7 +24,7 @@ import SecondBanner from "src/components/banners/secondBanner/SecondBanner";
 import ArticleDetails from "src/components/articleDetails/ArticleDetails";
 import InputField from "src/components/inputs/inputFields/InputFields";
 import Box_V2 from "src/components/wrappers/box_V2/Box_V2";
-import CustomDatePicker from "src/components/inputs/datePicker/DatePicker";
+import CalendarBox from "src/components/inputs/calendarBox/CalendarBox";
 import moment from "moment";
 
 const { B_13_ORANGE_463 } = Paragraphs;
@@ -348,8 +348,31 @@ const Sprint2: React.FC<Props> = () => {
           />
         </Col>
       </Row>
+      <Title>CalendarBox</Title>
+      <div>Input Date: {`${inputDate}`}</div>
+      <div>Selected Date: {`${selectedDate}`}</div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center"
+        }}
+      >
+        <CalendarBox
+          label="Effective Date"
+          minDate={moment()
+            .add(1, "day")
+            .toDate()}
+          maxDate={moment()
+            .add(7, "day")
+            .toDate()}
+          onChangeDate={handleOnChange}
+          onChangeInput={handleInputDateChange}
+          placeholderText="DD / MM / YYYY"
+          selectedDate={selectedDate}
+          value={inputDate}
+        />
+      </div>
       <Title>BoxSlider &larr;---&rarr; BoxContent</Title>
-
       <Row>
         <Col xs={0} md={7}>
           <BoxSlider
@@ -541,31 +564,6 @@ const Sprint2: React.FC<Props> = () => {
           />
         </div>
       </div>
-        <div>Input Date: {`${inputDate}`}</div>
-      <div>Selected Date: {`${selectedDate}`}</div>
-      <div
-        style={{
-          marginBottom: 500,
-          display: "flex",
-          justifyContent: "center"
-        }}
-      >
-        <CustomDatePicker
-          label="Effective Date"
-          minDate={moment()
-            .add(1, "day")
-            .toDate()}
-          maxDate={moment()
-            .add(7, "day")
-            .toDate()}
-          onChangeDate={handleOnChange}
-          onChangeInput={handleInputDateChange}
-          placeholderText="DD / MM / YYYY"
-          selectedDate={selectedDate}
-          value={inputDate}
-        />
-      </div>
-     
     </div>
   );
 };
