@@ -505,6 +505,8 @@ class Sprint1 extends Component<Props, State> {
                 amount: "- RM 2,000"
               },
               {
+                cardLogo:
+                  "https://images.unsplash.com/photo-1558981822-0c0c5b070026?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
                 accountName: "Conversion Account",
                 accountNumber: "20717524",
                 statusLabel: "RESTRICTED ACCESS",
@@ -1121,7 +1123,7 @@ class Sprint1 extends Component<Props, State> {
                   <div
                     style={{
                       display: "flex",
-                      paddingTop: 30,
+                      // paddingTop: 30,
                       flexDirection: "column"
                     }}
                   >
@@ -1132,22 +1134,6 @@ class Sprint1 extends Component<Props, State> {
                     </R_13_BLACK>
                     <TileListView
                       list={[
-                        {
-                          accountName: "TRUE Savings Account-i",
-                          accountNumber: "123456890",
-                          statusLabel: "ACTIVE",
-                          statusLabelColor: "#36A03E",
-                          amount: "RM 10,135"
-                        },
-                        {
-                          accountName: "Foreign Currency Account",
-                          accountNumber: "79429284",
-                          statusLabel: "INQUIRY ONLY ALLOWED",
-                          statusLabelColor: "#FF2626",
-                          countryFlagImage: images.common.countryFlag,
-                          amount: "AUD 1,392",
-                          equivalentAmount: "RM 4,583"
-                        },
                         {
                           accountName: "Conversion Account",
                           accountNumber: "20717524",

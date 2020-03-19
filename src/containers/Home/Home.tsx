@@ -113,6 +113,12 @@ const Home: React.FC<Props> = () => {
                     handleChange={event => {
                       setInputValue(event.target.value);
                     }}
+                    notValid={true}
+                    errorMessage={{
+                      testId: "testId",
+                      errorText: "The TAC is incorrect",
+                      subText: "Please try again."
+                    }}
                     isSecure
                     clearClickHandler={() => {
                       setInputValue("");

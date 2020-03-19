@@ -30,7 +30,7 @@ const VerticalTabSelection: React.FC<Props> = ({
                 ? selectedBorderColor
                 : "#ff2626"
             }
-          : {}
+          : { borderRight: "1px solid #dedede" }
       }
     >
       {!!icon ? (

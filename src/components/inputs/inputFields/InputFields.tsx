@@ -72,8 +72,18 @@ class InputField extends Component<Props, {}> {
             }}
             className={classes.InputFieldInput}
           />
-          <div className={`${classes.IconContainer}`}>
-            {!!isSecure && !!value ? (
+          <div className={classes.IconContainer}>
+            {!!clearIcon && (
+              <span
+                id={`${testId}-1`}
+                onClick={clearClickHandler}
+                className={classes.InputFieldClear}
+                style={!isSecure ? { marginLeft: "2.7rem" } : {}}
+              >
+                <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
+              </span>
+            )}
+            {!!isSecure && !!value && (
               <span
                 id={`${testId}-0`}
                 className={classes.InputFieldPassword}
@@ -86,17 +96,6 @@ class InputField extends Component<Props, {}> {
                   color={"#444444"}
                   size={25}
                 />
-              </span>
-            ) : (
-              <span></span>
-            )}
-            {!!clearIcon && (
-              <span
-                id={`${testId}-1`}
-                onClick={clearClickHandler}
-                className={classes.InputFieldClear}
-              >
-                <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
               </span>
             )}
           </div>
