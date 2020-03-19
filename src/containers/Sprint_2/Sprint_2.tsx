@@ -39,6 +39,7 @@ const Sprint2: React.FC<Props> = () => {
   const [selectedItem, setSelectedOption] = useState("Persian");
   const [sprint1, setSprint1] = useState(false);
   const [sprint2, setSprint2] = useState(false);
+  const [sprint3, setSprint3] = useState(false);
   const [homeRedirect, setHomeRedirect] = useState(false);
   const [settingModalCenter, setSettingModalCenter] = useState(false);
   const [settingModal, setSettingModal] = useState(false);
@@ -47,6 +48,9 @@ const Sprint2: React.FC<Props> = () => {
   }
   if (sprint2 === true) {
     return <Redirect to="/sprint-2" />;
+  }
+  if (sprint3 === true) {
+    return <Redirect to="/sprint-3" />;
   }
 
   if (homeRedirect === true) {
@@ -186,6 +190,17 @@ const Sprint2: React.FC<Props> = () => {
             buttonText="Sprint-2"
             onTextClick={() => {
               setSprint2(true);
+            }}
+            buttonStyles={{
+              color: "#000000",
+              fontWeight: 400,
+              fontSize: 15
+            }}
+          />,
+          <TextButton
+            buttonText="Sprint-3"
+            onTextClick={() => {
+              setSprint3(true);
             }}
             buttonStyles={{
               color: "#000000",

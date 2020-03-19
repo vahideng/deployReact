@@ -15,11 +15,15 @@ const Home: React.FC<Props> = () => {
   const [split, setsSplit] = useState(false);
   const [sprint1, setSprint1] = useState(false);
   const [sprint2, setSprint2] = useState(false);
+  const [sprint3, setSprint3] = useState(false);
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
   if (sprint2 === true) {
     return <Redirect to="/sprint-2" />;
+  }
+  if (sprint3 === true) {
+    return <Redirect to="/sprint-3" />;
   }
   return (
     <>
@@ -52,6 +56,17 @@ const Home: React.FC<Props> = () => {
                   buttonText="Sprint-2"
                   onTextClick={() => {
                     setSprint2(true);
+                  }}
+                  buttonStyles={{
+                    color: "#000000",
+                    fontWeight: 400,
+                    fontSize: 15
+                  }}
+                />,
+                <TextButton
+                  buttonText="Sprint-3"
+                  onTextClick={() => {
+                    setSprint3(true);
                   }}
                   buttonStyles={{
                     color: "#000000",

@@ -93,6 +93,7 @@ interface State {
   toggled: boolean;
   homRedirect: boolean;
   sprint_2Direct: boolean;
+  sprint_3Direct: boolean;
 }
 
 class Sprint1 extends Component<Props, State> {
@@ -110,7 +111,8 @@ class Sprint1 extends Component<Props, State> {
     verticalActiveTab: 3,
     toggled: false,
     homRedirect: false,
-    sprint_2Direct: false
+    sprint_2Direct: false,
+    sprint_3Direct: false
   };
   render() {
     const {
@@ -127,7 +129,8 @@ class Sprint1 extends Component<Props, State> {
       verticalActiveTab,
       toggled,
       homRedirect,
-      sprint_2Direct
+      sprint_2Direct,
+      sprint_3Direct
     } = this.state;
 
     if (homRedirect === true) {
@@ -135,6 +138,9 @@ class Sprint1 extends Component<Props, State> {
     }
     if (sprint_2Direct === true) {
       return <Redirect to="/sprint-2" />;
+    }
+    if (sprint_3Direct === true) {
+      return <Redirect to="/sprint-3" />;
     }
 
     return (
@@ -268,7 +274,11 @@ class Sprint1 extends Component<Props, State> {
             },
             {
               iconName: "Settings",
-              onButtonClick: () => alert("button-2-Clicked")
+              onButtonClick: () => {
+                this.setState({
+                  sprint_3Direct: true
+                });
+              }
             },
             {
               iconName: "Share",
