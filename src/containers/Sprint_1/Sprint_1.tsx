@@ -273,22 +273,33 @@ class Sprint1 extends Component<Props, State> {
           profile={{
             greeting: "Good Morning",
             name: "Adam Constantine",
-            alt: "AVATAR",
-            src:
-              "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+            initials: "HB",
+            initialsBg: "#ff2626",
+            alt: "AVATAR"
+            // src:
+            //   "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
           }}
           rightButtons={[
             {
               iconName: "Inbox",
-              onButtonClick: () => alert("button-1-Clicked")
+              onButtonClick: () => {
+                alert("Inbox-Clicked");
+                this.setState({ homRedirect: true });
+              }
             },
             {
               iconName: "Settings",
-              onButtonClick: () => alert("button-2-Clicked")
+              onButtonClick: () => {
+                alert("Settings-Clicked");
+                this.setState({ homRedirect: true });
+              }
             },
             {
               iconName: "logout",
-              onButtonClick: () => alert("button-3-Clicked")
+              onButtonClick: () => {
+                alert("logout-Clicked");
+                this.setState({ homRedirect: true });
+              }
             }
           ]}
         />
@@ -2803,7 +2814,7 @@ class Sprint1 extends Component<Props, State> {
           <StatusIcon icon={{ name: "Tick-1" }} />
           <StatusIcon
             testId={"testId"}
-            iconColor={{ top: "#FD8585", bottom: "#FF2222" }}
+            iconColor={{ top: "#FFA14E", bottom: "#FFA14E" }}
             icon={{ name: "Fail", color: "#ff3" }}
           />
           <StatusIcon

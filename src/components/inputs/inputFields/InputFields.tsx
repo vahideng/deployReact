@@ -70,6 +70,7 @@ class InputField extends Component<Props, {}> {
             onChange={event => {
               handleChange(event, testId);
             }}
+            className={classes.InputFieldInput}
           />
           <div className={`${classes.IconContainer}`}>
             {!!isSecure && !!value ? (

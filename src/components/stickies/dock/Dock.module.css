@@ -23,4 +23,11 @@
 
 .DockTag {
   margin: -1.5rem 0 -1.8rem 2rem;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.DockMainDiv:hover .DockTag {
+  opacity: 0;
 }

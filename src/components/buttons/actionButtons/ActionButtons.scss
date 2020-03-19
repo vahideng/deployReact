@@ -21,8 +21,11 @@
   word-wrap: break-word;
   text-align: center;
   padding-top: 0.6rem;
-  display: none;
+  height: 0;
+  opacity: 0;
+  transition: height 1s ease-in-out, opacity 1s ease-in-out;
 }
 .ActionButtonsMain:hover .ActionButtonsText {
-  display: block;
+  height: 3rem;
+  opacity: 1;
 }

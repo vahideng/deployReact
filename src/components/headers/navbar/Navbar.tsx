@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import Icon from "src/components/assets/icons/icon";
 import classes from "./Navbar.module.css";
 import Profile from "../profile/Profile";
@@ -9,10 +9,15 @@ interface Props {
   icon?: { name?: string; color?: string; onIconClick?: () => void };
   scrolledIcon?: { name?: string; color?: string; onIconClick?: () => void };
   profile?: {
-    greeting: string;
-    name: string;
+    testId?: string;
+    initials?: string;
+    initialsBg?: string;
+    greetingStyle?: CSSProperties;
+    nameStyle?: CSSProperties;
+    src?: string;
+    greeting?: string;
+    name?: string;
     alt?: string;
-    src: string;
   };
   rightButtons?: {
     iconName: string;
@@ -64,6 +69,8 @@ const Navbar: React.FC<Props> = ({
               testId={`${testId}-2`}
               alt={!!profile.alt ? profile.alt : ""}
               src={!!profile.src ? profile.src : ""}
+              initials={profile.initials}
+              initialsBg={profile.initialsBg}
             />
           ) : (
             <Profile
@@ -72,6 +79,10 @@ const Navbar: React.FC<Props> = ({
               name={!!profile.name ? profile.name : ""}
               alt={!!profile.alt ? profile.alt : ""}
               src={!!profile.src ? profile.src : ""}
+              initials={profile.initials}
+              initialsBg={profile.initialsBg}
+              greetingStyle={profile.greetingStyle}
+              nameStyle={profile.nameStyle}
             />
           ))}
         {!!rightButtons &&

@@ -15,6 +15,8 @@ const Home: React.FC<Props> = () => {
   const [selectedItem, setSelectedOption] = useState(null);
   const [split, setsSplit] = useState(false);
   const [sprint1, setSprint1] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [inputValue, setInputValue] = useState("");
 
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
@@ -94,6 +96,8 @@ const Home: React.FC<Props> = () => {
                 setsSplit(!split);
               }}
               leftTitle={"LeftTitle"}
+              // leftTitleStyle={{ color: "#ff2626" }}
+              // rightTitleStyle={{ color: "#000000" }}
               rightTitle={"rightTitle"}
               tabTitles={["Security", "Login", "Contact Us"]}
               onSelect={(obj: any) => console.log(obj)}
@@ -105,14 +109,20 @@ const Home: React.FC<Props> = () => {
 
                 <>
                   <InputField
-                    type="text"
-                    clearClickHandler={() => alert("clear")}
-                    clearIcon={false}
-                    label="Username"
-                    icon={{ name: "Account-2" }}
-                    value={""}
+                    value={inputValue}
                     handleChange={event => {
-                      alert(event);
+                      setInputValue(event.target.value);
+                    }}
+                    isSecure
+                    clearClickHandler={() => {
+                      setInputValue("");
+                    }}
+                    clearIcon={inputValue === "" ? false : true}
+                    type={!!hidden ? "password" : "text"}
+                    label="input label"
+                    icon={{ name: "User1" }}
+                    onSecureClick={() => {
+                      setHidden(!hidden);
                     }}
                   />
                   <div style={{ paddingTop: 30 }}>

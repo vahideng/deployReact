@@ -4,8 +4,8 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .InputFieldIconDiv {
@@ -13,8 +13,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
 }
 
@@ -29,8 +29,10 @@
   width: 31.6rem;
   border-radius: 0.95rem;
   border: 0.5px solid #dedede;
-  -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
-          box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+  -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5,
+    0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+  box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5,
+    0px 1px 5px #e5e5e5;
 }
 
 .InputFieldIconDiv input:focus {
@@ -38,7 +40,7 @@
 }
 
 .InputFieldLabel {
-  padding: 0 0 0.62rem 1rem;
+  padding: 0 0 0.62rem 1.56rem;
 }
 
 .IconContainer {
@@ -46,11 +48,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   position: relative;
   left: -5rem;
   width: 4rem;
@@ -62,6 +64,10 @@
 
 .InputFieldError {
   padding: 1rem 0 0 1rem;
+}
+
+.InputFieldInput::-ms-clear ::-ms-reveal {
+  display: none;
 }
 
 @media (max-width: 400px) {
