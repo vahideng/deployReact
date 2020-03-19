@@ -2,7 +2,7 @@ import React from "react";
 import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
 import Paragraphs from "../../assets/typography";
 import classes from "./Prompt.module.css";
-const { R_15_BLACK } = Paragraphs;
+const { B_17_BLACK } = Paragraphs;
 interface Props {
   testId?: string;
   text: string;
@@ -28,7 +28,7 @@ const Prompt: React.FC<Props> = ({
         image={image}
         outerIconColor={outerIconColor}
       />
-      <R_15_BLACK className={classes.promptText}>{text}</R_15_BLACK>
+      <B_17_BLACK className={classes.promptText}>{text}</B_17_BLACK>
     </div>
   );
 };

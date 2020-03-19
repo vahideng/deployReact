@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 const R_11_WHITE = styled.p`
   margin: 0;
   color: #ffffff;
@@ -72,6 +73,12 @@ const B_13_BLACK = styled.p`
   font-size: 0.82rem;
   font-weight: 700;
 `;
+const B_13_WHITE = styled.p`
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+`;
 const R_14_BLACK = styled.p`
   margin: 0;
   color: #000000;
@@ -97,6 +104,7 @@ const SB_15_BLACK = styled.p`
   font-weight: 600;
   line-height: 20px;
 `;
+
 const B_15_BLACK = styled.p`
   margin: 0;
   color: #000000;
@@ -189,6 +197,12 @@ const SB_16_GREY444 = styled.p`
   font-weight: 600;
   font-size: 1rem;
 `;
+const B_13_GREY969 = styled.p`
+  margin: 0;
+  color: #696969;
+  font-weight: 700;
+  font-size: 0.81rem;
+`;
 const B_15_GREY969 = styled.p`
   margin: 0;
   color: #696969;
@@ -213,6 +227,12 @@ const B_13_GREY393 = styled.p`
   font-weight: 700;
   font-size: 0.81rem;
 `;
+const SB_15_GREY393 = styled.p`
+  margin: 0;
+  color: #939393;
+  font-size: 0.93rem;
+  font-weight: 600;
+`;
 
 const B_13_ORANGE_463 = styled.p`
   margin: 0;
@@ -225,6 +245,12 @@ const B_17_ORANGE_463 = styled.p`
   color: #ffa463;
   font-weight: 700;
   font-size: 1.06rem;
+`;
+const B_15_ORANGE_463 = styled.p`
+  margin: 0;
+  color: #ffa463;
+  font-weight: 700;
+  font-size: 0.93rem;
 `;
 const B_13_RED_626 = styled.p`
   margin: 0;
@@ -263,10 +289,12 @@ const SB_17_BLACK = styled.p`
 
 export default {
   B_15_ORANGE,
+  SB_15_GREY393,
   R_20_BLACK,
   B_32_BLACK,
   R_13_BLACK,
   B_13_BLACK,
+  B_13_WHITE,
   R_14_BLACK,
   B_14_BLACK,
   SB_15_BLACK,
@@ -280,6 +308,7 @@ export default {
   SB_11_GREY444,
   B_13_GREY393,
   R_13_GREY444,
+  B_13_GREY969,
   B_15_GREY969,
   SB_16_GREY444,
   R_17_GREY969,
@@ -302,5 +331,6 @@ export default {
   B_17_ORANGE_463,
   SB_32_BLACK,
   SB_22_BLACK,
-  SB_17_BLACK
+  SB_17_BLACK,
+  B_15_ORANGE_463
 };

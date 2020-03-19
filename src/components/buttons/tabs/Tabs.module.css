@@ -10,18 +10,19 @@
   margin-bottom: 1.5rem;
 }
 
-.TT {
+.TabsTab {
   padding: 0 !important;
   list-style-type: none;
   cursor: pointer;
 }
 
-.TT:active {
+.TabsTab:active {
   background-color: transparent;
 }
 
-.KK {
+.TabsSelected {
   background-color: transparent;
   border: 0 !important;
   border-bottom: 2px solid #ff2626 !important;
+  font-weight: 700 !important;
 }

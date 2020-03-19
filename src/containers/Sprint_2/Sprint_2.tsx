@@ -24,6 +24,8 @@ import SecondBanner from "src/components/banners/secondBanner/SecondBanner";
 import ArticleDetails from "src/components/articleDetails/ArticleDetails";
 import InputField from "src/components/inputs/inputFields/InputFields";
 import Box_V2 from "src/components/wrappers/box_V2/Box_V2";
+import CalendarBox from "src/components/inputs/calendarBox/CalendarBox";
+import moment from "moment";
 
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -43,6 +45,9 @@ const Sprint2: React.FC<Props> = () => {
   const [homeRedirect, setHomeRedirect] = useState(false);
   const [settingModalCenter, setSettingModalCenter] = useState(false);
   const [settingModal, setSettingModal] = useState(false);
+  const [inputDate, setInputDate] = useState<string>("");
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>();
+
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -56,6 +61,16 @@ const Sprint2: React.FC<Props> = () => {
   if (homeRedirect === true) {
     return <Redirect to="/" />;
   }
+
+  const handleInputDateChange = (input: string) => {
+    setInputDate(input);
+  };
+
+  const handleOnChange = (input: Date) => {
+    const date = moment(input).format("DD/MM/YYYY");
+    setSelectedDate(input);
+    setInputDate(date);
+  };
 
   return (
     <div style={{ paddingTop: 100 }}>
@@ -87,6 +102,7 @@ const Sprint2: React.FC<Props> = () => {
           }
         ]}
       />
+
       <Title>BottomModal</Title>
       <div style={{ padding: ".5rem 30%", background: "#f5f5f5" }}>
         <FullButton
@@ -167,6 +183,7 @@ const Sprint2: React.FC<Props> = () => {
           />
         }
       />
+
       <Title>Navbar Transparent</Title>
       <NavbarTransparent
         icon={{
@@ -347,7 +364,6 @@ const Sprint2: React.FC<Props> = () => {
         </Col>
       </Row>
       <Title>BoxSlider &larr;---&rarr; BoxContent</Title>
-
       <Row>
         <Col xs={0} md={7}>
           <BoxSlider
@@ -501,7 +517,30 @@ const Sprint2: React.FC<Props> = () => {
           title="Lorem Ipsum"
           linkOnClick={() => alert("click")}
         />
-
+        <Title>CalendarBox</Title>
+        <div>Input Date: {`${inputDate}`}</div>
+        <div>Selected Date: {`${selectedDate}`}</div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center"
+          }}
+        >
+          <CalendarBox
+            label="Effective Date"
+            minDate={moment()
+              .add(1, "day")
+              .toDate()}
+            maxDate={moment()
+              .add(7, "day")
+              .toDate()}
+            onChangeDate={handleOnChange}
+            onChangeInput={handleInputDateChange}
+            placeholderText="DD / MM / YYYY"
+            selectedDate={selectedDate}
+            value={inputDate}
+          />
+        </div>
         <div
           style={{
             display: "flex",

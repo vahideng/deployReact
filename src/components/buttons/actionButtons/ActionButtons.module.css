@@ -27,9 +27,20 @@
   height: 2.81rem;
   border-radius: 1rem;
   margin-right: 2.1rem;
+  cursor: pointer;
 }
 
 .ActionButtonsText {
+  word-wrap: break-word;
   text-align: center;
   padding-top: 0.6rem;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: height 1s ease-in-out, opacity 1s ease-in-out;
+  transition: height 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.ActionButtonsMain:hover .ActionButtonsText {
+  height: 3rem;
+  opacity: 1;
 }

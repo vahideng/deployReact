@@ -8,7 +8,6 @@ const { B_14_WHITE } = Paragraphs;
 interface Props {
   testId?: string;
   statusIcon?: {
-    backgroundColor: string;
     testId?: string;
     iconColor: {
       top: string;
