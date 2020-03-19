@@ -7,7 +7,8 @@ const {
   B_20_BLACK,
   R_18_GREY444,
   B_24_BLACK,
-  R_13_BLACK
+  R_13_BLACK,
+  SB_15_GREY393
 } = Paragraphs;
 interface Props {
   testId?: string;
@@ -20,6 +21,7 @@ interface Props {
     statusLabel?: string;
     statusLabelColor?: string;
     selected: boolean;
+    convertedAmount?: string;
   }[];
   onAccountTileClick: (
     item: {
@@ -31,6 +33,7 @@ interface Props {
       statusLabel?: string;
       statusLabelColor?: string;
       selected: boolean;
+      convertedAmount?: string;
     },
     index: number
   ) => void;
@@ -89,6 +92,9 @@ const AccountsList: React.FC<Props> = ({
                       </R_13_BLACK>
                     )}
                   </div>
+                  {!!item.convertedAmount && (
+                    <SB_15_GREY393>{`(${item.convertedAmount})*`}</SB_15_GREY393>
+                  )}
                 </div>
                 <div
                   style={{
@@ -147,6 +153,9 @@ const AccountsList: React.FC<Props> = ({
                       </R_13_BLACK>
                     )}
                   </div>
+                  {!!item.convertedAmount && (
+                    <SB_15_GREY393>{`(${item.convertedAmount})*`}</SB_15_GREY393>
+                  )}
                 </div>
                 <div
                   style={{

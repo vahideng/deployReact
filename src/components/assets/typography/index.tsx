@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 const R_11_WHITE = styled.p`
   margin: 0;
   color: #ffffff;
@@ -97,6 +98,7 @@ const SB_15_BLACK = styled.p`
   font-weight: 600;
   line-height: 20px;
 `;
+
 const B_15_BLACK = styled.p`
   margin: 0;
   color: #000000;
@@ -213,6 +215,12 @@ const B_13_GREY393 = styled.p`
   font-weight: 700;
   font-size: 0.81rem;
 `;
+const SB_15_GREY393 = styled.p`
+  margin: 0;
+  color: #939393;
+  font-size: 0.93rem;
+  font-weight: 600;
+`;
 
 const B_13_ORANGE_463 = styled.p`
   margin: 0;
@@ -225,6 +233,12 @@ const B_17_ORANGE_463 = styled.p`
   color: #ffa463;
   font-weight: 700;
   font-size: 1.06rem;
+`;
+const B_15_ORANGE_463 = styled.p`
+  margin: 0;
+  color: #ffa463;
+  font-weight: 700;
+  font-size: 0.93rem;
 `;
 const B_13_RED_626 = styled.p`
   margin: 0;
@@ -263,6 +277,7 @@ const SB_17_BLACK = styled.p`
 
 export default {
   B_15_ORANGE,
+  SB_15_GREY393,
   R_20_BLACK,
   B_32_BLACK,
   R_13_BLACK,
@@ -302,5 +317,6 @@ export default {
   B_17_ORANGE_463,
   SB_32_BLACK,
   SB_22_BLACK,
-  SB_17_BLACK
+  SB_17_BLACK,
+  B_15_ORANGE_463
 };

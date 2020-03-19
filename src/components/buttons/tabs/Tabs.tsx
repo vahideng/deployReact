@@ -20,7 +20,7 @@ export const AMTabs: React.FC<Props> = ({
   return (
     <div className={classes.AMTabsMainDiv} id={testId}>
       <Tabs
-        selectedTabClassName={classes.KK}
+        selectedTabClassName={classes.TabsSelected}
         defaultIndex={!!defaultIndex ? defaultIndex : 0}
         onSelect={obj => onSelect(obj)}
       >
@@ -29,7 +29,7 @@ export const AMTabs: React.FC<Props> = ({
             titles.map((title, index: number) => {
               return (
                 <Tab
-                  className={classes.TT}
+                  className={classes.TabsTab}
                   key={index}
                   id={`${testId} -0 ${index}`}
                 >

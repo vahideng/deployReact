@@ -20,6 +20,8 @@
   -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
           box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
   margin-bottom: 1rem;
+  background-color: #ffffff;
+  cursor: pointer;
 }
 
 .DescriptionButtonAmount {

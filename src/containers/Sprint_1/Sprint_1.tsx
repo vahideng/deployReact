@@ -51,6 +51,7 @@ import CardList from "src/components/lists/CardList/CardList";
 import TileListView from "src/components/lists/TileListView/TileListView";
 
 import { Redirect } from "react-router-dom";
+import Box from "src/components/wrappers/box/Box";
 
 const {
   B_13_ORANGE_463,
@@ -91,8 +92,11 @@ interface State {
   generalModalOpen: boolean;
   verticalActiveTab: any;
   toggled: boolean;
+  tacInactive: boolean;
   homRedirect: boolean;
-  sprint_2Direct: boolean;
+  tacClear: boolean;
+  tacClearActiveStatus: boolean;
+  navbarScrolled: boolean;
 }
 
 class Sprint1 extends Component<Props, State> {
@@ -110,7 +114,11 @@ class Sprint1 extends Component<Props, State> {
     verticalActiveTab: 3,
     toggled: false,
     homRedirect: false,
-    sprint_2Direct: false
+    tacInactive: true,
+
+    tacClear: false,
+    tacClearActiveStatus: false,
+    navbarScrolled: false
   };
   render() {
     const {
@@ -127,15 +135,18 @@ class Sprint1 extends Component<Props, State> {
       verticalActiveTab,
       toggled,
       homRedirect,
-      sprint_2Direct
+      tacInactive,
+      tacClear,
+      tacClearActiveStatus,
+      navbarScrolled
     } = this.state;
 
     if (homRedirect === true) {
       return <Redirect to="/" />;
     }
-    if (sprint_2Direct === true) {
-      return <Redirect to="/sprint-2" />;
-    }
+    // if (sprint_2Direct === true) {
+    //   return <Redirect to="/sprint-2" />;
+    // }
 
     return (
       <div style={{ paddingTop: "4rem" }}>
@@ -243,36 +254,53 @@ class Sprint1 extends Component<Props, State> {
         </CenteredDiv>
         <Navbar
           testId={"testId"}
+          scrolled={navbarScrolled}
+          scrolledIcon={{
+            name: "LOGO",
+            color: "#ff2626",
+            onIconClick: () => {
+              this.setState({
+                navbarScrolled: !navbarScrolled
+              });
+            }
+          }}
           icon={{
             onIconClick: () => {
               this.setState({
-                homRedirect: true
+                navbarScrolled: !navbarScrolled
               });
             }
           }}
           profile={{
             greeting: "Good Morning",
             name: "Adam Constantine",
-            alt: "AVATAR",
-            src:
-              "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+            initials: "HB",
+            initialsBg: "#ff2626",
+            alt: "AVATAR"
+            // src:
+            //   "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
           }}
           rightButtons={[
             {
-              iconName: "Time",
+              iconName: "Inbox",
               onButtonClick: () => {
-                this.setState({
-                  sprint_2Direct: true
-                });
+                alert("Inbox-Clicked");
+                this.setState({ homRedirect: true });
               }
             },
             {
               iconName: "Settings",
-              onButtonClick: () => alert("button-2-Clicked")
+              onButtonClick: () => {
+                alert("Settings-Clicked");
+                this.setState({ homRedirect: true });
+              }
             },
             {
-              iconName: "Share",
-              onButtonClick: () => alert("button-3-Clicked")
+              iconName: "logout",
+              onButtonClick: () => {
+                alert("logout-Clicked");
+                this.setState({ homRedirect: true });
+              }
             }
           ]}
         />
@@ -560,10 +588,9 @@ class Sprint1 extends Component<Props, State> {
           />
         </>
         <Title>List with Header inside FormContainer with statusIcon</Title>
-        <CenteredDiv style={{ backgroundColor: "#EEEEEE", paddingTop: 100 }}>
+        <div style={{ backgroundColor: "#EEEEEE", paddingTop: 100 }}>
           <FormContainer
             statusIcon={{
-              backgroundColor: "#eeeeee",
               icon: "Tick-1",
               iconColor: { top: "#94EC9B", bottom: "#5BB362" }
             }}
@@ -609,7 +636,7 @@ class Sprint1 extends Component<Props, State> {
               />
             }
           />
-        </CenteredDiv>
+        </div>
         <Title>FloatingButton</Title>
         <CenteredDiv>
           <div
@@ -943,17 +970,97 @@ class Sprint1 extends Component<Props, State> {
             </div>
           }
         />
+        <Title>Box</Title>
+        <Box
+          title={"Login"}
+          leftTitle={"LeftTitle"}
+          rightTitle={"rightTitle"}
+          tabTitles={["Security", "Login", "Contact Us"]}
+          onSelect={(obj: any) => console.log(obj)}
+          content={[
+            <ZeroResult
+              text={`We can’t seem to find any result for 
+              “Damansara Heights”`}
+            />,
 
+            <>
+              <InputField
+                type="text"
+                clearClickHandler={() => alert("clear")}
+                clearIcon={false}
+                label="Username"
+                icon={{ name: "Account-2" }}
+                value={""}
+                handleChange={event => {
+                  alert(event);
+                }}
+              />
+              <div style={{ paddingTop: 30 }}>
+                <TextButton
+                  testId="testId"
+                  buttonText="Forgot username/password?"
+                  onTextClick={id => {
+                    alert(`${id} clicked`);
+                  }}
+                />
+              </div>
+            </>
+          ]}
+        ></Box>
         <TacModal
+          onCloseClick={() => {
+            alert("Tac Closed");
+          }}
+          clearIcon={inputValue === "" ? tacClear : !tacClear}
+          clearClickHandler={() => {
+            this.setState({ inputValue: "" });
+          }}
+          inActiveMessage={{
+            title: "Your profile is inactive.",
+            text: "TAC verification is required to activate your profile."
+          }}
+          inActive={tacInactive}
           testId={"testId"}
-          onButtonClick={() => alert("TAC Submitted")}
-          buttonTitle="Continue"
+          onButtonClick={() => {
+            this.setState({ tacInactive: !tacInactive });
+          }}
           modalIsOpen={TacModalOpen}
-          handleChange={(e: any) => alert(e.target.value)}
           label={"TAC verification"}
-          value={""}
-          content="TAC was sent to your registered mobile number (**** 6867). You should receive a TAC within 2 minutes."
-          buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
+          value={inputValue}
+          handleChange={(e: any) => {
+            this.setState({
+              inputValue: e.target.value
+            });
+          }}
+          notValid={inputValue === "" ? true : false}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The TAC is incorrect",
+            subText: "Please try again."
+          }}
+          content="TAC was sent to your registered mobile number (**** 6867)"
+          link={{
+            text: "Did not receive TAC? Request new",
+            onLinkClick: () => {
+              alert("Tac link");
+            }
+          }}
+          buttonColor={{
+            top: !tacInactive ? "#BDBDBD" : "#FD8585",
+            bottom: !tacInactive ? "#BDBDBD" : "#FF2222"
+          }}
+          buttonTitle={tacInactive ? "Request TAC" : "Continue"}
+          activeStatus={tacClearActiveStatus}
+          activeStatusChild={
+            <div style={{ display: "flex" }}>
+              <Prompt
+                testId={"testId"}
+                iconColor={{ top: "#81D988", bottom: "#5BB362" }}
+                icon={{ name: "Tick-1", color: "#ffffff" }}
+                text="Your profile is successfully activated."
+              />
+            </div>
+          }
         />
 
         <PrimaryButton
@@ -961,6 +1068,15 @@ class Sprint1 extends Component<Props, State> {
           onButtonClick={() => {
             this.setState({
               TacModalOpen: true
+            });
+          }}
+        />
+        <PrimaryButton
+          title="Open TacModal Status"
+          onButtonClick={() => {
+            this.setState({
+              TacModalOpen: true,
+              tacClearActiveStatus: true
             });
           }}
         />
@@ -1490,6 +1606,7 @@ class Sprint1 extends Component<Props, State> {
                           label1: "Foreign Current Account",
                           label2: "79429284",
                           amount: "RM 10,648.50",
+
                           selected: false
                         },
                         {
@@ -1506,6 +1623,7 @@ class Sprint1 extends Component<Props, State> {
                           default: true,
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
+
                           selected: true
                         },
                         {
@@ -1721,7 +1839,7 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
         <Title>SearchBar/Filter</Title>
-        <CenteredDiv>
+        <CenteredDiv style={{ backgroundColor: "#f5f5f5" }}>
           <SearchBar
             clearClickHandler={() => alert("clear clicked")}
             searchIconClickHandler={() => alert("Search Icon clicked")}
@@ -1829,7 +1947,8 @@ class Sprint1 extends Component<Props, State> {
                 label1: "Foreign Current Account",
                 label2: "79429284",
                 amount: "RM 10,648.50",
-                selected: false
+                selected: false,
+                convertedAmount: "RM 50.000.00"
               },
               {
                 label1: "Foreign Current Account",
@@ -1839,7 +1958,8 @@ class Sprint1 extends Component<Props, State> {
                 default: true,
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
-                selected: true
+                selected: true,
+                convertedAmount: "RM 100.000.00"
               },
               {
                 label1: "Foreign Current Account",
@@ -1918,6 +2038,7 @@ class Sprint1 extends Component<Props, State> {
         <div>
           <Title>DetailList Monthly</Title>
           <DetailListMonthly
+            divider={2}
             testId={"testId"}
             tipChildren={
               <div>
@@ -2142,6 +2263,7 @@ class Sprint1 extends Component<Props, State> {
             icon={{ name: "Account", color: "#000000", size: 30 }}
           />
         </div>
+
         <SelectionTile
           testId={"testId"}
           onTileClick={(item, index) => {
@@ -2195,10 +2317,7 @@ class Sprint1 extends Component<Props, State> {
               }
             },
             {
-              avatar: {
-                name: "Ahmad Kassim Azmi",
-                initials: "AK"
-              }
+              children: <img src={images.common.sampleLogo} width={150} />
             },
             {
               avatar: {
@@ -2255,21 +2374,23 @@ class Sprint1 extends Component<Props, State> {
           ]}
         />
         <Title>DescriptionButton</Title>
-        <DescriptionButton
-          testId={"testId"}
-          onButtonClick={(item, index) => {
-            alert(`${item.title} with indexOf ${index} clicked`);
-          }}
-          list={[
-            { title: "Pay Minimum Payment" },
-            { title: "Pay Minimum Payment", amount: "RM 1,000.00" },
-            {
-              title: "Pay Unpaid Statement Balance",
-              amount: "RM 2,000.00",
-              icon: { name: "Alert", color: "#ff2626" }
-            }
-          ]}
-        />
+        <CenteredDiv style={{ backgroundColor: "#f5f5f5" }}>
+          <DescriptionButton
+            testId={"testId"}
+            onButtonClick={(item, index) => {
+              alert(`${item.title} with indexOf ${index} clicked`);
+            }}
+            list={[
+              { title: "Pay Minimum Payment", disabled: true },
+              { title: "Pay Minimum Payment", amount: "RM 1,000.00" },
+              {
+                title: "Pay Unpaid Statement Balance",
+                amount: "RM 2,000.00",
+                icon: { name: "Alert", color: "#ff2626" }
+              }
+            ]}
+          />
+        </CenteredDiv>
         <Title>IconButtons</Title>
         <IconButtons
           testId={"testId"}
@@ -2686,6 +2807,17 @@ class Sprint1 extends Component<Props, State> {
             "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
           }
         />
+        <Profile
+          greetingStyle={{ color: "#ff2626" }}
+          nameStyle={{ color: "#000" }}
+          testId={"testId"}
+          greeting="Good Morning"
+          name="Adam Constantine"
+          alt="AVATAR"
+          src={
+            "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+          }
+        />
 
         <Title>StatusIcon</Title>
 
@@ -2696,7 +2828,7 @@ class Sprint1 extends Component<Props, State> {
           />
           <StatusIcon
             testId={"testId"}
-            iconColor={{ top: "#FD8585", bottom: "#FF2222" }}
+            iconColor={{ top: "#FFA14E", bottom: "#FFA14E" }}
             icon={{ name: "Fail", color: "#ff3" }}
           />
           <StatusIcon
@@ -2741,6 +2873,9 @@ class Sprint1 extends Component<Props, State> {
         />
         <CenteredDiv>
           <Dock
+            onButtonClick={(item, index) => {
+              alert(`${item.name} with index of${index} clicked`);
+            }}
             testId={"testId"}
             tagText="How may I help you?"
             list={[
@@ -2759,7 +2894,8 @@ class Sprint1 extends Component<Props, State> {
                 backgroundColor: {
                   top: "#FD8585",
                   bottom: "#FF2222"
-                }
+                },
+                text: "PlaceFD/TD"
               },
               {
                 name: "Apply",
@@ -2767,7 +2903,8 @@ class Sprint1 extends Component<Props, State> {
                 backgroundColor: {
                   top: "#798E96",
                   bottom: "#31434A"
-                }
+                },
+                text: "Apply"
               },
               {
                 name: "Apply",
@@ -2776,7 +2913,7 @@ class Sprint1 extends Component<Props, State> {
                   top: "#DCEAEA",
                   bottom: "#7FA2A2"
                 },
-                text: "Cash Advance"
+                text: "BrowseFunds"
               },
               {
                 name: "Health",
@@ -2813,75 +2950,6 @@ class Sprint1 extends Component<Props, State> {
                   bottom: "#7FA2A2"
                 },
                 text: "Cash Advance"
-              }
-            ]}
-          />
-          <Dock
-            tagText="How may I help you?"
-            list={[
-              {
-                name: "Health",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#FFC5A2",
-                  bottom: "#EA5702"
-                }
-              },
-              {
-                name: "AmSecure",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#FD8585",
-                  bottom: "#FF2222"
-                }
-              },
-              {
-                name: "Apply",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#798E96",
-                  bottom: "#31434A"
-                }
-              },
-              {
-                name: "Apply",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#DCEAEA",
-                  bottom: "#7FA2A2"
-                }
-              },
-              {
-                name: "Health",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#FFC5A2",
-                  bottom: "#EA5702"
-                }
-              },
-              {
-                name: "Bank",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#FD8585",
-                  bottom: "#FF2222"
-                }
-              },
-              {
-                name: "Card",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#798E96",
-                  bottom: "#31434A"
-                }
-              },
-              {
-                name: "Apply",
-                color: "#ffffff",
-                backgroundColor: {
-                  top: "#DCEAEA",
-                  bottom: "#7FA2A2"
-                }
               }
             ]}
           />
