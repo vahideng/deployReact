@@ -348,30 +348,6 @@ const Sprint2: React.FC<Props> = () => {
           />
         </Col>
       </Row>
-      <Title>CalendarBox</Title>
-      <div>Input Date: {`${inputDate}`}</div>
-      <div>Selected Date: {`${selectedDate}`}</div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center"
-        }}
-      >
-        <CalendarBox
-          label="Effective Date"
-          minDate={moment()
-            .add(1, "day")
-            .toDate()}
-          maxDate={moment()
-            .add(7, "day")
-            .toDate()}
-          onChangeDate={handleOnChange}
-          onChangeInput={handleInputDateChange}
-          placeholderText="DD / MM / YYYY"
-          selectedDate={selectedDate}
-          value={inputDate}
-        />
-      </div>
       <Title>BoxSlider &larr;---&rarr; BoxContent</Title>
       <Row>
         <Col xs={0} md={7}>
@@ -526,7 +502,30 @@ const Sprint2: React.FC<Props> = () => {
           title="Lorem Ipsum"
           linkOnClick={() => alert("click")}
         />
-
+        <Title>CalendarBox</Title>
+        <div>Input Date: {`${inputDate}`}</div>
+        <div>Selected Date: {`${selectedDate}`}</div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center"
+          }}
+        >
+          <CalendarBox
+            label="Effective Date"
+            minDate={moment()
+              .add(1, "day")
+              .toDate()}
+            maxDate={moment()
+              .add(7, "day")
+              .toDate()}
+            onChangeDate={handleOnChange}
+            onChangeInput={handleInputDateChange}
+            placeholderText="DD / MM / YYYY"
+            selectedDate={selectedDate}
+            value={inputDate}
+          />
+        </div>
         <div
           style={{
             display: "flex",
