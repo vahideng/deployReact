@@ -15,6 +15,7 @@ import LocalImages from "src/components/assets/images";
 import List from "src/components/lists/list/List";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
 import PortfolioList from "src/components/lists/PortfolioList/PortfolioList";
+import PortfolioListContent from "src/components/portfolioListContent/PortfolioListContent";
 
 import CenterMessage from "src/components/infographic/centerMessage/CenterMessage";
 import SettingModalCenter from "src/components/modals/settingModalCenter/SettingModalCenter";
@@ -1215,83 +1216,105 @@ const Sprint3: React.FC<Props> = () => {
           testId={"testId"}
           data={[
             {
-              left: {
-                title: "RM 406,318.98",
-                content: [
-                  {
-                    leftLabel: "Advantage Global Equity Volatility Focused",
-                    rightLabel: "16 Augest 1998"
-                  },
-                  {
-                    leftLabel: "Advantage Global Equity Volatility Focused",
-                    rightLabel: "12 March 2012"
-                  }
-                ]
-              },
-              middle: {
-                title: "RM 406,318.98",
-                content: [
-                  {
-                    leftLabel: "Advantage Global Equity Volatility Focused",
-                    rightLabel: "16 Augest 1998"
-                  },
-                  {
-                    leftLabel: "Advantage Global Equity Volatility Focused",
-                    rightLabel: "12 March 2012"
-                  }
-                ]
-              },
-              rightLabel: {
-                prefix: "RM",
-                content: "18.00000000000"
-              }
+              borderColor: "#FFA463",
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              rightLabel: "RM 12,189.56",
+              middleLabel: "RM 406,318.98",
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#FFA463"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73"
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894"
+                    },
+                    {
+                      leftLabel: "Number of Units",
+                      rightLabel: "1,828.40"
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity",
+                      rightLabelStyle: {
+                        color: "#FFA463"
+                      }
+                    }
+                  ]}
+                />
+              )
             },
             {
+              borderColor: "#8677D9",
               leftLabel: "Advantage Global Equity Volatility Focused",
-              middle: {
-                title: "RM 406,318.98",
-                content: [
-                  {
-                    leftLabel: "Advantage Global Equity Volatility Focused",
-                    rightLabel: "16 Augest 1998"
-                  },
-                  {
-                    leftLabel: "Advantage Global Equity Volatility Focused",
-                    rightLabel: "12 March 2012"
-                  }
-                ]
-              },
-              rightLabel: {
-                prefix: "RM",
-                content: "18.00000000000"
-              }
+              rightLabel: "RM 12,189.56",
+              middleLabel: "RM 406,318.98",
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#8677D9"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73"
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894"
+                    },
+                    {
+                      leftLabel: "Number of Unts",
+                      rightLabel: "1,828.40"
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity"
+                    }
+                  ]}
+                />
+              )
             },
             {
+              borderColor: "#7AB497",
               leftLabel: "Advantage Global Equity Volatility Focused",
-              middle: {
-                title: "RM 406,318.98",
-                content: [
-                  {
-                    leftLabel: "Advantage Global Equity Volatility Focused",
-                    rightLabel: "16 Jul 2020"
-                  },
-                  {
-                    leftLabel: "Advantage Global Equity Volatility Focused",
-                    rightLabel: "10 Jul 2018"
-                  }
-                ]
-              },
-              rightLabel: {
-                prefix: "RM",
-                content: "38.00"
-              }
+              rightLabel: "RM 12,189.56",
+              middleLabel: "RM 406,318.98",
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#7AB497"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73"
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894"
+                    },
+                    {
+                      leftLabel: "Number of Unts",
+                      rightLabel: "1,828.40"
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity"
+                    }
+                  ]}
+                />
+              )
             }
           ]}
-          header={[
-            { title: "Fund Name" },
-            { title: "Value" },
-            { title: "Profit/Loss" }
-          ]}
+          leftHeaderTitle="Fund Name"
+          middleHeaderTitle="Value"
+          rightHeaderTitle="Profit/Loss"
         />
       </CenteredDiv>
     </div>
