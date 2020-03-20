@@ -2,17 +2,58 @@
   padding: 0;
 }
 
-.Header {
+.ContainerWhole {
+  border: none !important;
+}
+
+.HeaderLeft {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  max-width: 14.4375rem;
+}
+
+.HeaderMiddle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-width: 11.5rem;
+}
+
+.HeaderRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-width: 10.9375rem;
+}
+
+.LeftItemHeader {
+  padding: 0;
+  max-width: 11.9375rem;
+}
+
+.MiddleItemHeader {
+  padding: 0;
+  max-width: 11.5rem;
+}
+
+.RightItemHeader {
+  padding: 0;
+  max-width: 10.9375rem;
 }
 
 .CardHeader {
-  background: rgba(196, 196, 196, 0.3);
+  background: #f7f7f7;
+  border: none !important;
   font-family: Nunito Sans;
   font-style: normal;
   min-height: 54px;
@@ -26,22 +67,23 @@
   font-size: 15px;
   line-height: 20px;
   color: #000000;
-  padding-left: 15px;
+  padding-left: 1.5rem;
 }
 
 .HeaderInside {
-  padding-left: 15px;
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
   line-height: 18px;
-  padding-right: 0;
+  padding: 0 !important;
+  margin: 0 !important;
   background-color: #ffffff;
+  border: none !important;
 }
 
 .Inverted {
-  background-color: #f1f1f1;
+  background-color: #f1f1f1 !important;
 }
 
 .Content {
@@ -52,17 +94,13 @@
   padding-left: 10px;
 }
 
-.CardBodyContent {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 2px 6px 0px 15px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.ContentBody {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ContentBody div {
+  background-color: transparent;
 }
 
 .LeftBody {
