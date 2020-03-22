@@ -12,6 +12,8 @@ import BottomModal from "src/components/modals/bottomModal/BottomModal";
 import SettingSummary from "src/components/infographic/settingSummary/SettingSummary";
 import StatusFormContainer from "src/components/wrappers/statusFormContainer/StatusFormContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
+import TextWithDetails from "src/components/infographic/textWithDetails/TextWithDetails";
+import ArrayCheckBox from "src/components/arrayCheckBox/ArrayCheckBox";
 
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -31,6 +33,7 @@ const Sprint3: React.FC<Props> = () => {
   const [homeRedirect, setHomeRedirect] = useState(false);
   const [settingModalCenter, setSettingModalCenter] = useState(false);
   const [settingModal, setSettingModal] = useState(false);
+  const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -46,6 +49,111 @@ const Sprint3: React.FC<Props> = () => {
   if (homeRedirect === true) {
     return <Redirect to="/" />;
   }
+
+  const handleCheckBox = () => {
+    setIsCheckboxChecked(!isCheckboxChecked);
+  };
+
+  const checkBoxData = [
+    {
+      title: "Indah",
+      content: ["Biller Code: 68502", "0"],
+      isCheckboxChecked: isCheckboxChecked,
+      name: "checkBox",
+      onCheckClick: handleCheckBox
+    },
+    {
+      title: "Kojadi",
+      content: ["Biller Code: 68502", "1"],
+      isCheckboxChecked: isCheckboxChecked,
+      name: "checkBox",
+      onCheckClick: handleCheckBox
+    },
+    {
+      title: "Indah",
+      content: ["Biller Code: 68502", "2"],
+      isCheckboxChecked: isCheckboxChecked,
+      name: "checkBox",
+      onCheckClick: handleCheckBox
+    },
+    {
+      title: "Indah",
+      content: ["Biller Code: 68502", "3"],
+      isCheckboxChecked: isCheckboxChecked,
+      name: "checkBox",
+      onCheckClick: handleCheckBox
+    },
+    {
+      title: "Astro",
+      content: ["Biller Code: 68502", "4"],
+      isCheckboxChecked: isCheckboxChecked,
+      name: "checkBox",
+      onCheckClick: handleCheckBox
+    },
+    {
+      title: "Syabas",
+      content: ["Biller Code: 68502", "5"],
+      isCheckboxChecked: isCheckboxChecked,
+      name: "checkBox",
+      onCheckClick: handleCheckBox
+    },
+    {
+      title: "Petronas",
+      content: ["Biller Code: 68502", "6"],
+      isCheckboxChecked: isCheckboxChecked,
+      name: "checkBox",
+      onCheckClick: handleCheckBox
+    },
+    {
+      title: "Time",
+      content: ["Biller Code: 68502", "7"],
+      isCheckboxChecked: isCheckboxChecked,
+      name: "checkBox",
+      onCheckClick: handleCheckBox
+    },
+    {
+      title: "UNIFI",
+      content: ["Biller Code: 68502", "8"],
+      isCheckboxChecked: isCheckboxChecked,
+      name: "checkBox",
+      onCheckClick: handleCheckBox
+    },
+    {
+      title: "TNB",
+      content: ["Biller Code: 68502", "9"],
+      isCheckboxChecked: isCheckboxChecked,
+      name: "checkBox",
+      onCheckClick: handleCheckBox
+    },
+    {
+      title: "Petronas",
+      content: ["Biller Code: 68502", "10"],
+      isCheckboxChecked: isCheckboxChecked,
+      name: "checkBox",
+      onCheckClick: handleCheckBox
+    },
+    {
+      title: "Time",
+      content: ["Biller Code: 68502", "11"],
+      isCheckboxChecked: isCheckboxChecked,
+      name: "checkBox",
+      onCheckClick: handleCheckBox
+    },
+    {
+      title: "UNIFI",
+      content: ["Biller Code: 68502", "12"],
+      isCheckboxChecked: isCheckboxChecked,
+      name: "checkBox",
+      onCheckClick: handleCheckBox
+    },
+    {
+      title: "TNB",
+      content: ["Biller Code: 68502", "13"],
+      isCheckboxChecked: isCheckboxChecked,
+      name: "checkBox",
+      onCheckClick: handleCheckBox
+    }
+  ];
 
   return (
     <div style={{ paddingTop: 100 }}>
@@ -214,7 +322,43 @@ const Sprint3: React.FC<Props> = () => {
           />
         ]}
       />
-      Sprint 3
+      <Title>Text With Details</Title>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center"
+        }}
+      >
+        <TextWithDetails
+          title="Insurance"
+          titleStyle={{ fontSize: "1.5rem" }}
+          content={["Bill Account No.: 51T0409A0690279989"]}
+          contentStyle={{ fontSize: "0.9375rem" }}
+        />
+
+        <TextWithDetails
+          title="Indah"
+          content={[
+            "Bill Account No.: 51T0409A0690279989",
+            "Ref-1: 65432145432"
+          ]}
+        />
+      </div>
+      <Title>ArrayCheckbox</Title>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center"
+        }}
+      >
+        <ArrayCheckBox
+          data={checkBoxData}
+          title={`Jompay (${checkBoxData.length})`}
+          testId="testId"
+        />
+      </div>
     </div>
   );
 };
