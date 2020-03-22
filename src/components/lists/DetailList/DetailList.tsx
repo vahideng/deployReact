@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import classes from "./DetailList.module.css";
 import Paragraphs from "../../assets/typography";
 import Tooltip from "src/components/tooltip/Tooltip";
-const { B_13_GREY393, R_15_BLACK, B_15_BLACK } = Paragraphs;
+const { R_15_BLACK, B_15_BLACK, B_11_GREY393 } = Paragraphs;
 interface Props {
   testId?: string;
   title?: string;
@@ -18,7 +18,7 @@ const DetailList: React.FC<Props> = ({ list, title, testId }) => {
     <div className={classes.DetailListMainDiv} id={testId}>
       {!!title && (
         <div className={classes.DetailListTitle}>
-          <B_13_GREY393 id={classes.title}>{title}</B_13_GREY393>
+          <B_11_GREY393 id={classes.title}>{title}</B_11_GREY393>
         </div>
       )}
 

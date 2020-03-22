@@ -3,7 +3,7 @@ import classes from "./SelectionTile.module.css";
 import Paragraphs from "../../assets/typography";
 import Icon from "src/components/assets/icons/icon";
 
-const { B_16_BLACK } = Paragraphs;
+const { B_17_BLACK, B_17_GREY969 } = Paragraphs;
 interface Props {
   onTileClick: any;
   selectedBorderColor?: string;
@@ -43,9 +43,15 @@ const VerticalTabSelection: React.FC<Props> = ({
           />
           {!!accountTitle && (
             <div className={classes.SelectionTileTDiv}>
-              <B_16_BLACK className={classes.SelectionTileTitle}>
-                {accountTitle}
-              </B_16_BLACK>
+              {selected ? (
+                <B_17_BLACK className={classes.SelectionTileTitle}>
+                  {accountTitle}
+                </B_17_BLACK>
+              ) : (
+                <B_17_GREY969 className={classes.SelectionTileTitle}>
+                  {accountTitle}
+                </B_17_GREY969>
+              )}
             </div>
           )}
         </div>

@@ -222,6 +222,8 @@ class Sprint1 extends Component<Props, State> {
                   ]
                 },
                 rightLabel: {
+                  iconName: "Plus",
+                  iconColor: "#36A03E",
                   prefix: "RM",
                   content: "18.00000000000"
                 }
@@ -243,6 +245,8 @@ class Sprint1 extends Component<Props, State> {
                   ]
                 },
                 rightLabel: {
+                  iconName: "Minus",
+                  iconColor: "#ff2626",
                   prefix: "RM",
                   content: "38.00"
                 }
@@ -1586,7 +1590,6 @@ class Sprint1 extends Component<Props, State> {
                           label1: "Foreign Current Account",
                           label2: "79429284",
                           amount: "RM 10,648.50",
-
                           selected: false
                         },
                         {
@@ -2447,6 +2450,14 @@ class Sprint1 extends Component<Props, State> {
           }}
         />
         <InputField
+          maxLength={10}
+          minLength={2}
+          onBlur={e => {
+            console.log(e.target);
+          }}
+          onFocus={e => {
+            console.log(e.target);
+          }}
           value={inputValue}
           handleChange={event => {
             this.setState({

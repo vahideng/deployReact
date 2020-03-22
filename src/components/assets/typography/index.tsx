@@ -190,6 +190,12 @@ const B_15_GREY969 = styled.p`
   font-weight: 700;
   font-size: 0.93rem;
 `;
+const B_17_GREY969 = styled.p`
+  margin: 0;
+  color: #696969;
+  font-weight: 700;
+  font-size: 1.06rem;
+`;
 const R_17_GREY969 = styled.p`
   margin: 0;
   color: #696969;
@@ -242,6 +248,7 @@ const B_20_BLACK = styled.p`
 `;
 
 export default {
+  B_17_GREY969,
   SB_15_GREY393,
   R_20_BLACK,
   B_32_BLACK,

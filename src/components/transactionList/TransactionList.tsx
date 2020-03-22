@@ -30,7 +30,6 @@ const CustomToggle: React.FC<Props> = ({ eventKey, content, testId }) => {
       id={testId}
     >
       {content}
-
       {isOpen ? (
         <span className={classes.TransListIcon}>
           <Icon icon="arrowUp" size={14} />
@@ -72,7 +71,17 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
                         style={{ whiteSpace: "nowrap", float: "right" }}
                         className="p-2"
                       >
-                        <span style={{ color: "#FF2222" }}> - </span>{" "}
+                        <span
+                          style={{
+                            marginRight: "-5px"
+                          }}
+                        >
+                          <Icon
+                            icon={item.rightLabel.iconName}
+                            color={item.rightLabel.iconColor}
+                            size={30}
+                          />
+                        </span>
                         <span style={{ paddingRight: "4px" }}>
                           {item.rightLabel.prefix}
                         </span>
@@ -87,6 +96,7 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
                     (item: any, index: string | number | undefined) => {
                       return (
                         <Accordion.Collapse eventKey={`${index}`} key={index}>
+
                           <Card.Body className={classes.CardBodyContent}>
                             <div
                               className={classes.LeftBody}

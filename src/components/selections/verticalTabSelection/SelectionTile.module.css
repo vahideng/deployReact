@@ -57,4 +57,5 @@
 .SelectionTileTitle {
   white-space: normal;
   word-wrap: break-word;
+  padding-left: 0.5rem;
 }

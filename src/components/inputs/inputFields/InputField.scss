@@ -21,6 +21,7 @@
   border-radius: 0.95rem;
   border: 0.5px solid #dedede;
   box-shadow: $mainBoxShadow;
+  box-sizing: border-box;
 }
 
 .InputFieldIconDiv input:focus {

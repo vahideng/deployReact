@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, FormEvent } from "react";
 import Paragraphs from "../../assets/typography";
 import classes from "./InputField.module.css";
 import Icon from "src/components/assets/icons/icon";
@@ -22,6 +22,10 @@ interface Props {
     errorText: string;
     subText: string;
   };
+  minLength?: number;
+  maxLength?: number;
+  onBlur?: (event: FormEvent) => void;
+  onFocus?: (event: FormEvent) => void;
 }
 
 class InputField extends Component<Props, {}> {
@@ -39,7 +43,11 @@ class InputField extends Component<Props, {}> {
       clearIcon,
       clearClickHandler,
       notValid,
-      errorMessage
+      errorMessage,
+      minLength,
+      maxLength,
+      onBlur,
+      onFocus
     } = this.props;
     return (
       <div className={classes.InputFieldMain}>
@@ -56,6 +64,10 @@ class InputField extends Component<Props, {}> {
             />
           )}
           <input
+            minLength={minLength}
+            maxLength={maxLength}
+            onBlur={event => onBlur(event)}
+            onFocus={event => onFocus(event)}
             style={
               autoFocus
                 ? {
