@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+const R_11_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-size: 0.68rem;
+  font-weight: 400;
+`;
 const R_11_WHITE = styled.p`
   margin: 0;
   color: #ffffff;
@@ -317,6 +323,7 @@ export default {
   B_11_GREY393,
   B_11_WHITE,
   B_14_WHITE,
+  R_11_BLACK,
   R_11_WHITE,
   R_15_GREY444,
   B_17_WHITE,
