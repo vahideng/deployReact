@@ -7,19 +7,21 @@ interface Props {
   name?: string;
   testId?: string;
   children?: ReactNode;
+  size?: number;
 }
 
 const Checkbox: React.FC<Props> = props => {
-  const { onCheckClick, isChecked, name, testId, children } = props;
+  const { onCheckClick, isChecked, name, testId, children, size } = props;
+  const iconSize = size !== undefined ? size : 25;
 
   return (
     <form id={`${testId}`}>
       <div className={classes.checkboxRow} id={`${testId}-1`}>
         <label id={`${testId}-2`}>
           {!!isChecked ? (
-            <Icon icon="CheckboxYes" color="#36a03e" size={25} />
+            <Icon icon="CheckboxYes" color="#36a03e" size={iconSize} />
           ) : (
-            <Icon icon="CheckboxNo" color="#ffffff" size={25} />
+            <Icon icon="CheckboxNo" color="#ffffff" size={iconSize} />
           )}
           <input
             type="checkbox"
