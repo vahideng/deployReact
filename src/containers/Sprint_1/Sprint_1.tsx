@@ -486,7 +486,7 @@ class Sprint1 extends Component<Props, State> {
             testId={"testId"}
             list={[
               {
-                accountName: "TRUE Savings Account-i",
+                accountName: "TRUE Savings AmBank Account-i visa card classic",
                 accountNumber: "123456890",
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
