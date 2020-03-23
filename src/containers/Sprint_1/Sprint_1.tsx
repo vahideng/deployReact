@@ -1174,7 +1174,7 @@ class Sprint1 extends Component<Props, State> {
                         },
                         {
                           cardLogo: images.common.masterCard,
-                          icon: "system-info",
+                          icon: "system-alert",
                           iconColor: "#FFA463",
                           iconSize: 20,
                           accountName: "AmBank Advance Card",
@@ -1451,27 +1451,46 @@ class Sprint1 extends Component<Props, State> {
                   subTitle: "Freedom to invest in Unit Trust is now yours"
                 },
                 children: (
-                  <div style={{ padding: "1rem", width: "42.68rem" }}>
-                    <p>
-                      Its hands were holograms that altered to match the
-                      convolutions of the car’s floor. The semiotics of the room
-                      where Case waited. Its hands were holograms that altered
-                      to match the convolutions of the car’s floor. The
-                      semiotics of the room where Case waited. Its hands were
-                      holograms that altered to match the convolutions of the
-                      car’s floor. The semiotics of the room where Case waited.
-                      Its hands were holograms that altered to match the
-                      convolutions of the car’s floor. The semiotics of the room
-                      where Case waited. Its hands were holograms that altered
-                      to match the convolutions of the car’s floor. The
-                      semiotics of the room where Case waited. car’s floor. The
-                      semiotics of the room where Case waited. Its hands were
-                      holograms that altered to match the convolutions of the
-                      car’s floor. The semiotics of the room where Case waited.
-                      Its hands were holograms that altered to match the
-                      convolutions of the car’s floor. The semiotics of the room
-                      where Case waited.
-                    </p>
+                  <div
+                    style={{
+                      padding: "1rem",
+                      width: "42.68rem",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center"
+                    }}
+                  >
+                    <div>
+                      <p>
+                        Its hands were holograms that altered to match the
+                        convolutions of the car’s floor. The semiotics of the
+                        room where Case waited. Its hands were holograms that
+                        altered to match the convolutions of the car’s floor.
+                        The semiotics of the room where Case waited. Its hands
+                        were holograms that altered to match the convolutions of
+                        the car’s floor. The semiotics of the room where Case
+                        waited. Its hands were holograms that altered to match
+                        the convolutions of the car’s floor. The semiotics of
+                        the room where Case waited. Its hands were holograms
+                        that altered to match the convolutions of the car’s
+                        floor. The semiotics of the room where Case waited.
+                        car’s floor. The semiotics of the room where Case
+                        waited. Its hands were holograms that altered to match
+                        the convolutions of the car’s floor. The semiotics of
+                        the room where Case waited. Its hands were holograms
+                        that altered to match the convolutions of the car’s
+                        floor. The semiotics of the room where Case waited.
+                      </p>
+                      <TextButton
+                        buttonText="LEARN MORE >"
+                        onTextClick={() => {}}
+                      />
+                    </div>
+                    <PrimaryButton
+                      onButtonClick={() => {}}
+                      title="Apply Now"
+                      buttonColor={{ top: "#f1f1f1", bottom: "#BDBDBD" }}
+                    />
                   </div>
                 )
               },
@@ -2695,6 +2714,17 @@ class Sprint1 extends Component<Props, State> {
             alert(`${event.target.checked} ${event.target.name} ${testId}`);
           }}
           children={<p> I have read and agree to the</p>}
+        />
+        <Checkbox
+          testId="testId"
+          isChecked={isCheckboxChecked}
+          name="checkBox"
+          onCheckClick={(event, testId) => {
+            this.setState({
+              isCheckboxChecked: !isCheckboxChecked
+            });
+            alert(`${event.target.checked} ${event.target.name} ${testId}`);
+          }}
         />
 
         <Title>FooterLogo</Title>
