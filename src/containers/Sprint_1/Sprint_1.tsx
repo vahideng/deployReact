@@ -1012,6 +1012,7 @@ class Sprint1 extends Component<Props, State> {
           onCloseClick={() => {
             alert("Tac Closed");
           }}
+          maxLength={6}
           clearIcon={inputValue === "" ? tacClear : !tacClear}
           clearClickHandler={() => {
             this.setState({ inputValue: "" });
@@ -1606,7 +1607,6 @@ class Sprint1 extends Component<Props, State> {
                           default: true,
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
-
                           selected: true
                         },
                         {
@@ -1931,6 +1931,7 @@ class Sprint1 extends Component<Props, State> {
                 label2: "79429284",
                 amount: "RM 10,648.50",
                 selected: false,
+                countryFlagImage: images.common.countryFlag,
                 convertedAmount: "RM 50.000.00"
               },
               {
@@ -1942,7 +1943,8 @@ class Sprint1 extends Component<Props, State> {
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
                 selected: true,
-                convertedAmount: "RM 100.000.00"
+                convertedAmount: "RM 100.000.00",
+                countryFlagImage: images.common.countryFlag
               },
               {
                 label1: "Foreign Current Account",
@@ -2453,9 +2455,6 @@ class Sprint1 extends Component<Props, State> {
           maxLength={10}
           minLength={2}
           onBlur={e => {
-            console.log(e.target);
-          }}
-          onFocus={e => {
             console.log(e.target);
           }}
           value={inputValue}

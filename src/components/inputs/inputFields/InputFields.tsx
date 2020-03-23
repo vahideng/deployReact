@@ -1,4 +1,4 @@
-import React, { Component, FormEvent } from "react";
+import React, { Component, FormEvent, ChangeEvent } from "react";
 import Paragraphs from "../../assets/typography";
 import classes from "./InputField.module.css";
 import Icon from "src/components/assets/icons/icon";
@@ -13,7 +13,10 @@ interface Props {
   autoFocus?: boolean;
   isSecure?: boolean;
   onSecureClick?: () => void;
-  handleChange: (event: any, testId?: string | undefined) => void;
+  handleChange: (
+    event: ChangeEvent<HTMLInputElement>,
+    testId?: string | undefined
+  ) => void;
   clearIcon?: boolean;
   clearClickHandler?: () => void;
   notValid?: boolean;
@@ -49,6 +52,15 @@ class InputField extends Component<Props, {}> {
       onBlur,
       onFocus
     } = this.props;
+    function changeHandler(event: ChangeEvent<HTMLInputElement>) {
+      handleChange(event, testId);
+    }
+    function focusHandler(event: FormEvent) {
+      !!onFocus && onFocus(event);
+    }
+    function blurHandler(event: FormEvent) {
+      !!onBlur && onBlur(event);
+    }
     return (
       <div className={classes.InputFieldMain}>
         {!!label && (
@@ -66,8 +78,8 @@ class InputField extends Component<Props, {}> {
           <input
             minLength={minLength}
             maxLength={maxLength}
-            onBlur={event => onBlur(event)}
-            onFocus={event => onFocus(event)}
+            onBlur={blurHandler}
+            onFocus={focusHandler}
             style={
               autoFocus
                 ? {
@@ -79,9 +91,7 @@ class InputField extends Component<Props, {}> {
             type={type}
             value={value}
             autoFocus={!!autoFocus ? autoFocus : false}
-            onChange={event => {
-              handleChange(event, testId);
-            }}
+            onChange={changeHandler}
             className={classes.InputFieldInput}
           />
           <div className={classes.IconContainer}>
