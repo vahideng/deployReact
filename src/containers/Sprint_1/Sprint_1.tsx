@@ -980,6 +980,7 @@ class Sprint1 extends Component<Props, State> {
           onSelect={(obj: any) => console.log(obj)}
           content={[
             <ZeroResult
+              hideIcon
               text={`We can’t seem to find any result for 
               “Damansara Heights”`}
             />,
@@ -2299,6 +2300,14 @@ class Sprint1 extends Component<Props, State> {
             {
               children: <img src={images.common.sampleLogo} width={150} />
             },
+            // {
+            //   children: (
+            //     <div style={{ display: "flex", justifyContent: "center" }}>
+            //       <p>JomPay</p>
+            //       <img src={images.common.JomPay1} />
+            //     </div>
+            //   )
+            // },
             {
               avatar: {
                 name: "Kurniawan Suriawati",

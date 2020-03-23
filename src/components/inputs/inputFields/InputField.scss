@@ -21,9 +21,10 @@
   border-radius: 0.95rem;
   border: 0.5px solid #dedede;
   box-shadow: $mainBoxShadow;
-  box-sizing: border-box;
 }
-
+.InputFieldInput {
+  padding-right: 5.2rem;
+}
 .InputFieldIconDiv input:focus {
   outline: none;
 }
@@ -49,9 +50,6 @@
 
 .InputFieldError {
   padding: 1rem 0 0 1rem;
-}
-.InputFieldInput::-ms-clear ::-ms-reveal {
-  display: none;
 }
 
 @media (max-width: 400px) {
