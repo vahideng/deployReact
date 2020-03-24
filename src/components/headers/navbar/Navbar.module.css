@@ -38,3 +38,76 @@
 .NavbarOnClick {
   cursor: pointer;
 }
+
+.NavbarIcon {
+  opacity: 1;
+  -webkit-animation-name: Profile;
+          animation-name: Profile;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.NavbarIcon .NavbarOnClick {
+  cursor: pointer;
+}
+
+.NavbarScrolledIcon {
+  opacity: 1;
+  -webkit-animation-name: navScrIcon;
+          animation-name: navScrIcon;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  cursor: pointer;
+}
+
+.scrolledProfile {
+  opacity: 1;
+  -webkit-animation-name: navScrIcon;
+          animation-name: navScrIcon;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.Profile {
+  opacity: 1;
+  -webkit-animation-name: Profile;
+          animation-name: Profile;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+@-webkit-keyframes navScrIcon {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes navScrIcon {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes Profile {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes Profile {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
