@@ -6,6 +6,7 @@ import countryFlag from "./images/AUD.png";
 import bankingInfo_1 from "./images/bankingInfo_1.png";
 import bankingInfo_2 from "./images/bankingInfo_2.png";
 import bankingInfo_3 from "./images/bankingInfo_3.png";
+import JomPay1 from "./images/JomPay1.png";
 
 const images: any = {
   common: {
@@ -16,7 +17,8 @@ const images: any = {
     countryFlag,
     bankingInfo_1,
     bankingInfo_2,
-    bankingInfo_3
+    bankingInfo_3,
+    JomPay1
   }
 };
 

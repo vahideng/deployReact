@@ -115,7 +115,7 @@ const Home: React.FC<Props> = () => {
                 leftTitle={"LeftTitle"}
                 rightTitle={"rightTitle"}
                 boxChildren={
-                  <div style={{ height: 250, padding: "3rem 0 0 1.7rem " }}>
+                  <div style={{ height: 250, padding: "3rem 1rem" }}>
                     <InputField
                       notValid={true}
                       errorMessage={{
