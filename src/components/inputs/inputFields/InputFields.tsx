@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, FormEvent, ChangeEvent } from "react";
 import Paragraphs from "../../assets/typography";
 import classes from "./InputField.module.css";
 import Icon from "src/components/assets/icons/icon";
@@ -13,7 +13,10 @@ interface Props {
   autoFocus?: boolean;
   isSecure?: boolean;
   onSecureClick?: () => void;
-  handleChange: (event: any, testId?: string | undefined) => void;
+  handleChange: (
+    event: ChangeEvent<HTMLInputElement>,
+    testId?: string | undefined
+  ) => void;
   clearIcon?: boolean;
   clearClickHandler?: () => void;
   notValid?: boolean;
@@ -22,6 +25,10 @@ interface Props {
     errorText: string;
     subText: string;
   };
+  minLength?: number;
+  maxLength?: number;
+  onBlur?: (event: FormEvent) => void;
+  onFocus?: (event: FormEvent) => void;
 }
 
 class InputField extends Component<Props, {}> {
@@ -39,9 +46,21 @@ class InputField extends Component<Props, {}> {
       clearIcon,
       clearClickHandler,
       notValid,
-      errorMessage
+      errorMessage,
+      minLength,
+      maxLength,
+      onBlur,
+      onFocus
     } = this.props;
-
+    function changeHandler(event: ChangeEvent<HTMLInputElement>) {
+      handleChange(event, testId);
+    }
+    function focusHandler(event: FormEvent) {
+      !!onFocus && onFocus(event);
+    }
+    function blurHandler(event: FormEvent) {
+      !!onBlur && onBlur(event);
+    }
     return (
       <div className={classes.InputFieldMain}>
         {!!label && (
@@ -57,6 +76,10 @@ class InputField extends Component<Props, {}> {
             />
           )}
           <input
+            minLength={minLength}
+            maxLength={maxLength}
+            onBlur={blurHandler}
+            onFocus={focusHandler}
             style={
               autoFocus
                 ? {
@@ -68,13 +91,21 @@ class InputField extends Component<Props, {}> {
             type={type}
             value={value}
             autoFocus={!!autoFocus ? autoFocus : false}
-            onChange={event => {
-              handleChange(event, testId);
-            }}
+            onChange={changeHandler}
             className={classes.InputFieldInput}
           />
-          <div className={`${classes.IconContainer}`}>
-            {!!isSecure && !!value ? (
+          <div className={classes.IconContainer}>
+            {!!clearIcon && (
+              <span
+                id={`${testId}-1`}
+                onClick={clearClickHandler}
+                className={classes.InputFieldClear}
+                style={!isSecure ? { marginLeft: "2.7rem" } : {}}
+              >
+                <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
+              </span>
+            )}
+            {!!isSecure && !!value && (
               <span
                 id={`${testId}-0`}
                 className={classes.InputFieldPassword}
@@ -87,17 +118,6 @@ class InputField extends Component<Props, {}> {
                   color={"#444444"}
                   size={25}
                 />
-              </span>
-            ) : (
-              <span></span>
-            )}
-            {!!clearIcon && (
-              <span
-                id={`${testId}-1`}
-                onClick={clearClickHandler}
-                className={classes.InputFieldClear}
-              >
-                <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
               </span>
             )}
           </div>

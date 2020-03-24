@@ -12,9 +12,6 @@
   color: #ffa463;
   font-weight: 700;
   font-size: 1.06rem;
+  white-space: pre;
   cursor: pointer;
-}
-
-.descriptions {
-  white-space: wrap;
 }

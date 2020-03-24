@@ -4,8 +4,8 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .InputFieldIconDiv {
@@ -13,8 +13,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
 
@@ -26,13 +26,16 @@
 
 .InputFieldIconDiv input {
   height: 3.12rem;
+  min-width: 22.6rem;
   width: 31.6rem;
   border-radius: 0.95rem;
   border: 0.5px solid #dedede;
-  -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5,
-    0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
-  box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5,
-    0px 1px 5px #e5e5e5;
+  -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+          box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+}
+
+.InputFieldInput {
+  padding-right: 5.2rem;
 }
 
 .InputFieldIconDiv input:focus {
@@ -48,18 +51,21 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   left: -5rem;
-  width: 4rem;
+  height: 3.12rem;
 }
 
 .InputFieldClear {
-  margin-bottom: 3px;
+  margin-top: -4px;
+  cursor: pointer;
+}
+
+.InputFieldPassword {
+  margin-left: 1rem;
+  cursor: pointer;
 }
 
 .InputFieldError {

@@ -232,6 +232,8 @@ class Sprint1 extends Component<Props, State> {
                   ]
                 },
                 rightLabel: {
+                  iconName: "Plus",
+                  iconColor: "#36A03E",
                   prefix: "RM",
                   content: "18.00000000000"
                 }
@@ -253,6 +255,8 @@ class Sprint1 extends Component<Props, State> {
                   ]
                 },
                 rightLabel: {
+                  iconName: "Minus",
+                  iconColor: "#ff2626",
                   prefix: "RM",
                   content: "38.00"
                 }
@@ -493,7 +497,7 @@ class Sprint1 extends Component<Props, State> {
             testId={"testId"}
             list={[
               {
-                accountName: "TRUE Savings Account-i",
+                accountName: "TRUE Savings AmBank Account-i visa card classic",
                 accountNumber: "123456890",
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
@@ -516,6 +520,8 @@ class Sprint1 extends Component<Props, State> {
                 amount: "- RM 2,000"
               },
               {
+                cardLogo:
+                  "https://images.unsplash.com/photo-1558981822-0c0c5b070026?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
                 accountName: "Conversion Account",
                 accountNumber: "20717524",
                 statusLabel: "RESTRICTED ACCESS",
@@ -989,6 +995,7 @@ class Sprint1 extends Component<Props, State> {
           onSelect={(obj: any) => console.log(obj)}
           content={[
             <ZeroResult
+              hideIcon
               text={`We can’t seem to find any result for 
               “Damansara Heights”`}
             />,
@@ -1021,6 +1028,7 @@ class Sprint1 extends Component<Props, State> {
           onCloseClick={() => {
             alert("Tac Closed");
           }}
+          maxLength={6}
           clearIcon={inputValue === "" ? tacClear : !tacClear}
           clearClickHandler={() => {
             this.setState({ inputValue: "" });
@@ -1137,7 +1145,7 @@ class Sprint1 extends Component<Props, State> {
                   <div
                     style={{
                       display: "flex",
-                      paddingTop: 30,
+                      // paddingTop: 30,
                       flexDirection: "column"
                     }}
                   >
@@ -1148,22 +1156,6 @@ class Sprint1 extends Component<Props, State> {
                     </R_13_BLACK>
                     <TileListView
                       list={[
-                        {
-                          accountName: "TRUE Savings Account-i",
-                          accountNumber: "123456890",
-                          statusLabel: "ACTIVE",
-                          statusLabelColor: "#36A03E",
-                          amount: "RM 10,135"
-                        },
-                        {
-                          accountName: "Foreign Currency Account",
-                          accountNumber: "79429284",
-                          statusLabel: "INQUIRY ONLY ALLOWED",
-                          statusLabelColor: "#FF2626",
-                          countryFlagImage: images.common.countryFlag,
-                          amount: "AUD 1,392",
-                          equivalentAmount: "RM 4,583"
-                        },
                         {
                           accountName: "Conversion Account",
                           accountNumber: "20717524",
@@ -1198,7 +1190,7 @@ class Sprint1 extends Component<Props, State> {
                         },
                         {
                           cardLogo: images.common.masterCard,
-                          icon: "system-info",
+                          icon: "system-alert",
                           iconColor: "#FFA463",
                           iconSize: 20,
                           accountName: "AmBank Advance Card",
@@ -1475,27 +1467,46 @@ class Sprint1 extends Component<Props, State> {
                   subTitle: "Freedom to invest in Unit Trust is now yours"
                 },
                 children: (
-                  <div style={{ padding: "1rem", width: "42.68rem" }}>
-                    <p>
-                      Its hands were holograms that altered to match the
-                      convolutions of the car’s floor. The semiotics of the room
-                      where Case waited. Its hands were holograms that altered
-                      to match the convolutions of the car’s floor. The
-                      semiotics of the room where Case waited. Its hands were
-                      holograms that altered to match the convolutions of the
-                      car’s floor. The semiotics of the room where Case waited.
-                      Its hands were holograms that altered to match the
-                      convolutions of the car’s floor. The semiotics of the room
-                      where Case waited. Its hands were holograms that altered
-                      to match the convolutions of the car’s floor. The
-                      semiotics of the room where Case waited. car’s floor. The
-                      semiotics of the room where Case waited. Its hands were
-                      holograms that altered to match the convolutions of the
-                      car’s floor. The semiotics of the room where Case waited.
-                      Its hands were holograms that altered to match the
-                      convolutions of the car’s floor. The semiotics of the room
-                      where Case waited.
-                    </p>
+                  <div
+                    style={{
+                      padding: "1rem",
+                      width: "42.68rem",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center"
+                    }}
+                  >
+                    <div>
+                      <p>
+                        Its hands were holograms that altered to match the
+                        convolutions of the car’s floor. The semiotics of the
+                        room where Case waited. Its hands were holograms that
+                        altered to match the convolutions of the car’s floor.
+                        The semiotics of the room where Case waited. Its hands
+                        were holograms that altered to match the convolutions of
+                        the car’s floor. The semiotics of the room where Case
+                        waited. Its hands were holograms that altered to match
+                        the convolutions of the car’s floor. The semiotics of
+                        the room where Case waited. Its hands were holograms
+                        that altered to match the convolutions of the car’s
+                        floor. The semiotics of the room where Case waited.
+                        car’s floor. The semiotics of the room where Case
+                        waited. Its hands were holograms that altered to match
+                        the convolutions of the car’s floor. The semiotics of
+                        the room where Case waited. Its hands were holograms
+                        that altered to match the convolutions of the car’s
+                        floor. The semiotics of the room where Case waited.
+                      </p>
+                      <TextButton
+                        buttonText="LEARN MORE >"
+                        onTextClick={() => {}}
+                      />
+                    </div>
+                    <PrimaryButton
+                      onButtonClick={() => {}}
+                      title="Apply Now"
+                      buttonColor={{ top: "#f1f1f1", bottom: "#BDBDBD" }}
+                    />
                   </div>
                 )
               },
@@ -1616,7 +1627,6 @@ class Sprint1 extends Component<Props, State> {
                           label1: "Foreign Current Account",
                           label2: "79429284",
                           amount: "RM 10,648.50",
-
                           selected: false
                         },
                         {
@@ -1633,7 +1643,6 @@ class Sprint1 extends Component<Props, State> {
                           default: true,
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
-
                           selected: true
                         },
                         {
@@ -1958,6 +1967,7 @@ class Sprint1 extends Component<Props, State> {
                 label2: "79429284",
                 amount: "RM 10,648.50",
                 selected: false,
+                countryFlagImage: images.common.countryFlag,
                 convertedAmount: "RM 50.000.00"
               },
               {
@@ -1969,7 +1979,8 @@ class Sprint1 extends Component<Props, State> {
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
                 selected: true,
-                convertedAmount: "RM 100.000.00"
+                convertedAmount: "RM 100.000.00",
+                countryFlagImage: images.common.countryFlag
               },
               {
                 label1: "Foreign Current Account",
@@ -2329,6 +2340,14 @@ class Sprint1 extends Component<Props, State> {
             {
               children: <img src={images.common.sampleLogo} width={150} />
             },
+            // {
+            //   children: (
+            //     <div style={{ display: "flex", justifyContent: "center" }}>
+            //       <p>JomPay</p>
+            //       <img src={images.common.JomPay1} />
+            //     </div>
+            //   )
+            // },
             {
               avatar: {
                 name: "Kurniawan Suriawati",
@@ -2482,6 +2501,11 @@ class Sprint1 extends Component<Props, State> {
           }}
         />
         <InputField
+          maxLength={10}
+          minLength={2}
+          onBlur={e => {
+            console.log(e.target);
+          }}
           value={inputValue}
           handleChange={event => {
             this.setState({
@@ -2711,6 +2735,17 @@ class Sprint1 extends Component<Props, State> {
             alert(`${event.target.checked} ${event.target.name} ${testId}`);
           }}
           children={<p> I have read and agree to the</p>}
+        />
+        <Checkbox
+          testId="testId"
+          isChecked={isCheckboxChecked}
+          name="checkBox"
+          onCheckClick={(event, testId) => {
+            this.setState({
+              isCheckboxChecked: !isCheckboxChecked
+            });
+            alert(`${event.target.checked} ${event.target.name} ${testId}`);
+          }}
         />
 
         <Title>FooterLogo</Title>
