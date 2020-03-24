@@ -14,6 +14,8 @@ import StatusFormContainer from "src/components/wrappers/statusFormContainer/Sta
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import TextWithDetails from "src/components/infographic/textWithDetails/TextWithDetails";
 import ArrayCheckBox from "src/components/arrayCheckBox/ArrayCheckBox";
+import LabelToolTip from "src/components/labelToolTip/LabelToolTip";
+// import { colors } from "react-select/src/theme";
 
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -357,6 +359,32 @@ const Sprint3: React.FC<Props> = () => {
           data={checkBoxData}
           title={`Jompay (${checkBoxData.length})`}
           testId="testId"
+        />
+      </div>
+      <Title>Label Tool Tip</Title>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center"
+        }}
+      >
+        <LabelToolTip
+          tooltipData={{
+            testId: "101",
+            tipChildren: "test",
+            spaceBetween: "4rem"
+          }}
+          label="Portfolio Comparison"
+        />
+        <br />
+        <LabelToolTip
+          tooltipData={{
+            testId: "101",
+            tipChildren: "test",
+            spaceBetween: "10%"
+          }}
+          label="Select your preffered account to send and received money"
         />
       </div>
     </div>
