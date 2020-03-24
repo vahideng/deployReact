@@ -1,11 +1,10 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 import Icon from "src/components/assets/icons/icon";
 import classes from "./Navbar.module.css";
 import Profile from "../profile/Profile";
 
 interface Props {
   testId?: string;
-  scrolled?: boolean;
   icon?: { name?: string; color?: string; onIconClick?: () => void };
   scrolledIcon?: { name?: string; color?: string; onIconClick?: () => void };
   profile?: {
@@ -30,9 +29,21 @@ const Navbar: React.FC<Props> = ({
   scrolledIcon = {},
   profile = {},
   rightButtons,
-  scrolled,
+
   testId
 }) => {
+  //@ts-ignore
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      if (window.scrollY >= 300) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    });
+  });
   return (
     <div className={classes.NavbarMainDiv} id={testId}>
       <div>

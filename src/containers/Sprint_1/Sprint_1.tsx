@@ -267,7 +267,7 @@ class Sprint1 extends Component<Props, State> {
         </CenteredDiv>
         <Navbar
           testId={"testId"}
-          scrolled={navbarScrolled}
+          // scrolled={navbarScrolled}
           scrolledIcon={{
             name: "LOGO",
             color: "#ff2626",
