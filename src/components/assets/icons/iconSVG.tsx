@@ -4,6 +4,89 @@ export default {
     {
       icon: {
         paths: [
+          "M874.048 149.952c92.64 92.672 149.92 220.672 149.92 362.048s-57.28 269.376-149.92 362.048v0c-92.64 92.64-220.64 149.952-362.048 149.952-282.784 0-512-229.216-512-512s229.216-512 512-512c141.376 0 269.376 57.312 362.048 149.952v0zM588.672 294.336c0-36.896-29.888-66.784-66.784-66.784s-66.784 29.888-66.784 66.784v0 267.136c0 36.896 29.888 66.784 66.784 66.784s66.784-29.888 66.784-66.784v-267.136zM520.704 675.616c-38.464 0-64.128 27.296-63.328 60.864-0.8 35.264 24.864 61.728 64.128 61.728s64.128-26.464 64.896-61.728c0-33.568-25.6-60.864-65.696-60.864z"
+        ],
+        attrs: [{}],
+        isMulticolor: false,
+        isMulticolor2: false,
+        grid: 0,
+        tags: ["system-alert"]
+      },
+      attrs: [{}],
+      properties: {
+        order: 306,
+        id: 141,
+        name: "system-alert",
+        prevSize: 32,
+        code: 59779
+      },
+      setIdx: 0,
+      setId: 0,
+      iconIdx: 0
+    },
+    {
+      icon: {
+        paths: ["M375.467 477.867h273.067v102.4h-273.067z"],
+        attrs: [],
+        isMulticolor: false,
+        isMulticolor2: false,
+        grid: 0,
+        tags: ["Minus"],
+        colorPermutations: {}
+      },
+      attrs: [],
+      properties: {
+        order: 303,
+        id: 140,
+        name: "Minus",
+        prevSize: 32,
+        code: 59777
+      },
+      setIdx: 0,
+      setId: 0,
+      iconIdx: 1
+    },
+    {
+      icon: {
+        paths: [
+          "M648.533 487.38v49.241h-111.913v111.913h-49.241v-111.913h-111.913v-49.241h111.913v-111.913h49.241v111.913h111.913z"
+        ],
+        attrs: [
+          {
+            strokeLinejoin: "miter",
+            strokeLinecap: "butt",
+            strokeMiterlimit: "4",
+            strokeWidth: 17.066666666666666
+          }
+        ],
+        isMulticolor: false,
+        isMulticolor2: false,
+        grid: 0,
+        tags: ["Plus"],
+        colorPermutations: {}
+      },
+      attrs: [
+        {
+          strokeLinejoin: "miter",
+          strokeLinecap: "butt",
+          strokeMiterlimit: "4",
+          strokeWidth: 17.066666666666666
+        }
+      ],
+      properties: {
+        order: 302,
+        id: 139,
+        name: "Plus",
+        prevSize: 32,
+        code: 59778
+      },
+      setIdx: 0,
+      setId: 0,
+      iconIdx: 2
+    },
+    {
+      icon: {
+        paths: [
           "M611.045 769.198c0-2.15-2.12-4.127-5.041-4.127h-341.811v-506.133h341.825c2.908 0 5.041-1.987 5.041-4.127v-45.884c0-2.14-2.133-4.127-5.041-4.127h-396.174c-2.907 0-5.043 1.987-5.043 4.127v606.142c0 2.14 2.136 4.127 5.043 4.127h396.16c2.912 0 5.041-1.983 5.041-4.127v-45.872zM818.811 509.839c0.242-0.246 0.389-0.608 0.389-0.959 0-0.382-0.15-0.744-0.406-1.007l-172.52-174.584c-0.225-0.229-1.242-0.228-1.475 0.005l-40.926 41.429c-0.515 0.522-0.515 1.434 0 1.956l97.536 98.731h-347.88c-0.584 0-1.13 0.55-1.13 1.304v64.28c0 0.754 0.546 1.304 1.13 1.304h347.901l-97.536 98.731c-0.519 0.522-0.519 1.434 0 1.959l40.926 41.431c0.208 0.212 0.481 0.328 0.741 0.328 0.263 0 0.526-0.113 0.741-0.328l172.51-174.578z"
         ],
         attrs: [{}],
@@ -22,7 +105,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 0
+      iconIdx: 3
     },
     {
       icon: {
@@ -46,7 +129,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 1
+      iconIdx: 4
     },
     {
       icon: {
@@ -70,7 +153,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 2
+      iconIdx: 5
     },
     {
       icon: {
@@ -94,7 +177,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 3
+      iconIdx: 6
     },
     {
       icon: {
@@ -118,7 +201,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 4
+      iconIdx: 7
     },
     {
       icon: {
@@ -142,7 +225,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 5
+      iconIdx: 8
     },
     {
       icon: {
@@ -166,7 +249,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 6
+      iconIdx: 9
     },
     {
       icon: {
@@ -192,7 +275,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 7
+      iconIdx: 10
     },
     {
       icon: {
@@ -218,7 +301,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 8
+      iconIdx: 11
     },
     {
       icon: {
@@ -244,7 +327,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 9
+      iconIdx: 12
     },
     {
       icon: {
@@ -275,7 +358,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 10
+      iconIdx: 13
     },
     {
       icon: {
@@ -302,7 +385,7 @@ export default {
       },
       attrs: [{ fill: "rgb(189, 189, 189)" }],
       properties: {
-        order: 286,
+        order: 304,
         id: 126,
         name: "popup-curve",
         prevSize: 32,
@@ -310,7 +393,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 11
+      iconIdx: 14
     },
     {
       icon: {
@@ -330,7 +413,7 @@ export default {
       },
       attrs: [],
       properties: {
-        order: 285,
+        order: 305,
         id: 125,
         name: "tab-curbe",
         prevSize: 32,
@@ -338,7 +421,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 12
+      iconIdx: 15
     },
     {
       icon: {
@@ -366,7 +449,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 13
+      iconIdx: 16
     },
     {
       icon: {
@@ -394,7 +477,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 14
+      iconIdx: 17
     },
     {
       icon: {
@@ -422,7 +505,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 15
+      iconIdx: 18
     },
     {
       icon: {
@@ -450,7 +533,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 16
+      iconIdx: 19
     },
     {
       icon: {
@@ -478,7 +561,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 17
+      iconIdx: 20
     },
     {
       icon: {
@@ -506,7 +589,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 18
+      iconIdx: 21
     },
     {
       icon: {
@@ -536,7 +619,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 19
+      iconIdx: 22
     },
     {
       icon: {
@@ -566,7 +649,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 20
+      iconIdx: 23
     },
     {
       icon: {
@@ -596,7 +679,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 21
+      iconIdx: 24
     },
     {
       icon: {
@@ -626,7 +709,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 22
+      iconIdx: 25
     },
     {
       icon: {
@@ -658,7 +741,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 23
+      iconIdx: 26
     },
     {
       icon: {
@@ -689,7 +772,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 24
+      iconIdx: 27
     },
     {
       icon: {
@@ -728,7 +811,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 25
+      iconIdx: 28
     },
     {
       icon: {
@@ -759,7 +842,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 26
+      iconIdx: 29
     },
     {
       icon: {
@@ -789,7 +872,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 27
+      iconIdx: 30
     },
     {
       icon: {
@@ -819,7 +902,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 28
+      iconIdx: 31
     },
     {
       icon: {
@@ -855,7 +938,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 29
+      iconIdx: 32
     },
     {
       icon: {
@@ -891,7 +974,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 30
+      iconIdx: 33
     },
     {
       icon: {
@@ -927,7 +1010,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 31
+      iconIdx: 34
     },
     {
       icon: {
@@ -963,7 +1046,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 32
+      iconIdx: 35
     },
     {
       icon: {
@@ -999,7 +1082,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 33
+      iconIdx: 36
     },
     {
       icon: {
@@ -1035,7 +1118,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 34
+      iconIdx: 37
     },
     {
       icon: {
@@ -1071,7 +1154,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 35
+      iconIdx: 38
     },
     {
       icon: {
@@ -1107,7 +1190,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 36
+      iconIdx: 39
     },
     {
       icon: {
@@ -1143,7 +1226,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 37
+      iconIdx: 40
     },
     {
       icon: {
@@ -1179,7 +1262,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 38
+      iconIdx: 41
     },
     {
       icon: {
@@ -1215,7 +1298,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 39
+      iconIdx: 42
     },
     {
       icon: {
@@ -1251,7 +1334,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 40
+      iconIdx: 43
     },
     {
       icon: {
@@ -1287,7 +1370,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 41
+      iconIdx: 44
     },
     {
       icon: {
@@ -1323,7 +1406,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 42
+      iconIdx: 45
     },
     {
       icon: {
@@ -1353,7 +1436,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 43
+      iconIdx: 46
     },
     {
       icon: {
@@ -1389,7 +1472,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 44
+      iconIdx: 47
     },
     {
       icon: {
@@ -1425,7 +1508,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 45
+      iconIdx: 48
     },
     {
       icon: {
@@ -1461,7 +1544,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 46
+      iconIdx: 49
     },
     {
       icon: {
@@ -1497,7 +1580,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 47
+      iconIdx: 50
     },
     {
       icon: {
@@ -1533,7 +1616,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 48
+      iconIdx: 51
     },
     {
       icon: {
@@ -1569,7 +1652,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 49
+      iconIdx: 52
     },
     {
       icon: {
@@ -1627,7 +1710,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 50
+      iconIdx: 53
     },
     {
       icon: {
@@ -1665,7 +1748,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 51
+      iconIdx: 54
     },
     {
       icon: {
@@ -1701,7 +1784,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 52
+      iconIdx: 55
     },
     {
       icon: {
@@ -1737,7 +1820,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 53
+      iconIdx: 56
     },
     {
       icon: {
@@ -1773,7 +1856,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 54
+      iconIdx: 57
     },
     {
       icon: {
@@ -1809,7 +1892,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 55
+      iconIdx: 58
     },
     {
       icon: {
@@ -1845,7 +1928,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 56
+      iconIdx: 59
     },
     {
       icon: {
@@ -1881,7 +1964,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 57
+      iconIdx: 60
     },
     {
       icon: {
@@ -1917,7 +2000,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 58
+      iconIdx: 61
     },
     {
       icon: {
@@ -1953,7 +2036,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 59
+      iconIdx: 62
     },
     {
       icon: {
@@ -1989,7 +2072,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 60
+      iconIdx: 63
     },
     {
       icon: {
@@ -2019,7 +2102,7 @@ export default {
       properties: { order: 205, id: 66, name: "FD", prevSize: 32, code: 59688 },
       setIdx: 0,
       setId: 0,
-      iconIdx: 61
+      iconIdx: 64
     },
     {
       icon: {
@@ -2055,7 +2138,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 62
+      iconIdx: 65
     },
     {
       icon: {
@@ -2091,7 +2174,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 63
+      iconIdx: 66
     },
     {
       icon: {
@@ -2127,7 +2210,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 64
+      iconIdx: 67
     },
     {
       icon: {
@@ -2163,7 +2246,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 65
+      iconIdx: 68
     },
     {
       icon: {
@@ -2199,7 +2282,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 66
+      iconIdx: 69
     },
     {
       icon: {
@@ -2235,7 +2318,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 67
+      iconIdx: 70
     },
     {
       icon: {
@@ -2271,7 +2354,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 68
+      iconIdx: 71
     },
     {
       icon: {
@@ -2307,7 +2390,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 69
+      iconIdx: 72
     },
     {
       icon: {
@@ -2343,7 +2426,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 70
+      iconIdx: 73
     },
     {
       icon: {
@@ -2379,7 +2462,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 71
+      iconIdx: 74
     },
     {
       icon: {
@@ -2415,7 +2498,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 72
+      iconIdx: 75
     },
     {
       icon: {
@@ -2451,7 +2534,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 73
+      iconIdx: 76
     },
     {
       icon: {
@@ -2487,7 +2570,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 74
+      iconIdx: 77
     },
     {
       icon: {
@@ -2523,7 +2606,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 75
+      iconIdx: 78
     },
     {
       icon: {
@@ -2559,7 +2642,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 76
+      iconIdx: 79
     },
     {
       icon: {
@@ -2595,7 +2678,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 77
+      iconIdx: 80
     },
     {
       icon: {
@@ -2631,7 +2714,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 78
+      iconIdx: 81
     },
     {
       icon: {
@@ -2667,7 +2750,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 79
+      iconIdx: 82
     },
     {
       icon: {
@@ -2703,7 +2786,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 80
+      iconIdx: 83
     },
     {
       icon: {
@@ -2739,7 +2822,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 81
+      iconIdx: 84
     },
     {
       icon: {
@@ -2775,7 +2858,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 82
+      iconIdx: 85
     },
     {
       icon: {
@@ -2811,7 +2894,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 83
+      iconIdx: 86
     },
     {
       icon: {
@@ -2847,7 +2930,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 84
+      iconIdx: 87
     },
     {
       icon: {
@@ -2883,7 +2966,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 85
+      iconIdx: 88
     },
     {
       icon: {
@@ -2919,7 +3002,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 86
+      iconIdx: 89
     },
     {
       icon: {
@@ -2955,7 +3038,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 87
+      iconIdx: 90
     },
     {
       icon: {
@@ -2991,7 +3074,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 88
+      iconIdx: 91
     },
     {
       icon: {
@@ -3038,7 +3121,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 89
+      iconIdx: 92
     },
     {
       icon: {
@@ -3074,7 +3157,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 90
+      iconIdx: 93
     },
     {
       icon: {
@@ -3110,7 +3193,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 91
+      iconIdx: 94
     },
     {
       icon: {
@@ -3146,7 +3229,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 92
+      iconIdx: 95
     },
     {
       icon: {
@@ -3182,7 +3265,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 93
+      iconIdx: 96
     },
     {
       icon: {
@@ -3218,7 +3301,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 94
+      iconIdx: 97
     },
     {
       icon: {
@@ -3254,7 +3337,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 95
+      iconIdx: 98
     },
     {
       icon: {
@@ -3290,7 +3373,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 96
+      iconIdx: 99
     },
     {
       icon: {
@@ -3326,7 +3409,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 97
+      iconIdx: 100
     },
     {
       icon: {
@@ -3362,7 +3445,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 98
+      iconIdx: 101
     },
     {
       icon: {
@@ -3392,7 +3475,7 @@ export default {
       properties: { order: 243, id: 28, name: "QR", prevSize: 32, code: 59726 },
       setIdx: 0,
       setId: 0,
-      iconIdx: 99
+      iconIdx: 102
     },
     {
       icon: {
@@ -3428,7 +3511,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 100
+      iconIdx: 103
     },
     {
       icon: {
@@ -3464,7 +3547,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 101
+      iconIdx: 104
     },
     {
       icon: {
@@ -3500,7 +3583,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 102
+      iconIdx: 105
     },
     {
       icon: {
@@ -3536,7 +3619,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 103
+      iconIdx: 106
     },
     {
       icon: {
@@ -3572,7 +3655,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 104
+      iconIdx: 107
     },
     {
       icon: {
@@ -3608,7 +3691,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 105
+      iconIdx: 108
     },
     {
       icon: {
@@ -3644,7 +3727,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 106
+      iconIdx: 109
     },
     {
       icon: {
@@ -3680,7 +3763,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 107
+      iconIdx: 110
     },
     {
       icon: {
@@ -3716,7 +3799,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 108
+      iconIdx: 111
     },
     {
       icon: {
@@ -3752,7 +3835,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 109
+      iconIdx: 112
     },
     {
       icon: {
@@ -3788,7 +3871,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 110
+      iconIdx: 113
     },
     {
       icon: {
@@ -3824,7 +3907,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 111
+      iconIdx: 114
     },
     {
       icon: {
@@ -3860,7 +3943,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 112
+      iconIdx: 115
     },
     {
       icon: {
@@ -3896,7 +3979,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 113
+      iconIdx: 116
     },
     {
       icon: {
@@ -3932,7 +4015,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 114
+      iconIdx: 117
     },
     {
       icon: {
@@ -3968,7 +4051,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 115
+      iconIdx: 118
     },
     {
       icon: {
@@ -4004,7 +4087,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 116
+      iconIdx: 119
     },
     {
       icon: {
@@ -4040,7 +4123,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 117
+      iconIdx: 120
     },
     {
       icon: {
@@ -4076,7 +4159,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 118
+      iconIdx: 121
     },
     {
       icon: {
@@ -4112,7 +4195,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 119
+      iconIdx: 122
     },
     {
       icon: {
@@ -4148,7 +4231,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 120
+      iconIdx: 123
     },
     {
       icon: {
@@ -4184,7 +4267,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 121
+      iconIdx: 124
     },
     {
       icon: {
@@ -4220,7 +4303,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 122
+      iconIdx: 125
     },
     {
       icon: {
@@ -4250,7 +4333,7 @@ export default {
       properties: { order: 263, id: 4, name: "UT", prevSize: 32, code: 59745 },
       setIdx: 0,
       setId: 0,
-      iconIdx: 123
+      iconIdx: 126
     },
     {
       icon: {
@@ -4286,7 +4369,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 124
+      iconIdx: 127
     },
     {
       icon: {
@@ -4322,7 +4405,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 125
+      iconIdx: 128
     },
     {
       icon: {
@@ -4358,7 +4441,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 126
+      iconIdx: 129
     },
     {
       icon: {
@@ -4394,7 +4477,7 @@ export default {
       },
       setIdx: 0,
       setId: 0,
-      iconIdx: 127
+      iconIdx: 130
     }
   ],
   height: 1024,

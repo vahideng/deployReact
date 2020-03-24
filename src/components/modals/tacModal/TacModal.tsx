@@ -14,6 +14,8 @@ interface Props {
   link?: { text: string; onLinkClick: () => void };
   modalIsOpen?: boolean;
   handleChange?: any;
+  maxLength?: number;
+
   label?: string;
   value?: string;
   notValid?: boolean;
@@ -70,7 +72,8 @@ const TacModal: React.FC<Props> = ({
   activeStatus,
   activeStatusChild,
   link,
-  onCloseClick
+  onCloseClick,
+  maxLength
 }) => {
   const [modalStatus, setModalStatus] = useState(modalIsOpen);
   useEffect(() => {
@@ -109,6 +112,7 @@ const TacModal: React.FC<Props> = ({
                       clearClickHandler={clearClickHandler}
                       testId={`${testId}-0`}
                       handleChange={handleChange}
+                      maxLength={maxLength}
                       type="password"
                       label={label}
                       icon={{ name: "TAC" }}

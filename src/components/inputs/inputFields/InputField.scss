@@ -16,12 +16,15 @@
 }
 .InputFieldIconDiv input {
   height: 3.12rem;
+  min-width: 22.6rem;
   width: 31.6rem;
   border-radius: 0.95rem;
   border: 0.5px solid #dedede;
   box-shadow: $mainBoxShadow;
 }
-
+.InputFieldInput {
+  padding-right: 5.2rem;
+}
 .InputFieldIconDiv input:focus {
   outline: none;
 }
@@ -32,21 +35,26 @@
 .IconContainer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   position: relative;
   left: -5rem;
-  width: 4rem;
+  height: 3.12rem;
 }
 .InputFieldClear {
-  margin-bottom: 3px;
+  margin-top: -4px;
+  cursor: pointer;
 }
+.InputFieldPassword {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
 .InputFieldError {
   padding: 1rem 0 0 1rem;
 }
-
-.InputFieldInput::-ms-clear {
+.InputFieldInput::-ms-clear ::-ms-reveal {
   display: none;
 }
+
 @media (max-width: 400px) {
   .InputFieldIconDiv input {
     width: 90vw;
