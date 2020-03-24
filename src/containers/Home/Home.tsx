@@ -28,7 +28,7 @@ const Home: React.FC<Props> = () => {
           "https://static.vecteezy.com/system/resources/previews/000/547/469/large_2x/abstract-blurred-background-with-bokeh-sparkling-lights-vector.jpg"
         }
       >
-        <div style={{ padding: 50 }}>
+        <div style={{ padding: 100 }}>
           <div>
             <NavbarTransparent
               icon={{
@@ -59,6 +59,17 @@ const Home: React.FC<Props> = () => {
                     fontSize: 15
                   }}
                 />,
+                <TextButton
+                  buttonText="Sprint-3"
+                  onTextClick={() => {
+                    setSprint2(true);
+                  }}
+                  buttonStyles={{
+                    color: "#000000",
+                    fontWeight: 400,
+                    fontSize: 15
+                  }}
+                />,
                 <TextDropdown
                   handleChange={(selectedOption: any) => {
                     setSelectedOption(selectedOption);
@@ -69,7 +80,8 @@ const Home: React.FC<Props> = () => {
                   options={[
                     { label: "English", value: "english" },
                     { label: "Malay", value: "malay" },
-                    { label: "中文", value: "中文" }
+                    { label: "中文", value: "中文" },
+                    { label: "Persian", value: "persian" }
                   ]}
                 />
               ]}
@@ -103,7 +115,7 @@ const Home: React.FC<Props> = () => {
                 leftTitle={"LeftTitle"}
                 rightTitle={"rightTitle"}
                 boxChildren={
-                  <div style={{ padding: "3rem 1rem" }}>
+                  <div style={{ height: 250, padding: "3rem 0 0 1.7rem " }}>
                     <InputField
                       notValid={true}
                       errorMessage={{
@@ -113,9 +125,9 @@ const Home: React.FC<Props> = () => {
                       }}
                       type="text"
                       clearClickHandler={() => alert("clear clicked")}
-                      clearIcon={true}
+                      // clearIcon={true}
                       label="input label"
-                      icon={{ name: "Account-2" }}
+                      icon={{ name: "User1" }}
                       value={""}
                       handleChange={event => {
                         console.log(event.target.value);
