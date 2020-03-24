@@ -7,6 +7,7 @@
       -ms-flex-direction: row !important;
           flex-direction: row !important;
   border-top: 1.5px solid #dedede !important;
+  cursor: pointer;
 }
 
 .ImageContainer {
