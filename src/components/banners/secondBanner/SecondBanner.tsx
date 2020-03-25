@@ -46,7 +46,9 @@ const SecondBanner: React.FC<Props> = ({
                 <img className={classes.ImageContainer} src={item.video} />
               </div>
             ) : (
-              <img className={classes.ImageContainer} src={item.image} />
+              <div className={classes.ImageContainer}>
+                <img className={classes.ImageContainer} src={item.image} />
+              </div>
             )}
             <div className={classes.Details}>
               <p className={classes.Title}>{item.title}</p>
