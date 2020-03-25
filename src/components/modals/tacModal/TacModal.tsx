@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactNode } from "react";
+import React, { useState, useEffect, ReactNode, FormEvent } from "react";
 import Modal from "react-modal";
 import InputField from "../../inputs/inputFields/InputFields";
 import Paragraphs from "../../assets/typography";
@@ -15,7 +15,8 @@ interface Props {
   modalIsOpen?: boolean;
   handleChange?: any;
   maxLength?: number;
-
+  onBlur?: (event: FormEvent) => void;
+  onFocus?: (event: FormEvent) => void;
   label?: string;
   value?: string;
   notValid?: boolean;
@@ -73,7 +74,9 @@ const TacModal: React.FC<Props> = ({
   activeStatusChild,
   link,
   onCloseClick,
-  maxLength
+  maxLength,
+  onBlur,
+  onFocus
 }) => {
   const [modalStatus, setModalStatus] = useState(modalIsOpen);
   useEffect(() => {
@@ -113,6 +116,8 @@ const TacModal: React.FC<Props> = ({
                       testId={`${testId}-0`}
                       handleChange={handleChange}
                       maxLength={maxLength}
+                      onBlur={onBlur}
+                      onFocus={onFocus}
                       type="password"
                       label={label}
                       icon={{ name: "TAC" }}

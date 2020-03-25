@@ -19,6 +19,7 @@ interface Props {
   rightTitle?: string;
   leftTitleStyle?: CSSProperties;
   rightTitleStyle?: CSSProperties;
+  titlesStyle?: CSSProperties;
 }
 
 const Box: React.FC<Props> = ({
@@ -36,7 +37,8 @@ const Box: React.FC<Props> = ({
   leftTitleStyle,
   rightTitleStyle,
   onRightButton,
-  buttonColor
+  buttonColor,
+  titlesStyle
 }) => {
   return (
     <div className={classes.BoxMainDiv}>
@@ -46,6 +48,7 @@ const Box: React.FC<Props> = ({
           defaultIndex={tabIndex}
           titles={tabTitles ? tabTitles : []}
           contents={content}
+          titlesStyle={titlesStyle}
         />
       </div>
 
