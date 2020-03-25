@@ -5,7 +5,7 @@
 }
 
 .DetailListTitle {
-  padding-top: 2rem;
+  padding: 2rem 0;
 }
 .DetailListTitle #title {
   text-align: center;
@@ -13,7 +13,7 @@
 .DetailListRows {
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem 2rem;
+  padding: 0 2rem 1.5rem 2rem;
 }
 
 .DetailListTool {
