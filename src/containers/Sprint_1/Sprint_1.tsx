@@ -486,7 +486,8 @@ class Sprint1 extends Component<Props, State> {
             testId={"testId"}
             list={[
               {
-                accountName: "TRUE Savings AmBank Account-i visa card classic",
+                accountName: "TRUE Savings AmBank Account-i",
+                accountNickName: "Visa Card Classic",
                 accountNumber: "123456890",
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
@@ -1141,7 +1142,8 @@ class Sprint1 extends Component<Props, State> {
                     <TileListView
                       list={[
                         {
-                          accountName: "Conversion Account",
+                          accountName: "Conversion",
+                          accountNickName: "Term Cov",
                           accountNumber: "20717524",
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
@@ -1645,8 +1647,7 @@ class Sprint1 extends Component<Props, State> {
                     />
                     <div style={{ width: 700, padding: "2rem" }}>
                       <AMTabs
-                       titlesStyle={{ padding: "0 4rem" }}
-
+                        titlesStyle={{ padding: "0 4rem" }}
                         defaultIndex={0}
                         titles={[
                           "Transactions",

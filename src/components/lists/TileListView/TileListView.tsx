@@ -9,6 +9,7 @@ interface Props {
   list: {
     cardLogo?: any;
     accountName: string;
+    accountNickName?: string;
     accountNumber: string;
     statusLabel: string;
     statusLabelColor: string;
@@ -25,6 +26,7 @@ interface Props {
     item: {
       cardLogo?: any;
       accountName: string;
+      accountNickName?: string;
       accountNumber: string;
       statusLabel: string;
       statusLabelColor: string;
@@ -64,7 +66,10 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                 }}
               >
                 <R_15_GREY444 style={{ fontWeight: 600 }}>
-                  {item.accountName}
+                  {item.accountName}{" "}
+                  <span style={{ display: "inline-block" }}>
+                    {item.accountNickName}
+                  </span>
                 </R_15_GREY444>
                 <R_15_GREY444 style={{ fontWeight: 600 }}>
                   {item.accountNumber}
