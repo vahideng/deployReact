@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import classes from "./Tabs.module.css";
@@ -8,6 +8,7 @@ interface Props {
   titles: string[];
   contents: React.ReactNode[];
   onSelect?: any;
+  titlesStyle?: CSSProperties;
 }
 
 export const AMTabs: React.FC<Props> = ({
@@ -15,7 +16,8 @@ export const AMTabs: React.FC<Props> = ({
   contents,
   defaultIndex,
   onSelect,
-  testId
+  testId,
+  titlesStyle
 }) => {
   return (
     <div className={classes.AMTabsMainDiv} id={testId}>
@@ -24,7 +26,10 @@ export const AMTabs: React.FC<Props> = ({
         defaultIndex={!!defaultIndex ? defaultIndex : 0}
         onSelect={obj => onSelect(obj)}
       >
-        <TabList style={{ border: 0 }} className={classes.AMTabsContents}>
+        <TabList
+          style={titlesStyle ? titlesStyle : {}}
+          className={classes.AMTabsContents}
+        >
           {!!titles &&
             titles.map((title, index: number) => {
               return (

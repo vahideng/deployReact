@@ -1,5 +1,5 @@
-import React from "react";
-import { Tab, Row, Col, Nav } from "react-bootstrap";
+import React, { useState } from "react";
+import { Tab, Nav } from "react-bootstrap";
 import VerticalTabSelection from "src/components/selections/verticalTabSelection/VerticalTabSelection";
 import Paragraphs from "../assets/typography";
 import classes from "./VerticalTab.module.css";
@@ -17,8 +17,8 @@ const VerticalTabs: React.FC<Props> = ({
   selectedBorderColor,
   testId
 }) => {
-  const [defaultActiveKey, setDefaultActiveKey] = React.useState(0);
-
+  const [defaultActiveKey, setDefaultActiveKey] = useState(0);
+  const lastIndex = data.length - 1;
   React.useEffect(() => {
     if (data) {
       data.map((item: any, index: number) => {
@@ -34,8 +34,8 @@ const VerticalTabs: React.FC<Props> = ({
       id={`verticalTabs ${testId}`}
       defaultActiveKey={defaultActiveKey}
     >
-      <Row className={classes.WholeWrapper}>
-        <Col className={classes.LeftChild} sm={minimize ? 1 : 3}>
+      <div className={classes.WholeWrapper}>
+        <div className={classes.LeftChild}>
           <Nav variant="pills" className={`${classes.Container} flex-column `}>
             {!!data &&
               data.map((item: any, index: number) => {
@@ -44,18 +44,39 @@ const VerticalTabs: React.FC<Props> = ({
                     <Nav.Link eventKey={index} className={`${classes.NavLink}`}>
                       <VerticalTabSelection
                         selected={item.selected}
-                        selectedBorderColor={selectedBorderColor}
                         onTileClick={() => item.onClick(index)}
                         icon={{ name: item.icon.name, color: item.icon.color }}
                         accountTitle={`${minimize ? "" : item.accountTitle}`}
+                        tabStyle={
+                          item.selected
+                            ? {
+                                borderRightColor: selectedBorderColor
+                                  ? selectedBorderColor
+                                  : "#ff2626",
+                                borderBottom:
+                                  index == lastIndex
+                                    ? "1px solid transparent"
+                                    : "1px solid #dedede"
+                              }
+                            : {
+                                borderBottom:
+                                  index == lastIndex
+                                    ? "1px solid transparent"
+                                    : "1px solid #dedede"
+                              }
+                        }
                       />
+                      {console.log(item.length, "len")}
                     </Nav.Link>
                   </Nav.Item>
                 );
               })}
           </Nav>
-        </Col>
-        <Col sm={minimize ? 11 : 9} className={classes.RightChild}>
+        </div>
+        <div
+          style={{ backgroundColor: "#dedede", height: "100%", width: 1 }}
+        ></div>
+        <div className={classes.RightChild}>
           <Tab.Content>
             {!!data &&
               data.map((_item: any, index: number) => {
@@ -79,8 +100,8 @@ const VerticalTabs: React.FC<Props> = ({
                 );
               })}
           </Tab.Content>
-        </Col>
-      </Row>
+        </div>
+      </div>
     </Tab.Container>
   );
 };

@@ -5,6 +5,9 @@
 }
 
 .WholeWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   border-radius: 1.25rem;
   margin: 1px;
   min-width: 57.18rem;
