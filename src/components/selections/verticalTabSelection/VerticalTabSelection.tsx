@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import classes from "./SelectionTile.module.css";
 import Paragraphs from "../../assets/typography";
 import Icon from "src/components/assets/icons/icon";
@@ -6,10 +6,11 @@ import Icon from "src/components/assets/icons/icon";
 const { B_17_BLACK, B_17_GREY969 } = Paragraphs;
 interface Props {
   onTileClick: any;
-  selectedBorderColor?: string;
+  // selectedBorderColor?: string;
   selected?: boolean;
   icon?: any;
   accountTitle?: string;
+  tabStyle: CSSProperties;
 }
 
 const VerticalTabSelection: React.FC<Props> = ({
@@ -17,21 +18,14 @@ const VerticalTabSelection: React.FC<Props> = ({
   onTileClick,
   icon,
   accountTitle,
-  selectedBorderColor
+  tabStyle
+  // selectedBorderColor
 }) => {
   return (
     <div
       onClick={onTileClick}
       className={classes.SelectionTileWrapper}
-      style={
-        selected
-          ? {
-              borderRightColor: selectedBorderColor
-                ? selectedBorderColor
-                : "#ff2626"
-            }
-          : { borderRight: "1px solid #dedede" }
-      }
+      style={tabStyle}
     >
       {!!icon ? (
         <div className={classes.WrapperContent}>
