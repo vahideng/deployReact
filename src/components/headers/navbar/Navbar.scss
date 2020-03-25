@@ -31,15 +31,13 @@
   opacity: 1;
   animation-name: Profile;
   animation-duration: 2s;
-  .NavbarOnClick {
-    cursor: pointer;
-  }
+  cursor: pointer;
 }
+
 .NavbarScrolledIcon {
   opacity: 1;
   animation-name: navScrIcon;
   animation-duration: 2s;
-
   cursor: pointer;
 }
 .scrolledProfile {

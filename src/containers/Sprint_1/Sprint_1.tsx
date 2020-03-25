@@ -1645,6 +1645,8 @@ class Sprint1 extends Component<Props, State> {
                     />
                     <div style={{ width: 700, padding: "2rem" }}>
                       <AMTabs
+                       titlesStyle={{ padding: "0 4rem" }}
+
                         defaultIndex={0}
                         titles={[
                           "Transactions",
@@ -1744,6 +1746,7 @@ class Sprint1 extends Component<Props, State> {
                           "Security",
                           "Contact Us"
                         ]}
+                        titlesStyle={{ backgroundColor: "red" }}
                         contents={[
                           <SearchBar
                             clearClickHandler={() => alert("clear clicked")}
@@ -2512,6 +2515,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>AMTabs</Title>
         <CenteredDiv>
           <AMTabs
+            titlesStyle={{ backgroundColor: "#f1f1f1", padding: "1rem 0" }}
             testId={"testId"}
             defaultIndex={1}
             titles={["Login", "Security", "Contact Us"]}
@@ -2622,6 +2626,8 @@ class Sprint1 extends Component<Props, State> {
               split
               leftTitle="No"
               rightTitle="Yes"
+              leftTitleStyle={{ color: "#ff2626" }}
+              rightTitleStyle={{ color: "#000000" }}
               onRightButton={() => {
                 alert("Right Button Clicked");
               }}

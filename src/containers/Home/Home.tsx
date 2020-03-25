@@ -96,10 +96,11 @@ const Home: React.FC<Props> = () => {
                 setsSplit(!split);
               }}
               leftTitle={"LeftTitle"}
-              // leftTitleStyle={{ color: "#ff2626" }}
-              // rightTitleStyle={{ color: "#000000" }}
+              leftTitleStyle={{ color: "#ff2626" }}
+              rightTitleStyle={{ color: "#000000" }}
               rightTitle={"rightTitle"}
               tabTitles={["Security", "Login", "Contact Us"]}
+              titlesStyle={{ padding: "0 1rem" }}
               onSelect={(obj: any) => console.log(obj)}
               content={[
                 <ZeroResult

@@ -45,9 +45,6 @@
           animation-name: Profile;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
-}
-
-.NavbarIcon .NavbarOnClick {
   cursor: pointer;
 }
 
