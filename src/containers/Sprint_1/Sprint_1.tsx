@@ -915,7 +915,7 @@ class Sprint1 extends Component<Props, State> {
                     colorRight: "#3D1A1A",
                     active: true,
                     activeLabel: "ACTIVE",
-                    selected: false
+                    selected: true
                   },
                   {
                     cardName: "AmBank World MasterCard",
@@ -1895,7 +1895,7 @@ class Sprint1 extends Component<Props, State> {
                 selected: false
               },
               {
-                cardName: "AmBank Platinum Card",
+                cardName: "AmBank Platinum Card Classic Two Lines Title",
                 cardNumber: "2379 4793 4797 7493",
                 amount: "RM 50,293",
                 expiryDate: "EXP 12/21",
