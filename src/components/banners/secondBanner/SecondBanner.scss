@@ -2,6 +2,7 @@
   display: flex !important;
   flex-direction: row !important;
   border-top: 1.5px solid #dedede !important;
+  cursor: pointer;
 }
 
 .ImageContainer {
@@ -71,7 +72,7 @@
   }
   .ImageOverlay {
     position: absolute;
-    width: 13.9375rem !important;
+    width: 13.125rem !important;
     height: 9.375rem !important;
     object-fit: cover !important;
     background-color: rgba(0, 0, 0, 0.1) !important;
