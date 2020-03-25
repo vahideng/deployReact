@@ -1130,7 +1130,7 @@ class Sprint1 extends Component<Props, State> {
                   <div
                     style={{
                       display: "flex",
-                      // paddingTop: 30,
+                      padding: 30,
                       flexDirection: "column"
                     }}
                   >
