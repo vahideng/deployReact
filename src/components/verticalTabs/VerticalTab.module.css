@@ -1,16 +1,18 @@
 .Container {
   width: 100%;
-  -webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.123279);
-          box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.123279);
   border-top-left-radius: 1.25rem;
   border-top-left-radius: 1.25rem;
 }
 
 .WholeWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   border-radius: 1.25rem;
-  border: 1px solid #dedede;
   margin: 1px;
   min-width: 57.18rem;
+  -webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.123279);
+          box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.123279);
 }
 
 .LeftChild {

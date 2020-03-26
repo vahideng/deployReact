@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./FullButton.module.css";
 import Paragraphs from "../../assets/typography";
+import { CSSProperties } from "styled-components";
 const { B_15_WHITE } = Paragraphs;
 interface Props {
   testId?: string;
@@ -13,12 +14,16 @@ interface Props {
   split?: boolean;
   leftTitle?: string;
   rightTitle?: string;
+  leftTitleStyle?: CSSProperties;
+  rightTitleStyle?: CSSProperties;
 }
 
 const FullButton: React.FC<Props> = ({
   title = "",
   leftTitle = "",
   rightTitle = "",
+  leftTitleStyle,
+  rightTitleStyle,
   buttonColor,
   titleColor,
   split,
@@ -62,7 +67,12 @@ const FullButton: React.FC<Props> = ({
                 : {}
             }
           >
-            <B_15_WHITE className={classes.leftText}>{leftTitle}</B_15_WHITE>
+            <B_15_WHITE
+              style={leftTitleStyle ? leftTitleStyle : { color: "#ff2626" }}
+              className={classes.leftText}
+            >
+              {leftTitle}
+            </B_15_WHITE>
           </button>
           <button
             id={`${testId}-2`}
@@ -76,7 +86,7 @@ const FullButton: React.FC<Props> = ({
                 : {}
             }
           >
-            <B_15_WHITE>{rightTitle}</B_15_WHITE>
+            <B_15_WHITE style={rightTitleStyle}>{rightTitle}</B_15_WHITE>
           </button>
         </div>
       )}

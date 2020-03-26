@@ -91,6 +91,7 @@ const SB_15_BLACK = styled.p`
   font-weight: 600;
   line-height: 20px;
 `;
+
 const B_15_BLACK = styled.p`
   margin: 0;
   color: #000000;
@@ -199,6 +200,12 @@ const B_15_GREY969 = styled.p`
   font-weight: 700;
   font-size: 0.93rem;
 `;
+const B_17_GREY969 = styled.p`
+  margin: 0;
+  color: #696969;
+  font-weight: 700;
+  font-size: 1.06rem;
+`;
 const R_17_GREY969 = styled.p`
   margin: 0;
   color: #696969;
@@ -217,12 +224,24 @@ const B_13_GREY393 = styled.p`
   font-weight: 700;
   font-size: 0.81rem;
 `;
+const SB_15_GREY393 = styled.p`
+  margin: 0;
+  color: #939393;
+  font-size: 0.93rem;
+  font-weight: 600;
+`;
 
 const B_13_ORANGE_463 = styled.p`
   margin: 0;
   color: #ffa463;
   font-weight: 700;
   font-size: 0.81rem;
+`;
+const B_15_ORANGE_463 = styled.p`
+  margin: 0;
+  color: #ffa463;
+  font-weight: 700;
+  font-size: 0.93rem;
 `;
 const B_13_RED_626 = styled.p`
   margin: 0;
@@ -239,6 +258,8 @@ const B_20_BLACK = styled.p`
 `;
 
 export default {
+  B_17_GREY969,
+  SB_15_GREY393,
   R_20_BLACK,
   B_32_BLACK,
   R_13_BLACK,
@@ -275,5 +296,6 @@ export default {
   B_20_BLACK,
   R_18_GREY444,
   B_32_WHITE,
-  SB_13_BLACK
+  SB_13_BLACK,
+  B_15_ORANGE_463
 };

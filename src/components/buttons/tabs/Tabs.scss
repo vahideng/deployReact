@@ -2,23 +2,25 @@
 .AMTabsContents {
   display: flex;
   justify-content: space-between;
-  // padding: 1.5rem 1.5rem 0rem 1.5rem;
   padding: 0;
   margin: 0;
   margin-bottom: 1.5rem;
+  border: none;
 }
 
-.TT {
+.TabsTab {
   padding: 0 !important;
   list-style-type: none;
+
   cursor: pointer;
   &:active {
     background-color: transparent;
   }
 }
 
-.KK {
+.TabsSelected {
   background-color: transparent;
   border: 0 !important;
   border-bottom: 2px solid #ff2626 !important;
+  font-weight: 700 !important;
 }

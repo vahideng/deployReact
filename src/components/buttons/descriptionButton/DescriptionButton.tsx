@@ -8,6 +8,7 @@ interface Props {
   onButtonClick: (item: any, index: number) => void;
   testId?: string;
   list: {
+    disabled?: boolean;
     title: string;
     amount?: string;
     icon?: { name?: string; color?: string };
@@ -24,6 +25,7 @@ const DescriptionButton: React.FC<Props> = ({
       {list.map((item, index) => {
         return (
           <div
+            style={item.disabled ? { pointerEvents: "none", opacity: 0.5 } : {}}
             id={`${testId}-${index}`}
             key={index}
             className={classes.DescriptionButtonRow}

@@ -7,7 +7,8 @@ const {
   B_20_BLACK,
   R_18_GREY444,
   B_24_BLACK,
-  R_13_BLACK
+  R_13_BLACK,
+  SB_15_GREY393
 } = Paragraphs;
 interface Props {
   testId?: string;
@@ -20,6 +21,8 @@ interface Props {
     statusLabel?: string;
     statusLabelColor?: string;
     selected: boolean;
+    convertedAmount?: string;
+    countryFlagImage?: any;
   }[];
   onAccountTileClick: (
     item: {
@@ -31,6 +34,8 @@ interface Props {
       statusLabel?: string;
       statusLabelColor?: string;
       selected: boolean;
+      convertedAmount?: string;
+      countryFlagImage?: any;
     },
     index: number
   ) => void;
@@ -70,6 +75,16 @@ const AccountsList: React.FC<Props> = ({
                       alignItems: "center"
                     }}
                   >
+                    {item.countryFlagImage && (
+                      <img
+                        src={item.countryFlagImage}
+                        alt="Image"
+                        width={"20rem"}
+                        height={"15rem"}
+                        className={classes.AccountListFlag}
+                      />
+                    )}
+
                     <B_24_BLACK>{item.amount}</B_24_BLACK>
                     {item.default && (
                       <R_13_BLACK style={{ marginLeft: 24, color: "#444" }}>
@@ -89,6 +104,9 @@ const AccountsList: React.FC<Props> = ({
                       </R_13_BLACK>
                     )}
                   </div>
+                  {!!item.convertedAmount && (
+                    <SB_15_GREY393>{`(${item.convertedAmount})*`}</SB_15_GREY393>
+                  )}
                 </div>
                 <div
                   style={{
@@ -125,6 +143,15 @@ const AccountsList: React.FC<Props> = ({
                       alignItems: "center"
                     }}
                   >
+                    {item.countryFlagImage && (
+                      <img
+                        src={item.countryFlagImage}
+                        alt="Image"
+                        width={"20rem"}
+                        height={"15rem"}
+                        className={classes.AccountListFlag}
+                      />
+                    )}
                     <B_20_BLACK style={{ letterSpacing: 0.4 }}>
                       {item.amount}
                     </B_20_BLACK>
@@ -147,6 +174,9 @@ const AccountsList: React.FC<Props> = ({
                       </R_13_BLACK>
                     )}
                   </div>
+                  {!!item.convertedAmount && (
+                    <SB_15_GREY393>{`(${item.convertedAmount})*`}</SB_15_GREY393>
+                  )}
                 </div>
                 <div
                   style={{

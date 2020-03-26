@@ -9,13 +9,10 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-
-  min-height: 5.31rem;
+  min-height: 6rem;
   position: relative;
-
   border-right: 0.37rem solid transparent;
-
-  border-bottom: 1px solid $greyEDE;
+  min-width: 6rem;
 }
 
 .WrapperContent {
@@ -41,4 +38,5 @@
 .SelectionTileTitle {
   white-space: normal;
   word-wrap: break-word;
+  padding-left: 0.5rem;
 }

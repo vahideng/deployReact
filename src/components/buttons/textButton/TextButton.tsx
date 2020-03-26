@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import Paragraphs from "../../assets/typography";
 import classes from "./TextButton.module.css";
 
@@ -6,7 +6,7 @@ const { B_13_ORANGE_463 } = Paragraphs;
 interface Props {
   testId?: string;
   buttonText: string;
-  buttonStyles?: {};
+  buttonStyles?: CSSProperties;
   onTextClick: (testId: string) => void;
 }
 

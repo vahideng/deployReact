@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import classes from "./Box.module.css";
 import AMTabs from "src/components/buttons/tabs/Tabs";
 import FullButton from "src/components/buttons/fullButton/FullButton";
@@ -17,6 +17,9 @@ interface Props {
   split?: boolean;
   leftTitle?: string;
   rightTitle?: string;
+  leftTitleStyle?: CSSProperties;
+  rightTitleStyle?: CSSProperties;
+  titlesStyle?: CSSProperties;
 }
 
 const Box: React.FC<Props> = ({
@@ -31,8 +34,11 @@ const Box: React.FC<Props> = ({
   onLeftButton,
   leftTitle,
   rightTitle,
+  leftTitleStyle,
+  rightTitleStyle,
   onRightButton,
-  buttonColor
+  buttonColor,
+  titlesStyle
 }) => {
   return (
     <div className={classes.BoxMainDiv}>
@@ -42,6 +48,7 @@ const Box: React.FC<Props> = ({
           defaultIndex={tabIndex}
           titles={tabTitles ? tabTitles : []}
           contents={content}
+          titlesStyle={titlesStyle}
         />
       </div>
 
@@ -56,6 +63,8 @@ const Box: React.FC<Props> = ({
           leftTitle={leftTitle}
           rightTitle={rightTitle}
           buttonColor={buttonColor}
+          leftTitleStyle={leftTitleStyle}
+          rightTitleStyle={rightTitleStyle}
         />
       </div>
     </div>

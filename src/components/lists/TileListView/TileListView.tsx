@@ -52,7 +52,9 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
           >
             <div style={{ display: "flex", flex: 1.5, flexDirection: "row" }}>
               {item.cardLogo && (
-                <img src={item.cardLogo} alt="Image" width="40rem" />
+                <div className={classes.imageContainer}>
+                  <img src={item.cardLogo} alt="Image" />
+                </div>
               )}
               <div
                 style={{

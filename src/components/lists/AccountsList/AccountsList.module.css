@@ -12,7 +12,7 @@
 
 .AccountsTile {
   width: 24.125em;
-  height: 5.4375em;
+  min-height: 5.4375em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,7 +32,7 @@
 
 .AccountsTileSelected {
   width: 24.125em;
-  height: 7.5em;
+  min-height: 7.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -48,4 +48,8 @@
   border-radius: 8px;
   margin-bottom: 24px;
   cursor: pointer;
+}
+
+.AccountListFlag {
+  margin-right: 0.5rem;
 }

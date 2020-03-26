@@ -1,18 +1,22 @@
-import React from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 import Icon from "src/components/assets/icons/icon";
 import classes from "./Navbar.module.css";
 import Profile from "../profile/Profile";
 
 interface Props {
   testId?: string;
-  scrolled?: boolean;
   icon?: { name?: string; color?: string; onIconClick?: () => void };
   scrolledIcon?: { name?: string; color?: string; onIconClick?: () => void };
   profile?: {
-    greeting: string;
-    name: string;
+    testId?: string;
+    initials?: string;
+    initialsBg?: string;
+    greetingStyle?: CSSProperties;
+    nameStyle?: CSSProperties;
+    src?: string;
+    greeting?: string;
+    name?: string;
     alt?: string;
-    src: string;
   };
   rightButtons?: {
     iconName: string;
@@ -25,9 +29,21 @@ const Navbar: React.FC<Props> = ({
   scrolledIcon = {},
   profile = {},
   rightButtons,
-  scrolled,
+
   testId
 }) => {
+  //@ts-ignore
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      if (window.scrollY >= 300) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    });
+  });
   return (
     <div className={classes.NavbarMainDiv} id={testId}>
       <div>
@@ -35,7 +51,7 @@ const Navbar: React.FC<Props> = ({
           <div
             id={`${testId}-0`}
             onClick={scrolledIcon.onIconClick}
-            className={classes.NavbarOnClick}
+            className={classes.NavbarScrolledIcon}
           >
             <Icon
               icon={scrolledIcon.name ? scrolledIcon.name : "LOGO"}
@@ -46,7 +62,7 @@ const Navbar: React.FC<Props> = ({
         ) : (
           <div
             onClick={icon.onIconClick}
-            className={classes.NavbarOnClick}
+            className={classes.NavbarIcon}
             id={`${testId}-1`}
           >
             <Icon
@@ -60,19 +76,29 @@ const Navbar: React.FC<Props> = ({
       <div className={classes.navbarIconDiv}>
         {!!profile &&
           (!!scrolled ? (
-            <Profile
-              testId={`${testId}-2`}
-              alt={!!profile.alt ? profile.alt : ""}
-              src={!!profile.src ? profile.src : ""}
-            />
+            <div className={classes.scrolledProfile}>
+              <Profile
+                testId={`${testId}-2`}
+                alt={!!profile.alt ? profile.alt : ""}
+                src={!!profile.src ? profile.src : ""}
+                initials={profile.initials}
+                initialsBg={profile.initialsBg}
+              />
+            </div>
           ) : (
-            <Profile
-              testId={`${testId}-3`}
-              greeting={!!profile.greeting ? profile.greeting : ""}
-              name={!!profile.name ? profile.name : ""}
-              alt={!!profile.alt ? profile.alt : ""}
-              src={!!profile.src ? profile.src : ""}
-            />
+            <div className={classes.Profile}>
+              <Profile
+                testId={`${testId}-3`}
+                greeting={!!profile.greeting ? profile.greeting : ""}
+                name={!!profile.name ? profile.name : ""}
+                alt={!!profile.alt ? profile.alt : ""}
+                src={!!profile.src ? profile.src : ""}
+                initials={profile.initials}
+                initialsBg={profile.initialsBg}
+                greetingStyle={profile.greetingStyle}
+                nameStyle={profile.nameStyle}
+              />
+            </div>
           ))}
         {!!rightButtons &&
           rightButtons.map((button, index) => {

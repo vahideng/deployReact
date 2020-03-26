@@ -1,6 +1,7 @@
 import React, { ReactNode, useState } from "react";
 import classes from "./FormContainerCurved.module.css";
 import Paragraphs from "../../assets/typography";
+import Icon from "src/components/assets/icons/icon";
 const { B_17_BLACK, B_17_WHITE } = Paragraphs;
 interface Props {
   testId?: string;
@@ -42,30 +43,41 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
               )}
             </div>
           </div>
-
-          <div
-            className={classes.FormContainerCurvedSecondCurveWr}
-            style={{
-              backgroundColor: !!LeftSelected ? "#ffffff" : "#c4c4c4"
-            }}
-          >
+          <span style={{ backgroundColor: "transparent", display: "flex" }}>
             <div
-              onClick={() => {
-                setLeftSelected(false);
-                setRightSelected(true);
-              }}
-              className={classes.FormContainerCurvedSecondCurve}
+              className={classes.FormContainerCurvedSecondCurveWr}
               style={{
-                backgroundColor: !!RightSelected ? "#ffffff" : "#c4c4c4"
+                backgroundColor: !!LeftSelected ? "#ffffff" : "#c4c4c4"
               }}
             >
-              {!!RightSelected ? (
-                <B_17_BLACK>{curvedTab.rightTab}</B_17_BLACK>
-              ) : (
-                <B_17_WHITE>{curvedTab.rightTab}</B_17_WHITE>
-              )}
+              <div
+                onClick={() => {
+                  setLeftSelected(false);
+                  setRightSelected(true);
+                }}
+                className={classes.FormContainerCurvedSecondCurve}
+                style={{
+                  backgroundColor: !!RightSelected ? "#ffffff" : "#c4c4c4"
+                }}
+              >
+                {!!RightSelected ? (
+                  <B_17_BLACK>{curvedTab.rightTab}</B_17_BLACK>
+                ) : (
+                  <B_17_WHITE>{curvedTab.rightTab}</B_17_WHITE>
+                )}
+              </div>
             </div>
-          </div>
+            <Icon
+              // size={30}
+              icon={"tab-curbe"}
+              color={!!RightSelected ? "#ffffff" : "#c4c4c4"}
+              style={{
+                marginLeft: "-1.5rem",
+                height: "3.18rem",
+                width: "3.8rem"
+              }}
+            />
+          </span>
         </div>
 
         <div className={classes.FormContainerCurvedRightCurve}></div>
