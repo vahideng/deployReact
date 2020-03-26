@@ -33,11 +33,11 @@ const CustomToggle: React.FC<Props> = ({ eventKey, content, testId }) => {
       {content}
       {isOpen ? (
         <span className={classes.TransListIcon}>
-          <Icon icon="arrowUp" size={14} />
+          <Icon icon="arrowUp" size={12} color="#444444" />
         </span>
       ) : (
         <span className={classes.TransListIcon}>
-          <Icon icon="arrowDown" size={14} />
+          <Icon icon="arrowDown" size={12} color="#444444" />
         </span>
       )}
     </div>
@@ -58,19 +58,32 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
                     style={{ alignItems: "center", height: "50px" }}
                     className="d-flex"
                   >
-                    <Col style={{ paddingLeft: 0 }} md={3}>
+                    <Col
+                      style={{ paddingLeft: 0, paddingRight: 32, margin: 0 }}
+                      md={3}
+                    >
                       {item.leftLabel}
                     </Col>
-                    <Col style={{ paddingLeft: 0 }} md={6}>
+                    <Col
+                      style={{ paddingLeft: 0, paddingRight: 0, margin: 0 }}
+                      md={6}
+                    >
                       <CustomToggle
                         eventKey={`${index}`}
                         content={item.middle.title}
                       />
                     </Col>
-                    <Col style={{ paddingLeft: 0 }} md={3}>
+                    <Col
+                      style={{ paddingLeft: 32, paddingRight: 0, margin: 0 }}
+                      md={3}
+                    >
                       <div
-                        style={{ whiteSpace: "nowrap", float: "right" }}
-                        className="p-2"
+                        style={{
+                          whiteSpace: "nowrap",
+                          float: "right",
+                          padding: 0,
+                          fontWeight: 900
+                        }}
                       >
                         <span
                           style={{
@@ -96,7 +109,10 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
                     {item.flag ? (
                       <SB_13_BLACK
                         className={classes.FlagText}
-                        style={{ color: `${item.flag.color}` }}
+                        style={{
+                          color: `${item.flag.color}`,
+                          paddingTop: "0px"
+                        }}
                       >
                         {" "}
                         {item.flag.text}{" "}
@@ -119,10 +135,7 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
                               className={classes.RightBody}
                               id={`${testId}-2-${index}`}
                             >
-                              <div
-                                style={{ whiteSpace: "nowrap" }}
-                                className="p-2"
-                              >
+                              <div style={{ whiteSpace: "nowrap" }}>
                                 {_item.rightLabel}
                               </div>
                             </div>

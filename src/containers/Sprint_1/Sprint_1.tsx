@@ -201,24 +201,23 @@ class Sprint1 extends Component<Props, State> {
           }
         />
         <Title>TransactionList</Title>
-        <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
-        <TransactionList
+        <CenteredDiv
+          style={{ backgroundColor: "white", paddingBottom: "20px" }}
+        >
+          <TransactionList
             testId={"testId"}
             data={[
               {
-                flag :{
-
-                  color : "red",
-                  text : "Successful"
-
-                }, 
+                flag: {
+                  color: "red",
+                  text: "Successful"
+                },
                 leftLabel: "DoItNow tr DF",
                 middle: {
                   title: "this is sample long data fot testing purposes only",
                   content: [
                     {
-                      leftLabel:
-                        "firstLeft",
+                      leftLabel: "firstLeft",
                       rightLabel: "firstRight"
                     },
                     {
@@ -235,17 +234,14 @@ class Sprint1 extends Component<Props, State> {
                   iconName: "Plus",
                   iconColor: "#36A03E",
                   prefix: "RM",
-                  content: "18.00000000000"
+                  content: "18.00000000"
                 }
               },
               {
-
-                flag :{
-
-                  color : "green",
-                  text : "Successful"
-
-                }, 
+                flag: {
+                  color: "green",
+                  text: "Successful"
+                },
                 leftLabel: "doLaterNow tr DF",
                 middle: {
                   title: "this is sample long data fot testing purposes only",
