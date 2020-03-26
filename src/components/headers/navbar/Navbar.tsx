@@ -46,78 +46,80 @@ const Navbar: React.FC<Props> = ({
   });
   return (
     <div className={classes.NavbarMainDiv} id={testId}>
-      <div>
-        {!!scrolled ? (
-          <div
-            id={`${testId}-0`}
-            onClick={scrolledIcon.onIconClick}
-            className={classes.NavbarScrolledIcon}
-          >
-            <Icon
-              icon={scrolledIcon.name ? scrolledIcon.name : "LOGO"}
-              color={scrolledIcon.color ? scrolledIcon.color : "#ff2626"}
-              size={27}
-            />
-          </div>
-        ) : (
-          <div
-            onClick={icon.onIconClick}
-            className={classes.NavbarIcon}
-            id={`${testId}-1`}
-          >
-            <Icon
-              icon={icon.name ? icon.name : "amonline-white"}
-              color={icon.color ? icon.color : "#ff2626"}
-              size={130}
-            />
-          </div>
-        )}
-      </div>
-      <div className={classes.navbarIconDiv}>
-        {!!profile &&
-          (!!scrolled ? (
-            <div className={classes.scrolledProfile}>
-              <Profile
-                testId={`${testId}-2`}
-                alt={!!profile.alt ? profile.alt : ""}
-                src={!!profile.src ? profile.src : ""}
-                initials={profile.initials}
-                initialsBg={profile.initialsBg}
+      <div className={classes.InnerWidth}>
+        <div>
+          {!!scrolled ? (
+            <div
+              id={`${testId}-0`}
+              onClick={scrolledIcon.onIconClick}
+              className={classes.NavbarScrolledIcon}
+            >
+              <Icon
+                icon={scrolledIcon.name ? scrolledIcon.name : "LOGO"}
+                color={scrolledIcon.color ? scrolledIcon.color : "#ff2626"}
+                size={27}
               />
             </div>
           ) : (
-            <div className={classes.Profile}>
-              <Profile
-                testId={`${testId}-3`}
-                greeting={!!profile.greeting ? profile.greeting : ""}
-                name={!!profile.name ? profile.name : ""}
-                alt={!!profile.alt ? profile.alt : ""}
-                src={!!profile.src ? profile.src : ""}
-                initials={profile.initials}
-                initialsBg={profile.initialsBg}
-                greetingStyle={profile.greetingStyle}
-                nameStyle={profile.nameStyle}
+            <div
+              onClick={icon.onIconClick}
+              className={classes.NavbarIcon}
+              id={`${testId}-1`}
+            >
+              <Icon
+                icon={icon.name ? icon.name : "amonline-white"}
+                color={icon.color ? icon.color : "#ff2626"}
+                size={130}
               />
             </div>
-          ))}
-        {!!rightButtons &&
-          rightButtons.map((button, index) => {
-            return (
-              <div
-                key={index}
-                className={classes.navbarIcons}
-                id={`${testId}-${index}`}
-              >
-                <div
-                  id={`${testId}-4`}
-                  onClick={button.onButtonClick}
-                  className={classes.NavbarOnClick}
-                >
-                  <Icon icon={button.iconName} size={30} color={"#444444"} />
-                </div>
+          )}
+        </div>
+        <div className={classes.navbarIconDiv}>
+          {!!profile &&
+            (!!scrolled ? (
+              <div className={classes.scrolledProfile}>
+                <Profile
+                  testId={`${testId}-2`}
+                  alt={!!profile.alt ? profile.alt : ""}
+                  src={!!profile.src ? profile.src : ""}
+                  initials={profile.initials}
+                  initialsBg={profile.initialsBg}
+                />
               </div>
-            );
-          })}
+            ) : (
+              <div className={classes.Profile}>
+                <Profile
+                  testId={`${testId}-3`}
+                  greeting={!!profile.greeting ? profile.greeting : ""}
+                  name={!!profile.name ? profile.name : ""}
+                  alt={!!profile.alt ? profile.alt : ""}
+                  src={!!profile.src ? profile.src : ""}
+                  initials={profile.initials}
+                  initialsBg={profile.initialsBg}
+                  greetingStyle={profile.greetingStyle}
+                  nameStyle={profile.nameStyle}
+                />
+              </div>
+            ))}
+          {!!rightButtons &&
+            rightButtons.map((button, index) => {
+              return (
+                <div
+                  key={index}
+                  className={classes.navbarIcons}
+                  id={`${testId}-${index}`}
+                >
+                  <div
+                    id={`${testId}-4`}
+                    onClick={button.onButtonClick}
+                    className={classes.NavbarOnClick}
+                  >
+                    <Icon icon={button.iconName} size={30} color={"#444444"} />
+                  </div>
+                </div>
+              );
+            })}
+        </div>
       </div>
     </div>
   );
