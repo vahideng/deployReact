@@ -655,27 +655,11 @@ class Sprint1 extends Component<Props, State> {
           />
         </div>
         <Title>FloatingButton</Title>
-        <CenteredDiv>
-          <div
-            style={{
-              backgroundColor: "#f1f1f1",
-              padding: "1rem",
-              display: "inline-block"
-            }}
-          >
-            <FloatingButton />
-          </div>
+        <div>
+          <FloatingButton />
 
-          <div
-            style={{
-              backgroundColor: "black",
-              padding: "1rem",
-              display: "inline-block"
-            }}
-          >
-            <FloatingButton darkButton={true} testId={"testId"} />
-          </div>
-        </CenteredDiv>
+          <FloatingButton darkButton={true} testId={"testId"} />
+        </div>
 
         <Title>List</Title>
 
