@@ -4,6 +4,8 @@
 
 .ContainerWhole {
   max-width: 615px;
+  border: 0px !important;
+  border-radius: 0px;
 }
 
 .CardHeader {
@@ -17,28 +19,32 @@
   font-size: 15px;
   line-height: 20px;
   color: #000000;
-  padding-left: 15px;
+  padding-left: 24px;
+  border-bottom: 0px;
 }
 
 .HeaderInside {
-  padding-left: 15px;
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
   line-height: 18px;
-  padding-right: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 19px;
+  padding-bottom: 19px;
+  color: #444444;
+  margin: 0px;
 }
 
 .Content {
   img {
     padding-left: 10px;
   }
-
   cursor: pointer;
 }
 
-.FlagText{
+.FlagText {
   padding-top: 10px;
   padding-bottom: 20px;
 }
@@ -48,8 +54,7 @@
   // justify-content: space-between;
   padding: 0px 24px 0px 24px;
   align-items: center;
-  background-color: #F7F7F7;
-
+  background-color: #f7f7f7;
 }
 
 .LeftBody {
@@ -59,18 +64,15 @@
   font-size: 13px;
   line-height: 18px;
   /* identical to box height */
-
   color: #696969;
 }
-
 
 .RowContainer {
   justify-content: space-between;
   width: 100%;
   align-items: center;
-
-  margin:0px;
-  padding-bottom:16px;
+  margin: 0px;
+  padding-bottom: 16px;
 }
 .RightBody {
   display: flex;

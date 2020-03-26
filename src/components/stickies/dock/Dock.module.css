@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 0;
   display: inline-block;
-  background-color: #44444490;
+  background-color: rgba(68, 68, 68, 0.8);
   border-radius: 1.3rem 1.3rem 0 0;
 }
 

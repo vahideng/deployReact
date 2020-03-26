@@ -202,24 +202,23 @@ class Sprint1 extends Component<Props, State> {
           }
         />
         <Title>TransactionList</Title>
-        <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
-        <TransactionList
+        <CenteredDiv
+          style={{ backgroundColor: "white", paddingBottom: "20px" }}
+        >
+          <TransactionList
             testId={"testId"}
             data={[
               {
-                flag :{
-
-                  color : "red",
-                  text : "Successful"
-
-                }, 
+                flag: {
+                  color: "red",
+                  text: "Successful"
+                },
                 leftLabel: "DoItNow tr DF",
                 middle: {
                   title: "this is sample long data fot testing purposes only",
                   content: [
                     {
-                      leftLabel:
-                        "firstLeft",
+                      leftLabel: "firstLeft",
                       rightLabel: "firstRight"
                     },
                     {
@@ -236,17 +235,14 @@ class Sprint1 extends Component<Props, State> {
                   iconName: "Plus",
                   iconColor: "#36A03E",
                   prefix: "RM",
-                  content: "18.00000000000"
+                  content: "18.00000000"
                 }
               },
               {
-
-                flag :{
-
-                  color : "green",
-                  text : "Successful"
-
-                }, 
+                flag: {
+                  color: "green",
+                  text: "Successful"
+                },
                 leftLabel: "doLaterNow tr DF",
                 middle: {
                   title: "this is sample long data fot testing purposes only",
@@ -662,31 +658,11 @@ class Sprint1 extends Component<Props, State> {
           />
         </div>
         <Title>FloatingButton</Title>
-        <CenteredDiv>
-          <div
-            style={{
-              backgroundColor: "#f1f1f1",
-              padding: "1rem",
-              display: "inline-block"
-            }}
-          >
-            <FloatingButton />
-          </div>
+        <div>
+          <FloatingButton />
 
-          <div
-            style={{
-              backgroundColor: "black",
-              padding: "1rem",
-              display: "inline-block"
-            }}
-          >
-            <FloatingButton
-              darkButton={true}
-              testId={"testId"}
-              onButtonClick={() => alert("onButtonClick")}
-            />
-          </div>
-        </CenteredDiv>
+          <FloatingButton darkButton={true} testId={"testId"} />
+        </div>
 
         <Title>List</Title>
 
@@ -1668,9 +1644,9 @@ class Sprint1 extends Component<Props, State> {
                         alert(index);
                       }}
                     />
-                    <div style={{ width: 700, padding: "2rem" }}>
+                    <div style={{ width: 700 }}>
                       <AMTabs
-                        titlesStyle={{ padding: "0 4rem" }}
+                        titlesStyle={{ padding: "2rem 4rem 0 4rem" }}
                         defaultIndex={0}
                         titles={[
                           "Transactions",
@@ -1679,20 +1655,23 @@ class Sprint1 extends Component<Props, State> {
                           "Contact Us"
                         ]}
                         contents={[
-                          <SearchBar
-                            testId={"testId"}
-                            clearClickHandler={() => alert("clear clicked")}
-                            searchIconClickHandler={() =>
-                              alert("Search Icon clicked")
-                            }
-                            placeholder={"Search"}
-                            value={this.state.inputValue}
-                            handleChange={event => {
-                              this.setState({
-                                inputValue: event.target.value
-                              });
-                            }}
-                          />,
+                          <div style={{ padding: "2rem" }}>
+                            <SearchBar
+                              testId={"testId"}
+                              clearClickHandler={() => alert("clear clicked")}
+                              searchIconClickHandler={() =>
+                                alert("Search Icon clicked")
+                              }
+                              placeholder={"Search"}
+                              value={this.state.inputValue}
+                              handleChange={event => {
+                                this.setState({
+                                  inputValue: event.target.value
+                                });
+                              }}
+                            />
+                          </div>,
+
                           <ZeroResult
                             testId={"testId"}
                             text={`We can’t seem to find any result for 
