@@ -9,6 +9,9 @@ interface Props {
   contents: React.ReactNode[];
   onSelect?: any;
   titlesStyle?: CSSProperties;
+  divider?: boolean;
+  //////////////////////
+  smallTab?: boolean; // for internal use no need to put this on design system
 }
 
 export const AMTabs: React.FC<Props> = ({
@@ -17,7 +20,9 @@ export const AMTabs: React.FC<Props> = ({
   defaultIndex,
   onSelect,
   testId,
-  titlesStyle
+  titlesStyle,
+
+  smallTab
 }) => {
   return (
     <div className={classes.AMTabsMainDiv} id={testId}>
@@ -34,6 +39,7 @@ export const AMTabs: React.FC<Props> = ({
             titles.map((title, index: number) => {
               return (
                 <Tab
+                  style={smallTab ? { height: "1.8rem" } : {}}
                   className={classes.TabsTab}
                   key={index}
                   id={`${testId} -0 ${index}`}
@@ -43,7 +49,6 @@ export const AMTabs: React.FC<Props> = ({
               );
             })}
         </TabList>
-
         {!!contents &&
           contents.map((content, index: number) => {
             return (

@@ -100,7 +100,6 @@ const Home: React.FC<Props> = () => {
               rightTitleStyle={{ color: "#000000" }}
               rightTitle={"rightTitle"}
               tabTitles={["Security", "Login", "Contact Us"]}
-              titlesStyle={{ padding: "0 1rem" }}
               onSelect={(obj: any) => console.log(obj)}
               content={[
                 <ZeroResult

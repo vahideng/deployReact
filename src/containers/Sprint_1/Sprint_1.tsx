@@ -202,23 +202,20 @@ class Sprint1 extends Component<Props, State> {
         />
         <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
-        <TransactionList
+          <TransactionList
             testId={"testId"}
             data={[
               {
-                flag :{
-
-                  color : "red",
-                  text : "Successful"
-
-                }, 
+                flag: {
+                  color: "red",
+                  text: "Successful"
+                },
                 leftLabel: "DoItNow tr DF",
                 middle: {
                   title: "this is sample long data fot testing purposes only",
                   content: [
                     {
-                      leftLabel:
-                        "firstLeft",
+                      leftLabel: "firstLeft",
                       rightLabel: "firstRight"
                     },
                     {
@@ -239,13 +236,10 @@ class Sprint1 extends Component<Props, State> {
                 }
               },
               {
-
-                flag :{
-
-                  color : "green",
-                  text : "Successful"
-
-                }, 
+                flag: {
+                  color: "green",
+                  text: "Successful"
+                },
                 leftLabel: "doLaterNow tr DF",
                 middle: {
                   title: "this is sample long data fot testing purposes only",
@@ -1662,9 +1656,9 @@ class Sprint1 extends Component<Props, State> {
                         alert(index);
                       }}
                     />
-                    <div style={{ width: 700, padding: "2rem" }}>
+                    <div style={{ width: 700 }}>
                       <AMTabs
-                        titlesStyle={{ padding: "0 4rem" }}
+                        titlesStyle={{ padding: "2rem 4rem 0 4rem" }}
                         defaultIndex={0}
                         titles={[
                           "Transactions",
@@ -1673,20 +1667,23 @@ class Sprint1 extends Component<Props, State> {
                           "Contact Us"
                         ]}
                         contents={[
-                          <SearchBar
-                            testId={"testId"}
-                            clearClickHandler={() => alert("clear clicked")}
-                            searchIconClickHandler={() =>
-                              alert("Search Icon clicked")
-                            }
-                            placeholder={"Search"}
-                            value={this.state.inputValue}
-                            handleChange={event => {
-                              this.setState({
-                                inputValue: event.target.value
-                              });
-                            }}
-                          />,
+                          <div style={{ padding: "2rem" }}>
+                            <SearchBar
+                              testId={"testId"}
+                              clearClickHandler={() => alert("clear clicked")}
+                              searchIconClickHandler={() =>
+                                alert("Search Icon clicked")
+                              }
+                              placeholder={"Search"}
+                              value={this.state.inputValue}
+                              handleChange={event => {
+                                this.setState({
+                                  inputValue: event.target.value
+                                });
+                              }}
+                            />
+                          </div>,
+
                           <ZeroResult
                             testId={"testId"}
                             text={`We can’t seem to find any result for 
