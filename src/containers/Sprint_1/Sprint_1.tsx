@@ -207,18 +207,28 @@ class Sprint1 extends Component<Props, State> {
             testId={"testId"}
             data={[
               {
+                flag :{
+
+                  color : "red",
+                  text : "Successful"
+
+                }, 
                 leftLabel: "DoItNow tr DF",
                 middle: {
                   title: "this is sample long data fot testing purposes only",
                   content: [
                     {
                       leftLabel:
-                        "this is sample long data fot testing purposes",
-                      rightLabel: "16 Augest 1998"
+                        "firstLeft",
+                      rightLabel: "firstRight"
                     },
                     {
-                      leftLabel: "DoItNow tr DF",
-                      rightLabel: "12 March 2012"
+                      leftLabel: "secondtLeft",
+                      rightLabel: "secondtRight"
+                    },
+                    {
+                      leftLabel: "thirdLeft",
+                      rightLabel: "thirdRight"
                     }
                   ]
                 },
@@ -230,6 +240,13 @@ class Sprint1 extends Component<Props, State> {
                 }
               },
               {
+
+                flag :{
+
+                  color : "green",
+                  text : "Successful"
+
+                }, 
                 leftLabel: "doLaterNow tr DF",
                 middle: {
                   title: "this is sample long data fot testing purposes only",

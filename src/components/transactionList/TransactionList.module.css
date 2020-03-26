@@ -42,17 +42,17 @@
   padding-left: 10px;
 }
 
+.FlagText {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
 .CardBodyContent {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 2px 6px 0px 15px;
+  padding: 0px 24px 0px 24px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #F7F7F7;
 }
 
 .LeftBody {
@@ -63,6 +63,18 @@
   line-height: 18px;
   /* identical to box height */
   color: #696969;
+}
+
+.RowContainer {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px;
+  padding-bottom: 16px;
 }
 
 .RightBody {

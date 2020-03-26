@@ -104,6 +104,15 @@ const SB_15_BLACK = styled.p`
   font-weight: 600;
   line-height: 20px;
 `;
+const SB_13_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-family: Nunito Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 0.8125rem;
+line-height: 18px;
+`;
 
 const B_15_BLACK = styled.p`
   margin: 0;
@@ -339,5 +348,6 @@ export default {
   SB_32_BLACK,
   SB_22_BLACK,
   SB_17_BLACK,
-  B_15_ORANGE_463
+  B_15_ORANGE_463,
+  SB_13_BLACK
 };
