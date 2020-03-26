@@ -38,11 +38,18 @@
   cursor: pointer;
 }
 
+.FlagText{
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
 .CardBodyContent {
-  display: flex;
-  justify-content: space-between;
-  padding: 2px 6px 0px 15px;
+  // display: flex;
+  // justify-content: space-between;
+  padding: 0px 24px 0px 24px;
   align-items: center;
+  background-color: #F7F7F7;
+
 }
 
 .LeftBody {
@@ -56,6 +63,15 @@
   color: #696969;
 }
 
+
+.RowContainer {
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+
+  margin:0px;
+  padding-bottom:16px;
+}
 .RightBody {
   display: flex;
   align-items: center;

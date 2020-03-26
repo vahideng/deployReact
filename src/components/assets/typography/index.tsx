@@ -153,6 +153,16 @@ const B_48_BLACK = styled.p`
   }
 `;
 
+const SB_13_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-family: Nunito Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 0.8125rem;
+line-height: 18px;
+`;
+
 const SB_11_GREY444 = styled.p`
   margin: 0;
   color: #444444;
@@ -264,5 +274,6 @@ export default {
   R_17_BLACK,
   B_20_BLACK,
   R_18_GREY444,
-  B_32_WHITE
+  B_32_WHITE,
+  SB_13_BLACK
 };

@@ -1,11 +1,12 @@
 import React from "react";
-import { Card, Accordion, useAccordionToggle, Col } from "react-bootstrap";
+import { Card, Accordion, useAccordionToggle, Col, Row } from "react-bootstrap";
 
 import classes from "./TransactionList.module.css";
 import "react-tabs/style/react-tabs.css";
+import Paragraphs from "../../components/assets/typography";
 
 import Icon from "../assets/icons/icon";
-
+const { SB_13_BLACK } = Paragraphs;
 interface Props {
   testId?: string;
   data?: any;
@@ -30,7 +31,6 @@ const CustomToggle: React.FC<Props> = ({ eventKey, content, testId }) => {
       id={testId}
     >
       {content}
-
       {isOpen ? (
         <span className={classes.TransListIcon}>
           <Icon icon="arrowUp" size={14} />
@@ -72,7 +72,17 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
                         style={{ whiteSpace: "nowrap", float: "right" }}
                         className="p-2"
                       >
-                        <span style={{ color: "#FF2222" }}> - </span>{" "}
+                        <span
+                          style={{
+                            marginRight: "-5px"
+                          }}
+                        >
+                          <Icon
+                            icon={item.rightLabel.iconName}
+                            color={item.rightLabel.iconColor}
+                            size={30}
+                          />
+                        </span>
                         <span style={{ paddingRight: "4px" }}>
                           {item.rightLabel.prefix}
                         </span>
@@ -81,14 +91,45 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
                     </Col>
                   </div>
                 </Card.Header>
+                <Accordion.Collapse eventKey={`${index}`} key={index}>
+                  <Card.Body className={classes.CardBodyContent}>
+                    {item.flag ? (
+                      <SB_13_BLACK
+                        className={classes.FlagText}
+                        style={{ color: `${item.flag.color}` }}
+                      >
+                        {" "}
+                        {item.flag.text}{" "}
+                      </SB_13_BLACK>
+                    ) : null}
 
-                {!!item.middle.content &&
-                  item.middle.content.map(
-                    (item: any, index: string | number | undefined) => {
-                      return (
-                        <Accordion.Collapse eventKey={`${index}`} key={index}>
-                          <Card.Body className={classes.CardBodyContent}>
+                    {!!item.middle.content &&
+                      item.middle.content.map((_item: any, _index: any) => {
+                        console.log(_item, "item");
+
+                        return (
+                          <Row className={classes.RowContainer}>
                             <div
+                              className={classes.LeftBody}
+                              id={`${testId}-1-${index}`}
+                            >
+                              {_item.leftLabel}
+                            </div>
+                            <div
+                              className={classes.RightBody}
+                              id={`${testId}-2-${index}`}
+                            >
+                              <div
+                                style={{ whiteSpace: "nowrap" }}
+                                className="p-2"
+                              >
+                                {_item.rightLabel}
+                              </div>
+                            </div>
+                          </Row>
+                        );
+                      })}
+                    {/* <div
                               className={classes.LeftBody}
                               id={`${testId}-1-${index}`}
                             >
@@ -105,12 +146,18 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
                               >
                                 {item.rightLabel}
                               </div>
-                            </div>
-                          </Card.Body>
-                        </Accordion.Collapse>
+                            </div> */}
+                  </Card.Body>
+                </Accordion.Collapse>
+
+                {/* {!!item.middle.content &&
+                  item.middle.content.map(
+                    (item: any, index: string | number | undefined) => {
+                      return (
+                        
                       );
                     }
-                  )}
+                  )} */}
               </Card>
             </Accordion>
           );
