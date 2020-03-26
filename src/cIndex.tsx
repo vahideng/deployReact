@@ -85,6 +85,7 @@ export {
   BannerHero,
   FirstBanner,
   SecondBanner,
+  ArticleDetails,
   ////
   /// below are sprint-1 components
   AmModal,
@@ -138,6 +139,5 @@ export {
   Logo,
   LabeledIcon,
   StatusIcon,
-  TileListView,
-  ArticleDetails
+  TileListView
 };
