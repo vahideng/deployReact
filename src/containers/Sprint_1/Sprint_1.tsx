@@ -201,7 +201,9 @@ class Sprint1 extends Component<Props, State> {
           }
         />
         <Title>TransactionList</Title>
-        <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
+        <CenteredDiv
+          style={{ backgroundColor: "white", paddingBottom: "20px" }}
+        >
           <TransactionList
             testId={"testId"}
             data={[
@@ -232,7 +234,7 @@ class Sprint1 extends Component<Props, State> {
                   iconName: "Plus",
                   iconColor: "#36A03E",
                   prefix: "RM",
-                  content: "18.00000000000"
+                  content: "18.00000000"
                 }
               },
               {
