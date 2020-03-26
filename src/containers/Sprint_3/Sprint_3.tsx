@@ -15,6 +15,7 @@ import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import TextWithDetails from "src/components/infographic/textWithDetails/TextWithDetails";
 import ArrayCheckBox from "src/components/arrayCheckBox/ArrayCheckBox";
 import LabelToolTip from "src/components/labelToolTip/LabelToolTip";
+import PayBillList from "src/components/PayBillList/PayBillList";
 // import { colors } from "react-select/src/theme";
 
 const { B_13_ORANGE_463 } = Paragraphs;
@@ -386,6 +387,43 @@ const Sprint3: React.FC<Props> = () => {
           }}
           label="Select your preffered account to send and received money"
         />
+      </div>
+      <Title>PayBillList and Line</Title>
+      <div
+        style={{
+          margin: "0 auto",
+          padding: 4,
+          width: "50%"
+        }}
+      >
+        <br />
+        <PayBillList
+          title="Review & Confirm"
+          content={[
+            {
+              label: "To",
+              title: "Kojadi",
+              titleIcon: "accent-tick",
+              subtitle: ["Sub1", "Sub2"],
+              amount: "RM 500"
+            },
+            {
+              label: "Date",
+              title: "Pay Now",
+              subtitle: ["Sub1", "Sub2"]
+            },
+            {
+              label: "From",
+              title: "Savings",
+              subtitle: ["Sub1", "Sub2"],
+              status: {
+                content: "UNSUCCESSFUL",
+                color: "red"
+              }
+            }
+          ]}
+        />
+        <br />
       </div>
     </div>
   );
