@@ -1,0 +1,73 @@
+.Container {
+  background: #ffffff;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 1.25rem;
+  padding: 2.5rem 3.5rem;
+}
+
+.TitleContainer {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.Title {
+  line-height: 1.5625rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+}
+
+.ItemContainer {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.ItemLeftContent {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.ItemRightContent {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.ItemTitleContainer {
+  padding: 0 !important;
+  margin: 0 !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ItemTitle {
+  padding-left: 0.5rem;
+  line-height: 1.25rem;
+}
+
+.Subtitle {
+  line-height: 1.25rem;
+}
+
+.AmountContainer {
+  padding: 0 !important;
+  margin: 0 !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Amount {
+  padding-left: 0.25rem;
+  line-height: 1.25rem;
+}
