@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Dock.module.css";
 import Tag from "src/components/tags/Tag";
 import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
@@ -17,8 +17,14 @@ interface Props {
 }
 
 const Dock: React.FC<Props> = props => {
+  const [isExpanded, setsIsExpanded] = useState(false);
   return (
-    <div className={classes.DockMainDiv} id={props.testId}>
+    <div
+      className={classes.DockMainDiv}
+      id={props.testId}
+      onMouseEnter={() => setsIsExpanded(!isExpanded)}
+      onMouseLeave={() => setsIsExpanded(!isExpanded)}
+    >
       {!!props.tagText && (
         <div className={classes.DockTag}>
           <Tag
@@ -33,6 +39,7 @@ const Dock: React.FC<Props> = props => {
           list={props.list}
           testId={`${props.testId}-2`}
           onButtonClick={props.onButtonClick}
+          expanded={isExpanded}
         />
       </div>
     </div>

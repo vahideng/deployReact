@@ -65,7 +65,15 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                   marginLeft: item.cardLogo ? 16 : 0
                 }}
               >
-                <R_15_GREY444 style={{ fontWeight: 600 }}>
+                <R_15_GREY444
+                  style={{
+                    fontWeight: 600,
+                    whiteSpace: "nowrap",
+                    maxWidth: "16.87rem",
+                    textOverflow: "ellipsis",
+                    overflow: "hidden"
+                  }}
+                >
                   {item.accountName}{" "}
                   <span style={{ display: "inline-block" }}>
                     {item.accountNickName}

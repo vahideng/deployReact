@@ -14,9 +14,15 @@ interface Props {
   eventKey?: any;
   content?: string;
   title?: string;
+  showIcon?: boolean;
 }
 
-const CustomToggle: React.FC<Props> = ({ eventKey, content, testId }) => {
+const CustomToggle: React.FC<Props> = ({
+  eventKey,
+  content,
+  testId,
+  showIcon
+}) => {
   const decoratedOnClick = useAccordionToggle(eventKey, () => null);
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -31,15 +37,17 @@ const CustomToggle: React.FC<Props> = ({ eventKey, content, testId }) => {
       id={testId}
     >
       {content}
-      {isOpen ? (
-        <span className={classes.TransListIcon}>
-          <Icon icon="arrowUp" size={12} color="#444444" />
-        </span>
-      ) : (
-        <span className={classes.TransListIcon}>
-          <Icon icon="arrowDown" size={12} color="#444444" />
-        </span>
-      )}
+      {showIcon ? (
+        isOpen ? (
+          <span className={classes.TransListIcon}>
+            <Icon icon="arrowUp" size={12} color="#444444" />
+          </span>
+        ) : (
+          <span className={classes.TransListIcon}>
+            <Icon icon="arrowDown" size={12} color="#444444" />
+          </span>
+        )
+      ) : null}
     </div>
   );
 };
@@ -71,6 +79,7 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
                       <CustomToggle
                         eventKey={`${index}`}
                         content={item.middle.title}
+                        showIcon={item.flag || item.middle.content}
                       />
                     </Col>
                     <Col

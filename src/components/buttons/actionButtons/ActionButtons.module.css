@@ -15,18 +15,18 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 2.81rem;
-  height: 2.81rem;
-  border-radius: 1rem;
-  margin-right: 2.1rem;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 2.31rem;
+  height: 2.31rem;
+  border-radius: 0.9rem;
+  margin-right: 1.5rem;
   cursor: pointer;
 }
 
@@ -34,13 +34,10 @@
   word-wrap: break-word;
   text-align: center;
   padding-top: 0.6rem;
-  height: 0;
-  opacity: 0;
   -webkit-transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
   transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-.ActionButtonsMain:hover .ActionButtonsText {
-  height: 3rem;
-  opacity: 1;
+.ActionButtonsIcon:hover {
+  opacity: 0.7;
 }

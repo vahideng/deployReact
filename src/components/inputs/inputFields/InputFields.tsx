@@ -76,6 +76,7 @@ class InputField extends Component<Props, {}> {
             />
           )}
           <input
+            autoComplete={"off"}
             minLength={minLength}
             maxLength={maxLength}
             onBlur={blurHandler}
