@@ -17,7 +17,13 @@ import ArrayCheckBox from "src/components/arrayCheckBox/ArrayCheckBox";
 import LabelToolTip from "src/components/labelToolTip/LabelToolTip";
 // import { colors } from "react-select/src/theme";
 
-const { B_13_ORANGE_463 } = Paragraphs;
+const {
+  B_13_ORANGE_463,
+  B_15_BLACK,
+  R_12_WHITE,
+  B_14_WHITE,
+  B_14_BLACK
+} = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
   padding: 5px 0;
@@ -372,19 +378,40 @@ const Sprint3: React.FC<Props> = () => {
         <LabelToolTip
           tooltipData={{
             testId: "101",
-            tipChildren: "test",
+
+            tipChildren: (
+              <div>
+                <B_14_WHITE>Tips</B_14_WHITE>
+                <R_12_WHITE>
+                  Accumulation of fund’s market value based on current NAV.
+                  Current value is an indicative value and is to be considered
+                  as reference only.
+                </R_12_WHITE>
+              </div>
+            ),
+
             spaceBetween: "4rem"
           }}
-          label="Portfolio Comparison"
+          label={<B_14_BLACK> Portfolio Comparison</B_14_BLACK>}
         />
         <br />
         <LabelToolTip
           tooltipData={{
             testId: "101",
-            tipChildren: "test",
-            spaceBetween: "10%"
+            tipChildren: (
+              <div>
+                <B_13_ORANGE_463>Try one</B_13_ORANGE_463>
+                <R_12_WHITE>test</R_12_WHITE>
+              </div>
+            ),
+            spaceBetween: "10%",
+            color: "red"
           }}
-          label="Select your preffered account to send and received money"
+          label={
+            <B_15_BLACK>
+              {"Select your preffered account to send and received money"}
+            </B_15_BLACK>
+          }
         />
       </div>
     </div>

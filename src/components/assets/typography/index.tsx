@@ -12,6 +12,12 @@ const R_11_WHITE = styled.p`
   font-size: 0.68rem;
   font-weight: 400;
 `;
+const R_12_WHITE = styled.p`
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 400;
+`;
 const B_15_WHITE = styled.p`
   margin: 0;
   color: #ffffff;
@@ -346,5 +352,6 @@ export default {
   SB_32_BLACK,
   SB_22_BLACK,
   SB_17_BLACK,
-  B_15_ORANGE_463
+  B_15_ORANGE_463,
+  R_12_WHITE
 };
