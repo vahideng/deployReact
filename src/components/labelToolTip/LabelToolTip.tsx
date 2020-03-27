@@ -1,7 +1,9 @@
 import React from "react";
 import Tooltip from "src/components/tooltip/Tooltip";
 import classes from "./LabelToolTip.module.css";
-//
+// import Paragraphs from "../../components/assets/typography";
+
+// const { B_14_WHITE } = Paragraphs;
 interface Props {
   tooltipData: {
     testId?: string;
@@ -9,7 +11,7 @@ interface Props {
     color?: string;
     spaceBetween?: any;
   };
-  label?: string;
+  label?: any;
 }
 
 const LabelToolTip: React.FC<Props> = ({ tooltipData, label }) => {
