@@ -10,8 +10,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 1.3rem 1.3rem 0 0;
-  padding: 2rem 0 1rem 0;
-  transition: padding 0.5s ease-in-out;
+  min-height: 5.12rem;
+  transition: min-height 0.5s ease-in-out;
 }
 .DockTag {
   margin: -1.5rem 0 -1.8rem 2rem;
@@ -21,6 +21,6 @@
 .DockMainDiv:hover .DockTag {
   opacity: 1;
 }
-.DockInnerDiv:hover {
-  padding-top: 3rem;
+.DockMainDiv:hover .DockInnerDiv {
+  min-height: 9.37rem;
 }

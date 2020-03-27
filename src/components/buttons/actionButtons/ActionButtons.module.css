@@ -23,10 +23,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 2.81rem;
-  height: 2.81rem;
-  border-radius: 1rem;
-  margin-right: 2.1rem;
+  width: 2.31rem;
+  height: 2.31rem;
+  border-radius: 0.9rem;
+  margin-right: 1.5rem;
   cursor: pointer;
 }
 
@@ -34,13 +34,10 @@
   word-wrap: break-word;
   text-align: center;
   padding-top: 0.6rem;
-  height: 0;
-  opacity: 0;
   -webkit-transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
   transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-.ActionButtonsMain:hover .ActionButtonsText {
-  height: 3rem;
-  opacity: 1;
+.ActionButtonsIcon:hover {
+  opacity: 0.7;
 }
