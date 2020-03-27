@@ -2386,7 +2386,7 @@ class Sprint1 extends Component<Props, State> {
           ]}
         />
         <Title>DescriptionButton</Title>
-        <div style={{ backgroundColor: "#f5f5f5" }}>
+        <div style={{ backgroundColor: "#f5f5f5", padding: 50 }}>
           <DescriptionButton
             testId={"testId"}
             onButtonClick={(item, index) => {
