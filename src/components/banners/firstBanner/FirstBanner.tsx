@@ -11,21 +11,27 @@ interface Props {
   tag: string;
   testId?: string;
   title: string;
+
 }
 
 const FirstBanner: React.FC<Props> = ({
   content,
   image,
   style,
+  onClick,
   tag,
   testId,
-  title
+  title,
+ 
 }: Props) => {
   return (
     <div className={classes.Container} id={`${testId}`} style={style}>
-      <div className={classes.Overlay}>
+      <div onClick ={ onClick ? ()=>onClick() : null} className={classes.Overlay}>
         <div className={classes.ImageOverlay} />
-        <img className={classes.ImageContainer} src={image} />
+        
+            <img className={classes.ImageContainer} src={image} />
+   
+    
         <div className={classes.Details}>
           <div className={classes.Tag}>
             <p className={classes.TagText}>{tag}</p>

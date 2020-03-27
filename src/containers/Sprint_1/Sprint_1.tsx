@@ -53,6 +53,7 @@ import TileListView from "src/components/lists/TileListView/TileListView";
 import { Redirect } from "react-router-dom";
 import Box from "src/components/wrappers/box/Box";
 
+
 const {
   B_13_ORANGE_463,
   B_14_WHITE,
@@ -1085,6 +1086,10 @@ class Sprint1 extends Component<Props, State> {
         {/* {console.log(this.state.StickyModalOpen)} */}
         <StickyTimer
           testId={"testId"}
+          closeTimeoutMS ={1000}
+          contentLabel ="example"
+          textBefore ="Transaction will expire in"
+          onCLoseButtonCLick = {()=>alert("clicked")}
           modalIsOpen={StickyModalOpen}
           expirationTime={20}
           expirationText="Seconds"

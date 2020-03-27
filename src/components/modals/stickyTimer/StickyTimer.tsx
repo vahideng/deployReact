@@ -8,7 +8,7 @@ import LocalImages from "src/components/assets/images";
 import Icon from "src/components/assets/icons/icon";
 const { R_17_BLACK, B_17_BLACK, R_15_BLACK } = Paragraphs;
 
-let myTimer: any;
+
 
 const customStyles = {
   content: {
@@ -31,6 +31,10 @@ interface Props {
   expirationTime: number;
   expirationText?: string;
   text?: string;
+  closeTimeoutMS ?: number;
+  contentLabel ?: string;
+  textBefore ?: string;
+  onCLoseButtonCLick ?: ()=> void
 }
 interface State {
   seconds: number;
@@ -43,45 +47,43 @@ class StickyTimer extends Component<Props, State> {
     closeModal: this.props.modalIsOpen
   };
 
-  componentDidMount() {
-    myTimer = setInterval(() => {
-      this.setState({ seconds: this.state.seconds - 1 });
-    }, 1000);
-  }
+  // componentDidMount() {
+  //   myTimer = setInterval(() => {
+  //     this.setState({ seconds: this.state.seconds - 1 });
+  //   }, 1000);
+  // }
 
-  componentDidUpdate(prevProps: any, prevState: any) {
-    if (this.state.seconds !== prevState.seconds && this.state.seconds === 0) {
-      this.setState({ closeModal: false }, () => {
-        clearInterval(myTimer);
-      });
-    }
+  // componentDidUpdate(prevProps: any, prevState: any) {
+  //   if (this.state.seconds !== prevState.seconds && this.state.seconds === 0) {
+  //     this.setState({ closeModal: false }, () => {
+  //       clearInterval(myTimer);
+  //     });
+  //   }
 
-    if (this.props.modalIsOpen !== prevProps.modalIsOpen) {
-      this.setState({ closeModal: this.props.modalIsOpen });
-    }
-  }
+  //   if (this.props.modalIsOpen !== prevProps.modalIsOpen) {
+  //     this.setState({ closeModal: this.props.modalIsOpen });
+  //   }
+  // }
 
   render() {
-    const { text, testId, expirationText } = this.props;
-    const { seconds, closeModal } = this.state;
+    const { text, testId,textBefore, expirationTime, modalIsOpen, closeTimeoutMS, contentLabel, onCLoseButtonCLick } = this.props;
+
 
     return (
       <>
         <Modal
-          isOpen={closeModal}
-          closeTimeoutMS={1000}
+          isOpen={modalIsOpen}
+          closeTimeoutMS={closeTimeoutMS}
           style={customStyles}
-          contentLabel="Example Modal"
+          contentLabel= {contentLabel ? contentLabel : "Example Modal"}
         >
           <div id={testId}>
             <div className={classes.StickyTimerTopDiv}>
               <img src={LocalImages.common.amSecure} alt="amSecure" />
               <div className={classes.StickyTimerExp}>
-                <R_17_BLACK>Transaction will expire in</R_17_BLACK>
+                <R_17_BLACK> {textBefore ? textBefore : "Transaction will expire in"}</R_17_BLACK>
                 <B_17_BLACK className={classes.StickyTimerExpTime}>
-                  {seconds}
-                  {"  "}
-                  {expirationText}
+                {expirationTime}
                 </B_17_BLACK>
                 <div
                   style={{
@@ -89,7 +91,7 @@ class StickyTimer extends Component<Props, State> {
                     cursor: "pointer"
                   }}
                   onClick={() => {
-                    this.setState({ closeModal: false });
+                    onCLoseButtonCLick()
                   }}
                 >
                   <Icon icon="Fail" size={25} />
