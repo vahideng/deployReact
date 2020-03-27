@@ -9,7 +9,7 @@ interface Props {
   icon?: string;
   iconColor?: string;
   iconSize?: number;
-  image?: string;
+  image?: any;
   imageStyle?: CSSProperties;
   testId?: string;
   title: string;
