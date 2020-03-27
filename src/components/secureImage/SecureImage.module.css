@@ -17,15 +17,28 @@
   -o-object-fit: inherit;
      object-fit: inherit;
   background-size: 22rem 12rem;
-  -webkit-filter: blur(1.5px);
-          filter: blur(1.5px);
+}
+
+.SecureImageBGBlur {
+  width: 21rem;
+  height: 10.2rem;
+  border-radius: 1rem;
+  -o-object-fit: inherit;
+     object-fit: inherit;
+  background-size: 22rem 12rem;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+  -webkit-transform: translate(1%, -101%);
+          transform: translate(1%, -101%);
 }
 
 .SecureImageImg {
   position: absolute;
-  top: 0.1rem;
+  top: 1px;
   right: 5rem;
   width: 10.62rem;
-  height: 10.4rem;
+  height: 10.43rem;
   z-index: 10;
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
 }

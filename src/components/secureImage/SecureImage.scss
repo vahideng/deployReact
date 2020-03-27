@@ -16,13 +16,23 @@
   border-radius: 1rem;
   object-fit: inherit;
   background-size: 22rem 12rem;
-  filter: blur(1.5px);
+  // filter: blur(3px);
+}
+.SecureImageBGBlur {
+  width: 21rem;
+  height: 10.2rem;
+  border-radius: 1rem;
+  object-fit: inherit;
+  background-size: 22rem 12rem;
+  filter: blur(3px);
+  transform: translate(1%, -101%);
 }
 .SecureImageImg {
   position: absolute;
-  top: 0.1rem;
+  top: 1px;
   right: 5rem;
   width: 10.62rem;
-  height: 10.4rem;
+  height: 10.43rem;
   z-index: 10;
+  filter: blur(0px);
 }

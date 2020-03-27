@@ -16,7 +16,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 55.25rem;
+  width: 52.75rem;
 }
 
 .TacButton {
@@ -27,10 +27,11 @@
 }
 
 .TacCrossButton {
+  position: absolute;
   height: 1.5rem;
   cursor: pointer;
-  margin-top: -1.5rem;
-  margin-left: 2rem;
+  right: -5rem;
+  top: -0.8rem;
 }
 
 .TacInActiveIconText {

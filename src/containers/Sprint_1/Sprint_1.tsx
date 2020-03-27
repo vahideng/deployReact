@@ -1986,7 +1986,7 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
         <Title>secureImage</Title>
-        <>
+        <div style={{ display: "flex" }}>
           <SecureImage
             testId={"testId"}
             label="Hi Adam3011, is this your security image?"
@@ -1994,7 +1994,28 @@ class Sprint1 extends Component<Props, State> {
               "https://images.unsplash.com/photo-1520167112707-56e25f2d7d6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
             }
           />
-        </>
+          <SecureImage
+            testId={"testId"}
+            label="Hi Adam3011, is this your security image?"
+            image={
+              "https://images.unsplash.com/photo-1548848221-0c2e497ed557?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+            }
+          />
+          <SecureImage
+            testId={"testId"}
+            label="Hi Adam3011, is this your security image?"
+            image={
+              "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+            }
+          />
+          <SecureImage
+            testId={"testId"}
+            label="Hi Adam3011, is this your security image?"
+            image={
+              "https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80"
+            }
+          />
+        </div>
         <Title>Tags</Title>
         <Tag
           testId={"testId"}
