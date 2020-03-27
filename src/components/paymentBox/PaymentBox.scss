@@ -1,0 +1,21 @@
+.Container {
+  margin: 0 !important;
+  background: #ffffff;
+  border-radius: 1.25rem;
+  padding: 0 !important;
+  border: 0.5px solid #dedede;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.129726),
+    0px 4px 7px rgba(0, 0, 0, 0.11574);
+}
+
+.Header {
+  padding: 0rem 2rem;
+  margin: 0 !important;
+  background: #474747;
+  height: 3.1875rem;
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+}
