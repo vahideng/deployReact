@@ -100,7 +100,7 @@ class SearchBar extends Component<Props, State> {
 
           <input
             className={classes.InputField}
-            placeholder={placeholder}
+            placeholder={!this.state.inputFocused && placeholder}
             value={value}
             autoFocus={!!autoFocus ? autoFocus : false}
             onChange={event => {

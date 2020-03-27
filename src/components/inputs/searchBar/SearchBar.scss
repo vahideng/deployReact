@@ -1,14 +1,15 @@
 .SearchBar {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 .SearchBarContainer {
   display: flex;
   align-items: center;
   position: relative;
   height: 2.625rem;
-  max-width: 53.12rem;
-  min-width: 32.31rem;
+  // max-width: 53.12rem;
+  // min-width: 32.31rem;
   border-radius: 25px;
   border: 1px solid #dedede;
   overflow: hidden;
