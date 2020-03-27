@@ -17,11 +17,11 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
   min-height: 6rem;
   position: relative;
   border-right: 0.37rem solid transparent;
   min-width: 6rem;
+  max-width: 14.68rem;
 }
 
 .WrapperContent {

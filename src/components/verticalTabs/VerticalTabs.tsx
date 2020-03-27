@@ -66,7 +66,6 @@ const VerticalTabs: React.FC<Props> = ({
                               }
                         }
                       />
-                      {console.log(item.length, "len")}
                     </Nav.Link>
                   </Nav.Item>
                 );
