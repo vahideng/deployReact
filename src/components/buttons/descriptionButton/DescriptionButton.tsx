@@ -35,6 +35,7 @@ const DescriptionButton: React.FC<Props> = ({
             <div className={classes.DescriptionButtonAmount}>
               {!!item.icon && (
                 <Icon
+                  style={{ marginRight: 11 }}
                   icon={!!item.icon.name ? item.icon.name : "Alert"}
                   size={20}
                   color={!!item.icon.color ? item.icon.color : "#ff2626"}

@@ -2386,7 +2386,7 @@ class Sprint1 extends Component<Props, State> {
           ]}
         />
         <Title>DescriptionButton</Title>
-        <CenteredDiv style={{ backgroundColor: "#f5f5f5" }}>
+        <div style={{ backgroundColor: "#f5f5f5" }}>
           <DescriptionButton
             testId={"testId"}
             onButtonClick={(item, index) => {
@@ -2398,11 +2398,11 @@ class Sprint1 extends Component<Props, State> {
               {
                 title: "Pay Unpaid Statement Balance",
                 amount: "RM 2,000.00",
-                icon: { name: "Alert", color: "#ff2626" }
+                icon: { name: "system-alert", color: "#ff2626" }
               }
             ]}
           />
-        </CenteredDiv>
+        </div>
         <Title>IconButtons</Title>
         <IconButtons
           testId={"testId"}
