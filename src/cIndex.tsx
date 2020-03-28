@@ -71,9 +71,6 @@ import CalendarBox from "./components/inputs/calendarBox/CalendarBox";
 import TextWithDetails from "./components/infographic/textWithDetails/TextWithDetails";
 import ArrayCheckBox from "./components/arrayCheckBox/ArrayCheckBox";
 import Line from "./components/line/Line";
-import PayBillList from "./components/PayBillList/PayBillList";
-import PaymentBox from "./components/paymentBox/PaymentBox";
-import TextWithIcon from "./components/infographic/textWithIcon/TextWithIcon";
 
 /// exports
 export {
@@ -83,9 +80,6 @@ export {
   TextWithDetails,
   ArrayCheckBox,
   Line,
-  PayBillList,
-  PaymentBox,
-  TextWithIcon,
   /// below are sprint-2 components
   CalendarBox,
   Box_V2,
