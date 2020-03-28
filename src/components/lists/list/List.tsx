@@ -2,8 +2,16 @@ import React from "react";
 import classes from "./List.module.css";
 import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../../assets/typography";
+import Line from "src/components/line/Line";
+import { Row } from "react-bootstrap";
 
-const { B_18_BLACK, R_13_GREY444, B_15_BLACK, B_24_BLACK } = Paragraphs;
+const {
+  B_18_BLACK,
+  R_13_GREY444,
+  B_15_BLACK,
+  B_24_BLACK,
+  B_14_BLACK
+} = Paragraphs;
 interface Props {
   testId?: string;
   header?: {
@@ -16,6 +24,11 @@ interface Props {
     rightLabel?: string;
     approved?: boolean;
     details?: string[];
+    amount?: string;
+    status?: {
+      content: string;
+      color: string;
+    };
   }[];
 }
 
@@ -50,34 +63,49 @@ const List: React.FC<Props> = ({ header, testId, list }) => {
         list.map((item, index) => {
           return (
             <div
-              key={index}
-              className={classes.ListItemsDiv}
+              className={classes.ListItemsContainer}
               id={`${testId}-${index}`}
+              key={index}
             >
-              <R_13_GREY444>{item.leftLabel}</R_13_GREY444>
-              <div>
-                <B_15_BLACK className={classes.ListTextRight}>
-                  {item.approved && (
-                    <span className={classes.ListTextRightIcon}>
-                      <Icon icon="accent-tick" size={13} />
-                    </span>
+              <Line style={{ marginTop: "1rem", marginBottom: "1rem" }} />
+              <div className={classes.ListItemsDiv}>
+                <R_13_GREY444>{item.leftLabel}</R_13_GREY444>
+                <div className={classes.ListItemRightContent}>
+                  <Row className={classes.ItemTitleContainer}>
+                    {item.approved && (
+                      <span className={classes.ListTextRightIcon}>
+                        <Icon icon="accent-tick" size={13} />
+                      </span>
+                    )}
+                    <B_15_BLACK>{item.rightLabel}</B_15_BLACK>
+                  </Row>
+
+                  {!!item.details &&
+                    item.details.map((detail, index) => {
+                      return (
+                        <R_13_GREY444
+                          className={classes.ListTextRight}
+                          key={index}
+                          id={`${testId}-0-${index}`}
+                        >
+                          {detail}
+                        </R_13_GREY444>
+                      );
+                    })}
+                  {item.amount === undefined ? null : (
+                    <Row className={classes.AmountContainer}>
+                      <R_13_GREY444>Amount:</R_13_GREY444>
+                      <B_14_BLACK className={classes.Amount}>
+                        {item.amount}
+                      </B_14_BLACK>
+                    </Row>
                   )}
-
-                  {item.rightLabel}
-                </B_15_BLACK>
-
-                {!!item.details &&
-                  item.details.map((detail, index) => {
-                    return (
-                      <R_13_GREY444
-                        className={classes.ListTextRight}
-                        key={index}
-                        id={`${testId}-0-${index}`}
-                      >
-                        {detail}
-                      </R_13_GREY444>
-                    );
-                  })}
+                  {item.status === undefined ? null : (
+                    <R_13_GREY444 style={{ color: item.status.color }}>
+                      {item.status.content}
+                    </R_13_GREY444>
+                  )}
+                </div>
               </div>
             </div>
           );
