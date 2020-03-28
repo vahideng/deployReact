@@ -121,16 +121,6 @@ const SB_15_BLACK = styled.p`
   font-weight: 600;
   line-height: 20px;
 `;
-const SB_13_BLACK = styled.p`
-  font-family: "Nunito Sans";
-  margin: 0;
-  color: #000000;
-  font-family: Nunito Sans;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 0.8125rem;
-  line-height: 18px;
-`;
 
 const B_15_BLACK = styled.p`
   font-family: "Nunito Sans";
