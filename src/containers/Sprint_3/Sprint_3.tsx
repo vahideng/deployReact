@@ -17,7 +17,7 @@ import ArrayCheckBox from "src/components/arrayCheckBox/ArrayCheckBox";
 import LabelToolTip from "src/components/labelToolTip/LabelToolTip";
 import PayBillList from "src/components/PayBillList/PayBillList";
 import PaymentBox from "src/components/paymentBox/PaymentBox";
-import TextWithIcon from "src/components/infographic/textWithIcon/TextWithIcon";
+import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
 import images from "src/assets";
 import List from "src/components/lists/list/List";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
@@ -494,7 +494,7 @@ const Sprint3: React.FC<Props> = () => {
 
         <br />
       </div>
-      <Title>Text With Icon</Title>
+      <Title>TextWithIcon (using LabeledIcon component)</Title>
       <div
         style={{
           display: "flex",
@@ -502,7 +502,11 @@ const Sprint3: React.FC<Props> = () => {
           padding: 20
         }}
       >
-        <TextWithIcon title="Powered By" image={images.common.JomPay1} />
+        <LabeledIcon
+          leftLabel="Powered by"
+          leftLabelStyle={{ fontWeight: 700 }}
+          imageIcon={{ src: images.common.JomPay1, size: 40 }}
+        />
       </div>
     </div>
   );
