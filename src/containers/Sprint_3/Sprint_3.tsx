@@ -16,6 +16,9 @@ import TextWithDetails from "src/components/infographic/textWithDetails/TextWith
 import ArrayCheckBox from "src/components/arrayCheckBox/ArrayCheckBox";
 import LabelToolTip from "src/components/labelToolTip/LabelToolTip";
 import PayBillList from "src/components/PayBillList/PayBillList";
+import PaymentBox from "src/components/paymentBox/PaymentBox";
+import TextWithIcon from "src/components/infographic/textWithIcon/TextWithIcon";
+import images from "src/assets";
 // import { colors } from "react-select/src/theme";
 
 const {
@@ -451,6 +454,37 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         />
         <br />
+      </div>
+      <Title>PayBillList and Line</Title>
+
+      <div
+        style={{
+          margin: "0 auto",
+          padding: 4,
+          width: "50%"
+        }}
+      >
+        <br />
+
+        <PaymentBox
+          leftHeader={{ title: "Biller 1 of 3" }}
+          rightHeader={{ title: "Remove", onClick: () => alert("Remove") }}
+        >
+          <div style={{ padding: 40 }}>
+            <TextWithDetails title="Insurance" content={["Ref No.: 123456"]} />
+          </div>
+        </PaymentBox>
+        <br />
+      </div>
+      <Title>Text With Icon</Title>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          padding: 20
+        }}
+      >
+        <TextWithIcon title="Powered By" image={images.common.JomPay1} />
       </div>
     </div>
   );
