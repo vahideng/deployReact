@@ -16,8 +16,10 @@ import TextWithDetails from "src/components/infographic/textWithDetails/TextWith
 import ArrayCheckBox from "src/components/arrayCheckBox/ArrayCheckBox";
 import LabelToolTip from "src/components/labelToolTip/LabelToolTip";
 import PayBillList from "src/components/PayBillList/PayBillList";
+import PaymentBox from "src/components/paymentBox/PaymentBox";
 import TextWithIcon from "src/components/infographic/textWithIcon/TextWithIcon";
 import images from "src/assets";
+import List from "src/components/lists/list/List";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
 // import { colors } from "react-select/src/theme";
 
@@ -418,7 +420,9 @@ const Sprint3: React.FC<Props> = () => {
           }
         />
       </div>
-      <Title>PayBillList and Line</Title>
+      <Title>
+        PayBillList using (FormContainer and List component)and Line
+      </Title>
       <div
         style={{
           margin: "0 auto",
@@ -426,34 +430,44 @@ const Sprint3: React.FC<Props> = () => {
           width: "50%"
         }}
       >
-        <br />
-        <PayBillList
-          title="Review & Confirm"
-          content={[
-            {
-              label: "To",
-              title: "Kojadi",
-              titleIcon: "accent-tick",
-              subtitle: ["Sub1", "Sub2"],
-              amount: "RM 500"
-            },
-            {
-              label: "Date",
-              title: "Pay Now",
-              subtitle: ["Sub1", "Sub2"]
-            },
-            {
-              label: "From",
-              title: "Savings",
-              subtitle: ["Sub1", "Sub2"],
-              status: {
-                content: "UNSUCCESSFUL",
-                color: "red"
-              }
-            }
-          ]}
+        <FormContainer
+          children={
+            <List
+              header={{
+                icon: {
+                  name: "LOGO",
+                  color: "#ff2626",
+                  iconText: "Review & Confirm"
+                }
+              }}
+              list={[
+                {
+                  leftLabel: "To",
+                  rightLabel: "Saving Account A",
+                  approved: true,
+                  details: ["8881019596535 | AmBank"],
+                  amount: "RM 500"
+                },
+
+                {
+                  leftLabel: "Date",
+                  rightLabel: "Transfer Now",
+                  details: ["Today, 5 January 2019"]
+                },
+
+                {
+                  leftLabel: "From",
+                  rightLabel: "Savings Account",
+                  details: ["2998202013", "Available Balance: RM 10,301.50"],
+                  status: {
+                    content: "UNSUCCESSFUL",
+                    color: "red"
+                  }
+                }
+              ]}
+            />
+          }
         />
-        <br />
       </div>
       <Title>PaymentBox (Using FormContainer component)</Title>
 
