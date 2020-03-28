@@ -77,23 +77,25 @@ const ArrayCheckBox: React.FC<Props> = ({
             );
           })}
       </div>
-      <Row className={classes.Pagination}>
-        <div
-          className={`${classes.PaginationButton} ${prevClass}`}
-          onClick={handlePrevPage}
-        >
-          <Icon color="#ffffff" icon="left" size={22} />
-        </div>
-        <R_13_GREY444
-          style={{ marginLeft: "1rem", marginRight: "1rem" }}
-        >{`${page + 1} of ${numberOfPage}`}</R_13_GREY444>
-        <div
-          className={`${classes.PaginationButton} ${nextClass}`}
-          onClick={handleNextPage}
-        >
-          <Icon color="#ffffff" icon="Right1" size={22} />
-        </div>
-      </Row>
+      {data.length <= 6 ? null : (
+        <Row className={classes.Pagination}>
+          <div
+            className={`${classes.PaginationButton} ${prevClass}`}
+            onClick={handlePrevPage}
+          >
+            <Icon color="#ffffff" icon="left" size={22} />
+          </div>
+          <R_13_GREY444
+            style={{ marginLeft: "1rem", marginRight: "1rem" }}
+          >{`${page + 1} of ${numberOfPage}`}</R_13_GREY444>
+          <div
+            className={`${classes.PaginationButton} ${nextClass}`}
+            onClick={handleNextPage}
+          >
+            <Icon color="#ffffff" icon="Right1" size={22} />
+          </div>
+        </Row>
+      )}
     </Col>
   );
 };
