@@ -2,6 +2,7 @@
   display: flex !important;
   flex-direction: column !important;
   cursor: pointer;
+  width: 100%;
 }
 
 .ImageContainer {
@@ -62,6 +63,7 @@
 }
 
 .Content {
+  word-break: break-all;
   margin: 0 !important;
   padding: 0 !important;
   color: #444444 !important;

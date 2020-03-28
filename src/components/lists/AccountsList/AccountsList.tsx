@@ -97,7 +97,10 @@ const AccountsList: React.FC<Props> = ({
                           marginLeft: 16,
                           color: item.statusLabelColor
                             ? item.statusLabelColor
-                            : "#000"
+                            : "#000",
+                          flex: 1,
+                          textAlign: "right",
+                          marginRight: 16
                         }}
                       >
                         {item.statusLabel}
@@ -155,24 +158,26 @@ const AccountsList: React.FC<Props> = ({
                     <B_20_BLACK style={{ letterSpacing: 0.4 }}>
                       {item.amount}
                     </B_20_BLACK>
-
-                    {item.default && (
-                      <R_13_BLACK style={{ marginLeft: 24 }}>
-                        {item.defaultLabel}
-                      </R_13_BLACK>
-                    )}
-                    {item.statusLabel && (
-                      <R_13_BLACK
-                        style={{
-                          marginLeft: 16,
-                          color: item.statusLabelColor
-                            ? item.statusLabelColor
-                            : "#000"
-                        }}
-                      >
-                        {item.statusLabel}
-                      </R_13_BLACK>
-                    )}
+                      {item.default && (
+                        <R_13_BLACK style={{ marginLeft: 24 }}>
+                          {item.defaultLabel}
+                        </R_13_BLACK>
+                      )}
+                      {item.statusLabel && (
+                        <R_13_BLACK
+                          style={{
+                            marginLeft: 16,
+                            color: item.statusLabelColor
+                              ? item.statusLabelColor
+                              : "#000",
+                            flex: 1,
+                            textAlign: "right",
+                            marginRight: 16
+                          }}
+                        >
+                          {item.statusLabel}
+                        </R_13_BLACK>
+                      )}
                   </div>
                   {!!item.convertedAmount && (
                     <SB_15_GREY393>{`(${item.convertedAmount})*`}</SB_15_GREY393>

@@ -7,13 +7,14 @@
           justify-content: space-between;
   padding: 0;
   margin: 0;
-  margin-bottom: 1.5rem;
   border: none;
+  border-bottom: 1px solid #dedede;
 }
 
 .TabsTab {
   padding: 0 !important;
   list-style-type: none;
+  height: 2.5rem;
   cursor: pointer;
 }
 
@@ -24,6 +25,6 @@
 .TabsSelected {
   background-color: transparent;
   border: 0 !important;
-  border-bottom: 2px solid #ff2626 !important;
+  border-bottom: 2px solid #fd8585 !important;
   font-weight: 700 !important;
 }

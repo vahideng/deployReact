@@ -4,6 +4,7 @@ interface Props {
   testId?: string;
   modalChildren?: ReactNode;
   modalIsOpen: boolean;
+  onRequestClose ?: ()=> void
 }
 
 const customStyles = {
@@ -26,14 +27,21 @@ const customStyles = {
 const BottomModal: React.FC<Props> = ({
   modalIsOpen,
   modalChildren,
-  testId
+  testId,
+  onRequestClose
 }) => {
   const [show, setShow] = useState(modalIsOpen);
   useEffect(() => {
     setShow(modalIsOpen);
   }, [modalIsOpen]);
   const handleCloseModal = () => {
-    setShow(false);
+
+    if(onRequestClose){
+      onRequestClose()
+    }else{
+      setShow(false);
+    }
+    
   };
   return (
     <div id={testId}>

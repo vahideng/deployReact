@@ -25,7 +25,9 @@ import ArticleDetails from "src/components/articleDetails/ArticleDetails";
 import InputField from "src/components/inputs/inputFields/InputFields";
 import Box_V2 from "src/components/wrappers/box_V2/Box_V2";
 import CalendarBox from "src/components/inputs/calendarBox/CalendarBox";
+import images from "src/assets";
 import moment from "moment";
+
 
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -119,6 +121,7 @@ const Sprint2: React.FC<Props> = () => {
       </div>
 
       <BottomModal
+      onRequestClose ={ ()=> alert("close")}
         testId={"testId"}
         modalIsOpen={settingModal}
         modalChildren={
@@ -133,6 +136,7 @@ const Sprint2: React.FC<Props> = () => {
       <Title>SettingModalCenter</Title>
 
       <SettingModalCenter
+      onRequestClose ={ ()=> alert("close")}
         testId={"testId"}
         modalIsOpen={settingModalCenter}
         modalChildren={
@@ -312,8 +316,8 @@ const Sprint2: React.FC<Props> = () => {
         }}
         buttonText="Learn More"
         content="Total of RM2.5 Million to be won. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab."
-        label="Hero Promotion"
-        leftImage="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1390&q=80"
+        label="Hero Promotion" 
+        leftImage= {images.common.masterCard}
         showButton={true}
         testId="testId"
         title="Grand Prize RM 1 Million Cash"
@@ -452,24 +456,29 @@ const Sprint2: React.FC<Props> = () => {
           // alignItems: "center"
         }}
       >
-        <div style={{ marginRight: "23px" }}>
+        <div style={{ width:"300PX", marginRight:"10px" }}>
           <FirstBanner
+          onClick={()=>alert("clicked")}
+            
             content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
             image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
             tag="tempor incidunt"
             title="Why pick between yield and liquidity? "
           />
         </div>
-        <div style={{ marginRight: "23px" }}>
+        <div  style={{ width:"300PX" , marginRight:"10px"}}>
           <FirstBanner
-            content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
+           onClick={()=>alert("clicked")}
+            content="Consecsadsadsadbdsabkdbaskbdkasbkbadskbdkasbksabbasdasdasdasdadsavasvdusabvhubuybguybgtetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
             image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
             tag="tempor incidunt"
             title="Why pick between yield and liquidity? "
           />
         </div>
-        <div>
+         <div  style={{ width:"300PX", marginRight:"10px" }}>
+      
           <FirstBanner
+            onClick={()=>alert("clicked")}
             content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
             image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
             tag="tempor incidunt"
@@ -490,19 +499,18 @@ const Sprint2: React.FC<Props> = () => {
             {
               onClick: () => alert("click"),
               content:
-                "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+                "Consectetur Consectetur ConsecteturConsectetur Consectetur  Consectetur  Consectetur Consectetur Consectetur Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
               video:
                 "https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80",
-              title:
-                "Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
+                
+                title:"Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
             },
             {
               content:
                 "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-              image:
-                "https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80",
-              title:
-                "Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
+               image: images.common.masterCard,
+               title:
+                "em ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloLorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
             },
             {
               content:

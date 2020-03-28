@@ -3,7 +3,9 @@
 }
 
 .ContainerWhole {
-  max-width: 615px;
+  width: 100%;
+  border: 0px !important;
+  border-radius: 0px;
 }
 
 .CardHeader {
@@ -15,23 +17,28 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-weight: bold;
   font-size: 15px;
   line-height: 20px;
   color: #000000;
-  padding-left: 15px;
+  padding-left: 24px;
+  border-bottom: 0px;
 }
 
 .HeaderInside {
-  padding-left: 15px;
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
   line-height: 18px;
-  padding-right: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 19px;
+  padding-bottom: 19px;
+  color: #444444;
+  margin: 0px;
 }
 
 .Content {
@@ -42,17 +49,17 @@
   padding-left: 10px;
 }
 
+.FlagText {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
 .CardBodyContent {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 2px 6px 0px 15px;
+  padding: 0px 24px 0px 24px;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #f7f7f7;
 }
 
 .LeftBody {
@@ -65,13 +72,25 @@
   color: #696969;
 }
 
+.RowContainer {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0px;
+  padding-bottom: 16px;
+}
+
 .RightBody {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-align: right;
   font-weight: bold;
   font-size: 13px;

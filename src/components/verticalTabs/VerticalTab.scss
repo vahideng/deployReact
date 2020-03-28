@@ -2,7 +2,6 @@
 
 .Container {
   width: 100%;
-
   border-top-left-radius: 1.25rem;
   border-top-left-radius: 1.25rem;
 }
@@ -27,6 +26,7 @@
   & a {
     background-color: transparent !important;
     padding: 0;
+    outline: none;
   }
 }
 .RightChildBG {

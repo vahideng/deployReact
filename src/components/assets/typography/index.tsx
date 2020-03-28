@@ -7,6 +7,7 @@ const R_11_BLACK = styled.p`
   font-weight: 400;
 `;
 const R_11_WHITE = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #ffffff;
   font-size: 0.68rem;
@@ -19,54 +20,63 @@ const R_12_WHITE = styled.p`
   font-weight: 400;
 `;
 const B_15_WHITE = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #ffffff;
   font-size: 0.93rem;
   font-weight: 700;
 `;
 const B_15_ORANGE = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #ffa463;
   font-size: 0.93rem;
   font-weight: 700;
 `;
 const SB_16_WHITE = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #ffffff;
   font-weight: 600;
   font-size: 1rem;
 `;
 const B_17_WHITE = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #ffffff;
   font-size: 1.06rem;
   font-weight: 700;
 `;
 const B_32_WHITE = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #ffffff;
   font-size: 2rem;
   font-weight: 700;
 `;
 const B_14_WHITE = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #ffffff;
   font-size: 0.87rem;
   font-weight: 700;
 `;
 const XB_14_WHITE = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #ffffff;
   font-size: 0.87rem;
   font-weight: 800;
 `;
 const B_11_WHITE = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #ffffff;
   font-size: 0.68rem;
   font-weight: 700;
 `;
 const SB_11_WHITE = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #ffffff;
   font-size: 0.68rem;
@@ -74,80 +84,103 @@ const SB_11_WHITE = styled.p`
 `;
 
 const R_13_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 0.82rem;
   font-weight: 400;
 `;
 const B_13_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 0.82rem;
   font-weight: 700;
 `;
 const B_13_WHITE = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #ffffff;
   font-size: 0.82rem;
   font-weight: 700;
 `;
 const R_14_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 0.87rem;
   font-weight: 400;
 `;
 const B_14_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 0.87rem;
   font-weight: 700;
 `;
 const R_15_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 0.93rem;
   font-weight: 400;
 `;
 const SB_15_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 0.93rem;
   font-weight: 600;
   line-height: 20px;
 `;
+const SB_13_BLACK = styled.p`
+  font-family: "Nunito Sans";
+  margin: 0;
+  color: #000000;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  line-height: 18px;
+`;
 
 const B_15_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 0.93rem;
   font-weight: 700;
 `;
 const B_16_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 1rem;
   font-weight: 700;
 `;
 const B_17_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 1.06rem;
   font-weight: 700;
 `;
 const R_17_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 1.06rem;
   font-weight: 400;
 `;
 const B_18_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 1.12rem;
   font-weight: 700;
 `;
 const R_20_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 1.25rem;
@@ -155,6 +188,7 @@ const R_20_BLACK = styled.p`
 `;
 
 const B_24_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 1.5rem;
@@ -162,6 +196,7 @@ const B_24_BLACK = styled.p`
 `;
 
 const B_32_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 2rem;
@@ -169,6 +204,7 @@ const B_32_BLACK = styled.p`
 `;
 
 const B_48_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 3rem;
@@ -179,73 +215,95 @@ const B_48_BLACK = styled.p`
   }
 `;
 
+const SB_13_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  line-height: 18px;
+`;
+
 const SB_11_GREY444 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #444444;
   font-weight: 600;
   font-size: 0.68rem;
 `;
 const R_13_GREY444 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #444444;
   font-weight: 400;
   font-size: 0.81rem;
 `;
 const R_15_GREY444 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #444444;
   font-weight: 400;
   font-size: 0.93rem;
 `;
 const R_18_GREY444 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #444444;
   font-weight: 600;
   font-size: 1.125rem;
 `;
 const SB_16_GREY444 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #444444;
   font-weight: 600;
   font-size: 1rem;
 `;
 const B_13_GREY969 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #696969;
   font-weight: 700;
   font-size: 0.81rem;
 `;
 const B_15_GREY969 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #696969;
   font-weight: 700;
   font-size: 0.93rem;
 `;
 const B_17_GREY969 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #696969;
   font-weight: 700;
   font-size: 1.06rem;
 `;
 const R_17_GREY969 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #696969;
   font-weight: 400;
   font-size: 1.06rem;
 `;
 const B_11_GREY393 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #939393;
   font-weight: 700;
   font-size: 0.68rem;
 `;
 const B_13_GREY393 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #939393;
   font-weight: 700;
   font-size: 0.81rem;
 `;
 const SB_15_GREY393 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #939393;
   font-size: 0.93rem;
@@ -253,24 +311,28 @@ const SB_15_GREY393 = styled.p`
 `;
 
 const B_13_ORANGE_463 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #ffa463;
   font-weight: 700;
   font-size: 0.81rem;
 `;
 const B_17_ORANGE_463 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #ffa463;
   font-weight: 700;
   font-size: 1.06rem;
 `;
 const B_15_ORANGE_463 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #ffa463;
   font-weight: 700;
   font-size: 0.93rem;
 `;
 const B_13_RED_626 = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #ff2626;
   font-weight: 700;
@@ -278,6 +340,7 @@ const B_13_RED_626 = styled.p`
 `;
 
 const B_20_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 1.25rem;
@@ -285,12 +348,14 @@ const B_20_BLACK = styled.p`
 `;
 
 const SB_32_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-weight: 600;
   font-size: 2rem;
 `;
 const SB_22_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-weight: 600;
@@ -298,6 +363,7 @@ const SB_22_BLACK = styled.p`
 `;
 
 const SB_17_BLACK = styled.p`
+  font-family: "Nunito Sans";
   margin: 0;
   color: #000000;
   font-size: 1.06rem;
@@ -353,5 +419,6 @@ export default {
   SB_22_BLACK,
   SB_17_BLACK,
   B_15_ORANGE_463,
-  R_12_WHITE
+  R_12_WHITE,
+  SB_13_BLACK
 };

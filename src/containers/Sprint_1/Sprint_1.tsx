@@ -211,23 +211,32 @@ class Sprint1 extends Component<Props, State> {
           }
         />
         <Title>TransactionList</Title>
-        <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
+        <CenteredDiv
+          style={{ backgroundColor: "white", paddingBottom: "20px" }}
+        >
           <TransactionList
             testId={"testId"}
             data={[
               {
+                flag: {
+                  color: "red",
+                  text: "Successful"
+                },
                 leftLabel: "DoItNow tr DF",
                 middle: {
                   title: "this is sample long data fot testing purposes only",
                   content: [
                     {
-                      leftLabel:
-                        "this is sample long data fot testing purposes",
-                      rightLabel: "16 Augest 1998"
+                      leftLabel: "firstLeft",
+                      rightLabel: "firstRight"
                     },
                     {
-                      leftLabel: "DoItNow tr DF",
-                      rightLabel: "12 March 2012"
+                      leftLabel: "secondtLeft",
+                      rightLabel: "secondtRight"
+                    },
+                    {
+                      leftLabel: "thirdLeft",
+                      rightLabel: "thirdRight"
                     }
                   ]
                 },
@@ -235,10 +244,14 @@ class Sprint1 extends Component<Props, State> {
                   iconName: "Plus",
                   iconColor: "#36A03E",
                   prefix: "RM",
-                  content: "18.00000000000"
+                  content: "18.00000000"
                 }
               },
               {
+                flag: {
+                  color: "green",
+                  text: "Successful"
+                },
                 leftLabel: "doLaterNow tr DF",
                 middle: {
                   title: "this is sample long data fot testing purposes only",
@@ -497,7 +510,9 @@ class Sprint1 extends Component<Props, State> {
             testId={"testId"}
             list={[
               {
-                accountName: "TRUE Savings AmBank Account-i visa card classic",
+                accountName:
+                  "TRUE Savings AmBank Account-i Australia Singapore and alot",
+                accountNickName: "Visa Card Classic",
                 accountNumber: "123456890",
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
@@ -654,31 +669,13 @@ class Sprint1 extends Component<Props, State> {
           />
         </div>
         <Title>FloatingButton</Title>
-        <CenteredDiv>
-          <div
-            style={{
-              backgroundColor: "#f1f1f1",
-              padding: "1rem",
-              display: "inline-block"
-            }}
-          >
+        <div>
+          <div style={{ position: "fixed", bottom: 15, right: "15%" }}>
             <FloatingButton />
           </div>
 
-          <div
-            style={{
-              backgroundColor: "black",
-              padding: "1rem",
-              display: "inline-block"
-            }}
-          >
-            <FloatingButton
-              darkButton={true}
-              testId={"testId"}
-              onButtonClick={() => alert("onButtonClick")}
-            />
-          </div>
-        </CenteredDiv>
+          <FloatingButton darkButton={true} testId={"testId"} />
+        </div>
 
         <Title>List</Title>
 
@@ -1101,6 +1098,10 @@ class Sprint1 extends Component<Props, State> {
         {/* {console.log(this.state.StickyModalOpen)} */}
         <StickyTimer
           testId={"testId"}
+          closeTimeoutMS={1000}
+          contentLabel="example"
+          textBefore="Transaction will expire in"
+          onCLoseButtonCLick={() => alert("clicked")}
           modalIsOpen={StickyModalOpen}
           expirationTime={20}
           expirationText="Seconds"
@@ -1145,7 +1146,7 @@ class Sprint1 extends Component<Props, State> {
                   <div
                     style={{
                       display: "flex",
-                      // paddingTop: 30,
+                      padding: 30,
                       flexDirection: "column"
                     }}
                   >
@@ -1157,7 +1158,8 @@ class Sprint1 extends Component<Props, State> {
                     <TileListView
                       list={[
                         {
-                          accountName: "Conversion Account",
+                          accountName: "Conversion",
+                          accountNickName: "Term Cov",
                           accountNumber: "20717524",
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
@@ -1659,10 +1661,9 @@ class Sprint1 extends Component<Props, State> {
                         alert(index);
                       }}
                     />
-                    <div style={{ width: 700, padding: "2rem" }}>
+                    <div style={{ width: 700 }}>
                       <AMTabs
-                       titlesStyle={{ padding: "0 4rem" }}
-
+                        titlesStyle={{ padding: "2rem 4rem 0 4rem" }}
                         defaultIndex={0}
                         titles={[
                           "Transactions",
@@ -1671,20 +1672,23 @@ class Sprint1 extends Component<Props, State> {
                           "Contact Us"
                         ]}
                         contents={[
-                          <SearchBar
-                            testId={"testId"}
-                            clearClickHandler={() => alert("clear clicked")}
-                            searchIconClickHandler={() =>
-                              alert("Search Icon clicked")
-                            }
-                            placeholder={"Search"}
-                            value={this.state.inputValue}
-                            handleChange={event => {
-                              this.setState({
-                                inputValue: event.target.value
-                              });
-                            }}
-                          />,
+                          <div style={{ padding: "2rem" }}>
+                            <SearchBar
+                              testId={"testId"}
+                              clearClickHandler={() => alert("clear clicked")}
+                              searchIconClickHandler={() =>
+                                alert("Search Icon clicked")
+                              }
+                              placeholder={"Search"}
+                              value={this.state.inputValue}
+                              handleChange={event => {
+                                this.setState({
+                                  inputValue: event.target.value
+                                });
+                              }}
+                            />
+                          </div>,
+
                           <ZeroResult
                             testId={"testId"}
                             text={`We can’t seem to find any result for 
@@ -1861,7 +1865,7 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
         <Title>SearchBar/Filter</Title>
-        <CenteredDiv style={{ backgroundColor: "#f5f5f5" }}>
+        <CenteredDiv style={{ backgroundColor: "#f5f5f5", width: "600px" }}>
           <SearchBar
             clearClickHandler={() => alert("clear clicked")}
             searchIconClickHandler={() => alert("Search Icon clicked")}
@@ -2001,7 +2005,7 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
         <Title>secureImage</Title>
-        <>
+        <div style={{ display: "flex" }}>
           <SecureImage
             testId={"testId"}
             label="Hi Adam3011, is this your security image?"
@@ -2009,7 +2013,28 @@ class Sprint1 extends Component<Props, State> {
               "https://images.unsplash.com/photo-1520167112707-56e25f2d7d6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
             }
           />
-        </>
+          <SecureImage
+            testId={"testId"}
+            label="Hi Adam3011, is this your security image?"
+            image={
+              "https://images.unsplash.com/photo-1548848221-0c2e497ed557?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+            }
+          />
+          <SecureImage
+            testId={"testId"}
+            label="Hi Adam3011, is this your security image?"
+            image={
+              "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+            }
+          />
+          <SecureImage
+            testId={"testId"}
+            label="Hi Adam3011, is this your security image?"
+            image={
+              "https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80"
+            }
+          />
+        </div>
         <Title>Tags</Title>
         <Tag
           testId={"testId"}
@@ -2406,7 +2431,7 @@ class Sprint1 extends Component<Props, State> {
           ]}
         />
         <Title>DescriptionButton</Title>
-        <CenteredDiv style={{ backgroundColor: "#f5f5f5" }}>
+        <div style={{ backgroundColor: "#f5f5f5", padding: 50 }}>
           <DescriptionButton
             testId={"testId"}
             onButtonClick={(item, index) => {
@@ -2418,11 +2443,11 @@ class Sprint1 extends Component<Props, State> {
               {
                 title: "Pay Unpaid Statement Balance",
                 amount: "RM 2,000.00",
-                icon: { name: "Alert", color: "#ff2626" }
+                icon: { name: "system-alert", color: "#ff2626" }
               }
             ]}
           />
-        </CenteredDiv>
+        </div>
         <Title>IconButtons</Title>
         <IconButtons
           testId={"testId"}

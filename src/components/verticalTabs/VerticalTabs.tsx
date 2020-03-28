@@ -56,17 +56,18 @@ const VerticalTabs: React.FC<Props> = ({
                                 borderBottom:
                                   index == lastIndex
                                     ? "1px solid transparent"
-                                    : "1px solid #dedede"
+                                    : "1px solid #dedede",
+                                width: minimize ? "6rem" : "14.68rem"
                               }
                             : {
                                 borderBottom:
                                   index == lastIndex
                                     ? "1px solid transparent"
-                                    : "1px solid #dedede"
+                                    : "1px solid #dedede",
+                                width: minimize ? "6rem" : "14.68rem"
                               }
                         }
                       />
-                      {console.log(item.length, "len")}
                     </Nav.Link>
                   </Nav.Item>
                 );
