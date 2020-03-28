@@ -7,7 +7,8 @@ import TextButton from "src/components/buttons/textButton/TextButton";
 import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTransparent";
 import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
 import { Redirect } from "react-router-dom";
-import ZeroResult from "src/components/infographic/zeroResault/ZeroResult";
+
+import SecureImage from "src/components/secureImage/SecureImage";
 
 interface Props {}
 
@@ -102,21 +103,24 @@ const Home: React.FC<Props> = () => {
               tabTitles={["Security", "Login", "Contact Us"]}
               onSelect={(obj: any) => console.log(obj)}
               content={[
-                <ZeroResult
-                  text={`We can’t seem to find any result for 
-              “Damansara Heights”`}
+                <SecureImage
+                  testId={"testId"}
+                  label="Hi Adam3011, is this your security image?"
+                  image={
+                    "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+                  }
                 />,
 
-                <>
+                <div style={{ paddingTop: "2rem" }}>
                   <InputField
                     value={inputValue}
                     handleChange={event => {
                       setInputValue(event.target.value);
                     }}
-                    notValid={true}
+                    notValid={inputValue.length >= 4 ? true : false}
                     errorMessage={{
                       testId: "testId",
-                      errorText: "The TAC is incorrect",
+                      errorText: "Wrong Password",
                       subText: "Please try again."
                     }}
                     isSecure
@@ -124,8 +128,8 @@ const Home: React.FC<Props> = () => {
                       setInputValue("");
                     }}
                     clearIcon={inputValue === "" ? false : true}
-                    type={!!hidden ? "password" : "text"}
-                    label="input label"
+                    type={!hidden ? "password" : "text"}
+                    label="Password"
                     icon={{ name: "User1" }}
                     onSecureClick={() => {
                       setHidden(!hidden);
@@ -140,7 +144,7 @@ const Home: React.FC<Props> = () => {
                       }}
                     />
                   </div>
-                </>
+                </div>
               ]}
             ></Box>
           </div>
