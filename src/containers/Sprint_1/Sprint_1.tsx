@@ -499,7 +499,8 @@ class Sprint1 extends Component<Props, State> {
             testId={"testId"}
             list={[
               {
-                accountName: "TRUE Savings AmBank Account-i Australia Singapore and alot",
+                accountName:
+                  "TRUE Savings AmBank Account-i Australia Singapore and alot",
                 accountNickName: "Visa Card Classic",
                 accountNumber: "123456890",
                 statusLabel: "ACTIVE",
@@ -658,7 +659,9 @@ class Sprint1 extends Component<Props, State> {
         </div>
         <Title>FloatingButton</Title>
         <div>
-          <FloatingButton />
+          <div style={{ position: "fixed", bottom: 15, right: "15%" }}>
+            <FloatingButton />
+          </div>
 
           <FloatingButton darkButton={true} testId={"testId"} />
         </div>
@@ -1846,7 +1849,7 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
         <Title>SearchBar/Filter</Title>
-        <CenteredDiv style={{ backgroundColor: "#f5f5f5", width: '600px'}}>
+        <CenteredDiv style={{ backgroundColor: "#f5f5f5", width: "600px" }}>
           <SearchBar
             clearClickHandler={() => alert("clear clicked")}
             searchIconClickHandler={() => alert("Search Icon clicked")}
