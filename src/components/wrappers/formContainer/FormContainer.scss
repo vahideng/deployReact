@@ -15,11 +15,12 @@
 .FormContainerLabel {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: #474747;
   height: 3.18rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  padding-left: 2rem;
+  padding: 0rem 2rem;
 }
 .FormContainerCurve {
   background-color: transparent;
@@ -34,4 +35,10 @@
 
 .FormContainerTooltip {
   margin-left: 1rem;
+}
+
+.LeftLabel {
+  padding: 0;
+  margin: 0;
+  align-items: center;
 }

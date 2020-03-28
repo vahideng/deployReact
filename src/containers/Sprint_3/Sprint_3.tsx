@@ -16,9 +16,9 @@ import TextWithDetails from "src/components/infographic/textWithDetails/TextWith
 import ArrayCheckBox from "src/components/arrayCheckBox/ArrayCheckBox";
 import LabelToolTip from "src/components/labelToolTip/LabelToolTip";
 import PayBillList from "src/components/PayBillList/PayBillList";
-import PaymentBox from "src/components/paymentBox/PaymentBox";
 import TextWithIcon from "src/components/infographic/textWithIcon/TextWithIcon";
 import images from "src/assets";
+import FormContainer from "src/components/wrappers/formContainer/FormContainer";
 // import { colors } from "react-select/src/theme";
 
 const {
@@ -455,7 +455,7 @@ const Sprint3: React.FC<Props> = () => {
         />
         <br />
       </div>
-      <Title>PayBillList and Line</Title>
+      <Title>PaymentBox (Using FormContainer component)</Title>
 
       <div
         style={{
@@ -465,15 +465,19 @@ const Sprint3: React.FC<Props> = () => {
         }}
       >
         <br />
+        <FormContainer
+          label="Biller 1 of 3"
+          rightLabel={{ label: "Remove", onClick: () => alert("asd") }}
+          children={
+            <div style={{ padding: "2rem" }}>
+              <TextWithDetails
+                title="Insurance"
+                content={["Ref No.: 123456"]}
+              />
+            </div>
+          }
+        />
 
-        <PaymentBox
-          leftHeader={{ title: "Biller 1 of 3" }}
-          rightHeader={{ title: "Remove", onClick: () => alert("Remove") }}
-        >
-          <div style={{ padding: 40 }}>
-            <TextWithDetails title="Insurance" content={["Ref No.: 123456"]} />
-          </div>
-        </PaymentBox>
         <br />
       </div>
       <Title>Text With Icon</Title>
