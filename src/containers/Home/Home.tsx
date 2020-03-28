@@ -60,7 +60,8 @@ const Home: React.FC<Props> = () => {
                   console.log(`Option:`, selectedOption);
                 }}
                 selectedOption={selectedItem}
-                placeHolder={"English"}
+                defaultValue={ { label: "Malay", value: "malay" }}
+                // placeHolder={"English"}
                 options={[
                   { label: "English", value: "english" },
                   { label: "Malay", value: "malay" },

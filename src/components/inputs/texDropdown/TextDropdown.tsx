@@ -12,6 +12,7 @@ interface Props {
   placeHolder?: string;
   menuIsOpen?: boolean;
   themColor?: string;
+  defaultValue?: any;
 }
 interface State {}
 
@@ -34,7 +35,8 @@ const customStyles = (themColor: string | undefined) => ({
 
   singleValue: (base: any) => ({
     ...base,
-    color: !!themColor ? themColor : "#000000"
+    color: !!themColor ? themColor : "#000000",
+    fontWeight: 'bold'
   }),
   menu: (provided: any) => ({
     ...provided,
@@ -102,7 +104,8 @@ class TextDropdown extends Component<Props, State> {
       selectedOption,
       placeHolder,
       testId,
-      themColor
+      themColor,
+      defaultValue
     } = this.props;
     return (
       <div
@@ -113,8 +116,8 @@ class TextDropdown extends Component<Props, State> {
         <div className={`col-sm-8 ${classes.LeftSide}`} id={`${testId}-0`}>
           <Select
             components={{ DropdownIndicator: () => null }}
-            placeholder={placeHolder}
-            value={selectedOption}
+            placeholder={placeHolder || ''}
+            value={selectedOption || defaultValue}
             onChange={object => this.onchangeHandler(object)}
             options={options}
             styles={customStyles(themColor)}

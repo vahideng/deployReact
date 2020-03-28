@@ -32,17 +32,17 @@ const VerticalTabSelection: React.FC<Props> = ({
           <Icon
             className={classes.Icon}
             icon={!!icon.name ? icon.name : "Alert"}
-            size={50}
+            size={40}
             color={!!icon.color ? icon.color : "#ff2626"}
           />
           {!!accountTitle && (
             <div className={classes.SelectionTileTDiv}>
               {selected ? (
-                <B_17_BLACK className={classes.SelectionTileTitle}>
+                <B_17_BLACK className={classes.SelectionTileTitle} style={{fontSize: 15}}>
                   {accountTitle}
                 </B_17_BLACK>
               ) : (
-                <B_17_GREY969 className={classes.SelectionTileTitle}>
+                <B_17_GREY969 className={classes.SelectionTileTitle} style={{fontSize: 15}}>
                   {accountTitle}
                 </B_17_GREY969>
               )}
