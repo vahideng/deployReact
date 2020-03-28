@@ -660,7 +660,9 @@ class Sprint1 extends Component<Props, State> {
         </div>
         <Title>FloatingButton</Title>
         <div>
-          <FloatingButton />
+          <div style={{ position: "fixed", bottom: 15, right: "15%" }}>
+            <FloatingButton />
+          </div>
 
           <FloatingButton darkButton={true} testId={"testId"} />
         </div>

@@ -203,6 +203,16 @@ const B_48_BLACK = styled.p`
   }
 `;
 
+const SB_13_BLACK = styled.p`
+  margin: 0;
+  color: #000000;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  line-height: 18px;
+`;
+
 const SB_11_GREY444 = styled.p`
   font-family: "Nunito Sans";
   margin: 0;

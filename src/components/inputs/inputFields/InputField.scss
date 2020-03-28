@@ -51,6 +51,9 @@
 .InputFieldError {
   padding: 1rem 0 0 1rem;
 }
+input::-ms-clear ::-ms-reveal {
+  display: none;
+}
 .InputFieldInput::-ms-clear ::-ms-reveal {
   display: none;
 }
