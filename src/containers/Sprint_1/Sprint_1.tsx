@@ -1663,8 +1663,11 @@ class Sprint1 extends Component<Props, State> {
                     />
                     <div style={{ width: 700 }}>
                       <AMTabs
-                        titlesStyle={{ padding: "2rem 4rem 0 4rem" }}
+                        titlesStyle={{}}
                         defaultIndex={0}
+                        onSelect={(obj: any) => {
+                          alert(obj);
+                        }}
                         titles={[
                           "Transactions",
                           "Settings",
