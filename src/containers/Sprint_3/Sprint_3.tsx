@@ -14,13 +14,7 @@ import images from "src/assets";
 import List from "src/components/lists/list/List";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
 
-const {
-  B_13_ORANGE_463,
-  B_15_BLACK,
-  R_12_WHITE,
-  B_14_WHITE,
-  B_14_BLACK
-} = Paragraphs;
+const { B_13_ORANGE_463, R_12_WHITE, B_14_WHITE } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
   padding: 5px 0;
@@ -286,17 +280,11 @@ const Sprint3: React.FC<Props> = () => {
         />
       </div>
       <Title>Label Tool Tip</Title>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center"
-        }}
-      >
+      <div style={{ padding: "0 25%" }}>
         <LabelToolTip
+          label="Portfolio Comparison"
           tooltipData={{
             testId: "101",
-
             tipChildren: (
               <div>
                 <B_14_WHITE>Tips</B_14_WHITE>
@@ -306,14 +294,14 @@ const Sprint3: React.FC<Props> = () => {
                   as reference only.
                 </R_12_WHITE>
               </div>
-            ),
-
-            spaceBetween: "4rem"
+            )
           }}
-          label={<B_14_BLACK> Portfolio Comparison</B_14_BLACK>}
         />
         <br />
         <LabelToolTip
+          spaceBetween={true}
+          label="Select your proffered account to send and received money"
+          labelStyle={{ color: "#444444", fontWeight: 400 }}
           tooltipData={{
             testId: "101",
             tipChildren: (
@@ -321,15 +309,8 @@ const Sprint3: React.FC<Props> = () => {
                 <B_13_ORANGE_463>Try one</B_13_ORANGE_463>
                 <R_12_WHITE>test</R_12_WHITE>
               </div>
-            ),
-            spaceBetween: "10%",
-            color: "red"
+            )
           }}
-          label={
-            <B_15_BLACK>
-              {"Select your preffered account to send and received money"}
-            </B_15_BLACK>
-          }
         />
       </div>
       <Title>

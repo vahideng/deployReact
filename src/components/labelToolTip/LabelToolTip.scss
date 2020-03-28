@@ -1,4 +1,7 @@
 .toolTipContainer {
   display: flex;
-  flex: nowrap;
+  align-items: center;
+}
+.toolTipLabel {
+  padding-right: 1rem;
 }
