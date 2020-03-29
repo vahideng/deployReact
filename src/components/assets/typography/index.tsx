@@ -48,6 +48,13 @@ const XB_14_WHITE = styled.p`
   font-size: 0.87rem;
   font-weight: 800;
 `;
+const XB_11_WHITE = styled.p`
+  font-family: "Nunito Sans";
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 800;
+`;
 const B_11_WHITE = styled.p`
   font-family: "Nunito Sans";
   margin: 0;
@@ -182,10 +189,10 @@ const SB_13_BLACK = styled.p`
   margin: 0;
   color: #000000;
   font-family: Nunito Sans;
-font-style: normal;
-font-weight: 600;
-font-size: 0.8125rem;
-line-height: 18px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  line-height: 18px;
 `;
 
 const SB_11_GREY444 = styled.p`
@@ -336,5 +343,6 @@ export default {
   R_18_GREY444,
   B_32_WHITE,
   SB_13_BLACK,
-  B_15_ORANGE_463
+  B_15_ORANGE_463,
+  XB_11_WHITE
 };

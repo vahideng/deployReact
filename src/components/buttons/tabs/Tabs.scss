@@ -9,16 +9,19 @@
 }
 
 .SmallTabsTab {
+  font-family: "Nunito Sans" !important;
+  font-size: 17px !important;
   padding: 0 !important;
   list-style-type: none;
   height: 1.8rem;
-
   cursor: pointer;
   &:active {
     background-color: transparent;
   }
 }
 .TabsTab {
+  font-family: "Nunito Sans" !important;
+  font-size: 17px !important;
   padding: 0 2rem !important;
   list-style-type: none;
   height: 2.5rem;
@@ -26,18 +29,24 @@
   &:active {
     background-color: transparent;
   }
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .SmallTabsSelected {
   background-color: transparent;
   border: 0 !important;
   border-bottom: 2px solid #fd8585 !important;
+  font-family: "Nunito Sans" !important;
+  font-size: 17px !important;
   font-weight: 700 !important;
 }
 .TabsSelected {
   background-color: transparent;
   border: 0 !important;
   border-bottom: 2px solid #fd8585 !important;
+  font-family: "Nunito Sans" !important;
+  font-size: 17px !important;
   font-weight: 700 !important;
   padding: 0 2rem !important;
 }

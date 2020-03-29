@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Profile.module.css";
 import Paragraphs from "../../assets/typography";
 import { CSSProperties } from "styled-components";
-const { B_15_BLACK, B_15_GREY969, XB_14_WHITE } = Paragraphs;
+const { B_15_BLACK, B_15_GREY969, XB_14_WHITE, XB_11_WHITE } = Paragraphs;
 interface Props {
   testId?: string;
   src?: string;
@@ -13,6 +13,7 @@ interface Props {
   greeting?: string;
   name?: string;
   alt?: string;
+  scrolled?: boolean;
 }
 
 const Profile: React.FC<Props> = ({
@@ -24,9 +25,25 @@ const Profile: React.FC<Props> = ({
   initialsBg,
   greetingStyle,
   nameStyle,
+  scrolled,
   alt = "AVATAR"
 }) => {
-  return (
+  return scrolled ? (
+    <div id={testId}>
+      <div className={`${classes.scrolledAvatarContainer}`}>
+        {!!src ? (
+          <img src={src} alt={alt} />
+        ) : (
+          <div
+            className={classes.scrolledAvatarInitials}
+            style={!!initialsBg ? { backgroundColor: initialsBg } : {}}
+          >
+            <XB_11_WHITE>{initials}</XB_11_WHITE>
+          </div>
+        )}
+      </div>
+    </div>
+  ) : (
     <div id={testId}>
       <div className={`${classes.avatarContainer}`}>
         {!!src ? (

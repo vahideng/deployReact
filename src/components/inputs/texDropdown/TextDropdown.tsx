@@ -36,7 +36,7 @@ const customStyles = (themColor: string | undefined) => ({
   singleValue: (base: any) => ({
     ...base,
     color: !!themColor ? themColor : "#000000",
-    fontWeight: 'bold'
+    fontWeight: "bold"
   }),
   menu: (provided: any) => ({
     ...provided,
@@ -93,8 +93,7 @@ class TextDropdown extends Component<Props, State> {
     this.props.handleChange(object);
     this.setState({ menuIsOpen: false });
   };
-  handleClickOutside = (evt: any) => {
-    evt.preventDefault();
+  onBlurHandler = () => {
     this.setState({ menuIsOpen: false });
   };
 
@@ -116,13 +115,14 @@ class TextDropdown extends Component<Props, State> {
         <div className={`col-sm-8 ${classes.LeftSide}`} id={`${testId}-0`}>
           <Select
             components={{ DropdownIndicator: () => null }}
-            placeholder={placeHolder || ''}
+            placeholder={placeHolder || ""}
             value={selectedOption || defaultValue}
             onChange={object => this.onchangeHandler(object)}
             options={options}
             styles={customStyles(themColor)}
             menuIsOpen={this.state.menuIsOpen}
             isSearchable={false}
+            onBlur={() => this.onBlurHandler()}
           />
         </div>
 
