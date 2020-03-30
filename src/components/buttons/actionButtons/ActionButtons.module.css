@@ -2,11 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 0.4rem 0 2.5rem;
-}
-
-.ActionButtonsWidth {
-  width: 2.81rem;
+  padding: 0 0.5rem 0 2rem;
 }
 
 .ActionButtonsIcon {
@@ -30,14 +26,66 @@
   cursor: pointer;
 }
 
+.ActionButtonsIconExpanded {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 2rem;
+  width: 2.81rem;
+  height: 2.81rem;
+  border-radius: 1.1rem;
+  cursor: pointer;
+}
+
+.FlexDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.ActionButtonsWidth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 4rem;
+  overflow: hidden;
+}
+
 .ActionButtonsText {
-  word-wrap: break-word;
   text-align: center;
   padding-top: 0.6rem;
   -webkit-transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
   transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-.ActionButtonsIcon:hover {
+.ActionButtonsIconExpanded:hover {
   opacity: 0.7;
 }

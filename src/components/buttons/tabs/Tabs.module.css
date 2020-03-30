@@ -12,6 +12,8 @@
 }
 
 .SmallTabsTab {
+  font-family: "Nunito Sans" !important;
+  font-size: 17px !important;
   padding: 0 !important;
   list-style-type: none;
   height: 1.8rem;
@@ -19,6 +21,21 @@
 }
 
 .SmallTabsTab:active {
+  background-color: transparent;
+}
+
+.TabsTab {
+  font-family: "Nunito Sans" !important;
+  font-size: 17px !important;
+  padding: 0 2rem !important;
+  list-style-type: none;
+  height: 2.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.TabsTab:active {
   background-color: transparent;
 }
 
@@ -37,6 +54,8 @@
   background-color: transparent;
   border: 0 !important;
   border-bottom: 2px solid #fd8585 !important;
+  font-family: "Nunito Sans" !important;
+  font-size: 17px !important;
   font-weight: 700 !important;
 }
 
@@ -44,6 +63,8 @@
   background-color: transparent;
   border: 0 !important;
   border-bottom: 2px solid #fd8585 !important;
+  font-family: "Nunito Sans" !important;
+  font-size: 17px !important;
   font-weight: 700 !important;
   padding: 0 2rem !important;
 }

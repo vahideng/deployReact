@@ -20,9 +20,8 @@ const FooterLogo: React.FC<Props> = props => {
             onClick={() => onLogoClick(logo, index)}
           >
             <img
+              className={classes.ImageStyle}
               src={logo.src}
-              width="100%"
-              height="100%"
               alt={"LOGO"}
               id={logo.id}
             />

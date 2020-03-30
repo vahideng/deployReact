@@ -58,8 +58,7 @@ const {
   B_14_WHITE,
   R_11_WHITE,
   R_13_BLACK,
-  B_24_BLACK,
-  R_13_GREY444
+  B_24_BLACK
 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -211,9 +210,7 @@ class Sprint1 extends Component<Props, State> {
           }
         />
         <Title>TransactionList</Title>
-        <CenteredDiv
-          style={{ backgroundColor: "white", paddingBottom: "20px" }}
-        >
+        <CenteredDiv style={{ backgroundColor: "white", padding: 50 }}>
           <TransactionList
             testId={"testId"}
             data={[
@@ -280,7 +277,6 @@ class Sprint1 extends Component<Props, State> {
         </CenteredDiv>
         <Navbar
           testId={"testId"}
-          // scrolled={navbarScrolled}
           scrolledIcon={{
             name: "LOGO",
             color: "#ff2626",
@@ -302,9 +298,9 @@ class Sprint1 extends Component<Props, State> {
             name: "Adam Constantine",
             initials: "HB",
             initialsBg: "#ff2626",
-            alt: "AVATAR"
-            // src:
-            //   "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+            alt: "AVATAR",
+            src:
+              "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
           }}
           rightButtons={[
             {
@@ -619,53 +615,53 @@ class Sprint1 extends Component<Props, State> {
           />
         </>
         <Title>List with Header inside FormContainer with statusIcon</Title>
-        <div style={{ backgroundColor: "#EEEEEE", paddingTop: 100 }}>
+        <div style={{ backgroundColor: "#EEEEEE", padding: 100 }}>
           <FormContainer
             statusIcon={{
               icon: "Tick-1",
               iconColor: { top: "#94EC9B", bottom: "#5BB362" }
             }}
-            children={
-              <List
-                header={{
-                  title: "Transfer Successful",
-                  subTitle: (
-                    <div style={{ display: "flex" }}>
-                      <span>You have successfully transferred</span>
-                      <p style={{ fontWeight: 700 }}> RM 500.00 </p>
-                      <span> to </span>
-                      <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
-                    </div>
-                  )
-                }}
-                list={[
-                  {
-                    leftLabel: "To",
-                    rightLabel: "Saving Account A",
-                    details: ["8881019596535 | AmBank"]
-                  },
-                  {
-                    leftLabel: "Amount",
-                    rightLabel: "RM 500.00",
-                    details: ["Fees & Charges: RM 0.00"]
-                  },
-                  {
-                    leftLabel: "Date",
-                    rightLabel: "Transfer Now",
-                    details: ["Today, 5 January 2019"]
-                  },
-                  {
-                    leftLabel: "Reference",
-                    rightLabel: "House Rental"
-                  },
-                  {
-                    leftLabel: "From",
-                    rightLabel: "Savings Account",
-                    details: ["2998202013", "Available Balance: RM 10,301.50"]
-                  }
-                ]}
-              />
-            }
+            // children={
+            //   <List
+            //     header={{
+            //       title: "Transfer Successful",
+            //       subTitle: (
+            //         <div style={{ display: "flex" }}>
+            //           <span>You have successfully transferred</span>
+            //           <p style={{ fontWeight: 700 }}> RM 500.00 </p>
+            //           <span> to </span>
+            //           <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
+            //         </div>
+            //       )
+            //     }}
+            //     list={[
+            //       {
+            //         leftLabel: "To",
+            //         rightLabel: "Saving Account A",
+            //         details: ["8881019596535 | AmBank"]
+            //       },
+            //       {
+            //         leftLabel: "Amount",
+            //         rightLabel: "RM 500.00",
+            //         details: ["Fees & Charges: RM 0.00"]
+            //       },
+            //       {
+            //         leftLabel: "Date",
+            //         rightLabel: "Transfer Now",
+            //         details: ["Today, 5 January 2019"]
+            //       },
+            //       {
+            //         leftLabel: "Reference",
+            //         rightLabel: "House Rental"
+            //       },
+            //       {
+            //         leftLabel: "From",
+            //         rightLabel: "Savings Account",
+            //         details: ["2998202013", "Available Balance: RM 10,301.50"]
+            //       }
+            //     ]}
+            //   />
+            // }
           />
         </div>
         <Title>FloatingButton</Title>
@@ -1214,93 +1210,32 @@ class Sprint1 extends Component<Props, State> {
                 onClick: (index: any) =>
                   this.setState({ verticalActiveTab: index }),
                 icon: {
-                  name: "Account-2",
-                  color: "#ff2626"
+                  name: "Car",
+                  color: "#444444"
                 },
-                accountTitle: "Credit Cards",
+                accountTitle: "DescriptionButton",
                 children: (
                   <div
                     style={{
-                      display: "flex",
-                      paddingTop: 30,
-                      flexDirection: "column"
+                      width: "43rem",
+                      padding: 30
                     }}
                   >
-                    <R_13_BLACK>YOUR OUTSTANDING</R_13_BLACK>
-                    <B_24_BLACK>RM 55,555.00</B_24_BLACK>
-                    <R_13_BLACK style={{ marginBottom: 16 }}>
-                      5 credit cards
-                    </R_13_BLACK>
-                    <TileListView
+                    <DescriptionButton
+                      testId={"testId"}
+                      onButtonClick={(item, index) => {
+                        alert(`${item.title} with indexOf ${index} clicked`);
+                      }}
                       list={[
+                        { title: "Pay Minimum Payment", disabled: true },
+                        { title: "Pay Minimum Payment", amount: "RM 1,000.00" },
                         {
-                          accountName: "TRUE Savings Account-i",
-                          accountNumber: "123456890",
-                          statusLabel: "ACTIVE",
-                          statusLabelColor: "#36A03E",
-                          amount: "RM 10,135"
-                        },
-                        {
-                          accountName: "Foreign Currency Account",
-                          accountNumber: "79429284",
-                          statusLabel: "INQUIRY ONLY ALLOWED",
-                          statusLabelColor: "#FF2626",
-                          countryFlagImage: images.common.countryFlag,
-                          amount: "AUD 1,392",
-                          equivalentAmount: "RM 4,583"
-                        },
-                        {
-                          accountName: "Conversion Account",
-                          accountNumber: "20717524",
-                          statusLabel: "ACTIVE",
-                          statusLabelColor: "#36A03E",
-                          amount: "- RM 2,000"
-                        },
-                        {
-                          accountName: "Conversion Account",
-                          accountNumber: "20717524",
-                          statusLabel: "RESTRICTED ACCESS",
-                          statusLabelColor: "#FF2626",
-                          amount: "RM 0.00"
-                        },
-                        {
-                          cardLogo: images.common.masterCard,
-                          accountName: "AmBank TRUE VISA (Supp)",
-                          accountNumber: "5000 0220 5023 5678",
-                          statusLabel: "ACTIVE",
-                          statusLabelColor: "#36A03E",
-                          amount: "RM 5,000"
-                        },
-                        {
-                          icon: "system-info",
-                          iconColor: "#FF2626",
-                          iconSize: 20,
-                          accountName: "AmBank Advance Card",
-                          accountNumber: "3062 2401 2019 5678",
-                          statusLabel: "OVERDUE",
-                          statusLabelColor: "#FF2626",
-                          amount: "RM 50"
-                        },
-                        {
-                          cardLogo: images.common.masterCard,
-                          icon: "system-info",
-                          iconColor: "#FFA463",
-                          iconSize: 20,
-                          accountName: "AmBank Advance Card",
-                          accountNumber: "3062 2401 2019 5678",
-                          statusLabel: "ACTIVE",
-                          statusLabelColor: "#36A03E",
-                          statusLabel2: "DUE SOON",
-                          statusLabel2Color: "#FFA463",
-                          amount: "RM 50"
+                          title: "Pay Unpaid Statement Balance",
+                          amount: "RM 2,000.00",
+                          icon: { name: "system-alert", color: "#ff2626" }
                         }
                       ]}
-                      onTileClick={item => alert(JSON.stringify(item))}
                     />
-                    <R_13_GREY444 style={{ marginBottom: 38 }}>
-                      *RM Amount is an indicative value and to be considered as
-                      reference only
-                    </R_13_GREY444>
                   </div>
                 )
               },
@@ -1621,7 +1556,7 @@ class Sprint1 extends Component<Props, State> {
                 accountTitle: "Credit Cards",
 
                 children: (
-                  <div style={{ display: "flex" }}>
+                  <div style={{ display: "flex", padding: "1rem" }}>
                     <AccountsList
                       testId={"testId"}
                       list={[
@@ -1664,7 +1599,7 @@ class Sprint1 extends Component<Props, State> {
                     <div style={{ width: 700 }}>
                       <AMTabs
                         titlesStyle={{}}
-                        defaultIndex={0}
+                        defaultIndex={1}
                         onSelect={(obj: any) => {
                           alert(obj);
                         }}
@@ -1762,7 +1697,7 @@ class Sprint1 extends Component<Props, State> {
                     />
                     <div style={{ width: 700, padding: "2rem" }}>
                       <AMTabs
-                        defaultIndex={0}
+                        defaultIndex={2}
                         titles={[
                           "Transactions",
                           "Settings",
@@ -2008,7 +1943,7 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
         <Title>secureImage</Title>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
           <SecureImage
             testId={"testId"}
             label="Hi Adam3011, is this your security image?"
@@ -2977,13 +2912,13 @@ class Sprint1 extends Component<Props, State> {
                 text: "PlaceFD/TD"
               },
               {
-                name: "Apply",
+                name: "Car",
                 color: "#ffffff",
                 backgroundColor: {
                   top: "#798E96",
                   bottom: "#31434A"
                 },
-                text: "Apply"
+                text: "Renew Car Insurance"
               },
               {
                 name: "Apply",

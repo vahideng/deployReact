@@ -13,10 +13,14 @@ interface Props {
   placeHolder?: string;
   menuIsOpen?: boolean;
   themColor?: string;
+  boldFont?: boolean;
 }
 interface State {}
 
-const customStyles = (themColor: string | undefined) => ({
+const customStyles = (
+  themColor: string | undefined,
+  boldFont: boolean | undefined
+) => ({
   control: (provided: any) => ({
     ...provided,
     border: "hidden",
@@ -35,7 +39,8 @@ const customStyles = (themColor: string | undefined) => ({
 
   singleValue: (base: any) => ({
     ...base,
-    color: !!themColor ? themColor : "#000000"
+    color: !!themColor ? themColor : "#000000",
+    fontWeight: !!boldFont ? "bold" : "normal"
   }),
   menu: (provided: any) => ({
     ...provided,
@@ -92,8 +97,7 @@ class TextDropdown extends Component<Props, State> {
     this.props.handleChange(object);
     this.setState({ menuIsOpen: false });
   };
-  handleClickOutside = (evt: any) => {
-    evt.preventDefault();
+  onBlurHandler = () => {
     this.setState({ menuIsOpen: false });
   };
 
@@ -103,8 +107,9 @@ class TextDropdown extends Component<Props, State> {
       selectedOption,
       placeHolder,
       testId,
+      themColor,
       defaultValue,
-      themColor
+      boldFont
     } = this.props;
     return (
       <div
@@ -116,13 +121,14 @@ class TextDropdown extends Component<Props, State> {
           <Select
             defaultValue={defaultValue}
             components={{ DropdownIndicator: () => null }}
-            placeholder={placeHolder}
-            value={selectedOption}
+            placeholder={placeHolder || ""}
+            value={selectedOption || defaultValue}
             onChange={object => this.onchangeHandler(object)}
             options={options}
-            styles={customStyles(themColor)}
+            styles={customStyles(themColor, boldFont)}
             menuIsOpen={this.state.menuIsOpen}
             isSearchable={false}
+            onBlur={() => this.onBlurHandler()}
           />
         </div>
 

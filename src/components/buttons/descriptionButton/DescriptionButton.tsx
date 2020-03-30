@@ -41,7 +41,11 @@ const DescriptionButton: React.FC<Props> = ({
                   color={!!item.icon.color ? item.icon.color : "#ff2626"}
                 />
               )}
-              {!!item.amount && <B_15_BLACK>{item.amount}</B_15_BLACK>}
+              {!!item.amount && (
+                <B_15_BLACK className={classes.DescriptionAmount}>
+                  {item.amount}
+                </B_15_BLACK>
+              )}
               <Icon icon={"Right1"} size={25} color={"#000000"} />
             </div>
           </div>

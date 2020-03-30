@@ -74,9 +74,7 @@ const VerticalTabs: React.FC<Props> = ({
               })}
           </Nav>
         </div>
-        <div
-          style={{ backgroundColor: "#dedede", height: "100%", width: 1 }}
-        ></div>
+        <div className={classes.verticalLine}></div>
         <div className={classes.RightChild}>
           <Tab.Content>
             {!!data &&

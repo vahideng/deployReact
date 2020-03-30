@@ -4,11 +4,11 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .SearchBarContainer {
@@ -16,8 +16,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
   height: 2.625rem;
   border-radius: 25px;
@@ -31,15 +31,21 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: relative;
   height: 2.625rem;
   width: 6.3rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f6f6f3), to(#eae9e3));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#f6f6f3),
+    to(#eae9e3)
+  );
   background: linear-gradient(180deg, #f6f6f3 0%, #eae9e3 100%);
   overflow: hidden;
   cursor: pointer;
@@ -50,15 +56,21 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: relative;
   height: 2.625rem;
   width: 6.3rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#eae9e3), to(#f6f6f3));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#eae9e3),
+    to(#f6f6f3)
+  );
   background: linear-gradient(180deg, #eae9e3 0%, #f6f6f3 100%);
   overflow: hidden;
   cursor: pointer;
@@ -71,11 +83,13 @@
   background: #ffffff;
   z-index: 299;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border-radius: 5px;
   left: 0;
-  -webkit-box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
-          box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede, 0px 1px 5px #dedede;
+  -webkit-box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede,
+    0px -1px 5px #dedede, 0px 1px 5px #dedede;
+  box-shadow: 1px 0px 5px #dedede, -1px 0px 5px #dedede, 0px -1px 5px #dedede,
+    0px 1px 5px #dedede;
   padding: 1.25rem 1.25rem 0 1.25rem;
 }
 
@@ -85,14 +99,14 @@
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   margin-bottom: 16px;
 }
 
@@ -101,14 +115,14 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .SelectedFiltersContainer {
@@ -117,11 +131,11 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   padding-top: 16px;
   max-width: 53.12rem;
 }
@@ -133,17 +147,17 @@
   padding-right: 6px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin-right: 8px;
   height: 1.5rem;
   margin-bottom: 8px;
@@ -167,8 +181,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   outline: none;
   padding-right: 0.3rem;
   border: none;
@@ -192,10 +206,14 @@
 
 input::-ms-clear ::-ms-reveal {
   display: none;
+  width: 0;
+  height: 0;
 }
 
 .InputField::-ms-clear ::-ms-reveal {
   display: none;
+  width: 0;
+  height: 0;
 }
 
 @media (max-width: 400px) {

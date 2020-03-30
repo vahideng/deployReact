@@ -26,23 +26,17 @@ const ActionButtons: React.FC<Props> = ({
       <>
         {!!list &&
           list.map((item, index) => {
-            return (
-              <div key={index} id={`${testId}-${index}`}>
+            return expanded ? (
+              <div
+                key={index}
+                id={`${testId}-${index}`}
+                className={classes.FlexDiv}
+              >
                 <div
-                  className={classes.ActionButtonsIcon}
-                  style={
-                    expanded
-                      ? {
-                          width: "2.81rem",
-                          height: "2.81rem",
-                          marginTop: "1.6rem",
-                          borderRadius: "1.06rem",
-                          background: `linear-gradient(180deg, ${item.backgroundColor.top} 0%,  ${item.backgroundColor.bottom} 100%)`
-                        }
-                      : {
-                          background: `linear-gradient(180deg, ${item.backgroundColor.top} 0%,  ${item.backgroundColor.bottom} 100%)`
-                        }
-                  }
+                  className={classes.ActionButtonsIconExpanded}
+                  style={{
+                    background: `linear-gradient(180deg, ${item.backgroundColor.top} 0%,  ${item.backgroundColor.bottom} 100%)`
+                  }}
                   onClick={() => {
                     onButtonClick(item, index);
                   }}
@@ -51,14 +45,23 @@ const ActionButtons: React.FC<Props> = ({
                 </div>
 
                 <div className={classes.ActionButtonsWidth}>
-                  {!!item.text && expanded && (
-                    <SB_11_WHITE
-                      className={classes.ActionButtonsText}
-                      style={{}}
-                    >
-                      {item.text}
-                    </SB_11_WHITE>
-                  )}
+                  <SB_11_WHITE className={classes.ActionButtonsText} style={{}}>
+                    {item.text}
+                  </SB_11_WHITE>
+                </div>
+              </div>
+            ) : (
+              <div key={index} id={`${testId}-${index}`}>
+                <div
+                  className={classes.ActionButtonsIcon}
+                  style={{
+                    background: `linear-gradient(180deg, ${item.backgroundColor.top} 0%,  ${item.backgroundColor.bottom} 100%)`
+                  }}
+                  onClick={() => {
+                    onButtonClick(item, index);
+                  }}
+                >
+                  <Icon icon={item.name} size={20} color={item.color} />
                 </div>
               </div>
             );
