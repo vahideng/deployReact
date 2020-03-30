@@ -101,7 +101,10 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                       |{" "}
                     </R_13_BLACK>
                     <R_13_BLACK
-                      style={{ color: item.statusLabel2Color, fontWeight: 600 }}
+                      style={{
+                        color: item.statusLabel2Color,
+                        fontWeight: 600
+                      }}
                     >
                       {item.statusLabel2}
                     </R_13_BLACK>

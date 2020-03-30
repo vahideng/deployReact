@@ -56,6 +56,13 @@ const XB_14_WHITE = styled.p`
   font-size: 0.87rem;
   font-weight: 800;
 `;
+const XB_11_WHITE = styled.p`
+  font-family: "Nunito Sans";
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 800;
+`;
 const B_11_WHITE = styled.p`
   font-family: "Nunito Sans";
   margin: 0;
@@ -396,5 +403,6 @@ export default {
   SB_22_BLACK,
   SB_17_BLACK,
   B_15_ORANGE_463,
-  SB_13_BLACK
+  SB_13_BLACK,
+  XB_11_WHITE
 };

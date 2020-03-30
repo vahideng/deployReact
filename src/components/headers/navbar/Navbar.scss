@@ -11,6 +11,26 @@
   height: 4.31rem;
   box-shadow: $mainBoxShadow;
   z-index: 1000;
+  transition: height 0.5s ease-in-out;
+}
+.NavbarMainDivScrolled {
+  display: flex;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  background-color: #ffffff;
+  height: 3rem;
+  box-shadow: $mainBoxShadow;
+  z-index: 1000;
+  transition: height 0.5s ease-in-out;
+}
+.InnerWidth {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 57.25rem;
 }
 .InnerWidth {
   display: flex;

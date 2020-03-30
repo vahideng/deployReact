@@ -4,8 +4,8 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .InputFieldIconDiv {
@@ -13,8 +13,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
 }
 
@@ -30,8 +30,10 @@
   width: 31.6rem;
   border-radius: 0.95rem;
   border: 0.5px solid #dedede;
-  -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
-          box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+  -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5,
+    0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+  box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5,
+    0px 1px 5px #e5e5e5;
 }
 
 .InputFieldInput {
@@ -51,8 +53,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
   left: -5rem;
   height: 3.12rem;
@@ -74,10 +76,14 @@
 
 input::-ms-clear ::-ms-reveal {
   display: none;
+  width: 0;
+  height: 0;
 }
 
 .InputFieldInput::-ms-clear ::-ms-reveal {
   display: none;
+  width: 0;
+  height: 0;
 }
 
 @media (max-width: 400px) {

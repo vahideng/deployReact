@@ -60,7 +60,7 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
         {data.map((item: any, index: any) => {
           return (
             <Accordion key={index} id={`${testId}-0-${index}`}>
-              <Card>
+              <Card className={classes.CardContainer}>
                 <Card.Header className={classes.HeaderInside}>
                   <div
                     style={{ alignItems: "center", height: "50px" }}

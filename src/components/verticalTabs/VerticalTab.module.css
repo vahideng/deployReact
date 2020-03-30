@@ -50,3 +50,9 @@
   border-top-right-radius: 1.25rem;
   padding: 1rem;
 }
+
+.verticalLine {
+  background-color: #dedede;
+  height: 100%;
+  width: 1px;
+}

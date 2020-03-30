@@ -1,11 +1,8 @@
 .ActionButtonsMain {
   display: flex;
-  padding: 0 0.4rem 0 2.5rem;
+  padding: 0 0.5rem 0 2rem;
 }
 
-.ActionButtonsWidth {
-  width: 2.81rem;
-}
 .ActionButtonsIcon {
   display: flex;
   flex-direction: column;
@@ -17,13 +14,38 @@
   margin-right: 1.5rem;
   cursor: pointer;
 }
+.ActionButtonsIconExpanded {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  width: 2.81rem;
+  height: 2.81rem;
+  border-radius: 1.1rem;
+
+  cursor: pointer;
+}
+.FlexDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1rem;
+}
+.ActionButtonsWidth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  overflow: hidden;
+}
 
 .ActionButtonsText {
-  word-wrap: break-word;
   text-align: center;
   padding-top: 0.6rem;
   transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
-.ActionButtonsIcon:hover {
+.ActionButtonsIconExpanded:hover {
   opacity: 0.7;
 }
