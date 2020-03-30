@@ -401,6 +401,48 @@ const Sprint3: React.FC<Props> = () => {
           imageIcon={{ src: images.common.JomPay1, size: 40 }}
         />
       </div>
+      <Title>
+      W2W List using (FormContainer and List component)and Line
+      </Title>
+      <div
+        style={{
+          margin: "0 auto",
+          padding: 4,
+          width: "50%"
+        }}
+      >
+        <FormContainer
+          children={
+            <List
+              header={{
+                icon: {
+                  name: "LOGO",
+                  color: "#ff2626",
+                  iconText: "Review & Confirm"
+                }
+              }}
+              list={[
+                {
+                  leftLabel: "To",
+                  rightLabel: "Saving Account A",
+                  approved: true,
+                  details: ["8881019596535 | AmBank"],
+                  amount: "RM 500"
+                },
+                {
+                  leftLabel: "From",
+                  rightLabel: "Savings Account",
+                  details: ["2998202013", "Available Balance: RM 10,301.50"],
+                  bottomText: {
+                    content: "Change Account",
+                    onClick: () => alert("Change account")
+                  }
+                }
+              ]}
+            />
+          }
+        />
+      </div>
     </div>
   );
 };
