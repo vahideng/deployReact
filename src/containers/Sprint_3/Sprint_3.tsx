@@ -13,8 +13,9 @@ import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
 import images from "src/assets";
 import List from "src/components/lists/list/List";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
+import StatusFormContainer from "src/components/wrappers/statusFormContainer/StatusFormContainer";
 
-const { B_13_ORANGE_463, R_12_WHITE, B_14_WHITE } = Paragraphs;
+const { B_13_ORANGE_463, R_12_WHITE, B_14_WHITE, B_24_BLACK } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
   padding: 5px 0;
@@ -402,46 +403,73 @@ const Sprint3: React.FC<Props> = () => {
         />
       </div>
       <Title>
-      W2W List using (FormContainer and List component)and Line
+        W2W List using (StatusFormContainer and List component)and Line
       </Title>
       <div
         style={{
-          margin: "0 auto",
-          padding: 4,
-          width: "50%"
+          backgroundColor: "#EEEEEE",
+          paddingTop: 100
         }}
       >
-        <FormContainer
+        <StatusFormContainer
+          statusIcon={{
+            icon: "Fail",
+            iconColor: { top: "#FD8585", bottom: "#FF2222" },
+            outerIconColor: "#FFEBEE"
+          }}
           children={
-            <List
-              header={{
-                icon: {
-                  name: "LOGO",
-                  color: "#ff2626",
-                  iconText: "Review & Confirm"
-                }
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                padding: "2rem"
               }}
-              list={[
-                {
-                  leftLabel: "To",
-                  rightLabel: "Saving Account A",
-                  approved: true,
-                  details: ["8881019596535 | AmBank"],
-                  amount: "RM 500"
-                },
-                {
-                  leftLabel: "From",
-                  rightLabel: "Savings Account",
-                  details: ["2998202013", "Available Balance: RM 10,301.50"],
-                  bottomText: {
-                    content: "Change Account",
-                    onClick: () => alert("Change account")
+            >
+              <B_24_BLACK style={{ textAlign: "center" }}>
+                Transfer Unsuccessful
+              </B_24_BLACK>
+              <br />
+              <p style={{ textAlign: "center" }}>
+                Your payment of RM 20.50 to Revenue Harvest Sdn. Bhd. is
+                unsuccessful
+              </p>
+              <p style={{ textAlign: "center" }}>
+                Unable to perform this transaction. Please call our Contact
+                Centre for assistance.
+              </p>
+              <List
+                itemContainerStyle={{ padding: 0 }}
+                list={[
+                  {
+                    leftLabel: "To",
+                    rightLabel: "Saving Account A",
+                    details: ["8881019596535 | AmBank"]
+                  },
+                  {
+                    leftLabel: "Amount",
+                    rightLabel: "RM 500.00",
+                    details: ["Fees & Charges: RM 0.00"]
+                  },
+                  {
+                    leftLabel: "Date",
+                    rightLabel: "Transfer Now",
+                    details: ["Today, 5 January 2019"]
+                  },
+                  {
+                    leftLabel: "Reference",
+                    rightLabel: "House Rental"
+                  },
+                  {
+                    leftLabel: "From",
+                    rightLabel: "Savings Account",
+                    details: ["2998202013", "Available Balance: RM 10,301.50"]
                   }
-                }
-              ]}
-            />
+                ]}
+              />
+            </div>
           }
         />
+        }
       </div>
     </div>
   );
