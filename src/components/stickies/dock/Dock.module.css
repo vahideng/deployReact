@@ -2,7 +2,6 @@
   position: fixed;
   bottom: 0;
   display: inline-block;
-  background-color: rgba(68, 68, 68, 0.8);
   border-radius: 1.3rem 1.3rem 0 0;
 }
 
@@ -20,10 +19,11 @@
   min-height: 5.12rem;
   -webkit-transition: min-height 0.5s ease-in-out;
   transition: min-height 0.5s ease-in-out;
+  background-color: rgba(68, 68, 68, 0.8);
 }
 
 .DockTag {
-  margin: -1.5rem 0 -1.8rem 2.6rem;
+  margin: -1.5rem 0 -1.4rem 2.6rem;
   opacity: 0;
   -webkit-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
