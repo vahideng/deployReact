@@ -13,6 +13,9 @@ import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
 import images from "src/assets";
 import List from "src/components/lists/list/List";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
+import SettingModalCenter from "src/components/modals/settingModalCenter/SettingModalCenter";
+import StatusFormContainer from "src/components/wrappers/statusFormContainer/StatusFormContainer";
+import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 
 const { B_13_ORANGE_463, R_12_WHITE, B_14_WHITE } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -31,6 +34,7 @@ const Sprint3: React.FC<Props> = () => {
   const [sprint3, setSprint3] = useState(false);
   const [homeRedirect, setHomeRedirect] = useState(false);
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+  const [settingsModalOpen, setSettingsModalOpen] = useState(false);
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -401,6 +405,94 @@ const Sprint3: React.FC<Props> = () => {
           imageIcon={{ src: images.common.JomPay1, size: 40 }}
         />
       </div>
+      <Title>SettingModalCenter</Title>
+      <PrimaryButton
+        title="Open Settings Modal"
+        onButtonClick={() => setSettingsModalOpen(true)}
+      />
+      <SettingModalCenter
+        onRequestClose={() => setSettingsModalOpen(false)}
+        testId={"testId"}
+        modalIsOpen={settingsModalOpen}
+        modalChildren={
+          <StatusFormContainer
+            statusIcon={{
+              iconColor: { top: "#DCEAEA", bottom: "#7FA2A2" },
+              image: {
+                src: images.common.amyIcon,
+                alt: "logo"
+              },
+              outerIconColor: "#EAF4F4"
+            }}
+            children={
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  padding: "0rem 2rem"
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textAlign: "center",
+                    padding: "1rem"
+                  }}
+                >
+                  <TextWithDetails
+                    title="Forgotten your username and password?"
+                    content={[
+                      "If you have forgotten your username and/or password, you can change them in AmOnline"
+                    ]}
+                    contentStyle={{ marginBottom: "1rem" }}
+                  />
+                  <TextWithDetails
+                    title="Need more assistance?"
+                    direction="row"
+                    content={["We're here to help. Get in touch with us"]}
+                    contentStyle={{ marginBottom: "1rem" }}
+                  />
+                  <div style={{ marginBottom: "1rem" }}>
+                    <LabeledIcon
+                      rightLabel="+603 2178 8888"
+                      rightLabelStyle={{
+                        fontWeight: 700,
+                        fontSize: "0.93rem"
+                      }}
+                      icon={{
+                        name: "Call",
+                        color: "#FF2626",
+                        size: 28
+                      }}
+                    />
+                  </div>
+                  <LabeledIcon
+                    rightLabel="customercare@ambankgroup.com"
+                    rightLabelStyle={{ fontWeight: 700, fontSize: "0.93rem" }}
+                    icon={{
+                      name: "Inbox",
+                      color: "#FF2626",
+                      size: 28
+                    }}
+                  />
+                </div>
+                <div style={{ marginTop: "1rem", marginBottom: "3rem" }}>
+                  <PrimaryButton
+                    title="Close"
+                    onButtonClick={() => {
+                      setSettingsModalOpen(false);
+                    }}
+                  />
+                </div>
+              </div>
+            }
+          />
+        }
+      />
     </div>
   );
 };
