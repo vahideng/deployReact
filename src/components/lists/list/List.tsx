@@ -4,10 +4,12 @@ import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../../assets/typography";
 import Line from "src/components/line/Line";
 import { Row } from "react-bootstrap";
+import { CSSProperties } from "styled-components";
 
 const {
   B_18_BLACK,
   R_13_GREY444,
+  B_13_ORANGE_463,
   B_15_BLACK,
   B_24_BLACK,
   B_14_BLACK
@@ -28,6 +30,11 @@ interface Props {
     status?: {
       content: string;
       color: string;
+    };
+    bottomText?: {
+      content: string;
+      onClick?: () => void;
+      style?: CSSProperties;
     };
   }[];
 }
@@ -104,6 +111,15 @@ const List: React.FC<Props> = ({ header, testId, list }) => {
                     <R_13_GREY444 style={{ color: item.status.color }}>
                       {item.status.content}
                     </R_13_GREY444>
+                  )}
+                  {item.bottomText === undefined ? null : (
+                    <B_13_ORANGE_463
+                      className={classes.BottomText}
+                      onClick={item.bottomText.onClick}
+                      style={item.bottomText.style}
+                    >
+                      {item.bottomText.content}
+                    </B_13_ORANGE_463>
                   )}
                 </div>
               </div>
