@@ -14,6 +14,7 @@ import images from "src/assets";
 import List from "src/components/lists/list/List";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
 import StatusFormContainer from "src/components/wrappers/statusFormContainer/StatusFormContainer";
+import CenterMessage from "src/components/infographic/centerMessage/CenterMessage";
 
 const { B_13_ORANGE_463, R_12_WHITE, B_14_WHITE, B_24_BLACK } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -510,6 +511,17 @@ const Sprint3: React.FC<Props> = () => {
           }
         />
         }
+      </div>
+      <Title>Message (using CenterMessage component)</Title>
+      <div
+        style={{
+          height: 500
+        }}
+      >
+        <CenterMessage
+          title="You have been logged out"
+          subtitle="Thank you for banking with AmOnline"
+        />
       </div>
     </div>
   );

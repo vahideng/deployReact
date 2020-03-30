@@ -71,6 +71,7 @@ import CalendarBox from "./components/inputs/calendarBox/CalendarBox";
 import TextWithDetails from "./components/infographic/textWithDetails/TextWithDetails";
 import ArrayCheckBox from "./components/arrayCheckBox/ArrayCheckBox";
 import Line from "./components/line/Line";
+import CenterMessage from "./components/infographic/centerMessage/CenterMessage";
 
 /// exports
 export {
@@ -80,6 +81,7 @@ export {
   TextWithDetails,
   ArrayCheckBox,
   Line,
+  CenterMessage,
   /// below are sprint-2 components
   CalendarBox,
   Box_V2,
