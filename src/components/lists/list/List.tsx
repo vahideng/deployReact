@@ -21,6 +21,7 @@ interface Props {
     title?: string;
     subTitle?: React.ReactNode;
   };
+  itemContainerStyle?: CSSProperties;
   list?: {
     leftLabel: string;
     rightLabel?: string;
@@ -39,7 +40,12 @@ interface Props {
   }[];
 }
 
-const List: React.FC<Props> = ({ header, testId, list }) => {
+const List: React.FC<Props> = ({
+  header,
+  itemContainerStyle,
+  testId,
+  list
+}) => {
   return (
     <div id={testId}>
       {!!header && (
@@ -71,6 +77,7 @@ const List: React.FC<Props> = ({ header, testId, list }) => {
           return (
             <div
               className={classes.ListItemsContainer}
+              style={itemContainerStyle}
               id={`${testId}-${index}`}
               key={index}
             >
