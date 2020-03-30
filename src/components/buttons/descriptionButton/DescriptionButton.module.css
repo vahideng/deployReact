@@ -36,3 +36,7 @@
           align-items: center;
   height: 100%;
 }
+
+.DescriptionAmount {
+  white-space: nowrap;
+}

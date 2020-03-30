@@ -48,12 +48,13 @@ const Home: React.FC<Props> = () => {
                 }}
                 buttonStyles={{
                   color: "#FFFFFF",
-                  fontWeight: 400,
-                  fontSize: 15
+                  fontWeight: 'bold',
+                  fontSize: 15,
                 }}
               />,
 
               <TextDropdown
+                boldFont={true}
                 themColor="#FFFFFF"
                 handleChange={(selectedOption: any) => {
                   setSelectedOption(selectedOption);

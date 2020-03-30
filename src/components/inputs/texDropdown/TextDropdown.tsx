@@ -13,10 +13,11 @@ interface Props {
   menuIsOpen?: boolean;
   themColor?: string;
   defaultValue?: any;
+  boldFont?: boolean;
 }
 interface State {}
 
-const customStyles = (themColor: string | undefined) => ({
+const customStyles = (themColor: string | undefined, boldFont: boolean | undefined) => ({
   control: (provided: any) => ({
     ...provided,
     border: "hidden",
@@ -36,7 +37,7 @@ const customStyles = (themColor: string | undefined) => ({
   singleValue: (base: any) => ({
     ...base,
     color: !!themColor ? themColor : "#000000",
-    fontWeight: "bold"
+    fontWeight: !!boldFont ? 'bold' : 'normal'
   }),
   menu: (provided: any) => ({
     ...provided,
@@ -104,7 +105,8 @@ class TextDropdown extends Component<Props, State> {
       placeHolder,
       testId,
       themColor,
-      defaultValue
+      defaultValue,
+      boldFont
     } = this.props;
     return (
       <div
@@ -119,7 +121,7 @@ class TextDropdown extends Component<Props, State> {
             value={selectedOption || defaultValue}
             onChange={object => this.onchangeHandler(object)}
             options={options}
-            styles={customStyles(themColor)}
+            styles={customStyles(themColor, boldFont)}
             menuIsOpen={this.state.menuIsOpen}
             isSearchable={false}
             onBlur={() => this.onBlurHandler()}
