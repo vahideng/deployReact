@@ -200,9 +200,7 @@ class Sprint1 extends Component<Props, State> {
           }
         />
         <Title>TransactionList</Title>
-        <CenteredDiv
-          style={{ backgroundColor: "white", paddingBottom: "20px" }}
-        >
+        <CenteredDiv style={{ backgroundColor: "white", padding: 50 }}>
           <TransactionList
             testId={"testId"}
             data={[
@@ -606,53 +604,53 @@ class Sprint1 extends Component<Props, State> {
           />
         </>
         <Title>List with Header inside FormContainer with statusIcon</Title>
-        <div style={{ backgroundColor: "#EEEEEE", paddingTop: 100 }}>
+        <div style={{ backgroundColor: "#EEEEEE", padding: 100 }}>
           <FormContainer
             statusIcon={{
               icon: "Tick-1",
               iconColor: { top: "#94EC9B", bottom: "#5BB362" }
             }}
-            children={
-              <List
-                header={{
-                  title: "Transfer Successful",
-                  subTitle: (
-                    <div style={{ display: "flex" }}>
-                      <span>You have successfully transferred</span>
-                      <p style={{ fontWeight: 700 }}> RM 500.00 </p>
-                      <span> to </span>
-                      <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
-                    </div>
-                  )
-                }}
-                list={[
-                  {
-                    leftLabel: "To",
-                    rightLabel: "Saving Account A",
-                    details: ["8881019596535 | AmBank"]
-                  },
-                  {
-                    leftLabel: "Amount",
-                    rightLabel: "RM 500.00",
-                    details: ["Fees & Charges: RM 0.00"]
-                  },
-                  {
-                    leftLabel: "Date",
-                    rightLabel: "Transfer Now",
-                    details: ["Today, 5 January 2019"]
-                  },
-                  {
-                    leftLabel: "Reference",
-                    rightLabel: "House Rental"
-                  },
-                  {
-                    leftLabel: "From",
-                    rightLabel: "Savings Account",
-                    details: ["2998202013", "Available Balance: RM 10,301.50"]
-                  }
-                ]}
-              />
-            }
+            // children={
+            //   <List
+            //     header={{
+            //       title: "Transfer Successful",
+            //       subTitle: (
+            //         <div style={{ display: "flex" }}>
+            //           <span>You have successfully transferred</span>
+            //           <p style={{ fontWeight: 700 }}> RM 500.00 </p>
+            //           <span> to </span>
+            //           <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
+            //         </div>
+            //       )
+            //     }}
+            //     list={[
+            //       {
+            //         leftLabel: "To",
+            //         rightLabel: "Saving Account A",
+            //         details: ["8881019596535 | AmBank"]
+            //       },
+            //       {
+            //         leftLabel: "Amount",
+            //         rightLabel: "RM 500.00",
+            //         details: ["Fees & Charges: RM 0.00"]
+            //       },
+            //       {
+            //         leftLabel: "Date",
+            //         rightLabel: "Transfer Now",
+            //         details: ["Today, 5 January 2019"]
+            //       },
+            //       {
+            //         leftLabel: "Reference",
+            //         rightLabel: "House Rental"
+            //       },
+            //       {
+            //         leftLabel: "From",
+            //         rightLabel: "Savings Account",
+            //         details: ["2998202013", "Available Balance: RM 10,301.50"]
+            //       }
+            //     ]}
+            //   />
+            // }
           />
         </div>
         <Title>FloatingButton</Title>
@@ -1929,7 +1927,7 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
         <Title>secureImage</Title>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
           <SecureImage
             testId={"testId"}
             label="Hi Adam3011, is this your security image?"

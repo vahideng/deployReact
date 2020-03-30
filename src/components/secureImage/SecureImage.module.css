@@ -20,16 +20,16 @@
 }
 
 .SecureImageBGBlur {
-  width: 21rem;
-  height: 10.2rem;
+  width: 21.25rem;
+  height: 10.43rem;
   border-radius: 1rem;
   -o-object-fit: inherit;
      object-fit: inherit;
-  background-size: 22rem 12rem;
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
-  -webkit-transform: translate(1%, -101%);
-          transform: translate(1%, -101%);
+  background-size: 26rem 10rem;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
 }
 
 .SecureImageImg {
@@ -39,6 +39,4 @@
   width: 10.62rem;
   height: 10.43rem;
   z-index: 10;
-  -webkit-filter: blur(0px);
-          filter: blur(0px);
 }

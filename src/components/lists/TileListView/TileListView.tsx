@@ -62,10 +62,18 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  marginLeft: item.cardLogo ? 16 : 0,
+                  marginLeft: item.cardLogo ? 16 : 0
                 }}
               >
-                <R_15_GREY444 style={{ fontWeight: 600, whiteSpace: 'nowrap', maxWidth: '16.87rem', textOverflow: 'ellipsis',overflow: 'hidden' }}>
+                <R_15_GREY444
+                  style={{
+                    fontWeight: 600,
+                    whiteSpace: "nowrap",
+                    maxWidth: "16.87rem",
+                    textOverflow: "ellipsis",
+                    overflow: "hidden"
+                  }}
+                >
                   {item.accountName}{" "}
                   <span style={{ display: "inline-block" }}>
                     {item.accountNickName}
@@ -93,7 +101,10 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                       |{" "}
                     </R_13_BLACK>
                     <R_13_BLACK
-                      style={{ color: item.statusLabel2Color, fontWeight: 600 }}
+                      style={{
+                        color: item.statusLabel2Color,
+                        fontWeight: 600
+                      }}
                     >
                       {item.statusLabel2}
                     </R_13_BLACK>
