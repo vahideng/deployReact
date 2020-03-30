@@ -1,13 +1,12 @@
-import React, { ReactNode, CSSProperties } from "react";
+import React, { CSSProperties } from "react";
 import Paragraphs from "../../assets/typography";
-import classes from "./TextWithDetails.module.css";
-import { Row, Col } from "react-bootstrap";
+import styled from "styled-components";
 
-const { R_11_BLACK, B_13_BLACK } = Paragraphs;
+const { B_15_BLACK, R_15_BLACK } = Paragraphs;
 interface Props {
   content?: string[];
   contentStyle?: CSSProperties;
-  left?: ReactNode;
+  direction?: "row" | "column";
   testId?: string;
   title: string;
   titleStyle?: CSSProperties;
@@ -16,25 +15,27 @@ interface Props {
 const TextWithDetails: React.FC<Props> = ({
   content,
   contentStyle,
+  direction,
   testId,
-  left,
   title,
   titleStyle
 }) => {
+  const paddingLeft = direction === "row" ? { paddingLeft: "0.25rem" } : {};
+  const defaultDirection = direction !== undefined ? direction : "column";
+  const MainDiv = styled.div`
+    display: flex;
+    flex-direction: ${defaultDirection};
+  `;
+
   return (
-    <Row className={classes.Row} id={testId}>
-      <div>{left !== undefined ? left : null}</div>
-      <Col className={classes.Col}>
-        <B_13_BLACK style={titleStyle}>{title}</B_13_BLACK>
-        {content === undefined
-          ? null
-          : content.map((subtitle: string, index: number) => (
-              <R_11_BLACK key={index} style={contentStyle}>
-                {subtitle}
-              </R_11_BLACK>
-            ))}
-      </Col>
-    </Row>
+    <MainDiv id={testId}>
+      <B_15_BLACK style={titleStyle}>{title}</B_15_BLACK>
+      {content === undefined ? null : (
+        <R_15_BLACK style={{ ...paddingLeft, ...contentStyle }}>
+          {content}
+        </R_15_BLACK>
+      )}
+    </MainDiv>
   );
 };
 
