@@ -5,8 +5,15 @@
 .SecureImageMain {
   width: 21.25rem;
   height: 10.43rem;
-  display: inline-block;
-  padding: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 1rem;
   height: 10.5rem;
   overflow: hidden;
@@ -14,12 +21,12 @@
 }
 
 .SecureImageBG {
-  width: 21.25rem;
-  height: 10.43rem;
+  width: 60rem;
+  height: 30rem;
   border-radius: 1rem;
   -o-object-fit: inherit;
      object-fit: inherit;
-  background-size: 127% 127%;
+  background-size: 110% 110%;
   -webkit-filter: blur(4px);
           filter: blur(4px);
 }
