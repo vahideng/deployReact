@@ -12,7 +12,7 @@ interface IItem {
   content: string;
   image?: any;
 
-  onClick?: () => void;
+  onClick?: (item: any) => void;
   title: string;
   video?: string;
 }
@@ -36,7 +36,8 @@ const SecondBanner: React.FC<Props> = ({
       <B_32_BLACK style={{ paddingBottom: "2rem" }}>{title}</B_32_BLACK>
 
       {data.map(item => (
-        <div className={classes.Container} onClick={item.onClick}>
+
+        <div className={classes.Container} onClick={item.onClick ?  ()=>item.onClick(item) : null}>
           <Row>
             <div className={classes.Overlay}>
               <div className={classes.ImageOverlay}></div>

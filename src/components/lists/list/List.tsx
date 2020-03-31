@@ -8,18 +8,25 @@ import { CSSProperties } from "styled-components";
 
 const {
   B_18_BLACK,
-  R_13_GREY444,
   B_13_ORANGE_463,
+  R_13_GREY444,
   B_15_BLACK,
+  R_14_GREY444,
   B_24_BLACK,
   B_14_BLACK
 } = Paragraphs;
 interface Props {
   testId?: string;
+
   header?: {
     icon?: { name: string; color?: string; iconText: string };
     title?: string;
     subTitle?: React.ReactNode;
+    image?: {
+      name?: any;
+      alt?: string;
+      style?: CSSProperties;
+    };
   };
   itemContainerStyle?: CSSProperties;
   list?: {
@@ -27,7 +34,12 @@ interface Props {
     rightLabel?: string;
     approved?: boolean;
     details?: string[];
-    amount?: string;
+    amount?: {
+      content?: string;
+      styleContent?: CSSProperties;
+      value?: string;
+      styleValue?: CSSProperties;
+    };
     status?: {
       content: string;
       color: string;
@@ -47,7 +59,7 @@ const List: React.FC<Props> = ({
   list
 }) => {
   return (
-    <div id={testId}>
+    <div className={classes.Container} id={testId}>
       {!!header && (
         <div>
           {!!header.title && (
@@ -58,18 +70,34 @@ const List: React.FC<Props> = ({
               {header.subTitle}
             </div>
           )}
-          {!!header.icon && (
-            <div>
-              <div className={classes.ListIconDiv}>
-                <Icon
-                  className={classes.ListIcon}
-                  icon={header.icon.name}
-                  color={!!header.icon.color ? header.icon.color : "#ff2626"}
-                />
-                <B_18_BLACK>{header.icon.iconText}</B_18_BLACK>
-              </div>
-            </div>
-          )}
+
+          {!header.image
+            ? !!header.icon && (
+                <div>
+                  <div className={classes.ListIconDiv}>
+                    <Icon
+                      className={classes.ListIcon}
+                      icon={header.icon.name}
+                      color={
+                        !!header.icon.color ? header.icon.color : "#ff2626"
+                      }
+                    />
+                    <B_18_BLACK>{header.icon.iconText}</B_18_BLACK>
+                  </div>
+                </div>
+              )
+            : !!header.image && (
+                <div>
+                  <div className={classes.ListIconDiv}>
+                    <img
+                      src={header.image.name}
+                      alt={header.image.alt}
+                      style={header.image.style}
+                    />
+                    <B_18_BLACK>{header.icon.iconText}</B_18_BLACK>
+                  </div>
+                </div>
+              )}
         </div>
       )}
       {!!list &&
@@ -108,9 +136,14 @@ const List: React.FC<Props> = ({
                     })}
                   {item.amount === undefined ? null : (
                     <Row className={classes.AmountContainer}>
-                      <R_13_GREY444>Amount:</R_13_GREY444>
-                      <B_14_BLACK className={classes.Amount}>
-                        {item.amount}
+                      <R_14_GREY444 style={item.amount.styleContent}>
+                        {item.amount.content}
+                      </R_14_GREY444>
+                      <B_14_BLACK
+                        style={item.amount.styleValue}
+                        className={classes.Amount}
+                      >
+                        {item.amount.value}
                       </B_14_BLACK>
                     </Row>
                   )}

@@ -12,13 +12,15 @@ interface Props {
     highlighted?: Boolean;
     title: string;
     content?: string;
+    clickable?: boolean
   }[];
 }
 const ArticleDetails: React.FC<Props> = ({
   testId,
   mainTitle,
   data,
-  onArticleClick
+  onArticleClick,
+  
 }) => {
   return (
     <>
@@ -31,9 +33,9 @@ const ArticleDetails: React.FC<Props> = ({
             <div
               key={index}
               className={classes.adData}
-              onClick={() => {
-                onArticleClick(item, index);
-              }}
+              onClick={ item.clickable ? () => {
+                onArticleClick(item, index)
+              }:  null}
             >
               <div className={classes.Container}>
                 {item.highlighted ? (

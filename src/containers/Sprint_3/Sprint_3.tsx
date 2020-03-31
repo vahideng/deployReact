@@ -345,7 +345,12 @@ const Sprint3: React.FC<Props> = () => {
                   rightLabel: "Saving Account A",
                   approved: true,
                   details: ["8881019596535 | AmBank"],
-                  amount: "RM 500"
+                  amount : {
+                    content : "Dynamic",
+                       styleContent : {},
+                      value : "600RM", 
+                       styleValue : {}
+                  }
                 },
 
                 {
@@ -417,33 +422,43 @@ const Sprint3: React.FC<Props> = () => {
       >
         <FormContainer
           children={
+           
             <List
               header={{
                 icon: {
                   name: "LOGO",
                   color: "#ff2626",
                   iconText: "Review & Confirm"
-                }
-              }}
+                },
+                image : {
+                name: images.common.amyIcon,
+                alt: "logo",
+                style :{ paddingLeft :"40px"}
+              }}}
               list={[
                 {
                   leftLabel: "To",
                   rightLabel: "Saving Account A",
                   approved: true,
                   details: ["8881019596535 | AmBank"],
-                  amount: "RM 500"
+                  amount : {
+                    content : "amount",
+                    value : "500RM",
+                  }
                 },
                 {
                   leftLabel: "From",
                   rightLabel: "Savings Account",
                   details: ["2998202013", "Available Balance: RM 10,301.50"],
-                  bottomText: {
+                  bottomText: { // provide color props
                     content: "Change Account",
-                    onClick: () => alert("Change account")
+                    onClick: () => alert("Change account"),
+                    style : {backgroundColor : "blue" , color: "red"}
                   }
                 }
               ]}
             />
+        
           }
         />
       </div>
@@ -523,9 +538,11 @@ const Sprint3: React.FC<Props> = () => {
           height: 500
         }}
       >
-        <CenterMessage
+        <CenterMessage // show props , positioning props
+          show= {true}
+          style = {{padding :"80px" }}
           title="You have been logged out"
-          subtitle="Thank you for banking with AmOnline"
+          subtitle="Thank you for banking with AmOnline Thank you for banking with AmOnline Thank you for banking with AmOnline Thank you for banking with AmOnline Thank you for banking with AmOnlineThank you for banking with AmOnlineThank you for banking with AmOnlineThank you for banking with AmOnlineThank you for banking with AmOnline Thank you for banking with AmOnline Thank you for banking with AmOnline "
         />
       </div> 
       <Title>SettingModalCenter</Title>
@@ -533,10 +550,10 @@ const Sprint3: React.FC<Props> = () => {
         title="Open Settings Modal"
         onButtonClick={() => setSettingsModalOpen(true)}
       />
-      <SettingModalCenter
-        onRequestClose={() => setSettingsModalOpen(false)}
-        testId={"testId"}
-        modalIsOpen={settingsModalOpen}
+      <SettingModalCenter // give CV  close functionality 
+       testId={"testId"}
+       modalIsOpen={settingsModalOpen}
+        onRequestClose ={ ()=> alert("close")}
         modalChildren={
           <StatusFormContainer
             statusIcon={{

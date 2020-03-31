@@ -497,7 +497,7 @@ const Sprint2: React.FC<Props> = () => {
         <SecondBanner
           data={[
             {
-              onClick: () => alert("click"),
+              onClick: (item) => alert(item.title),
               content:
                 "Consectetur Consectetur ConsecteturConsectetur Consectetur  Consectetur  Consectetur Consectetur Consectetur Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
               video:
@@ -506,6 +506,7 @@ const Sprint2: React.FC<Props> = () => {
                 title:"Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
             },
             {
+              onClick: (item) => alert(item.title),
               content:
                 "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
                image: images.common.masterCard,
@@ -513,6 +514,7 @@ const Sprint2: React.FC<Props> = () => {
                 "em ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloLorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
             },
             {
+             
               content:
                 "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
               image:
@@ -572,15 +574,18 @@ const Sprint2: React.FC<Props> = () => {
                   "Lorem ipsum dolor sit amet, surreal awesome gabr builds",
                 content:
                   "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-                highlighted: true
+                highlighted: true,
+                clickable : false
               },
               {
                 title:
-                  "Lorem ipsum dolor sit amet, surreal awesome gabr builds conversion"
+                  "Lorem ipsum dolor sit amet, surreal awesome gabr builds conversion",
+                  clickable : true
               },
               {
                 title:
-                  "Lorem ipsum dolor sit amet, surreal awesome gabr builds conversion"
+                  "Lorem ipsum dolor sit amet, surreal awesome gabr builds conversion",
+                  clickable : true
               }
             ]}
           />
