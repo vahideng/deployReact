@@ -1939,7 +1939,7 @@ class Sprint1 extends Component<Props, State> {
             testId={"testId"}
             label="Hi Adam3011, is this your security image?"
             image={
-              "https://images.unsplash.com/photo-1548848221-0c2e497ed557?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+              "https://images.unsplash.com/photo-1515041219749-89347f83291a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2167&q=80"
             }
           />
           <SecureImage
