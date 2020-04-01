@@ -20,6 +20,7 @@ import StatusFormContainer from "src/components/wrappers/statusFormContainer/Sta
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import PieChartBox from "src/components/pies/PieChartBox/PieChartBox";
 import InputField from "src/components/inputs/inputFields/InputFields";
+import HeaderWithIcons from "src/components/headers/HeaderWithIcons/HeaderWithIcons";
 
 const {
   B_13_ORANGE_463,
@@ -348,6 +349,72 @@ const Sprint3: React.FC<Props> = () => {
           onButtonClick={() => alert("clicked")}
           icon={{ name: "delete", color: "#ffffff" }}
         />
+        <PrimaryButton
+          title="Set up now"
+          onButtonClick={() => alert("clicked")}
+          buttonColor={{ top: "#F6F6F3", bottom: "#EAE9E3" }}
+          titleColor="#000000"
+        />
+        <PrimaryButton
+          title="Remove device"
+          onButtonClick={() => alert("clicked")}
+        />
+      </CenteredDiv>
+      <Title>HeaderWithIcons</Title>
+      <CenteredDiv>
+        <div style={{ width: 620 }}>
+          <HeaderWithIcons
+            headerStyle={{
+              backgroundColor: "rgba(196, 196, 196, 0.3)",
+              padding: "1rem"
+            }}
+            icon={{ name: "Amy", color: "#ff2626" }}
+            label="Your DuitNow IDs (3/5)"
+            tooltipData={{
+              testId: "101",
+              tipChildren: (
+                <div>
+                  <B_14_WHITE>Tips</B_14_WHITE>
+                  <R_12_WHITE>
+                    Accumulation of fund’s market value based on current NAV.
+                    Current value is an indicative value and is to be considered
+                    as reference only.
+                  </R_12_WHITE>
+                </div>
+              )
+            }}
+            buttonLabel={"Add Mobile Number"}
+            buttonColor={{ top: "#F6F6F3", bottom: "#EAE9E3" }}
+            buttonIcon={{ name: "Add", color: "#000000", size: 25 }}
+            onButtonClick={() => alert("clicked")}
+          />
+          <br />
+          <HeaderWithIcons
+            headerStyle={{
+              backgroundColor: "rgba(196, 196, 196, 0.3)",
+              padding: "1rem"
+            }}
+            image={{ src: images.common.Duitnow1 }}
+            label="Your DuitNow IDs (3/5)"
+            tooltipData={{
+              testId: "101",
+              tipChildren: (
+                <div>
+                  <B_14_WHITE>Tips</B_14_WHITE>
+                  <R_12_WHITE>
+                    Accumulation of fund’s market value based on current NAV.
+                    Current value is an indicative value and is to be considered
+                    as reference only.
+                  </R_12_WHITE>
+                </div>
+              )
+            }}
+            buttonLabel={"Add Mobile Number"}
+            buttonColor={{ top: "#F6F6F3", bottom: "#EAE9E3" }}
+            buttonIcon={{ name: "Add", color: "#000000", size: 25 }}
+            onButtonClick={() => alert("clicked")}
+          />
+        </div>
       </CenteredDiv>
       <Title>Text With Details</Title>
       <div
