@@ -42,9 +42,19 @@ const PrimaryButton: React.FC<Props> = ({
             : {}
         }
       >
-        <B_15_WHITE style={titleColor ? { color: titleColor } : {}}>
-          {title}
-        </B_15_WHITE>
+        <div className={classes.IconDiv}>
+          {icon && (
+            <Icon
+              icon={icon.name}
+              className={classes.Icon}
+              color={icon.color}
+              size={30}
+            />
+          )}
+          <B_15_WHITE style={titleColor ? { color: titleColor } : {}}>
+            {title}
+          </B_15_WHITE>
+        </div>
       </button>
     </div>
   ) : (

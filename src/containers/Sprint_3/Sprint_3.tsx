@@ -303,6 +303,7 @@ const Sprint3: React.FC<Props> = () => {
         />
       </div>
       <Title>InputField</Title>
+
       <CenteredDiv>
         <InputField
           tipChildren={
@@ -331,6 +332,21 @@ const Sprint3: React.FC<Props> = () => {
               inputValue: event.target.value
             });
           }}
+        />
+      </CenteredDiv>
+      <Title>InputField</Title>
+      <CenteredDiv>
+        <PrimaryButton
+          title="Set up now"
+          onButtonClick={() => alert("clicked")}
+          buttonColor={{ top: "#F6F6F3", bottom: "#EAE9E3" }}
+          titleColor="#000000"
+          icon={{ name: "Settings", color: "#000000" }}
+        />
+        <PrimaryButton
+          title="Remove device"
+          onButtonClick={() => alert("clicked")}
+          icon={{ name: "delete", color: "#ffffff" }}
         />
       </CenteredDiv>
       <Title>Text With Details</Title>
