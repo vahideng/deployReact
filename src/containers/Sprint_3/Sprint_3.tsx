@@ -20,6 +20,7 @@ import StatusFormContainer from "src/components/wrappers/statusFormContainer/Sta
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import PieChartBox from "src/components/pies/PieChartBox/PieChartBox";
 import InputField from "src/components/inputs/inputFields/InputFields";
+import HeaderWithIButtons from "src/components/headers/HeaderWithButtons/HeaderWithIButtons";
 import HeaderWithIcons from "src/components/headers/HeaderWithIcons/HeaderWithIcons";
 
 const {
@@ -39,7 +40,7 @@ const Title = styled(B_13_ORANGE_463)`
 const CenteredDiv = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 5rem;
+  padding: 2rem 0;
 `;
 interface Props {}
 
@@ -335,7 +336,7 @@ const Sprint3: React.FC<Props> = () => {
           }}
         />
       </CenteredDiv>
-      <Title>InputField</Title>
+      <Title>Primary Button</Title>
       <CenteredDiv>
         <PrimaryButton
           title="Set up now"
@@ -360,10 +361,10 @@ const Sprint3: React.FC<Props> = () => {
           onButtonClick={() => alert("clicked")}
         />
       </CenteredDiv>
-      <Title>HeaderWithIcons</Title>
+      <Title>HeaderWithIButtons</Title>
       <CenteredDiv>
         <div style={{ width: 620 }}>
-          <HeaderWithIcons
+          <HeaderWithIButtons
             headerStyle={{
               backgroundColor: "rgba(196, 196, 196, 0.3)",
               padding: "1rem"
@@ -389,7 +390,7 @@ const Sprint3: React.FC<Props> = () => {
             onButtonClick={() => alert("clicked")}
           />
           <br />
-          <HeaderWithIcons
+          <HeaderWithIButtons
             headerStyle={{
               backgroundColor: "rgba(196, 196, 196, 0.3)",
               padding: "1rem"
@@ -413,6 +414,31 @@ const Sprint3: React.FC<Props> = () => {
             buttonColor={{ top: "#F6F6F3", bottom: "#EAE9E3" }}
             buttonIcon={{ name: "Add", color: "#000000", size: 25 }}
             onButtonClick={() => alert("clicked")}
+          />
+        </div>
+      </CenteredDiv>
+      <Title>Header With Icons</Title>
+      <CenteredDiv>
+        <div style={{ width: 620 }}>
+          <HeaderWithIcons
+            headerStyle={{
+              backgroundColor: "rgba(196, 196, 196, 0.3)",
+              padding: "1rem"
+            }}
+            label={"DuitNow QR"}
+            image={{ src: images.common.Duitnow1 }}
+            onIconClick={() => alert("clicked")}
+          />
+          <br />
+          <HeaderWithIcons
+            headerStyle={{
+              backgroundColor: "rgba(196, 196, 196, 0.3)",
+              padding: "1rem"
+            }}
+            label={"DuitNow QR"}
+            labelStyle={{ fontWeight: "normal" }}
+            leftIcon={{ name: "Amy", color: "#ff2626" }}
+            onIconClick={() => alert("clicked")}
           />
         </div>
       </CenteredDiv>

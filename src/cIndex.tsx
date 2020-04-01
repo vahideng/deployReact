@@ -75,11 +75,15 @@ import ArrayCheckBox from "./components/arrayCheckBox/ArrayCheckBox";
 import Line from "./components/line/Line";
 import CenterMessage from "./components/infographic/centerMessage/CenterMessage";
 import PieChartWrapped from "./components/pies/PieChartBox/PieChartBox";
+import HeaderWithIcons from "./components/headers/HeaderWithIcons/HeaderWithIcons";
+import HeaderWithIButtons from "./components/headers/HeaderWithButtons/HeaderWithIButtons";
 
 /// exports
 export {
   ////
   /// below are sprint-3 components
+  HeaderWithIButtons,
+  HeaderWithIcons,
   PieChartWrapped,
   TextWithDetails,
   ArrayCheckBox,

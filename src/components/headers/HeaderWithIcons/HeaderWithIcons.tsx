@@ -1,39 +1,48 @@
-import React, { ReactNode, CSSProperties } from "react";
-import LabelToolTip from "src/components/labelToolTip/LabelToolTip";
+import React, { CSSProperties } from "react";
 import Icon from "src/components/assets/icons/icon";
-import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import classes from "./HeaderWithIcons.module.css";
-
+import Paragraphs from "../../assets/typography";
+const { B_15_BLACK } = Paragraphs;
 interface Props {
-  icon?: { name: string; color?: string };
+  testId?: string;
+  leftIcon?: { name: string; color?: string; size?: number };
+  rightIcon?: {
+    name: string;
+    color?: string;
+    size?: number;
+  };
+  onIconClick: () => void;
   image?: { src: string; size?: number; alt?: string };
   label: string;
+  labelStyle?: CSSProperties;
   headerStyle?: CSSProperties;
-  tooltipData: ReactNode;
-  buttonLabel: string;
-  buttonColor?: { top: string; bottom: string };
-  titleColor?: string;
-  onButtonClick: () => void;
-  buttonIcon?: { name: string; color: string; size?: number };
 }
 
 const HeaderWithIcons = ({
-  label,
+  testId,
   headerStyle,
-  tooltipData,
-  icon,
+  leftIcon,
+  rightIcon = { name: "Fail-2", color: "#000000", size: 15 },
+  onIconClick,
   image,
-  onButtonClick,
-  buttonLabel,
-  buttonColor = { top: "", bottom: "" },
-  titleColor,
-  buttonIcon
+  label,
+  labelStyle
 }: Props) => {
   return (
-    <div className={classes.MainDiv} style={headerStyle ? headerStyle : {}}>
+    <div
+      className={classes.MainDiv}
+      style={headerStyle ? headerStyle : {}}
+      id={testId}
+    >
       <div className={classes.LeftDiv}>
         <div className={classes.IconDiv}>
-          {!!icon && <Icon icon={icon.name} color={icon.color} />}
+          {!!leftIcon && (
+            <Icon
+              icon={leftIcon.name}
+              color={leftIcon.color}
+              size={leftIcon.size}
+            />
+          )}
           {!!image && (
             <img
               src={image.src}
@@ -42,24 +51,21 @@ const HeaderWithIcons = ({
             />
           )}
         </div>
-
-        <LabelToolTip
-          label={label}
-          tooltipData={tooltipData ? tooltipData : ""}
-        />
+        <B_15_BLACK style={labelStyle}>{label}</B_15_BLACK>
       </div>
-
-      <PrimaryButton
-        onButtonClick={onButtonClick}
-        title={buttonLabel}
-        buttonColor={{ top: buttonColor.top, bottom: buttonColor.bottom }}
-        titleColor={titleColor}
-        icon={buttonIcon}
-        shadowed={true}
-        width={"10.12rem"}
-        height={"2.5rem"}
-        titleStyle={{ fontSize: 11, color: "#000000" }}
-      />
+      {!!rightIcon && (
+        <div
+          className={classes.RightIconDiv}
+          onClick={onIconClick}
+          id={`${testId}-0`}
+        >
+          <Icon
+            icon={rightIcon.name}
+            color={rightIcon.color}
+            size={rightIcon.size}
+          />
+        </div>
+      )}
     </div>
   );
 };
