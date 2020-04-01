@@ -261,7 +261,7 @@ const Sprint3: React.FC<Props> = () => {
           />
         ]}
       />
-      <Title>Pie Chart</Title>
+      <Title>Pie Chart Box</Title>
       <div
         style={{
           display: "flex",
