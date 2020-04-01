@@ -16,16 +16,19 @@ const PieChartBox: React.FC<Props> = ({
   testId,
   title
 }) => {
+  const [hundred, setHundred] = useState(false);
+
+  useEffect(() => {
+    full(pieDataSets.data);
+  }, []);
+
   const full = (num: any) => {
     const newNum = num.find((n: number) => n === 100);
     if (newNum === 100) {
       setHundred(true);
     }
   };
-  const [hundred, setHundred] = useState(false);
-  useEffect(() => {
-    full(pieDataSets.data);
-  }, []);
+
   return (
     <div className={classes.MainWrapper} id={`${testId}`}>
       <SB_13_GREY444 className={classes.Title}>{title}</SB_13_GREY444>

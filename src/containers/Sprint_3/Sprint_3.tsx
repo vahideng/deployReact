@@ -19,14 +19,26 @@ import SettingModalCenter from "src/components/modals/settingModalCenter/Setting
 import StatusFormContainer from "src/components/wrappers/statusFormContainer/StatusFormContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import PieChartBox from "src/components/pies/PieChartBox/PieChartBox";
+import InputField from "src/components/inputs/inputFields/InputFields";
 
-const { B_13_ORANGE_463, R_12_WHITE, B_14_WHITE, B_24_BLACK } = Paragraphs;
+const {
+  B_13_ORANGE_463,
+  R_12_WHITE,
+  B_14_WHITE,
+  B_24_BLACK,
+  B_15_WHITE
+} = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
   padding: 5px 0;
   margin: 5px 0;
   border-top: 1px solid #ffa463;
   border-bottom: 1px solid #ffa463;
+`;
+const CenteredDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
 `;
 interface Props {}
 
@@ -290,7 +302,38 @@ const Sprint3: React.FC<Props> = () => {
           }}
         />
       </div>
-      ,<Title>Text With Details</Title>
+      <Title>InputField</Title>
+      <CenteredDiv>
+        <InputField
+          tipChildren={
+            <div>
+              <B_15_WHITE>Password</B_15_WHITE>
+              <R_12_WHITE>
+                Must contain letter and numbers (special characters optional).
+              </R_12_WHITE>
+              <R_12_WHITE>Length between 6 to 15 characters.</R_12_WHITE>
+            </div>
+          }
+          notValid={true}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The Password is incorrect",
+            subText: "Please try again."
+          }}
+          type="text"
+          clearClickHandler={() => alert("clear clicked")}
+          clearIcon={true}
+          label="New Password"
+          icon={{ name: "Lock" }}
+          value={""}
+          handleChange={event => {
+            alert({
+              inputValue: event.target.value
+            });
+          }}
+        />
+      </CenteredDiv>
+      <Title>Text With Details</Title>
       <div
         style={{
           display: "flex",
