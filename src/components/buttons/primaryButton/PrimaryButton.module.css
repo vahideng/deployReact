@@ -1,8 +1,8 @@
 .PrimaryButton {
   border: none;
   margin: 0;
-  height: 3.5rem;
-  min-width: 16rem;
+  height: 3.12rem;
+  min-width: 14rem;
   border-radius: 2rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#fd8585), to(#ff2222));
   background: linear-gradient(180deg, #fd8585 0%, #ff2222 100%);

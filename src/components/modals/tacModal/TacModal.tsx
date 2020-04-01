@@ -108,23 +108,26 @@ const TacModal: React.FC<Props> = ({
                   </div>
                 </div>
               ) : (
-                <div className={classes.TacInputField}>
+                <>
                   <form>
-                    <InputField
-                      clearIcon={clearIcon}
-                      clearClickHandler={clearClickHandler}
-                      testId={`${testId}-0`}
-                      handleChange={handleChange}
-                      maxLength={maxLength}
-                      onBlur={onBlur}
-                      onFocus={onFocus}
-                      type="password"
-                      label={label}
-                      icon={{ name: "TAC" }}
-                      value={value}
-                      notValid={notValid}
-                      errorMessage={errorMessage}
-                    />
+                    <div className={classes.TacInputField}>
+                      <InputField
+                        clearIcon={clearIcon}
+                        clearClickHandler={clearClickHandler}
+                        testId={`${testId}-0`}
+                        handleChange={handleChange}
+                        maxLength={maxLength}
+                        onBlur={onBlur}
+                        onFocus={onFocus}
+                        type="password"
+                        label={label}
+                        icon={{ name: "TAC" }}
+                        value={value}
+                        notValid={notValid}
+                        errorMessage={errorMessage}
+                        tacInput={true}
+                      />
+                    </div>
                     <div className={classes.TacInputFieldContent}>
                       <R_15_GREY444>{content}</R_15_GREY444>
                       {!!link && (
@@ -137,7 +140,7 @@ const TacModal: React.FC<Props> = ({
                       )}
                     </div>
                   </form>
-                </div>
+                </>
               )}
 
               <div className={classes.TacButton}>

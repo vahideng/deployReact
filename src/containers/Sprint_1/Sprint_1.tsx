@@ -621,47 +621,48 @@ class Sprint1 extends Component<Props, State> {
               icon: "Tick-1",
               iconColor: { top: "#94EC9B", bottom: "#5BB362" }
             }}
-            // children={
-            //   <List
-            //     header={{
-            //       title: "Transfer Successful",
-            //       subTitle: (
-            //         <div style={{ display: "flex" }}>
-            //           <span>You have successfully transferred</span>
-            //           <p style={{ fontWeight: 700 }}> RM 500.00 </p>
-            //           <span> to </span>
-            //           <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
-            //         </div>
-            //       )
-            //     }}
-            //     list={[
-            //       {
-            //         leftLabel: "To",
-            //         rightLabel: "Saving Account A",
-            //         details: ["8881019596535 | AmBank"]
-            //       },
-            //       {
-            //         leftLabel: "Amount",
-            //         rightLabel: "RM 500.00",
-            //         details: ["Fees & Charges: RM 0.00"]
-            //       },
-            //       {
-            //         leftLabel: "Date",
-            //         rightLabel: "Transfer Now",
-            //         details: ["Today, 5 January 2019"]
-            //       },
-            //       {
-            //         leftLabel: "Reference",
-            //         rightLabel: "House Rental"
-            //       },
-            //       {
-            //         leftLabel: "From",
-            //         rightLabel: "Savings Account",
-            //         details: ["2998202013", "Available Balance: RM 10,301.50"]
-            //       }
-            //     ]}
-            //   />
-            // }
+            children={
+              <List
+                header={{
+                  title: "Transfer Successful",
+                  titleStyle: { paddingBottom: 0 },
+                  subTitle: (
+                    <div style={{ display: "flex" }}>
+                      <span>You have successfully transferred</span>
+                      <p style={{ fontWeight: 700 }}> RM 500.00 </p>
+                      <span> to </span>
+                      <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
+                    </div>
+                  )
+                }}
+                list={[
+                  {
+                    leftLabel: "To",
+                    rightLabel: "Saving Account A",
+                    details: ["8881019596535 | AmBank"]
+                  },
+                  {
+                    leftLabel: "Amount",
+                    rightLabel: "RM 500.00",
+                    details: ["Fees & Charges: RM 0.00"]
+                  },
+                  {
+                    leftLabel: "Date",
+                    rightLabel: "Transfer Now",
+                    details: ["Today, 5 January 2019"]
+                  },
+                  {
+                    leftLabel: "Reference",
+                    rightLabel: "House Rental"
+                  },
+                  {
+                    leftLabel: "From",
+                    rightLabel: "Savings Account",
+                    details: ["2998202013", "Available Balance: RM 10,301.50"]
+                  }
+                ]}
+              />
+            }
           />
         </div>
         <Title>FloatingButton</Title>
@@ -1955,7 +1956,7 @@ class Sprint1 extends Component<Props, State> {
             testId={"testId"}
             label="Hi Adam3011, is this your security image?"
             image={
-              "https://images.unsplash.com/photo-1548848221-0c2e497ed557?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+              "https://images.unsplash.com/photo-1515041219749-89347f83291a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2167&q=80"
             }
           />
           <SecureImage

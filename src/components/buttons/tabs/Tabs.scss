@@ -32,15 +32,6 @@
   overflow: hidden;
   white-space: nowrap;
 }
-.TabsTab {
-  padding: 0 2rem !important;
-  list-style-type: none;
-  height: 2.5rem;
-  cursor: pointer;
-  &:active {
-    background-color: transparent;
-  }
-}
 
 .SmallTabsSelected {
   background-color: transparent;

@@ -1,10 +1,9 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import classes from "./List.module.css";
 import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../../assets/typography";
 import Line from "src/components/line/Line";
 import { Row } from "react-bootstrap";
-import { CSSProperties } from "styled-components";
 
 const {
   B_18_BLACK,
@@ -21,6 +20,7 @@ interface Props {
   header?: {
     icon?: { name: string; color?: string; iconText: string };
     title?: string;
+    titleStyle?: CSSProperties;
     subTitle?: React.ReactNode;
     image?: {
       name?: any;
@@ -64,7 +64,10 @@ const List: React.FC<Props> = ({
         <div>
           {!!header.title && (
             <div className={classes.ListTitleDiv}>
-              <B_24_BLACK className={classes.ListTitle}>
+              <B_24_BLACK
+                className={classes.ListTitle}
+                style={header.titleStyle ? header.titleStyle : {}}
+              >
                 {header.title}
               </B_24_BLACK>
               {header.subTitle}
