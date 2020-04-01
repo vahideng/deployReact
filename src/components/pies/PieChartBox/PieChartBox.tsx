@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Doughnut } from "react-chartjs-2";
-import classes from "./PieChartWrapped.module.css";
+import classes from "./PieChartBox.module.css";
 import Paragraphs from "../../assets/typography";
 const { R_13_BLACK, SB_13_GREY444 } = Paragraphs;
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
   pieDataSets: { data: number[]; backgroundColor: string[] };
 }
 
-const PieChartWrapped: React.FC<Props> = ({
+const PieChartBox: React.FC<Props> = ({
   pieLabels,
   pieDataSets,
   testId,
@@ -90,4 +90,4 @@ const PieChartWrapped: React.FC<Props> = ({
   );
 };
 
-export default PieChartWrapped;
+export default PieChartBox;

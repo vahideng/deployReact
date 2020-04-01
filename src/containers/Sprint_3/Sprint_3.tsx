@@ -18,7 +18,7 @@ import CenterMessage from "src/components/infographic/centerMessage/CenterMessag
 import SettingModalCenter from "src/components/modals/settingModalCenter/SettingModalCenter";
 import StatusFormContainer from "src/components/wrappers/statusFormContainer/StatusFormContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
-import PieChartWrapped from "src/components/pies/PieChartWrapped/PieChartWrapped";
+import PieChartBox from "src/components/pies/PieChartBox/PieChartBox";
 
 const { B_13_ORANGE_463, R_12_WHITE, B_14_WHITE, B_24_BLACK } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -257,7 +257,7 @@ const Sprint3: React.FC<Props> = () => {
           padding: "4rem"
         }}
       >
-        <PieChartWrapped
+        <PieChartBox
           title={"YOUR CURRENT PORTFOLIO"}
           pieLabels={["Fixed Income 100%", "Equity 0%", "Mixed Assets 0% "]}
           pieDataSets={{
@@ -265,7 +265,7 @@ const Sprint3: React.FC<Props> = () => {
             backgroundColor: ["#7AB497", "#FFA463", "#8677D9"]
           }}
         />
-        <PieChartWrapped
+        <PieChartBox
           title={"Your Ideal Portfolio"}
           pieLabels={["Fixed Income 100%", "Equity 0%"]}
           pieDataSets={{
@@ -273,7 +273,7 @@ const Sprint3: React.FC<Props> = () => {
             backgroundColor: ["#7AB497", "#FFA463"]
           }}
         />
-        <PieChartWrapped
+        <PieChartBox
           title={"YOUR CURRENT PORTFOLIO"}
           pieLabels={["Fixed Income 60%", "Equity 20%", "Mixed Assets 20% "]}
           pieDataSets={{
@@ -281,7 +281,7 @@ const Sprint3: React.FC<Props> = () => {
             backgroundColor: ["#7AB497", "#FFA463", "#8677D9"]
           }}
         />
-        <PieChartWrapped
+        <PieChartBox
           title={"Your Ideal Portfolio"}
           pieLabels={["Fixed Income 85%", "Equity 15%"]}
           pieDataSets={{

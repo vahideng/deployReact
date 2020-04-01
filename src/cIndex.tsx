@@ -74,7 +74,7 @@ import TextWithDetails from "./components/infographic/textWithDetails/TextWithDe
 import ArrayCheckBox from "./components/arrayCheckBox/ArrayCheckBox";
 import Line from "./components/line/Line";
 import CenterMessage from "./components/infographic/centerMessage/CenterMessage";
-import PieChartWrapped from "./components/pies/PieChartWrapped/PieChartWrapped";
+import PieChartWrapped from "./components/pies/PieChartBox/PieChartBox";
 
 /// exports
 export {
