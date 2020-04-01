@@ -22,3 +22,11 @@
 .PrimaryButtonSmall:focus {
   outline: none;
 }
+.IconDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Icon {
+  margin-right: 0.3rem;
+}
