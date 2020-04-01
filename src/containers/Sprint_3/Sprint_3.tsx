@@ -18,6 +18,7 @@ import CenterMessage from "src/components/infographic/centerMessage/CenterMessag
 import SettingModalCenter from "src/components/modals/settingModalCenter/SettingModalCenter";
 import StatusFormContainer from "src/components/wrappers/statusFormContainer/StatusFormContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
+import PieChartWrapped from "src/components/pies/PieChartWrapped/PieChartWrapped";
 
 const { B_13_ORANGE_463, R_12_WHITE, B_14_WHITE, B_24_BLACK } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -188,7 +189,6 @@ const Sprint3: React.FC<Props> = () => {
           }
         ]}
       />
-
       <Title>Navbar Transparent</Title>
       <NavbarTransparent
         icon={{
@@ -248,7 +248,49 @@ const Sprint3: React.FC<Props> = () => {
           />
         ]}
       />
-      <Title>Text With Details</Title>
+      <Title>Pie Chart</Title>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          backgroundColor: "#F7F7F7",
+          padding: "4rem"
+        }}
+      >
+        <PieChartWrapped
+          title={"YOUR CURRENT PORTFOLIO"}
+          pieLabels={["Fixed Income 100%", "Equity 0%", "Mixed Assets 0% "]}
+          pieDataSets={{
+            data: [100, 0, 0],
+            backgroundColor: ["#7AB497", "#FFA463", "#8677D9"]
+          }}
+        />
+        <PieChartWrapped
+          title={"Your Ideal Portfolio"}
+          pieLabels={["Fixed Income 100%", "Equity 0%"]}
+          pieDataSets={{
+            data: [100, 0],
+            backgroundColor: ["#7AB497", "#FFA463"]
+          }}
+        />
+        <PieChartWrapped
+          title={"YOUR CURRENT PORTFOLIO"}
+          pieLabels={["Fixed Income 60%", "Equity 20%", "Mixed Assets 20% "]}
+          pieDataSets={{
+            data: [60, 20, 20],
+            backgroundColor: ["#7AB497", "#FFA463", "#8677D9"]
+          }}
+        />
+        <PieChartWrapped
+          title={"Your Ideal Portfolio"}
+          pieLabels={["Fixed Income 85%", "Equity 15%"]}
+          pieDataSets={{
+            data: [85, 15],
+            backgroundColor: ["#7AB497", "#FFA463"]
+          }}
+        />
+      </div>
+      ,<Title>Text With Details</Title>
       <div
         style={{
           display: "flex",
@@ -345,11 +387,11 @@ const Sprint3: React.FC<Props> = () => {
                   rightLabel: "Saving Account A",
                   approved: true,
                   details: ["8881019596535 | AmBank"],
-                  amount : {
-                    content : "Dynamic",
-                       styleContent : {},
-                      value : "600RM", 
-                       styleValue : {}
+                  amount: {
+                    content: "Dynamic",
+                    styleContent: {},
+                    value: "600RM",
+                    styleValue: {}
                   }
                 },
 
@@ -374,7 +416,6 @@ const Sprint3: React.FC<Props> = () => {
         />
       </div>
       <Title>PaymentBox (Using FormContainer component)</Title>
-
       <div
         style={{
           margin: "0 auto",
@@ -422,7 +463,6 @@ const Sprint3: React.FC<Props> = () => {
       >
         <FormContainer
           children={
-           
             <List
               header={{
                 icon: {
@@ -430,35 +470,36 @@ const Sprint3: React.FC<Props> = () => {
                   color: "#ff2626",
                   iconText: "Review & Confirm"
                 },
-                image : {
-                name: images.common.amyIcon,
-                alt: "logo",
-                style :{ paddingLeft :"40px"}
-              }}}
+                image: {
+                  name: images.common.amyIcon,
+                  alt: "logo",
+                  style: { paddingLeft: "40px" }
+                }
+              }}
               list={[
                 {
                   leftLabel: "To",
                   rightLabel: "Saving Account A",
                   approved: true,
                   details: ["8881019596535 | AmBank"],
-                  amount : {
-                    content : "amount",
-                    value : "500RM",
+                  amount: {
+                    content: "amount",
+                    value: "500RM"
                   }
                 },
                 {
                   leftLabel: "From",
                   rightLabel: "Savings Account",
                   details: ["2998202013", "Available Balance: RM 10,301.50"],
-                  bottomText: { // provide color props
+                  bottomText: {
+                    // provide color props
                     content: "Change Account",
                     onClick: () => alert("Change account"),
-                    style : {backgroundColor : "blue" , color: "red"}
+                    style: { backgroundColor: "blue", color: "red" }
                   }
                 }
               ]}
             />
-        
           }
         />
       </div>
@@ -526,7 +567,6 @@ const Sprint3: React.FC<Props> = () => {
                   }
                 ]}
               />
-              
             </div>
           }
         />
@@ -539,21 +579,21 @@ const Sprint3: React.FC<Props> = () => {
         }}
       >
         <CenterMessage // show props , positioning props
-          show= {true}
-          style = {{padding :"80px" }}
+          show={true}
+          style={{ padding: "80px" }}
           title="You have been logged out"
           subtitle="Thank you for banking with AmOnline Thank you for banking with AmOnline Thank you for banking with AmOnline Thank you for banking with AmOnline Thank you for banking with AmOnlineThank you for banking with AmOnlineThank you for banking with AmOnlineThank you for banking with AmOnlineThank you for banking with AmOnline Thank you for banking with AmOnline Thank you for banking with AmOnline "
         />
-      </div> 
+      </div>
       <Title>SettingModalCenter</Title>
       <PrimaryButton
         title="Open Settings Modal"
         onButtonClick={() => setSettingsModalOpen(true)}
       />
-      <SettingModalCenter // give CV  close functionality 
-       testId={"testId"}
-       modalIsOpen={settingsModalOpen}
-        onRequestClose ={ ()=> alert("close")}
+      <SettingModalCenter // give CV  close functionality
+        testId={"testId"}
+        modalIsOpen={settingsModalOpen}
+        onRequestClose={() => alert("close")}
         modalChildren={
           <StatusFormContainer
             statusIcon={{
@@ -632,7 +672,7 @@ const Sprint3: React.FC<Props> = () => {
             }
           />
         }
-      /> 
+      />
     </div>
   );
 };

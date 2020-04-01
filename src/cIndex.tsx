@@ -68,20 +68,24 @@ import BoxSlider from "./components/carousel/boxSlider/BoxSlider";
 import ArticleDetails from "./components/articleDetails/ArticleDetails";
 import Box_V2 from "./components/wrappers/box_V2/Box_V2";
 import CalendarBox from "./components/inputs/calendarBox/CalendarBox";
+/// below are sprint-3 components
+
 import TextWithDetails from "./components/infographic/textWithDetails/TextWithDetails";
 import ArrayCheckBox from "./components/arrayCheckBox/ArrayCheckBox";
 import Line from "./components/line/Line";
 import CenterMessage from "./components/infographic/centerMessage/CenterMessage";
+import PieChartWrapped from "./components/pies/PieChartWrapped/PieChartWrapped";
 
 /// exports
 export {
   ////
-
   /// below are sprint-3 components
+  PieChartWrapped,
   TextWithDetails,
   ArrayCheckBox,
   Line,
   CenterMessage,
+  ////
   /// below are sprint-2 components
   CalendarBox,
   Box_V2,
