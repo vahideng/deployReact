@@ -5,6 +5,7 @@ import Icon from "src/components/assets/icons/icon";
 import InlineMessage from "src/components/infographic/inlineMessage/InlineMessage";
 const { B_13_BLACK } = Paragraphs;
 interface Props {
+  tacInput?: boolean;
   testId?: string;
   value: any;
   type: string;
@@ -50,7 +51,8 @@ class InputField extends Component<Props, {}> {
       minLength,
       maxLength,
       onBlur,
-      onFocus
+      onFocus,
+      tacInput
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);
@@ -66,7 +68,10 @@ class InputField extends Component<Props, {}> {
         {!!label && (
           <B_13_BLACK className={classes.InputFieldLabel}>{label}</B_13_BLACK>
         )}
-        <div className={classes.InputFieldIconDiv}>
+        <div
+          className={classes.InputFieldIconDiv}
+          style={{ maxWidth: tacInput ? "34.81rem" : "31.6rem" }}
+        >
           {!!icon && (
             <Icon
               className={classes.InputFieldIcon}
@@ -75,6 +80,7 @@ class InputField extends Component<Props, {}> {
               size={30}
             />
           )}
+
           <input
             autoComplete={"off"}
             minLength={minLength}
@@ -84,10 +90,14 @@ class InputField extends Component<Props, {}> {
             style={
               autoFocus
                 ? {
+                    width: tacInput ? "34.81rem" : "31.6rem",
                     paddingLeft: !icon ? "1.5rem" : "3.75rem",
                     boxShadow: "none"
                   }
-                : { paddingLeft: !icon ? "1.5rem" : "3.75rem" }
+                : {
+                    paddingLeft: !icon ? "1.5rem" : "3.75rem",
+                    width: tacInput ? "34.81rem" : "31.6rem"
+                  }
             }
             type={type}
             value={value}
@@ -95,18 +105,19 @@ class InputField extends Component<Props, {}> {
             onChange={changeHandler}
             className={classes.InputFieldInput}
           />
-          <div className={classes.IconContainer}>
-            {!!clearIcon && (
-              <span
-                id={`${testId}-1`}
-                onClick={clearClickHandler}
-                className={classes.InputFieldClear}
-                style={!isSecure ? { marginLeft: "2.7rem" } : {}}
-              >
-                <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
-              </span>
-            )}
-            {!!isSecure && !!value && (
+
+          {!!clearIcon && !isSecure && (
+            <span
+              id={`${testId}-1`}
+              onClick={clearClickHandler}
+              className={classes.InputFieldClear}
+              // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
+            >
+              <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
+            </span>
+          )}
+          {!!isSecure && !!value && (
+            <>
               <span
                 id={`${testId}-0`}
                 className={classes.InputFieldPassword}
@@ -120,8 +131,18 @@ class InputField extends Component<Props, {}> {
                   size={25}
                 />
               </span>
-            )}
-          </div>
+              {!!clearIcon && (
+                <span
+                  id={`${testId}-1`}
+                  onClick={clearClickHandler}
+                  className={classes.InputFieldClear}
+                  style={{ right: "3.5rem" }}
+                >
+                  <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
+                </span>
+              )}
+            </>
+          )}
         </div>
         {!!notValid && (
           <div className={classes.InputFieldError}>

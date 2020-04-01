@@ -20,13 +20,6 @@ const SecureImage: React.FC<Props> = props => {
           }}
           className={classes.SecureImageBG}
         ></div>
-        <div
-          style={{
-            backgroundImage: `url(${image})`
-          }}
-          className={classes.SecureImageBGBlur}
-        ></div>
-
         {!!image && (
           <img src={image} alt="Logo" className={classes.SecureImageImg} />
         )}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import classes from "./List.module.css";
 import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../../assets/typography";
@@ -9,6 +9,7 @@ interface Props {
   header?: {
     icon?: { name: string; color?: string; iconText: string };
     title?: string;
+    titleStyle?: CSSProperties;
     subTitle?: React.ReactNode;
   };
   list?: {
@@ -26,7 +27,10 @@ const List: React.FC<Props> = ({ header, testId, list }) => {
         <div>
           {!!header.title && (
             <div className={classes.ListTitleDiv}>
-              <B_24_BLACK className={classes.ListTitle}>
+              <B_24_BLACK
+                className={classes.ListTitle}
+                style={header.titleStyle ? header.titleStyle : {}}
+              >
                 {header.title}
               </B_24_BLACK>
               {header.subTitle}
