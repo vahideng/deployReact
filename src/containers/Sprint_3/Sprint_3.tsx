@@ -23,6 +23,7 @@ import InputField from "src/components/inputs/inputFields/InputFields";
 import HeaderWithIButtons from "src/components/headers/HeaderWithButtons/HeaderWithIButtons";
 import HeaderWithIcons from "src/components/headers/HeaderWithIcons/HeaderWithIcons";
 import SimpleHeader from "src/components/headers/simpleHeader/SimpleHeader";
+import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
 
 const {
   B_13_ORANGE_463,
@@ -53,6 +54,11 @@ const Sprint3: React.FC<Props> = () => {
   const [homeRedirect, setHomeRedirect] = useState(false);
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   const [settingsModalOpen, setSettingsModalOpen] = useState(false);
+  const [sTileNum, setSTileNum] = useState(2);
+  const [sTileNum1, setSTileNum1] = useState(0);
+  const [sTileNum2, setSTileNum2] = useState(3);
+  const [sTileNum3, setSTileNum3] = useState(1);
+
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -450,6 +456,117 @@ const Sprint3: React.FC<Props> = () => {
           />
         </div>
       </CenteredDiv>
+      <Title>Selection Tiles</Title>
+      <div style={{ paddingLeft: "2rem" }}>
+        <SelectionTile
+          testId={"testId"}
+          onTileClick={(item, index) => {
+            setSTileNum(index);
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={sTileNum}
+          list={[
+            {
+              accountTitle: "Saving Account A",
+              accountNumber: "RM 2,000.00"
+            },
+            {
+              accountTitle: "Ambank AmMoneyLine AmMoneyLine",
+              accountNumber: "RM 2,000.00"
+            },
+            {
+              accountTitle: "Ambank BonusLink Visa",
+              accountNumber: "RM 2,000.00"
+            },
+            {
+              accountTitle: "Saving Account B",
+              accountNumber: "RM 2,000.00"
+            }
+          ]}
+        />
+
+        <SelectionTile
+          onTileClick={(item, index) => {
+            setSTileNum1(index);
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={sTileNum1}
+          list={[
+            {
+              avatar: {
+                name: "Myself Adam Constantine",
+                src:
+                  "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+              }
+            },
+            {
+              avatar: {
+                name: "Christina Azalea Rossie",
+                initials: "CA",
+                initialsBg: "#f1f1f1"
+              }
+            },
+            {
+              children: <img src={images.common.sampleLogo} width={150} />
+            },
+
+            {
+              avatar: {
+                name: "Kurniawan Suriawati",
+                initials: "KS"
+              }
+            }
+          ]}
+        />
+        <SelectionTile
+          onTileClick={(item, index) => {
+            setSTileNum2(index);
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={sTileNum2}
+          list={[
+            {
+              accountTitle: "Saving Account A",
+              accountNumber: "RM 2,000.00",
+              amount: "RM 10,301.50"
+            },
+            {
+              accountTitle: "Ambank AmMoneyLine AmMoneyLine",
+              accountNumber: "RM 2,000.00",
+              amount: " RM 11,555.00"
+            },
+            {
+              accountTitle: "Ambank BonusLink Visa",
+              accountNumber: "RM 2,000.00",
+              amount: " RM 55,555.00"
+            },
+            {
+              accountTitle: "Saving Account B",
+              accountNumber: "RM 2,000.00",
+              amount: " RM 33,555.50"
+            }
+          ]}
+        />
+        <SelectionTile
+          centered={true}
+          onTileClick={(item, index) => {
+            setSTileNum3(index);
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={sTileNum3}
+          list={[
+            {
+              centeredText: "Lost"
+            },
+            {
+              centeredText: "Stolen"
+            },
+            {
+              centeredText: "Suspicious Activity"
+            }
+          ]}
+        />
+      </div>
       <Title>Text With Details</Title>
       <div
         style={{
