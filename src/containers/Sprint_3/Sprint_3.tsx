@@ -24,6 +24,7 @@ import HeaderWithIButtons from "src/components/headers/HeaderWithButtons/HeaderW
 import HeaderWithIcons from "src/components/headers/HeaderWithIcons/HeaderWithIcons";
 import SimpleHeader from "src/components/headers/simpleHeader/SimpleHeader";
 import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
+import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 
 const {
   B_13_ORANGE_463,
@@ -58,6 +59,7 @@ const Sprint3: React.FC<Props> = () => {
   const [sTileNum1, setSTileNum1] = useState(0);
   const [sTileNum2, setSTileNum2] = useState(3);
   const [sTileNum3, setSTileNum3] = useState(1);
+  const [stickyFooter, setStickyFooter] = useState(false);
 
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
@@ -567,6 +569,24 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         />
       </div>
+      <Title>Sticky Footer</Title>
+      <CenteredDiv>
+        <PrimaryButton
+          title={"open Sticky Footer"}
+          onButtonClick={() => {
+            setStickyFooter(!stickyFooter);
+          }}
+        />
+      </CenteredDiv>
+      <StickyFooter
+        isOpen={stickyFooter}
+        label="Hide Card"
+        buttonTitle="Yes, Disable"
+        onButtonClick={() => {
+          setStickyFooter(!stickyFooter);
+        }}
+        iconText="Disable online purchases for AmBank Debit Card?"
+      />
       <Title>Text With Details</Title>
       <div
         style={{

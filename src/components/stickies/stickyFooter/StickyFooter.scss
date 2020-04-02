@@ -1,0 +1,44 @@
+.MainDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1000000;
+  animation-name: MainDiv;
+  animation-duration: 0.5s;
+}
+.LabelDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #444444;
+  height: 3.93rem;
+  width: 100%;
+}
+.InnerLabel {
+  width: 70rem;
+}
+.ContentDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70rem;
+  height: 8.18rem;
+}
+.ContentIcon {
+  display: flex;
+  align-items: center;
+  width: 39rem;
+}
+@keyframes MainDiv {
+  from {
+    height: 0;
+  }
+  to {
+    height: 12.11rem;
+  }
+}
