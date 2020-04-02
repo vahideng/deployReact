@@ -1,3 +1,28 @@
+.Container {
+  position: relative;
+}
+
+.DropdownContent {
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 100%;
+  top: 77px;
+  -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+          box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+  z-index: 1;
+}
+
+.DropdownContent p {
+  padding-bottom: 16px;
+  padding-left: 60px;
+  padding-top: 16px;
+}
+
+.DropdownContent div:hover {
+  cursor: pointer;
+  background-color: lightgrey;
+}
+
 .InputFieldMain {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6,6 +31,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.InputFieldIcon {
+  position: absolute;
+  top: 0.7rem;
+  left: 1rem;
 }
 
 .InputFieldIconDiv {
@@ -18,12 +49,6 @@
   position: relative;
 }
 
-.InputFieldIcon {
-  position: absolute;
-  top: 0.7rem;
-  left: 1rem;
-}
-
 .InputFieldIconDiv input {
   height: 3.12rem;
   min-width: 22.6rem;
@@ -31,6 +56,15 @@
   border: 0.5px solid #dedede;
   -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
           box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+}
+
+.InputFieldIconWithoutBorder input {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.InputFieldIconWithoutBorder input:focus {
+  outline: none;
 }
 
 .InputFieldInput {
@@ -77,6 +111,9 @@ input::-ms-clear ::-ms-reveal {
 
 @media (max-width: 400px) {
   .InputFieldIconDiv input {
+    width: 90vw;
+  }
+  .InputFieldIconDivWithouTBorder {
     width: 90vw;
   }
 }

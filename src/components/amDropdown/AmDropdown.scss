@@ -1,0 +1,126 @@
+@import "../assets/common/common.scss";
+
+.Container {
+  position: relative;
+}
+
+.DropdownContent {
+
+ 
+ 
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 100%;
+  top: 77px;
+  box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5,
+    0px 1px 5px #e5e5e5;
+
+  z-index: 1;
+}
+
+.DropdownContent p{
+
+    padding-bottom: 16px;
+    padding-left: 60px;
+padding-top: 16px;
+}
+
+
+.DropdownContent div:hover {
+    cursor: pointer;
+    background-color: lightgrey;
+    
+  }
+
+
+
+// .DropdownContent p:hover {
+//   cursor: pointer;
+//   background-color: red;
+  
+// }
+.InputFieldMain {
+  display: flex;
+  flex-direction: column;
+}
+
+.InputFieldIcon {
+  position: absolute;
+  top: 0.7rem;
+  left: 1rem;
+}
+
+.InputFieldIconDiv {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+.InputFieldIconDiv input {
+  height: 3.12rem;
+  min-width: 22.6rem;
+
+  border-radius: 0.95rem;
+  border: 0.5px solid #dedede;
+  box-shadow: $mainBoxShadow;
+
+}
+
+
+
+
+
+.InputFieldIconWithoutBorder input{
+  
+
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+ 
+}
+.InputFieldIconWithoutBorder input:focus {
+    outline: none;
+  }
+
+
+.InputFieldInput {
+  padding-right: 5.2rem;
+}
+.InputFieldIconDiv input:focus {
+  outline: none;
+}
+.InputFieldLabel {
+  padding: 0 0 0.62rem 1.56rem;
+}
+
+.InputFieldClear {
+  cursor: pointer;
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+}
+.InputFieldPassword {
+  cursor: pointer;
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+}
+
+.InputFieldError {
+  padding: 1rem 0 0 1rem;
+}
+input::-ms-clear ::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.InputFieldInput::-ms-clear ::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+@media (max-width: 400px) {
+  .InputFieldIconDiv input {
+    width: 90vw;
+  }
+  .InputFieldIconDivWithouTBorder{  width: 90vw;}
+}
