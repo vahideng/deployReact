@@ -1,0 +1,83 @@
+.MainDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1000000;
+  -webkit-animation-name: MainDiv;
+          animation-name: MainDiv;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+.LabelDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #444444;
+  height: 3.93rem;
+  width: 100%;
+}
+
+.InnerLabel {
+  width: 70rem;
+}
+
+.ContentDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 70rem;
+  height: 8.18rem;
+}
+
+.ContentIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 39rem;
+}
+
+@-webkit-keyframes MainDiv {
+  from {
+    height: 0;
+  }
+  to {
+    height: 12.11rem;
+  }
+}
+
+@keyframes MainDiv {
+  from {
+    height: 0;
+  }
+  to {
+    height: 12.11rem;
+  }
+}
