@@ -74,7 +74,7 @@ import TextWithDetails from "./components/infographic/textWithDetails/TextWithDe
 import ArrayCheckBox from "./components/arrayCheckBox/ArrayCheckBox";
 import Line from "./components/line/Line";
 import CenterMessage from "./components/infographic/centerMessage/CenterMessage";
-import PieChartWrapped from "./components/pies/PieChartBox/PieChartBox";
+import PieChartBox from "./components/pies/PieChartBox/PieChartBox";
 import HeaderWithIcons from "./components/headers/HeaderWithIcons/HeaderWithIcons";
 import HeaderWithIButtons from "./components/headers/HeaderWithButtons/HeaderWithIButtons";
 
@@ -84,7 +84,7 @@ export {
   /// below are sprint-3 components
   HeaderWithIButtons,
   HeaderWithIcons,
-  PieChartWrapped,
+  PieChartBox,
   TextWithDetails,
   ArrayCheckBox,
   Line,

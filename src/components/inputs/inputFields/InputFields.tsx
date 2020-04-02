@@ -3,8 +3,7 @@ import Paragraphs from "../../assets/typography";
 import classes from "./InputField.module.css";
 import Icon from "src/components/assets/icons/icon";
 import InlineMessage from "src/components/infographic/inlineMessage/InlineMessage";
-import Tooltip from "src/components/tooltip/Tooltip";
-const { B_13_BLACK } = Paragraphs;
+import Tooltip from "src/components/tooltip/Tooltip"; const { B_13_BLACK } = Paragraphs;
 interface Props {
   tacInput?: boolean;
   testId?: string;
