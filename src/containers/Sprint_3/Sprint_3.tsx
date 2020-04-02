@@ -26,6 +26,9 @@ import SimpleHeader from "src/components/headers/simpleHeader/SimpleHeader";
 import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
 import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 
+import AmDropdown from "src/components/amDropdown/AmDropdown";
+
+
 const {
   B_13_ORANGE_463,
   R_12_WHITE,
@@ -60,6 +63,19 @@ const Sprint3: React.FC<Props> = () => {
   const [sTileNum2, setSTileNum2] = useState(3);
   const [sTileNum3, setSTileNum3] = useState(1);
   const [stickyFooter, setStickyFooter] = useState(false);
+  const [showDropdown,setDropdown] = useState(false);
+  const [dropdownValue , setDropdownValue]= useState("anything")
+
+
+const handlerDropdown = (item: any)=>{
+  console.log(item,"dropdownValue");
+  
+
+  setDropdown(!showDropdown)
+  setDropdownValue(item.value)
+}
+
+
 
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
@@ -182,6 +198,9 @@ const Sprint3: React.FC<Props> = () => {
     }
   ];
 
+
+  console.log(dropdownValue, "dropdownValue");
+  
   return (
     <div style={{ paddingTop: 100 }}>
       <Navbar
@@ -271,6 +290,41 @@ const Sprint3: React.FC<Props> = () => {
           />
         ]}
       />
+
+      <Title>AmDropDown</Title>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center"
+        }}
+      >
+        <AmDropdown
+        readOnly = {true}
+        disabled = {false}
+        clickOnArrow = {()=>setDropdown(!showDropdown)}
+        showDropdown = {showDropdown}
+          dropdownData={[
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" }
+          ]}
+          notValid={false}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The TAC is incorrect",
+            subText: "Please try again."
+          }}
+          type="text"
+          inputClickHandler= {()=>setDropdown(!showDropdown)}
+          arrowIcon={true}
+          label="dropdown label"
+          icon={{ name: "Account-2" }}
+          value={dropdownValue}
+          handleChange={(item )=> handlerDropdown(item)}
+        />
+      </div>
+
       <Title>Pie Chart Box</Title>
       <div
         style={{
