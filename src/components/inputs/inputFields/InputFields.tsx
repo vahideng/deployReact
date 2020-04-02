@@ -1,9 +1,9 @@
-import React, { Component, FormEvent, ChangeEvent } from "react";
+import React, { Component, FormEvent, ChangeEvent, ReactNode } from "react";
 import Paragraphs from "../../assets/typography";
 import classes from "./InputField.module.css";
 import Icon from "src/components/assets/icons/icon";
 import InlineMessage from "src/components/infographic/inlineMessage/InlineMessage";
-const { B_13_BLACK } = Paragraphs;
+import Tooltip from "src/components/tooltip/Tooltip"; const { B_13_BLACK } = Paragraphs;
 interface Props {
   tacInput?: boolean;
   testId?: string;
@@ -30,6 +30,7 @@ interface Props {
   maxLength?: number;
   onBlur?: (event: FormEvent) => void;
   onFocus?: (event: FormEvent) => void;
+  tipChildren?: ReactNode;
 }
 
 class InputField extends Component<Props, {}> {
@@ -52,7 +53,8 @@ class InputField extends Component<Props, {}> {
       maxLength,
       onBlur,
       onFocus,
-      tacInput
+      tacInput,
+      tipChildren
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);
@@ -66,7 +68,12 @@ class InputField extends Component<Props, {}> {
     return (
       <div className={classes.InputFieldMain}>
         {!!label && (
-          <B_13_BLACK className={classes.InputFieldLabel}>{label}</B_13_BLACK>
+          <div className={classes.TitleDiv}>
+            <B_13_BLACK className={classes.InputFieldLabel}>{label}</B_13_BLACK>
+            {tipChildren && (
+              <Tooltip tipChildren={tipChildren} rightAlign={true} />
+            )}
+          </div>
         )}
         <div
           className={classes.InputFieldIconDiv}

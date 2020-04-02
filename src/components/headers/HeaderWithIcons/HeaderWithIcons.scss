@@ -1,0 +1,16 @@
+.MainDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+}
+.LeftDiv {
+  display: flex;
+  align-items: center;
+}
+.IconDiv {
+  padding-right: 1rem;
+}
+.RightIconDiv {
+  cursor: pointer;
+}

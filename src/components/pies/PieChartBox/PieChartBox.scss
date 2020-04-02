@@ -1,0 +1,35 @@
+.PieChartMain {
+  display: flex;
+}
+
+.PieChartLabelDiv {
+  display: flex;
+  align-items: center;
+}
+
+.PieChartLabel {
+  margin-bottom: 8px;
+}
+.PieChartLegend {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+.PieChartLegendWr {
+  display: flex;
+  align-items: center;
+  margin: 0 10px 10px 10px;
+  height: 16px;
+}
+.MainWrapper {
+  padding: 1.5rem;
+  border: 1px solid #dedede;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  min-width: 17.18rem;
+}
+.Title {
+  text-transform: uppercase;
+  padding-bottom: 1.5rem;
+}
