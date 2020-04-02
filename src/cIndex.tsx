@@ -77,6 +77,8 @@ import CenterMessage from "./components/infographic/centerMessage/CenterMessage"
 import PieChartBox from "./components/pies/PieChartBox/PieChartBox";
 import HeaderWithIcons from "./components/headers/HeaderWithIcons/HeaderWithIcons";
 import HeaderWithIButtons from "./components/headers/HeaderWithButtons/HeaderWithIButtons";
+import TextWithLink from "./components/buttons/TextWithLink/TextWithLink";
+import ImageModal from "./components/modals/ImageModal/ImageModal"
 
 /// exports
 export {
@@ -89,6 +91,8 @@ export {
   ArrayCheckBox,
   Line,
   CenterMessage,
+  TextWithLink,
+  ImageModal,
   ////
   /// below are sprint-2 components
   CalendarBox,

@@ -22,6 +22,11 @@ import PieChartBox from "src/components/pies/PieChartBox/PieChartBox";
 import InputField from "src/components/inputs/inputFields/InputFields";
 import HeaderWithIButtons from "src/components/headers/HeaderWithButtons/HeaderWithIButtons";
 import HeaderWithIcons from "src/components/headers/HeaderWithIcons/HeaderWithIcons";
+import SearchBar from "src/components/inputs/searchBar/SearchBar";
+import TextWithLink from "src/components/buttons/TextWithLink/TextWithLink";
+import ImageModal from "src/components/modals/ImageModal/ImageModal";
+
+import LocalImages from "src/components/assets/images";
 
 const {
   B_13_ORANGE_463,
@@ -52,6 +57,9 @@ const Sprint3: React.FC<Props> = () => {
   const [homeRedirect, setHomeRedirect] = useState(false);
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   const [settingsModalOpen, setSettingsModalOpen] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const [showImageModal, setShowImageModal] = useState(false);
+
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -203,6 +211,39 @@ const Sprint3: React.FC<Props> = () => {
           }
         ]}
       />
+      <Title>ImageModal</Title>
+      <CenteredDiv>
+        <PrimaryButton
+          title="Open ImageModal"
+          onButtonClick={() => {
+            setShowImageModal(true)
+          }}
+          width={"25rem"}
+          buttonColor={{ top: "#FD8585", bottom: "#FF2222" }}
+        />
+        <ImageModal
+          modalIsOpen={showImageModal}
+          imgSrc={LocalImages.common.passwordSecurity}
+          title="Keep your account safe"
+          message="We have just changed our password policy. It is good for you to change it now to keep your account secured."
+          buttonLabel="Continue"
+          buttonLabelColor={'#FFF'}
+          // buttonColor={{ top: "#FD8585", bottom: "#FF2222" }}
+          onButtonClick={() => alert("Continue")}
+
+          // leftButtonLabel="NO"
+          // rightButtonLabel="YES"
+          // onLeftButtonClick={()=>alert('NO')}
+          // onRightButtonClick={()=>alert('YES')}
+          // leftButtonLabelColor={'#000'}
+          // leftButtonColor={{ top: "#F6F6F3", bottom: "#EAE9E3" }}
+          // rightButtonLabelColor={'#FFF'}
+          // rightButtonColor={{ top: "#FD8585", bottom: "#FF2222" }}
+
+          onRequestClose={() => setShowImageModal(false)}
+        />
+      </CenteredDiv>
+
       <Title>Navbar Transparent</Title>
       <NavbarTransparent
         icon={{
@@ -416,6 +457,120 @@ const Sprint3: React.FC<Props> = () => {
             onButtonClick={() => alert("clicked")}
           />
         </div>
+      </CenteredDiv>
+      <Title>TextWithLink</Title>
+      <CenteredDiv>
+        <TextWithLink
+          label="I agree to the"
+          textWithLink="Terms and conditions"
+          onClick={() => alert("Hello")}
+        />
+      </CenteredDiv>
+      <Title>SearchBar/Filter (updated for sections)</Title>
+      <CenteredDiv
+        style={{
+          backgroundColor: "#f5f5f5",
+          width: "600px",
+          marginLeft: "32%"
+        }}
+      >
+        <SearchBar
+          clearClickHandler={() => alert("clear clicked")}
+          searchIconClickHandler={() => alert("Search Icon clicked")}
+          placeholder={"Search"}
+          value={inputValue}
+          handleChange={event => {
+            setInputValue(event.target.value);
+          }}
+          autoFocus={false}
+          showFilter={true}
+          sectionFilter={true}
+          sectionFilterOptions={[
+            {
+              sectionTitle: "Transaction Channel",
+              data: [
+                {
+                  label: "AmOnline Transaction",
+                  value: "AmOnline Transaction",
+                  selected: true
+                },
+                {
+                  label: "Branch Transaction",
+                  value: "Branch Transaction",
+                  selected: false
+                },
+                {
+                  label: "All Transaction",
+                  value: "All Transaction",
+                  selected: false
+                }
+              ]
+            },
+            {
+              sectionTitle: "Period",
+              data: [
+                {
+                  label: "Last 30 days",
+                  value: "Last 30 days",
+                  selected: true
+                },
+                {
+                  label: "Last 60 days",
+                  value: "Last 60 days",
+                  selected: false
+                },
+                {
+                  label: "Last 90 days",
+                  value: "Last 90 days",
+                  selected: false
+                },
+                {
+                  label: "Last 1 year",
+                  value: "Last 1 year",
+                  selected: false
+                }
+              ]
+            },
+            {
+              sectionTitle: "Transaction Type",
+              data: [
+                {
+                  label: "All",
+                  value: "All",
+                  selected: false
+                },
+                {
+                  label: "Buy Fund",
+                  value: "Buy Fund",
+                  selected: true
+                },
+                {
+                  label: "Redemption",
+                  value: "Redemption",
+                  selected: true
+                },
+                {
+                  label: "Dividend",
+                  value: "Dividend",
+                  selected: false
+                }
+              ]
+            }
+          ]}
+          onFilterOptionClick={obj => alert(JSON.stringify(obj))}
+          selectedFilters={[
+            {
+              label: "Successful",
+              value: "Successful",
+              closeIconClickHandler: () => alert("clear Successful")
+            },
+            {
+              label: "Unsuccessful",
+              value: "Unsuccessful",
+              closeIconClickHandler: () => alert("clear Unsuccessful")
+            }
+          ]}
+        />
       </CenteredDiv>
       <Title>Header With Icons</Title>
       <CenteredDiv>

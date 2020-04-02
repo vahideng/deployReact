@@ -3,7 +3,7 @@ import Paragraphs from "../../assets/typography";
 import classes from "./SearchBar.module.css";
 import Icon from "src/components/assets/icons/icon";
 
-const { R_13_BLACK } = Paragraphs;
+const { R_13_BLACK, B_13_BLACK } = Paragraphs;
 interface Props {
   testId?: string;
   value: any;
@@ -14,10 +14,19 @@ interface Props {
   clearClickHandler: () => void;
 
   showFilter?: boolean;
+  sectionFilter?: boolean;
   filterOptions?: {
     label: string;
     value: string | number;
     selected: boolean;
+  }[];
+  sectionFilterOptions?: {
+    sectionTitle: string;
+    data: {
+      label: string;
+      value: string | number;
+      selected: boolean;
+    }[];
   }[];
   onFilterOptionClick?: (filterOption: {
     label: string;
@@ -60,7 +69,9 @@ class SearchBar extends Component<Props, State> {
       filterOptions,
       onFilterOptionClick,
       selectedFilters,
-      showFilter
+      showFilter,
+      sectionFilter,
+      sectionFilterOptions
     } = this.props;
 
     const {
@@ -127,28 +138,69 @@ class SearchBar extends Component<Props, State> {
 
         {this.state.filterExpanded && (
           <div style={{ position: "relative" }}>
-            <div className={classes.FilterDropdownContainer}>
-              {filterOptions &&
-                filterOptions.map((item, index) => (
-                  <div
-                    key={index}
-                    id={`${testId}-0${index}`}
-                    className={classes.FilterOptionContainer}
-                    onClick={() =>
-                      onFilterOptionClick && onFilterOptionClick(item)
-                    }
-                  >
-                    <R_13_BLACK style={{ marginRight: 16 }}>
-                      {item.label}
-                    </R_13_BLACK>
-                    <span
-                      className={classes.FilterOptionSelectedContainer}
-                      style={{ opacity: item.selected ? 1 : 0 }}
+            <div
+              className={
+                !!sectionFilter
+                  ? classes.SectionFilterDropdownContainer
+                  : classes.FilterDropdownContainer
+              }
+            >
+              {!!sectionFilter
+                ? sectionFilterOptions &&
+                  sectionFilterOptions.map((item, index) => (
+                    <div
+                      key={index}
+                      id={`${testId}-0${index}`}
+                      className={classes.SectionFilterContainer}
                     >
-                      <Icon icon="Tick-1" size={22} color="36A03E" />
-                    </span>
-                  </div>
-                ))}
+                      <span
+                        className={classes.SectionFilterSectionTitleContainer}
+                      >
+                        <B_13_BLACK>{item.sectionTitle}</B_13_BLACK>
+                      </span>
+                      {item.data.map((option, index) => (
+                        <div
+                          key={index}
+                          id={`${testId}-0${index}`}
+                          className={classes.SectionFilterOptionContainer}
+                          onClick={() =>
+                            onFilterOptionClick && onFilterOptionClick(option)
+                          }
+                        >
+                          <R_13_BLACK style={{ marginRight: 8 }}>
+                            {option.label}
+                          </R_13_BLACK>
+                          <span
+                            className={classes.SectionFilterOptionSelectedContainer}
+                            style={{ opacity: option.selected ? 1 : 0 }}
+                          >
+                            <Icon icon="Tick-1" size={22} color="36A03E" />
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  ))
+                : filterOptions &&
+                  filterOptions.map((item, index) => (
+                    <div
+                      key={index}
+                      id={`${testId}-0${index}`}
+                      className={classes.FilterOptionContainer}
+                      onClick={() =>
+                        onFilterOptionClick && onFilterOptionClick(item)
+                      }
+                    >
+                      <R_13_BLACK style={{ marginRight: 16 }}>
+                        {item.label}
+                      </R_13_BLACK>
+                      <span
+                        className={classes.FilterOptionSelectedContainer}
+                        style={{ opacity: item.selected ? 1 : 0 }}
+                      >
+                        <Icon icon="Tick-1" size={22} color="36A03E" />
+                      </span>
+                    </div>
+                  ))}
             </div>
           </div>
         )}
