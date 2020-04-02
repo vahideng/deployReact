@@ -20,7 +20,7 @@
 
 .DropdownContent div:hover {
   cursor: pointer;
-  background-color: lightgrey;
+  background-color: #F1F1F1;
 }
 
 .InputFieldMain {
@@ -71,8 +71,13 @@
   padding-right: 5.2rem;
 }
 
+.InputFieldInput:focus {
+  text-shadow: 0px 0px 0px black;
+}
+
 .InputFieldIconDiv input:focus {
   outline: none;
+  color: transparent;
 }
 
 .InputFieldLabel {

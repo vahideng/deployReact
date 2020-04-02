@@ -55,6 +55,20 @@ const Sprint3: React.FC<Props> = () => {
   const [homeRedirect, setHomeRedirect] = useState(false);
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   const [settingsModalOpen, setSettingsModalOpen] = useState(false);
+  const [showDropdown,setDropdown] = useState(false);
+  const [dropdownValue , setDropdownValue]= useState("anything")
+
+
+const handlerDropdown = (item: any)=>{
+  console.log(item,"dropdownValue");
+  
+
+  setDropdown(!showDropdown)
+  setDropdownValue(item.value)
+}
+
+
+
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -176,6 +190,9 @@ const Sprint3: React.FC<Props> = () => {
     }
   ];
 
+
+  console.log(dropdownValue, "dropdownValue");
+  
   return (
     <div style={{ paddingTop: 100 }}>
       <Navbar
@@ -276,9 +293,10 @@ const Sprint3: React.FC<Props> = () => {
         }}
       >
         <AmDropdown
-        disabled = {true}
-        closeAfterSelect = {true}
-        showDropdown = {true}
+        readOnly = {true}
+        disabled = {false}
+        clickOnArrow = {()=>setDropdown(!showDropdown)}
+        showDropdown = {showDropdown}
           dropdownData={[
             { value: "ambank", label: "am" },
             { value: "Alpeh", label: "alp" }
@@ -290,12 +308,12 @@ const Sprint3: React.FC<Props> = () => {
             subText: "Please try again."
           }}
           type="text"
-        
+          inputClickHandler= {()=>setDropdown(!showDropdown)}
           arrowIcon={true}
-          label="input label"
+          label="dropdown label"
           icon={{ name: "Account-2" }}
-          value={"anything"}
-          handleChange={(item) => console.log(item, "itemmm")}
+          value={dropdownValue}
+          handleChange={(item )=> handlerDropdown(item)}
         />
       </div>
 

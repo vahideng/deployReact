@@ -6,10 +6,11 @@ import InlineMessage from "src/components/infographic/inlineMessage/InlineMessag
 const { B_13_BLACK, R_15_BLACK } = Paragraphs;
 interface Props {
   tacInput?: boolean;
-  closeAfterSelect?: boolean;
-  showDropdown: boolean;
+  clickOnArrow?: (event: any) => void;
+  showDropdown?: boolean;
   dropdownData: { value?: string; label?: string }[];
   testId?: string;
+  readOnly ?: boolean;
   value: any;
   type: string;
   label?: string;
@@ -34,6 +35,7 @@ interface Props {
   maxLength?: number;
   onBlur?: (event: FormEvent) => void;
   onFocus?: (event: FormEvent) => void;
+  inputClickHandler?:() => void; 
 }
 
 class AmDropdown extends Component<Props, {}> {
@@ -42,19 +44,21 @@ class AmDropdown extends Component<Props, {}> {
   };
 
   clickHandler = () => {
+   
     this.setState({ showDropdown: !this.state.showDropdown });
   };
 
   OnClickItemHandler = (item: any) => {
     this.props.handleChange(item, this.props.testId);
-    if (this.props.closeAfterSelect) {
-      this.setState({ showDropdown: !this.state.showDropdown });
-    }
+    // if (this.props.closeAfterSelect) {
+    //   this.setState({ showDropdown: !this.state.showDropdown });
+    // }
   };
 
   render() {
     const {
       dropdownData,
+      readOnly,
       testId,
       value,
       handleChange,
@@ -71,7 +75,9 @@ class AmDropdown extends Component<Props, {}> {
       onFocus,
       disabled,
       showDropdown,
-      tacInput
+      tacInput,
+      inputClickHandler,
+  clickOnArrow
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);
@@ -107,6 +113,7 @@ class AmDropdown extends Component<Props, {}> {
             )}
 
             <input
+            readOnly = {readOnly}
             disabled={disabled}
               autoComplete={"off"}
               minLength={minLength}
@@ -130,12 +137,13 @@ class AmDropdown extends Component<Props, {}> {
               autoFocus={!!autoFocus ? autoFocus : false}
               onChange={changeHandler}
               className={classes.InputFieldInput}
+              onClick ={inputClickHandler}
             />
 
-            {!!arrowIcon && !arrowIcon && (
+            {!!arrowIcon && (
               <span
                 id={`${testId}-1`}
-                onClick={this.clickHandler}
+                onClick={clickOnArrow}
                 className={classes.InputFieldClear}
                 // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
               >
