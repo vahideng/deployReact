@@ -22,6 +22,7 @@ import PieChartBox from "src/components/pies/PieChartBox/PieChartBox";
 import InputField from "src/components/inputs/inputFields/InputFields";
 import HeaderWithIButtons from "src/components/headers/HeaderWithButtons/HeaderWithIButtons";
 import HeaderWithIcons from "src/components/headers/HeaderWithIcons/HeaderWithIcons";
+import SimpleHeader from "src/components/headers/simpleHeader/SimpleHeader";
 
 const {
   B_13_ORANGE_463,
@@ -366,8 +367,7 @@ const Sprint3: React.FC<Props> = () => {
         <div style={{ width: 620 }}>
           <HeaderWithIButtons
             headerStyle={{
-              backgroundColor: "rgba(196, 196, 196, 0.3)",
-              padding: "1rem"
+              backgroundColor: "rgba(196, 196, 196, 0.3)"
             }}
             icon={{ name: "Amy", color: "#ff2626" }}
             label="Your DuitNow IDs (3/5)"
@@ -392,8 +392,7 @@ const Sprint3: React.FC<Props> = () => {
           <br />
           <HeaderWithIButtons
             headerStyle={{
-              backgroundColor: "rgba(196, 196, 196, 0.3)",
-              padding: "1rem"
+              backgroundColor: "rgba(196, 196, 196, 0.3)"
             }}
             image={{ src: images.common.Duitnow1 }}
             label="Your DuitNow IDs (3/5)"
@@ -422,8 +421,7 @@ const Sprint3: React.FC<Props> = () => {
         <div style={{ width: 620 }}>
           <HeaderWithIcons
             headerStyle={{
-              backgroundColor: "rgba(196, 196, 196, 0.3)",
-              padding: "1rem"
+              backgroundColor: "rgba(196, 196, 196, 0.3)"
             }}
             label={"DuitNow QR"}
             image={{ src: images.common.Duitnow1 }}
@@ -432,13 +430,23 @@ const Sprint3: React.FC<Props> = () => {
           <br />
           <HeaderWithIcons
             headerStyle={{
-              backgroundColor: "rgba(196, 196, 196, 0.3)",
-              padding: "1rem"
+              backgroundColor: "rgba(196, 196, 196, 0.3)"
             }}
             label={"DuitNow QR"}
             labelStyle={{ fontWeight: "normal" }}
             leftIcon={{ name: "Amy", color: "#ff2626" }}
             onIconClick={() => alert("clicked")}
+          />
+        </div>
+      </CenteredDiv>
+      <Title>Simple Header</Title>
+      <CenteredDiv>
+        <div style={{ width: 620 }}>
+          <SimpleHeader
+            label="Change Default Account"
+            headerStyle={{
+              backgroundColor: "rgba(196, 196, 196, 0.3)"
+            }}
           />
         </div>
       </CenteredDiv>
