@@ -1,0 +1,62 @@
+.container {
+  min-height: 29.625rem;
+  width: 36.3125rem;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+}
+
+.imageContainer {
+  height: 14.6875rem;
+  width: 36.3125rem;
+}
+
+.titleContainer {
+  margin-top: 1.875rem;
+  padding-left: 3.1875rem;
+  padding-right: 3.1875rem;
+}
+
+.title {
+  text-align: center;
+}
+
+.messageContainer {
+  margin-top: 1rem;
+  padding-left: 3.1875rem;
+  padding-right: 3.1875rem;
+}
+
+.message {
+  text-align: center;
+}
+
+.buttonContainer {
+  margin-top: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.twoButtonContainer {
+  margin-top: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 2.875rem;
+  padding-right: 2.875rem;
+}
