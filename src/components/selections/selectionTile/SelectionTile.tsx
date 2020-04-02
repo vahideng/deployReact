@@ -2,12 +2,15 @@ import React, { ReactNode } from "react";
 import classes from "./SelectionTile.module.css";
 import Paragraphs from "../../assets/typography";
 import Profile from "src/components/headers/profile/Profile";
-const { B_16_BLACK, R_14_BLACK } = Paragraphs;
+const { B_16_BLACK, R_14_BLACK, B_15_BLACK } = Paragraphs;
 interface Props {
   onTileClick: (item: any, index: number) => void;
+  centered?: boolean;
   testId?: string;
   selected?: number;
   list: {
+    centeredText?: string;
+    centeredChild?: ReactNode;
     avatar?: {
       name: string;
       src?: string;
@@ -25,9 +28,10 @@ const SelectionTile: React.FC<Props> = ({
   list,
   selected,
   onTileClick,
-  testId
+  testId,
+  centered
 }) => {
-  return (
+  return !centered ? (
     <div className={classes.SelectionTileRow} id={testId}>
       {!!list &&
         list.map((item, index) => {
@@ -80,6 +84,44 @@ const SelectionTile: React.FC<Props> = ({
                     )}
                   </div>
                 )}
+              </div>
+            </div>
+          );
+        })}
+    </div>
+  ) : (
+    <div className={classes.SelectionTileRow} id={testId}>
+      {!!list &&
+        list.map((item, index) => {
+          return (
+            <div
+              id={`${testId}-${index}`}
+              onClick={() => onTileClick(item, index)}
+              className={classes.CenteredDiv}
+              key={index}
+              style={
+                selected === index
+                  ? {
+                      borderBottomColor: "#ff2626"
+                    }
+                  : {}
+              }
+            >
+              <div className={classes.CenteredSelector}>
+                {item.centeredText && (
+                  <B_15_BLACK
+                    style={
+                      selected !== index
+                        ? {
+                            fontWeight: "normal"
+                          }
+                        : {}
+                    }
+                  >
+                    {item.centeredText}
+                  </B_15_BLACK>
+                )}
+                {!!item.centeredChild && item.centeredChild}
               </div>
             </div>
           );

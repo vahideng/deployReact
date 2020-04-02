@@ -11,6 +11,7 @@ import ArrayCheckBox from "src/components/arrayCheckBox/ArrayCheckBox";
 import LabelToolTip from "src/components/labelToolTip/LabelToolTip";
 import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
 import images from "src/assets";
+import LocalImages from "src/components/assets/images";
 import List from "src/components/lists/list/List";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
 
@@ -25,8 +26,12 @@ import HeaderWithIcons from "src/components/headers/HeaderWithIcons/HeaderWithIc
 import SearchBar from "src/components/inputs/searchBar/SearchBar";
 import TextWithLink from "src/components/buttons/TextWithLink/TextWithLink";
 import ImageModal from "src/components/modals/ImageModal/ImageModal";
+import SimpleHeader from "src/components/headers/simpleHeader/SimpleHeader";
+import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
+import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 
-import LocalImages from "src/components/assets/images";
+import AmDropdown from "src/components/amDropdown/AmDropdown";
+
 
 const {
   B_13_ORANGE_463,
@@ -59,6 +64,24 @@ const Sprint3: React.FC<Props> = () => {
   const [settingsModalOpen, setSettingsModalOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [showImageModal, setShowImageModal] = useState(false);
+  const [sTileNum, setSTileNum] = useState(2);
+  const [sTileNum1, setSTileNum1] = useState(0);
+  const [sTileNum2, setSTileNum2] = useState(3);
+  const [sTileNum3, setSTileNum3] = useState(1);
+  const [stickyFooter, setStickyFooter] = useState(false);
+  const [showDropdown,setDropdown] = useState(false);
+  const [dropdownValue , setDropdownValue]= useState("anything")
+
+
+const handlerDropdown = (item: any)=>{
+  console.log(item,"dropdownValue");
+  
+
+  setDropdown(!showDropdown)
+  setDropdownValue(item.value)
+}
+
+
 
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
@@ -181,6 +204,9 @@ const Sprint3: React.FC<Props> = () => {
     }
   ];
 
+
+  console.log(dropdownValue, "dropdownValue");
+  
   return (
     <div style={{ paddingTop: 100 }}>
       <Navbar
@@ -303,6 +329,41 @@ const Sprint3: React.FC<Props> = () => {
           />
         ]}
       />
+
+      <Title>AmDropDown</Title>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center"
+        }}
+      >
+        <AmDropdown
+        readOnly = {true}
+        disabled = {false}
+        clickOnArrow = {()=>setDropdown(!showDropdown)}
+        showDropdown = {showDropdown}
+          dropdownData={[
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" }
+          ]}
+          notValid={false}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The TAC is incorrect",
+            subText: "Please try again."
+          }}
+          type="text"
+          inputClickHandler= {()=>setDropdown(!showDropdown)}
+          arrowIcon={true}
+          label="dropdown label"
+          icon={{ name: "Account-2" }}
+          value={dropdownValue}
+          handleChange={(item )=> handlerDropdown(item)}
+        />
+      </div>
+
       <Title>Pie Chart Box</Title>
       <div
         style={{
@@ -407,8 +468,7 @@ const Sprint3: React.FC<Props> = () => {
         <div style={{ width: 620 }}>
           <HeaderWithIButtons
             headerStyle={{
-              backgroundColor: "rgba(196, 196, 196, 0.3)",
-              padding: "1rem"
+              backgroundColor: "rgba(196, 196, 196, 0.3)"
             }}
             icon={{ name: "Amy", color: "#ff2626" }}
             label="Your DuitNow IDs (3/5)"
@@ -433,8 +493,7 @@ const Sprint3: React.FC<Props> = () => {
           <br />
           <HeaderWithIButtons
             headerStyle={{
-              backgroundColor: "rgba(196, 196, 196, 0.3)",
-              padding: "1rem"
+              backgroundColor: "rgba(196, 196, 196, 0.3)"
             }}
             image={{ src: images.common.Duitnow1 }}
             label="Your DuitNow IDs (3/5)"
@@ -577,8 +636,7 @@ const Sprint3: React.FC<Props> = () => {
         <div style={{ width: 620 }}>
           <HeaderWithIcons
             headerStyle={{
-              backgroundColor: "rgba(196, 196, 196, 0.3)",
-              padding: "1rem"
+              backgroundColor: "rgba(196, 196, 196, 0.3)"
             }}
             label={"DuitNow QR"}
             image={{ src: images.common.Duitnow1 }}
@@ -587,8 +645,7 @@ const Sprint3: React.FC<Props> = () => {
           <br />
           <HeaderWithIcons
             headerStyle={{
-              backgroundColor: "rgba(196, 196, 196, 0.3)",
-              padding: "1rem"
+              backgroundColor: "rgba(196, 196, 196, 0.3)"
             }}
             label={"DuitNow QR"}
             labelStyle={{ fontWeight: "normal" }}
@@ -597,6 +654,146 @@ const Sprint3: React.FC<Props> = () => {
           />
         </div>
       </CenteredDiv>
+      <Title>Simple Header</Title>
+      <CenteredDiv>
+        <div style={{ width: 620 }}>
+          <SimpleHeader
+            label="Change Default Account"
+            headerStyle={{
+              backgroundColor: "rgba(196, 196, 196, 0.3)"
+            }}
+          />
+        </div>
+      </CenteredDiv>
+      <Title>Selection Tiles</Title>
+      <div style={{ paddingLeft: "2rem" }}>
+        <SelectionTile
+          testId={"testId"}
+          onTileClick={(item, index) => {
+            setSTileNum(index);
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={sTileNum}
+          list={[
+            {
+              accountTitle: "Saving Account A",
+              accountNumber: "RM 2,000.00"
+            },
+            {
+              accountTitle: "Ambank AmMoneyLine AmMoneyLine",
+              accountNumber: "RM 2,000.00"
+            },
+            {
+              accountTitle: "Ambank BonusLink Visa",
+              accountNumber: "RM 2,000.00"
+            },
+            {
+              accountTitle: "Saving Account B",
+              accountNumber: "RM 2,000.00"
+            }
+          ]}
+        />
+
+        <SelectionTile
+          onTileClick={(item, index) => {
+            setSTileNum1(index);
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={sTileNum1}
+          list={[
+            {
+              avatar: {
+                name: "Myself Adam Constantine",
+                src:
+                  "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+              }
+            },
+            {
+              avatar: {
+                name: "Christina Azalea Rossie",
+                initials: "CA",
+                initialsBg: "#f1f1f1"
+              }
+            },
+            {
+              children: <img src={images.common.sampleLogo} width={150} />
+            },
+
+            {
+              avatar: {
+                name: "Kurniawan Suriawati",
+                initials: "KS"
+              }
+            }
+          ]}
+        />
+        <SelectionTile
+          onTileClick={(item, index) => {
+            setSTileNum2(index);
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={sTileNum2}
+          list={[
+            {
+              accountTitle: "Saving Account A",
+              accountNumber: "RM 2,000.00",
+              amount: "RM 10,301.50"
+            },
+            {
+              accountTitle: "Ambank AmMoneyLine AmMoneyLine",
+              accountNumber: "RM 2,000.00",
+              amount: " RM 11,555.00"
+            },
+            {
+              accountTitle: "Ambank BonusLink Visa",
+              accountNumber: "RM 2,000.00",
+              amount: " RM 55,555.00"
+            },
+            {
+              accountTitle: "Saving Account B",
+              accountNumber: "RM 2,000.00",
+              amount: " RM 33,555.50"
+            }
+          ]}
+        />
+        <SelectionTile
+          centered={true}
+          onTileClick={(item, index) => {
+            setSTileNum3(index);
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={sTileNum3}
+          list={[
+            {
+              centeredText: "Lost"
+            },
+            {
+              centeredText: "Stolen"
+            },
+            {
+              centeredText: "Suspicious Activity"
+            }
+          ]}
+        />
+      </div>
+      <Title>Sticky Footer</Title>
+      <CenteredDiv>
+        <PrimaryButton
+          title={"open Sticky Footer"}
+          onButtonClick={() => {
+            setStickyFooter(!stickyFooter);
+          }}
+        />
+      </CenteredDiv>
+      <StickyFooter
+        isOpen={stickyFooter}
+        label="Hide Card"
+        buttonTitle="Yes, Disable"
+        onButtonClick={() => {
+          setStickyFooter(!stickyFooter);
+        }}
+        iconText="Disable online purchases for AmBank Debit Card?"
+      />
       <Title>Text With Details</Title>
       <div
         style={{
