@@ -6,49 +6,74 @@
   border: none !important;
 }
 
-.HeaderLeft {
+.Header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  max-width: 14.4375rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.HeaderMiddle {
+.Header0 {
+  width: 11.9rem;
+}
+
+.Header1 {
+  width: 11.75rem;
+}
+
+.Header2 {
+  width: 9.4375rem;
+}
+
+.HeaderIcon {
+  padding-left: 0.25rem;
+}
+
+.LeftItemContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  max-width: 11.5rem;
+  padding: 0;
+  width: 14.4375rem;
 }
 
-.HeaderRight {
+.MiddleItemContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  max-width: 10.9375rem;
+  padding: 0;
+  width: 11.5rem;
 }
 
-.LeftItemHeader {
+.RightItemContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 0;
-  max-width: 11.9375rem;
-}
-
-.MiddleItemHeader {
-  padding: 0;
-  max-width: 11.5rem;
-}
-
-.RightItemHeader {
-  padding: 0;
-  max-width: 10.9375rem;
+  width: 9.4375rem;
 }
 
 .CardHeader {
@@ -109,7 +134,6 @@
   font-weight: normal;
   font-size: 13px;
   line-height: 18px;
-  /* identical to box height */
   color: #696969;
 }
 

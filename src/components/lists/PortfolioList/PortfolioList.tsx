@@ -10,41 +10,44 @@ import Paragraphs from "../../assets/typography";
 const { SB_13_GREY444 } = Paragraphs;
 
 interface Data {
-  leftLabel?: string;
-  rightLabel?: string;
-  middleLabel?: string;
-  expandableLeftLabel?: boolean;
-  expandableMiddleLabel?: boolean;
-  expandableEightLabel?: boolean;
-  leftContent?: ReactNode;
-  rightContent?: ReactNode;
-  middleContent?: ReactNode;
   borderColor: string;
+  expandableLeft?: boolean;
+  expandableMiddle?: boolean;
+  leftContent?: ReactNode;
+  leftLabel?: string;
+  middleContent?: ReactNode;
+  middleLabel?: string;
+  rightLabel: {
+    type: "profit" | "loss";
+    percentage: string;
+    amount: string;
+  };
+}
+
+interface HeaderProps {
+  icon?: string;
+  id?: string;
+  onClick?: () => void;
+  style?: CSSProperties;
+  textStyle?: CSSProperties;
+  title: string;
 }
 
 interface Props {
   data: Data[];
-  leftHeaderOnClick?: () => void;
-  leftHeaderStyle?: CSSProperties;
-  leftHeaderTitle: string;
-  middleHeaderOnClick?: () => void;
-  middleHeaderStyle?: CSSProperties;
-  middleHeaderTitle: string;
-  rightHeaderOnClick?: () => void;
-  rightHeaderStyle?: CSSProperties;
-  rightHeaderTitle: string;
+  header: HeaderProps[];
   testId?: string;
 }
 
 interface ToggleProps {
-  eventKey: string;
   content: string;
+  eventKey: string;
   testId: string;
 }
 
 const CustomToggle: React.FC<ToggleProps> = ({
-  eventKey,
   content,
+  eventKey,
   testId
 }: ToggleProps) => {
   const decoratedOnClick = useAccordionToggle(eventKey, () => null);
@@ -54,6 +57,7 @@ const CustomToggle: React.FC<ToggleProps> = ({
     decoratedOnClick(e);
     setIsOpen(!isOpen);
   };
+
   return (
     <div
       className={classes.Content}
@@ -75,40 +79,28 @@ const CustomToggle: React.FC<ToggleProps> = ({
   );
 };
 
-const PortfolioList: React.FC<Props> = ({
-  leftHeaderOnClick,
-  leftHeaderStyle,
-  leftHeaderTitle,
-  middleHeaderOnClick,
-  middleHeaderStyle,
-  middleHeaderTitle,
-  rightHeaderOnClick,
-  rightHeaderStyle,
-  rightHeaderTitle,
-  data,
-  testId
-}) => {
+const PortfolioList: React.FC<Props> = ({ data, header, testId }) => {
   return (
-    <Card className={classes.ContainerWhole}>
+    <Card className={classes.ContainerWhole} id={`${testId}`}>
       <Card.Header className={classes.CardHeader}>
-        <div className={classes.HeaderLeft}>
-          <SB_13_GREY444 style={leftHeaderStyle} onClick={leftHeaderOnClick}>
-            {leftHeaderTitle}
-          </SB_13_GREY444>
-        </div>
-        <div className={classes.HeaderMiddle}>
-          <SB_13_GREY444
-            style={middleHeaderStyle}
-            onClick={middleHeaderOnClick}
-          >
-            {middleHeaderTitle}
-          </SB_13_GREY444>
-        </div>
-        <div className={classes.HeaderRight}>
-          <SB_13_GREY444 style={rightHeaderStyle} onClick={rightHeaderOnClick}>
-            {rightHeaderTitle}
-          </SB_13_GREY444>
-        </div>
+        {header.map((item: HeaderProps, index: number) => {
+          return (
+            <div
+              className={classes[`Header${index}`]}
+              key={index}
+              style={item.style}
+            >
+              <div className={classes.Header} onClick={item.onClick}>
+                <SB_13_GREY444 style={item.textStyle}>
+                  {item.title}
+                </SB_13_GREY444>
+                <div className={classes.HeaderIcon}>
+                  <Icon icon={item.icon} size={22} />
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </Card.Header>
       <Card.Body className={classes.CardBody}>
         {data.map((item: Data, index: number) => {
@@ -123,39 +115,67 @@ const PortfolioList: React.FC<Props> = ({
             padding-right: 1.5rem;
           `;
 
+          const profitOrLoss = (
+            <span
+              style={{
+                color: item.rightLabel.type === "loss" ? "#FF2222" : "#36A03E"
+              }}
+            >
+              {item.rightLabel.type === "loss" ? "-" : "+"}
+            </span>
+          );
+
           return (
-            <Accordion key={index} id={`${testId}-0-${index}`}>
+            <Accordion key={index} id={`${testId}-${index}`}>
               <Card className={classes.ContainerWhole}>
-                <Card.Header className={`${classes.HeaderInside}`}>
+                <Card.Header className={classes.HeaderInside}>
                   <StyledDiv className={inverted}>
-                    <Col className={classes.LeftItemHeader} md={6}>
-                      <CustomToggle
-                        eventKey={`${index}`}
-                        testId={testId}
-                        content={item.leftLabel}
-                      />
+                    <Col className={classes.LeftItemContainer}>
+                      {item.expandableLeft === true ? (
+                        <CustomToggle
+                          eventKey={`left-${index}`}
+                          testId={testId}
+                          content={item.leftLabel}
+                        />
+                      ) : (
+                        <SB_13_GREY444>{item.leftLabel}</SB_13_GREY444>
+                      )}
                     </Col>
-                    <Col className={classes.MiddleItemHeader} md={3}>
-                      <SB_13_GREY444>{item.middleLabel}</SB_13_GREY444>
+                    <Col className={classes.MiddleItemContainer}>
+                      {item.expandableMiddle === true ? (
+                        <CustomToggle
+                          eventKey={`middle-${index}`}
+                          testId={testId}
+                          content={item.middleLabel}
+                        />
+                      ) : (
+                        <SB_13_GREY444>{item.middleLabel}</SB_13_GREY444>
+                      )}
+                      <br />
                     </Col>
-                    <Col className={classes.RightItemHeader} md={3}>
-                      <div
-                        style={{ whiteSpace: "nowrap", float: "right" }}
-                        className="p-2"
-                      >
-                        <span style={{ color: "#FF2222" }}> - </span>{" "}
-                        <span style={{ paddingRight: "4px" }}>
-                          {item.rightLabel}
-                        </span>
-                        {item.rightLabel}
+                    <Col className={classes.RightItemContainer}>
+                      <div>
+                        <div className={classes.RightLabel}>
+                          ({profitOrLoss} {item.rightLabel.percentage})
+                        </div>
+                        <div className={classes.RightLabel}>
+                          {item.rightLabel.amount}
+                        </div>
                       </div>
                     </Col>
                   </StyledDiv>
                 </Card.Header>
                 {item.leftContent !== undefined && (
-                  <Accordion.Collapse eventKey={`${index}`}>
+                  <Accordion.Collapse eventKey={`left-${index}`}>
                     <Card.Body className={`${classes.ContentBody} ${inverted}`}>
                       {item.leftContent}
+                    </Card.Body>
+                  </Accordion.Collapse>
+                )}
+                {item.middleContent !== undefined && (
+                  <Accordion.Collapse eventKey={`middle-${index}`}>
+                    <Card.Body className={`${classes.ContentBody} ${inverted}`}>
+                      {item.middleContent}
                     </Card.Body>
                   </Accordion.Collapse>
                 )}
