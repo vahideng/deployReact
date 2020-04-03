@@ -81,6 +81,9 @@ import TextWithLink from "./components/buttons/TextWithLink/TextWithLink";
 import ImageModal from "./components/modals/ImageModal/ImageModal";
 import PortfolioListContent from "./components/portfolioListContent/PortfolioListContent";
 import BarCode from "./components/barCode/barCode";
+import AmDropdown from "./components/amDropdown/AmDropdown";
+import StickyFooter from "./components/stickies/stickyFooter/StickyFooter";
+import SimpleHeader from "./components/headers/simpleHeader/SimpleHeader";
 
 /// exports
 export {
@@ -97,6 +100,10 @@ export {
   ImageModal,
   PortfolioListContent,
   BarCode,
+  AmDropdown,
+  StickyFooter,
+  SimpleHeader,
+
   ////
   /// below are sprint-2 components
   CalendarBox,
