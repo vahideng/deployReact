@@ -33,6 +33,9 @@ import BarCode from "src/components/barCode/barCode";
 
 import AmDropdown from "src/components/amDropdown/AmDropdown";
 import PortfolioListContent from "src/components/portfolioListContent/PortfolioListContent";
+import SecureImage from "src/components/secureImage/SecureImage";
+import SecureImageSelect from "src/components/secureImageSelect/SecureImageSelect";
+import Line from "src/components/line/Line";
 
 const {
   B_13_ORANGE_463,
@@ -233,6 +236,48 @@ const Sprint3: React.FC<Props> = () => {
           }
         ]}
       />
+      <Title>Secure Image Container</Title>
+      <CenteredDiv>
+        <FormContainer
+          label="Change Security Image"
+          children={
+            <>
+              <CenteredDiv>
+                <SecureImage
+                  testId="secure_image_testid"
+                  image={images.common.SampleSecureImage}
+                />
+              </CenteredDiv>
+              <CenteredDiv>
+                <Line color="#DEDEDE" width={787} height={1} />
+              </CenteredDiv>
+              <CenteredDiv>
+                <SecureImageSelect
+                  testId="secure_image_select_testid"
+                  label="Select your new security image"
+                  images={[
+                    {
+                      uri: images.common.SampleSecureImage
+                    },
+                    {
+                      uri: images.common.SampleSecureImage
+                    },
+                    {
+                      uri: images.common.SampleSecureImage
+                    },
+                    {
+                      uri: images.common.SampleSecureImage
+                    },
+                    {
+                      uri: images.common.SampleSecureImage
+                    }
+                  ]}
+                />
+              </CenteredDiv>
+            </>
+          }
+        />
+      </CenteredDiv>
       <Title>ImageModal</Title>
       <CenteredDiv>
         <PrimaryButton
@@ -325,10 +370,8 @@ const Sprint3: React.FC<Props> = () => {
         ]}
       />
       <Title>Barcode</Title>
-      <CenteredDiv style={{backgroundColor: '#F7F7F7'}}>
-        <BarCode
-          imgSrc={images.common.SampleQRCode}
-        />
+      <CenteredDiv style={{ backgroundColor: "#F7F7F7" }}>
+        <BarCode imgSrc={images.common.SampleQRCode} />
       </CenteredDiv>
       <Title>AmDropDown</Title>
 

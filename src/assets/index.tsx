@@ -8,7 +8,8 @@ import bankingInfo_2 from "./images/bankingInfo_2.png";
 import bankingInfo_3 from "./images/bankingInfo_3.png";
 import JomPay1 from "./images/JomPay1.png";
 import Duitnow1 from "./images/Duitnow1.png";
-import SampleQRCode from "./images/SampleQRCode.png"
+import SampleQRCode from "./images/SampleQRCode.png";
+import SampleSecureImage from "./images/secure-image.png";
 
 const images: any = {
   common: {
@@ -22,7 +23,8 @@ const images: any = {
     bankingInfo_3,
     JomPay1,
     Duitnow1,
-    SampleQRCode
+    SampleQRCode,
+    SampleSecureImage
   }
 };
 
