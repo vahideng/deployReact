@@ -31,7 +31,7 @@ import SelectionTile from "src/components/selections/selectionTile/SelectionTile
 import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 
 import AmDropdown from "src/components/amDropdown/AmDropdown";
-
+import PortfolioListContent from "src/components/portfolioListContent/PortfolioListContent";
 
 const {
   B_13_ORANGE_463,
@@ -69,19 +69,15 @@ const Sprint3: React.FC<Props> = () => {
   const [sTileNum2, setSTileNum2] = useState(3);
   const [sTileNum3, setSTileNum3] = useState(1);
   const [stickyFooter, setStickyFooter] = useState(false);
-  const [showDropdown,setDropdown] = useState(false);
-  const [dropdownValue , setDropdownValue]= useState("anything")
+  const [showDropdown, setDropdown] = useState(false);
+  const [dropdownValue, setDropdownValue] = useState("anything");
 
+  const handlerDropdown = (item: any) => {
+    console.log(item, "dropdownValue");
 
-const handlerDropdown = (item: any)=>{
-  console.log(item,"dropdownValue");
-  
-
-  setDropdown(!showDropdown)
-  setDropdownValue(item.value)
-}
-
-
+    setDropdown(!showDropdown);
+    setDropdownValue(item.value);
+  };
 
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
@@ -204,9 +200,8 @@ const handlerDropdown = (item: any)=>{
     }
   ];
 
-
   console.log(dropdownValue, "dropdownValue");
-  
+
   return (
     <div style={{ paddingTop: 100 }}>
       <Navbar
@@ -242,7 +237,7 @@ const handlerDropdown = (item: any)=>{
         <PrimaryButton
           title="Open ImageModal"
           onButtonClick={() => {
-            setShowImageModal(true)
+            setShowImageModal(true);
           }}
           width={"25rem"}
           buttonColor={{ top: "#FD8585", bottom: "#FF2222" }}
@@ -253,10 +248,9 @@ const handlerDropdown = (item: any)=>{
           title="Keep your account safe"
           message="We have just changed our password policy. It is good for you to change it now to keep your account secured."
           buttonLabel="Continue"
-          buttonLabelColor={'#FFF'}
+          buttonLabelColor={"#FFF"}
           // buttonColor={{ top: "#FD8585", bottom: "#FF2222" }}
           onButtonClick={() => alert("Continue")}
-
           // leftButtonLabel="NO"
           // rightButtonLabel="YES"
           // onLeftButtonClick={()=>alert('NO')}
@@ -340,10 +334,10 @@ const handlerDropdown = (item: any)=>{
         }}
       >
         <AmDropdown
-        readOnly = {true}
-        disabled = {false}
-        clickOnArrow = {()=>setDropdown(!showDropdown)}
-        showDropdown = {showDropdown}
+          readOnly={true}
+          disabled={false}
+          clickOnArrow={() => setDropdown(!showDropdown)}
+          showDropdown={showDropdown}
           dropdownData={[
             { value: "ambank", label: "am" },
             { value: "Alpeh", label: "alp" }
@@ -355,12 +349,12 @@ const handlerDropdown = (item: any)=>{
             subText: "Please try again."
           }}
           type="text"
-          inputClickHandler= {()=>setDropdown(!showDropdown)}
+          inputClickHandler={() => setDropdown(!showDropdown)}
           arrowIcon={true}
           label="dropdown label"
           icon={{ name: "Account-2" }}
           value={dropdownValue}
-          handleChange={(item )=> handlerDropdown(item)}
+          handleChange={item => handlerDropdown(item)}
         />
       </div>
 
@@ -1074,7 +1068,6 @@ const handlerDropdown = (item: any)=>{
             </div>
           }
         />
-        }
       </div>
       <Title>Message (using CenterMessage component)</Title>
       <div
@@ -1177,6 +1170,32 @@ const handlerDropdown = (item: any)=>{
           />
         }
       />
+      <Title>PortfolioListContent</Title>
+      <div style={{ width: "50%", margin: "0 auto" }}>
+        <PortfolioListContent
+          borderColor="#8677D9"
+          buttonText="View Performance"
+          onClickButton={() => alert("button clicked")}
+          data={[
+            {
+              leftLabel: "Invested",
+              rightLabel: "RM 418,944.73"
+            },
+            {
+              leftLabel: "NAV",
+              rightLabel: "4.7894"
+            },
+            {
+              leftLabel: "Number of Unts",
+              rightLabel: "1,828.40"
+            },
+            {
+              leftLabel: "Asset Class",
+              rightLabel: "Equity"
+            }
+          ]}
+        />
+      </div>
     </div>
   );
 };
