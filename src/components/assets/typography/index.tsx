@@ -97,6 +97,12 @@ const R_13_BLACK = styled.p`
   font-size: 0.82rem;
   font-weight: 400;
 `;
+const R_13_GREY969 = styled.p`
+  margin: 0;
+  color: #696969;
+  font-weight: 400;
+  font-size: 0.81rem;
+`;
 const B_13_BLACK = styled.p`
   font-family: "Nunito Sans";
   margin: 0;
@@ -393,6 +399,7 @@ export default {
   R_20_BLACK,
   B_32_BLACK,
   R_13_BLACK,
+  R_13_GREY969,
   B_13_BLACK,
   B_13_WHITE,
   R_14_BLACK,

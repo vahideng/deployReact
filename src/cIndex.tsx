@@ -78,7 +78,8 @@ import PieChartBox from "./components/pies/PieChartBox/PieChartBox";
 import HeaderWithIcons from "./components/headers/HeaderWithIcons/HeaderWithIcons";
 import HeaderWithIButtons from "./components/headers/HeaderWithButtons/HeaderWithIButtons";
 import TextWithLink from "./components/buttons/TextWithLink/TextWithLink";
-import ImageModal from "./components/modals/ImageModal/ImageModal"
+import ImageModal from "./components/modals/ImageModal/ImageModal";
+import PortfolioListContent from "./components/portfolioListContent/PortfolioListContent";
 
 /// exports
 export {
@@ -93,6 +94,7 @@ export {
   CenterMessage,
   TextWithLink,
   ImageModal,
+  PortfolioListContent,
   ////
   /// below are sprint-2 components
   CalendarBox,
