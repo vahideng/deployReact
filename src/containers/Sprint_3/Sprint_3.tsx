@@ -57,12 +57,6 @@ const CenteredDiv = styled.div`
 `;
 interface Props {}
 
-const CenteredDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-top: 5rem;
-`;
-
 const Sprint3: React.FC<Props> = () => {
   const [selectedItem, setSelectedOption] = useState("Persian");
   const [sprint1, setSprint1] = useState(false);
@@ -1210,16 +1204,21 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         />
       </div>
-      <Title>TransactionList</Title>
-      <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
+      <Title>PortfolioList</Title>
+      <CenteredDiv>
         <PortfolioList
           testId={"testId"}
           data={[
             {
               borderColor: "#FFA463",
+              expandableLeft: true,
               leftLabel: "Advantage Global Equity Volatility Focused",
-              rightLabel: "RM 12,189.56",
               middleLabel: "RM 406,318.98",
+              rightLabel: {
+                type: "loss",
+                percentage: "0.03%",
+                amount: "RM 12,189.56"
+              },
               leftContent: (
                 <PortfolioListContent
                   borderColor="#FFA463"
@@ -1251,8 +1250,13 @@ const Sprint3: React.FC<Props> = () => {
             },
             {
               borderColor: "#8677D9",
+              expandableLeft: true,
               leftLabel: "Advantage Global Equity Volatility Focused",
-              rightLabel: "RM 12,189.56",
+              rightLabel: {
+                type: "profit",
+                percentage: "0.03%",
+                amount: "RM 12,189.56"
+              },
               middleLabel: "RM 406,318.98",
               leftContent: (
                 <PortfolioListContent
@@ -1282,8 +1286,13 @@ const Sprint3: React.FC<Props> = () => {
             },
             {
               borderColor: "#7AB497",
+              expandableLeft: true,
               leftLabel: "Advantage Global Equity Volatility Focused",
-              rightLabel: "RM 12,189.56",
+              rightLabel: {
+                type: "loss",
+                percentage: "0.03%",
+                amount: "RM 12,189.56"
+              },
               middleLabel: "RM 406,318.98",
               leftContent: (
                 <PortfolioListContent
@@ -1312,9 +1321,23 @@ const Sprint3: React.FC<Props> = () => {
               )
             }
           ]}
-          leftHeaderTitle="Fund Name"
-          middleHeaderTitle="Value"
-          rightHeaderTitle="Profit/Loss"
+          header={[
+            {
+              title: "Fund Name",
+              icon: "sort",
+              onClick: () => alert("Handle sort and icon change")
+            },
+            {
+              title: "Value",
+              icon: "sort",
+              onClick: () => alert("Handle sort and icon change")
+            },
+            {
+              title: "Profit/Loss",
+              icon: "sort",
+              onClick: () => alert("Handle sort and icon change")
+            }
+          ]}
         />
       </CenteredDiv>
     </div>
