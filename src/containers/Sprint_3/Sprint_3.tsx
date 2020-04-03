@@ -34,7 +34,6 @@ import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 import BarCode from "src/components/barCode/barCode";
 
 import AmDropdown from "src/components/amDropdown/AmDropdown";
-import PortfolioListContent from "src/components/portfolioListContent/PortfolioListContent";
 
 const {
   B_13_ORANGE_463,
@@ -327,10 +326,8 @@ const Sprint3: React.FC<Props> = () => {
         ]}
       />
       <Title>Barcode</Title>
-      <CenteredDiv style={{backgroundColor: '#F7F7F7'}}>
-        <BarCode
-          imgSrc={images.common.SampleQRCode}
-        />
+      <CenteredDiv style={{ backgroundColor: "#F7F7F7" }}>
+        <BarCode imgSrc={images.common.SampleQRCode} />
       </CenteredDiv>
       <Title>AmDropDown</Title>
 
