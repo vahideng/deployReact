@@ -236,12 +236,7 @@ const SB_11_GREY444 = styled.p`
   font-weight: 600;
   font-size: 0.68rem;
 `;
-const SB_13_GREY444 = styled.p`
-  margin: 0;
-  color: #444444;
-  font-weight: 600;
-  font-size: 0.81rem;
-`;
+
 const R_13_GREY444 = styled.p`
   font-family: "Nunito Sans";
   margin: 0;
@@ -426,7 +421,6 @@ export default {
   B_15_WHITE,
   SB_11_GREY444,
   B_13_GREY393,
-  SB_13_GREY444,
   R_13_GREY444,
   R_13_GREY969,
   R_14_GREY444,
