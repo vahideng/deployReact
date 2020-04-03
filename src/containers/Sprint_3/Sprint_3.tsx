@@ -14,6 +14,8 @@ import images from "src/assets";
 import LocalImages from "src/components/assets/images";
 import List from "src/components/lists/list/List";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
+import PortfolioList from "src/components/lists/PortfolioList/PortfolioList";
+import PortfolioListContent from "src/components/portfolioListContent/PortfolioListContent";
 
 import CenterMessage from "src/components/infographic/centerMessage/CenterMessage";
 import SettingModalCenter from "src/components/modals/settingModalCenter/SettingModalCenter";
@@ -32,7 +34,6 @@ import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 import BarCode from "src/components/barCode/barCode";
 
 import AmDropdown from "src/components/amDropdown/AmDropdown";
-import PortfolioListContent from "src/components/portfolioListContent/PortfolioListContent";
 import SecureImage from "src/components/secureImage/SecureImage";
 import SecureImageSelect from "src/components/secureImageSelect/SecureImageSelect";
 import Line from "src/components/line/Line";
@@ -1245,6 +1246,142 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         />
       </div>
+      <Title>PortfolioList</Title>
+      <CenteredDiv>
+        <PortfolioList
+          testId={"testId"}
+          data={[
+            {
+              borderColor: "#FFA463",
+              expandableLeft: true,
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              middleLabel: "RM 406,318.98",
+              rightLabel: {
+                type: "loss",
+                percentage: "0.03%",
+                amount: "RM 12,189.56"
+              },
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#FFA463"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73"
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894"
+                    },
+                    {
+                      leftLabel: "Number of Units",
+                      rightLabel: "1,828.40"
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity",
+                      rightLabelStyle: {
+                        color: "#FFA463"
+                      }
+                    }
+                  ]}
+                />
+              )
+            },
+            {
+              borderColor: "#8677D9",
+              expandableLeft: true,
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              rightLabel: {
+                type: "profit",
+                percentage: "0.03%",
+                amount: "RM 12,189.56"
+              },
+              middleLabel: "RM 406,318.98",
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#8677D9"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73"
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894"
+                    },
+                    {
+                      leftLabel: "Number of Unts",
+                      rightLabel: "1,828.40"
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity"
+                    }
+                  ]}
+                />
+              )
+            },
+            {
+              borderColor: "#7AB497",
+              expandableLeft: true,
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              rightLabel: {
+                type: "loss",
+                percentage: "0.03%",
+                amount: "RM 12,189.56"
+              },
+              middleLabel: "RM 406,318.98",
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#7AB497"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73"
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894"
+                    },
+                    {
+                      leftLabel: "Number of Unts",
+                      rightLabel: "1,828.40"
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity"
+                    }
+                  ]}
+                />
+              )
+            }
+          ]}
+          header={[
+            {
+              title: "Fund Name",
+              icon: "sort",
+              onClick: () => alert("Handle sort and icon change")
+            },
+            {
+              title: "Value",
+              icon: "sort",
+              onClick: () => alert("Handle sort and icon change")
+            },
+            {
+              title: "Profit/Loss",
+              icon: "sort",
+              onClick: () => alert("Handle sort and icon change")
+            }
+          ]}
+        />
+      </CenteredDiv>
     </div>
   );
 };
