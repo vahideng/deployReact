@@ -80,6 +80,7 @@ import HeaderWithIButtons from "./components/headers/HeaderWithButtons/HeaderWit
 import TextWithLink from "./components/buttons/TextWithLink/TextWithLink";
 import ImageModal from "./components/modals/ImageModal/ImageModal";
 import PortfolioListContent from "./components/portfolioListContent/PortfolioListContent";
+import BarCode from "./components/barCode/barCode";
 
 /// exports
 export {
@@ -95,6 +96,7 @@ export {
   TextWithLink,
   ImageModal,
   PortfolioListContent,
+  BarCode,
   ////
   /// below are sprint-2 components
   CalendarBox,

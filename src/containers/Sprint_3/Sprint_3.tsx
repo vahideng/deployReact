@@ -29,6 +29,7 @@ import ImageModal from "src/components/modals/ImageModal/ImageModal";
 import SimpleHeader from "src/components/headers/simpleHeader/SimpleHeader";
 import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
 import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
+import BarCode from "src/components/barCode/barCode";
 
 import AmDropdown from "src/components/amDropdown/AmDropdown";
 import PortfolioListContent from "src/components/portfolioListContent/PortfolioListContent";
@@ -323,7 +324,12 @@ const Sprint3: React.FC<Props> = () => {
           />
         ]}
       />
-
+      <Title>Barcode</Title>
+      <CenteredDiv style={{backgroundColor: '#F7F7F7'}}>
+        <BarCode
+          imgSrc={images.common.SampleQRCode}
+        />
+      </CenteredDiv>
       <Title>AmDropDown</Title>
 
       <div
