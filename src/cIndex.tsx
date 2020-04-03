@@ -84,6 +84,7 @@ import BarCode from "./components/barCode/barCode";
 import AmDropdown from "./components/amDropdown/AmDropdown";
 import StickyFooter from "./components/stickies/stickyFooter/StickyFooter";
 import SimpleHeader from "./components/headers/simpleHeader/SimpleHeader";
+import PortfolioList from "./components/lists/PortfolioList/PortfolioList";
 
 /// exports
 export {
@@ -103,7 +104,7 @@ export {
   AmDropdown,
   StickyFooter,
   SimpleHeader,
-
+  PortfolioList,
   ////
   /// below are sprint-2 components
   CalendarBox,
