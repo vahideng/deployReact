@@ -1,7 +1,7 @@
-import React from "react";
-import classes from "./SecureImageSelect.module.css";
-import Icon from "../assets/icons/icon";
-import Paragraphs from "../assets/typography";
+import React from 'react';
+import classes from './SecureImageSelect.module.css';
+import Icon from '../assets/icons/icon';
+import Paragraphs from '../assets/typography';
 const { B_15_BLACK } = Paragraphs;
 
 declare type SecureImage = {
@@ -20,7 +20,7 @@ interface Props {
   onRefresh?: (secureImageIds?: string[]) => void;
 }
 
-const SecureImage: React.FC<Props> = props => {
+const SecureImage: React.FC<Props> = (props) => {
   const {
     disabled,
     label,
@@ -28,7 +28,7 @@ const SecureImage: React.FC<Props> = props => {
     images,
     iconRefresh,
     onSelect,
-    onRefresh
+    onRefresh,
   } = props;
 
   const handleSelectImage = (image: SecureImage) => {
@@ -43,7 +43,7 @@ const SecureImage: React.FC<Props> = props => {
     if (onRefresh && !disabled) {
       onRefresh();
     } else {
-      window.alert("refresh new image options");
+      window.alert('refresh new image options');
     }
   };
 
@@ -70,11 +70,11 @@ const SecureImage: React.FC<Props> = props => {
               onClick={handleRefreshOptions}
               className={classes.Action}
               src={iconRefresh}
-              alt="refresh"
+              alt='refresh'
             />
           ) : (
             <div onClick={handleRefreshOptions}>
-              <Icon className={classes.Action} icon="Security2" />
+              <Icon className={classes.Action} icon='Security2' />
             </div>
           )}
         </div>
