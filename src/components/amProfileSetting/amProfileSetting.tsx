@@ -43,7 +43,9 @@ interface ProfileSettingProps {
     subText: string;
   };
   label?: string;
-  icon: { name: string };
+  inputFieldIcon?: { name?: string; color?: string; size?: number };
+  openAccordionIcon?: { name?: string; color?: string; size?: number };
+  closeAccordionIcon?: { name?: string; color?: string; size?: number };
   onButtonClick: (item: profileItemProps, index: number) => void;
   buttonTitle: string;
   buttonTitleColor: string;
@@ -65,7 +67,7 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
   clearClickHandler,
   errorMessage,
   label,
-  icon,
+  inputFieldIcon,
   onButtonClick,
   buttonTitle,
   buttonTitleColor,
@@ -76,6 +78,8 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
   editIcon,
   onEditClickHandler,
   fullName,
+  openAccordionIcon,
+  closeAccordionIcon,
 }) => {
   const {
     CardOuterContainer,
@@ -135,6 +139,8 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
                           eventKey={`${index}`}
                           content={item.profile_data.title}
                           showIcon={item.flag || item.profile_data.showIcon}
+                          openAccordionIcon={openAccordionIcon}
+                          closeAccordionIcon={closeAccordionIcon}
                         />
                       </Col>
                     </div>
@@ -149,7 +155,7 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
                         clearClickHandler={clearClickHandler}
                         clearIcon={clearIcon}
                         label={label}
-                        icon={icon}
+                        icon={inputFieldIcon}
                         value={value}
                         handleChange={e => handleChange(e, item, index)}
                       />
@@ -182,9 +188,17 @@ interface Props {
   content?: string;
   title?: string;
   showIcon?: boolean;
+  openAccordionIcon?: { name?: string; color?: string; size?: number };
+  closeAccordionIcon?: { name?: string; color?: string; size?: number };
 }
 
-const CustomToggle: React.FC<Props> = ({ eventKey, testId, showIcon }) => {
+const CustomToggle: React.FC<Props> = ({
+  eventKey,
+  testId,
+  showIcon,
+  openAccordionIcon,
+  closeAccordionIcon,
+}) => {
   const decoratedOnClick = useAccordionToggle(eventKey, () => null);
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -201,11 +215,19 @@ const CustomToggle: React.FC<Props> = ({ eventKey, testId, showIcon }) => {
       {showIcon ? (
         isOpen ? (
           <span className={classes.TransListIcon}>
-            <Icon icon="system-close-grey" size={12} color="#444444" />
+            <Icon
+              icon={openAccordionIcon.name}
+              size={openAccordionIcon.size}
+              color={openAccordionIcon.color}
+            />
           </span>
         ) : (
           <span className={classes.TransListIcon}>
-            <Icon icon="arrowDown" size={12} color="#444444" />
+            <Icon
+              icon={closeAccordionIcon.name}
+              size={closeAccordionIcon.size}
+              color={closeAccordionIcon.color}
+            />
           </span>
         )
       ) : null}

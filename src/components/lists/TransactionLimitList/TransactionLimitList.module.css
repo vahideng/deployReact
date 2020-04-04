@@ -21,3 +21,19 @@
   margin-bottom: 1rem;
   padding: 1.25rem;
 }
+
+.TransactionImg {
+  height: 30px;
+  width: 50px;
+}
+
+.columnView {
+  display: 'flex';
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: 'column';
+          flex-direction: 'column';
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}

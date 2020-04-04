@@ -14,3 +14,14 @@
   margin-bottom: 1rem;
   padding: 1.25rem;
 }
+
+.TransactionImg {
+  height: 30px;
+  width: 50px;
+}
+
+.columnView {
+  display: 'flex';
+  flex-direction: 'column';
+  flex: 1;
+}

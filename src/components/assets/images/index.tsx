@@ -4,6 +4,7 @@ import popupCurve from './popup_curve.png';
 import passwordSecurity from './passwordSecurity.png';
 import profilePic from './profilePic.png';
 import editIcon from './editIcon.png';
+import card from './card.png';
 const LocalImages: any = {
   common: {
     amSecure,
@@ -12,6 +13,7 @@ const LocalImages: any = {
     passwordSecurity,
     profilePic,
     editIcon,
+    card,
   },
 };
 

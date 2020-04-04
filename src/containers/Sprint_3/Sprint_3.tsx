@@ -1284,7 +1284,13 @@ const Sprint3: React.FC<Props> = () => {
             subText: 'Please try again.',
           }}
           label=""
-          icon={{ name: 'Lock' }}
+          inputFieldIcon={{ name: 'Lock', color: 'red' }}
+          openAccordionIcon={{
+            name: 'system-close-grey',
+            color: '#444444',
+            size: 12,
+          }}
+          closeAccordionIcon={{ name: 'arrowDown', color: '#444444', size: 12 }}
           onButtonClick={(item, index) => {
             alert(JSON.stringify(item));
             alert(`Index: ${index}`);
