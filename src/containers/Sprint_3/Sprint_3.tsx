@@ -844,14 +844,15 @@ const Sprint3: React.FC<Props> = () => {
               }
             ]}
           />
-          <br />
+
           <BoxId
             title="Inactive IDs"
             list={[
               {
-                leftIcon: { name: "Mobile" },
+                leftImage:
+                  "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
                 boldText: "Mobile Number ••••••4546",
-                subText: "CIMB Bank  |  ••••••••9864",
+
                 iconButtons: [
                   {
                     icon: "Edit",
@@ -866,6 +867,25 @@ const Sprint3: React.FC<Props> = () => {
                   {
                     icon: "Clear",
                     text: "Deactivate",
+                    onClick: () => alert("click")
+                  }
+                ]
+              }
+            ]}
+          />
+
+          <BoxId
+            title="Active"
+            isActive={true}
+            list={[
+              {
+                leftImage: images.common.Duitnow1,
+                boldText: "DuitNow QR",
+                subText: "Savings Account A  |  ••••••••4321",
+                iconButtons: [
+                  {
+                    icon: "Switch",
+                    text: "Change Default Account",
                     onClick: () => alert("click")
                   }
                 ]

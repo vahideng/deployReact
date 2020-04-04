@@ -11,6 +11,7 @@ interface Props {
   isActive?: boolean;
   list: {
     leftIcon?: { name: string; color?: string; size?: number };
+    leftImage?: string;
     boldText?: string;
     subText?: string;
     notification?: boolean;
@@ -56,30 +57,43 @@ const BoxId = ({ testId, title, titleStyle, list, isActive }: Props) => {
             return list.length === 1 ? (
               <div className={classes.WrapperDiv} key={index}>
                 <div className={classes.IconDiv}>
-                  <Icon
-                    icon={item.leftIcon.name}
-                    color={
-                      item.leftIcon.color ? item.leftIcon.color : "#ff2626"
-                    }
-                    size={item.leftIcon.size ? item.leftIcon.size : 35}
-                  />
+                  {item.leftIcon && (
+                    <Icon
+                      icon={item.leftIcon.name}
+                      color={
+                        item.leftIcon.color ? item.leftIcon.color : "#ff2626"
+                      }
+                      size={item.leftIcon.size ? item.leftIcon.size : 35}
+                    />
+                  )}
 
+                  {item.leftImage && (
+                    <img
+                      src={item.leftImage}
+                      alt="icon"
+                      className={classes.ImageIcon}
+                    />
+                  )}
                   <div className={classes.TextContainer}>
-                    <B_15_BLACK className={classes.BoldText}>
-                      {item.boldText}
-                    </B_15_BLACK>
-                    <R_13_BLACK>{item.subText}</R_13_BLACK>
+                    <B_15_BLACK>{item.boldText}</B_15_BLACK>
+                    {item.subText && (
+                      <R_13_BLACK className={classes.SubText}>
+                        {item.subText}
+                      </R_13_BLACK>
+                    )}
                   </div>
                   {item.notification && <Notify className={classes.notify} />}
                 </div>
-                <div
-                  className={classes.rightIcon}
-                  onClick={() => {
-                    iconClickHandler(index);
-                  }}
-                >
-                  <Icon icon="Menu" size={32} color={iconColor()} />
-
+                <div className={classes.RightIconDiv}>
+                  <div
+                    className={classes.rightIcon}
+                    onClick={() => {
+                      iconClickHandler(index);
+                      console.log(index);
+                    }}
+                  >
+                    <Icon icon="Menu" size={32} color={iconColor()} />
+                  </div>
                   {selected === index && (
                     <div className={classes.BoxDiv}>
                       {item.iconButtons &&
@@ -115,28 +129,42 @@ const BoxId = ({ testId, title, titleStyle, list, isActive }: Props) => {
                 key={index}
               >
                 <div className={classes.IconDiv}>
-                  <Icon
-                    icon={item.leftIcon.name}
-                    color={
-                      item.leftIcon.color ? item.leftIcon.color : "#ff2626"
-                    }
-                    size={item.leftIcon.size ? item.leftIcon.size : 35}
-                  />
+                  {item.leftIcon && (
+                    <Icon
+                      icon={item.leftIcon.name}
+                      color={
+                        item.leftIcon.color ? item.leftIcon.color : "#ff2626"
+                      }
+                      size={item.leftIcon.size ? item.leftIcon.size : 35}
+                    />
+                  )}
+
+                  {item.leftImage && (
+                    <img
+                      src={item.leftImage}
+                      alt="icon"
+                      className={classes.ImageIcon}
+                    />
+                  )}
                   <div className={classes.TextContainer}>
-                    <B_15_BLACK className={classes.BoldText}>
-                      {item.boldText}
-                    </B_15_BLACK>
-                    <R_13_BLACK>{item.subText}</R_13_BLACK>
+                    <B_15_BLACK>{item.boldText}</B_15_BLACK>
+                    {item.subText && (
+                      <R_13_BLACK className={classes.SubText}>
+                        {item.subText}
+                      </R_13_BLACK>
+                    )}
                   </div>
                   {item.notification && <Notify className={classes.notify} />}
                 </div>
-                <div
-                  className={classes.rightIcon}
-                  onClick={() => {
-                    iconClickHandler(index);
-                  }}
-                >
-                  <Icon icon="Menu" size={32} color={iconColor()} />
+                <div className={classes.RightIconDiv}>
+                  <div
+                    className={classes.rightIcon}
+                    onClick={() => {
+                      iconClickHandler(index);
+                    }}
+                  >
+                    <Icon icon="Menu" size={32} color={iconColor()} />
+                  </div>
                   {selected === index && (
                     <div className={classes.BoxDiv}>
                       {item.iconButtons &&

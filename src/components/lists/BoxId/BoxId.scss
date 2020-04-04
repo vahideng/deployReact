@@ -27,6 +27,7 @@
 }
 .Title {
   padding-bottom: 1.5rem;
+  padding-top: 2rem;
 }
 .IconDiv {
   display: flex;
@@ -39,31 +40,42 @@
 .notify {
   margin: 0 0 2.2rem 0.5rem;
 }
-.BoldText {
-  padding-bottom: 5px;
+.SubText {
+  padding-top: 5px;
 }
 .rightIcon {
   cursor: pointer;
+}
+.RightIconDiv {
   position: relative;
 }
 .BoxDiv {
   position: absolute;
   right: 1rem;
   top: 2.6rem;
-  width: 9.62rem;
+  width: 10rem;
   border-radius: 5px;
   height: auto;
   z-index: 100;
   background-color: #ffffff;
-  padding: 0.5rem 1rem;
+
   box-shadow: $mainBoxShadow;
 }
 .ButtonIcon {
   display: flex;
   align-items: center;
-  min-height: 2.5rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+.ButtonIcon:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.4s;
 }
 .ButtonIconText {
   padding-top: 0.2rem;
   padding-left: 0.5rem;
+}
+.ImageIcon {
+  width: 2.5rem;
+  height: 2.5rem;
 }
