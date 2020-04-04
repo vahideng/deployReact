@@ -1,0 +1,69 @@
+@import "../../assets/common/common.scss";
+
+.MainDiv {
+  width: 35.5rem;
+}
+.WrapperDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 4.62rem;
+}
+.BorderDiv {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dedede;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  min-height: 4.62rem;
+  background-color: #ffffff;
+}
+.WrapperDivMulti {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 4.62rem;
+  border-bottom: 1px solid #dedede;
+}
+.Title {
+  padding-bottom: 1.5rem;
+}
+.IconDiv {
+  display: flex;
+
+  align-items: center;
+}
+.TextContainer {
+  margin-left: 1rem;
+}
+.notify {
+  margin: 0 0 2.2rem 0.5rem;
+}
+.BoldText {
+  padding-bottom: 5px;
+}
+.rightIcon {
+  cursor: pointer;
+  position: relative;
+}
+.BoxDiv {
+  position: absolute;
+  right: 1rem;
+  top: 2.6rem;
+  width: 9.62rem;
+  border-radius: 5px;
+  height: auto;
+  z-index: 100;
+  background-color: #ffffff;
+  padding: 0.5rem 1rem;
+  box-shadow: $mainBoxShadow;
+}
+.ButtonIcon {
+  display: flex;
+  align-items: center;
+  min-height: 2.5rem;
+}
+.ButtonIconText {
+  padding-top: 0.2rem;
+  padding-left: 0.5rem;
+}

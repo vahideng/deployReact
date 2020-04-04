@@ -31,7 +31,7 @@ import SelectionTile from "src/components/selections/selectionTile/SelectionTile
 import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 
 import AmDropdown from "src/components/amDropdown/AmDropdown";
-
+import BoxId from "src/components/lists/BoxId/BoxId";
 
 const {
   B_13_ORANGE_463,
@@ -50,6 +50,7 @@ const Title = styled(B_13_ORANGE_463)`
 const CenteredDiv = styled.div`
   display: flex;
   justify-content: center;
+
   padding: 2rem 0;
 `;
 interface Props {}
@@ -69,19 +70,15 @@ const Sprint3: React.FC<Props> = () => {
   const [sTileNum2, setSTileNum2] = useState(3);
   const [sTileNum3, setSTileNum3] = useState(1);
   const [stickyFooter, setStickyFooter] = useState(false);
-  const [showDropdown,setDropdown] = useState(false);
-  const [dropdownValue , setDropdownValue]= useState("anything")
+  const [showDropdown, setDropdown] = useState(false);
+  const [dropdownValue, setDropdownValue] = useState("anything");
 
+  const handlerDropdown = (item: any) => {
+    console.log(item, "dropdownValue");
 
-const handlerDropdown = (item: any)=>{
-  console.log(item,"dropdownValue");
-  
-
-  setDropdown(!showDropdown)
-  setDropdownValue(item.value)
-}
-
-
+    setDropdown(!showDropdown);
+    setDropdownValue(item.value);
+  };
 
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
@@ -204,9 +201,8 @@ const handlerDropdown = (item: any)=>{
     }
   ];
 
-
   console.log(dropdownValue, "dropdownValue");
-  
+
   return (
     <div style={{ paddingTop: 100 }}>
       <Navbar
@@ -242,7 +238,7 @@ const handlerDropdown = (item: any)=>{
         <PrimaryButton
           title="Open ImageModal"
           onButtonClick={() => {
-            setShowImageModal(true)
+            setShowImageModal(true);
           }}
           width={"25rem"}
           buttonColor={{ top: "#FD8585", bottom: "#FF2222" }}
@@ -253,10 +249,9 @@ const handlerDropdown = (item: any)=>{
           title="Keep your account safe"
           message="We have just changed our password policy. It is good for you to change it now to keep your account secured."
           buttonLabel="Continue"
-          buttonLabelColor={'#FFF'}
+          buttonLabelColor={"#FFF"}
           // buttonColor={{ top: "#FD8585", bottom: "#FF2222" }}
           onButtonClick={() => alert("Continue")}
-
           // leftButtonLabel="NO"
           // rightButtonLabel="YES"
           // onLeftButtonClick={()=>alert('NO')}
@@ -340,10 +335,10 @@ const handlerDropdown = (item: any)=>{
         }}
       >
         <AmDropdown
-        readOnly = {true}
-        disabled = {false}
-        clickOnArrow = {()=>setDropdown(!showDropdown)}
-        showDropdown = {showDropdown}
+          readOnly={true}
+          disabled={false}
+          clickOnArrow={() => setDropdown(!showDropdown)}
+          showDropdown={showDropdown}
           dropdownData={[
             { value: "ambank", label: "am" },
             { value: "Alpeh", label: "alp" }
@@ -355,12 +350,12 @@ const handlerDropdown = (item: any)=>{
             subText: "Please try again."
           }}
           type="text"
-          inputClickHandler= {()=>setDropdown(!showDropdown)}
+          inputClickHandler={() => setDropdown(!showDropdown)}
           arrowIcon={true}
           label="dropdown label"
           icon={{ name: "Account-2" }}
           value={dropdownValue}
-          handleChange={(item )=> handlerDropdown(item)}
+          handleChange={item => handlerDropdown(item)}
         />
       </div>
 
@@ -760,7 +755,7 @@ const handlerDropdown = (item: any)=>{
           centered={true}
           onTileClick={(item, index) => {
             setSTileNum3(index);
-            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+            alert(`${item.centeredText} with indexOf ${index} clicked`);
           }}
           selected={sTileNum3}
           list={[
@@ -776,6 +771,7 @@ const handlerDropdown = (item: any)=>{
           ]}
         />
       </div>
+
       <Title>Sticky Footer</Title>
       <CenteredDiv>
         <PrimaryButton
@@ -794,6 +790,91 @@ const handlerDropdown = (item: any)=>{
         }}
         iconText="Disable online purchases for AmBank Debit Card?"
       />
+      <Title>BoxId</Title>
+      <CenteredDiv>
+        <div>
+          <BoxId
+            title="Active IDs"
+            isActive={true}
+            list={[
+              {
+                leftIcon: { name: "ID-2" },
+                boldText: "ID Number ••••••9876",
+                subText: "Maybank  |  ••••••••4321",
+                notification: true,
+                iconButtons: [
+                  {
+                    icon: "Edit",
+                    text: "Edit",
+                    onClick: () => alert("click")
+                  },
+                  {
+                    icon: "delete",
+                    text: "Delete",
+                    onClick: () => alert("click")
+                  },
+                  {
+                    icon: "Clear",
+                    text: "Deactivate",
+                    onClick: () => alert("click")
+                  }
+                ]
+              },
+              {
+                leftIcon: { name: "Mobile" },
+                boldText: "Mobile Number ••••••1234",
+                subText: "Ambank  |  ••••••••3463",
+                iconButtons: [
+                  {
+                    icon: "Edit",
+                    text: "Edit",
+                    onClick: () => alert("click")
+                  },
+                  {
+                    icon: "delete",
+                    text: "Delete",
+                    onClick: () => alert("click")
+                  },
+                  {
+                    icon: "Clear",
+                    text: "Deactivate",
+                    onClick: () => alert("click")
+                  }
+                ]
+              }
+            ]}
+          />
+          <br />
+          <BoxId
+            title="Inactive IDs"
+            list={[
+              {
+                leftIcon: { name: "Mobile" },
+                boldText: "Mobile Number ••••••4546",
+                subText: "CIMB Bank  |  ••••••••9864",
+                iconButtons: [
+                  {
+                    icon: "Edit",
+                    text: "Edit",
+                    onClick: () => alert("click")
+                  },
+                  {
+                    icon: "delete",
+                    text: "Delete",
+                    onClick: () => alert("click")
+                  },
+                  {
+                    icon: "Clear",
+                    text: "Deactivate",
+                    onClick: () => alert("click")
+                  }
+                ]
+              }
+            ]}
+          />
+        </div>
+      </CenteredDiv>
+
       <Title>Text With Details</Title>
       <div
         style={{
