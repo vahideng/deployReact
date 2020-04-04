@@ -5,7 +5,7 @@ interface Props {
   testId?: string;
   modalChildren: ReactNode;
   modalIsOpen: boolean;
-  onRequestClose ?: () => void;
+  onRequestClose?: () => void;
 }
 const customStyles = {
   content: {
@@ -16,19 +16,19 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     background: "transparent",
-    border: "none"
+    border: "none",
   },
   overlay: {
     background: "rgba(0, 0, 0, 0.5)",
-    backgroundBlendMode: "multiply"
-  }
+    backgroundBlendMode: "multiply",
+  },
 };
 
 const AmModal: React.FC<Props> = ({
   modalChildren,
   modalIsOpen,
   testId,
-  onRequestClose
+  onRequestClose,
 }) => {
   const [show, setShow] = useState(false);
   useEffect(() => {
@@ -41,8 +41,6 @@ const AmModal: React.FC<Props> = ({
     } else {
       setShow(false);
     }
-
-  
   };
   return (
     <div id={testId}>
