@@ -1,11 +1,11 @@
-import React from "react";
-import { Card, Accordion, useAccordionToggle, Col, Row } from "react-bootstrap";
+import React from 'react';
+import { Card, Accordion, useAccordionToggle, Col, Row } from 'react-bootstrap';
 
-import classes from "./TransactionList.module.css";
-import "react-tabs/style/react-tabs.css";
-import Paragraphs from "../../components/assets/typography";
+import classes from './TransactionList.module.css';
+import 'react-tabs/style/react-tabs.css';
+import Paragraphs from '../../components/assets/typography';
 
-import Icon from "../assets/icons/icon";
+import Icon from '../assets/icons/icon';
 const { SB_13_BLACK } = Paragraphs;
 interface Props {
   testId?: string;
@@ -21,7 +21,7 @@ const CustomToggle: React.FC<Props> = ({
   eventKey,
   content,
   testId,
-  showIcon
+  showIcon,
 }) => {
   const decoratedOnClick = useAccordionToggle(eventKey, () => null);
   const [isOpen, setIsOpen] = React.useState(false);
@@ -63,7 +63,7 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
               <Card className={classes.CardContainer}>
                 <Card.Header className={classes.HeaderInside}>
                   <div
-                    style={{ alignItems: "center", height: "50px" }}
+                    style={{ alignItems: 'center', height: '50px' }}
                     className="d-flex"
                   >
                     <Col
@@ -88,15 +88,15 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
                     >
                       <div
                         style={{
-                          whiteSpace: "nowrap",
-                          float: "right",
+                          whiteSpace: 'nowrap',
+                          float: 'right',
                           padding: 0,
-                          fontWeight: 900
+                          fontWeight: 900,
                         }}
                       >
                         <span
                           style={{
-                            marginRight: "-5px"
+                            marginRight: '-5px',
                           }}
                         >
                           <Icon
@@ -105,7 +105,7 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
                             size={30}
                           />
                         </span>
-                        <span style={{ paddingRight: "4px" }}>
+                        <span style={{ paddingRight: '4px' }}>
                           {item.rightLabel.prefix}
                         </span>
                         {item.rightLabel.content}
@@ -120,17 +120,17 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
                         className={classes.FlagText}
                         style={{
                           color: `${item.flag.color}`,
-                          paddingTop: "0px"
+                          paddingTop: '0px',
                         }}
                       >
-                        {" "}
-                        {item.flag.text}{" "}
+                        {' '}
+                        {item.flag.text}{' '}
                       </SB_13_BLACK>
                     ) : null}
 
                     {!!item.middle.content &&
                       item.middle.content.map((_item: any, _index: any) => {
-                        console.log(_item, "item");
+                        console.log(_item, 'item');
 
                         return (
                           <Row className={classes.RowContainer}>
@@ -144,7 +144,7 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
                               className={classes.RightBody}
                               id={`${testId}-2-${index}`}
                             >
-                              <div style={{ whiteSpace: "nowrap" }}>
+                              <div style={{ whiteSpace: 'nowrap' }}>
                                 {_item.rightLabel}
                               </div>
                             </div>

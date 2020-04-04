@@ -14,8 +14,6 @@ import images from "src/assets";
 import LocalImages from "src/components/assets/images";
 import List from "src/components/lists/list/List";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
-import PortfolioList from "src/components/lists/PortfolioList/PortfolioList";
-import PortfolioListContent from "src/components/portfolioListContent/PortfolioListContent";
 
 import CenterMessage from "src/components/infographic/centerMessage/CenterMessage";
 import SettingModalCenter from "src/components/modals/settingModalCenter/SettingModalCenter";
@@ -30,20 +28,29 @@ import TextWithLink from "src/components/buttons/TextWithLink/TextWithLink";
 import ImageModal from "src/components/modals/ImageModal/ImageModal";
 import SimpleHeader from "src/components/headers/simpleHeader/SimpleHeader";
 import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
-import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 import BarCode from "src/components/barCode/barCode";
+import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 
 import AmDropdown from "src/components/amDropdown/AmDropdown";
 import SecureImage from "src/components/secureImage/SecureImage";
 import SecureImageSelect from "src/components/secureImageSelect/SecureImageSelect";
 import Line from "src/components/line/Line";
 
+import { MemoizedAmProfilePic as AmProfilePic } from "src/components/amProfilePic/AmProfilePic";
+
+import Icon from "src/components/assets/icons/icon";
+
+import AmProfileDetail from "src/components/amProfileDetail/amProfileDetail";
+
 const {
   B_13_ORANGE_463,
   R_12_WHITE,
   B_14_WHITE,
   B_24_BLACK,
-  B_15_WHITE
+  B_15_WHITE,
+  B_32_BLACK,
+  R_15_BLACK,
+  SB_13_BLACK
 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -76,6 +83,12 @@ const Sprint3: React.FC<Props> = () => {
   const [stickyFooter, setStickyFooter] = useState(false);
   const [showDropdown, setDropdown] = useState(false);
   const [dropdownValue, setDropdownValue] = useState("anything");
+  const [tacClear, setTacClear] = useState(false);
+  const [profileInputValue, setProfileInputValue] = useState("");
+  const [buttonColor, setButtonColor] = useState({
+    top: "#BDBDBD",
+    bottom: "#BDBDBD"
+  });
 
   const handlerDropdown = (item: any) => {
     console.log(item, "dropdownValue");
@@ -1157,7 +1170,8 @@ const Sprint3: React.FC<Props> = () => {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  padding: "0rem 2rem"
+                  padding: "0rem 2rem",
+                  marginTop: "1rem"
                 }}
               >
                 <div
@@ -1220,167 +1234,257 @@ const Sprint3: React.FC<Props> = () => {
           />
         }
       />
-      <Title>PortfolioListContent</Title>
-      <div style={{ width: "50%", margin: "0 auto" }}>
-        <PortfolioListContent
-          borderColor="#8677D9"
-          buttonText="View Performance"
-          onClickButton={() => alert("button clicked")}
-          data={[
-            {
-              leftLabel: "Invested",
-              rightLabel: "RM 418,944.73"
-            },
-            {
-              leftLabel: "NAV",
-              rightLabel: "4.7894"
-            },
-            {
-              leftLabel: "Number of Unts",
-              rightLabel: "1,828.40"
-            },
-            {
-              leftLabel: "Asset Class",
-              rightLabel: "Equity"
-            }
-          ]}
-        />
-      </div>
-      <Title>PortfolioList</Title>
-      <CenteredDiv>
-        <PortfolioList
+
+      <Title>ProfilePic</Title>
+      <CenteredDiv
+        style={{
+          margin: "5rem"
+        }}
+      >
+        <AmProfilePic
+          testId={"testId"}
+          profilePicImage={LocalImages.common.profilePic}
+          ProfilePicBgColor={"#2694EB"}
+          editIcon={<Icon icon={"Right1"} size={20} color={"#000000"} />}
+          onEditClickHandler={() => alert("link clicked")}
+          fullName={"Adam Faruk"}
+        ></AmProfilePic>
+      </CenteredDiv>
+
+      <Title>ProfileDetail</Title>
+      <CenteredDiv style={{ backgroundColor: "white", padding: 50 }}>
+        <AmProfileDetail
           testId={"testId"}
           data={[
             {
-              borderColor: "#FFA463",
-              expandableLeft: true,
-              leftLabel: "Advantage Global Equity Volatility Focused",
-              middleLabel: "RM 406,318.98",
-              rightLabel: {
-                type: "loss",
-                percentage: "0.03%",
-                amount: "RM 12,189.56"
-              },
-              leftContent: (
-                <PortfolioListContent
-                  borderColor="#FFA463"
-                  buttonText="View Performance"
-                  onClickButton={() => alert("button clicked")}
-                  data={[
-                    {
-                      leftLabel: "Invested",
-                      rightLabel: "RM 418,944.73"
-                    },
-                    {
-                      leftLabel: "NAV",
-                      rightLabel: "4.7894"
-                    },
-                    {
-                      leftLabel: "Number of Units",
-                      rightLabel: "1,828.40"
-                    },
-                    {
-                      leftLabel: "Asset Class",
-                      rightLabel: "Equity",
-                      rightLabelStyle: {
-                        color: "#FFA463"
-                      }
-                    }
-                  ]}
-                />
-              )
+              profile_data: {
+                title: "Full Name",
+                showIcon: false,
+                subtitle: [
+                  {
+                    content: "Adam Jake"
+                  },
+                  {
+                    content: "aslam Furich"
+                  }
+                ]
+              }
             },
             {
-              borderColor: "#8677D9",
-              expandableLeft: true,
-              leftLabel: "Advantage Global Equity Volatility Focused",
-              rightLabel: {
-                type: "profit",
-                percentage: "0.03%",
-                amount: "RM 12,189.56"
-              },
-              middleLabel: "RM 406,318.98",
-              leftContent: (
-                <PortfolioListContent
-                  borderColor="#8677D9"
-                  buttonText="View Performance"
-                  onClickButton={() => alert("button clicked")}
-                  data={[
-                    {
-                      leftLabel: "Invested",
-                      rightLabel: "RM 418,944.73"
-                    },
-                    {
-                      leftLabel: "NAV",
-                      rightLabel: "4.7894"
-                    },
-                    {
-                      leftLabel: "Number of Unts",
-                      rightLabel: "1,828.40"
-                    },
-                    {
-                      leftLabel: "Asset Class",
-                      rightLabel: "Equity"
-                    }
-                  ]}
-                />
-              )
+              profile_data: {
+                title: "Nickname",
+                showIcon: true,
+                subtitle: [
+                  {
+                    content: "Adam_1234"
+                  }
+                ]
+              }
             },
             {
-              borderColor: "#7AB497",
-              expandableLeft: true,
-              leftLabel: "Advantage Global Equity Volatility Focused",
-              rightLabel: {
-                type: "loss",
-                percentage: "0.03%",
-                amount: "RM 12,189.56"
-              },
-              middleLabel: "RM 406,318.98",
-              leftContent: (
-                <PortfolioListContent
-                  borderColor="#7AB497"
-                  buttonText="View Performance"
-                  onClickButton={() => alert("button clicked")}
-                  data={[
-                    {
-                      leftLabel: "Invested",
-                      rightLabel: "RM 418,944.73"
-                    },
-                    {
-                      leftLabel: "NAV",
-                      rightLabel: "4.7894"
-                    },
-                    {
-                      leftLabel: "Number of Unts",
-                      rightLabel: "1,828.40"
-                    },
-                    {
-                      leftLabel: "Asset Class",
-                      rightLabel: "Equity"
-                    }
-                  ]}
-                />
-              )
+              profile_data: {
+                title: "Mobile Number",
+                showIcon: false,
+                subtitle: [
+                  {
+                    content: "******897"
+                  }
+                ]
+              }
+            },
+            {
+              profile_data: {
+                title: "Mailing Address",
+                showIcon: false,
+                subtitle: [
+                  {
+                    content:
+                      "41, Jalan PJU 1A/29A Ara Damansara,Kundanahalli,Banagalore,43701 Petaling Jaya,Selangor,Malaysia"
+                  }
+                ]
+              }
+            },
+            {
+              profile_data: {
+                title: "Email",
+                showIcon: true,
+                subtitle: [
+                  {
+                    content: "*******5678@gmail.com"
+                  }
+                ]
+              }
             }
           ]}
-          header={[
-            {
-              title: "Fund Name",
-              icon: "sort",
-              onClick: () => alert("Handle sort and icon change")
-            },
-            {
-              title: "Value",
-              icon: "sort",
-              onClick: () => alert("Handle sort and icon change")
-            },
-            {
-              title: "Profit/Loss",
-              icon: "sort",
-              onClick: () => alert("Handle sort and icon change")
-            }
-          ]}
+          value={profileInputValue}
+          handleChange={(e: any) => {
+            setProfileInputValue(e.target.value);
+            setTacClear(true);
+            setButtonColor({ top: "#FF0D0D", bottom: "#FD8585" });
+          }}
+          clearIcon={profileInputValue === "" ? tacClear : true}
+          clearClickHandler={() => {
+            setProfileInputValue("");
+            setTacClear(false);
+            setButtonColor({ top: "#BDBDBD", bottom: "#BDBDBD" });
+          }}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The Input Field is wrong",
+            subText: "Please try again."
+          }}
+          label=""
+          icon={{ name: "Lock" }}
+          onButtonClick={() => {
+            alert("Button Clicked");
+          }}
+          buttonTitle="Continue"
+          buttonTitleColor="#ffffff"
+          buttonColor={buttonColor}
         />
+      </CenteredDiv>
+
+      <Title>ProfileSetting</Title>
+      <CenteredDiv
+        style={{
+          backgroundColor: "white",
+          padding: 50,
+          alignItems: "center"
+        }}
+      >
+        <CenteredDiv
+          style={{
+            flexDirection: "column",
+            padding: "24px 24px  51px 24px",
+            background: " #F7F7F7",
+            borderRadius: "16px"
+          }}
+        >
+          <div>
+            <AmProfilePic
+              testId={"testId"}
+              profilePicImage={LocalImages.common.profilePic}
+              ProfilePicBgColor={"#2694EB"}
+              editIcon={<Icon icon={"Right1"} size={20} color={"#000000"} />}
+              onEditClickHandler={() => alert("link clicked")}
+              fullName={"Adam Faruk"}
+            ></AmProfilePic>
+          </div>
+          <div style={{ marginTop: "31px", marginBottom: "4px" }}>
+            <B_32_BLACK>Adam_1234</B_32_BLACK>
+          </div>
+          <div style={{ marginBottom: "41px" }}>
+            <R_15_BLACK>Last login on 2 Feb 2020 at 03:06pm</R_15_BLACK>
+          </div>
+          <AmProfileDetail
+            testId={"testId"}
+            data={[
+              {
+                profile_data: {
+                  title: "Full Name",
+                  showIcon: false,
+                  subtitle: [
+                    {
+                      content: "Adam Jake"
+                    },
+                    {
+                      content: "aslam Furich"
+                    }
+                  ]
+                }
+              },
+              {
+                profile_data: {
+                  title: "Nickname",
+                  showIcon: true,
+                  subtitle: [
+                    {
+                      content: "Adam_1234"
+                    }
+                  ]
+                }
+              },
+              {
+                profile_data: {
+                  title: "Mobile Number",
+                  showIcon: false,
+                  subtitle: [
+                    {
+                      content: "******897"
+                    }
+                  ]
+                }
+              },
+              {
+                profile_data: {
+                  title: "Mailing Address",
+                  showIcon: false,
+                  subtitle: [
+                    {
+                      content:
+                        "41, Jalan PJU 1A/29A Ara Damansara,Kundanahalli,Banagalore,43701 Petaling Jaya,Selangor,Malaysia"
+                    }
+                  ]
+                }
+              },
+              {
+                profile_data: {
+                  title: "Email",
+                  showIcon: true,
+                  subtitle: [
+                    {
+                      content: "*******5678@gmail.com"
+                    }
+                  ]
+                }
+              }
+            ]}
+            value={profileInputValue}
+            handleChange={(e: any) => {
+              setProfileInputValue(e.target.value);
+              setTacClear(true);
+              setButtonColor({ top: "#FF0D0D", bottom: "#FD8585" });
+            }}
+            clearIcon={profileInputValue === "" ? tacClear : true}
+            clearClickHandler={() => {
+              setProfileInputValue("");
+              setTacClear(false);
+              setButtonColor({ top: "#BDBDBD", bottom: "#BDBDBD" });
+            }}
+            errorMessage={{
+              testId: "testId",
+              errorText: "The Input Field is wrong",
+              subText: "Please try again."
+            }}
+            label=""
+            icon={{ name: "Lock" }}
+            onButtonClick={() => {
+              alert("Button Clicked");
+            }}
+            buttonTitle="Continue"
+            buttonTitleColor="#ffffff"
+            buttonColor={buttonColor}
+          />
+          <div style={{ padding: 24, maxWidth: 439, width: "100%" }}>
+            <SB_13_BLACK>
+              Note: If you wish to change your <strong>mobile number</strong>
+              and/or <strong>mailing address.</strong> please visit your nearest
+              branch.
+            </SB_13_BLACK>
+          </div>
+          <div
+            style={{
+              padding: "0px 24px 0px 24px",
+              maxWidth: 439,
+              width: "100%"
+            }}
+          >
+            <SB_13_BLACK>
+              Your <strong>Profile picture</strong>should not exceed the 5 MB
+              file limit.
+            </SB_13_BLACK>
+          </div>
+        </CenteredDiv>
       </CenteredDiv>
     </div>
   );

@@ -1,0 +1,46 @@
+.CardOuterContainer {
+  max-width: 699px;
+  width: 100%;
+  border: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.CardBody {
+  padding: 0;
+}
+
+.CardContainer {
+  border-right: none !important;
+  border-left: none !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.HeaderInside {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  color: #444444;
+  margin: 0px;
+}
+
+.RowContainer {
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 0px;
+}
+
+.CardBodyContent {
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+.primaryBtnStyle {
+  margin-top: 24px;
+}
