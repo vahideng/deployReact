@@ -1266,7 +1266,8 @@ const Sprint3: React.FC<Props> = () => {
             alert('on edit click');
           }}
           fullName={'Adam Faruk'}
-          handleChange={(e: any) => {
+          handleChange={(e: any, item, index) => {
+            console.log(`Item:${item},index:${index}`);
             setProfileInputValue(e.target.value);
             setTacClear(true);
             setButtonColor({ top: '#FF0D0D', bottom: '#FD8585' });
@@ -1284,8 +1285,9 @@ const Sprint3: React.FC<Props> = () => {
           }}
           label=""
           icon={{ name: 'Lock' }}
-          onButtonClick={() => {
-            alert('Hello ' + profileInputValue);
+          onButtonClick={(item, index) => {
+            alert(JSON.stringify(item));
+            alert(`Index: ${index}`);
           }}
           buttonTitle="Continue"
           buttonTitleColor="#ffffff"

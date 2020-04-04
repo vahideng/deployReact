@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import classes from './amProfileSetting.module.css';
 import { Card, Accordion, useAccordionToggle, Col } from 'react-bootstrap';
 import Icon from 'src/components/assets/icons/icon';
@@ -6,7 +6,23 @@ import Paragraphs from '../assets/typography';
 import InputField from 'src/components/inputs/inputFields/InputFields';
 import PrimaryButton from 'src/components/buttons/primaryButton/PrimaryButton';
 import { MemoizedAmProfilePic as AmProfilePic } from 'src/components/amProfilePic/AmProfilePic';
+
 const { B_32_BLACK, SB_15_BLACK, R_15_BLACK } = Paragraphs;
+
+interface profileItemProps {
+  item: {
+    profile_data: {
+      title: string;
+      subtitle: [
+        {
+          content: string;
+        },
+      ];
+      showIcon: boolean;
+    };
+  };
+}
+
 interface ProfileSettingProps {
   data: any;
   testId: string;
@@ -15,7 +31,11 @@ interface ProfileSettingProps {
   showIcon?: boolean;
   clearIcon: boolean;
   value: string;
-  handleChange?: any;
+  handleChange: (
+    event: ChangeEvent<HTMLInputElement>,
+    item: profileItemProps,
+    index: number,
+  ) => void;
   clearClickHandler: () => void;
   errorMessage?: {
     testId: string;
@@ -24,7 +44,7 @@ interface ProfileSettingProps {
   };
   label?: string;
   icon: { name: string };
-  onButtonClick: () => void;
+  onButtonClick: (item: profileItemProps, index: number) => void;
   buttonTitle: string;
   buttonTitleColor: string;
   buttonColor: { top: string; bottom: string };
@@ -131,11 +151,11 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
                         label={label}
                         icon={icon}
                         value={value}
-                        handleChange={handleChange}
+                        handleChange={e => handleChange(e, item, index)}
                       />
                       <div className={primaryBtnStyle}>
                         <PrimaryButton
-                          onButtonClick={onButtonClick}
+                          onButtonClick={() => onButtonClick(item, index)}
                           title={buttonTitle}
                           titleColor={buttonTitleColor}
                           buttonColor={buttonColor}
