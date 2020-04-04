@@ -24,18 +24,14 @@ interface Props {
 
 const BoxId = ({ testId, title, titleStyle, list, isActive }: Props) => {
   const [selected, setSelected] = useState(null);
+
   const iconClickHandler = (index: number) => {
     setSelected(index);
-
-    console.log("close1");
   };
 
   const closeHandler = () => {
     setSelected(null);
-
-    alert(selected);
   };
-
   const iconColor = () => {
     if (isActive) {
       return "#000000";
