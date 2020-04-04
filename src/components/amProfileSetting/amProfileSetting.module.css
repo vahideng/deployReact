@@ -1,0 +1,73 @@
+.CardOuterContainer {
+  max-width: 699px;
+  width: 100%;
+  border: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  background: #f7f7f7;
+}
+
+.CardBody {
+  padding: 0;
+}
+
+.mainContainer {
+  padding: 24px 24px 51px 24px;
+  border-radius: 16px;
+  max-width: 699px;
+  width: 100%;
+  padding: 24px;
+  background: #f7f7f7 none repeat scroll 0% 0%;
+}
+
+.CardContainer {
+  border-right: none !important;
+  border-left: none !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.HeaderInside {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  color: #444444;
+  padding-left: 0px;
+  margin: 0px;
+}
+
+.RowContainer {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 0px;
+}
+
+.CardBodyContent {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+.primaryBtnStyle {
+  margin-top: 24px;
+}
+
+.cardUserDetails {
+  margin-top: 31px;
+  margin-bottom: 4px;
+}
+
+.cardLastLogin {
+  margin-bottom: 41px;
+}

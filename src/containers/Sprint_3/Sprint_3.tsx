@@ -33,11 +33,8 @@ import StickyFooter from 'src/components/stickies/stickyFooter/StickyFooter';
 
 import AmDropdown from 'src/components/amDropdown/AmDropdown';
 
-import { MemoizedAmProfilePic as AmProfilePic } from 'src/components/amProfilePic/AmProfilePic';
-
+import AmProfileSetting from 'src/components/amProfileSetting/amProfileSetting';
 import Icon from 'src/components/assets/icons/icon';
-
-import AmProfileDetail from 'src/components/amProfileDetail/amProfileDetail';
 
 const {
   B_13_ORANGE_463,
@@ -45,8 +42,6 @@ const {
   B_14_WHITE,
   B_24_BLACK,
   B_15_WHITE,
-  B_32_BLACK,
-  R_15_BLACK,
   SB_13_BLACK,
 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -60,6 +55,10 @@ const CenteredDiv = styled.div`
   display: flex;
   justify-content: center;
   padding: 2rem 0;
+`;
+const RowDiv = styled.div`
+  display: flex;
+  flex-direction: 'row';
 `;
 interface Props {}
 
@@ -1189,27 +1188,18 @@ const Sprint3: React.FC<Props> = () => {
           />
         }
       />
-
-      <Title>ProfilePic</Title>
+      <Title>ProfileSetting</Title>
       <CenteredDiv
         style={{
-          margin: '5rem',
+          flexDirection: 'column',
+          alignItems: 'center',
         }}
       >
-        <AmProfilePic
+        <AmProfileSetting
           testId={'testId'}
           profilePicImage={LocalImages.common.profilePic}
           ProfilePicBgColor={'#2694EB'}
           editIcon={<Icon icon={'Right1'} size={20} color={'#000000'} />}
-          onEditClickHandler={() => alert('link clicked')}
-          fullName={'Adam Faruk'}
-        ></AmProfilePic>
-      </CenteredDiv>
-
-      <Title>ProfileDetail</Title>
-      <CenteredDiv style={{ backgroundColor: 'white', padding: 50 }}>
-        <AmProfileDetail
-          testId={'testId'}
           data={[
             {
               profile_data: {
@@ -1272,6 +1262,10 @@ const Sprint3: React.FC<Props> = () => {
             },
           ]}
           value={profileInputValue}
+          onEditClickHandler={() => {
+            alert('on edit click');
+          }}
+          fullName={'Adam Faruk'}
           handleChange={(e: any) => {
             setProfileInputValue(e.target.value);
             setTacClear(true);
@@ -1291,155 +1285,42 @@ const Sprint3: React.FC<Props> = () => {
           label=""
           icon={{ name: 'Lock' }}
           onButtonClick={() => {
-            alert('Button Clicked');
+            alert('Hello ' + profileInputValue);
           }}
           buttonTitle="Continue"
           buttonTitleColor="#ffffff"
           buttonColor={buttonColor}
+          tipChildren={
+            <div>
+              <RowDiv
+                style={{
+                  maxWidth: 439,
+                  width: '100%',
+                  paddingTop: '24px',
+                  paddingBottom: '24px',
+                }}
+              >
+                <SB_13_BLACK>
+                  Note: If you wish to change your
+                  <strong>mobile number</strong>
+                  and/or <strong>mailing address.</strong> please visit your
+                  nearest branch.
+                </SB_13_BLACK>
+              </RowDiv>
+              <RowDiv
+                style={{
+                  maxWidth: 439,
+                  width: '100%',
+                }}
+              >
+                <SB_13_BLACK>
+                  Your <b>Profile picture</b>should not exceed the 5 MB file
+                  limit.
+                </SB_13_BLACK>
+              </RowDiv>
+            </div>
+          }
         />
-      </CenteredDiv>
-
-      <Title>ProfileSetting</Title>
-      <CenteredDiv
-        style={{
-          backgroundColor: 'white',
-          padding: 50,
-          alignItems: 'center',
-        }}
-      >
-        <CenteredDiv
-          style={{
-            flexDirection: 'column',
-            padding: '24px 24px  51px 24px',
-            background: ' #F7F7F7',
-            borderRadius: '16px',
-          }}
-        >
-          <div>
-            <AmProfilePic
-              testId={'testId'}
-              profilePicImage={LocalImages.common.profilePic}
-              ProfilePicBgColor={'#2694EB'}
-              editIcon={<Icon icon={'Right1'} size={20} color={'#000000'} />}
-              onEditClickHandler={() => alert('link clicked')}
-              fullName={'Adam Faruk'}
-            ></AmProfilePic>
-          </div>
-          <div style={{ marginTop: '31px', marginBottom: '4px' }}>
-            <B_32_BLACK>Adam_1234</B_32_BLACK>
-          </div>
-          <div style={{ marginBottom: '41px' }}>
-            <R_15_BLACK>Last login on 2 Feb 2020 at 03:06pm</R_15_BLACK>
-          </div>
-          <AmProfileDetail
-            testId={'testId'}
-            data={[
-              {
-                profile_data: {
-                  title: 'Full Name',
-                  showIcon: false,
-                  subtitle: [
-                    {
-                      content: 'Adam Jake',
-                    },
-                    {
-                      content: 'aslam Furich',
-                    },
-                  ],
-                },
-              },
-              {
-                profile_data: {
-                  title: 'Nickname',
-                  showIcon: true,
-                  subtitle: [
-                    {
-                      content: 'Adam_1234',
-                    },
-                  ],
-                },
-              },
-              {
-                profile_data: {
-                  title: 'Mobile Number',
-                  showIcon: false,
-                  subtitle: [
-                    {
-                      content: '******897',
-                    },
-                  ],
-                },
-              },
-              {
-                profile_data: {
-                  title: 'Mailing Address',
-                  showIcon: false,
-                  subtitle: [
-                    {
-                      content:
-                        '41, Jalan PJU 1A/29A Ara Damansara,Kundanahalli,Banagalore,43701 Petaling Jaya,Selangor,Malaysia',
-                    },
-                  ],
-                },
-              },
-              {
-                profile_data: {
-                  title: 'Email',
-                  showIcon: true,
-                  subtitle: [
-                    {
-                      content: '*******5678@gmail.com',
-                    },
-                  ],
-                },
-              },
-            ]}
-            value={profileInputValue}
-            handleChange={(e: any) => {
-              setProfileInputValue(e.target.value);
-              setTacClear(true);
-              setButtonColor({ top: '#FF0D0D', bottom: '#FD8585' });
-            }}
-            clearIcon={profileInputValue === '' ? tacClear : true}
-            clearClickHandler={() => {
-              setProfileInputValue('');
-              setTacClear(false);
-              setButtonColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
-            }}
-            errorMessage={{
-              testId: 'testId',
-              errorText: 'The Input Field is wrong',
-              subText: 'Please try again.',
-            }}
-            label=""
-            icon={{ name: 'Lock' }}
-            onButtonClick={() => {
-              alert('Button Clicked');
-            }}
-            buttonTitle="Continue"
-            buttonTitleColor="#ffffff"
-            buttonColor={buttonColor}
-          />
-          <div style={{ padding: 24, maxWidth: 439, width: '100%' }}>
-            <SB_13_BLACK>
-              Note: If you wish to change your <strong>mobile number</strong>
-              and/or <strong>mailing address.</strong> please visit your nearest
-              branch.
-            </SB_13_BLACK>
-          </div>
-          <div
-            style={{
-              padding: '0px 24px 0px 24px',
-              maxWidth: 439,
-              width: '100%',
-            }}
-          >
-            <SB_13_BLACK>
-              Your <strong>Profile picture</strong>should not exceed the 5 MB
-              file limit.
-            </SB_13_BLACK>
-          </div>
-        </CenteredDiv>
       </CenteredDiv>
     </div>
   );
