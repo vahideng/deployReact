@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import Paragraphs from '../../components/assets/typography';
@@ -29,15 +30,54 @@ import ImageModal from 'src/components/modals/ImageModal/ImageModal';
 import SimpleHeader from 'src/components/headers/simpleHeader/SimpleHeader';
 import SelectionTile from 'src/components/selections/selectionTile/SelectionTile';
 import StickyFooter from 'src/components/stickies/stickyFooter/StickyFooter';
+=======
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
+import Paragraphs from "../../components/assets/typography";
+import styled from "styled-components";
+import Navbar from "src/components/headers/navbar/Navbar";
+import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTransparent";
+import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
+import TextButton from "src/components/buttons/textButton/TextButton";
+import TextWithDetails from "src/components/infographic/textWithDetails/TextWithDetails";
+import ArrayCheckBox from "src/components/arrayCheckBox/ArrayCheckBox";
+import LabelToolTip from "src/components/labelToolTip/LabelToolTip";
+import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
+import images from "src/assets";
+import LocalImages from "src/components/assets/images";
+import List from "src/components/lists/list/List";
+import FormContainer from "src/components/wrappers/formContainer/FormContainer";
+import PortfolioList from "src/components/lists/PortfolioList/PortfolioList";
+import PortfolioListContent from "src/components/portfolioListContent/PortfolioListContent";
+
+import CenterMessage from "src/components/infographic/centerMessage/CenterMessage";
+import SettingModalCenter from "src/components/modals/settingModalCenter/SettingModalCenter";
+import StatusFormContainer from "src/components/wrappers/statusFormContainer/StatusFormContainer";
+import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
+import PieChartBox from "src/components/pies/PieChartBox/PieChartBox";
+import InputField from "src/components/inputs/inputFields/InputFields";
+import HeaderWithIButtons from "src/components/headers/HeaderWithButtons/HeaderWithIButtons";
+import HeaderWithIcons from "src/components/headers/HeaderWithIcons/HeaderWithIcons";
+import SearchBar from "src/components/inputs/searchBar/SearchBar";
+import TextWithLink from "src/components/buttons/TextWithLink/TextWithLink";
+import ImageModal from "src/components/modals/ImageModal/ImageModal";
+import SimpleHeader from "src/components/headers/simpleHeader/SimpleHeader";
+import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
+import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
+import BarCode from "src/components/barCode/barCode";
+>>>>>>> 23c210e090e2cc8d2d00f6683f196b55948a1f15
 
 import AmDropdown from 'src/components/amDropdown/AmDropdown';
 
+<<<<<<< HEAD
 import { MemoizedAmProfilePic as AmProfilePic } from 'src/components/amProfilePic/AmProfilePic';
 
 import Icon from 'src/components/assets/icons/icon';
 
 import AmProfileDetail from 'src/components/amProfileDetail/amProfileDetail';
 
+=======
+>>>>>>> 23c210e090e2cc8d2d00f6683f196b55948a1f15
 const {
   B_13_ORANGE_463,
   R_12_WHITE,
@@ -78,6 +118,7 @@ const Sprint3: React.FC<Props> = () => {
   const [sTileNum3, setSTileNum3] = useState(1);
   const [stickyFooter, setStickyFooter] = useState(false);
   const [showDropdown, setDropdown] = useState(false);
+<<<<<<< HEAD
   const [dropdownValue, setDropdownValue] = useState('anything');
   const [tacClear, setTacClear] = useState(false);
   const [profileInputValue, setProfileInputValue] = useState('');
@@ -88,6 +129,12 @@ const Sprint3: React.FC<Props> = () => {
 
   const handlerDropdown = (item: any) => {
     console.log(item, 'dropdownValue');
+=======
+  const [dropdownValue, setDropdownValue] = useState("anything");
+
+  const handlerDropdown = (item: any) => {
+    console.log(item, "dropdownValue");
+>>>>>>> 23c210e090e2cc8d2d00f6683f196b55948a1f15
 
     setDropdown(!showDropdown);
     setDropdownValue(item.value);
@@ -214,7 +261,11 @@ const Sprint3: React.FC<Props> = () => {
     },
   ];
 
+<<<<<<< HEAD
   console.log(dropdownValue, 'dropdownValue');
+=======
+  console.log(dropdownValue, "dropdownValue");
+>>>>>>> 23c210e090e2cc8d2d00f6683f196b55948a1f15
 
   return (
     <div style={{ paddingTop: 100 }}>
@@ -262,9 +313,13 @@ const Sprint3: React.FC<Props> = () => {
           title="Keep your account safe"
           message="We have just changed our password policy. It is good for you to change it now to keep your account secured."
           buttonLabel="Continue"
-          buttonLabelColor={'#FFF'}
+          buttonLabelColor={"#FFF"}
           // buttonColor={{ top: "#FD8585", bottom: "#FF2222" }}
+<<<<<<< HEAD
           onButtonClick={() => alert('Continue')}
+=======
+          onButtonClick={() => alert("Continue")}
+>>>>>>> 23c210e090e2cc8d2d00f6683f196b55948a1f15
           // leftButtonLabel="NO"
           // rightButtonLabel="YES"
           // onLeftButtonClick={()=>alert('NO')}
@@ -337,7 +392,10 @@ const Sprint3: React.FC<Props> = () => {
           />,
         ]}
       />
-
+      <Title>Barcode</Title>
+      <CenteredDiv style={{ backgroundColor: "#F7F7F7" }}>
+        <BarCode imgSrc={images.common.SampleQRCode} />
+      </CenteredDiv>
       <Title>AmDropDown</Title>
 
       <div
@@ -1082,7 +1140,6 @@ const Sprint3: React.FC<Props> = () => {
             </div>
           }
         />
-        }
       </div>
       <Title>Message (using CenterMessage component)</Title>
       <div
@@ -1186,6 +1243,7 @@ const Sprint3: React.FC<Props> = () => {
           />
         }
       />
+<<<<<<< HEAD
 
       <Title>ProfilePic</Title>
       <CenteredDiv
@@ -1437,6 +1495,169 @@ const Sprint3: React.FC<Props> = () => {
             </SB_13_BLACK>
           </div>
         </CenteredDiv>
+=======
+      <Title>PortfolioListContent</Title>
+      <div style={{ width: "50%", margin: "0 auto" }}>
+        <PortfolioListContent
+          borderColor="#8677D9"
+          buttonText="View Performance"
+          onClickButton={() => alert("button clicked")}
+          data={[
+            {
+              leftLabel: "Invested",
+              rightLabel: "RM 418,944.73"
+            },
+            {
+              leftLabel: "NAV",
+              rightLabel: "4.7894"
+            },
+            {
+              leftLabel: "Number of Unts",
+              rightLabel: "1,828.40"
+            },
+            {
+              leftLabel: "Asset Class",
+              rightLabel: "Equity"
+            }
+          ]}
+        />
+      </div>
+      <Title>PortfolioList</Title>
+      <CenteredDiv>
+        <PortfolioList
+          testId={"testId"}
+          data={[
+            {
+              borderColor: "#FFA463",
+              expandableLeft: true,
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              middleLabel: "RM 406,318.98",
+              rightLabel: {
+                type: "loss",
+                percentage: "0.03%",
+                amount: "RM 12,189.56"
+              },
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#FFA463"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73"
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894"
+                    },
+                    {
+                      leftLabel: "Number of Units",
+                      rightLabel: "1,828.40"
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity",
+                      rightLabelStyle: {
+                        color: "#FFA463"
+                      }
+                    }
+                  ]}
+                />
+              )
+            },
+            {
+              borderColor: "#8677D9",
+              expandableLeft: true,
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              rightLabel: {
+                type: "profit",
+                percentage: "0.03%",
+                amount: "RM 12,189.56"
+              },
+              middleLabel: "RM 406,318.98",
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#8677D9"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73"
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894"
+                    },
+                    {
+                      leftLabel: "Number of Unts",
+                      rightLabel: "1,828.40"
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity"
+                    }
+                  ]}
+                />
+              )
+            },
+            {
+              borderColor: "#7AB497",
+              expandableLeft: true,
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              rightLabel: {
+                type: "loss",
+                percentage: "0.03%",
+                amount: "RM 12,189.56"
+              },
+              middleLabel: "RM 406,318.98",
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#7AB497"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73"
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894"
+                    },
+                    {
+                      leftLabel: "Number of Unts",
+                      rightLabel: "1,828.40"
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity"
+                    }
+                  ]}
+                />
+              )
+            }
+          ]}
+          header={[
+            {
+              title: "Fund Name",
+              icon: "sort",
+              onClick: () => alert("Handle sort and icon change")
+            },
+            {
+              title: "Value",
+              icon: "sort",
+              onClick: () => alert("Handle sort and icon change")
+            },
+            {
+              title: "Profit/Loss",
+              icon: "sort",
+              onClick: () => alert("Handle sort and icon change")
+            }
+          ]}
+        />
+>>>>>>> 23c210e090e2cc8d2d00f6683f196b55948a1f15
       </CenteredDiv>
     </div>
   );
