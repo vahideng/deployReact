@@ -256,6 +256,7 @@ const Sprint3: React.FC<Props> = () => {
       <CenteredDiv style={{ margin: "1.5rem" }}>
         <LinkList
           testId="link_list_sprint_3_test"
+          defaultActiveKey="2"
           list={[
             {
               label: "Show on AmOnline",
