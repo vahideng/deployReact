@@ -32,6 +32,8 @@ import BarCode from 'src/components/barCode/barCode';
 import StickyFooter from 'src/components/stickies/stickyFooter/StickyFooter';
 
 import AmDropdown from 'src/components/amDropdown/AmDropdown';
+import AmAccordion from 'src/components/amAccordion/AmAccordion';
+import AmListItem from 'src/components/amListItem/AmListItem';
 
 import { MemoizedAmProfilePic as AmProfilePic } from 'src/components/amProfilePic/AmProfilePic';
 
@@ -1440,6 +1442,109 @@ const Sprint3: React.FC<Props> = () => {
             </SB_13_BLACK>
           </div>
         </CenteredDiv>
+      </CenteredDiv>
+      <Title>AccordionSetting</Title>
+      <CenteredDiv
+        style={{
+          margin: '5rem',
+        }}
+      >
+        <AmAccordion
+          testId={'testId'}
+          data={[
+            {
+              id: "id-1", 
+              title: "iPhone X",
+              contentList: [{
+                id: "id-1",
+                title: "ItemName",
+                leftIcon: {name: "Settings", color: "#000000"},
+                status: {
+                  label: 'inactive'
+                }
+              },
+              {
+                id: "id-1",
+                title: "ItemName",
+                leftIcon: {name: "Security2", color: "#000000"},
+                status: {
+                  label: 'inactive'
+                }
+              }
+              ],
+              buttonContent: {
+                clickHandler: () => {alert("Set device handler")},
+                title: "Setup now",
+                titleColor: "#000000",
+                buttonColor: {
+                  top: "#F6F6F3",
+                  bottom: "#EAE9E3"
+                },
+                icon: {
+                  name:"Settings",
+                  color:"#000"
+                }
+              }
+            },
+            {
+              id: "id-2", 
+              title: "Macbook Pro",
+              contentList: [{
+                id: "id-2",
+                title: "ItemName",
+                leftIcon: {name: "Settings", color: "red"},
+                status: {
+                  icon: <Icon icon={'Right1'} size={20} color={'#000000'} />
+                }
+              },
+              {
+                id: "id-2",
+                title: "ItemName",
+                leftIcon: {name: "Security2", color: "red"},
+                status: {
+                  icon: <Icon icon={'Right1'} size={20} color={'#000000'} />
+                }
+              }
+              ],
+              buttonContent: {
+                clickHandler: () => {alert("Remove device handler")},
+                title: "Remove Device",
+                titleColor: "#ffffff",
+                icon: {
+                  name: "delete",
+                  color: "#ffffff"
+                }
+              }
+            }
+          ]
+        }
+        ></AmAccordion>
+      </CenteredDiv>
+      <Title>ListItem (item used inside accordion)</Title>
+      <CenteredDiv
+        style={{
+          margin: '5rem',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }}
+      >
+        <AmListItem
+          testId="testId"
+          title="List Item Title"
+          icon={<Icon icon={'Right1'} size={20} color={'#000000'} />}
+          status={<Icon icon={'CheckboxYes'} size={20} color={'#000000'} />}
+        />
+        <AmListItem
+          testId="testId"
+          title="List Item Title"
+          icon={<Icon icon={'Right1'} size={20} color={'#000000'} />}
+          status="inactive"
+        />
+        <AmListItem
+          testId="testId"
+          title="List Item Title"
+          status="disabled"
+        />
       </CenteredDiv>
     </div>
   );

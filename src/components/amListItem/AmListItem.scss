@@ -1,0 +1,19 @@
+
+.listItems {
+    display: flex;
+    padding: 25px 0 25px 2px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d4d4d4;
+    width: 100%;
+    max-width: 699px;
+
+    p {
+      display: inline;
+    }
+  }
+  
+  .spacer {
+    display: inline-block;
+    margin-right: 12px;
+  }
