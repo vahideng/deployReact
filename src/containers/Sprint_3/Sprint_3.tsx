@@ -1494,7 +1494,7 @@ const Sprint3: React.FC<Props> = () => {
                 title: "ItemName",
                 leftIcon: {name: "Settings", color: "red"},
                 status: {
-                  icon: <Icon icon={'Right1'} size={20} color={'#000000'} />
+                  icon: <Icon icon={'CheckboxYes'} size={20} color={'#36A03E'} />
                 }
               },
               {
@@ -1502,7 +1502,7 @@ const Sprint3: React.FC<Props> = () => {
                 title: "ItemName",
                 leftIcon: {name: "Security2", color: "red"},
                 status: {
-                  icon: <Icon icon={'Right1'} size={20} color={'#000000'} />
+                  icon: <Icon icon={'CheckboxYes'} size={20} color={'#36A03E'} />
                 }
               }
               ],
@@ -1529,20 +1529,20 @@ const Sprint3: React.FC<Props> = () => {
         }}
       >
         <AmListItem
-          testId="testId"
-          title="List Item Title"
+          testId="testId-123"
+          title="Item with no left but right icon"
           icon={<Icon icon={'Right1'} size={20} color={'#000000'} />}
           status={<Icon icon={'CheckboxYes'} size={20} color={'#000000'} />}
         />
         <AmListItem
-          testId="testId"
-          title="List Item Title"
+          testId="testId-345"
+          title="Item with no right but left icon"
           icon={<Icon icon={'Right1'} size={20} color={'#000000'} />}
           status="inactive"
         />
         <AmListItem
-          testId="testId"
-          title="List Item Title"
+          testId="testId-456"
+          title="Item without icon" 
           status="disabled"
         />
       </CenteredDiv>
