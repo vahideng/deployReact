@@ -5,14 +5,20 @@
 }
 
 .DropdownContent {
-  position: absolute;
-  background-color: #f9f9f9;
-  width: 100%;
+
   top: 77px;
   box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5,
     0px 1px 5px #e5e5e5;
 
   z-index: 1;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 100%;
+
+  
+  overflow-y: auto;
+
+
 }
 
 .DropdownContent p {

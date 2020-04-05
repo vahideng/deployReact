@@ -335,12 +335,20 @@ const Sprint3: React.FC<Props> = () => {
         }}
       >
         <AmDropdown
+        max ="200px"
           readOnly={true}
           disabled={false}
           clickOnArrow={() => setDropdown(!showDropdown)}
           showDropdown={showDropdown}
           dropdownData={[
             { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" }, { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" }, { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" }, { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" }, { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" }, { value: "ambank", label: "am" },
             { value: "Alpeh", label: "alp" }
           ]}
           notValid={false}
