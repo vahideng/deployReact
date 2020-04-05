@@ -1,4 +1,4 @@
-.FlexCenter, .FlexLeft, .FlexRight, .ToggleWrapper, .FlexTop, .FlexBottom, .HeaderWrapper, .LinkListItemsDiv {
+.FlexCenter, .FlexLeft, .FlexRight, .FlexTop, .FlexBottom {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,7 +20,7 @@
           justify-content: flex-start;
 }
 
-.FlexRight, .ToggleWrapper {
+.FlexRight {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -36,37 +36,4 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-}
-
-.Container {
-  width: 100%;
-}
-
-.HeaderWrapper {
-  min-height: 4.875rem;
-  cursor: pointer;
-}
-
-.LabelWrapper {
-  text-align: left;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.LinkListItemsDiv {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 1rem 2rem;
-  border-top: 1px solid #dedede;
-  cursor: pointer;
-}
-
-.LinkListIcon {
-  margin-right: -0.6rem;
-}
-
-.ToggleIcon {
-  cursor: pointer;
 }

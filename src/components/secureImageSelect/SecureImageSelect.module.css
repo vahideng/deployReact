@@ -1,4 +1,4 @@
-.flexCenter, .flexLeft, .flexRight, .flexTop, .flexBottom, .Options, .OptionWrapper, .ActionWrapper {
+.FlexCenter, .FlexLeft, .FlexRight, .FlexTop, .FlexBottom, .Options, .OptionWrapper, .ActionWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,25 +14,25 @@
           justify-content: center;
 }
 
-.flexLeft {
+.FlexLeft {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
 
-.flexRight {
+.FlexRight {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
 
-.flexTop {
+.FlexTop {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
 }
 
-.flexBottom {
+.FlexBottom {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;

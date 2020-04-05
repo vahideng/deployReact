@@ -1,6 +1,26 @@
+@import "../../assets/common/flex.scss";
+
+.Container {
+  width: 100%;
+}
+
+.HeaderWrapper {
+  @extend .FlexCenter;
+  min-height: 4.875rem;
+  cursor: pointer;
+}
+
+.LabelWrapper {
+  text-align: left;
+  flex: 1;
+}
+
+.ToggleWrapper {
+  @extend .FlexRight;
+}
+
 .LinkListItemsDiv {
-  display: flex;
-  align-items: center;
+  @extend .FlexCenter;
   justify-content: space-between;
   padding: 1rem 2rem;
   border-top: 1px solid #dedede;
@@ -9,4 +29,8 @@
 
 .LinkListIcon {
   margin-right: -0.6rem;
+}
+
+.ToggleIcon {
+  cursor: pointer;
 }
