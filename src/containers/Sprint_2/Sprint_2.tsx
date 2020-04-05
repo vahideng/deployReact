@@ -418,6 +418,7 @@ const Sprint2: React.FC<Props> = () => {
               },
             ]}
             testId="testId"
+            cardImgStyle={{ height: 30, width: 40 }}
           />
         </Col>
       </Row>

@@ -25,9 +25,17 @@ interface ITransactionLimitList {
 interface Props {
   list: ITransactionLimitList[];
   testId?: string;
+  cardImgStyle?: {
+    height: number;
+    width: number;
+  };
 }
 
-const TransactionLimitList: React.FC<Props> = ({ list, testId }: Props) => {
+const TransactionLimitList: React.FC<Props> = ({
+  list,
+  testId,
+  cardImgStyle,
+}: Props) => {
   return (
     <div className={classes.ListContainer} id={`${testId}`}>
       {list &&
@@ -47,6 +55,7 @@ const TransactionLimitList: React.FC<Props> = ({ list, testId }: Props) => {
                       src={item.cardImg}
                       alt="Image"
                       rounded
+                      style={cardImgStyle}
                       className={classes.TransactionImg}
                     />
                   )}
