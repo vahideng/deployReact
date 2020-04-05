@@ -1,3 +1,4 @@
+@import "../../assets/common/common.scss";
 @import "../../assets/common/flex.scss";
 
 .Container {
@@ -15,8 +16,23 @@
   flex: 1;
 }
 
+.LabelInner {
+  @extend .FlexCenter;
+  @extend .FlexLeft;
+}
+
 .ToggleWrapper {
   @extend .FlexRight;
+}
+
+.ReadNotification {
+  position: relative;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  background-color: $blue269;
+  border-radius: 50%;
+  top: -0.3rem;
+  margin-left: 0.5rem;
 }
 
 .LinkListItemsDiv {
@@ -33,4 +49,8 @@
 
 .ToggleIcon {
   cursor: pointer;
+}
+
+.primaryBtnStyle {
+  margin-top: 24px;
 }

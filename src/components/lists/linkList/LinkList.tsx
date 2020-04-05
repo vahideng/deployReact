@@ -1,8 +1,8 @@
 import React, { ReactNode, useState } from "react";
 import { Card, Accordion, useAccordionToggle } from "react-bootstrap";
 import Icon from "src/components/assets/icons/icon";
-// import InputField from "src/components/inputs/inputFields/InputFields";
-// import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
+import InputField from "src/components/inputs/inputFields/InputFields";
+import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import Paragraphs from "../../assets/typography";
 import classes from "./LinkList.module.css";
 const { SB_15_BLACK, R_15_BLACK } = Paragraphs;
@@ -16,12 +16,12 @@ declare type ListItem = {
   toggleIcon?: any;
   backgroundColor?: string;
   leftBorderColor?: string;
-
   expandable?: boolean;
   expandableContent?: ReactNode;
   onListClick?: (item: any) => void;
   rightItem?: ReactNode;
   inputProps?: any;
+  buttonProps?: any;
 };
 interface LinkListProps {
   testId?: string;
@@ -39,15 +39,13 @@ const LinkList: React.FC<LinkListProps> = ({
       <Accordion defaultActiveKey={defaultActiveKey}>
         {list &&
           list.map((item, index) => {
-            // const {
-            //   label,
-            //   subtitle = [],
-            //   bold,
-            //   onListClick = () => {},
-            //   disabled,
-            //   inputProps,
-            // } = item;
-            console.log(`${index}`);
+            const {
+              disabled,
+              inputProps,
+              buttonProps,
+              expandableContent,
+            } = item;
+
             return (
               <Card key={index}>
                 <Card.Header>
@@ -59,31 +57,14 @@ const LinkList: React.FC<LinkListProps> = ({
                 </Card.Header>
                 <Accordion.Collapse eventKey={`${index}`}>
                   <Card.Body>
-                    {`${index}`}
-                    {/* {expandableContent || (
+                    {expandableContent || (
                       <div className={classes.EditWrapper}>
-                        <InputField
-                          notValid={disabled}
-                          errorMessage={errorMessage}
-                          type="text"
-                          clearClickHandler={clearClickHandler}
-                          clearIcon={clearIcon}
-                          label={label}
-                          icon={icon}
-                          value={value}
-                          handleChange={handleChange}
-                          {...inputProps}
-                        />
-                        <div className={primaryBtnStyle}>
-                          <PrimaryButton
-                            onButtonClick={onButtonClick}
-                            title={buttonTitle}
-                            titleColor={buttonTitleColor}
-                            buttonColor={buttonColor}
-                          />
+                        <InputField notValid={disabled} {...inputProps} />
+                        <div className={classes.primaryBtnStyle}>
+                          <PrimaryButton {...buttonProps} />
                         </div>
                       </div>
-                    )} */}
+                    )}
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -108,6 +89,7 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
   const {
     expandable,
     label,
+    read,
     subtitle = [],
     bold,
     onListClick = () => {},
@@ -126,11 +108,14 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
   return (
     <div className={classes.HeaderWrapper} onClick={handleToggle}>
       <div className={classes.LabelWrapper}>
-        {bold ? (
-          <SB_15_BLACK>{label}</SB_15_BLACK>
-        ) : (
-          <R_15_BLACK>{label}</R_15_BLACK>
-        )}
+        <div className={classes.LabelInner}>
+          {bold ? (
+            <SB_15_BLACK>{label}</SB_15_BLACK>
+          ) : (
+            <R_15_BLACK>{label}</R_15_BLACK>
+          )}
+          {!read && <div className={classes.ReadNotification}></div>}
+        </div>
         {subtitle.map((sub: any, index: number) => {
           return <R_15_BLACK key={index}>{sub}</R_15_BLACK>;
         })}

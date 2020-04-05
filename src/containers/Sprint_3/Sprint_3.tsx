@@ -91,6 +91,12 @@ const Sprint3: React.FC<Props> = () => {
     top: "#BDBDBD",
     bottom: "#BDBDBD",
   });
+  const [linkListClear, setLinkListClear] = useState(false);
+  const [linkListInputValue, setLinkListInputValue] = useState("");
+  const [linkListBtnColor, setLinkListBtnColor] = useState({
+    top: "#BDBDBD",
+    bottom: "#BDBDBD",
+  });
 
   const handlerDropdown = (item: any) => {
     console.log(item, "dropdownValue");
@@ -279,6 +285,36 @@ const Sprint3: React.FC<Props> = () => {
                 "AmBank BonusLink Visa",
                 "AmBank BonusLink Mastercard",
               ],
+              inputProps: {
+                type: "text",
+                value: linkListInputValue,
+                notValid: false,
+                handleChange: (e: any) => {
+                  setLinkListInputValue(e.target.value);
+                  setLinkListClear(true);
+                  setLinkListBtnColor({ top: "#FF0D0D", bottom: "#FD8585" });
+                },
+                clearClickHandler: () => {
+                  setLinkListInputValue("");
+                  setLinkListClear(false);
+                  setLinkListBtnColor({ top: "#BDBDBD", bottom: "#BDBDBD" });
+                },
+                clearIcon: linkListInputValue ? true : linkListClear,
+                label: "",
+                icon: { name: "Lock" },
+                errorMessage: {
+                  errorText: "something wrong",
+                  subText: "detail error",
+                },
+              },
+              buttonProps: {
+                onButtonClick: () => {
+                  alert("Button Clicked");
+                },
+                title: "Update",
+                titleColor: "#fff",
+                buttonColor: linkListBtnColor,
+              },
             },
             { label: "Block This Card" },
             { label: "Block This Replace This Card" },
