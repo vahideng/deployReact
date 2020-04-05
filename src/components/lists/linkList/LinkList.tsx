@@ -16,6 +16,7 @@ declare type ListItem = {
   toggleIcon?: any;
   backgroundColor?: string;
   leftBorderColor?: string;
+  leftIcon?: ReactNode;
   expandable?: boolean;
   expandableContent?: ReactNode;
   onListClick?: (item: any) => void;
@@ -94,6 +95,7 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
     subtitle = [],
     bold,
     onListClick = () => {},
+    leftIcon,
   } = item;
   const [isOpen, setIsOpen] = useState(defaultActiveKey === eventKey);
   const decoratedOnClick = useAccordionToggle(eventKey, () =>
@@ -108,6 +110,7 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
   };
   return (
     <div className={classes.HeaderWrapper} onClick={handleToggle}>
+      {leftIcon && <div className={classes.LeftIconWrapper}>{leftIcon}</div>}
       <div className={classes.LabelWrapper}>
         <div className={classes.LabelInner}>
           {bold ? (

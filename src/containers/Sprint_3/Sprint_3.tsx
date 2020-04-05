@@ -278,6 +278,7 @@ const Sprint3: React.FC<Props> = () => {
             { label: 'Change Card PIN' },
             {
               label: 'Nickname',
+              leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
               bold: true,
               onListClick: () => {},
               expandable: true,

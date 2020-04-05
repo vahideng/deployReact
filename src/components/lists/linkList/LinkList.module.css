@@ -54,6 +54,10 @@
           flex: 1;
 }
 
+.LeftIconWrapper {
+  margin-right: 0.5rem;
+}
+
 .ReadNotification {
   position: relative;
   width: 0.4375rem;
