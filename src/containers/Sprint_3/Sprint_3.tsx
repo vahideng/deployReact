@@ -285,6 +285,7 @@ const Sprint3: React.FC<Props> = () => {
                 'AmBank BonusLink Visa',
                 'AmBank BonusLink Mastercard',
               ],
+              leftBorderColor: 'red',
               inputProps: {
                 type: 'text',
                 value: linkListInputValue,

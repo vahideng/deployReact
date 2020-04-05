@@ -1,10 +1,10 @@
-import React, { ReactNode, useState } from "react";
-import { Card, Accordion, useAccordionToggle } from "react-bootstrap";
-import Icon from "src/components/assets/icons/icon";
-import InputField from "src/components/inputs/inputFields/InputFields";
-import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
-import Paragraphs from "../../assets/typography";
-import classes from "./LinkList.module.css";
+import React, { ReactNode, useState } from 'react';
+import { Card, Accordion, useAccordionToggle } from 'react-bootstrap';
+import Icon from 'src/components/assets/icons/icon';
+import InputField from 'src/components/inputs/inputFields/InputFields';
+import PrimaryButton from 'src/components/buttons/primaryButton/PrimaryButton';
+import Paragraphs from '../../assets/typography';
+import classes from './LinkList.module.css';
 const { SB_15_BLACK, R_15_BLACK } = Paragraphs;
 
 declare type ListItem = {
@@ -44,10 +44,11 @@ const LinkList: React.FC<LinkListProps> = ({
               inputProps,
               buttonProps,
               expandableContent,
+              leftBorderColor,
             } = item;
 
             return (
-              <Card key={index}>
+              <Card key={index} style={{ borderLeftColor: leftBorderColor }}>
                 <Card.Header>
                   <AccordionToggle
                     item={item}
@@ -96,7 +97,7 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
   } = item;
   const [isOpen, setIsOpen] = useState(defaultActiveKey === eventKey);
   const decoratedOnClick = useAccordionToggle(eventKey, () =>
-    console.log("totally custom!")
+    console.log('totally custom!')
   );
   const handleToggle = (e: any) => {
     onListClick(item);
