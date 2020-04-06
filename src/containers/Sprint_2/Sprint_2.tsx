@@ -1,33 +1,33 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
-import { Row, Col } from "react-bootstrap";
-import Paragraphs from "../../components/assets/typography";
-import styled from "styled-components";
-import Navbar from "src/components/headers/navbar/Navbar";
-import BannerHero from "src/components/banners/bannerHero/BannerHero";
-import TransactionLimitList from "src/components/lists/TransactionLimitList/TransactionLimitList";
-import BoxContent from "src/components/boxContent/BoxContent";
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
+import Paragraphs from '../../components/assets/typography';
+import styled from 'styled-components';
+import Navbar from 'src/components/headers/navbar/Navbar';
+import BannerHero from 'src/components/banners/bannerHero/BannerHero';
+import TransactionLimitList from 'src/components/lists/TransactionLimitList/TransactionLimitList';
+import BoxContent from 'src/components/boxContent/BoxContent';
 // import images from "../../assets";
-import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTransparent";
-import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
-import TextButton from "src/components/buttons/textButton/TextButton";
-import List from "src/components/lists/list/List";
-import SettingModalCenter from "src/components/modals/settingModalCenter/SettingModalCenter";
-import FullButton from "src/components/buttons/fullButton/FullButton";
-import BottomModal from "src/components/modals/bottomModal/BottomModal";
-import SettingSummary from "src/components/infographic/settingSummary/SettingSummary";
-import StatusFormContainer from "src/components/wrappers/statusFormContainer/StatusFormContainer";
-import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
-import BoxSlider from "src/components/carousel/boxSlider/BoxSlider";
-import FirstBanner from "src/components/banners/firstBanner/FirstBanner";
-import SecondBanner from "src/components/banners/secondBanner/SecondBanner";
-import ArticleDetails from "src/components/articleDetails/ArticleDetails";
-import InputField from "src/components/inputs/inputFields/InputFields";
-import Box_V2 from "src/components/wrappers/box_V2/Box_V2";
-import CalendarBox from "src/components/inputs/calendarBox/CalendarBox";
-import images from "src/assets";
-import moment from "moment";
-
+import NavbarTransparent from 'src/components/headers/navbarTransparent/NavbarTransparent';
+import TextDropdown from 'src/components/inputs/texDropdown/TextDropdown';
+import TextButton from 'src/components/buttons/textButton/TextButton';
+import List from 'src/components/lists/list/List';
+import SettingModalCenter from 'src/components/modals/settingModalCenter/SettingModalCenter';
+import FullButton from 'src/components/buttons/fullButton/FullButton';
+import BottomModal from 'src/components/modals/bottomModal/BottomModal';
+import SettingSummary from 'src/components/infographic/settingSummary/SettingSummary';
+import StatusFormContainer from 'src/components/wrappers/statusFormContainer/StatusFormContainer';
+import PrimaryButton from 'src/components/buttons/primaryButton/PrimaryButton';
+import BoxSlider from 'src/components/carousel/boxSlider/BoxSlider';
+import FirstBanner from 'src/components/banners/firstBanner/FirstBanner';
+import SecondBanner from 'src/components/banners/secondBanner/SecondBanner';
+import ArticleDetails from 'src/components/articleDetails/ArticleDetails';
+import InputField from 'src/components/inputs/inputFields/InputFields';
+import Box_V2 from 'src/components/wrappers/box_V2/Box_V2';
+import CalendarBox from 'src/components/inputs/calendarBox/CalendarBox';
+import images from 'src/assets';
+import moment from 'moment';
+import LocalImages from 'src/components/assets/images';
 
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -40,14 +40,14 @@ const Title = styled(B_13_ORANGE_463)`
 interface Props {}
 
 const Sprint2: React.FC<Props> = () => {
-  const [selectedItem, setSelectedOption] = useState("Persian");
+  const [selectedItem, setSelectedOption] = useState('Persian');
   const [sprint1, setSprint1] = useState(false);
   const [sprint2, setSprint2] = useState(false);
   const [sprint3, setSprint3] = useState(false);
   const [homeRedirect, setHomeRedirect] = useState(false);
   const [settingModalCenter, setSettingModalCenter] = useState(false);
   const [settingModal, setSettingModal] = useState(false);
-  const [inputDate, setInputDate] = useState<string>("");
+  const [inputDate, setInputDate] = useState<string>('');
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
 
   if (sprint1 === true) {
@@ -69,7 +69,7 @@ const Sprint2: React.FC<Props> = () => {
   };
 
   const handleOnChange = (input: Date) => {
-    const date = moment(input).format("DD/MM/YYYY");
+    const date = moment(input).format('DD/MM/YYYY');
     setSelectedDate(input);
     setInputDate(date);
   };
@@ -80,33 +80,33 @@ const Sprint2: React.FC<Props> = () => {
         icon={{
           onIconClick: () => {
             setHomeRedirect(true);
-          }
+          },
         }}
         profile={{
-          greeting: "Good Morning",
-          name: "Adam Constantine",
-          alt: "AVATAR",
+          greeting: 'Good Morning',
+          name: 'Adam Constantine',
+          alt: 'AVATAR',
           src:
-            "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+            'https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80',
         }}
         rightButtons={[
           {
-            iconName: "Time",
-            onButtonClick: () => alert("button-1-Clicked")
+            iconName: 'Time',
+            onButtonClick: () => alert('button-1-Clicked'),
           },
           {
-            iconName: "Settings",
-            onButtonClick: () => alert("button-2-Clicked")
+            iconName: 'Settings',
+            onButtonClick: () => alert('button-2-Clicked'),
           },
           {
-            iconName: "Share",
-            onButtonClick: () => alert("button-3-Clicked")
-          }
+            iconName: 'Share',
+            onButtonClick: () => alert('button-3-Clicked'),
+          },
         ]}
       />
 
       <Title>BottomModal</Title>
-      <div style={{ padding: ".5rem 30%", background: "#f5f5f5" }}>
+      <div style={{ padding: '.5rem 30%', background: '#f5f5f5' }}>
         <FullButton
           split
           leftTitle="Open BottomModal"
@@ -121,13 +121,13 @@ const Sprint2: React.FC<Props> = () => {
       </div>
 
       <BottomModal
-      onRequestClose ={ ()=> alert("close")}
-        testId={"testId"}
+        onRequestClose={() => alert('close')}
+        testId={'testId'}
         modalIsOpen={settingModal}
         modalChildren={
           <SettingSummary
-            icon={{ name: "Tick-1" }}
-            iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
+            icon={{ name: 'Tick-1' }}
+            iconColor={{ top: '#94EC9B', bottom: '#5BB362' }}
             detailTitle="Successfully Activated"
             detail="Your account has been activated successfully."
           />
@@ -136,50 +136,50 @@ const Sprint2: React.FC<Props> = () => {
       <Title>SettingModalCenter</Title>
 
       <SettingModalCenter
-      onRequestClose ={ ()=> alert("close")}
-        testId={"testId"}
+        onRequestClose={() => alert('close')}
+        testId={'testId'}
         modalIsOpen={settingModalCenter}
         modalChildren={
           <StatusFormContainer
             statusIcon={{
-              icon: "Tick-1",
-              iconColor: { top: "#94EC9B", bottom: "#5BB362" },
-              outerIconColor: "#E5FCE6"
+              icon: 'Tick-1',
+              iconColor: { top: '#94EC9B', bottom: '#5BB362' },
+              outerIconColor: '#E5FCE6',
             }}
             children={
               <div
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  padding: "2rem"
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  padding: '2rem',
                 }}
               >
-                <p style={{ textAlign: "center" }}>
+                <p style={{ textAlign: 'center' }}>
                   The amount entered exceeds the transaction limit set in your
                   settings. Would you like to change your limit now?
                 </p>
                 <div
                   style={{
-                    display: "flex",
-                    width: "100%",
-                    justifyContent: "space-between",
-                    padding: "1rem 0"
+                    display: 'flex',
+                    width: '100%',
+                    justifyContent: 'space-between',
+                    padding: '1rem 0',
                   }}
                 >
                   <PrimaryButton
                     title="No, thanks"
                     onButtonClick={() => {
-                      alert("Button Clicked");
+                      alert('Button Clicked');
                     }}
                   />
                   <PrimaryButton
                     onButtonClick={() => {
-                      alert("Button Clicked");
+                      alert('Button Clicked');
                     }}
                     title="Change Limit"
                     titleColor="#000000"
-                    buttonColor={{ top: "#F6F6F3", bottom: "#EAE9E3" }}
+                    buttonColor={{ top: '#F6F6F3', bottom: '#EAE9E3' }}
                   />
                 </div>
               </div>
@@ -193,7 +193,7 @@ const Sprint2: React.FC<Props> = () => {
         icon={{
           onIconClick: () => {
             setSprint1(true);
-          }
+          },
         }}
         rightButtons={[
           <TextButton
@@ -202,9 +202,9 @@ const Sprint2: React.FC<Props> = () => {
               setSprint1(true);
             }}
             buttonStyles={{
-              color: "#000000",
+              color: '#000000',
               fontWeight: 400,
-              fontSize: 15
+              fontSize: 15,
             }}
           />,
           <TextButton
@@ -213,9 +213,9 @@ const Sprint2: React.FC<Props> = () => {
               setSprint2(true);
             }}
             buttonStyles={{
-              color: "#000000",
+              color: '#000000',
               fontWeight: 400,
-              fontSize: 15
+              fontSize: 15,
             }}
           />,
           <TextButton
@@ -224,47 +224,47 @@ const Sprint2: React.FC<Props> = () => {
               setSprint3(true);
             }}
             buttonStyles={{
-              color: "#000000",
+              color: '#000000',
               fontWeight: 400,
-              fontSize: 15
+              fontSize: 15,
             }}
           />,
           <TextDropdown
             // menuIsOpen
-            defaultValue={"Persian"}
+            defaultValue={'Persian'}
             handleChange={(selectedOption: any) => {
               setSelectedOption(selectedOption);
               console.log(`Option:`, selectedOption);
             }}
             selectedOption={selectedItem}
-            placeHolder={"English"}
+            placeHolder={'English'}
             options={[
-              { label: "English", value: "english" },
-              { label: "Malay", value: "malay" },
-              { label: "Persian", value: "persian" },
-              { label: "中文", value: "中文" }
+              { label: 'English', value: 'english' },
+              { label: 'Malay', value: 'malay' },
+              { label: 'Persian', value: 'persian' },
+              { label: '中文', value: '中文' },
             ]}
-          />
+          />,
         ]}
       />
       <Title>Box_V2</Title>
       <Box_V2
-        title={"Login"}
+        title={'Login'}
         boxChildren={
-          <div style={{ padding: "3rem 1.5rem" }}>
+          <div style={{ padding: '3rem 1.5rem' }}>
             <InputField
               notValid={true}
               errorMessage={{
-                testId: "testId",
-                errorText: "The TAC is incorrect",
-                subText: "Please try again."
+                testId: 'testId',
+                errorText: 'The TAC is incorrect',
+                subText: 'Please try again.',
               }}
               type="text"
-              clearClickHandler={() => alert("clear clicked")}
+              clearClickHandler={() => alert('clear clicked')}
               clearIcon={true}
               label="input label"
-              icon={{ name: "Account-2" }}
-              value={""}
+              icon={{ name: 'Account-2' }}
+              value={''}
               handleChange={event => {
                 console.log(event.target.value);
               }}
@@ -276,48 +276,48 @@ const Sprint2: React.FC<Props> = () => {
       <List
         header={{
           icon: {
-            name: "LOGO",
-            color: "#ff2626",
-            iconText: "Review & Confirm"
-          }
+            name: 'LOGO',
+            color: '#ff2626',
+            iconText: 'Review & Confirm',
+          },
         }}
         list={[
           {
-            leftLabel: "To",
-            rightLabel: "Saving Account A",
-            details: ["8881019596535 | AmBank"]
+            leftLabel: 'To',
+            rightLabel: 'Saving Account A',
+            details: ['8881019596535 | AmBank'],
           },
           {
-            leftLabel: "Amount",
-            rightLabel: "RM 500.00",
+            leftLabel: 'Amount',
+            rightLabel: 'RM 500.00',
             approved: true,
-            details: ["Fees & Charges: RM 0.00"]
+            details: ['Fees & Charges: RM 0.00'],
           },
           {
-            leftLabel: "Date",
-            rightLabel: "Transfer Now",
-            details: ["Today, 5 January 2019"]
+            leftLabel: 'Date',
+            rightLabel: 'Transfer Now',
+            details: ['Today, 5 January 2019'],
           },
           {
-            leftLabel: "Reference",
-            rightLabel: "House Rental"
+            leftLabel: 'Reference',
+            rightLabel: 'House Rental',
           },
           {
-            leftLabel: "From",
-            rightLabel: "Savings Account",
-            details: ["2998202013", "Available Balance: RM 10,301.50"]
-          }
+            leftLabel: 'From',
+            rightLabel: 'Savings Account',
+            details: ['2998202013', 'Available Balance: RM 10,301.50'],
+          },
         ]}
       />
       <Title>BannerHero</Title>
       <BannerHero
         buttonClick={() => {
-          alert("Clicked");
+          alert('Clicked');
         }}
         buttonText="Learn More"
         content="Total of RM2.5 Million to be won. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab."
-        label="Hero Promotion" 
-        leftImage= {images.common.masterCard}
+        label="Hero Promotion"
+        leftImage={images.common.masterCard}
         showButton={true}
         testId="testId"
         title="Grand Prize RM 1 Million Cash"
@@ -326,44 +326,99 @@ const Sprint2: React.FC<Props> = () => {
       <Title>Transaction Limit List</Title>
       <Row
         style={{
-          background: "#FFFFFF",
-          boxShadow: "0px 2px 7px rgba(0, 0, 0, 0.123279)",
-          borderRadius: "20px 20px 0px 0px",
-          margin: "24px 20% auto"
+          background: '#FFFFFF',
+          boxShadow: '0px 2px 7px rgba(0, 0, 0, 0.123279)',
+          borderRadius: '20px 20px 0px 0px',
+          margin: '24px 20% auto',
         }}
       >
         <Col
           sm={3}
           style={{
-            borderRight: "1px solid #DEDEDE",
-            padding: "0"
+            borderRight: '1px solid #DEDEDE',
+            padding: '0',
           }}
         ></Col>
-        <Col sm={9} style={{ padding: "0" }}>
+        <Col sm={9} style={{ padding: '0' }}>
           <TransactionLimitList
             list={[
               {
-                label: "Transfers",
-                onClick: () => alert("click")
+                label: 'AmBank BonusLink Visa BlackGold',
+                subDetail: '7565 8767 5821 5409',
+                onClick: (item, index) =>
+                  alert(`${JSON.stringify(item)},Index: ${index}`),
+                allowRightLabelText: true,
+                rightLabelcolor: 'red',
+                rightLabel: 'Default',
+                allowbtnWithIconText: true,
+                allowCardImg: true,
+                allowGreyTextCardImg: true,
+                allowGreyText: true,
+                cardImg: LocalImages.common.card,
               },
               {
-                label: "Payments",
-                onClick: () => alert("click")
+                label: 'Change Password',
+                subDetail: 'Password last change: 0 day ago',
+                onClick: (item, index) =>
+                  alert(`${JSON.stringify(item)},Index: ${index}`),
+                allowRightLabelText: true,
+                rightLabelcolor: '',
+                rightLabel: '',
+                allowbtnWithIconText: true,
+                allowCardImg: true,
+                allowGreyTextCardImg: true,
+                allowGreyText: true,
+                notify: false,
+                cardImg: '',
               },
               {
-                label: "Investments",
-                onClick: () => alert("click")
+                label: 'Investments',
+                subDetail: 'Password last change: 0 day ago',
+                onClick: (item, index) =>
+                  alert(`${JSON.stringify(item)},Index: ${index}`),
+                allowRightLabelText: true,
+                rightLabelcolor: '',
+                rightLabel: '',
+                allowbtnWithIconText: false,
+                allowCardImg: true,
+                allowGreyTextCardImg: true,
+                allowGreyText: false,
+                notify: false,
+                cardImg: LocalImages.common.card,
               },
               {
-                label: "Online Shopping",
-                onClick: () => alert("click")
+                label: 'Online Shopping',
+                subDetail: 'Password last change: 0 day ago',
+                onClick: (item, index) =>
+                  alert(`${JSON.stringify(item)},Index: ${index}`),
+                allowRightLabelText: true,
+                rightLabelcolor: 'green',
+                rightLabel: 'Default',
+                allowbtnWithIconText: true,
+                allowCardImg: false,
+                allowGreyTextCardImg: false,
+                allowGreyText: false,
+                notify: false,
+                cardImg: '',
               },
               {
-                label: "FPX Specific Merchant",
-                onClick: () => alert("click")
-              }
+                label: 'FPX Specific Merchant',
+                subDetail: 'Password last change: 0 day ago',
+                onClick: (item, index) =>
+                  alert(`${JSON.stringify(item)},Index: ${index}`),
+                allowRightLabelText: true,
+                rightLabelcolor: '#000000',
+                rightLabel: 'Show',
+                allowbtnWithIconText: true,
+                allowCardImg: false,
+                allowGreyTextCardImg: true,
+                allowGreyText: true,
+                notify: false,
+                cardImg: '',
+              },
             ]}
             testId="testId"
+            cardImgStyle={{ height: 30, width: 40 }}
           />
         </Col>
       </Row>
@@ -373,41 +428,41 @@ const Sprint2: React.FC<Props> = () => {
           <BoxSlider
             sliderItems={[
               {
-                tagText: "ANNOUNCeMeNTS",
-                title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+                tagText: 'ANNOUNCeMeNTS',
+                title: 'Pay Bills to Majlis Bandaraya Seremban via JomPAY',
                 descriptions:
-                  "Majlis Perbandaran Nilai and Majlis Perbandaran Seremban have combined to become Majlis Bandaraya Seremban (MBS). You can now pay to MBS via JomPAY on AmOnline through all the different channels such as Consectetur elit. At vero eos et accusamus et iusto odio. Sithfint occ. Neque porro quisquam est qui dolorem adipisci velit",
+                  'Majlis Perbandaran Nilai and Majlis Perbandaran Seremban have combined to become Majlis Bandaraya Seremban (MBS). You can now pay to MBS via JomPAY on AmOnline through all the different channels such as Consectetur elit. At vero eos et accusamus et iusto odio. Sithfint occ. Neque porro quisquam est qui dolorem adipisci velit',
                 readMore: {
-                  text: "read more",
+                  text: 'read more',
                   onReadClick: () => {
-                    alert("ReadMore");
-                  }
-                }
+                    alert('ReadMore');
+                  },
+                },
               },
               {
-                tagText: "ANNOUNCeMeNTS",
-                title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+                tagText: 'ANNOUNCeMeNTS',
+                title: 'Pay Bills to Majlis Bandaraya Seremban via JomPAY',
                 descriptions:
-                  "The semiotics of the console in faded pinks and yellows. They were dropping, losing altitude in a canyon of rainbow foliage, a lurid communal mural that completely covered the hull of the previous century",
+                  'The semiotics of the console in faded pinks and yellows. They were dropping, losing altitude in a canyon of rainbow foliage, a lurid communal mural that completely covered the hull of the previous century',
                 readMore: {
-                  text: "read more",
+                  text: 'read more',
                   onReadClick: () => {
-                    alert("ReadMore");
-                  }
-                }
+                    alert('ReadMore');
+                  },
+                },
               },
               {
-                tagText: "ANNOUNCeMeNTS",
-                title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+                tagText: 'ANNOUNCeMeNTS',
+                title: 'Pay Bills to Majlis Bandaraya Seremban via JomPAY',
                 descriptions:
-                  "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term"
+                  "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term",
               },
               {
-                tagText: "ANNOUNCeMeNTS",
-                title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+                tagText: 'ANNOUNCeMeNTS',
+                title: 'Pay Bills to Majlis Bandaraya Seremban via JomPAY',
                 descriptions:
-                  "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term"
-              }
+                  "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term",
+              },
             ]}
           />
         </Col>
@@ -415,33 +470,33 @@ const Sprint2: React.FC<Props> = () => {
           <BoxContent
             content={[
               {
-                title: "Phone Scam",
+                title: 'Phone Scam',
                 content:
-                  "Never respond to phone calls asking for your sensitive banking information.",
-                icon: "Call"
+                  'Never respond to phone calls asking for your sensitive banking information.',
+                icon: 'Call',
               },
               {
-                title: "SMS Scam",
+                title: 'SMS Scam',
                 content:
-                  "Never respond to SMS-es informing you have won a contest/reward that you did not participate in",
-                icon: "Inbox"
+                  'Never respond to SMS-es informing you have won a contest/reward that you did not participate in',
+                icon: 'Inbox',
               },
               {
-                title: "Malware",
-                content: "Never “jailbreak” or “root” your smart phones.",
-                icon: "Hold"
+                title: 'Malware',
+                content: 'Never “jailbreak” or “root” your smart phones.',
+                icon: 'Hold',
               },
               {
-                title: "Email Scam",
+                title: 'Email Scam',
                 content:
-                  "Never click website links from unknown and suspicious senders",
-                icon: "Target"
-              }
+                  'Never click website links from unknown and suspicious senders',
+                icon: 'Target',
+              },
             ]}
             tag="Security Alerts"
             testId="testId"
             title="Always be vigilant against scam threats."
-            link={{ label: "Learn more", url: "#" }}
+            link={{ label: 'Learn more', url: '#' }}
           />
         </Col>
       </Row>
@@ -449,36 +504,34 @@ const Sprint2: React.FC<Props> = () => {
       <Title>First Banner</Title>
       <div
         style={{
-          display: "flex",
-          flexDirection: "row",
-          marginLeft: "58px",
-          marginRight: "58px"
+          display: 'flex',
+          flexDirection: 'row',
+          marginLeft: '58px',
+          marginRight: '58px',
           // alignItems: "center"
         }}
       >
-        <div style={{ width:"300PX", marginRight:"10px" }}>
+        <div style={{ width: '300PX', marginRight: '10px' }}>
           <FirstBanner
-          onClick={()=>alert("clicked")}
-            
+            onClick={() => alert('clicked')}
             content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
             image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
             tag="tempor incidunt"
             title="Why pick between yield and liquidity? "
           />
         </div>
-        <div  style={{ width:"300PX" , marginRight:"10px"}}>
+        <div style={{ width: '300PX', marginRight: '10px' }}>
           <FirstBanner
-           onClick={()=>alert("clicked")}
+            onClick={() => alert('clicked')}
             content="Consecsadsadsadbdsabkdbaskbdkasbkbadskbdkasbksabbasdasdasdasdadsavasvdusabvhubuybguybgtetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
             image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
             tag="tempor incidunt"
             title="Why pick between yield and liquidity? "
           />
         </div>
-         <div  style={{ width:"300PX", marginRight:"10px" }}>
-      
+        <div style={{ width: '300PX', marginRight: '10px' }}>
           <FirstBanner
-            onClick={()=>alert("clicked")}
+            onClick={() => alert('clicked')}
             content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
             image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
             tag="tempor incidunt"
@@ -490,59 +543,59 @@ const Sprint2: React.FC<Props> = () => {
       <Title>Second Banner</Title>
       <div
         style={{
-          marginLeft: "58px",
-          marginRight: "58px"
+          marginLeft: '58px',
+          marginRight: '58px',
         }}
       >
         <SecondBanner
           data={[
             {
-              onClick: (item) => alert(item.title),
+              onClick: item => alert(item.title),
               content:
-                "Consectetur Consectetur ConsecteturConsectetur Consectetur  Consectetur  Consectetur Consectetur Consectetur Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+                'Consectetur Consectetur ConsecteturConsectetur Consectetur  Consectetur  Consectetur Consectetur Consectetur Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
               video:
-                "https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80",
-                
-                title:"Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
-            },
-            {
-              onClick: (item) => alert(item.title),
-              content:
-                "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-               image: images.common.masterCard,
-               title:
-                "em ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloLorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
-            },
-            {
-             
-              content:
-                "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-              image:
-                "https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80",
+                'https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80',
+
               title:
-                "Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
-            }
+                'Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion',
+            },
+            {
+              onClick: item => alert(item.title),
+              content:
+                'Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
+              image: images.common.masterCard,
+              title:
+                'em ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloLorem ipsum dolor sit amet, surreal awesome gabr builds conver assion',
+            },
+            {
+              content:
+                'Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
+              image:
+                'https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80',
+              title:
+                'Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion',
+            },
           ]}
           linkText="View More"
           title="Lorem Ipsum"
-          linkOnClick={() => alert("click")}
+          linkOnClick={() => alert('click')}
         />
         <Title>CalendarBox</Title>
         <div>Input Date: {`${inputDate}`}</div>
         <div>Selected Date: {`${selectedDate}`}</div>
         <div
           style={{
-            display: "flex",
-            justifyContent: "center"
+            display: 'flex',
+            justifyContent: 'center',
           }}
         >
           <CalendarBox
             label="Effective Date"
             minDate={moment()
-              .add(1, "day")
+              .add(1, 'day')
               .toDate()}
             maxDate={moment()
-              .add(7, "day")
+              .add(7, 'day')
               .toDate()}
             onChangeDate={handleOnChange}
             onChangeInput={handleInputDateChange}
@@ -553,12 +606,12 @@ const Sprint2: React.FC<Props> = () => {
         </div>
         <div
           style={{
-            display: "flex",
+            display: 'flex',
             // justify-content: left;
             // margin-bottom: 2rem;
-            marginLeft: "55rem",
-            marginBottom: "20.44rem",
-            marginRight: "3.62rem"
+            marginLeft: '55rem',
+            marginBottom: '20.44rem',
+            marginRight: '3.62rem',
             // padding-left: 0.93rem;
           }}
         >
@@ -571,22 +624,22 @@ const Sprint2: React.FC<Props> = () => {
             data={[
               {
                 title:
-                  "Lorem ipsum dolor sit amet, surreal awesome gabr builds",
+                  'Lorem ipsum dolor sit amet, surreal awesome gabr builds',
                 content:
-                  "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+                  'Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
                 highlighted: true,
-                clickable : false
+                clickable: false,
               },
               {
                 title:
-                  "Lorem ipsum dolor sit amet, surreal awesome gabr builds conversion",
-                  clickable : true
+                  'Lorem ipsum dolor sit amet, surreal awesome gabr builds conversion',
+                clickable: true,
               },
               {
                 title:
-                  "Lorem ipsum dolor sit amet, surreal awesome gabr builds conversion",
-                  clickable : true
-              }
+                  'Lorem ipsum dolor sit amet, surreal awesome gabr builds conversion',
+                clickable: true,
+              },
             ]}
           />
         </div>
