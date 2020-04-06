@@ -32,25 +32,23 @@ import BarCode from 'src/components/barCode/barCode';
 import StickyFooter from 'src/components/stickies/stickyFooter/StickyFooter';
 
 import AmDropdown from 'src/components/amDropdown/AmDropdown';
-import BoxId from 'src/components/lists/BoxId/BoxId';
-
-import SecureImage from 'src/components/secureImage/SecureImage';
-import SecureImageSelect from 'src/components/secureImageSelect/SecureImageSelect';
-import Line from 'src/components/line/Line';
-import LinkList from 'src/components/lists/linkList/LinkList';
-import ToggleButton from 'src/components/buttons/toggleButton/ToggleButton';
-
-import AmProfileSetting from 'src/components/amProfileSetting/amProfileSetting';
-import Icon from 'src/components/assets/icons/icon';
-
 import AmAccordion from 'src/components/amAccordion/AmAccordion';
 import AmListItem from 'src/components/amListItem/AmListItem';
+
+import { MemoizedAmProfilePic as AmProfilePic } from 'src/components/amProfilePic/AmProfilePic';
+
+import Icon from 'src/components/assets/icons/icon';
+
+import AmProfileDetail from 'src/components/amProfileDetail/amProfileDetail';
+
 const {
   B_13_ORANGE_463,
   R_12_WHITE,
   B_14_WHITE,
   B_24_BLACK,
   B_15_WHITE,
+  B_32_BLACK,
+  R_15_BLACK,
   SB_13_BLACK,
 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -63,12 +61,7 @@ const Title = styled(B_13_ORANGE_463)`
 const CenteredDiv = styled.div`
   display: flex;
   justify-content: center;
-
   padding: 2rem 0;
-`;
-const RowDiv = styled.div`
-  display: flex;
-  flex-direction: 'row';
 `;
 interface Props {}
 
@@ -92,12 +85,6 @@ const Sprint3: React.FC<Props> = () => {
   const [tacClear, setTacClear] = useState(false);
   const [profileInputValue, setProfileInputValue] = useState('');
   const [buttonColor, setButtonColor] = useState({
-    top: '#BDBDBD',
-    bottom: '#BDBDBD',
-  });
-  const [linkListClear, setLinkListClear] = useState(false);
-  const [linkListInputValue, setLinkListInputValue] = useState('');
-  const [linkListBtnColor, setLinkListBtnColor] = useState({
     top: '#BDBDBD',
     bottom: '#BDBDBD',
   });
@@ -262,264 +249,6 @@ const Sprint3: React.FC<Props> = () => {
           },
         ]}
       />
-      <Title>LinkList</Title>
-      <CenteredDiv style={{ margin: '1.5rem' }}>
-        <LinkList
-          testId="link_list_sprint_3_test"
-          defaultActiveKey="2"
-          list={[
-            {
-              label: 'Show on AmOnline',
-              rightItem: (
-                <ToggleButton
-                  toggleOffLabel="NO"
-                  toggleOnLabel="YES"
-                  value={true}
-                  onTogglePress={() => {}}
-                />
-              ),
-            },
-            { label: 'Change Card PIN' },
-            {
-              label: 'Nickname',
-              leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
-              bold: true,
-              onListClick: () => {},
-              expandable: true,
-              subtitle: [
-                'AmBank BonusLink Visa',
-                'AmBank BonusLink Mastercard',
-              ],
-              leftBorderColor: 'red',
-              inputProps: [
-                {
-                  type: 'text',
-                  value: linkListInputValue,
-                  notValid: false,
-                  handleChange: (e: any) => {
-                    setLinkListInputValue(e.target.value);
-                    setLinkListClear(true);
-                    setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
-                  },
-                  clearClickHandler: () => {
-                    setLinkListInputValue('');
-                    setLinkListClear(false);
-                    setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
-                  },
-                  clearIcon: linkListInputValue ? true : linkListClear,
-                  label: '',
-                  icon: { name: 'Lock' },
-                  errorMessage: {
-                    errorText: 'something wrong',
-                    subText: 'detail error',
-                  },
-                },
-                {
-                  type: 'text',
-                  value: linkListInputValue,
-                  notValid: false,
-                  handleChange: (e: any) => {
-                    setLinkListInputValue(e.target.value);
-                    setLinkListClear(true);
-                    setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
-                  },
-                  clearClickHandler: () => {
-                    setLinkListInputValue('');
-                    setLinkListClear(false);
-                    setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
-                  },
-                  clearIcon: linkListInputValue ? true : linkListClear,
-                  label: '',
-                  icon: { name: 'Lock' },
-                  errorMessage: {
-                    errorText: 'something wrong',
-                    subText: 'detail error',
-                  },
-                },
-                {
-                  type: 'text',
-                  value: linkListInputValue,
-                  notValid: false,
-                  handleChange: (e: any) => {
-                    setLinkListInputValue(e.target.value);
-                    setLinkListClear(true);
-                    setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
-                  },
-                  clearClickHandler: () => {
-                    setLinkListInputValue('');
-                    setLinkListClear(false);
-                    setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
-                  },
-                  clearIcon: linkListInputValue ? true : linkListClear,
-                  label: '',
-                  icon: { name: 'Lock' },
-                  errorMessage: {
-                    errorText: 'something wrong',
-                    subText: 'detail error',
-                  },
-                },
-              ],
-              buttonProps: {
-                onButtonClick: () => {
-                  alert('Button Clicked');
-                },
-                title: 'Update',
-                titleColor: '#fff',
-                buttonColor: linkListBtnColor,
-              },
-            },
-            { label: 'Block This Card' },
-            { label: 'Block This Replace This Card' },
-          ]}
-        />
-      </CenteredDiv>
-
-      <Title>Secure Image Container</Title>
-      <CenteredDiv>
-        <FormContainer
-          label="Change Security Image"
-          children={
-            <>
-              <CenteredDiv>
-                <SecureImage
-                  testId="secure_image_testid"
-                  image={images.common.SampleSecureImage}
-                />
-              </CenteredDiv>
-              <CenteredDiv>
-                <Line color="#DEDEDE" width={787} height={1} />
-              </CenteredDiv>
-              <CenteredDiv>
-                <SecureImageSelect
-                  testId="secure_image_select_testid"
-                  label="Select your new security image"
-                  images={[
-                    {
-                      uri: images.common.SampleSecureImage,
-                    },
-                    {
-                      uri: images.common.SampleSecureImage,
-                    },
-                    {
-                      uri: images.common.SampleSecureImage,
-                    },
-                    {
-                      uri: images.common.SampleSecureImage,
-                    },
-                    {
-                      uri: images.common.SampleSecureImage,
-                    },
-                  ]}
-                />
-              </CenteredDiv>
-            </>
-          }
-        />
-      </CenteredDiv>
-      <Title>AccordionSetting</Title>
-      <CenteredDiv
-        style={{
-          margin: '5rem',
-        }}
-      >
-        <AmAccordion
-          testId={'testId'}
-          data={[
-            {
-              id: "id-1", 
-              title: "iPhone X",
-              contentList: [{
-                id: "id-1",
-                title: "ItemName",
-                leftIcon: {name: "Settings", color: "#000000"},
-                status: {
-                  label: 'inactive'
-                }
-              },
-              {
-                id: "id-1",
-                title: "ItemName",
-                leftIcon: {name: "Security2", color: "#000000"},
-                status: {
-                  label: 'inactive'
-                }
-              }
-              ],
-              buttonContent: {
-                clickHandler: () => {alert("Set device handler")},
-                title: "Setup now",
-                titleColor: "#000000",
-                buttonColor: {
-                  top: "#F6F6F3",
-                  bottom: "#EAE9E3"
-                },
-                icon: {
-                  name:"Settings",
-                  color:"#000"
-                }
-              }
-            },
-            {
-              id: "id-2", 
-              title: "Macbook Pro",
-              contentList: [{
-                id: "id-2",
-                title: "ItemName",
-                leftIcon: {name: "Settings", color: "red"},
-                status: {
-                  icon: <Icon icon={'CheckboxYes'} size={20} color={'#36A03E'} />
-                }
-              },
-              {
-                id: "id-2",
-                title: "ItemName",
-                leftIcon: {name: "Security2", color: "red"},
-                status: {
-                  icon: <Icon icon={'CheckboxYes'} size={20} color={'#36A03E'} />
-                }
-              }
-              ],
-              buttonContent: {
-                clickHandler: () => {alert("Remove device handler")},
-                title: "Remove Device",
-                titleColor: "#ffffff",
-                icon: {
-                  name: "delete",
-                  color: "#ffffff"
-                }
-              }
-            }
-          ]
-        }
-        ></AmAccordion>
-      </CenteredDiv>
-
-      <Title>ListItem (item used inside accordion)</Title>
-      <CenteredDiv
-        style={{
-          margin: '5rem',
-          flexDirection: 'column',
-          alignItems: 'center'
-        }}
-      >
-        <AmListItem
-          testId="testId-123"
-          title="Item with no left but right icon"
-          icon={<Icon icon={'Right1'} size={20} color={'#000000'} />}
-          status={<Icon icon={'CheckboxYes'} size={20} color={'#000000'} />}
-        />
-        <AmListItem
-          testId="testId-345"
-          title="Item with no right but left icon"
-          icon={<Icon icon={'Right1'} size={20} color={'#000000'} />}
-          status="inactive"
-        />
-        <AmListItem
-          testId="testId-456"
-          title="Item without icon" 
-          status="disabled"
-        />
-      </CenteredDiv>
       <Title>ImageModal</Title>
       <CenteredDiv>
         <PrimaryButton
@@ -625,24 +354,11 @@ const Sprint3: React.FC<Props> = () => {
         }}
       >
         <AmDropdown
-          max="200px"
           readOnly={true}
           disabled={false}
           clickOnArrow={() => setDropdown(!showDropdown)}
           showDropdown={showDropdown}
           dropdownData={[
-            { value: 'ambank', label: 'am' },
-            { value: 'Alpeh', label: 'alp' },
-            { value: 'ambank', label: 'am' },
-            { value: 'Alpeh', label: 'alp' },
-            { value: 'ambank', label: 'am' },
-            { value: 'Alpeh', label: 'alp' },
-            { value: 'ambank', label: 'am' },
-            { value: 'Alpeh', label: 'alp' },
-            { value: 'ambank', label: 'am' },
-            { value: 'Alpeh', label: 'alp' },
-            { value: 'ambank', label: 'am' },
-            { value: 'Alpeh', label: 'alp' },
             { value: 'ambank', label: 'am' },
             { value: 'Alpeh', label: 'alp' },
           ]}
@@ -658,7 +374,7 @@ const Sprint3: React.FC<Props> = () => {
           label="dropdown label"
           icon={{ name: 'Account-2' }}
           value={dropdownValue}
-          handleChange={(item) => handlerDropdown(item)}
+          handleChange={item => handlerDropdown(item)}
         />
       </div>
 
@@ -729,7 +445,7 @@ const Sprint3: React.FC<Props> = () => {
           label="New Password"
           icon={{ name: 'Lock' }}
           value={''}
-          handleChange={(event) => {
+          handleChange={event => {
             alert({
               inputValue: event.target.value,
             });
@@ -836,7 +552,7 @@ const Sprint3: React.FC<Props> = () => {
           searchIconClickHandler={() => alert('Search Icon clicked')}
           placeholder={'Search'}
           value={inputValue}
-          handleChange={(event) => {
+          handleChange={event => {
             setInputValue(event.target.value);
           }}
           autoFocus={false}
@@ -914,7 +630,7 @@ const Sprint3: React.FC<Props> = () => {
               ],
             },
           ]}
-          onFilterOptionClick={(obj) => alert(JSON.stringify(obj))}
+          onFilterOptionClick={obj => alert(JSON.stringify(obj))}
           selectedFilters={[
             {
               label: 'Successful',
@@ -1058,7 +774,7 @@ const Sprint3: React.FC<Props> = () => {
           centered={true}
           onTileClick={(item, index) => {
             setSTileNum3(index);
-            alert(`${item.centeredText} with indexOf ${index} clicked`);
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
           }}
           selected={sTileNum3}
           list={[
@@ -1074,7 +790,6 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         />
       </div>
-
       <Title>Sticky Footer</Title>
       <CenteredDiv>
         <PrimaryButton
@@ -1093,111 +808,6 @@ const Sprint3: React.FC<Props> = () => {
         }}
         iconText="Disable online purchases for AmBank Debit Card?"
       />
-      <Title>BoxId</Title>
-      <CenteredDiv>
-        <div>
-          <BoxId
-            title="Active IDs"
-            isActive={true}
-            list={[
-              {
-                leftIcon: { name: 'ID-2' },
-                boldText: 'ID Number ••••••9876',
-                subText: 'Maybank  |  ••••••••4321',
-                notification: true,
-                iconButtons: [
-                  {
-                    icon: 'Edit',
-                    text: 'Edit',
-                    onClick: () => alert('click'),
-                  },
-                  {
-                    icon: 'delete',
-                    text: 'Delete',
-                    onClick: () => alert('click'),
-                  },
-                  {
-                    icon: 'Clear',
-                    text: 'Deactivate',
-                    onClick: () => alert('click'),
-                  },
-                ],
-              },
-              {
-                leftIcon: { name: 'Mobile' },
-                boldText: 'Mobile Number ••••••1234',
-                subText: 'Ambank  |  ••••••••3463',
-                iconButtons: [
-                  {
-                    icon: 'Edit',
-                    text: 'Edit',
-                    onClick: () => alert('click'),
-                  },
-                  {
-                    icon: 'delete',
-                    text: 'Delete',
-                    onClick: () => alert('click'),
-                  },
-                  {
-                    icon: 'Clear',
-                    text: 'Deactivate',
-                    onClick: () => alert('click'),
-                  },
-                ],
-              },
-            ]}
-          />
-
-          <BoxId
-            title="Inactive IDs"
-            list={[
-              {
-                leftImage:
-                  'https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80',
-                boldText: 'Mobile Number ••••••4546',
-
-                iconButtons: [
-                  {
-                    icon: 'Edit',
-                    text: 'Edit',
-                    onClick: () => alert('click'),
-                  },
-                  {
-                    icon: 'delete',
-                    text: 'Delete',
-                    onClick: () => alert('click'),
-                  },
-                  {
-                    icon: 'Clear',
-                    text: 'Deactivate',
-                    onClick: () => alert('click'),
-                  },
-                ],
-              },
-            ]}
-          />
-
-          <BoxId
-            title="Active"
-            isActive={true}
-            list={[
-              {
-                leftImage: images.common.Duitnow1,
-                boldText: 'DuitNow QR',
-                subText: 'Savings Account A  |  ••••••••4321',
-                iconButtons: [
-                  {
-                    icon: 'Switch',
-                    text: 'Change Default Account',
-                    onClick: () => alert('click'),
-                  },
-                ],
-              },
-            ]}
-          />
-        </div>
-      </CenteredDiv>
-
       <Title>Text With Details</Title>
       <div
         style={{
@@ -1581,18 +1191,27 @@ const Sprint3: React.FC<Props> = () => {
           />
         }
       />
-      <Title>ProfileSetting</Title>
+
+      <Title>ProfilePic</Title>
       <CenteredDiv
         style={{
-          flexDirection: 'column',
-          alignItems: 'center',
+          margin: '5rem',
         }}
       >
-        <AmProfileSetting
+        <AmProfilePic
           testId={'testId'}
           profilePicImage={LocalImages.common.profilePic}
           ProfilePicBgColor={'#2694EB'}
           editIcon={<Icon icon={'Right1'} size={20} color={'#000000'} />}
+          onEditClickHandler={() => alert('link clicked')}
+          fullName={'Adam Faruk'}
+        ></AmProfilePic>
+      </CenteredDiv>
+
+      <Title>ProfileDetail</Title>
+      <CenteredDiv style={{ backgroundColor: 'white', padding: 50 }}>
+        <AmProfileDetail
+          testId={'testId'}
           data={[
             {
               profile_data: {
@@ -1655,12 +1274,7 @@ const Sprint3: React.FC<Props> = () => {
             },
           ]}
           value={profileInputValue}
-          onEditClickHandler={() => {
-            alert('on edit click');
-          }}
-          fullName={'Adam Faruk'}
-          handleChange={(e: any, item, index) => {
-            console.log(`Item:${item},index:${index}`);
+          handleChange={(e: any) => {
             setProfileInputValue(e.target.value);
             setTacClear(true);
             setButtonColor({ top: '#FF0D0D', bottom: '#FD8585' });
@@ -1677,50 +1291,259 @@ const Sprint3: React.FC<Props> = () => {
             subText: 'Please try again.',
           }}
           label=""
-          inputFieldIcon={{ name: 'Lock', color: 'red' }}
-          openAccordionIcon={{
-            name: 'system-close-grey',
-            color: '#444444',
-            size: 12,
-          }}
-          closeAccordionIcon={{ name: 'arrowDown', color: '#444444', size: 12 }}
-          onButtonClick={(item, index) => {
-            alert(JSON.stringify(item));
-            alert(`Index: ${index}`);
+          icon={{ name: 'Lock' }}
+          onButtonClick={() => {
+            alert('Button Clicked');
           }}
           buttonTitle="Continue"
           buttonTitleColor="#ffffff"
           buttonColor={buttonColor}
-          tipChildren={
-            <div>
-              <RowDiv
-                style={{
-                  maxWidth: 439,
-                  width: '100%',
-                  paddingTop: '24px',
-                  paddingBottom: '24px',
-                }}
-              >
-                <SB_13_BLACK>
-                  Note: If you wish to change your
-                  <strong>mobile number</strong>
-                  and/or <strong>mailing address.</strong> please visit your
-                  nearest branch.
-                </SB_13_BLACK>
-              </RowDiv>
-              <RowDiv
-                style={{
-                  maxWidth: 439,
-                  width: '100%',
-                }}
-              >
-                <SB_13_BLACK>
-                  Your <b>Profile picture</b>should not exceed the 5 MB file
-                  limit.
-                </SB_13_BLACK>
-              </RowDiv>
-            </div>
-          }
+        />
+      </CenteredDiv>
+
+      <Title>ProfileSetting</Title>
+      <CenteredDiv
+        style={{
+          backgroundColor: 'white',
+          padding: 50,
+          alignItems: 'center',
+        }}
+      >
+        <CenteredDiv
+          style={{
+            flexDirection: 'column',
+            padding: '24px 24px  51px 24px',
+            background: ' #F7F7F7',
+            borderRadius: '16px',
+          }}
+        >
+          <div>
+            <AmProfilePic
+              testId={'testId'}
+              profilePicImage={LocalImages.common.profilePic}
+              ProfilePicBgColor={'#2694EB'}
+              editIcon={<Icon icon={'Right1'} size={20} color={'#000000'} />}
+              onEditClickHandler={() => alert('link clicked')}
+              fullName={'Adam Faruk'}
+            ></AmProfilePic>
+          </div>
+          <div style={{ marginTop: '31px', marginBottom: '4px' }}>
+            <B_32_BLACK>Adam_1234</B_32_BLACK>
+          </div>
+          <div style={{ marginBottom: '41px' }}>
+            <R_15_BLACK>Last login on 2 Feb 2020 at 03:06pm</R_15_BLACK>
+          </div>
+          <AmProfileDetail
+            testId={'testId'}
+            data={[
+              {
+                profile_data: {
+                  title: 'Full Name',
+                  showIcon: false,
+                  subtitle: [
+                    {
+                      content: 'Adam Jake',
+                    },
+                    {
+                      content: 'aslam Furich',
+                    },
+                  ],
+                },
+              },
+              {
+                profile_data: {
+                  title: 'Nickname',
+                  showIcon: true,
+                  subtitle: [
+                    {
+                      content: 'Adam_1234',
+                    },
+                  ],
+                },
+              },
+              {
+                profile_data: {
+                  title: 'Mobile Number',
+                  showIcon: false,
+                  subtitle: [
+                    {
+                      content: '******897',
+                    },
+                  ],
+                },
+              },
+              {
+                profile_data: {
+                  title: 'Mailing Address',
+                  showIcon: false,
+                  subtitle: [
+                    {
+                      content:
+                        '41, Jalan PJU 1A/29A Ara Damansara,Kundanahalli,Banagalore,43701 Petaling Jaya,Selangor,Malaysia',
+                    },
+                  ],
+                },
+              },
+              {
+                profile_data: {
+                  title: 'Email',
+                  showIcon: true,
+                  subtitle: [
+                    {
+                      content: '*******5678@gmail.com',
+                    },
+                  ],
+                },
+              },
+            ]}
+            value={profileInputValue}
+            handleChange={(e: any) => {
+              setProfileInputValue(e.target.value);
+              setTacClear(true);
+              setButtonColor({ top: '#FF0D0D', bottom: '#FD8585' });
+            }}
+            clearIcon={profileInputValue === '' ? tacClear : true}
+            clearClickHandler={() => {
+              setProfileInputValue('');
+              setTacClear(false);
+              setButtonColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
+            }}
+            errorMessage={{
+              testId: 'testId',
+              errorText: 'The Input Field is wrong',
+              subText: 'Please try again.',
+            }}
+            label=""
+            icon={{ name: 'Lock' }}
+            onButtonClick={() => {
+              alert('Button Clicked');
+            }}
+            buttonTitle="Continue"
+            buttonTitleColor="#ffffff"
+            buttonColor={buttonColor}
+          />
+          <div style={{ padding: 24, maxWidth: 439, width: '100%' }}>
+            <SB_13_BLACK>
+              Note: If you wish to change your <strong>mobile number</strong>
+              and/or <strong>mailing address.</strong> please visit your nearest
+              branch.
+            </SB_13_BLACK>
+          </div>
+          <div
+            style={{
+              padding: '0px 24px 0px 24px',
+              maxWidth: 439,
+              width: '100%',
+            }}
+          >
+            <SB_13_BLACK>
+              Your <strong>Profile picture</strong>should not exceed the 5 MB
+              file limit.
+            </SB_13_BLACK>
+          </div>
+        </CenteredDiv>
+      </CenteredDiv>
+      <Title>AccordionSetting</Title>
+      <CenteredDiv
+        style={{
+          margin: '5rem',
+        }}
+      >
+        <AmAccordion
+          testId={'testId'}
+          data={[
+            {
+              id: "id-1", 
+              title: "iPhone X",
+              contentList: [{
+                id: "id-1",
+                title: "ItemName",
+                leftIcon: {name: "Settings", color: "#000000"},
+                status: {
+                  label: 'inactive'
+                }
+              },
+              {
+                id: "id-1",
+                title: "ItemName",
+                leftIcon: {name: "Security2", color: "#000000"},
+                status: {
+                  label: 'inactive'
+                }
+              }
+              ],
+              buttonContent: {
+                clickHandler: () => {alert("Set device handler")},
+                title: "Setup now",
+                titleColor: "#000000",
+                buttonColor: {
+                  top: "#F6F6F3",
+                  bottom: "#EAE9E3"
+                },
+                icon: {
+                  name:"Settings",
+                  color:"#000"
+                }
+              }
+            },
+            {
+              id: "id-2", 
+              title: "Macbook Pro",
+              contentList: [{
+                id: "id-2",
+                title: "ItemName",
+                leftIcon: {name: "Settings", color: "red"},
+                status: {
+                  icon: <Icon icon={'CheckboxYes'} size={20} color={'#36A03E'} />
+                }
+              },
+              {
+                id: "id-2",
+                title: "ItemName",
+                leftIcon: {name: "Security2", color: "red"},
+                status: {
+                  icon: <Icon icon={'CheckboxYes'} size={20} color={'#36A03E'} />
+                }
+              }
+              ],
+              buttonContent: {
+                clickHandler: () => {alert("Remove device handler")},
+                title: "Remove Device",
+                titleColor: "#ffffff",
+                icon: {
+                  name: "delete",
+                  color: "#ffffff"
+                }
+              }
+            }
+          ]
+        }
+        ></AmAccordion>
+      </CenteredDiv>
+      <Title>ListItem (item used inside accordion)</Title>
+      <CenteredDiv
+        style={{
+          margin: '5rem',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }}
+      >
+        <AmListItem
+          testId="testId-123"
+          title="Item with no left but right icon"
+          icon={<Icon icon={'Right1'} size={20} color={'#000000'} />}
+          status={<Icon icon={'CheckboxYes'} size={20} color={'#000000'} />}
+        />
+        <AmListItem
+          testId="testId-345"
+          title="Item with no right but left icon"
+          icon={<Icon icon={'Right1'} size={20} color={'#000000'} />}
+          status="inactive"
+        />
+        <AmListItem
+          testId="testId-456"
+          title="Item without icon" 
+          status="disabled"
         />
       </CenteredDiv>
     </div>
