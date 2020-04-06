@@ -20,7 +20,7 @@ declare type ListItem = {
   expandableContent?: ReactNode;
   onListClick?: (item: any) => void;
   rightItem?: ReactNode;
-  inputProps?: any;
+  inputProps?: any[];
   buttonProps?: any;
 };
 interface LinkListProps {
@@ -41,7 +41,7 @@ const LinkList: React.FC<LinkListProps> = ({
           list.map((item, index) => {
             const {
               disabled,
-              inputProps,
+              inputProps = [{}],
               buttonProps,
               expandableContent,
               leftBorderColor,
@@ -58,23 +58,30 @@ const LinkList: React.FC<LinkListProps> = ({
                 </Card.Header>
                 <Accordion.Collapse eventKey={`${index}`}>
                   <Card.Body>
-                    {expandableContent || (
+                    {!expandableContent ? (
                       <div className={classes.EditWrapper}>
-                        <InputField
-                          type="text"
-                          value=""
-                          notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
-                          clearIcon={true}
-                          label=""
-                          icon={{ name: 'Lock' }}
-                          errorMessage={{
-                            errorText: 'something wrong',
-                            subText: 'detail error',
-                          }}
-                          {...{ notValid: disabled, ...inputProps }}
-                        />
+                        {inputProps &&
+                          inputProps.map((input: any, index: number) => {
+                            return (
+                              <div key={index} className={classes.InputWrapper}>
+                                <InputField
+                                  type="text"
+                                  value=""
+                                  notValid={false}
+                                  handleChange={() => {}}
+                                  clearClickHandler={() => {}}
+                                  clearIcon={true}
+                                  label=""
+                                  icon={{ name: 'Lock' }}
+                                  errorMessage={{
+                                    errorText: 'something wrong',
+                                    subText: 'detail error',
+                                  }}
+                                  {...{ notValid: disabled, ...input }}
+                                />
+                              </div>
+                            );
+                          })}
                         <div className={classes.primaryBtnStyle}>
                           <PrimaryButton
                             onButtonClick={() => {
@@ -90,6 +97,8 @@ const LinkList: React.FC<LinkListProps> = ({
                           />
                         </div>
                       </div>
+                    ) : (
+                      <>{expandableContent}</>
                     )}
                   </Card.Body>
                 </Accordion.Collapse>
