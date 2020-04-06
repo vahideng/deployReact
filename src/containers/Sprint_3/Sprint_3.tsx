@@ -47,6 +47,7 @@ import PortfolioListContent from 'src/components/portfolioListContent/PortfolioL
 
 import AmAccordion from 'src/components/amAccordion/AmAccordion';
 import AmListItem from 'src/components/amListItem/AmListItem';
+import DashboardCart from 'src/components/dashboardCart/DashboardCart';
 const {
   B_13_ORANGE_463,
   R_12_WHITE,
@@ -428,71 +429,80 @@ const Sprint3: React.FC<Props> = () => {
           testId={'testId'}
           data={[
             {
-              id: "id-1", 
-              title: "iPhone X",
-              contentList: [{
-                id: "id-1",
-                title: "ItemName",
-                leftIcon: {name: "Settings", color: "#000000"},
-                status: {
-                  label: 'inactive'
-                }
-              },
-              {
-                id: "id-1",
-                title: "ItemName",
-                leftIcon: {name: "Security2", color: "#000000"},
-                status: {
-                  label: 'inactive'
-                }
-              }
+              id: 'id-1',
+              title: 'iPhone X',
+              contentList: [
+                {
+                  id: 'id-1',
+                  title: 'ItemName',
+                  leftIcon: { name: 'Settings', color: '#000000' },
+                  status: {
+                    label: 'inactive',
+                  },
+                },
+                {
+                  id: 'id-1',
+                  title: 'ItemName',
+                  leftIcon: { name: 'Security2', color: '#000000' },
+                  status: {
+                    label: 'inactive',
+                  },
+                },
               ],
               buttonContent: {
-                clickHandler: () => {alert("Set device handler")},
-                title: "Setup now",
-                titleColor: "#000000",
+                clickHandler: () => {
+                  alert('Set device handler');
+                },
+                title: 'Setup now',
+                titleColor: '#000000',
                 buttonColor: {
-                  top: "#F6F6F3",
-                  bottom: "#EAE9E3"
+                  top: '#F6F6F3',
+                  bottom: '#EAE9E3',
                 },
                 icon: {
-                  name:"Settings",
-                  color:"#000"
-                }
-              }
+                  name: 'Settings',
+                  color: '#000',
+                },
+              },
             },
             {
-              id: "id-2", 
-              title: "Macbook Pro",
-              contentList: [{
-                id: "id-2",
-                title: "ItemName",
-                leftIcon: {name: "Settings", color: "red"},
-                status: {
-                  icon: <Icon icon={'CheckboxYes'} size={20} color={'#36A03E'} />
-                }
-              },
-              {
-                id: "id-2",
-                title: "ItemName",
-                leftIcon: {name: "Security2", color: "red"},
-                status: {
-                  icon: <Icon icon={'CheckboxYes'} size={20} color={'#36A03E'} />
-                }
-              }
+              id: 'id-2',
+              title: 'Macbook Pro',
+              contentList: [
+                {
+                  id: 'id-2',
+                  title: 'ItemName',
+                  leftIcon: { name: 'Settings', color: 'red' },
+                  status: {
+                    icon: (
+                      <Icon icon={'CheckboxYes'} size={20} color={'#36A03E'} />
+                    ),
+                  },
+                },
+                {
+                  id: 'id-2',
+                  title: 'ItemName',
+                  leftIcon: { name: 'Security2', color: 'red' },
+                  status: {
+                    icon: (
+                      <Icon icon={'CheckboxYes'} size={20} color={'#36A03E'} />
+                    ),
+                  },
+                },
               ],
               buttonContent: {
-                clickHandler: () => {alert("Remove device handler")},
-                title: "Remove Device",
-                titleColor: "#ffffff",
+                clickHandler: () => {
+                  alert('Remove device handler');
+                },
+                title: 'Remove Device',
+                titleColor: '#ffffff',
                 icon: {
-                  name: "delete",
-                  color: "#ffffff"
-                }
-              }
-            }
-          ]
-        }
+                  name: 'delete',
+                  color: '#ffffff',
+                },
+              },
+            },
+          ]}
         ></AmAccordion>
       </CenteredDiv>
 
@@ -501,7 +511,7 @@ const Sprint3: React.FC<Props> = () => {
         style={{
           margin: '5rem',
           flexDirection: 'column',
-          alignItems: 'center'
+          alignItems: 'center',
         }}
       >
         <AmListItem
@@ -518,7 +528,7 @@ const Sprint3: React.FC<Props> = () => {
         />
         <AmListItem
           testId="testId-456"
-          title="Item without icon" 
+          title="Item without icon"
           status="disabled"
         />
       </CenteredDiv>
@@ -1885,6 +1895,35 @@ const Sprint3: React.FC<Props> = () => {
               onClick: () => alert('Handle sort and icon change'),
             },
           ]}
+        />
+      </CenteredDiv>
+      <Title>DashboardCart</Title>
+      <CenteredDiv>
+        <DashboardCart
+          title="My UT Account"
+          subtitle={{ content: '123456', icon: 'User1' }}
+          description="RM 100,084,208.66"
+          descriptionRightLabel={{
+            type: 'loss',
+            percentage: '6.6%',
+          }}
+          data={[
+            {
+              leftSide: {
+                title: 'Profit/Loss',
+                content: 'RM 6,205,220.93',
+                type: 'profit',
+              },
+              rightSide: {
+                title: 'Invested',
+                content: 'RM 93,878,987.73',
+              },
+            },
+          ]}
+          onClickContainer={() => alert('Clicked')}
+          tooltip={true}
+          footerLabel="Last Updated: 11 Nov 2019"
+          tipChildren={<div>tip</div>}
         />
       </CenteredDiv>
     </div>
