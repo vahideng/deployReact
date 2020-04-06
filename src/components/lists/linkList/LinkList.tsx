@@ -41,7 +41,7 @@ const LinkList: React.FC<LinkListProps> = ({
           list.map((item, index) => {
             const {
               disabled,
-              inputProps,
+              inputProps = [{}],
               buttonProps,
               expandableContent,
               leftBorderColor,
@@ -58,7 +58,7 @@ const LinkList: React.FC<LinkListProps> = ({
                 </Card.Header>
                 <Accordion.Collapse eventKey={`${index}`}>
                   <Card.Body>
-                    {expandableContent || (
+                    {!expandableContent ? (
                       <div className={classes.EditWrapper}>
                         {inputProps &&
                           inputProps.map((input: any, index: number) => {
@@ -97,6 +97,8 @@ const LinkList: React.FC<LinkListProps> = ({
                           />
                         </div>
                       </div>
+                    ) : (
+                      <>{expandableContent}</>
                     )}
                   </Card.Body>
                 </Accordion.Collapse>
