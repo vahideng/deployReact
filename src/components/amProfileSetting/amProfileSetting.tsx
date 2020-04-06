@@ -1,77 +1,47 @@
-import React, { ChangeEvent } from 'react';
+import React, { ReactNode } from 'react';
 import classes from './amProfileSetting.module.css';
 import { Card, Accordion, useAccordionToggle, Col } from 'react-bootstrap';
 import Icon from 'src/components/assets/icons/icon';
 import Paragraphs from '../assets/typography';
-import InputField from 'src/components/inputs/inputFields/InputFields';
-import PrimaryButton from 'src/components/buttons/primaryButton/PrimaryButton';
 import { MemoizedAmProfilePic as AmProfilePic } from 'src/components/amProfilePic/AmProfilePic';
 
 const { B_32_BLACK, SB_15_BLACK, R_15_BLACK } = Paragraphs;
 
-interface profileItemProps {
-  item: {
-    profile_data: {
-      title: string;
-      subtitle: [
-        {
-          content: string;
-        },
-      ];
-      showIcon: boolean;
-    };
-  };
+interface ProfileItemProps {
+  profile_data: itemProps;
+}
+
+interface itemProps {
+  title: string;
+  showIcon: boolean;
+  subtitle: contentType[];
+  children?: ReactNode;
+}
+
+interface contentType {
+  content: string;
 }
 
 interface ProfileSettingProps {
-  data: any;
   testId: string;
   eventKey?: any;
   content?: string;
   showIcon?: boolean;
-  clearIcon: boolean;
-  value: string;
-  handleChange: (
-    event: ChangeEvent<HTMLInputElement>,
-    item: profileItemProps,
-    index: number,
-  ) => void;
-  clearClickHandler: () => void;
-  errorMessage?: {
-    testId: string;
-    errorText: string;
-    subText: string;
-  };
-  label?: string;
-  inputFieldIcon?: { name?: string; color?: string; size?: number };
+  clearIcon?: boolean;
   openAccordionIcon?: { name?: string; color?: string; size?: number };
   closeAccordionIcon?: { name?: string; color?: string; size?: number };
-  onButtonClick: (item: profileItemProps, index: number) => void;
-  buttonTitle: string;
-  buttonTitleColor: string;
-  buttonColor: { top: string; bottom: string };
   tipChildren?: any;
   profilePicImage?: string;
   ProfilePicBgColor: string;
-  editIcon: React.ReactNode;
+  editIcon: any;
   onEditClickHandler: () => void;
   fullName: string;
+  data?: ProfileItemProps[];
 }
 
 const AmProfileSetting: React.FC<ProfileSettingProps> = ({
   data,
   testId,
-  clearIcon,
-  value,
-  handleChange,
-  clearClickHandler,
-  errorMessage,
-  label,
-  inputFieldIcon,
-  onButtonClick,
-  buttonTitle,
-  buttonTitleColor,
-  buttonColor,
   tipChildren,
   profilePicImage,
   ProfilePicBgColor,
@@ -84,7 +54,6 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
   const {
     CardOuterContainer,
     CardBody,
-    primaryBtnStyle,
     cardUserDetails,
     cardLastLogin,
     mainContainer,
@@ -148,25 +117,7 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
 
                   <Accordion.Collapse eventKey={`${index}`} key={index}>
                     <Card.Body className={classes.CardBodyContent}>
-                      <InputField
-                        notValid={false}
-                        errorMessage={errorMessage}
-                        type="text"
-                        clearClickHandler={clearClickHandler}
-                        clearIcon={clearIcon}
-                        label={label}
-                        icon={inputFieldIcon}
-                        value={value}
-                        handleChange={e => handleChange(e, item, index)}
-                      />
-                      <div className={primaryBtnStyle}>
-                        <PrimaryButton
-                          onButtonClick={() => onButtonClick(item, index)}
-                          title={buttonTitle}
-                          titleColor={buttonTitleColor}
-                          buttonColor={buttonColor}
-                        />
-                      </div>
+                      {item.profile_data.children}
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
