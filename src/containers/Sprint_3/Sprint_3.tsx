@@ -1486,7 +1486,7 @@ const Sprint3: React.FC<Props> = () => {
       >
         <AmProfileSetting
           testId={'testId'}
-          profilePicImage={LocalImages.common.profilePic}
+          profilePicImage={''}
           ProfilePicBgColor={'#2694EB'}
           editIcon={<Icon icon={'Right1'} size={20} color={'#000000'} />}
           data={[
@@ -1494,6 +1494,7 @@ const Sprint3: React.FC<Props> = () => {
               profile_data: {
                 title: 'Full Name',
                 showIcon: false,
+                showAccordion: false,
                 subtitle: [
                   {
                     content: 'Adam Jake',
@@ -1546,6 +1547,7 @@ const Sprint3: React.FC<Props> = () => {
               profile_data: {
                 title: 'Nickname',
                 showIcon: true,
+                showAccordion: true,
                 subtitle: [
                   {
                     content: 'Adam_1234',
@@ -1597,6 +1599,7 @@ const Sprint3: React.FC<Props> = () => {
               profile_data: {
                 title: 'Mobile Number',
                 showIcon: false,
+                showAccordion: false,
                 subtitle: [
                   {
                     content: '******897',
@@ -1607,6 +1610,7 @@ const Sprint3: React.FC<Props> = () => {
             {
               profile_data: {
                 title: 'Mailing Address',
+                showAccordion: false,
                 showIcon: false,
                 subtitle: [
                   {
@@ -1618,6 +1622,7 @@ const Sprint3: React.FC<Props> = () => {
             },
             {
               profile_data: {
+                showAccordion: true,
                 title: 'Email',
                 showIcon: true,
                 subtitle: [

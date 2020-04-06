@@ -16,6 +16,7 @@ interface itemProps {
   showIcon: boolean;
   subtitle: contentType[];
   children?: ReactNode;
+  showAccordion: boolean;
 }
 
 interface contentType {
@@ -99,19 +100,20 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
                             },
                           )}
                       </Col>
-
-                      <Col
-                        style={{ paddingLeft: 0, paddingRight: 0, margin: 0 }}
-                        md={1}
-                      >
-                        <CustomToggle
-                          eventKey={`${index}`}
-                          content={item.profile_data.title}
-                          showIcon={item.flag || item.profile_data.showIcon}
-                          openAccordionIcon={openAccordionIcon}
-                          closeAccordionIcon={closeAccordionIcon}
-                        />
-                      </Col>
+                      {item.profile_data.showAccordion && (
+                        <Col
+                          style={{ paddingLeft: 0, paddingRight: 0, margin: 0 }}
+                          md={1}
+                        >
+                          <CustomToggle
+                            eventKey={`${index}`}
+                            content={item.profile_data.title}
+                            showIcon={item.flag || item.profile_data.showIcon}
+                            openAccordionIcon={openAccordionIcon}
+                            closeAccordionIcon={closeAccordionIcon}
+                          />
+                        </Col>
+                      )}
                     </div>
                   </Card.Header>
 
