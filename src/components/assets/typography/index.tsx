@@ -6,6 +6,13 @@ const R_11_BLACK = styled.p`
   font-size: 0.68rem;
   font-weight: 400;
 `;
+
+const R_11_GREY969 = styled.p`
+  margin: 0;
+  color: #696969;
+  font-size: 0.68rem;
+  font-weight: 400;
+`;
 const R_12_BLACK = styled.p`
   margin: 0;
   color: #000000;
@@ -106,6 +113,14 @@ const R_13_BLACK = styled.p`
   color: #000000;
   font-size: 0.82rem;
   font-weight: 400;
+`;
+
+const R_13_GREY393 = styled.p`
+  font-family: 'Nunito Sans';
+  margin: 0;
+  color: #939393;
+  font-weight: 700;
+  font-size: 0.82rem;
 `;
 const B_13_BLACK = styled.p`
   font-family: 'Nunito Sans';
@@ -286,7 +301,7 @@ const SB_13_GREY444 = styled.p`
   font-size: 0.81rem;
 `;
 const B_13_GREY444 = styled.p`
-  font-family: "Nunito Sans";
+  font-family: 'Nunito Sans';
   margin: 0;
   color: #444444;
   font-weight: 700;
@@ -417,6 +432,7 @@ export default {
   R_20_BLACK,
   B_32_BLACK,
   R_13_BLACK,
+  R_13_GREY393,
   B_13_BLACK,
   B_13_WHITE,
   R_14_BLACK,
@@ -444,6 +460,7 @@ export default {
   B_11_WHITE,
   B_14_WHITE,
   R_11_BLACK,
+  R_11_GREY969,
   R_11_WHITE,
   R_15_GREY444,
   B_17_WHITE,
