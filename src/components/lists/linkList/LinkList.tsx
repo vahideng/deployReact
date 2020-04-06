@@ -61,9 +61,34 @@ const LinkList: React.FC<LinkListProps> = ({
                   <Card.Body>
                     {expandableContent || (
                       <div className={classes.EditWrapper}>
-                        <InputField notValid={disabled} {...inputProps} />
+                        <InputField
+                          type="text"
+                          value=""
+                          notValid={false}
+                          handleChange={() => {}}
+                          clearClickHandler={() => {}}
+                          clearIcon={true}
+                          label=""
+                          icon={{ name: 'Lock' }}
+                          errorMessage={{
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          }}
+                          {...{ notValid: disabled, ...inputProps }}
+                        />
                         <div className={classes.primaryBtnStyle}>
-                          <PrimaryButton {...buttonProps} />
+                          <PrimaryButton
+                            onButtonClick={() => {
+                              window.alert('Button Clicked');
+                            }}
+                            title={'Update'}
+                            titleColor={'#fff'}
+                            buttonColor={{
+                              top: '#BDBDBD',
+                              bottom: '#BDBDBD',
+                            }}
+                            {...buttonProps}
+                          />
                         </div>
                       </div>
                     )}
