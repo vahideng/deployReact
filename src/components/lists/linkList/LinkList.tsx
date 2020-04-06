@@ -13,7 +13,6 @@ declare type ListItem = {
   label: string;
   bold?: boolean;
   subtitle?: any[];
-  toggleIcon?: any;
   backgroundColor?: string;
   leftBorderColor?: string;
   leftIcon?: ReactNode;
