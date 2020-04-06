@@ -1,0 +1,41 @@
+.Item {
+  margin: 0 !important;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-right: 1.5rem;
+  padding-left: 1.125rem;
+  padding-top: 1rem;
+}
+
+.ButtonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 2rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+.Button {
+  background: -webkit-gradient(linear, left top, left bottom, from(#f6f6f3), to(#eae9e3));
+  background: linear-gradient(180deg, #f6f6f3 0%, #eae9e3 100%);
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.129726), 0px 4px 7px rgba(0, 0, 0, 0.11574);
+          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.129726), 0px 4px 7px rgba(0, 0, 0, 0.11574);
+  border-radius: 2rem;
+  border: none;
+  height: 3rem;
+  width: 21.125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  outline: none !important;
+}

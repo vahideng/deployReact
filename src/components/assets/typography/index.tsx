@@ -230,6 +230,7 @@ const SB_11_GREY444 = styled.p`
   font-weight: 600;
   font-size: 0.68rem;
 `;
+
 const R_13_GREY444 = styled.p`
   font-family: "Nunito Sans";
   margin: 0;
@@ -279,6 +280,11 @@ const B_13_GREY444 = styled.p`
   margin: 0;
   color: #444444;
   font-weight: 700;
+`;
+const R_13_GREY969 = styled.p`
+  margin: 0;
+  color: #696969;
+  font-weight: 400;
   font-size: 0.81rem;
 `;
 const B_13_GREY969 = styled.p`
@@ -416,6 +422,7 @@ export default {
   SB_11_GREY444,
   B_13_GREY393,
   R_13_GREY444,
+  R_13_GREY969,
   R_14_GREY444,
   B_13_GREY969,
   B_15_GREY969,
@@ -445,5 +452,5 @@ export default {
   B_15_ORANGE_463,
   R_12_WHITE,
   SB_13_BLACK,
-  XB_11_WHITE
+  XB_11_WHITE,
 };

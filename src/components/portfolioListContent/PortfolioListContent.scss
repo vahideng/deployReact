@@ -1,0 +1,28 @@
+.Item {
+  margin: 0 !important;
+  justify-content: space-between;
+  padding-right: 1.5rem;
+  padding-left: 1.125rem;
+  padding-top: 1rem;
+}
+
+.ButtonContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+.Button {
+  background: linear-gradient(180deg, #f6f6f3 0%, #eae9e3 100%);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.129726),
+    0px 4px 7px rgba(0, 0, 0, 0.11574);
+  border-radius: 2rem;
+  border: none;
+  height: 3rem;
+  width: 21.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none !important;
+}

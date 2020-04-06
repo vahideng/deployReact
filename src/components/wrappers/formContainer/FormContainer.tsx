@@ -34,7 +34,7 @@ const FormContainer: React.FC<Props> = ({
   rightLabel,
   statusIcon,
   tooltip,
-  testId
+  testId,
 }) => {
   const rightLabelPointer: CSSProperties =
     rightLabel !== undefined && rightLabel.onClick !== undefined
@@ -51,7 +51,7 @@ const FormContainer: React.FC<Props> = ({
               icon={!!statusIcon ? statusIcon.icon : ""}
               iconColor={{
                 top: statusIcon.iconColor.top,
-                bottom: statusIcon.iconColor.bottom
+                bottom: statusIcon.iconColor.bottom,
               }}
               image={!!statusIcon ? statusIcon.image : ""}
             />
@@ -62,7 +62,7 @@ const FormContainer: React.FC<Props> = ({
               color={"#FFFFFF"}
               size={58}
               style={{
-                width: "36.31rem"
+                width: "36.31rem",
               }}
             />
           </span>
@@ -77,7 +77,7 @@ const FormContainer: React.FC<Props> = ({
             : {
                 width: "36.31rem",
                 borderTopLeftRadius: 0,
-                borderTopRightRadius: 0
+                borderTopRightRadius: 0,
               }
         }
       >
