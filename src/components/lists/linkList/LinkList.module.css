@@ -1,10 +1,74 @@
-.LinkListItemsDiv {
+.FlexCenter, .FlexLeft, .LabelInner, .FlexRight, .ToggleWrapper, .FlexTop, .FlexBottom, .HeaderWrapper, .LinkListItemsDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.FlexLeft, .LabelInner {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.FlexRight, .ToggleWrapper {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.FlexTop {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.FlexBottom {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.Container {
+  width: 100%;
+}
+
+.HeaderWrapper {
+  min-height: 4.875rem;
+  cursor: pointer;
+}
+
+.LabelWrapper {
+  text-align: left;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.LeftIconWrapper {
+  margin-right: 0.5rem;
+}
+
+.ReadNotification {
+  position: relative;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  background-color: #2694eb;
+  border-radius: 50%;
+  top: -0.3rem;
+  margin-left: 0.5rem;
+}
+
+.LinkListItemsDiv {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -15,4 +79,12 @@
 
 .LinkListIcon {
   margin-right: -0.6rem;
+}
+
+.ToggleIcon {
+  cursor: pointer;
+}
+
+.primaryBtnStyle {
+  margin-top: 24px;
 }

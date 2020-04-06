@@ -1,0 +1,26 @@
+.FlexCenter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.FlexLeft {
+  @extend .FlexCenter;
+  justify-content: flex-start;
+}
+
+.FlexRight {
+  @extend .FlexCenter;
+  justify-content: flex-end;
+}
+
+.FlexTop {
+  @extend .FlexCenter;
+  align-items: flex-start;
+}
+
+.FlexBottom {
+  @extend .FlexCenter;
+  align-items: flex-end;
+}

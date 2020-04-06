@@ -1,6 +1,46 @@
+@import '../../assets/common/common.scss';
+@import '../../assets/common/flex.scss';
+
+.Container {
+  width: 100%;
+}
+
+.HeaderWrapper {
+  @extend .FlexCenter;
+  min-height: 4.875rem;
+  cursor: pointer;
+}
+
+.LabelWrapper {
+  text-align: left;
+  flex: 1;
+}
+
+.LeftIconWrapper {
+  margin-right: 0.5rem;
+}
+
+.LabelInner {
+  @extend .FlexCenter;
+  @extend .FlexLeft;
+}
+
+.ToggleWrapper {
+  @extend .FlexRight;
+}
+
+.ReadNotification {
+  position: relative;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  background-color: $blue269;
+  border-radius: 50%;
+  top: -0.3rem;
+  margin-left: 0.5rem;
+}
+
 .LinkListItemsDiv {
-  display: flex;
-  align-items: center;
+  @extend .FlexCenter;
   justify-content: space-between;
   padding: 1rem 2rem;
   border-top: 1px solid #dedede;
@@ -9,4 +49,12 @@
 
 .LinkListIcon {
   margin-right: -0.6rem;
+}
+
+.ToggleIcon {
+  cursor: pointer;
+}
+
+.primaryBtnStyle {
+  margin-top: 24px;
 }

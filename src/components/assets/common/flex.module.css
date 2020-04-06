@@ -1,4 +1,4 @@
-.FlexCenter, .FlexLeft, .FlexRight, .FlexTop, .FlexBottom, .Options, .OptionWrapper, .ActionWrapper {
+.FlexCenter, .FlexLeft, .FlexRight, .FlexTop, .FlexBottom {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,28 +36,4 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-}
-
-.Title {
-  text-align: center;
-  margin-bottom: 1.5rem !important;
-}
-
-.OptionWrapper, .ActionWrapper {
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 50%;
-  overflow: hidden;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f6f6f3), to(#eae9e3));
-  background: linear-gradient(180deg, #f6f6f3 0%, #eae9e3 100%);
-  -webkit-box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
-  margin-right: 1.5rem;
-}
-
-.Option, .Action {
-  width: 3.64rem;
-  height: 3.64rem;
-  border-radius: 50%;
-  cursor: pointer;
 }

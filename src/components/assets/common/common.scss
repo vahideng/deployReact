@@ -11,6 +11,7 @@ $greyD8D: #d8d8d8;
 $white7F7: #f7f7f7;
 $green03e: #36a03e;
 $green988: #81d988;
+$blue269: #2694eb;
 
 $mainBoxShadow: 1px 0px 5px $grey5E5, -1px 0px 5px $grey5E5,
   0px -1px 5px $grey5E5, 0px 1px 5px $grey5E5;
@@ -22,33 +23,6 @@ $darkBoxShadow: 0px 0px 3px rgba(0, 0, 0, 0.129726),
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-}
-
-.flexCenter {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.flexLeft {
-  @extend .flexCenter;
-  justify-content: flex-start;
-}
-
-.flexRight {
-  @extend .flexCenter;
-  justify-content: flex-end;
-}
-
-.flexTop {
-  @extend .flexCenter;
-  align-items: flex-start;
-}
-
-.flexBottom {
-  @extend .flexCenter;
-  align-items: flex-end;
 }
 
 $HorizontalPadding: 0 18vw;

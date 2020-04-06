@@ -1,47 +1,208 @@
-import React, { ReactNode } from "react";
-import classes from "./LinkList.module.css";
-import Icon from "src/components/assets/icons/icon";
-import Paragraphs from "../../assets/typography";
-const { SB_15_BLACK } = Paragraphs;
-interface Props {
+import React, { ReactNode, useState } from 'react';
+import { Card, Accordion, useAccordionToggle } from 'react-bootstrap';
+import Icon from 'src/components/assets/icons/icon';
+import InputField from 'src/components/inputs/inputFields/InputFields';
+import PrimaryButton from 'src/components/buttons/primaryButton/PrimaryButton';
+import Paragraphs from '../../assets/typography';
+import classes from './LinkList.module.css';
+const { SB_15_BLACK, R_15_BLACK } = Paragraphs;
+
+declare type ListItem = {
+  disabled?: boolean;
+  read?: boolean;
+  label: string;
+  bold?: boolean;
+  subtitle?: any[];
+  backgroundColor?: string;
+  leftBorderColor?: string;
+  leftIcon?: ReactNode;
+  expandable?: boolean;
+  expandableContent?: ReactNode;
+  onListClick?: (item: any) => void;
+  rightItem?: ReactNode;
+  inputProps?: any;
+  buttonProps?: any;
+};
+interface LinkListProps {
   testId?: string;
-  list?: {
-    label: string;
-    onListClick?: () => void;
-    rightItem?: ReactNode;
-  }[];
+  defaultActiveKey?: string;
+  list?: ListItem[];
 }
 
-const LinkList: React.FC<Props> = ({ testId, list }) => {
+const LinkList: React.FC<LinkListProps> = ({
+  testId,
+  list,
+  defaultActiveKey,
+}) => {
   return (
-    <div id={testId}>
-      {!!list &&
-        list.map((item, index) => {
-          return !!item.rightItem ? (
-            <div
-              key={index}
-              className={classes.LinkListItemsDiv}
-              id={`${testId}-0-${index}`}
-            >
-              <SB_15_BLACK>{item.label}</SB_15_BLACK>
-              <div>{item.rightItem}</div>
-            </div>
+    <div id={testId} className={classes.Container}>
+      <Accordion defaultActiveKey={defaultActiveKey}>
+        {list &&
+          list.map((item, index) => {
+            const {
+              disabled,
+              inputProps,
+              buttonProps,
+              expandableContent,
+              leftBorderColor,
+            } = item;
+
+            return (
+              <Card key={index} style={{ borderLeftColor: leftBorderColor }}>
+                <Card.Header>
+                  <AccordionToggle
+                    item={item}
+                    eventKey={`${index}`}
+                    defaultActiveKey={defaultActiveKey}
+                  />
+                </Card.Header>
+                <Accordion.Collapse eventKey={`${index}`}>
+                  <Card.Body>
+                    {expandableContent || (
+                      <div className={classes.EditWrapper}>
+                        <InputField
+                          type="text"
+                          value=""
+                          notValid={false}
+                          handleChange={() => {}}
+                          clearClickHandler={() => {}}
+                          clearIcon={true}
+                          label=""
+                          icon={{ name: 'Lock' }}
+                          errorMessage={{
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          }}
+                          {...{ notValid: disabled, ...inputProps }}
+                        />
+                        <div className={classes.primaryBtnStyle}>
+                          <PrimaryButton
+                            onButtonClick={() => {
+                              window.alert('Button Clicked');
+                            }}
+                            title={'Update'}
+                            titleColor={'#fff'}
+                            buttonColor={{
+                              top: '#BDBDBD',
+                              bottom: '#BDBDBD',
+                            }}
+                            {...buttonProps}
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            );
+          })}
+      </Accordion>
+    </div>
+  );
+};
+
+interface AccordionToggleProps {
+  item: ListItem;
+  eventKey?: string;
+  defaultActiveKey?: string;
+}
+
+const AccordionToggle: React.FC<AccordionToggleProps> = ({
+  item,
+  eventKey,
+  defaultActiveKey,
+}) => {
+  const {
+    expandable,
+    label,
+    read,
+    subtitle = [],
+    bold,
+    onListClick = () => {},
+    leftIcon,
+  } = item;
+  const [isOpen, setIsOpen] = useState(defaultActiveKey === eventKey);
+  const decoratedOnClick = useAccordionToggle(eventKey, () =>
+    console.log('totally custom!')
+  );
+  const handleToggle = (e: any) => {
+    onListClick(item);
+    if (expandable) {
+      setIsOpen(!isOpen);
+      decoratedOnClick(e);
+    }
+  };
+  return (
+    <div className={classes.HeaderWrapper} onClick={handleToggle}>
+      {leftIcon && <div className={classes.LeftIconWrapper}>{leftIcon}</div>}
+      <div className={classes.LabelWrapper}>
+        <div className={classes.LabelInner}>
+          {bold ? (
+            <SB_15_BLACK>{label}</SB_15_BLACK>
           ) : (
-            <div
-              key={index}
-              className={classes.LinkListItemsDiv}
-              onClick={item.onListClick}
-              id={`${testId}-1-${index}`}
-            >
-              <SB_15_BLACK>{item.label}</SB_15_BLACK>
-              <div>
-                <div className={classes.LinkListIcon}>
-                  <Icon icon="Right1" color="#000000" size={27} />
-                </div>
-              </div>
-            </div>
-          );
+            <R_15_BLACK>{label}</R_15_BLACK>
+          )}
+          {!read && <div className={classes.ReadNotification}></div>}
+        </div>
+        {subtitle.map((sub: any, index: number) => {
+          return <R_15_BLACK key={index}>{sub}</R_15_BLACK>;
         })}
+      </div>
+      <div className={classes.ToggleWrapper}>
+        <RightComponent item={item} isOpen={isOpen} />
+      </div>
+    </div>
+  );
+};
+
+interface RightComponentProps {
+  item: ListItem;
+  isOpen?: boolean;
+}
+
+const RightComponent: React.FC<RightComponentProps> = ({ item, isOpen }) => {
+  const { expandable, rightItem } = item;
+  if (expandable) {
+    return (
+      <ExpandIcon
+        testId="link-list-test-toggle"
+        isOpen={isOpen}
+        content={rightItem}
+      />
+    );
+  }
+  return rightItem ? (
+    <>{rightItem}</>
+  ) : (
+    <span className={classes.ToggleIcon}>
+      <Icon icon="Right1" size={22} color="#444444" />
+    </span>
+  );
+};
+interface ExpandIconProps {
+  testId?: string;
+  data?: any;
+  minimize?: boolean;
+  eventKey?: any;
+  content?: any;
+  title?: string;
+  isOpen?: boolean;
+}
+
+const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, isOpen }) => {
+  return (
+    <div className={classes.Content} id={testId}>
+      {isOpen ? (
+        <span className={classes.ToggleIcon}>
+          <Icon icon="system-close-grey" size={12} color="#444444" />
+        </span>
+      ) : (
+        content || (
+          <span className={classes.ToggleIcon}>
+            <Icon icon="arrowDown" size={12} color="#444444" />
+          </span>
+        )
+      )}
     </div>
   );
 };
