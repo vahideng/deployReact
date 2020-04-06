@@ -11,12 +11,9 @@
 }
 
 .mainContainer {
-  padding: 24px 24px 51px 24px;
-  border-radius: 16px;
-  max-width: 699px;
-  width: 100%;
-  padding: 24px;
-  background: #f7f7f7 none repeat scroll 0% 0%;
+  background: ' #F7F7F7';
+  padding: '24px 24px  51px 24px';
+  border-radius: '16px';
 }
 
 .CardContainer {
@@ -41,12 +38,12 @@
 
 .RowContainer {
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-left: 0px;
   padding-right: 0px;
   margin: 0px;
@@ -54,8 +51,8 @@
 
 .CardBodyContent {
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #f7f7f7;
 }
 
