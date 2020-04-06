@@ -3,7 +3,8 @@ import Paragraphs from "../../assets/typography";
 import classes from "./InputField.module.css";
 import Icon from "src/components/assets/icons/icon";
 import InlineMessage from "src/components/infographic/inlineMessage/InlineMessage";
-import Tooltip from "src/components/tooltip/Tooltip"; const { B_13_BLACK } = Paragraphs;
+import Tooltip from "src/components/tooltip/Tooltip";
+const { B_13_BLACK } = Paragraphs;
 interface Props {
   tacInput?: boolean;
   testId?: string;
@@ -54,7 +55,7 @@ class InputField extends Component<Props, {}> {
       onBlur,
       onFocus,
       tacInput,
-      tipChildren
+      tipChildren,
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);
@@ -99,11 +100,11 @@ class InputField extends Component<Props, {}> {
                 ? {
                     width: tacInput ? "34.81rem" : "31.6rem",
                     paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                    boxShadow: "none"
+                    boxShadow: "none",
                   }
                 : {
                     paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                    width: tacInput ? "34.81rem" : "31.6rem"
+                    width: tacInput ? "34.81rem" : "31.6rem",
                   }
             }
             type={type}

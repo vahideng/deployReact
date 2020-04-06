@@ -21,8 +21,8 @@ const Line: React.FC<Props> = ({
   const lineWidth = width !== undefined ? width : "100%";
   const Line = styled.div`
     background-color: ${backgroundColor};
-    height: ${lineHeight};
-    width: ${lineWidth};
+    height: ${lineHeight}px;
+    width: ${lineWidth}px;
   `;
   return <Line id={`${testId}`} style={style} />;
 };

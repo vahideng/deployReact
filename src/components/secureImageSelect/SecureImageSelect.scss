@@ -1,0 +1,39 @@
+@import "../assets/common/common.scss";
+
+.SecureImageSelectContainer {
+}
+
+.Title {
+  text-align: center;
+  margin-bottom: 1.5rem !important;
+}
+
+.Options {
+  @extend .flexCenter;
+}
+
+.OptionWrapper {
+  @extend .flexCenter;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(180deg, $greyF6F 0%, $greyEAE 100%);
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
+  margin-right: 1.5rem;
+}
+
+.Option {
+  width: 3.64rem;
+  height: 3.64rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.ActionWrapper {
+  @extend .OptionWrapper;
+}
+
+.Action {
+  @extend .Option;
+}
