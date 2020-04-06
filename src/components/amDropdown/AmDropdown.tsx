@@ -36,6 +36,7 @@ interface Props {
   onBlur?: (event: FormEvent) => void;
   onFocus?: (event: FormEvent) => void;
   inputClickHandler?:() => void; 
+  max ?: string
 }
 
 class AmDropdown extends Component<Props, {}> {
@@ -77,6 +78,7 @@ class AmDropdown extends Component<Props, {}> {
       showDropdown,
       tacInput,
       inputClickHandler,
+      max,
   clickOnArrow
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
@@ -162,7 +164,7 @@ class AmDropdown extends Component<Props, {}> {
           </div>
 
           {showDropdown ? (
-            <div className={classes.DropdownContent}>
+            <div className={classes.DropdownContent} style={!!max?  {maxHeight : `${max}`} : {maxHeight:  "500px"}}>
               {!!dropdownData &&
                 dropdownData.map(item => {
                   return (
