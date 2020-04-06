@@ -199,6 +199,9 @@ interface ExpandIconProps {
 }
 
 const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, isOpen }) => {
+  if (content) {
+    return <>{content}</>;
+  }
   return (
     <div className={classes.Content} id={testId}>
       {isOpen ? (
@@ -206,11 +209,9 @@ const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, isOpen }) => {
           <Icon icon="system-close-grey" size={12} color="#444444" />
         </span>
       ) : (
-        content || (
-          <span className={classes.ToggleIcon}>
-            <Icon icon="arrowDown" size={12} color="#444444" />
-          </span>
-        )
+        <span className={classes.ToggleIcon}>
+          <Icon icon="arrowDown" size={12} color="#444444" />
+        </span>
       )}
     </div>
   );
