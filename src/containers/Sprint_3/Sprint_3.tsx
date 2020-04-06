@@ -35,6 +35,13 @@ import AmDropdown from "src/components/amDropdown/AmDropdown";
 import BoxId from "src/components/lists/BoxId/BoxId";
 
 
+import SecureImage from 'src/components/secureImage/SecureImage';
+import SecureImageSelect from 'src/components/secureImageSelect/SecureImageSelect';
+import Line from 'src/components/line/Line';
+import LinkList from 'src/components/lists/linkList/LinkList';
+import ToggleButton from 'src/components/buttons/toggleButton/ToggleButton';
+
+
 import AmProfileSetting from 'src/components/amProfileSetting/amProfileSetting';
 import Icon from 'src/components/assets/icons/icon';
 
@@ -85,6 +92,12 @@ const Sprint3: React.FC<Props> = () => {
   const [tacClear, setTacClear] = useState(false);
   const [profileInputValue, setProfileInputValue] = useState('');
   const [buttonColor, setButtonColor] = useState({
+    top: '#BDBDBD',
+    bottom: '#BDBDBD',
+  });
+  const [linkListClear, setLinkListClear] = useState(false);
+  const [linkListInputValue, setLinkListInputValue] = useState('');
+  const [linkListBtnColor, setLinkListBtnColor] = useState({
     top: '#BDBDBD',
     bottom: '#BDBDBD',
   });
@@ -249,6 +262,114 @@ const Sprint3: React.FC<Props> = () => {
           },
         ]}
       />
+       <Title>LinkList</Title>
+      <CenteredDiv style={{ margin: '1.5rem' }}>
+        <LinkList
+          testId="link_list_sprint_3_test"
+          defaultActiveKey="2"
+          list={[
+            {
+              label: 'Show on AmOnline',
+              rightItem: (
+                <ToggleButton
+                  toggleOffLabel="NO"
+                  toggleOnLabel="YES"
+                  value={true}
+                  onTogglePress={() => {}}
+                />
+              ),
+            },
+            { label: 'Change Card PIN' },
+            {
+              label: 'Nickname',
+              leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+              bold: true,
+              onListClick: () => {},
+              expandable: true,
+              subtitle: [
+                'AmBank BonusLink Visa',
+                'AmBank BonusLink Mastercard',
+              ],
+              leftBorderColor: 'red',
+              inputProps: {
+                type: 'text',
+                value: linkListInputValue,
+                notValid: false,
+                handleChange: (e: any) => {
+                  setLinkListInputValue(e.target.value);
+                  setLinkListClear(true);
+                  setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                },
+                clearClickHandler: () => {
+                  setLinkListInputValue('');
+                  setLinkListClear(false);
+                  setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
+                },
+                clearIcon: linkListInputValue ? true : linkListClear,
+                label: '',
+                icon: { name: 'Lock' },
+                errorMessage: {
+                  errorText: 'something wrong',
+                  subText: 'detail error',
+                },
+              },
+              buttonProps: {
+                onButtonClick: () => {
+                  alert('Button Clicked');
+                },
+                title: 'Update',
+                titleColor: '#fff',
+                buttonColor: linkListBtnColor,
+              },
+            },
+            { label: 'Block This Card' },
+            { label: 'Block This Replace This Card' },
+          ]}
+        />
+      </CenteredDiv>
+
+<Title>Secure Image Container</Title>
+      <CenteredDiv>
+        <FormContainer
+          label="Change Security Image"
+          children={
+            <>
+              <CenteredDiv>
+                <SecureImage
+                  testId="secure_image_testid"
+                  image={images.common.SampleSecureImage}
+                />
+              </CenteredDiv>
+              <CenteredDiv>
+                <Line color="#DEDEDE" width={787} height={1} />
+              </CenteredDiv>
+              <CenteredDiv>
+                <SecureImageSelect
+                  testId="secure_image_select_testid"
+                  label="Select your new security image"
+                  images={[
+                    {
+                      uri: images.common.SampleSecureImage,
+                    },
+                    {
+                      uri: images.common.SampleSecureImage,
+                    },
+                    {
+                      uri: images.common.SampleSecureImage,
+                    },
+                    {
+                      uri: images.common.SampleSecureImage,
+                    },
+                    {
+                      uri: images.common.SampleSecureImage,
+                    },
+                  ]}
+                />
+              </CenteredDiv>
+            </>
+          }
+        />
+      </CenteredDiv>
       <Title>ImageModal</Title>
       <CenteredDiv>
         <PrimaryButton
