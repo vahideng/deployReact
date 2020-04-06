@@ -31,16 +31,14 @@ import SelectionTile from 'src/components/selections/selectionTile/SelectionTile
 import BarCode from 'src/components/barCode/barCode';
 import StickyFooter from 'src/components/stickies/stickyFooter/StickyFooter';
 
-import AmDropdown from "src/components/amDropdown/AmDropdown";
-import BoxId from "src/components/lists/BoxId/BoxId";
-
+import AmDropdown from 'src/components/amDropdown/AmDropdown';
+import BoxId from 'src/components/lists/BoxId/BoxId';
 
 import SecureImage from 'src/components/secureImage/SecureImage';
 import SecureImageSelect from 'src/components/secureImageSelect/SecureImageSelect';
 import Line from 'src/components/line/Line';
 import LinkList from 'src/components/lists/linkList/LinkList';
 import ToggleButton from 'src/components/buttons/toggleButton/ToggleButton';
-
 
 import AmProfileSetting from 'src/components/amProfileSetting/amProfileSetting';
 import Icon from 'src/components/assets/icons/icon';
@@ -262,7 +260,7 @@ const Sprint3: React.FC<Props> = () => {
           },
         ]}
       />
-       <Title>LinkList</Title>
+      <Title>LinkList</Title>
       <CenteredDiv style={{ margin: '1.5rem' }}>
         <LinkList
           testId="link_list_sprint_3_test"
@@ -291,28 +289,74 @@ const Sprint3: React.FC<Props> = () => {
                 'AmBank BonusLink Mastercard',
               ],
               leftBorderColor: 'red',
-              inputProps: {
-                type: 'text',
-                value: linkListInputValue,
-                notValid: false,
-                handleChange: (e: any) => {
-                  setLinkListInputValue(e.target.value);
-                  setLinkListClear(true);
-                  setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
+              inputProps: [
+                {
+                  type: 'text',
+                  value: linkListInputValue,
+                  notValid: false,
+                  handleChange: (e: any) => {
+                    setLinkListInputValue(e.target.value);
+                    setLinkListClear(true);
+                    setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                  },
+                  clearClickHandler: () => {
+                    setLinkListInputValue('');
+                    setLinkListClear(false);
+                    setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
+                  },
+                  clearIcon: linkListInputValue ? true : linkListClear,
+                  label: '',
+                  icon: { name: 'Lock' },
+                  errorMessage: {
+                    errorText: 'something wrong',
+                    subText: 'detail error',
+                  },
                 },
-                clearClickHandler: () => {
-                  setLinkListInputValue('');
-                  setLinkListClear(false);
-                  setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
+                {
+                  type: 'text',
+                  value: linkListInputValue,
+                  notValid: false,
+                  handleChange: (e: any) => {
+                    setLinkListInputValue(e.target.value);
+                    setLinkListClear(true);
+                    setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                  },
+                  clearClickHandler: () => {
+                    setLinkListInputValue('');
+                    setLinkListClear(false);
+                    setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
+                  },
+                  clearIcon: linkListInputValue ? true : linkListClear,
+                  label: '',
+                  icon: { name: 'Lock' },
+                  errorMessage: {
+                    errorText: 'something wrong',
+                    subText: 'detail error',
+                  },
                 },
-                clearIcon: linkListInputValue ? true : linkListClear,
-                label: '',
-                icon: { name: 'Lock' },
-                errorMessage: {
-                  errorText: 'something wrong',
-                  subText: 'detail error',
+                {
+                  type: 'text',
+                  value: linkListInputValue,
+                  notValid: false,
+                  handleChange: (e: any) => {
+                    setLinkListInputValue(e.target.value);
+                    setLinkListClear(true);
+                    setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                  },
+                  clearClickHandler: () => {
+                    setLinkListInputValue('');
+                    setLinkListClear(false);
+                    setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
+                  },
+                  clearIcon: linkListInputValue ? true : linkListClear,
+                  label: '',
+                  icon: { name: 'Lock' },
+                  errorMessage: {
+                    errorText: 'something wrong',
+                    subText: 'detail error',
+                  },
                 },
-              },
+              ],
               buttonProps: {
                 onButtonClick: () => {
                   alert('Button Clicked');
@@ -328,7 +372,7 @@ const Sprint3: React.FC<Props> = () => {
         />
       </CenteredDiv>
 
-<Title>Secure Image Container</Title>
+      <Title>Secure Image Container</Title>
       <CenteredDiv>
         <FormContainer
           label="Change Security Image"
@@ -386,7 +430,7 @@ const Sprint3: React.FC<Props> = () => {
           title="Keep your account safe"
           message="We have just changed our password policy. It is good for you to change it now to keep your account secured."
           buttonLabel="Continue"
-          buttonLabelColor={"#FFF"}
+          buttonLabelColor={'#FFF'}
           // buttonColor={{ top: "#FD8585", bottom: "#FF2222" }}
           onButtonClick={() => alert('Continue')}
           // leftButtonLabel="NO"
@@ -475,21 +519,26 @@ const Sprint3: React.FC<Props> = () => {
         }}
       >
         <AmDropdown
-        max ="200px"
+          max="200px"
           readOnly={true}
           disabled={false}
           clickOnArrow={() => setDropdown(!showDropdown)}
           showDropdown={showDropdown}
           dropdownData={[
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" }, { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" }, { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" }, { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" }, { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" }, { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" }
+            { value: 'ambank', label: 'am' },
+            { value: 'Alpeh', label: 'alp' },
+            { value: 'ambank', label: 'am' },
+            { value: 'Alpeh', label: 'alp' },
+            { value: 'ambank', label: 'am' },
+            { value: 'Alpeh', label: 'alp' },
+            { value: 'ambank', label: 'am' },
+            { value: 'Alpeh', label: 'alp' },
+            { value: 'ambank', label: 'am' },
+            { value: 'Alpeh', label: 'alp' },
+            { value: 'ambank', label: 'am' },
+            { value: 'Alpeh', label: 'alp' },
+            { value: 'ambank', label: 'am' },
+            { value: 'Alpeh', label: 'alp' },
           ]}
           notValid={false}
           errorMessage={{
@@ -503,7 +552,7 @@ const Sprint3: React.FC<Props> = () => {
           label="dropdown label"
           icon={{ name: 'Account-2' }}
           value={dropdownValue}
-          handleChange={item => handlerDropdown(item)}
+          handleChange={(item) => handlerDropdown(item)}
         />
       </div>
 
@@ -574,7 +623,7 @@ const Sprint3: React.FC<Props> = () => {
           label="New Password"
           icon={{ name: 'Lock' }}
           value={''}
-          handleChange={event => {
+          handleChange={(event) => {
             alert({
               inputValue: event.target.value,
             });
@@ -681,7 +730,7 @@ const Sprint3: React.FC<Props> = () => {
           searchIconClickHandler={() => alert('Search Icon clicked')}
           placeholder={'Search'}
           value={inputValue}
-          handleChange={event => {
+          handleChange={(event) => {
             setInputValue(event.target.value);
           }}
           autoFocus={false}
@@ -759,7 +808,7 @@ const Sprint3: React.FC<Props> = () => {
               ],
             },
           ]}
-          onFilterOptionClick={obj => alert(JSON.stringify(obj))}
+          onFilterOptionClick={(obj) => alert(JSON.stringify(obj))}
           selectedFilters={[
             {
               label: 'Successful',
@@ -946,50 +995,50 @@ const Sprint3: React.FC<Props> = () => {
             isActive={true}
             list={[
               {
-                leftIcon: { name: "ID-2" },
-                boldText: "ID Number ••••••9876",
-                subText: "Maybank  |  ••••••••4321",
+                leftIcon: { name: 'ID-2' },
+                boldText: 'ID Number ••••••9876',
+                subText: 'Maybank  |  ••••••••4321',
                 notification: true,
                 iconButtons: [
                   {
-                    icon: "Edit",
-                    text: "Edit",
-                    onClick: () => alert("click")
+                    icon: 'Edit',
+                    text: 'Edit',
+                    onClick: () => alert('click'),
                   },
                   {
-                    icon: "delete",
-                    text: "Delete",
-                    onClick: () => alert("click")
+                    icon: 'delete',
+                    text: 'Delete',
+                    onClick: () => alert('click'),
                   },
                   {
-                    icon: "Clear",
-                    text: "Deactivate",
-                    onClick: () => alert("click")
-                  }
-                ]
+                    icon: 'Clear',
+                    text: 'Deactivate',
+                    onClick: () => alert('click'),
+                  },
+                ],
               },
               {
-                leftIcon: { name: "Mobile" },
-                boldText: "Mobile Number ••••••1234",
-                subText: "Ambank  |  ••••••••3463",
+                leftIcon: { name: 'Mobile' },
+                boldText: 'Mobile Number ••••••1234',
+                subText: 'Ambank  |  ••••••••3463',
                 iconButtons: [
                   {
-                    icon: "Edit",
-                    text: "Edit",
-                    onClick: () => alert("click")
+                    icon: 'Edit',
+                    text: 'Edit',
+                    onClick: () => alert('click'),
                   },
                   {
-                    icon: "delete",
-                    text: "Delete",
-                    onClick: () => alert("click")
+                    icon: 'delete',
+                    text: 'Delete',
+                    onClick: () => alert('click'),
                   },
                   {
-                    icon: "Clear",
-                    text: "Deactivate",
-                    onClick: () => alert("click")
-                  }
-                ]
-              }
+                    icon: 'Clear',
+                    text: 'Deactivate',
+                    onClick: () => alert('click'),
+                  },
+                ],
+              },
             ]}
           />
 
@@ -998,27 +1047,27 @@ const Sprint3: React.FC<Props> = () => {
             list={[
               {
                 leftImage:
-                  "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
-                boldText: "Mobile Number ••••••4546",
+                  'https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80',
+                boldText: 'Mobile Number ••••••4546',
 
                 iconButtons: [
                   {
-                    icon: "Edit",
-                    text: "Edit",
-                    onClick: () => alert("click")
+                    icon: 'Edit',
+                    text: 'Edit',
+                    onClick: () => alert('click'),
                   },
                   {
-                    icon: "delete",
-                    text: "Delete",
-                    onClick: () => alert("click")
+                    icon: 'delete',
+                    text: 'Delete',
+                    onClick: () => alert('click'),
                   },
                   {
-                    icon: "Clear",
-                    text: "Deactivate",
-                    onClick: () => alert("click")
-                  }
-                ]
-              }
+                    icon: 'Clear',
+                    text: 'Deactivate',
+                    onClick: () => alert('click'),
+                  },
+                ],
+              },
             ]}
           />
 
@@ -1028,16 +1077,16 @@ const Sprint3: React.FC<Props> = () => {
             list={[
               {
                 leftImage: images.common.Duitnow1,
-                boldText: "DuitNow QR",
-                subText: "Savings Account A  |  ••••••••4321",
+                boldText: 'DuitNow QR',
+                subText: 'Savings Account A  |  ••••••••4321',
                 iconButtons: [
                   {
-                    icon: "Switch",
-                    text: "Change Default Account",
-                    onClick: () => alert("click")
-                  }
-                ]
-              }
+                    icon: 'Switch',
+                    text: 'Change Default Account',
+                    onClick: () => alert('click'),
+                  },
+                ],
+              },
             ]}
           />
         </div>
@@ -1426,7 +1475,7 @@ const Sprint3: React.FC<Props> = () => {
           />
         }
       />
-     <Title>ProfileSetting</Title>
+      <Title>ProfileSetting</Title>
       <CenteredDiv
         style={{
           flexDirection: 'column',
@@ -1568,7 +1617,6 @@ const Sprint3: React.FC<Props> = () => {
           }
         />
       </CenteredDiv>
-  
     </div>
   );
 };

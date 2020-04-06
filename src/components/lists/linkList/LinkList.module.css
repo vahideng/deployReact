@@ -85,6 +85,10 @@
   cursor: pointer;
 }
 
+.InputWrapper {
+  margin-bottom: 0.5rem;
+}
+
 .primaryBtnStyle {
   margin-top: 24px;
 }
