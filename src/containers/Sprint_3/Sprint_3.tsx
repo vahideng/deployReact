@@ -1488,13 +1488,14 @@ const Sprint3: React.FC<Props> = () => {
           testId={'testId'}
           profilePicImage={''}
           ProfilePicBgColor={'#2694EB'}
+          profile_name={'Adam_1234'}
+          profile_login_history={'Last login on 2 Feb 2020 at 03:09pm'}
           editIcon={<Icon icon={'Right1'} size={20} color={'#000000'} />}
           data={[
             {
               profile_data: {
                 title: 'Full Name',
-                showIcon: false,
-                showAccordion: false,
+                showAccordion: true,
                 subtitle: [
                   {
                     content: 'Adam Jake',
@@ -1502,9 +1503,46 @@ const Sprint3: React.FC<Props> = () => {
                   {
                     content: 'aslam Furich',
                   },
+                  {
+                    content: 'Furich',
+                  },
                 ],
                 children: (
                   <div>
+                    <InputField
+                      notValid={false}
+                      errorMessage={{
+                        testId: 'testId',
+                        errorText: 'The Input Field is wrong',
+                        subText: 'Please try again.',
+                      }}
+                      type="text"
+                      clearClickHandler={() => {
+                        setLinkListInputValue('');
+                        setLinkListClear(false);
+                        setLinkListBtnColor({
+                          top: '#BDBDBD',
+                          bottom: '#BDBDBD',
+                        });
+                      }}
+                      clearIcon={profileInputValue === '' ? tacClear : true}
+                      label=""
+                      icon={{ name: 'Lock', color: 'red' }}
+                      value={profileInputValue}
+                      handleChange={e => {
+                        setProfileInputValue(e.target.value);
+                        setTacClear(true);
+                        setButtonColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                      }}
+                    />
+                    <div style={{ marginTop: '24px' }}>
+                      <PrimaryButton
+                        title="Continue"
+                        titleColor="#ffffff"
+                        buttonColor={buttonColor}
+                        onButtonClick={() => {}}
+                      />
+                    </div>
                     <InputField
                       notValid={false}
                       errorMessage={{
@@ -1546,7 +1584,6 @@ const Sprint3: React.FC<Props> = () => {
             {
               profile_data: {
                 title: 'Nickname',
-                showIcon: true,
                 showAccordion: true,
                 subtitle: [
                   {
@@ -1598,7 +1635,6 @@ const Sprint3: React.FC<Props> = () => {
             {
               profile_data: {
                 title: 'Mobile Number',
-                showIcon: false,
                 showAccordion: false,
                 subtitle: [
                   {
@@ -1611,7 +1647,6 @@ const Sprint3: React.FC<Props> = () => {
               profile_data: {
                 title: 'Mailing Address',
                 showAccordion: false,
-                showIcon: false,
                 subtitle: [
                   {
                     content:
@@ -1624,7 +1659,6 @@ const Sprint3: React.FC<Props> = () => {
               profile_data: {
                 showAccordion: true,
                 title: 'Email',
-                showIcon: true,
                 subtitle: [
                   {
                     content: '*******5678@gmail.com',

@@ -13,7 +13,6 @@ interface ProfileItemProps {
 
 interface itemProps {
   title: string;
-  showIcon: boolean;
   subtitle: contentType[];
   children?: ReactNode;
   showAccordion: boolean;
@@ -27,7 +26,6 @@ interface ProfileSettingProps {
   testId: string;
   eventKey?: any;
   content?: string;
-  showIcon?: boolean;
   clearIcon?: boolean;
   openAccordionIcon?: { name?: string; color?: string; size?: number };
   closeAccordionIcon?: { name?: string; color?: string; size?: number };
@@ -38,6 +36,8 @@ interface ProfileSettingProps {
   onEditClickHandler: () => void;
   fullName: string;
   data?: ProfileItemProps[];
+  profile_name: string;
+  profile_login_history: string;
 }
 
 const AmProfileSetting: React.FC<ProfileSettingProps> = ({
@@ -51,6 +51,8 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
   fullName,
   openAccordionIcon,
   closeAccordionIcon,
+  profile_login_history,
+  profile_name,
 }) => {
   const {
     CardOuterContainer,
@@ -72,10 +74,10 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
           fullName={fullName}
         />
         <div className={cardUserDetails}>
-          <B_32_BLACK>Adam_1234</B_32_BLACK>
+          <B_32_BLACK>{profile_name}</B_32_BLACK>
         </div>
         <div className={cardLastLogin}>
-          <R_15_BLACK>Last login on 2 Feb 2020 at 03:06pm</R_15_BLACK>
+          <R_15_BLACK>{profile_login_history}</R_15_BLACK>
         </div>
         <Card.Body className={CardBody}>
           {data.map((item: any, index: any) => {
@@ -108,7 +110,9 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
                           <CustomToggle
                             eventKey={`${index}`}
                             content={item.profile_data.title}
-                            showIcon={item.flag || item.profile_data.showIcon}
+                            showAccordion={
+                              item.flag || item.profile_data.showAccordion
+                            }
                             openAccordionIcon={openAccordionIcon}
                             closeAccordionIcon={closeAccordionIcon}
                           />
@@ -140,7 +144,7 @@ interface Props {
   eventKey?: any;
   content?: string;
   title?: string;
-  showIcon?: boolean;
+  showAccordion?: boolean;
   openAccordionIcon?: { name?: string; color?: string; size?: number };
   closeAccordionIcon?: { name?: string; color?: string; size?: number };
 }
@@ -148,9 +152,9 @@ interface Props {
 const CustomToggle: React.FC<Props> = ({
   eventKey,
   testId,
-  showIcon,
   openAccordionIcon,
   closeAccordionIcon,
+  showAccordion,
 }) => {
   const decoratedOnClick = useAccordionToggle(eventKey, () => null);
   const [isOpen, setIsOpen] = React.useState(false);
@@ -165,7 +169,7 @@ const CustomToggle: React.FC<Props> = ({
       onClick={e => accordianClickHandler(e)}
       id={`${testId}-0`}
     >
-      {showIcon ? (
+      {showAccordion ? (
         isOpen ? (
           <span className={classes.TransListIcon}>
             <Icon
