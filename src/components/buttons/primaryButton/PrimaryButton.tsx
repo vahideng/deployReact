@@ -28,7 +28,7 @@ const PrimaryButton: React.FC<Props> = ({
   small,
   icon = { name: "", color: "" },
   shadowed,
-  titleStyle
+  titleStyle,
 }) => {
   return !small ? (
     <div id={testId}>
@@ -42,7 +42,9 @@ const PrimaryButton: React.FC<Props> = ({
                 background: `linear-gradient(180deg, ${buttonColor.top} 0%,  ${buttonColor.bottom} 100%)`,
                 height: height,
                 minWidth: width ? width : "14rem",
-                boxShadow: shadowed ? "0px 4px 9px rgba(0, 0, 0, 0.140925)" : ""
+                boxShadow: shadowed
+                  ? "0px 4px 9px rgba(0, 0, 0, 0.140925)"
+                  : "",
               }
             : { minWidth: width ? width : "14rem" }
         }
@@ -76,7 +78,7 @@ const PrimaryButton: React.FC<Props> = ({
           !!buttonColor || width
             ? {
                 background: `linear-gradient(180deg, ${buttonColor.top} 0%,  ${buttonColor.bottom} 100%)`,
-                width: width
+                width: width,
               }
             : {}
         }
