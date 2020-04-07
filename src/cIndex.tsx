@@ -86,11 +86,17 @@ import StickyFooter from "./components/stickies/stickyFooter/StickyFooter";
 import SimpleHeader from "./components/headers/simpleHeader/SimpleHeader";
 import PortfolioList from "./components/lists/PortfolioList/PortfolioList";
 import DashboardCart from "./components/dashboardCart/DashboardCart";
+import LabelToolTip from "./components/labelToolTip/LabelToolTip";
+import BoxId from "./components/lists/BoxId/BoxId";
+import TooltipDropdown from "./components/tooltipDropdown/TooltipDropdown";
 
 /// exports
 export {
   ////
   /// below are sprint-3 components
+  TooltipDropdown,
+  BoxId,
+  LabelToolTip,
   HeaderWithIButtons,
   HeaderWithIcons,
   PieChartBox,
@@ -175,5 +181,5 @@ export {
   Logo,
   LabeledIcon,
   StatusIcon,
-  TileListView
+  TileListView,
 };

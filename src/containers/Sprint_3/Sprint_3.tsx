@@ -44,6 +44,8 @@ import AmProfileSetting from "src/components/amProfileSetting/amProfileSetting";
 import Icon from "src/components/assets/icons/icon";
 import PortfolioList from "src/components/lists/PortfolioList/PortfolioList";
 import PortfolioListContent from "src/components/portfolioListContent/PortfolioListContent";
+import TooltipDropdown from "src/components/tooltipDropdown/TooltipDropdown";
+import TransactionLimitList from "src/components/lists/TransactionLimitList/TransactionLimitList";
 
 import AmAccordion from "src/components/amAccordion/AmAccordion";
 import AmListItem from "src/components/amListItem/AmListItem";
@@ -104,6 +106,7 @@ const Sprint3: React.FC<Props> = () => {
     top: "#BDBDBD",
     bottom: "#BDBDBD",
   });
+  const [hiddenList, setHiddenList] = useState(true);
 
   const handlerDropdown = (item: any) => {
     console.log(item, "dropdownValue");
@@ -439,6 +442,74 @@ const Sprint3: React.FC<Props> = () => {
           tipChildren={<div>tip</div>}
         />
       </CenteredDiv>
+      <Title>TransactionLimitList Hidden</Title>
+      <div style={{ width: "60vw", margin: "auto" }}>
+        <TransactionLimitList
+          list={[
+            {
+              notify: true,
+              label: "AmBank BonusLink Visa BlackGold",
+              subDetail: "7565 8767 5821 5409",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+
+              cardImg: LocalImages.common.card,
+              hidden: hiddenList,
+              onHiddenButtonClick: () => {
+                setHiddenList(false);
+              },
+            },
+            {
+              label: "Change Password",
+              subDetail: "Password last change: 0 day ago",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+              hidden: hiddenList,
+              onHiddenButtonClick: () => {
+                setHiddenList(false);
+              },
+            },
+            {
+              label: "Investments",
+              subDetail: "Password last change: 0 day ago",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+              cardImg: images.common.Duitnow1,
+              cardImgStyle: { height: 30, width: 30 },
+              hidden: hiddenList,
+              onHiddenButtonClick: () => {
+                setHiddenList(false);
+              },
+            },
+            {
+              label: "Online Shopping",
+
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+              rightLabelColor: "green",
+              rightLabel: "Default",
+              hidden: hiddenList,
+              onHiddenButtonClick: () => {
+                setHiddenList(false);
+              },
+            },
+            {
+              label: "FPX Specific Merchant",
+              subDetail: "Password last change: 0 day ago",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+              rightLabelColor: "#000000",
+              rightLabel: "Show",
+              hidden: hiddenList,
+              onHiddenButtonClick: () => {
+                setHiddenList(false);
+              },
+            },
+          ]}
+          testId="testId"
+        />
+      </div>
+
       <Title>LinkList</Title>
       <CenteredDiv style={{ margin: "1.5rem" }}>
         <LinkList
@@ -666,7 +737,10 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         />
       </CenteredDiv>
-
+      <Title>line</Title>
+      <div>
+        <Line testId={"testId"} />
+      </div>
       <Title>Secure Image Container</Title>
       <CenteredDiv>
         <FormContainer
@@ -679,9 +753,9 @@ const Sprint3: React.FC<Props> = () => {
                   image={images.common.SampleSecureImage}
                 />
               </CenteredDiv>
-              <CenteredDiv>
-                <Line color="#DEDEDE" width={787} height={1} />
-              </CenteredDiv>
+
+              <Line testId={"testId"} />
+
               <CenteredDiv>
                 <SecureImageSelect
                   testId="secure_image_select_testid"
@@ -954,7 +1028,6 @@ const Sprint3: React.FC<Props> = () => {
             errorText: "The TAC is incorrect",
             subText: "Please try again.",
           }}
-          type="text"
           inputClickHandler={() => setDropdown(!showDropdown)}
           arrowIcon={true}
           label="dropdown label"
@@ -1381,7 +1454,7 @@ const Sprint3: React.FC<Props> = () => {
       <Title>Sticky Footer</Title>
       <CenteredDiv>
         <PrimaryButton
-          title={"open Sticky Footer"}
+          title={"Open Sticky Footer"}
           onButtonClick={() => {
             setStickyFooter(!stickyFooter);
           }}
@@ -1500,7 +1573,28 @@ const Sprint3: React.FC<Props> = () => {
           />
         </div>
       </CenteredDiv>
-
+      <Title>TooltipDropdown</Title>
+      <CenteredDiv>
+        <TooltipDropdown
+          iconButtons={[
+            {
+              icon: "Edit",
+              text: "Edit",
+              onClick: () => alert("click"),
+            },
+            {
+              icon: "delete",
+              text: "Delete",
+              onClick: () => alert("click"),
+            },
+            {
+              icon: "Clear",
+              text: "Deactivate",
+              onClick: () => alert("click"),
+            },
+          ]}
+        />
+      </CenteredDiv>
       <Title>Text With Details</Title>
       <div
         style={{
