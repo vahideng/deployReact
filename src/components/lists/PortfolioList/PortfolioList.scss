@@ -27,6 +27,26 @@
   padding-left: 0.25rem;
 }
 
+.BothIcon{
+  display:flex; 
+  flex-direction:column-reverse;
+}
+
+
+.BothIcon div:nth-child(2){
+ height: 9px;
+}
+
+.ArrowDown {
+
+  cursor: pointer;
+}
+
+.ArrowUp {
+
+  cursor: pointer;
+}
+
 .LeftItemContainer {
   display: flex;
   flex-direction: column;

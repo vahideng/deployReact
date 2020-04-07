@@ -31,6 +31,28 @@
   padding-left: 0.25rem;
 }
 
+.BothIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.BothIcon div:nth-child(2) {
+  height: 9px;
+}
+
+.ArrowDown {
+  cursor: pointer;
+}
+
+.ArrowUp {
+  cursor: pointer;
+}
+
 .LeftItemContainer {
   display: -webkit-box;
   display: -ms-flexbox;

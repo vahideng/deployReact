@@ -23,7 +23,7 @@ const IconButtons: React.FC<Props> = ({
   list,
   selected,
   onButtonClick,
-  testId
+  testId,
 }) => {
   return (
     <div id={testId}>
@@ -49,7 +49,7 @@ const IconButtons: React.FC<Props> = ({
                   color={!!item.icon.color ? item.icon.color : "#ff2626"}
                 />
               </div>
-              <div>
+              <div className={classes.TextWrapper}>
                 {selected === index ? (
                   <B_13_BLACK className={classes.IconButtonsText}>
                     {item.text}

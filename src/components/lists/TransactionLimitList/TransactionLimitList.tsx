@@ -1,92 +1,127 @@
-import React from 'react';
-import classes from './TransactionLimitList.module.css';
-import Paragraphs from '../../assets/typography';
-import Icon from 'src/components/assets/icons/icon';
-import { Col, Row } from 'react-bootstrap';
-import { Image } from 'react-bootstrap';
-import { Notify } from '../../assets/common/notification';
-const { R_15_BLACK, R_12_BLACK } = Paragraphs;
+import React from "react";
+import classes from "./TransactionLimitList.module.css";
+import Paragraphs from "../../assets/typography";
+import Icon from "src/components/assets/icons/icon";
+
+import { Notify } from "../../assets/common/notification";
+import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
+const { B_15_BLACK, R_12_BLACK } = Paragraphs;
 
 interface ITransactionLimitList {
   label: string;
   subDetail?: string;
   onClick: (item: ITransactionLimitList, index: number) => void;
   icon?: { name: string; size: number; color: string };
-  rightLabelcolor?: string;
-  allowRightLabelText?: boolean;
+  rightLabelColor?: string;
   rightLabel?: string;
-  allowbtnWithIconText?: boolean;
-  allowCardImg?: boolean;
-  allowGreyTextCardImg?: boolean;
-  allowGreyText?: boolean;
   notify?: boolean;
   cardImg?: string;
+  cardImgStyle?: {
+    height: number;
+    width: number;
+  };
+  hidden?: boolean;
+  onHiddenButtonClick?: () => void;
+  hiddenBtnLabel?: string;
 }
 
 interface Props {
   list: ITransactionLimitList[];
   testId?: string;
-  cardImgStyle?: {
-    height: number;
-    width: number;
-  };
 }
 
-const TransactionLimitList: React.FC<Props> = ({
-  list,
-  testId,
-  cardImgStyle,
-}: Props) => {
+const TransactionLimitList: React.FC<Props> = ({ list, testId }: Props) => {
   return (
     <div className={classes.ListContainer} id={`${testId}`}>
       {list &&
-        list.map((item, index) => (
-          <div
-            className={classes.ItemContainer}
-            id={`${testId}-${index}`}
-            key={index}
-            onClick={() => item.onClick(item, index)}
-          >
-            <Col className={classes.columnView}>
-              <Row>
-                {item.allowGreyTextCardImg &&
-                  item.allowCardImg &&
-                  !!item.cardImg && (
-                    <Image
+        list.map((item, index) =>
+          item.hidden ? (
+            <div
+              className={classes.ItemContainer}
+              id={`${testId}-${index}`}
+              key={index}
+              onClick={() => item.onClick(item, index)}
+            >
+              <div style={{ opacity: "0.5" }}>
+                <div className={classes.ImageContainer}>
+                  {!!item.cardImg && (
+                    <img
                       src={item.cardImg}
-                      alt="Image"
-                      rounded
-                      style={cardImgStyle}
+                      alt="CardImage"
+                      style={item.cardImgStyle}
                       className={classes.TransactionImg}
                     />
                   )}
 
-                <Col>
-                  <Row>
-                    <R_15_BLACK className={classes.itemLabel}>
-                      {item.label}
-                    </R_15_BLACK>
+                  <div className={classes.TextContainer}>
+                    <B_15_BLACK>{item.label}</B_15_BLACK>
                     {item.notify && <Notify className={classes.notify} />}
-                  </Row>
-                  {item.allowGreyTextCardImg && item.allowGreyText && (
-                    <R_12_BLACK style={{ marginTop: 4 }}>
+                    {item.subDetail && (
+                      <R_12_BLACK style={{ marginTop: 5 }}>
+                        {item.subDetail}
+                      </R_12_BLACK>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <PrimaryButton
+                testId={`${testId}-1`}
+                title={item.hiddenBtnLabel ? item.hiddenBtnLabel : "Show"}
+                titleStyle={{
+                  color: "#000000",
+                  fontSize: "11px",
+                  margin: "2px 0 0 3px",
+                }}
+                onButtonClick={item.onHiddenButtonClick}
+                icon={{ name: "field-open-eye", size: 15, color: "#000000" }}
+                buttonColor={{ top: "#F6F6F3", bottom: "#EAE9E3" }}
+                width={"7.4rem"}
+                height="2rem"
+              />
+            </div>
+          ) : (
+            <div
+              className={classes.ItemContainer}
+              id={`${testId}-${index}`}
+              key={index}
+              onClick={() => item.onClick(item, index)}
+            >
+              <div className={classes.ImageContainer}>
+                {!!item.cardImg && (
+                  <img
+                    src={item.cardImg}
+                    alt="CardImage"
+                    style={item.cardImgStyle}
+                    className={classes.TransactionImg}
+                  />
+                )}
+
+                <div className={classes.TextContainer}>
+                  <B_15_BLACK>
+                    {item.label}
+                    {item.notify && <Notify className={classes.notify} />}
+                  </B_15_BLACK>
+
+                  {item.subDetail && (
+                    <R_12_BLACK style={{ marginTop: 5 }}>
                       {item.subDetail}
                     </R_12_BLACK>
                   )}
-                </Col>
-              </Row>
-            </Col>
+                </div>
+              </div>
+              <div className={classes.rightLabelDiv}>
+                {item.rightLabel && (
+                  <B_15_BLACK style={{ color: item.rightLabelColor }}>
+                    {item.rightLabel}
+                  </B_15_BLACK>
+                )}
 
-            {item.allowbtnWithIconText && item.allowRightLabelText && (
-              <R_15_BLACK style={{ color: item.rightLabelcolor }}>
-                {item.rightLabel}
-              </R_15_BLACK>
-            )}
-            {item.allowbtnWithIconText && (
-              <Icon icon="Right1" color="#000" size={28} />
-            )}
-          </div>
-        ))}
+                {<Icon icon="Right1" color="#000" size={28} />}
+              </div>
+            </div>
+          )
+        )}
     </div>
   );
 };

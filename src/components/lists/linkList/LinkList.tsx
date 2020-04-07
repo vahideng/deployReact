@@ -60,6 +60,7 @@ const LinkList: React.FC<LinkListProps> = ({
                 {expandable ? (
                   <Accordion.Collapse eventKey={`${index}`}>
                     <Card.Body>
+                 
                       {!expandableContent ? (
                         <div className={classes.EditWrapper}>
                           {inputProps &&

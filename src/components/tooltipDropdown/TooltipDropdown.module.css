@@ -1,0 +1,43 @@
+.Icon {
+  cursor: pointer;
+}
+
+.MainDiv {
+  position: relative;
+  width: 2rem;
+}
+
+.BoxDiv {
+  position: absolute;
+  right: 1rem;
+  top: 2.6rem;
+  width: 10rem;
+  border-radius: 5px;
+  height: auto;
+  z-index: 100;
+  background-color: #ffffff;
+  -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+          box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+}
+
+.ButtonIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.ButtonIcon:hover {
+  background-color: #f1f1f1;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+}
+
+.ButtonIconText {
+  padding-top: 0.2rem;
+  padding-left: 0.5rem;
+}

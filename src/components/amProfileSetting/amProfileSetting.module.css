@@ -70,3 +70,7 @@
 .cardLastLogin {
   margin-bottom: 41px;
 }
+
+.TransListIcon {
+  cursor: pointer;
+}

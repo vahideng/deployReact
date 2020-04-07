@@ -32,17 +32,13 @@ const BannerHero: React.FC<Props> = ({
 
   showButton,
   testId,
-  title
+  title,
 }: Props) => {
-  
-
   return (
     <div id={`${testId}`}>
       <Row>
         <Col xs={12} sm={6} style={{ padding: "0" }}>
-          
-            <img className={classes.ImageContainer} src={leftImage} />
-
+          <img className={classes.ImageContainer} src={leftImage} />
         </Col>
         <Col xs={12} sm={6} className={classes.Container}>
           <SB_15_BLACK style={{ textTransform: "uppercase" }}>
@@ -57,7 +53,7 @@ const BannerHero: React.FC<Props> = ({
               <Col xs={12} sm={6} className={classes.Button}>
                 <PrimaryButton
                   testId={`${testId}-0`}
-                  buttonColor={!!buttonColor}
+                  buttonColor={buttonColor}
                   title={buttonText}
                   onButtonClick={buttonClick}
                   height="3.125rem"
