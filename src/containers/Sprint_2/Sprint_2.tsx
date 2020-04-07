@@ -355,6 +355,7 @@ const Sprint2: React.FC<Props> = () => {
                 allowGreyTextCardImg: true,
                 allowGreyText: true,
                 cardImg: LocalImages.common.card,
+                notify: true,
               },
               {
                 label: 'Change Password',
