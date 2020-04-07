@@ -43,6 +43,7 @@ const LinkList: React.FC<LinkListProps> = ({
               disabled,
               inputProps = [{}],
               buttonProps,
+              expandable,
               expandableContent,
               leftBorderColor,
             } = item;
@@ -56,52 +57,57 @@ const LinkList: React.FC<LinkListProps> = ({
                     defaultActiveKey={defaultActiveKey}
                   />
                 </Card.Header>
-                <Accordion.Collapse eventKey={`${index}`}>
-                  <Card.Body>
-                    {!expandableContent ? (
-                      <div className={classes.EditWrapper}>
-                        {inputProps &&
-                          inputProps.map((input: any, index: number) => {
-                            return (
-                              <div key={index} className={classes.InputWrapper}>
-                                <InputField
-                                  type="text"
-                                  value=""
-                                  notValid={false}
-                                  handleChange={() => {}}
-                                  clearClickHandler={() => {}}
-                                  clearIcon={true}
-                                  label=""
-                                  icon={{ name: 'Lock' }}
-                                  errorMessage={{
-                                    errorText: 'something wrong',
-                                    subText: 'detail error',
-                                  }}
-                                  {...{ notValid: disabled, ...input }}
-                                />
-                              </div>
-                            );
-                          })}
-                        <div className={classes.primaryBtnStyle}>
-                          <PrimaryButton
-                            onButtonClick={() => {
-                              window.alert('Button Clicked');
-                            }}
-                            title={'Update'}
-                            titleColor={'#fff'}
-                            buttonColor={{
-                              top: '#BDBDBD',
-                              bottom: '#BDBDBD',
-                            }}
-                            {...buttonProps}
-                          />
+                {expandable ? (
+                  <Accordion.Collapse eventKey={`${index}`}>
+                    <Card.Body>
+                      {!expandableContent ? (
+                        <div className={classes.EditWrapper}>
+                          {inputProps &&
+                            inputProps.map((input: any, index: number) => {
+                              return (
+                                <div
+                                  key={index}
+                                  className={classes.InputWrapper}
+                                >
+                                  <InputField
+                                    type="text"
+                                    value=""
+                                    notValid={false}
+                                    handleChange={() => {}}
+                                    clearClickHandler={() => {}}
+                                    clearIcon={true}
+                                    label=""
+                                    icon={{ name: 'Lock' }}
+                                    errorMessage={{
+                                      errorText: 'something wrong',
+                                      subText: 'detail error',
+                                    }}
+                                    {...{ notValid: disabled, ...input }}
+                                  />
+                                </div>
+                              );
+                            })}
+                          <div className={classes.primaryBtnStyle}>
+                            <PrimaryButton
+                              onButtonClick={() => {
+                                window.alert('Button Clicked');
+                              }}
+                              title={'Update'}
+                              titleColor={'#fff'}
+                              buttonColor={{
+                                top: '#BDBDBD',
+                                bottom: '#BDBDBD',
+                              }}
+                              {...buttonProps}
+                            />
+                          </div>
                         </div>
-                      </div>
-                    ) : (
-                      <>{expandableContent}</>
-                    )}
-                  </Card.Body>
-                </Accordion.Collapse>
+                      ) : (
+                        <>{expandableContent}</>
+                      )}
+                    </Card.Body>
+                  </Accordion.Collapse>
+                ) : null}
               </Card>
             );
           })}
@@ -199,6 +205,9 @@ interface ExpandIconProps {
 }
 
 const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, isOpen }) => {
+  if (content) {
+    return <>{content}</>;
+  }
   return (
     <div className={classes.Content} id={testId}>
       {isOpen ? (
@@ -206,11 +215,9 @@ const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, isOpen }) => {
           <Icon icon="system-close-grey" size={12} color="#444444" />
         </span>
       ) : (
-        content || (
-          <span className={classes.ToggleIcon}>
-            <Icon icon="arrowDown" size={12} color="#444444" />
-          </span>
-        )
+        <span className={classes.ToggleIcon}>
+          <Icon icon="arrowDown" size={12} color="#444444" />
+        </span>
       )}
     </div>
   );
