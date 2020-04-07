@@ -563,7 +563,10 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         />
       </CenteredDiv>
-
+      <Title>line</Title>
+      <div>
+        <Line testId={"testId"} />
+      </div>
       <Title>Secure Image Container</Title>
       <CenteredDiv>
         <FormContainer
@@ -576,9 +579,9 @@ const Sprint3: React.FC<Props> = () => {
                   image={images.common.SampleSecureImage}
                 />
               </CenteredDiv>
-              <CenteredDiv>
-                <Line color="#DEDEDE" width={787} height={1} />
-              </CenteredDiv>
+
+              <Line testId={"testId"} />
+
               <CenteredDiv>
                 <SecureImageSelect
                   testId="secure_image_select_testid"
@@ -851,7 +854,6 @@ const Sprint3: React.FC<Props> = () => {
             errorText: "The TAC is incorrect",
             subText: "Please try again.",
           }}
-          type="text"
           inputClickHandler={() => setDropdown(!showDropdown)}
           arrowIcon={true}
           label="dropdown label"
