@@ -90,7 +90,7 @@ const Sprint3: React.FC<Props> = () => {
   const [sTileNum3, setSTileNum3] = useState(1);
   const [stickyFooter, setStickyFooter] = useState(false);
   const [showDropdown, setDropdown] = useState(false);
-  const [dropdownValue, setDropdownValue] = useState('anything');
+  const [dropdownValue, setDropdownValue] = useState('');
   const [tacClear, setTacClear] = useState(false);
   const [profileInputValue, setProfileInputValue] = useState('');
   const [buttonColor, setButtonColor] = useState({
@@ -661,6 +661,7 @@ const Sprint3: React.FC<Props> = () => {
           icon={{ name: 'Account-2' }}
           value={dropdownValue}
           handleChange={(item) => handlerDropdown(item)}
+          placeholder = "place holder"
         />
       </div>
 
