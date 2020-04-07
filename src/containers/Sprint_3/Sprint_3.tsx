@@ -283,83 +283,199 @@ const Sprint3: React.FC<Props> = () => {
             },
             { label: 'Change Card PIN' },
             {
-              label: 'Nickname',
+              label: 'Nickname', // change Lastname
               leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
-              bold: true,
-              onListClick: () => {},
-              expandable: true,
+              bold: true, // chang false
+              onListClick: (item: any) => {
+                window.alert(`clicked on item ${item.label}`);
+                // window.alert(`ITEM NAME:::: ${item.label}`)
+              },
+              // rightItem: (
+              //   <ToggleButton
+              //     toggleOffLabel="NO"
+              //     toggleOnLabel="YES"
+              //     value={true}
+              //     onTogglePress={() => {}}
+              //   />
+              // ), // change
+              expandable: true, // change false
               subtitle: [
                 'AmBank BonusLink Visa',
-                'AmBank BonusLink Mastercard',
+                'AmBank BonusLink Mastercard', // change
+                // 'Another line of subtitle'
               ],
-              leftBorderColor: 'red',
+              leftBorderColor: 'red', // change green
               inputProps: [
                 {
-                  type: 'text',
+                  type: 'text', // change number
                   value: linkListInputValue,
-                  notValid: false,
+                  notValid: false, // change true
                   handleChange: (e: any) => {
+                    // window.alert(`text change: ${e.target.value}`)
                     setLinkListInputValue(e.target.value);
                     setLinkListClear(true);
                     setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
                   },
                   clearClickHandler: () => {
+                    // window.alert(`clear change`)
                     setLinkListInputValue('');
                     setLinkListClear(false);
                     setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
                   },
-                  clearIcon: linkListInputValue ? true : linkListClear,
-                  label: '',
-                  icon: { name: 'Lock' },
+                  clearIcon: linkListInputValue ? true : linkListClear, // change false
+                  label: '', // change Test Input
+                  icon: { name: 'Lock' }, // change Amy
                   errorMessage: {
                     errorText: 'something wrong',
                     subText: 'detail error',
                   },
                 },
+                // {
+                //   type: 'text',
+                //   value: linkListInputValue,
+                //   notValid: false,
+                //   handleChange: (e: any) => {
+                //     setLinkListInputValue(e.target.value);
+                //     setLinkListClear(true);
+                //     setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                //   },
+                //   clearClickHandler: () => {
+                //     setLinkListInputValue('');
+                //     setLinkListClear(false);
+                //     setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
+                //   },
+                //   clearIcon: linkListInputValue ? true : linkListClear,
+                //   label: '',
+                //   icon: { name: 'Lock' },
+                //   errorMessage: {
+                //     errorText: 'something wrong',
+                //     subText: 'detail error',
+                //   },
+                // },
+                // {
+                //   type: 'text',
+                //   value: linkListInputValue,
+                //   notValid: false,
+                //   handleChange: (e: any) => {
+                //     setLinkListInputValue(e.target.value);
+                //     setLinkListClear(true);
+                //     setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                //   },
+                //   clearClickHandler: () => {
+                //     setLinkListInputValue('');
+                //     setLinkListClear(false);
+                //     setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
+                //   },
+                //   clearIcon: linkListInputValue ? true : linkListClear,
+                //   label: '',
+                //   icon: { name: 'Lock' },
+                //   errorMessage: {
+                //     errorText: 'something wrong',
+                //     subText: 'detail error',
+                //   },
+                // },
+              ],
+              buttonProps: {
+                onButtonClick: () => {
+                  alert('Button Clicked');
+                },
+                title: 'Update',
+                titleColor: '#fff',
+                buttonColor: linkListBtnColor,
+              },
+            },
+            {
+              label: 'Nickname', // change Lastname
+              leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+              bold: true, // chang false
+              onListClick: (item: any) => {
+                window.alert(`clicked on item ${item.label}`);
+                // window.alert(`ITEM NAME:::: ${item.label}`)
+              },
+              // rightItem: (
+              //   <ToggleButton
+              //     toggleOffLabel="NO"
+              //     toggleOnLabel="YES"
+              //     value={true}
+              //     onTogglePress={() => {}}
+              //   />
+              // ), // change
+              expandable: true, // change false
+              subtitle: [
+                'AmBank BonusLink Visa',
+                'AmBank BonusLink Mastercard', // change
+                // 'Another line of subtitle'
+              ],
+              leftBorderColor: 'green', // change red
+              inputProps: [
                 {
-                  type: 'text',
+                  type: 'text', // change number
                   value: linkListInputValue,
-                  notValid: false,
+                  notValid: false, // change true
                   handleChange: (e: any) => {
+                    // window.alert(`text change: ${e.target.value}`)
                     setLinkListInputValue(e.target.value);
                     setLinkListClear(true);
                     setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
                   },
                   clearClickHandler: () => {
+                    // window.alert(`clear change`)
                     setLinkListInputValue('');
                     setLinkListClear(false);
                     setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
                   },
-                  clearIcon: linkListInputValue ? true : linkListClear,
-                  label: '',
-                  icon: { name: 'Lock' },
+                  clearIcon: linkListInputValue ? true : linkListClear, // change false
+                  label: '', // change Test Input
+                  icon: { name: 'Lock' }, // change Amy
                   errorMessage: {
                     errorText: 'something wrong',
                     subText: 'detail error',
                   },
                 },
-                {
-                  type: 'text',
-                  value: linkListInputValue,
-                  notValid: false,
-                  handleChange: (e: any) => {
-                    setLinkListInputValue(e.target.value);
-                    setLinkListClear(true);
-                    setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
-                  },
-                  clearClickHandler: () => {
-                    setLinkListInputValue('');
-                    setLinkListClear(false);
-                    setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
-                  },
-                  clearIcon: linkListInputValue ? true : linkListClear,
-                  label: '',
-                  icon: { name: 'Lock' },
-                  errorMessage: {
-                    errorText: 'something wrong',
-                    subText: 'detail error',
-                  },
-                },
+                // {
+                //   type: 'text',
+                //   value: linkListInputValue,
+                //   notValid: false,
+                //   handleChange: (e: any) => {
+                //     setLinkListInputValue(e.target.value);
+                //     setLinkListClear(true);
+                //     setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                //   },
+                //   clearClickHandler: () => {
+                //     setLinkListInputValue('');
+                //     setLinkListClear(false);
+                //     setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
+                //   },
+                //   clearIcon: linkListInputValue ? true : linkListClear,
+                //   label: '',
+                //   icon: { name: 'Lock' },
+                //   errorMessage: {
+                //     errorText: 'something wrong',
+                //     subText: 'detail error',
+                //   },
+                // },
+                // {
+                //   type: 'text',
+                //   value: linkListInputValue,
+                //   notValid: false,
+                //   handleChange: (e: any) => {
+                //     setLinkListInputValue(e.target.value);
+                //     setLinkListClear(true);
+                //     setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                //   },
+                //   clearClickHandler: () => {
+                //     setLinkListInputValue('');
+                //     setLinkListClear(false);
+                //     setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
+                //   },
+                //   clearIcon: linkListInputValue ? true : linkListClear,
+                //   label: '',
+                //   icon: { name: 'Lock' },
+                //   errorMessage: {
+                //     errorText: 'something wrong',
+                //     subText: 'detail error',
+                //   },
+                // },
               ],
               buttonProps: {
                 onButtonClick: () => {
