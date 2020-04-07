@@ -16,6 +16,7 @@ const Home: React.FC<Props> = () => {
   const [sprint1, setSprint1] = useState(false);
   const [sprint2, setSprint2] = useState(false);
   const [sprint3, setSprint3] = useState(false);
+  const [sprint4, setSprint4] = useState(false);
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -24,6 +25,9 @@ const Home: React.FC<Props> = () => {
   }
   if (sprint3 === true) {
     return <Redirect to="/sprint-3" />;
+  }
+  if (sprint4 === true) {
+    return <Redirect to="/sprint-4" />;
   }
   return (
     <>
@@ -74,6 +78,17 @@ const Home: React.FC<Props> = () => {
                     fontSize: 15
                   }}
                 />,
+                <TextButton
+                buttonText="Sprint-4"
+                onTextClick={() => {
+                  setSprint4(true);
+                }}
+                buttonStyles={{
+                  color: "#000000",
+                  fontWeight: 400,
+                  fontSize: 15
+                }}
+              />,
                 <TextDropdown
                   handleChange={(selectedOption: any) => {
                     setSelectedOption(selectedOption);
