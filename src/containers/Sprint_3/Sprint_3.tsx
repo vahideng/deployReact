@@ -54,6 +54,7 @@ const {
   B_14_WHITE,
   B_24_BLACK,
   B_15_WHITE,
+  R_13_GREY969,
   SB_13_BLACK,
 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
@@ -547,24 +548,24 @@ const Sprint3: React.FC<Props> = () => {
             {
               id: 'id-1',
               title: 'iPhone X',
-              contentList: [
-                {
-                  id: 'id-1',
-                  title: 'ItemName',
-                  leftIcon: { name: 'Settings', color: '#000000' },
-                  status: {
-                    label: 'inactive',
-                  },
-                },
-                {
-                  id: 'id-1',
-                  title: 'ItemName',
-                  leftIcon: { name: 'Security2', color: '#000000' },
-                  status: {
-                    label: 'inactive',
-                  },
-                },
-              ],
+              children:(
+                <div>
+                    <AmListItem
+                              key={`accordionCollapseList-id1-1`}
+                              testId={`accordionCollapseList-id1-1`}
+                              title={'ItemName'}
+                              icon={<Icon icon={'Settings'} size={18} color={"#000000"} />}
+                              status={<R_13_GREY969>{'inactive'}</R_13_GREY969>}
+                            />
+                       <AmListItem
+                              key={`accordionCollapseList-id12-2`}
+                              testId={`accordionCollapseList-id2-2`}
+                              title={'ItemName'}
+                              icon={<Icon icon={'Security2'} size={18} color={"#000000"} />}
+                              status={<R_13_GREY969>{'inactive'}</R_13_GREY969>}
+                            />        
+                </div>
+              ),
               buttonContent: {
                 clickHandler: () => {
                   alert('Set device handler');
@@ -584,28 +585,24 @@ const Sprint3: React.FC<Props> = () => {
             {
               id: 'id-2',
               title: 'Macbook Pro',
-              contentList: [
-                {
-                  id: 'id-2',
-                  title: 'ItemName',
-                  leftIcon: { name: 'Settings', color: 'red' },
-                  status: {
-                    icon: (
-                      <Icon icon={'CheckboxYes'} size={20} color={'#36A03E'} />
-                    ),
-                  },
-                },
-                {
-                  id: 'id-2',
-                  title: 'ItemName',
-                  leftIcon: { name: 'Security2', color: 'red' },
-                  status: {
-                    icon: (
-                      <Icon icon={'CheckboxYes'} size={20} color={'#36A03E'} />
-                    ),
-                  },
-                },
-              ],
+              children:(
+                <div>
+                <AmListItem
+                          key={`accordionCollapseList-id1-1`}
+                          testId={`accordionCollapseList-id1-1`}
+                          title={'ItemName'}
+                          icon={<Icon icon={'Settings'} size={18} color={'red'} />}
+                          status={ <Icon icon={'CheckboxYes'} size={20} color={'#36A03E'} />}
+                        />
+                   <AmListItem
+                          key={`accordionCollapseList-id12-2`}
+                          testId={`accordionCollapseList-id2-2`}
+                          title={'ItemName'}
+                          icon={<Icon icon={'Security2'} size={18} color={'red'} />}
+                          status={<Icon icon={'CheckboxYes'} size={20} color={'#36A03E'} />}
+                        />        
+            </div>
+              ),
               buttonContent: {
                 clickHandler: () => {
                   alert('Remove device handler');

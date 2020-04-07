@@ -3,9 +3,7 @@ import classes from './AmAccordion.module.css';
 import { Card, Accordion, useAccordionToggle, Col } from 'react-bootstrap';
 import Icon from 'src/components/assets/icons/icon';
 import Paragraphs from '../../components/assets/typography';
-import AmListItem from '../amListItem/AmListItem';
-import PrimaryButton from 'src/components/buttons/primaryButton/PrimaryButton';
-const { SB_15_BLACK, R_13_GREY969 } = Paragraphs;
+const { SB_15_BLACK } = Paragraphs;
 
 interface AccordionSettingProps {
   testId: string;
@@ -15,13 +13,7 @@ interface AccordionSettingProps {
       id: string | number;
       accordionOpenIcon?: { name: string; color: string, size: number };
       accordionCloseIcon?: { name: string; color: string, size: number };
-      contentList:
-        {
-          id: string | number;
-          title: string;
-          leftIcon?: { name: string; color?: string, size?: number };
-          status: { label?: string; icon?: ReactNode};
-        }[];
+      children?: ReactNode;
       buttonContent?: {
         clickHandler: () => void;
         title: string;
@@ -36,7 +28,7 @@ const AmAccordion: React.FC<AccordionSettingProps> = ({
   data,
   testId
 }) => {
-  const { CardOuterContainer, primaryBtnStyle } = classes;
+  const { CardOuterContainer } = classes;
 
   return (
     <Card className={CardOuterContainer} id={testId}>
@@ -60,28 +52,7 @@ const AmAccordion: React.FC<AccordionSettingProps> = ({
 
                 <Accordion.Collapse eventKey={index} key={`accordionCollapse-${item.id}-${index}`} id={`accordionCollapse-${item.id}-${index}`}>
                   <Card.Body className={classes.CardBodyContent}>
-                    {item.contentList && item.contentList.length > 0 && item.contentList.map((list: any, listIndex: any) => {
-                        return (
-                            <AmListItem
-                              key={`accordionCollapseList-${list.id}-${listIndex}`}
-                              testId={`accordionCollapseList-${list.id}-${listIndex}`}
-                              title={list.title}
-                              icon={list.leftIcon && <Icon icon={list.leftIcon.name} size={list.leftIcon.size|| 18} color={list.leftIcon.color || "#444444"} />}
-                              status={list.status.icon ? list.status.icon : <R_13_GREY969>{list.status.label}</R_13_GREY969>}
-                            />
-                        )
-                      })
-                    }
-                    {item.buttonContent && <div className={primaryBtnStyle}>
-                        <PrimaryButton
-                          onButtonClick={item.buttonContent.clickHandler}
-                          title={item.buttonContent.title}
-                          titleColor={item.buttonContent.titleColor || "#ffffff"}
-                          buttonColor={item.buttonContent.buttonColor}
-                          icon={item.buttonContent.icon}
-                        />
-                      </div>
-                    }
+                    {item.children}
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
