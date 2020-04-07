@@ -42,8 +42,14 @@ import ToggleButton from "src/components/buttons/toggleButton/ToggleButton";
 
 import AmProfileSetting from "src/components/amProfileSetting/amProfileSetting";
 import Icon from "src/components/assets/icons/icon";
+import PortfolioList from "src/components/lists/PortfolioList/PortfolioList";
+import PortfolioListContent from "src/components/portfolioListContent/PortfolioListContent";
 import TooltipDropdown from "src/components/tooltipDropdown/TooltipDropdown";
+// import TransactionLimitList from "src/components/lists/TransactionLimitList/TransactionLimitList";
 
+import AmAccordion from "src/components/amAccordion/AmAccordion";
+import AmListItem from "src/components/amListItem/AmListItem";
+import DashboardCart from "src/components/dashboardCart/DashboardCart";
 const {
   B_13_ORANGE_463,
   R_12_WHITE,
@@ -261,7 +267,6 @@ const Sprint3: React.FC<Props> = () => {
           },
         ]}
       />
-      
 
       <Title>LinkList</Title>
       <CenteredDiv style={{ margin: "1.5rem" }}>
@@ -282,83 +287,199 @@ const Sprint3: React.FC<Props> = () => {
             },
             { label: "Change Card PIN" },
             {
-              label: "Nickname",
+              label: "Nickname", // change Lastname
               leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
-              bold: true,
-              onListClick: () => {},
-              expandable: true,
+              bold: true, // chang false
+              onListClick: (item: any) => {
+                window.alert(`clicked on item ${item.label}`);
+                // window.alert(`ITEM NAME:::: ${item.label}`)
+              },
+              // rightItem: (
+              //   <ToggleButton
+              //     toggleOffLabel="NO"
+              //     toggleOnLabel="YES"
+              //     value={true}
+              //     onTogglePress={() => {}}
+              //   />
+              // ), // change
+              expandable: true, // change false
               subtitle: [
                 "AmBank BonusLink Visa",
-                "AmBank BonusLink Mastercard",
+                "AmBank BonusLink Mastercard", // change
+                // 'Another line of subtitle'
               ],
-              leftBorderColor: "red",
+              leftBorderColor: "red", // change green
               inputProps: [
                 {
-                  type: "text",
+                  type: "text", // change number
                   value: linkListInputValue,
-                  notValid: false,
+                  notValid: false, // change true
                   handleChange: (e: any) => {
+                    // window.alert(`text change: ${e.target.value}`)
                     setLinkListInputValue(e.target.value);
                     setLinkListClear(true);
                     setLinkListBtnColor({ top: "#FF0D0D", bottom: "#FD8585" });
                   },
                   clearClickHandler: () => {
+                    // window.alert(`clear change`)
                     setLinkListInputValue("");
                     setLinkListClear(false);
                     setLinkListBtnColor({ top: "#BDBDBD", bottom: "#BDBDBD" });
                   },
-                  clearIcon: linkListInputValue ? true : linkListClear,
-                  label: "",
-                  icon: { name: "Lock" },
+                  clearIcon: linkListInputValue ? true : linkListClear, // change false
+                  label: "", // change Test Input
+                  icon: { name: "Lock" }, // change Amy
                   errorMessage: {
                     errorText: "something wrong",
                     subText: "detail error",
                   },
                 },
+                // {
+                //   type: 'text',
+                //   value: linkListInputValue,
+                //   notValid: false,
+                //   handleChange: (e: any) => {
+                //     setLinkListInputValue(e.target.value);
+                //     setLinkListClear(true);
+                //     setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                //   },
+                //   clearClickHandler: () => {
+                //     setLinkListInputValue('');
+                //     setLinkListClear(false);
+                //     setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
+                //   },
+                //   clearIcon: linkListInputValue ? true : linkListClear,
+                //   label: '',
+                //   icon: { name: 'Lock' },
+                //   errorMessage: {
+                //     errorText: 'something wrong',
+                //     subText: 'detail error',
+                //   },
+                // },
+                // {
+                //   type: 'text',
+                //   value: linkListInputValue,
+                //   notValid: false,
+                //   handleChange: (e: any) => {
+                //     setLinkListInputValue(e.target.value);
+                //     setLinkListClear(true);
+                //     setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                //   },
+                //   clearClickHandler: () => {
+                //     setLinkListInputValue('');
+                //     setLinkListClear(false);
+                //     setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
+                //   },
+                //   clearIcon: linkListInputValue ? true : linkListClear,
+                //   label: '',
+                //   icon: { name: 'Lock' },
+                //   errorMessage: {
+                //     errorText: 'something wrong',
+                //     subText: 'detail error',
+                //   },
+                // },
+              ],
+              buttonProps: {
+                onButtonClick: () => {
+                  alert("Button Clicked");
+                },
+                title: "Update",
+                titleColor: "#fff",
+                buttonColor: linkListBtnColor,
+              },
+            },
+            {
+              label: "Nickname", // change Lastname
+              leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+              bold: true, // chang false
+              onListClick: (item: any) => {
+                window.alert(`clicked on item ${item.label}`);
+                // window.alert(`ITEM NAME:::: ${item.label}`)
+              },
+              // rightItem: (
+              //   <ToggleButton
+              //     toggleOffLabel="NO"
+              //     toggleOnLabel="YES"
+              //     value={true}
+              //     onTogglePress={() => {}}
+              //   />
+              // ), // change
+              expandable: true, // change false
+              subtitle: [
+                "AmBank BonusLink Visa",
+                "AmBank BonusLink Mastercard", // change
+                // 'Another line of subtitle'
+              ],
+              leftBorderColor: "green", // change red
+              inputProps: [
                 {
-                  type: "text",
+                  type: "text", // change number
                   value: linkListInputValue,
-                  notValid: false,
+                  notValid: false, // change true
                   handleChange: (e: any) => {
+                    // window.alert(`text change: ${e.target.value}`)
                     setLinkListInputValue(e.target.value);
                     setLinkListClear(true);
                     setLinkListBtnColor({ top: "#FF0D0D", bottom: "#FD8585" });
                   },
                   clearClickHandler: () => {
+                    // window.alert(`clear change`)
                     setLinkListInputValue("");
                     setLinkListClear(false);
                     setLinkListBtnColor({ top: "#BDBDBD", bottom: "#BDBDBD" });
                   },
-                  clearIcon: linkListInputValue ? true : linkListClear,
-                  label: "",
-                  icon: { name: "Lock" },
+                  clearIcon: linkListInputValue ? true : linkListClear, // change false
+                  label: "", // change Test Input
+                  icon: { name: "Lock" }, // change Amy
                   errorMessage: {
                     errorText: "something wrong",
                     subText: "detail error",
                   },
                 },
-                {
-                  type: "text",
-                  value: linkListInputValue,
-                  notValid: false,
-                  handleChange: (e: any) => {
-                    setLinkListInputValue(e.target.value);
-                    setLinkListClear(true);
-                    setLinkListBtnColor({ top: "#FF0D0D", bottom: "#FD8585" });
-                  },
-                  clearClickHandler: () => {
-                    setLinkListInputValue("");
-                    setLinkListClear(false);
-                    setLinkListBtnColor({ top: "#BDBDBD", bottom: "#BDBDBD" });
-                  },
-                  clearIcon: linkListInputValue ? true : linkListClear,
-                  label: "",
-                  icon: { name: "Lock" },
-                  errorMessage: {
-                    errorText: "something wrong",
-                    subText: "detail error",
-                  },
-                },
+                // {
+                //   type: 'text',
+                //   value: linkListInputValue,
+                //   notValid: false,
+                //   handleChange: (e: any) => {
+                //     setLinkListInputValue(e.target.value);
+                //     setLinkListClear(true);
+                //     setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                //   },
+                //   clearClickHandler: () => {
+                //     setLinkListInputValue('');
+                //     setLinkListClear(false);
+                //     setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
+                //   },
+                //   clearIcon: linkListInputValue ? true : linkListClear,
+                //   label: '',
+                //   icon: { name: 'Lock' },
+                //   errorMessage: {
+                //     errorText: 'something wrong',
+                //     subText: 'detail error',
+                //   },
+                // },
+                // {
+                //   type: 'text',
+                //   value: linkListInputValue,
+                //   notValid: false,
+                //   handleChange: (e: any) => {
+                //     setLinkListInputValue(e.target.value);
+                //     setLinkListClear(true);
+                //     setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                //   },
+                //   clearClickHandler: () => {
+                //     setLinkListInputValue('');
+                //     setLinkListClear(false);
+                //     setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
+                //   },
+                //   clearIcon: linkListInputValue ? true : linkListClear,
+                //   label: '',
+                //   icon: { name: 'Lock' },
+                //   errorMessage: {
+                //     errorText: 'something wrong',
+                //     subText: 'detail error',
+                //   },
+                // },
               ],
               buttonProps: {
                 onButtonClick: () => {
@@ -415,6 +536,119 @@ const Sprint3: React.FC<Props> = () => {
               </CenteredDiv>
             </>
           }
+        />
+      </CenteredDiv>
+      <Title>AccordionSetting</Title>
+      <CenteredDiv
+        style={{
+          margin: "5rem",
+        }}
+      >
+        <AmAccordion
+          testId={"testId"}
+          data={[
+            {
+              id: "id-1",
+              title: "iPhone X",
+              contentList: [
+                {
+                  id: "id-1",
+                  title: "ItemName",
+                  leftIcon: { name: "Settings", color: "#000000" },
+                  status: {
+                    label: "inactive",
+                  },
+                },
+                {
+                  id: "id-1",
+                  title: "ItemName",
+                  leftIcon: { name: "Security2", color: "#000000" },
+                  status: {
+                    label: "inactive",
+                  },
+                },
+              ],
+              buttonContent: {
+                clickHandler: () => {
+                  alert("Set device handler");
+                },
+                title: "Setup now",
+                titleColor: "#000000",
+                buttonColor: {
+                  top: "#F6F6F3",
+                  bottom: "#EAE9E3",
+                },
+                icon: {
+                  name: "Settings",
+                  color: "#000",
+                },
+              },
+            },
+            {
+              id: "id-2",
+              title: "Macbook Pro",
+              contentList: [
+                {
+                  id: "id-2",
+                  title: "ItemName",
+                  leftIcon: { name: "Settings", color: "red" },
+                  status: {
+                    icon: (
+                      <Icon icon={"CheckboxYes"} size={20} color={"#36A03E"} />
+                    ),
+                  },
+                },
+                {
+                  id: "id-2",
+                  title: "ItemName",
+                  leftIcon: { name: "Security2", color: "red" },
+                  status: {
+                    icon: (
+                      <Icon icon={"CheckboxYes"} size={20} color={"#36A03E"} />
+                    ),
+                  },
+                },
+              ],
+              buttonContent: {
+                clickHandler: () => {
+                  alert("Remove device handler");
+                },
+                title: "Remove Device",
+                titleColor: "#ffffff",
+                icon: {
+                  name: "delete",
+                  color: "#ffffff",
+                },
+              },
+            },
+          ]}
+        ></AmAccordion>
+      </CenteredDiv>
+
+      <Title>ListItem (item used inside accordion)</Title>
+      <CenteredDiv
+        style={{
+          margin: "5rem",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <AmListItem
+          testId="testId-123"
+          title="Item with no left but right icon"
+          icon={<Icon icon={"Right1"} size={20} color={"#000000"} />}
+          status={<Icon icon={"CheckboxYes"} size={20} color={"#000000"} />}
+        />
+        <AmListItem
+          testId="testId-345"
+          title="Item with no right but left icon"
+          icon={<Icon icon={"Right1"} size={20} color={"#000000"} />}
+          status="inactive"
+        />
+        <AmListItem
+          testId="testId-456"
+          title="Item without icon"
+          status="disabled"
         />
       </CenteredDiv>
       <Title>ImageModal</Title>
@@ -1508,14 +1742,16 @@ const Sprint3: React.FC<Props> = () => {
       >
         <AmProfileSetting
           testId={"testId"}
-          profilePicImage={LocalImages.common.profilePic}
+          profilePicImage={""}
           ProfilePicBgColor={"#2694EB"}
+          profile_name={"Adam_1234"}
+          profile_login_history={"Last login on 2 Feb 2020 at 03:09pm"}
           editIcon={<Icon icon={"Right1"} size={20} color={"#000000"} />}
           data={[
             {
               profile_data: {
                 title: "Full Name",
-                showIcon: false,
+                showAccordion: true,
                 subtitle: [
                   {
                     content: "Adam Jake",
@@ -1523,24 +1759,139 @@ const Sprint3: React.FC<Props> = () => {
                   {
                     content: "aslam Furich",
                   },
+                  {
+                    content: "Furich",
+                  },
                 ],
+                children: (
+                  <div>
+                    <InputField
+                      notValid={false}
+                      errorMessage={{
+                        testId: "testId",
+                        errorText: "The Input Field is wrong",
+                        subText: "Please try again.",
+                      }}
+                      type="text"
+                      clearClickHandler={() => {
+                        setLinkListInputValue("");
+                        setLinkListClear(false);
+                        setLinkListBtnColor({
+                          top: "#BDBDBD",
+                          bottom: "#BDBDBD",
+                        });
+                      }}
+                      clearIcon={profileInputValue === "" ? tacClear : true}
+                      label=""
+                      icon={{ name: "Lock", color: "red" }}
+                      value={profileInputValue}
+                      handleChange={(e) => {
+                        setProfileInputValue(e.target.value);
+                        setTacClear(true);
+                        setButtonColor({ top: "#FF0D0D", bottom: "#FD8585" });
+                      }}
+                    />
+                    <div style={{ marginTop: "24px" }}>
+                      <PrimaryButton
+                        title="Continue"
+                        titleColor="#ffffff"
+                        buttonColor={buttonColor}
+                        onButtonClick={() => {}}
+                      />
+                    </div>
+                    <InputField
+                      notValid={false}
+                      errorMessage={{
+                        testId: "testId",
+                        errorText: "The Input Field is wrong",
+                        subText: "Please try again.",
+                      }}
+                      type="text"
+                      clearClickHandler={() => {
+                        setLinkListInputValue("");
+                        setLinkListClear(false);
+                        setLinkListBtnColor({
+                          top: "#BDBDBD",
+                          bottom: "#BDBDBD",
+                        });
+                      }}
+                      clearIcon={profileInputValue === "" ? tacClear : true}
+                      label=""
+                      icon={{ name: "Lock", color: "red" }}
+                      value={profileInputValue}
+                      handleChange={(e) => {
+                        setProfileInputValue(e.target.value);
+                        setTacClear(true);
+                        setButtonColor({ top: "#FF0D0D", bottom: "#FD8585" });
+                      }}
+                    />
+                    <div style={{ marginTop: "24px" }}>
+                      <PrimaryButton
+                        title="Continue"
+                        titleColor="#ffffff"
+                        buttonColor={buttonColor}
+                        onButtonClick={() => {}}
+                      />
+                    </div>
+                  </div>
+                ),
               },
             },
             {
               profile_data: {
                 title: "Nickname",
-                showIcon: true,
+                showAccordion: true,
                 subtitle: [
                   {
                     content: "Adam_1234",
                   },
                 ],
+                children: (
+                  <div>
+                    <InputField
+                      notValid={false}
+                      errorMessage={{
+                        testId: "testId",
+                        errorText: "The Input Field is wrong",
+                        subText: "Please try again.",
+                      }}
+                      type="text"
+                      clearClickHandler={() => {
+                        setLinkListInputValue("");
+                        setLinkListClear(false);
+                        setLinkListBtnColor({
+                          top: "#BDBDBD",
+                          bottom: "#BDBDBD",
+                        });
+                      }}
+                      clearIcon={profileInputValue === "" ? tacClear : true}
+                      label=""
+                      icon={{ name: "Lock", color: "red" }}
+                      value={profileInputValue}
+                      handleChange={(e) => {
+                        setProfileInputValue(e.target.value);
+                        setTacClear(true);
+                        setButtonColor({ top: "#FF0D0D", bottom: "#FD8585" });
+                      }}
+                    />
+                    <div style={{ marginTop: "24px" }}>
+                      <PrimaryButton
+                        title="Continue"
+                        titleColor="#ffffff"
+                        buttonColor={buttonColor}
+                        onButtonClick={() => {
+                          alert(`button cliked`);
+                        }}
+                      />
+                    </div>
+                  </div>
+                ),
               },
             },
             {
               profile_data: {
                 title: "Mobile Number",
-                showIcon: false,
+                showAccordion: false,
                 subtitle: [
                   {
                     content: "******897",
@@ -1551,7 +1902,7 @@ const Sprint3: React.FC<Props> = () => {
             {
               profile_data: {
                 title: "Mailing Address",
-                showIcon: false,
+                showAccordion: false,
                 subtitle: [
                   {
                     content:
@@ -1562,53 +1913,64 @@ const Sprint3: React.FC<Props> = () => {
             },
             {
               profile_data: {
+                showAccordion: true,
                 title: "Email",
-                showIcon: true,
                 subtitle: [
                   {
                     content: "*******5678@gmail.com",
                   },
                 ],
+                children: (
+                  <div>
+                    <InputField
+                      notValid={false}
+                      errorMessage={{
+                        testId: "testId",
+                        errorText: "The Input Field is wrong",
+                        subText: "Please try again.",
+                      }}
+                      type="text"
+                      clearClickHandler={() => {
+                        setLinkListInputValue("");
+                        setLinkListClear(false);
+                        setLinkListBtnColor({
+                          top: "#BDBDBD",
+                          bottom: "#BDBDBD",
+                        });
+                      }}
+                      clearIcon={profileInputValue === "" ? tacClear : true}
+                      label=""
+                      icon={{ name: "Lock", color: "red" }}
+                      value={profileInputValue}
+                      handleChange={(e) => {
+                        setProfileInputValue(e.target.value);
+                        setTacClear(true);
+                        setButtonColor({ top: "#FF0D0D", bottom: "#FD8585" });
+                      }}
+                    />
+                    <div style={{ marginTop: "24px" }}>
+                      <PrimaryButton
+                        title="Continue"
+                        titleColor="#ffffff"
+                        buttonColor={buttonColor}
+                        onButtonClick={() => {}}
+                      />
+                    </div>
+                  </div>
+                ),
               },
             },
           ]}
-          value={profileInputValue}
           onEditClickHandler={() => {
             alert("on edit click");
           }}
           fullName={"Adam Faruk"}
-          handleChange={(e: any, item, index) => {
-            console.log(`Item:${item},index:${index}`);
-            setProfileInputValue(e.target.value);
-            setTacClear(true);
-            setButtonColor({ top: "#FF0D0D", bottom: "#FD8585" });
-          }}
-          clearIcon={profileInputValue === "" ? tacClear : true}
-          clearClickHandler={() => {
-            setProfileInputValue("");
-            setTacClear(false);
-            setButtonColor({ top: "#BDBDBD", bottom: "#BDBDBD" });
-          }}
-          errorMessage={{
-            testId: "testId",
-            errorText: "The Input Field is wrong",
-            subText: "Please try again.",
-          }}
-          label=""
-          inputFieldIcon={{ name: "Lock", color: "red" }}
           openAccordionIcon={{
             name: "system-close-grey",
             color: "#444444",
             size: 12,
           }}
           closeAccordionIcon={{ name: "arrowDown", color: "#444444", size: 12 }}
-          onButtonClick={(item, index) => {
-            alert(JSON.stringify(item));
-            alert(`Index: ${index}`);
-          }}
-          buttonTitle="Continue"
-          buttonTitleColor="#ffffff"
-          buttonColor={buttonColor}
           tipChildren={
             <div>
               <RowDiv
@@ -1639,6 +2001,197 @@ const Sprint3: React.FC<Props> = () => {
               </RowDiv>
             </div>
           }
+        />
+      </CenteredDiv>
+      <Title>PortfolioListContent</Title>
+      <div style={{ width: "50%", margin: "0 auto" }}>
+        <PortfolioListContent
+          borderColor="#8677D9"
+          buttonText="View Performance"
+          onClickButton={() => alert("button clicked")}
+          data={[
+            {
+              leftLabel: "Invested",
+              rightLabel: "RM 418,944.73",
+            },
+            {
+              leftLabel: "NAV",
+              rightLabel: "4.7894",
+            },
+            {
+              leftLabel: "Number of Unts",
+              rightLabel: "1,828.40",
+            },
+            {
+              leftLabel: "Asset Class",
+              rightLabel: "Equity",
+            },
+          ]}
+        />
+      </div>
+      <Title>PortfolioList</Title>
+      <CenteredDiv>
+        <PortfolioList
+          testId={"testId"}
+          data={[
+            {
+              borderColor: "#FFA463",
+              expandableLeft: true,
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              middleLabel: "RM 406,318.98",
+              rightLabel: {
+                type: "loss",
+                percentage: "0.03%",
+                amount: "RM 12,189.56",
+              },
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#FFA463"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73",
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894",
+                    },
+                    {
+                      leftLabel: "Number of Units",
+                      rightLabel: "1,828.40",
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity",
+                      rightLabelStyle: {
+                        color: "#FFA463",
+                      },
+                    },
+                  ]}
+                />
+              ),
+            },
+            {
+              borderColor: "#8677D9",
+              expandableLeft: true,
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              rightLabel: {
+                type: "profit",
+                percentage: "0.03%",
+                amount: "RM 12,189.56",
+              },
+              middleLabel: "RM 406,318.98",
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#8677D9"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73",
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894",
+                    },
+                    {
+                      leftLabel: "Number of Unts",
+                      rightLabel: "1,828.40",
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity",
+                    },
+                  ]}
+                />
+              ),
+            },
+            {
+              borderColor: "#7AB497",
+              expandableLeft: true,
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              rightLabel: {
+                type: "loss",
+                percentage: "0.03%",
+                amount: "RM 12,189.56",
+              },
+              middleLabel: "RM 406,318.98",
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#7AB497"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73",
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894",
+                    },
+                    {
+                      leftLabel: "Number of Unts",
+                      rightLabel: "1,828.40",
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity",
+                    },
+                  ]}
+                />
+              ),
+            },
+          ]}
+          header={[
+            {
+              title: "Fund Name",
+              icon: "sort",
+              onClick: () => alert("Handle sort and icon change"),
+            },
+            {
+              title: "Value",
+              icon: "sort",
+              onClick: () => alert("Handle sort and icon change"),
+            },
+            {
+              title: "Profit/Loss",
+              icon: "sort",
+              onClick: () => alert("Handle sort and icon change"),
+            },
+          ]}
+        />
+      </CenteredDiv>
+      <Title>DashboardCart</Title>
+      <CenteredDiv>
+        <DashboardCart
+          title="My UT Account"
+          subtitle={{ content: "123456", icon: "User1" }}
+          description="RM 100,084,208.66"
+          descriptionRightLabel={{
+            type: "loss",
+            percentage: "6.6%",
+          }}
+          data={[
+            {
+              leftSide: {
+                title: "Profit/Loss",
+                content: "RM 6,205,220.93",
+                type: "profit",
+              },
+              rightSide: {
+                title: "Invested",
+                content: "RM 93,878,987.73",
+              },
+            },
+          ]}
+          onClickContainer={() => alert("Clicked")}
+          tooltip={true}
+          footerLabel="Last Updated: 11 Nov 2019"
+          tipChildren={<div>tip</div>}
         />
       </CenteredDiv>
     </div>

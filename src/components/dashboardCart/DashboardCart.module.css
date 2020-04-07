@@ -1,0 +1,76 @@
+.Container {
+  background: #f8f8f8;
+  border: 1px solid #dedede;
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1rem 0.5rem 1rem 1rem;
+  min-width: 24rem;
+}
+
+.RightIconContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.Subtitle {
+  padding: 0;
+  margin: 0;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.Content {
+  padding: 0;
+  margin: 0;
+}
+
+.FooterContainer {
+  padding: 0;
+  margin: 0;
+  margin-top: 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 0.75rem;
+}
+
+.FooterLabel {
+  font-style: italic;
+}
+
+.Description {
+  font-family: 'Nunito Sans';
+  margin: 0;
+  color: #000000;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-top: 1rem;
+  padding-right: 1rem;
+}
+
+.ContentContainer {
+  padding: 0;
+  margin: 0;
+}
+
+.ContentItem {
+  font-family: 'Nunito Sans';
+  margin: 0;
+  color: #000000;
+  font-size: 0.93rem;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.CursorPointer {
+  cursor: pointer;
+}

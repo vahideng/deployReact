@@ -10,6 +10,7 @@ interface TooltipProps {
   tipChildren?: any;
   color?: string;
   rightAlign?: boolean;
+  tipSize?: number;
 }
 interface State {
   clicked: boolean;
@@ -21,10 +22,12 @@ class Tooltip extends Component<TooltipProps, State> {
   };
   render() {
     const { clicked } = this.state;
-    const { tipChildren, color, testId, rightAlign } = this.props;
+    const { tipChildren, color, testId, rightAlign, tipSize } = this.props;
     const clickHandler = () => {
       this.setState({ clicked: !clicked });
     };
+
+    const tooltipSize = tipSize !== undefined ? tipSize : 23;
 
     return (
       <OutsideClickHandler
@@ -38,7 +41,7 @@ class Tooltip extends Component<TooltipProps, State> {
               <Icon
                 icon={!clicked ? "system-info" : "system-close-grey"}
                 color={!!color ? color : "#000000"}
-                size={23}
+                size={tooltipSize}
               />
             </div>
 
@@ -56,7 +59,7 @@ class Tooltip extends Component<TooltipProps, State> {
               <Icon
                 icon={!clicked ? "system-info" : "system-close-grey"}
                 color={!!color ? color : "#000000"}
-                size={23}
+                size={tooltipSize}
               />
             </div>
 
