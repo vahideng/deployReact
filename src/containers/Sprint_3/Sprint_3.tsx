@@ -776,7 +776,7 @@ const Sprint3: React.FC<Props> = () => {
           label="dropdown label"
           icon={{ name: 'Account-2' }}
           value={dropdownValue}
-          handleChange={(item) => handlerDropdown(item)}
+          handleChange={item => handlerDropdown(item)}
         />
       </div>
 
@@ -847,7 +847,7 @@ const Sprint3: React.FC<Props> = () => {
           label="New Password"
           icon={{ name: 'Lock' }}
           value={''}
-          handleChange={(event) => {
+          handleChange={event => {
             alert({
               inputValue: event.target.value,
             });
@@ -954,7 +954,7 @@ const Sprint3: React.FC<Props> = () => {
           searchIconClickHandler={() => alert('Search Icon clicked')}
           placeholder={'Search'}
           value={inputValue}
-          handleChange={(event) => {
+          handleChange={event => {
             setInputValue(event.target.value);
           }}
           autoFocus={false}
@@ -1032,7 +1032,7 @@ const Sprint3: React.FC<Props> = () => {
               ],
             },
           ]}
-          onFilterOptionClick={(obj) => alert(JSON.stringify(obj))}
+          onFilterOptionClick={obj => alert(JSON.stringify(obj))}
           selectedFilters={[
             {
               label: 'Successful',
@@ -1708,14 +1708,16 @@ const Sprint3: React.FC<Props> = () => {
       >
         <AmProfileSetting
           testId={'testId'}
-          profilePicImage={LocalImages.common.profilePic}
+          profilePicImage={''}
           ProfilePicBgColor={'#2694EB'}
+          profile_name={'Adam_1234'}
+          profile_login_history={'Last login on 2 Feb 2020 at 03:09pm'}
           editIcon={<Icon icon={'Right1'} size={20} color={'#000000'} />}
           data={[
             {
               profile_data: {
                 title: 'Full Name',
-                showIcon: false,
+                showAccordion: true,
                 subtitle: [
                   {
                     content: 'Adam Jake',
@@ -1723,24 +1725,139 @@ const Sprint3: React.FC<Props> = () => {
                   {
                     content: 'aslam Furich',
                   },
+                  {
+                    content: 'Furich',
+                  },
                 ],
+                children: (
+                  <div>
+                    <InputField
+                      notValid={false}
+                      errorMessage={{
+                        testId: 'testId',
+                        errorText: 'The Input Field is wrong',
+                        subText: 'Please try again.',
+                      }}
+                      type="text"
+                      clearClickHandler={() => {
+                        setLinkListInputValue('');
+                        setLinkListClear(false);
+                        setLinkListBtnColor({
+                          top: '#BDBDBD',
+                          bottom: '#BDBDBD',
+                        });
+                      }}
+                      clearIcon={profileInputValue === '' ? tacClear : true}
+                      label=""
+                      icon={{ name: 'Lock', color: 'red' }}
+                      value={profileInputValue}
+                      handleChange={e => {
+                        setProfileInputValue(e.target.value);
+                        setTacClear(true);
+                        setButtonColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                      }}
+                    />
+                    <div style={{ marginTop: '24px' }}>
+                      <PrimaryButton
+                        title="Continue"
+                        titleColor="#ffffff"
+                        buttonColor={buttonColor}
+                        onButtonClick={() => {}}
+                      />
+                    </div>
+                    <InputField
+                      notValid={false}
+                      errorMessage={{
+                        testId: 'testId',
+                        errorText: 'The Input Field is wrong',
+                        subText: 'Please try again.',
+                      }}
+                      type="text"
+                      clearClickHandler={() => {
+                        setLinkListInputValue('');
+                        setLinkListClear(false);
+                        setLinkListBtnColor({
+                          top: '#BDBDBD',
+                          bottom: '#BDBDBD',
+                        });
+                      }}
+                      clearIcon={profileInputValue === '' ? tacClear : true}
+                      label=""
+                      icon={{ name: 'Lock', color: 'red' }}
+                      value={profileInputValue}
+                      handleChange={e => {
+                        setProfileInputValue(e.target.value);
+                        setTacClear(true);
+                        setButtonColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                      }}
+                    />
+                    <div style={{ marginTop: '24px' }}>
+                      <PrimaryButton
+                        title="Continue"
+                        titleColor="#ffffff"
+                        buttonColor={buttonColor}
+                        onButtonClick={() => {}}
+                      />
+                    </div>
+                  </div>
+                ),
               },
             },
             {
               profile_data: {
                 title: 'Nickname',
-                showIcon: true,
+                showAccordion: true,
                 subtitle: [
                   {
                     content: 'Adam_1234',
                   },
                 ],
+                children: (
+                  <div>
+                    <InputField
+                      notValid={false}
+                      errorMessage={{
+                        testId: 'testId',
+                        errorText: 'The Input Field is wrong',
+                        subText: 'Please try again.',
+                      }}
+                      type="text"
+                      clearClickHandler={() => {
+                        setLinkListInputValue('');
+                        setLinkListClear(false);
+                        setLinkListBtnColor({
+                          top: '#BDBDBD',
+                          bottom: '#BDBDBD',
+                        });
+                      }}
+                      clearIcon={profileInputValue === '' ? tacClear : true}
+                      label=""
+                      icon={{ name: 'Lock', color: 'red' }}
+                      value={profileInputValue}
+                      handleChange={e => {
+                        setProfileInputValue(e.target.value);
+                        setTacClear(true);
+                        setButtonColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                      }}
+                    />
+                    <div style={{ marginTop: '24px' }}>
+                      <PrimaryButton
+                        title="Continue"
+                        titleColor="#ffffff"
+                        buttonColor={buttonColor}
+                        onButtonClick={() => {
+                          alert(`button cliked`);
+                        }}
+                      />
+                    </div>
+                  </div>
+                ),
               },
             },
             {
               profile_data: {
                 title: 'Mobile Number',
-                showIcon: false,
+                showAccordion: false,
                 subtitle: [
                   {
                     content: '******897',
@@ -1751,7 +1868,7 @@ const Sprint3: React.FC<Props> = () => {
             {
               profile_data: {
                 title: 'Mailing Address',
-                showIcon: false,
+                showAccordion: false,
                 subtitle: [
                   {
                     content:
@@ -1762,53 +1879,64 @@ const Sprint3: React.FC<Props> = () => {
             },
             {
               profile_data: {
+                showAccordion: true,
                 title: 'Email',
-                showIcon: true,
                 subtitle: [
                   {
                     content: '*******5678@gmail.com',
                   },
                 ],
+                children: (
+                  <div>
+                    <InputField
+                      notValid={false}
+                      errorMessage={{
+                        testId: 'testId',
+                        errorText: 'The Input Field is wrong',
+                        subText: 'Please try again.',
+                      }}
+                      type="text"
+                      clearClickHandler={() => {
+                        setLinkListInputValue('');
+                        setLinkListClear(false);
+                        setLinkListBtnColor({
+                          top: '#BDBDBD',
+                          bottom: '#BDBDBD',
+                        });
+                      }}
+                      clearIcon={profileInputValue === '' ? tacClear : true}
+                      label=""
+                      icon={{ name: 'Lock', color: 'red' }}
+                      value={profileInputValue}
+                      handleChange={e => {
+                        setProfileInputValue(e.target.value);
+                        setTacClear(true);
+                        setButtonColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                      }}
+                    />
+                    <div style={{ marginTop: '24px' }}>
+                      <PrimaryButton
+                        title="Continue"
+                        titleColor="#ffffff"
+                        buttonColor={buttonColor}
+                        onButtonClick={() => {}}
+                      />
+                    </div>
+                  </div>
+                ),
               },
             },
           ]}
-          value={profileInputValue}
           onEditClickHandler={() => {
             alert('on edit click');
           }}
           fullName={'Adam Faruk'}
-          handleChange={(e: any, item, index) => {
-            console.log(`Item:${item},index:${index}`);
-            setProfileInputValue(e.target.value);
-            setTacClear(true);
-            setButtonColor({ top: '#FF0D0D', bottom: '#FD8585' });
-          }}
-          clearIcon={profileInputValue === '' ? tacClear : true}
-          clearClickHandler={() => {
-            setProfileInputValue('');
-            setTacClear(false);
-            setButtonColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
-          }}
-          errorMessage={{
-            testId: 'testId',
-            errorText: 'The Input Field is wrong',
-            subText: 'Please try again.',
-          }}
-          label=""
-          inputFieldIcon={{ name: 'Lock', color: 'red' }}
           openAccordionIcon={{
             name: 'system-close-grey',
             color: '#444444',
             size: 12,
           }}
           closeAccordionIcon={{ name: 'arrowDown', color: '#444444', size: 12 }}
-          onButtonClick={(item, index) => {
-            alert(JSON.stringify(item));
-            alert(`Index: ${index}`);
-          }}
-          buttonTitle="Continue"
-          buttonTitleColor="#ffffff"
-          buttonColor={buttonColor}
           tipChildren={
             <div>
               <RowDiv

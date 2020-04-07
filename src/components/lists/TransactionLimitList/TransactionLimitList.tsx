@@ -4,6 +4,7 @@ import Paragraphs from '../../assets/typography';
 import Icon from 'src/components/assets/icons/icon';
 import { Col, Row } from 'react-bootstrap';
 import { Image } from 'react-bootstrap';
+import { Notify } from '../../assets/common/notification';
 const { R_15_BLACK, R_12_BLACK } = Paragraphs;
 
 interface ITransactionLimitList {
@@ -59,8 +60,14 @@ const TransactionLimitList: React.FC<Props> = ({
                       className={classes.TransactionImg}
                     />
                   )}
+
                 <Col>
-                  <R_15_BLACK>{item.label}</R_15_BLACK>
+                  <Row>
+                    <R_15_BLACK className={classes.itemLabel}>
+                      {item.label}
+                    </R_15_BLACK>
+                    {item.notify && <Notify className={classes.notify} />}
+                  </Row>
                   {item.allowGreyTextCardImg && item.allowGreyText && (
                     <R_12_BLACK style={{ marginTop: 4 }}>
                       {item.subDetail}
