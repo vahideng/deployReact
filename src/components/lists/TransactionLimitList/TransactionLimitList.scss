@@ -14,22 +14,31 @@
   margin-bottom: 1rem;
   padding: 1.25rem;
 }
-
-.TransactionImg {
-  height: 30px;
-  width: 50px;
+.ImageContainer {
+  display: flex;
+  align-items: center;
 }
-
-.columnView {
-  display: 'flex';
-  flex-direction: 'column';
-  flex: 1;
-}
-
-.itemLabel {
+.TextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding-left: 1rem;
+  height: 3rem;
+
+  position: relative;
+}
+.TransactionImg {
+  height: 2.06rem;
+  width: 3.31rem;
 }
 
 .notify {
   margin-left: 0.25rem;
+  position: absolute;
+  top: 5px;
+  right: -1rem;
+}
+.rightLabelDiv {
+  display: flex;
+  align-items: center;
 }

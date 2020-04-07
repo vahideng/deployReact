@@ -36,7 +36,8 @@ interface Props {
   onBlur?: (event: FormEvent) => void;
   onFocus?: (event: FormEvent) => void;
   inputClickHandler?:() => void; 
-  max ?: string
+  max ?: string;
+  placeholder ?: string;
 }
 
 class AmDropdown extends Component<Props, {}> {
@@ -79,6 +80,7 @@ class AmDropdown extends Component<Props, {}> {
       tacInput,
       inputClickHandler,
       max,
+      placeholder,
   clickOnArrow
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
@@ -116,6 +118,7 @@ class AmDropdown extends Component<Props, {}> {
 
             <input
             readOnly = {readOnly}
+            placeholder={placeholder}
             disabled={disabled}
               autoComplete={"off"}
               minLength={minLength}

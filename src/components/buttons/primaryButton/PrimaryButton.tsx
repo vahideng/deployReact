@@ -8,7 +8,7 @@ interface Props {
   title?: string;
   titleColor?: string;
   titleStyle?: CSSProperties;
-  buttonColor?: any;
+  buttonColor?: { top: string; bottom: string };
   height?: number | string;
   width?: number | string;
   onButtonClick: () => void;
@@ -37,7 +37,7 @@ const PrimaryButton: React.FC<Props> = ({
         onClick={onButtonClick}
         className={classes.PrimaryButton}
         style={
-          !!buttonColor
+          buttonColor
             ? {
                 background: `linear-gradient(180deg, ${buttonColor.top} 0%,  ${buttonColor.bottom} 100%)`,
                 height: height,
