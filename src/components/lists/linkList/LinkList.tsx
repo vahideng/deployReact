@@ -63,7 +63,13 @@ const LinkList: React.FC<LinkListProps> = ({
                   />
                 </Card.Header>
                 {expandable ? (
-                  <Accordion.Collapse eventKey={`${index}`}>
+                  <Accordion.Collapse
+                    className={classes.AccordionCollapseWrapper}
+                    eventKey={`${index}`}
+                    style={{
+                      backgroundColor: cardStyle && cardStyle.backgroundColor,
+                    }}
+                  >
                     <Card.Body>{expandableContent}</Card.Body>
                   </Accordion.Collapse>
                 ) : null}
