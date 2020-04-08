@@ -473,6 +473,8 @@ const Sprint3: React.FC<Props> = () => {
               onClick: (item, index) =>
                 alert(`${JSON.stringify(item)},Index: ${index}`),
               cardImg: images.common.Duitnow1,
+              showShadow: true,
+              // shadowStyle: {boxShadow: '2px 2px 7px rgba(0, 0, 0, 0.8)'},
               cardImgStyle: { height: 30, width: 30 },
               hidden: hiddenList,
               onHiddenButtonClick: () => {
@@ -758,6 +760,7 @@ const Sprint3: React.FC<Props> = () => {
                 <SecureImageSelect
                   testId="secure_image_select_testid"
                   label="Select your new security image"
+                  selectedImages={[3]}
                   images={[
                     {
                       uri: images.common.SampleSecureImage,

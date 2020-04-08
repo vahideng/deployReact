@@ -16,6 +16,7 @@ interface Props {
   label?: string;
   images: SecureImage[];
   iconRefresh?: string;
+  selectedImages?: number[];
   onSelect?: (secureImage: SecureImage) => void;
   onRefresh?: (secureImageIds?: string[]) => void;
 }
@@ -27,6 +28,7 @@ const SecureImageSelect: React.FC<Props> = (props) => {
     testId,
     images,
     iconRefresh,
+    selectedImages,
     onSelect = (image: SecureImage) => {
       window.alert(`secure image ${image.uri} selected`);
     },
@@ -54,7 +56,7 @@ const SecureImageSelect: React.FC<Props> = (props) => {
         {images.map((image: SecureImage, index: number) => {
           const { uri, alt } = image;
           return (
-            <div className={classes.OptionWrapper} key={index}>
+            <div className={classes.OptionWrapper} key={index} style={ !!selectedImages && selectedImages.includes(index) ? {  border: '0.125rem solid #ff2626' } : { }}>
               <img
                 className={classes.Option}
                 src={uri}
