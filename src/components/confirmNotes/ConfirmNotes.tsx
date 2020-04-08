@@ -20,7 +20,7 @@ const ConfirmNotes: React.FC<Props> = ({ title, body, testId, disabled }) => {
       {content && (
         <div className={classes.Title}>
           {disabled ? (
-            <B_15_GREY969></B_15_GREY969>
+            <B_15_GREY969>{content}</B_15_GREY969>
           ) : (
             <B_15_BLACK style={style}>{content}</B_15_BLACK>
           )}

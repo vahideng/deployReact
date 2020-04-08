@@ -97,6 +97,7 @@ const Sprint3: React.FC<Props> = () => {
         }}
       >
         <ConfirmNotes
+          testId="sprint_4_confirm_notes"
           title={{
             content: 'Important Notes',
             style: { fontSize: '2rem' },
