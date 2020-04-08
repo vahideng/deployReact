@@ -13,6 +13,7 @@ import ConfirmNotes from 'src/components/confirmNotes/ConfirmNotes';
 import Icon from 'src/components/assets/icons/icon';
 import InputField from 'src/components/inputs/inputFields/InputFields';
 import PrimaryButton from 'src/components/buttons/primaryButton/PrimaryButton';
+import ViewRate from 'src/components/viewRate/ViewRate';
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -92,6 +93,49 @@ const Sprint3: React.FC<Props> = () => {
           },
         ]}
       />
+      <Title>View Rate</Title>
+      <CenteredDiv
+        style={{
+          margin: '0 auto',
+          width: '30rem',
+        }}
+      >
+        <ViewRate
+          testId="sprint_4_view_rate"
+          title={{
+            content: '** Rates are subject to change',
+          }}
+          subtitle={{
+            content:
+              'Note: Customer with Reward Code may be entitled additional rate in AmOnline.',
+          }}
+          data={{
+            headers: [
+              {
+                style: {},
+                values: ['Tenure']
+              },
+              {
+                style: {textAlign: 'center'},
+                values: ['Board Rate', '(% p.a.)'],
+              },
+              {
+                style: {textAlign: 'center'},
+                values: ['AmOnline Rate', '(% p.a.)'],
+              },
+            ],
+            values: [
+              ['1 Month', '2.95', '2.95'],
+              ['2 Month', '2.95', '2.95'],
+              ['3 Month', '2.95', '2.95'],
+              ['4 Month', '3.95', '2.95'],
+              ['5 Month', '2.95', '2.95'],
+              ['6 Month', '2.95', '2.95'],
+              ['7 Month', '6.95', '2.95'],
+            ],
+          }}
+        />
+      </CenteredDiv>
       <Title>Confirm Notes</Title>
       <CenteredDiv
         style={{
@@ -224,6 +268,12 @@ const Sprint3: React.FC<Props> = () => {
                           <Icon icon="Announcement" size={22} color="#444444" />
                         ),
                         bold: true, // chang false
+                        cardStyle: {
+                          backgroundColor: '#fff',
+                        },
+                        cardHeaderStyle: {
+                          backgroundColor: '#fff',
+                        },
                         onListClick: () => {
                           // window.alert(`clicked on item ${item.label}`);
                           // window.alert(`ITEM NAME:::: ${item.label}`)
