@@ -9,10 +9,9 @@ import TextButton from 'src/components/buttons/textButton/TextButton';
 import AmAccordion from 'src/components/amAccordion/AmAccordion';
 import LinkList from 'src/components/lists/linkList/LinkList';
 import ToggleButton from 'src/components/buttons/toggleButton/ToggleButton';
+import ConfirmNotes from 'src/components/confirmNotes/ConfirmNotes';
 import Icon from 'src/components/assets/icons/icon';
-const {
-  B_13_ORANGE_463,
-} = Paragraphs;
+const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
   padding: 5px 0;
@@ -61,8 +60,6 @@ const Sprint3: React.FC<Props> = () => {
     return <Redirect to="/" />;
   }
 
-
-
   return (
     <div style={{ paddingTop: 100 }}>
       <Navbar
@@ -93,6 +90,31 @@ const Sprint3: React.FC<Props> = () => {
           },
         ]}
       />
+      <Title>Confirm Notes</Title>
+      <CenteredDiv
+        style={{
+          margin: '1rem 15rem',
+        }}
+      >
+        <ConfirmNotes
+          title={{
+            content: 'Important Notes',
+            style: { fontSize: '2rem' },
+          }}
+          body={[
+            {
+              content:
+                'This is not the final confirmation of your payment. Please check with your merchant for final status confirmation.',
+              style: {},
+            },
+            {
+              content:
+                'Please click on the “Continue with Transaction” button below and do not close the browser until final receipt is displayed',
+              style: {},
+            },
+          ]}
+        />
+      </CenteredDiv>
       <Title>Navbar Transparent</Title>
       <NavbarTransparent
         icon={{
@@ -135,16 +157,16 @@ const Sprint3: React.FC<Props> = () => {
             }}
           />,
           <TextButton
-          buttonText="Sprint-4"
-          onTextClick={() => {
-            setSprint4(true);
-          }}
-          buttonStyles={{
-            color: '#000000',
-            fontWeight: 400,
-            fontSize: 15,
-          }}
-        />,
+            buttonText="Sprint-4"
+            onTextClick={() => {
+              setSprint4(true);
+            }}
+            buttonStyles={{
+              color: '#000000',
+              fontWeight: 400,
+              fontSize: 15,
+            }}
+          />,
           <TextDropdown
             // menuIsOpen
             defaultValue={'Persian'}
@@ -163,8 +185,8 @@ const Sprint3: React.FC<Props> = () => {
           />,
         ]}
       />
-            <Title>Input Accordian</Title>
-            <CenteredDiv
+      <Title>Input Accordian</Title>
+      <CenteredDiv
         style={{
           margin: '5rem',
         }}
@@ -175,137 +197,157 @@ const Sprint3: React.FC<Props> = () => {
             {
               id: 'id-1',
               title: 'Transfers',
-              children:(
+              children: (
                 <div>
-          <LinkList
-          testId="link_list_sprint_3_test"
-          defaultActiveKey="2"
-          list={[
-            {
-              label: 'Show on AmOnline',
-              rightItem: (
-                <ToggleButton
-                  toggleOffLabel="NO"
-                  toggleOnLabel="YES"
-                  value={true}
-                  onTogglePress={() => {}}
-                />
-              ),
-            },
-            { label: 'Change Card PIN' },
-            {
-              label: 'Nickname', // change Lastname
-              leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
-              bold: true, // chang false
-              onListClick: (item: any) => {
-                window.alert(`clicked on item ${item.label}`);
-                // window.alert(`ITEM NAME:::: ${item.label}`)
-              },
-          
-              expandable: true, // change false
-              subtitle: [
-                'AmBank BonusLink Visa',
-                'AmBank BonusLink Mastercard', // change
-                // 'Another line of subtitle'
-              ],
-              leftBorderColor: 'red', // change green
-              inputProps: [
-                {
-                  type: 'text', // change number
-                  value: linkListInputValue,
-                  notValid: false, // change true
-                  handleChange: (e: any) => {
-                    // window.alert(`text change: ${e.target.value}`)
-                    setLinkListInputValue(e.target.value);
-                    setLinkListClear(true);
-                    setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
-                  },
-                  clearClickHandler: () => {
-                    // window.alert(`clear change`)
-                    setLinkListInputValue('');
-                    setLinkListClear(false);
-                    setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
-                  },
-                  clearIcon: linkListInputValue ? true : linkListClear, // change false
-                  label: '', // change Test Input
-                  icon: { name: 'Lock' }, // change Amy
-                  errorMessage: {
-                    errorText: 'something wrong',
-                    subText: 'detail error',
-                  },
-                },
-              ],
-              buttonProps: {
-                onButtonClick: () => {
-                  alert('Button Clicked');
-                },
-                title: 'Update',
-                titleColor: '#fff',
-                buttonColor: linkListBtnColor,
-              },
-            },
-            {
-              label: 'Nickname', // change Lastname
-              leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
-              bold: true, // chang false
-              onListClick: (item: any) => {
-                window.alert(`clicked on item ${item.label}`);
-                // window.alert(`ITEM NAME:::: ${item.label}`)
-              },
-              // rightItem: (
-              //   <ToggleButton
-              //     toggleOffLabel="NO"
-              //     toggleOnLabel="YES"
-              //     value={true}
-              //     onTogglePress={() => {}}
-              //   />
-              // ), // change
-              expandable: true, // change false
-              subtitle: [
-                'AmBank BonusLink Visa',
-                'AmBank BonusLink Mastercard', // change
-                // 'Another line of subtitle'
-              ],
-              leftBorderColor: 'green', // change red
-              inputProps: [
-                {
-                  type: 'text', // change number
-                  value: linkListInputValue,
-                  notValid: false, // change true
-                  handleChange: (e: any) => {
-                    // window.alert(`text change: ${e.target.value}`)
-                    setLinkListInputValue(e.target.value);
-                    setLinkListClear(true);
-                    setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
-                  },
-                  clearClickHandler: () => {
-                    // window.alert(`clear change`)
-                    setLinkListInputValue('');
-                    setLinkListClear(false);
-                    setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
-                  },
-                  clearIcon: linkListInputValue ? true : linkListClear, // change false
-                  label: '', // change Test Input
-                  icon: { name: 'Lock' }, // change Amy
-                  errorMessage: {
-                    errorText: 'something wrong',
-                    subText: 'detail error',
-                  },
-                },
-              ],
-              buttonProps: {
-                onButtonClick: () => {
-                  alert('Button Clicked');
-                },
-                title: 'Update',
-                titleColor: '#fff',
-                buttonColor: linkListBtnColor,
-              },
-            },
-            { label: 'Block This Card' },
-            { label: 'Block This Replace This Card' },
-          ]}
-        />     
+                  <LinkList
+                    testId="link_list_sprint_3_test"
+                    defaultActiveKey="2"
+                    list={[
+                      {
+                        label: 'Show on AmOnline',
+                        rightItem: (
+                          <ToggleButton
+                            toggleOffLabel="NO"
+                            toggleOnLabel="YES"
+                            value={true}
+                            onTogglePress={() => {}}
+                          />
+                        ),
+                      },
+                      { label: 'Change Card PIN' },
+                      {
+                        label: 'Nickname', // change Lastname
+                        leftIcon: (
+                          <Icon icon="Announcement" size={22} color="#444444" />
+                        ),
+                        bold: true, // chang false
+                        onListClick: (item: any) => {
+                          window.alert(`clicked on item ${item.label}`);
+                          // window.alert(`ITEM NAME:::: ${item.label}`)
+                        },
+
+                        expandable: true, // change false
+                        subtitle: [
+                          'AmBank BonusLink Visa',
+                          'AmBank BonusLink Mastercard', // change
+                          // 'Another line of subtitle'
+                        ],
+                        leftBorderColor: 'red', // change green
+                        inputProps: [
+                          {
+                            type: 'text', // change number
+                            value: linkListInputValue,
+                            notValid: false, // change true
+                            handleChange: (e: any) => {
+                              // window.alert(`text change: ${e.target.value}`)
+                              setLinkListInputValue(e.target.value);
+                              setLinkListClear(true);
+                              setLinkListBtnColor({
+                                top: '#FF0D0D',
+                                bottom: '#FD8585',
+                              });
+                            },
+                            clearClickHandler: () => {
+                              // window.alert(`clear change`)
+                              setLinkListInputValue('');
+                              setLinkListClear(false);
+                              setLinkListBtnColor({
+                                top: '#BDBDBD',
+                                bottom: '#BDBDBD',
+                              });
+                            },
+                            clearIcon: linkListInputValue
+                              ? true
+                              : linkListClear, // change false
+                            label: '', // change Test Input
+                            icon: { name: 'Lock' }, // change Amy
+                            errorMessage: {
+                              errorText: 'something wrong',
+                              subText: 'detail error',
+                            },
+                          },
+                        ],
+                        buttonProps: {
+                          onButtonClick: () => {
+                            alert('Button Clicked');
+                          },
+                          title: 'Update',
+                          titleColor: '#fff',
+                          buttonColor: linkListBtnColor,
+                        },
+                      },
+                      {
+                        label: 'Nickname', // change Lastname
+                        leftIcon: (
+                          <Icon icon="Announcement" size={22} color="#444444" />
+                        ),
+                        bold: true, // chang false
+                        onListClick: (item: any) => {
+                          window.alert(`clicked on item ${item.label}`);
+                          // window.alert(`ITEM NAME:::: ${item.label}`)
+                        },
+                        // rightItem: (
+                        //   <ToggleButton
+                        //     toggleOffLabel="NO"
+                        //     toggleOnLabel="YES"
+                        //     value={true}
+                        //     onTogglePress={() => {}}
+                        //   />
+                        // ), // change
+                        expandable: true, // change false
+                        subtitle: [
+                          'AmBank BonusLink Visa',
+                          'AmBank BonusLink Mastercard', // change
+                          // 'Another line of subtitle'
+                        ],
+                        leftBorderColor: 'green', // change red
+                        inputProps: [
+                          {
+                            type: 'text', // change number
+                            value: linkListInputValue,
+                            notValid: false, // change true
+                            handleChange: (e: any) => {
+                              // window.alert(`text change: ${e.target.value}`)
+                              setLinkListInputValue(e.target.value);
+                              setLinkListClear(true);
+                              setLinkListBtnColor({
+                                top: '#FF0D0D',
+                                bottom: '#FD8585',
+                              });
+                            },
+                            clearClickHandler: () => {
+                              // window.alert(`clear change`)
+                              setLinkListInputValue('');
+                              setLinkListClear(false);
+                              setLinkListBtnColor({
+                                top: '#BDBDBD',
+                                bottom: '#BDBDBD',
+                              });
+                            },
+                            clearIcon: linkListInputValue
+                              ? true
+                              : linkListClear, // change false
+                            label: '', // change Test Input
+                            icon: { name: 'Lock' }, // change Amy
+                            errorMessage: {
+                              errorText: 'something wrong',
+                              subText: 'detail error',
+                            },
+                          },
+                        ],
+                        buttonProps: {
+                          onButtonClick: () => {
+                            alert('Button Clicked');
+                          },
+                          title: 'Update',
+                          titleColor: '#fff',
+                          buttonColor: linkListBtnColor,
+                        },
+                      },
+                      { label: 'Block This Card' },
+                      { label: 'Block This Replace This Card' },
+                    ]}
+                  />
                 </div>
               ),
               buttonContent: {
@@ -327,11 +369,7 @@ const Sprint3: React.FC<Props> = () => {
             {
               id: 'id-2',
               title: 'Payments',
-              children:(
-                <div>
-                    
-            </div>
-              ),
+              children: <div></div>,
               buttonContent: {
                 clickHandler: () => {
                   alert('Remove device handler');
@@ -347,11 +385,7 @@ const Sprint3: React.FC<Props> = () => {
             {
               id: 'id-2',
               title: 'Investments',
-              children:(
-                <div>
-                    
-            </div>
-              ),
+              children: <div></div>,
               buttonContent: {
                 clickHandler: () => {
                   alert('Remove device handler');
@@ -367,11 +401,7 @@ const Sprint3: React.FC<Props> = () => {
             {
               id: 'id-2',
               title: 'Online Shopping',
-              children:(
-                <div>
-                    
-            </div>
-              ),
+              children: <div></div>,
               buttonContent: {
                 clickHandler: () => {
                   alert('Remove device handler');
@@ -387,11 +417,7 @@ const Sprint3: React.FC<Props> = () => {
             {
               id: 'id-2',
               title: 'FPX Specific Merchant',
-              children:(
-                <div>
-                    
-            </div>
-              ),
+              children: <div></div>,
               buttonContent: {
                 clickHandler: () => {
                   alert('Remove device handler');
@@ -407,7 +433,6 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         ></AmAccordion>
       </CenteredDiv>
-
     </div>
   );
 };
