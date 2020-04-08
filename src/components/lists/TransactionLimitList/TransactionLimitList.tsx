@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties }  from "react";
 import classes from "./TransactionLimitList.module.css";
 import Paragraphs from "../../assets/typography";
 import Icon from "src/components/assets/icons/icon";
@@ -15,6 +15,7 @@ interface ITransactionLimitList {
   rightLabelColor?: string;
   rightLabel?: string;
   notify?: boolean;
+  notifyStyle ?: CSSProperties;
   cardImg?: string;
   cardImgStyle?: {
     height: number;
@@ -55,7 +56,8 @@ const TransactionLimitList: React.FC<Props> = ({ list, testId }: Props) => {
 
                   <div className={classes.TextContainer}>
                     <B_15_BLACK>{item.label}</B_15_BLACK>
-                    {item.notify && <Notify className={classes.notify} />}
+                    {item.notify && 
+                    <Notify   className={classes.notify} style={item.notifyStyle? item.notifyStyle: null }/>}
                     {item.subDetail && (
                       <R_12_BLACK style={{ marginTop: 5 }}>
                         {item.subDetail}
