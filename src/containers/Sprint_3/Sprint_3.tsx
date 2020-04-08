@@ -275,24 +275,22 @@ const Sprint3: React.FC<Props> = () => {
             {
               title: "Fund Name",
               icon: "sort",
-              arrowDownCLick : () => alert("down Handle sort and icon change"),
-              arrowUpCLick : () => alert(" up Handle sort and icon change"),
+              onArrowClick : () => alert(" Handle sort and icon change"),
+              
               arrowDownBold :true,
               arrowUpBold : false
             },
             {
               title: "Value",
               icon: "sort",
-              arrowDownCLick : () => alert("down Handle sort and icon change"),
-              arrowUpCLick : () => alert(" up Handle sort and icon change"),
+              onArrowClick : () => alert(" Handle sort and icon change"),
               arrowDownBold :false,
               arrowUpBold : true
             },
             {
               title: "Profit/Loss",
               icon: "sort",
-              arrowDownCLick : () => alert("down Handle sort and icon change"),
-              arrowUpCLick : () => alert(" up Handle sort and icon change"),
+              onArrowClick : () => alert(" Handle sort and icon change"),
               arrowDownBold :true,
               arrowUpBold : false
             },
