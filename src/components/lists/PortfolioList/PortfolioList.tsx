@@ -28,8 +28,7 @@ interface Data {
 interface HeaderProps {
   icon?: string;
   id?: string;
-  arrowDownCLick?: () => void;
-  arrowUpCLick?: () => void;
+  onArrowClick?: () => void;
   arrowDownBold?: boolean;
   arrowUpBold: boolean;
   style?: CSSProperties;
@@ -100,15 +99,15 @@ const PortfolioList: React.FC<Props> = ({ data, header, testId }) => {
                 </SB_13_GREY444>
                 <div className={classes.HeaderIcon}>
                   <div style={{ position: "relative" }}>
-                    <div className={classes.BothIcon}>
-                      <div className={classes.ArrowDown} onClick={item.arrowDownCLick}>
+                    <div onClick={item.onArrowClick} className={classes.BothIcon}>
+                      <div className={classes.ArrowDown} >
                         {item.arrowDownBold ? (
                           <Icon icon="arrowDown" size={12} color="black" />
                         ) : (
                           <Icon icon="arrowDown" size={12} color="gray" />
                         )}
                       </div>
-                      <div  className={classes.ArrowUp} onClick={item.arrowUpCLick}>
+                      <div  className={classes.ArrowUp} >
                         {item.arrowUpBold ? (
                           <Icon icon="arrowUp" size={12} color="black"/>
                         ) : (
