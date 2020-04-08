@@ -530,18 +530,18 @@ const Sprint3: React.FC<Props> = () => {
               label: 'Nickname', // change Lastname
               leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
               bold: true, // chang false
-              onListClick: (item: any) => {
-                window.alert(`clicked on item ${item.label}`);
+              onListClick: () => {
+                // window.alert(`clicked on item ${item.label}`);
                 // window.alert(`ITEM NAME:::: ${item.label}`)
               },
-              rightItem: (
-                <ToggleButton
-                  toggleOffLabel="NO"
-                  toggleOnLabel="YES"
-                  value={true}
-                  onTogglePress={() => {}}
-                />
-              ), // change
+              // rightItem: (
+              //   <ToggleButton
+              //     toggleOffLabel="NO"
+              //     toggleOnLabel="YES"
+              //     value={true}
+              //     onTogglePress={() => {}}
+              //   />
+              // ), // change
               expandable: true, // change false
               expandableContent: (
                 <>

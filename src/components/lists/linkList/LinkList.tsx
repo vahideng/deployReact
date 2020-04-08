@@ -18,6 +18,9 @@ declare type ListItem = {
   expandableContent?: ReactNode;
   onListClick?: (item: any) => void;
   rightItem?: ReactNode;
+  cardStyle?: any;
+  cardHeaderStyle?: any;
+  cardHeaderInnerStyle?: any;
 };
 interface LinkListProps {
   testId?: string;
@@ -35,11 +38,24 @@ const LinkList: React.FC<LinkListProps> = ({
       <Accordion defaultActiveKey={defaultActiveKey}>
         {list &&
           list.map((item, index) => {
-            const { expandable, expandableContent, leftBorderColor } = item;
+            const {
+              expandable,
+              expandableContent,
+              leftBorderColor,
+              cardStyle,
+              cardHeaderStyle,
+            } = item;
 
             return (
-              <Card key={index} style={{ borderLeftColor: leftBorderColor }}>
-                <Card.Header>
+              <Card
+                key={index}
+                style={{
+                  borderRadius: 0,
+                  borderLeftColor: leftBorderColor,
+                  ...cardStyle,
+                }}
+              >
+                <Card.Header style={cardHeaderStyle}>
                   <AccordionToggle
                     item={item}
                     eventKey={`${index}`}
@@ -78,6 +94,7 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
     bold,
     onListClick = () => {},
     leftIcon,
+    cardHeaderInnerStyle,
   } = item;
   const [isOpen, setIsOpen] = useState(defaultActiveKey === eventKey);
   const decoratedOnClick = useAccordionToggle(eventKey, () =>
@@ -91,7 +108,11 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
     }
   };
   return (
-    <div className={classes.HeaderWrapper} onClick={handleToggle}>
+    <div
+      className={classes.HeaderWrapper}
+      onClick={handleToggle}
+      style={cardHeaderInnerStyle}
+    >
       {leftIcon && <div className={classes.LeftIconWrapper}>{leftIcon}</div>}
       <div className={classes.LabelWrapper}>
         <div className={classes.LabelInner}>
@@ -159,7 +180,7 @@ const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, isOpen }) => {
         </span>
       ) : (
         <span className={classes.ToggleIcon}>
-          <Icon icon="arrowDown" size={12} color="#444444" />
+          <Icon icon="Edit" size={22} color="#444444" />
         </span>
       )}
     </div>
