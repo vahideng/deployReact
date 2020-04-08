@@ -180,7 +180,7 @@ const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, isOpen }) => {
         </span>
       ) : (
         <span className={classes.ToggleIcon}>
-          <Icon icon="Edit" size={22} color="#444444" />
+          <Icon icon="Edit" size={25} color="#444444" />
         </span>
       )}
     </div>
