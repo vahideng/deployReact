@@ -8,8 +8,9 @@ import TextDropdown from 'src/components/inputs/texDropdown/TextDropdown';
 import TextButton from 'src/components/buttons/textButton/TextButton';
 import AmAccordion from 'src/components/amAccordion/AmAccordion';
 import LinkList from 'src/components/lists/linkList/LinkList';
-import ToggleButton from 'src/components/buttons/toggleButton/ToggleButton';
 import Icon from 'src/components/assets/icons/icon';
+import InputField from "src/components/inputs/inputFields/InputFields";
+import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 const {
   B_13_ORANGE_463,
 } = Paragraphs;
@@ -177,135 +178,174 @@ const Sprint3: React.FC<Props> = () => {
               title: 'Transfers',
               children:(
                 <div>
-          <LinkList
+            <LinkList
           testId="link_list_sprint_3_test"
           defaultActiveKey="2"
           list={[
             {
               label: 'Show on AmOnline',
-              rightItem: (
-                <ToggleButton
-                  toggleOffLabel="NO"
-                  toggleOnLabel="YES"
-                  value={true}
-                  onTogglePress={() => {}}
-                />
+              cardStyle:{border:0,borderBottom:'1px solid rgba(0,0,0,.125)',margin:'0rem 1.5rem'},
+              cardHeaderStyle:{padding:0,backgroundColor:'#ffffff',borderBottom:'1px solid rgba(0,0,0,.125)'},
+              expandable: true, // change false
+              expandableContent: (
+                <>
+                  <InputField
+                    type="text"
+                    value=""
+                    notValid={false}
+                    handleChange={() => {}}
+                    clearClickHandler={() => {}}
+                    clearIcon={true}
+                    label=""
+                    icon={{ name: 'Lock' }}
+                    errorMessage={{
+                      errorText: 'something wrong',
+                      subText: 'detail error',
+                    }}
+                    {...{
+                      type: 'text', // change number
+                      value: linkListInputValue,
+                      notValid: false, // change true
+                      handleChange: (e: any) => {
+                        // window.alert(`text change: ${e.target.value}`)
+                        setLinkListInputValue(e.target.value);
+                        setLinkListClear(true);
+                        setLinkListBtnColor({
+                          top: '#FF0D0D',
+                          bottom: '#FD8585',
+                        });
+                      },
+                      clearClickHandler: () => {
+                        // window.alert(`clear change`)
+                        setLinkListInputValue('');
+                        setLinkListClear(false);
+                        setLinkListBtnColor({
+                          top: '#BDBDBD',
+                          bottom: '#BDBDBD',
+                        });
+                      },
+                      clearIcon: linkListInputValue ? true : linkListClear, // change false
+                      label: '', // change Test Input
+                      icon: { name: 'Lock' }, // change Amy
+                      errorMessage: {
+                        errorText: 'something wrong',
+                        subText: 'detail error',
+                      },
+                    }}
+                  />
+                  <PrimaryButton
+                    onButtonClick={() => {
+                      window.alert('Button Clicked');
+                    }}
+                    title={'Update'}
+                    titleColor={'#fff'}
+                    buttonColor={{
+                      top: '#BDBDBD',
+                      bottom: '#BDBDBD',
+                    }}
+                    {...{
+                      onButtonClick: () => {
+                        alert('Button Clicked');
+                      },
+                      title: 'Update',
+                      titleColor: '#fff',
+                      buttonColor: linkListBtnColor,
+                    }}
+                  />
+                </>
               ),
             },
-            { label: 'Change Card PIN' },
+            { label: 'Change Card PIN',
+            cardStyle:{border:0,borderBottom:'1px solid rgba(0,0,0,.125)',margin:'0rem 1.5rem'},
+            cardHeaderStyle:{padding:0,backgroundColor:'#ffffff',borderBottom:'1px solid rgba(0,0,0,.125)'},
+            },
             {
               label: 'Nickname', // change Lastname
               leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
               bold: true, // chang false
-              onListClick: (item: any) => {
-                window.alert(`clicked on item ${item.label}`);
+              onListClick: () => {
+                // window.alert(`clicked on item ${item.label}`);
                 // window.alert(`ITEM NAME:::: ${item.label}`)
               },
-          
               expandable: true, // change false
+              expandableContent: (
+                <>
+                  <InputField
+                    type="text"
+                    value=""
+                    notValid={false}
+                    handleChange={() => {}}
+                    clearClickHandler={() => {}}
+                    clearIcon={true}
+                    label=""
+                    icon={{ name: 'Lock' }}
+                    errorMessage={{
+                      errorText: 'something wrong',
+                      subText: 'detail error',
+                    }}
+                    {...{
+                      type: 'text', // change number
+                      value: linkListInputValue,
+                      notValid: false, // change true
+                      handleChange: (e: any) => {
+                        // window.alert(`text change: ${e.target.value}`)
+                        setLinkListInputValue(e.target.value);
+                        setLinkListClear(true);
+                        setLinkListBtnColor({
+                          top: '#FF0D0D',
+                          bottom: '#FD8585',
+                        });
+                      },
+                      clearClickHandler: () => {
+                        // window.alert(`clear change`)
+                        setLinkListInputValue('');
+                        setLinkListClear(false);
+                        setLinkListBtnColor({
+                          top: '#BDBDBD',
+                          bottom: '#BDBDBD',
+                        });
+                      },
+                      clearIcon: linkListInputValue ? true : linkListClear, // change false
+                      label: '', // change Test Input
+                      icon: { name: 'Lock' }, // change Amy
+                      errorMessage: {
+                        errorText: 'something wrong',
+                        subText: 'detail error',
+                      },
+                    }}
+                  />
+                  <PrimaryButton
+                    onButtonClick={() => {
+                      window.alert('Button Clicked');
+                    }}
+                    title={'Update'}
+                    titleColor={'#fff'}
+                    buttonColor={{
+                      top: '#BDBDBD',
+                      bottom: '#BDBDBD',
+                    }}
+                    {...{
+                      onButtonClick: () => {
+                        alert('Button Clicked');
+                      },
+                      title: 'Update',
+                      titleColor: '#fff',
+                      buttonColor: linkListBtnColor,
+                    }}
+                  />
+                </>
+              ),
               subtitle: [
                 'AmBank BonusLink Visa',
                 'AmBank BonusLink Mastercard', // change
                 // 'Another line of subtitle'
               ],
               leftBorderColor: 'red', // change green
-              inputProps: [
-                {
-                  type: 'text', // change number
-                  value: linkListInputValue,
-                  notValid: false, // change true
-                  handleChange: (e: any) => {
-                    // window.alert(`text change: ${e.target.value}`)
-                    setLinkListInputValue(e.target.value);
-                    setLinkListClear(true);
-                    setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
-                  },
-                  clearClickHandler: () => {
-                    // window.alert(`clear change`)
-                    setLinkListInputValue('');
-                    setLinkListClear(false);
-                    setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
-                  },
-                  clearIcon: linkListInputValue ? true : linkListClear, // change false
-                  label: '', // change Test Input
-                  icon: { name: 'Lock' }, // change Amy
-                  errorMessage: {
-                    errorText: 'something wrong',
-                    subText: 'detail error',
-                  },
-                },
-              ],
-              buttonProps: {
-                onButtonClick: () => {
-                  alert('Button Clicked');
-                },
-                title: 'Update',
-                titleColor: '#fff',
-                buttonColor: linkListBtnColor,
-              },
-            },
-            {
-              label: 'Nickname', // change Lastname
-              leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
-              bold: true, // chang false
-              onListClick: (item: any) => {
-                window.alert(`clicked on item ${item.label}`);
-                // window.alert(`ITEM NAME:::: ${item.label}`)
-              },
-              // rightItem: (
-              //   <ToggleButton
-              //     toggleOffLabel="NO"
-              //     toggleOnLabel="YES"
-              //     value={true}
-              //     onTogglePress={() => {}}
-              //   />
-              // ), // change
-              expandable: true, // change false
-              subtitle: [
-                'AmBank BonusLink Visa',
-                'AmBank BonusLink Mastercard', // change
-                // 'Another line of subtitle'
-              ],
-              leftBorderColor: 'green', // change red
-              inputProps: [
-                {
-                  type: 'text', // change number
-                  value: linkListInputValue,
-                  notValid: false, // change true
-                  handleChange: (e: any) => {
-                    // window.alert(`text change: ${e.target.value}`)
-                    setLinkListInputValue(e.target.value);
-                    setLinkListClear(true);
-                    setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
-                  },
-                  clearClickHandler: () => {
-                    // window.alert(`clear change`)
-                    setLinkListInputValue('');
-                    setLinkListClear(false);
-                    setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
-                  },
-                  clearIcon: linkListInputValue ? true : linkListClear, // change false
-                  label: '', // change Test Input
-                  icon: { name: 'Lock' }, // change Amy
-                  errorMessage: {
-                    errorText: 'something wrong',
-                    subText: 'detail error',
-                  },
-                },
-              ],
-              buttonProps: {
-                onButtonClick: () => {
-                  alert('Button Clicked');
-                },
-                title: 'Update',
-                titleColor: '#fff',
-                buttonColor: linkListBtnColor,
-              },
             },
             { label: 'Block This Card' },
             { label: 'Block This Replace This Card' },
           ]}
-        />     
+        />  
                 </div>
               ),
               buttonContent: {

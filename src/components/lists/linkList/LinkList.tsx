@@ -1,8 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 import { Card, Accordion, useAccordionToggle } from 'react-bootstrap';
 import Icon from 'src/components/assets/icons/icon';
-import InputField from 'src/components/inputs/inputFields/InputFields';
-import PrimaryButton from 'src/components/buttons/primaryButton/PrimaryButton';
 import Paragraphs from '../../assets/typography';
 import classes from './LinkList.module.css';
 const { SB_15_BLACK, R_15_BLACK } = Paragraphs;
@@ -20,8 +18,9 @@ declare type ListItem = {
   expandableContent?: ReactNode;
   onListClick?: (item: any) => void;
   rightItem?: ReactNode;
-  inputProps?: any[];
-  buttonProps?: any;
+  cardStyle?: any;
+  cardHeaderStyle?: any;
+  cardHeaderInnerStyle?: any;
 };
 interface LinkListProps {
   testId?: string;
@@ -40,17 +39,23 @@ const LinkList: React.FC<LinkListProps> = ({
         {list &&
           list.map((item, index) => {
             const {
-              disabled,
-              inputProps = [{}],
-              buttonProps,
               expandable,
               expandableContent,
               leftBorderColor,
+              cardStyle,
+              cardHeaderStyle,
             } = item;
 
             return (
-              <Card key={index} style={{ borderLeftColor: leftBorderColor }}>
-                <Card.Header>
+              <Card
+                key={index}
+                style={{
+                  borderRadius: 0,
+                  borderLeftColor: leftBorderColor,
+                  ...cardStyle,
+                }}
+              >
+                <Card.Header style={cardHeaderStyle}>
                   <AccordionToggle
                     item={item}
                     eventKey={`${index}`}
@@ -58,55 +63,14 @@ const LinkList: React.FC<LinkListProps> = ({
                   />
                 </Card.Header>
                 {expandable ? (
-                  <Accordion.Collapse eventKey={`${index}`}>
-                    <Card.Body>
-                 
-                      {!expandableContent ? (
-                        <div className={classes.EditWrapper}>
-                          {inputProps &&
-                            inputProps.map((input: any, index: number) => {
-                              return (
-                                <div
-                                  key={index}
-                                  className={classes.InputWrapper}
-                                >
-                                  <InputField
-                                    type="text"
-                                    value=""
-                                    notValid={false}
-                                    handleChange={() => {}}
-                                    clearClickHandler={() => {}}
-                                    clearIcon={true}
-                                    label=""
-                                    icon={{ name: 'Lock' }}
-                                    errorMessage={{
-                                      errorText: 'something wrong',
-                                      subText: 'detail error',
-                                    }}
-                                    {...{ notValid: disabled, ...input }}
-                                  />
-                                </div>
-                              );
-                            })}
-                          <div className={classes.primaryBtnStyle}>
-                            <PrimaryButton
-                              onButtonClick={() => {
-                                window.alert('Button Clicked');
-                              }}
-                              title={'Update'}
-                              titleColor={'#fff'}
-                              buttonColor={{
-                                top: '#BDBDBD',
-                                bottom: '#BDBDBD',
-                              }}
-                              {...buttonProps}
-                            />
-                          </div>
-                        </div>
-                      ) : (
-                        <>{expandableContent}</>
-                      )}
-                    </Card.Body>
+                  <Accordion.Collapse
+                    className={classes.AccordionCollapseWrapper}
+                    eventKey={`${index}`}
+                    style={{
+                      backgroundColor: cardStyle && cardStyle.backgroundColor,
+                    }}
+                  >
+                    <Card.Body>{expandableContent}</Card.Body>
                   </Accordion.Collapse>
                 ) : null}
               </Card>
@@ -136,6 +100,7 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
     bold,
     onListClick = () => {},
     leftIcon,
+    cardHeaderInnerStyle,
   } = item;
   const [isOpen, setIsOpen] = useState(defaultActiveKey === eventKey);
   const decoratedOnClick = useAccordionToggle(eventKey, () =>
@@ -149,7 +114,11 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
     }
   };
   return (
-    <div className={classes.HeaderWrapper} onClick={handleToggle}>
+    <div
+      className={classes.HeaderWrapper}
+      onClick={handleToggle}
+      style={cardHeaderInnerStyle}
+    >
       {leftIcon && <div className={classes.LeftIconWrapper}>{leftIcon}</div>}
       <div className={classes.LabelWrapper}>
         <div className={classes.LabelInner}>
@@ -217,7 +186,7 @@ const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, isOpen }) => {
         </span>
       ) : (
         <span className={classes.ToggleIcon}>
-          <Icon icon="arrowDown" size={12} color="#444444" />
+          <Icon icon="Edit" size={25} color="#444444" />
         </span>
       )}
     </div>

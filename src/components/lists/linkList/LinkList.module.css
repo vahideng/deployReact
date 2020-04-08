@@ -58,6 +58,10 @@
   margin-right: 0.5rem;
 }
 
+.AccordionCollapseWrapper {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
 .ReadNotification {
   position: relative;
   width: 0.4375rem;
