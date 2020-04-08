@@ -6,12 +6,12 @@ import Navbar from 'src/components/headers/navbar/Navbar';
 import NavbarTransparent from 'src/components/headers/navbarTransparent/NavbarTransparent';
 import TextDropdown from 'src/components/inputs/texDropdown/TextDropdown';
 import TextButton from 'src/components/buttons/textButton/TextButton';
-import AmAccordion from 'src/components/amAccordion/AmAccordion';
-import LinkList from 'src/components/lists/linkList/LinkList';
-import ToggleButton from 'src/components/buttons/toggleButton/ToggleButton';
 import Icon from 'src/components/assets/icons/icon';
+import InputField from "src/components/inputs/inputFields/InputFields";
+import AmInputFieldAccordian from 'src/components/amInputFieldAccordian/amInputFieldAccordian';
 const {
   B_13_ORANGE_463,
+  R_13_GREY444,
 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -37,10 +37,6 @@ const Sprint3: React.FC<Props> = () => {
   const [homeRedirect, setHomeRedirect] = useState(false);
   const [linkListClear, setLinkListClear] = useState(false);
   const [linkListInputValue, setLinkListInputValue] = useState('');
-  const [linkListBtnColor, setLinkListBtnColor] = useState({
-    top: '#BDBDBD',
-    bottom: '#BDBDBD',
-  });
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -163,250 +159,1582 @@ const Sprint3: React.FC<Props> = () => {
           />,
         ]}
       />
-            <Title>Input Accordian</Title>
+
+
+<Title>Input Accordian</Title>
             <CenteredDiv
         style={{
           margin: '5rem',
+          maxWidth:'699px',
         }}
       >
-        <AmAccordion
+        <AmInputFieldAccordian
           testId={'testId'}
           data={[
             {
               id: 'id-1',
               title: 'Transfers',
-              children:(
-                <div>
-          <LinkList
-          testId="link_list_sprint_3_test"
-          defaultActiveKey="2"
-          list={[
-            {
-              label: 'Show on AmOnline',
-              rightItem: (
-                <ToggleButton
-                  toggleOffLabel="NO"
-                  toggleOnLabel="YES"
-                  value={true}
-                  onTogglePress={() => {}}
-                />
-              ),
-            },
-            { label: 'Change Card PIN' },
-            {
-              label: 'Nickname', // change Lastname
-              leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
-              bold: true, // chang false
-              onListClick: (item: any) => {
-                window.alert(`clicked on item ${item.label}`);
-                // window.alert(`ITEM NAME:::: ${item.label}`)
-              },
-          
-              expandable: true, // change false
-              subtitle: [
-                'AmBank BonusLink Visa',
-                'AmBank BonusLink Mastercard', // change
-                // 'Another line of subtitle'
-              ],
-              leftBorderColor: 'red', // change green
-              inputProps: [
+              defaultActiveContentIndex:'',
+              content:[
                 {
-                  type: 'text', // change number
-                  value: linkListInputValue,
-                  notValid: false, // change true
-                  handleChange: (e: any) => {
-                    // window.alert(`text change: ${e.target.value}`)
-                    setLinkListInputValue(e.target.value);
-                    setLinkListClear(true);
-                    setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                  label: 'Quick Access Limit', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
                   },
-                  clearClickHandler: () => {
-                    // window.alert(`clear change`)
-                    setLinkListInputValue('');
-                    setLinkListClear(false);
-                    setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
-                  },
-                  clearIcon: linkListInputValue ? true : linkListClear, // change false
-                  label: '', // change Test Input
-                  icon: { name: 'Lock' }, // change Amy
-                  errorMessage: {
-                    errorText: 'something wrong',
-                    subText: 'detail error',
-                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 250.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
                 },
-              ],
-              buttonProps: {
-                onButtonClick: () => {
-                  alert('Button Clicked');
-                },
-                title: 'Update',
-                titleColor: '#fff',
-                buttonColor: linkListBtnColor,
-              },
-            },
-            {
-              label: 'Nickname', // change Lastname
-              leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
-              bold: true, // chang false
-              onListClick: (item: any) => {
-                window.alert(`clicked on item ${item.label}`);
-                // window.alert(`ITEM NAME:::: ${item.label}`)
-              },
-              // rightItem: (
-              //   <ToggleButton
-              //     toggleOffLabel="NO"
-              //     toggleOnLabel="YES"
-              //     value={true}
-              //     onTogglePress={() => {}}
-              //   />
-              // ), // change
-              expandable: true, // change false
-              subtitle: [
-                'AmBank BonusLink Visa',
-                'AmBank BonusLink Mastercard', // change
-                // 'Another line of subtitle'
-              ],
-              leftBorderColor: 'green', // change red
-              inputProps: [
                 {
-                  type: 'text', // change number
-                  value: linkListInputValue,
-                  notValid: false, // change true
-                  handleChange: (e: any) => {
-                    // window.alert(`text change: ${e.target.value}`)
-                    setLinkListInputValue(e.target.value);
-                    setLinkListClear(true);
-                    setLinkListBtnColor({ top: '#FF0D0D', bottom: '#FD8585' });
+                  label: 'Own Ambank Account', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
                   },
-                  clearClickHandler: () => {
-                    // window.alert(`clear change`)
-                    setLinkListInputValue('');
-                    setLinkListClear(false);
-                    setLinkListBtnColor({ top: '#BDBDBD', bottom: '#BDBDBD' });
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'Current Limit RM 5,00,000',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
+                },
+                {
+                  label: 'Other Bank Account', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
                   },
-                  clearIcon: linkListInputValue ? true : linkListClear, // change false
-                  label: '', // change Test Input
-                  icon: { name: 'Lock' }, // change Amy
-                  errorMessage: {
-                    errorText: 'something wrong',
-                    subText: 'detail error',
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 50,000.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
+                },
+                {
+                  label: 'IBG/ DuitNow/ QR', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
                   },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 250.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
                 },
-              ],
-              buttonProps: {
-                onButtonClick: () => {
-                  alert('Button Clicked');
+                {
+                  label: 'Overseas Account(Remittance)', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 250.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
                 },
-                title: 'Update',
-                titleColor: '#fff',
-                buttonColor: linkListBtnColor,
-              },
-            },
-            { label: 'Block This Card' },
-            { label: 'Block This Replace This Card' },
-          ]}
-        />     
-                </div>
-              ),
-              buttonContent: {
-                clickHandler: () => {
-                  alert('Set device handler');
-                },
-                title: 'Setup now',
-                titleColor: '#000000',
-                buttonColor: {
-                  top: '#F6F6F3',
-                  bottom: '#EAE9E3',
-                },
-                icon: {
-                  name: 'Settings',
-                  color: '#000',
-                },
-              },
+              ],  
             },
             {
               id: 'id-2',
               title: 'Payments',
-              children:(
-                <div>
+              content:[
+                {
+                  label: 'Quick Access Limit', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
                     
-            </div>
-              ),
-              buttonContent: {
-                clickHandler: () => {
-                  alert('Remove device handler');
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 250.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
                 },
-                title: 'Remove Device',
-                titleColor: '#ffffff',
-                icon: {
-                  name: 'delete',
-                  color: '#ffffff',
+                {
+                  label: 'Own Ambank Account', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'Current Limit RM 5,00,000',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
                 },
-              },
+                {
+                  label: 'Other Bank Account', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 50,000.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
+                },
+                {
+                  label: 'IBG/ DuitNow/ QR', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 250.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
+                },
+                {
+                  label: 'Overseas Account(Remittance)', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 250.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
+                },
+              ],
             },
             {
               id: 'id-2',
               title: 'Investments',
-              children:(
-                <div>
+              content:[
+                {
+                  label: 'Quick Access Limit', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
                     
-            </div>
-              ),
-              buttonContent: {
-                clickHandler: () => {
-                  alert('Remove device handler');
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 250.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
                 },
-                title: 'Remove Device',
-                titleColor: '#ffffff',
-                icon: {
-                  name: 'delete',
-                  color: '#ffffff',
+                {
+                  label: 'Own Ambank Account', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'Current Limit RM 5,00,000',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
                 },
-              },
+                {
+                  label: 'Other Bank Account', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 50,000.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
+                },
+                {
+                  label: 'IBG/ DuitNow/ QR', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 250.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
+                },
+                {
+                  label: 'Overseas Account(Remittance)', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 250.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
+                },
+              ],
             },
             {
               id: 'id-2',
               title: 'Online Shopping',
-              children:(
-                <div>
+              content:[
+                {
+                  label: 'Quick Access Limit', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
                     
-            </div>
-              ),
-              buttonContent: {
-                clickHandler: () => {
-                  alert('Remove device handler');
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 250.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
                 },
-                title: 'Remove Device',
-                titleColor: '#ffffff',
-                icon: {
-                  name: 'delete',
-                  color: '#ffffff',
+                {
+                  label: 'Own Ambank Account', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'Current Limit RM 5,00,000',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
                 },
-              },
+                {
+                  label: 'Other Bank Account', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 50,000.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
+                },
+                {
+                  label: 'IBG/ DuitNow/ QR', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 250.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
+                },
+                {
+                  label: 'Overseas Account(Remittance)', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 250.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
+                },
+              ],
             },
             {
               id: 'id-2',
               title: 'FPX Specific Merchant',
-              children:(
-                <div>
+              content:[
+                {
+                  label: 'Quick Access Limit', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
                     
-            </div>
-              ),
-              buttonContent: {
-                clickHandler: () => {
-                  alert('Remove device handler');
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 250.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
                 },
-                title: 'Remove Device',
-                titleColor: '#ffffff',
-                icon: {
-                  name: 'delete',
-                  color: '#ffffff',
+                {
+                  label: 'Own Ambank Account', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'Current Limit RM 5,00,000',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
                 },
-              },
+                {
+                  label: 'Other Bank Account', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 50,000.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
+                },
+                {
+                  label: 'IBG/ DuitNow/ QR', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 250.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
+                },
+                {
+                  label: 'Overseas Account(Remittance)', // change Lastname
+                  leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+                  bold: true, // chang false
+                  onListClick: () => {
+                    // window.alert(`clicked on item ${item.label}`);
+                    // window.alert(`ITEM NAME:::: ${item.label}`)
+                  },
+                  expandable: true, // change false
+                  expandableContent: (
+                    <>
+                    <div style={{padding:0}}>
+                      <InputField
+                        type="text"
+                        value="9,99,99,999"
+                        notValid={false}
+                        handleChange={() => {}}
+                        clearClickHandler={() => {}}
+                        clearIcon={true}
+                        label=""
+                        icon={{ name: 'Lock' }}
+                        errorMessage={{
+                          errorText: 'something wrong',
+                          subText: 'detail error',
+                        }}
+                        {...{
+                          type: 'text', // change number
+                          value: linkListInputValue,
+                          notValid: false, // change true
+                          handleChange: (e: any) => {
+                            // window.alert(`text change: ${e.target.value}`)
+                            setLinkListInputValue(e.target.value);
+                            setLinkListClear(true);
+                    
+                          },
+                          clearClickHandler: () => {
+                            // window.alert(`clear change`)
+                            setLinkListInputValue('');
+                            setLinkListClear(false);
+                       
+                          },
+                          clearIcon: linkListInputValue ? true : linkListClear, // change false
+                          label: '', // change Test Input
+                          icon: { name: 'Lock' }, // change Amy
+                          errorMessage: {
+                            errorText: 'something wrong',
+                            subText: 'detail error',
+                          },
+                        }}
+                      />
+                     <R_13_GREY444 style={{marginTop:'12px'}}>Maximum Daily Limit RM 99,99,999</R_13_GREY444>
+                      </div>
+                    </>
+                  ),
+                  subtitle: [
+                    'RM 250.00',
+                 
+                    // 'Another line of subtitle'
+                  ],
+                  leftBorderColor: 'red', // change green
+                },
+              ],
             },
           ]}
-        ></AmAccordion>
+        >
+
+        </AmInputFieldAccordian>
       </CenteredDiv>
+
+
+   
 
     </div>
   );
