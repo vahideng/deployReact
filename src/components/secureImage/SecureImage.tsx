@@ -7,37 +7,77 @@ interface Props {
   mainImage?: string;
   image: string;
   label?: string;
+  type?: "wide" | "default";
 }
 
-const SecureImage: React.FC<Props> = props => {
-  const { image, label, testId, mainImage } = props;
-  return (
-    <div className={classes.SecureImageContainer} id={testId}>
-      {!!label && (
+const SecureImage: React.FC<Props> = (props) => {
+  const { image, label, testId, mainImage, type } = props;
+
+  const DefaultType = () => {
+    return (
+      <div id={testId}>
         <B_15_BLACK className={classes.SecureImageTitle}>{label}</B_15_BLACK>
-      )}
-      <div className={classes.SecureImageMain}>
-        <div
-          style={{
-            backgroundImage: `url(${mainImage || image})`
-          }}
-          className={classes.SecureImageBG}
-        ></div>
-        {!!image && (
-          <img src={image} alt="Logo" className={classes.SecureImageImg} />
-        )}
-      </div>
-      <div className={classes.SecureImageCircle}>
-        <div className={classes.CircleCenterWrapper}>
-          <img
-            className={classes.CircleCenterImage}
-            alt="Secure Picture"
-            src={image}
-          ></img>
+        <div className={classes.SecureImageMain}>
+          <div
+            style={{
+              backgroundImage: `url(${image})`,
+            }}
+            className={classes.SecureImageBG}
+          ></div>
+          {!!image && (
+            <img src={image} alt="Logo" className={classes.SecureImageImg} />
+          )}
         </div>
       </div>
-    </div>
-  );
+    );
+  };
+
+  const WideType = () => {
+    return (
+      <div className={classes.SecureImageContainerWide} id={testId}>
+        {!!label && (
+          <B_15_BLACK className={classes.SecureImageTitleWide}>
+            {label}
+          </B_15_BLACK>
+        )}
+        <div className={classes.SecureImageMainWide}>
+          <div
+            style={{
+              backgroundImage: `url(${mainImage || image})`,
+            }}
+            className={classes.SecureImageBGWide}
+          ></div>
+          {!!image && (
+            <img
+              src={image}
+              alt="Logo"
+              className={classes.SecureImageImgWide}
+            />
+          )}
+        </div>
+        <div className={classes.SecureImageCircleWide}>
+          <div className={classes.CircleCenterWrapperWide}>
+            <img
+              className={classes.CircleCenterImageWide}
+              alt="Secure Picture"
+              src={image}
+            ></img>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const Controller = () => {
+    switch (type) {
+      case "wide":
+        return <WideType />;
+      default:
+        return <DefaultType />;
+    }
+  };
+
+  return <Controller />;
 };
 
 export default SecureImage;
