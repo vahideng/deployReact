@@ -274,28 +274,26 @@ const Sprint3: React.FC<Props> = () => {
         <PortfolioList
           header={[
             {
-              title: 'Fund Name',
-              icon: 'sort',
-              arrowDownCLick: () => alert('down Handle sort and icon change'),
-              arrowUpCLick: () => alert(' up Handle sort and icon change'),
-              arrowDownBold: true,
-              arrowUpBold: false,
+              title: "Fund Name",
+              icon: "sort",
+              onArrowClick : () => alert(" Handle sort and icon change"),
+              
+              arrowDownBold :true,
+              arrowUpBold : false
             },
             {
-              title: 'Value',
-              icon: 'sort',
-              arrowDownCLick: () => alert('down Handle sort and icon change'),
-              arrowUpCLick: () => alert(' up Handle sort and icon change'),
-              arrowDownBold: false,
-              arrowUpBold: true,
+              title: "Value",
+              icon: "sort",
+              onArrowClick : () => alert(" Handle sort and icon change"),
+              arrowDownBold :false,
+              arrowUpBold : true
             },
             {
-              title: 'Profit/Loss',
-              icon: 'sort',
-              arrowDownCLick: () => alert('down Handle sort and icon change'),
-              arrowUpCLick: () => alert(' up Handle sort and icon change'),
-              arrowDownBold: true,
-              arrowUpBold: false,
+              title: "Profit/Loss",
+              icon: "sort",
+              onArrowClick : () => alert(" Handle sort and icon change"),
+              arrowDownBold :true,
+              arrowUpBold : false
             },
           ]}
           testId={'testId'}

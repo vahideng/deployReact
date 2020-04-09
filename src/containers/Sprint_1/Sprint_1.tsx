@@ -98,6 +98,7 @@ interface State {
   tacClear: boolean;
   tacClearActiveStatus: boolean;
   navbarScrolled: boolean;
+  actionBtnStatus:boolean;
 }
 
 class Sprint1 extends Component<Props, State> {
@@ -118,10 +119,10 @@ class Sprint1 extends Component<Props, State> {
     sprint_2Direct: false,
     sprint_3Direct: false,
     tacInactive: true,
-
     tacClear: false,
     tacClearActiveStatus: false,
     navbarScrolled: false,
+    actionBtnStatus:true,
   };
   render() {
     const {
@@ -144,6 +145,8 @@ class Sprint1 extends Component<Props, State> {
       tacClear,
       tacClearActiveStatus,
       navbarScrolled,
+      actionBtnStatus,
+
     } = this.state;
 
     if (homRedirect === true) {
@@ -400,7 +403,9 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
-                      onActionButtonClick: () => alert("Repeat"),
+                      onActionButtonClick: () =>{ 
+                        alert("Repeat")
+                    },
                       details: [
                         {
                           label1: "From Account",
@@ -409,14 +414,17 @@ class Sprint1 extends Component<Props, State> {
                           value2: "May - Rental",
                           actionLabel: "Add to Fav",
                           actionIcon: "Love",
-                          onActionButtonClick: () => alert("Fav"),
+                          onActionButtonClick: () =>{ alert("Fav")
+                          this.setState({
+                            actionBtnStatus: !actionBtnStatus,
+                          })},
                         },
                         {
                           label1: "",
                           value1: "",
                           label2: "Other Details",
                           value2: "-",
-                          // actionLabel: 'View Receipt',
+                          //  actionLabel: 'View Receipt',
                           // actionIcon: ''
                         },
                       ],
@@ -497,7 +505,7 @@ class Sprint1 extends Component<Props, State> {
                 },
               ]}
               onTransactionClick={(item, sectionIndex, itemIndex) => {
-                alert(item);
+                alert("check : "+item);
                 alert(`${sectionIndex} - ${itemIndex}`);
               }}
             />
