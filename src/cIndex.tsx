@@ -51,6 +51,7 @@ import StatusIcon from "./components/assets/icons/statusIcon/StatusIcon";
 import Logo from "./components/assets/logo/Logo";
 import TileListView from "./components/lists/TileListView/TileListView";
 import AmModal from "./components/modals/Modal";
+import TransactionIconList from "./components/lists/TransactionIconList/TransactionIconList";
 
 ///
 /// below are sprint-2 components
@@ -130,6 +131,7 @@ export {
   ArticleDetails,
   ////
   /// below are sprint-1 components
+  TransactionIconList,
   AmModal,
   ActionButtons,
   BackButton,
