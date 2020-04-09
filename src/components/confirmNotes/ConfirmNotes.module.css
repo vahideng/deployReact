@@ -1,0 +1,55 @@
+.FlexCenter, .FlexLeft, .FlexRight, .FlexTop, .FlexBottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.FlexLeft {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.FlexRight {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.FlexTop {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.FlexBottom {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.Container {
+  width: 100%;
+}
+
+.Title {
+  margin-bottom: 1.75rem;
+  line-height: 1.25rem;
+  text-align: left;
+}
+
+.Content {
+  margin-bottom: 1.75rem;
+  line-height: 1.375rem;
+  text-align: left;
+}

@@ -21,30 +21,37 @@ declare type ListItem = {
   cardStyle?: any;
   cardHeaderStyle?: any;
   cardHeaderInnerStyle?: any;
+  cardBody?:any;
+  accordionStyle?:any;
+
 };
 interface LinkListProps {
   testId?: string;
   defaultActiveKey?: string;
   list?: ListItem[];
+  cardStyle?: any;
+  cardHeaderStyle?: any;
+  cardHeaderInnerStyle?: any;
+  cardBody?:any;
+  accordionStyle?:any;
 }
 
 const LinkList: React.FC<LinkListProps> = ({
   testId,
   list,
   defaultActiveKey,
+  cardStyle,
+  cardHeaderStyle,
+  cardHeaderInnerStyle,
+  cardBody,
+  accordionStyle
 }) => {
   return (
     <div id={testId} className={classes.Container}>
-      <Accordion defaultActiveKey={defaultActiveKey}>
+      <Accordion defaultActiveKey={defaultActiveKey} style={{...accordionStyle}}>
         {list &&
           list.map((item, index) => {
-            const {
-              expandable,
-              expandableContent,
-              leftBorderColor,
-              cardStyle,
-              cardHeaderStyle,
-            } = item;
+            const { expandable, expandableContent, leftBorderColor } = item;
 
             return (
               <Card
@@ -53,13 +60,17 @@ const LinkList: React.FC<LinkListProps> = ({
                   borderRadius: 0,
                   borderLeftColor: leftBorderColor,
                   ...cardStyle,
+                  ...item.cardStyle,
                 }}
               >
-                <Card.Header style={cardHeaderStyle}>
+                <Card.Header
+                  style={{ ...cardHeaderStyle, ...item.cardHeaderStyle }}
+                >
                   <AccordionToggle
                     item={item}
                     eventKey={`${index}`}
                     defaultActiveKey={defaultActiveKey}
+                    cardHeaderInnerStyle={cardHeaderInnerStyle}
                   />
                 </Card.Header>
                 {expandable ? (
@@ -70,7 +81,7 @@ const LinkList: React.FC<LinkListProps> = ({
                       backgroundColor: cardStyle && cardStyle.backgroundColor,
                     }}
                   >
-                    <Card.Body>{expandableContent}</Card.Body>
+                    <Card.Body style={{...cardBody,...item.cardBody}}>{expandableContent}</Card.Body>
                   </Accordion.Collapse>
                 ) : null}
               </Card>
@@ -85,12 +96,14 @@ interface AccordionToggleProps {
   item: ListItem;
   eventKey?: string;
   defaultActiveKey?: string;
+  cardHeaderInnerStyle?: any;
 }
 
 const AccordionToggle: React.FC<AccordionToggleProps> = ({
   item,
   eventKey,
   defaultActiveKey,
+  cardHeaderInnerStyle,
 }) => {
   const {
     expandable,
@@ -100,7 +113,6 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
     bold,
     onListClick = () => {},
     leftIcon,
-    cardHeaderInnerStyle,
   } = item;
   const [isOpen, setIsOpen] = useState(defaultActiveKey === eventKey);
   const decoratedOnClick = useAccordionToggle(eventKey, () =>
@@ -117,7 +129,7 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
     <div
       className={classes.HeaderWrapper}
       onClick={handleToggle}
-      style={cardHeaderInnerStyle}
+      style={{ ...cardHeaderInnerStyle, ...item.cardHeaderInnerStyle }}
     >
       {leftIcon && <div className={classes.LeftIconWrapper}>{leftIcon}</div>}
       <div className={classes.LabelWrapper}>
