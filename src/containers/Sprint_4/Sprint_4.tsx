@@ -5,14 +5,16 @@ import styled from 'styled-components';
 import Navbar from 'src/components/headers/navbar/Navbar';
 import NavbarTransparent from 'src/components/headers/navbarTransparent/NavbarTransparent';
 import TextDropdown from 'src/components/inputs/texDropdown/TextDropdown';
+import AmDropdown from 'src/components/amDropdown/AmDropdown';
 import TextButton from 'src/components/buttons/textButton/TextButton';
+
+import ConfirmNotes from 'src/components/confirmNotes/ConfirmNotes';
 import Icon from 'src/components/assets/icons/icon';
-import InputField from "src/components/inputs/inputFields/InputFields";
+import InputField from 'src/components/inputs/inputFields/InputFields';
+
+import ViewRate from 'src/components/viewRate/ViewRate';
 import AmInputFieldAccordian from 'src/components/amInputFieldAccordian/amInputFieldAccordian';
-const {
-  B_13_ORANGE_463,
-  R_13_GREY444,
-} = Paragraphs;
+const { B_13_ORANGE_463, R_13_GREY444 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
   padding: 5px 0;
@@ -37,6 +39,12 @@ const Sprint3: React.FC<Props> = () => {
   const [homeRedirect, setHomeRedirect] = useState(false);
   const [linkListClear, setLinkListClear] = useState(false);
   const [linkListInputValue, setLinkListInputValue] = useState('');
+  const [linkListBtnColor, setLinkListBtnColor] = useState({
+    top: '#BDBDBD',
+    bottom: '#BDBDBD',
+  });
+  const [viewRateType, setViewRateType] = useState('test_value3');
+  const [showDropdown, setShowDropDown] = useState(false);
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -56,8 +64,6 @@ const Sprint3: React.FC<Props> = () => {
   if (homeRedirect === true) {
     return <Redirect to="/" />;
   }
-
-
 
   return (
     <div style={{ paddingTop: 100 }}>
@@ -89,6 +95,109 @@ const Sprint3: React.FC<Props> = () => {
           },
         ]}
       />
+      <Title>View Rate Container</Title>
+      <CenteredDiv
+        style={{
+          margin: '0 auto',
+          width: '36.25rem',
+        }}
+      >
+        <AmDropdown
+          dropdownData={[
+            { value: 'test_value', label: 'Conventional Fixed Deposit 1' },
+            { value: 'test_value2', label: 'Conventional Fixed Deposit 2' },
+            { value: 'test_value3', label: 'Conventional Fixed Deposit 3' },
+          ]}
+          value={viewRateType}
+          icon={{ name: 'Clock', color: '#ff2626', size: 30 }}
+          handleChange={(item: any) => {
+            const { value } = item;
+            setViewRateType(value);
+            setShowDropDown(false);
+          }}
+          placeholder="Select test"
+          clickOnArrow={() => {
+            setShowDropDown(!showDropdown);
+          }}
+          inputClickHandler={() => {
+            setShowDropDown(!showDropdown);
+          }}
+          onBlur={() => {
+            setShowDropDown(false);
+          }}
+          showDropdown={showDropdown}
+          arrowIcon
+        />
+      </CenteredDiv>
+      <Title>View Rate</Title>
+      <CenteredDiv
+        style={{
+          margin: '0 auto',
+          width: '30rem',
+        }}
+      >
+        <ViewRate
+          testId="sprint_4_view_rate"
+          title={{
+            content: '** Rates are subject to change',
+          }}
+          subtitle={{
+            content:
+              'Note: Customer with Reward Code may be entitled additional rate in AmOnline.',
+          }}
+          data={{
+            headers: [
+              {
+                style: {},
+                values: ['Tenure'],
+              },
+              {
+                style: { textAlign: 'center', fontWeight: 'bold' },
+                values: ['Board Rate', '(% p.a.)'],
+              },
+              {
+                style: { textAlign: 'center', fontWeight: 'bold' },
+                values: ['AmOnline Rate', '(% p.a.)'],
+              },
+            ],
+            values: [
+              ['1 Month', '2.95', '2.95'],
+              ['2 Month', '2.95', '2.95'],
+              ['3 Month', '2.95', '2.95'],
+              ['4 Month', '3.95', '2.95'],
+              ['5 Month', '2.95', '2.95'],
+              ['6 Month', '2.95', '2.95'],
+              ['7 Month', '6.95', '2.95'],
+            ],
+          }}
+        />
+      </CenteredDiv>
+      <Title>Confirm Notes</Title>
+      <CenteredDiv
+        style={{
+          margin: '1rem 15rem',
+        }}
+      >
+        <ConfirmNotes
+          testId="sprint_4_confirm_notes"
+          title={{
+            content: 'Important Notes',
+            style: { fontSize: '2rem' },
+          }}
+          body={[
+            {
+              content:
+                'This is not the final confirmation of your payment. Please check with your merchant for final status confirmation.',
+              style: {},
+            },
+            {
+              content:
+                'Please click on the “Continue with Transaction” button below and do not close the browser until final receipt is displayed',
+              style: {},
+            },
+          ]}
+        />
+      </CenteredDiv>
       <Title>Navbar Transparent</Title>
       <NavbarTransparent
         icon={{
@@ -131,16 +240,16 @@ const Sprint3: React.FC<Props> = () => {
             }}
           />,
           <TextButton
-          buttonText="Sprint-4"
-          onTextClick={() => {
-            setSprint4(true);
-          }}
-          buttonStyles={{
-            color: '#000000',
-            fontWeight: 400,
-            fontSize: 15,
-          }}
-        />,
+            buttonText="Sprint-4"
+            onTextClick={() => {
+              setSprint4(true);
+            }}
+            buttonStyles={{
+              color: '#000000',
+              fontWeight: 400,
+              fontSize: 15,
+            }}
+          />,
           <TextDropdown
             // menuIsOpen
             defaultValue={'Persian'}
@@ -159,10 +268,8 @@ const Sprint3: React.FC<Props> = () => {
           />,
         ]}
       />
-
-
-<Title>Input Accordian</Title>
-            <CenteredDiv
+      <Title>Input Accordian</Title>
+      <CenteredDiv
         style={{
           margin: '5rem',
           maxWidth:'699px',

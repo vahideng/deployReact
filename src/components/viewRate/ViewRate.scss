@@ -1,0 +1,27 @@
+@import '../assets/common/common.scss';
+@import '../assets/common/flex.scss';
+
+.Container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.Title {
+  margin-bottom: 1.375rem;
+  line-height: 1.125rem;
+}
+.Subtitle {
+  margin-bottom: 2.375rem;
+  line-height: 0.9375rem;
+}
+
+.Content {
+  margin-bottom: 1.75rem;
+  line-height: 1.375rem;
+}
+
+.TableHeading {
+  vertical-align: top !important;
+  font-size: 0.81rem;
+  font-weight: bold;
+}
