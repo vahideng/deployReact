@@ -1,8 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 import { Card, Accordion, useAccordionToggle } from 'react-bootstrap';
 import Icon from 'src/components/assets/icons/icon';
-import InputField from 'src/components/inputs/inputFields/InputFields';
-import PrimaryButton from 'src/components/buttons/primaryButton/PrimaryButton';
 import Paragraphs from '../../assets/typography';
 import classes from './LinkList.module.css';
 const { SB_15_BLACK, R_15_BLACK } = Paragraphs;
@@ -20,92 +18,70 @@ declare type ListItem = {
   expandableContent?: ReactNode;
   onListClick?: (item: any) => void;
   rightItem?: ReactNode;
-  inputProps?: any[];
-  buttonProps?: any;
+  cardStyle?: any;
+  cardHeaderStyle?: any;
+  cardHeaderInnerStyle?: any;
+  cardBody?:any;
+  accordionStyle?:any;
+
 };
 interface LinkListProps {
   testId?: string;
   defaultActiveKey?: string;
   list?: ListItem[];
+  cardStyle?: any;
+  cardHeaderStyle?: any;
+  cardHeaderInnerStyle?: any;
+  cardBody?:any;
+  accordionStyle?:any;
 }
 
 const LinkList: React.FC<LinkListProps> = ({
   testId,
   list,
   defaultActiveKey,
+  cardStyle,
+  cardHeaderStyle,
+  cardHeaderInnerStyle,
+  cardBody,
+  accordionStyle
 }) => {
   return (
     <div id={testId} className={classes.Container}>
-      <Accordion defaultActiveKey={defaultActiveKey}>
+      <Accordion defaultActiveKey={defaultActiveKey} style={{...accordionStyle}}>
         {list &&
           list.map((item, index) => {
-            const {
-              disabled,
-              inputProps = [{}],
-              buttonProps,
-              expandable,
-              expandableContent,
-              leftBorderColor,
-            } = item;
+            const { expandable, expandableContent, leftBorderColor } = item;
 
             return (
-              <Card key={index} style={{ borderLeftColor: leftBorderColor }}>
-                <Card.Header>
+              <Card
+                key={index}
+                style={{
+                  borderRadius: 0,
+                  borderLeftColor: leftBorderColor,
+                  ...cardStyle,
+                  ...item.cardStyle,
+                }}
+              >
+                <Card.Header
+                  style={{ ...cardHeaderStyle, ...item.cardHeaderStyle }}
+                >
                   <AccordionToggle
                     item={item}
                     eventKey={`${index}`}
                     defaultActiveKey={defaultActiveKey}
+                    cardHeaderInnerStyle={cardHeaderInnerStyle}
                   />
                 </Card.Header>
                 {expandable ? (
-                  <Accordion.Collapse eventKey={`${index}`}>
-                    <Card.Body>
-                      {!expandableContent ? (
-                        <div className={classes.EditWrapper}>
-                          {inputProps &&
-                            inputProps.map((input: any, index: number) => {
-                              return (
-                                <div
-                                  key={index}
-                                  className={classes.InputWrapper}
-                                >
-                                  <InputField
-                                    type="text"
-                                    value=""
-                                    notValid={false}
-                                    handleChange={() => {}}
-                                    clearClickHandler={() => {}}
-                                    clearIcon={true}
-                                    label=""
-                                    icon={{ name: 'Lock' }}
-                                    errorMessage={{
-                                      errorText: 'something wrong',
-                                      subText: 'detail error',
-                                    }}
-                                    {...{ notValid: disabled, ...input }}
-                                  />
-                                </div>
-                              );
-                            })}
-                          <div className={classes.primaryBtnStyle}>
-                            <PrimaryButton
-                              onButtonClick={() => {
-                                window.alert('Button Clicked');
-                              }}
-                              title={'Update'}
-                              titleColor={'#fff'}
-                              buttonColor={{
-                                top: '#BDBDBD',
-                                bottom: '#BDBDBD',
-                              }}
-                              {...buttonProps}
-                            />
-                          </div>
-                        </div>
-                      ) : (
-                        <>{expandableContent}</>
-                      )}
-                    </Card.Body>
+                  <Accordion.Collapse
+                    className={classes.AccordionCollapseWrapper}
+                    eventKey={`${index}`}
+                    style={{
+                      backgroundColor: cardStyle && cardStyle.backgroundColor,
+                    }}
+                  >
+                    <Card.Body style={{...cardBody,...item.cardBody}}>{expandableContent}</Card.Body>
                   </Accordion.Collapse>
                 ) : null}
               </Card>
@@ -120,12 +96,14 @@ interface AccordionToggleProps {
   item: ListItem;
   eventKey?: string;
   defaultActiveKey?: string;
+  cardHeaderInnerStyle?: any;
 }
 
 const AccordionToggle: React.FC<AccordionToggleProps> = ({
   item,
   eventKey,
   defaultActiveKey,
+  cardHeaderInnerStyle,
 }) => {
   const {
     expandable,
@@ -148,7 +126,11 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
     }
   };
   return (
-    <div className={classes.HeaderWrapper} onClick={handleToggle}>
+    <div
+      className={classes.HeaderWrapper}
+      onClick={handleToggle}
+      style={{ ...cardHeaderInnerStyle, ...item.cardHeaderInnerStyle }}
+    >
       {leftIcon && <div className={classes.LeftIconWrapper}>{leftIcon}</div>}
       <div className={classes.LabelWrapper}>
         <div className={classes.LabelInner}>
@@ -216,7 +198,7 @@ const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, isOpen }) => {
         </span>
       ) : (
         <span className={classes.ToggleIcon}>
-          <Icon icon="arrowDown" size={12} color="#444444" />
+          <Icon icon="Edit" size={25} color="#444444" />
         </span>
       )}
     </div>

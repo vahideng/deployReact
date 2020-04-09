@@ -104,7 +104,7 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
                       </Col>
                       {item.profile_data.showAccordion && (
                         <Col
-                          style={{ paddingLeft: 0, paddingRight: 0, margin: 0 }}
+                      
                           md={1}
                         >
                           <CustomToggle

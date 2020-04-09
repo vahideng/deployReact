@@ -4,7 +4,7 @@ import Sprint1 from "./containers/Sprint_1/Sprint_1";
 import Sprint2 from "./containers/Sprint_2/Sprint_2";
 import Home from "./containers/Home/Home";
 import Sprint3 from "./containers/Sprint_3/Sprint_3";
-
+import Sprint4 from "./containers/Sprint_4/Sprint_4";
 const App: React.FC = () => {
   return (
     <Router>
@@ -20,6 +20,9 @@ const App: React.FC = () => {
         </Route>
         <Route path="/sprint-3" exact>
           <Sprint3 />
+        </Route>
+        <Route path="/sprint-4" exact>
+          <Sprint4 />
         </Route>
       </Switch>
     </Router>

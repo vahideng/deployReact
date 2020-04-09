@@ -7,6 +7,7 @@ import Icon from "src/components/assets/icons/icon";
 import styled from "styled-components";
 
 import Paragraphs from "../../assets/typography";
+
 const { SB_13_GREY444 } = Paragraphs;
 
 interface Data {
@@ -27,7 +28,9 @@ interface Data {
 interface HeaderProps {
   icon?: string;
   id?: string;
-  onClick?: () => void;
+  onArrowClick?: () => void;
+  arrowDownBold?: boolean;
+  arrowUpBold: boolean;
   style?: CSSProperties;
   textStyle?: CSSProperties;
   title: string;
@@ -48,7 +51,7 @@ interface ToggleProps {
 const CustomToggle: React.FC<ToggleProps> = ({
   content,
   eventKey,
-  testId
+  testId,
 }: ToggleProps) => {
   const decoratedOnClick = useAccordionToggle(eventKey, () => null);
   const [isOpen, setIsOpen] = React.useState(false);
@@ -61,7 +64,7 @@ const CustomToggle: React.FC<ToggleProps> = ({
   return (
     <div
       className={classes.Content}
-      onClick={e => accordionClickHandler(e)}
+      onClick={(e) => accordionClickHandler(e)}
       id={testId}
     >
       {content}
@@ -90,12 +93,29 @@ const PortfolioList: React.FC<Props> = ({ data, header, testId }) => {
               key={index}
               style={item.style}
             >
-              <div className={classes.Header} onClick={item.onClick}>
+              <div className={classes.Header}>
                 <SB_13_GREY444 style={item.textStyle}>
                   {item.title}
                 </SB_13_GREY444>
                 <div className={classes.HeaderIcon}>
-                  <Icon icon={item.icon} size={22} />
+                  <div style={{ position: "relative" }}>
+                    <div onClick={item.onArrowClick} className={classes.BothIcon}>
+                      <div className={classes.ArrowDown} >
+                        {item.arrowDownBold ? (
+                          <Icon icon="arrowDown" size={12} color="black" />
+                        ) : (
+                          <Icon icon="arrowDown" size={12} color="gray" />
+                        )}
+                      </div>
+                      <div  className={classes.ArrowUp} >
+                        {item.arrowUpBold ? (
+                          <Icon icon="arrowUp" size={12} color="black"/>
+                        ) : (
+                          <Icon icon="arrowUp" size={12} color="gray" />
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -118,7 +138,7 @@ const PortfolioList: React.FC<Props> = ({ data, header, testId }) => {
           const profitOrLoss = (
             <span
               style={{
-                color: item.rightLabel.type === "loss" ? "#FF2222" : "#36A03E"
+                color: item.rightLabel.type === "loss" ? "#FF2222" : "#36A03E",
               }}
             >
               {item.rightLabel.type === "loss" ? "-" : "+"}

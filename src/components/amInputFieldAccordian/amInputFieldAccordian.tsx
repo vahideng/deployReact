@@ -1,32 +1,30 @@
 import React, { ReactNode } from 'react';
-import classes from './AmAccordion.module.css';
+import classes from './amInputFieldAccordian.module.css';
 import { Card, Accordion, useAccordionToggle, Col } from 'react-bootstrap';
 import Icon from 'src/components/assets/icons/icon';
 import Paragraphs from '../../components/assets/typography';
+import LinkList from 'src/components/lists/linkList/LinkList';
+
 const { SB_15_BLACK } = Paragraphs;
 
-interface AccordionSettingProps {
+interface InputFieldAccordianProps {
   testId: string;
-  data:
-    {
-      title: string;
-      id: string | number;
-      accordionOpenIcon?: { name: string; color: string, size: number };
-      accordionCloseIcon?: { name: string; color: string, size: number };
-      children?: ReactNode;
-      buttonContent?: {
-        clickHandler: () => void;
-        title: string;
-        titleColor?: string;
-        buttonColor?: {top: string, bottom: string};
-        icon?: { name: string; color: string; size?: number };
-      }
-    }[]
+  data:any;
+  cardStyle?: any;
+  cardHeaderStyle?: any;
+  cardHeaderInnerStyle?: any;
+  cardBody?:any;
+  accordionStyle?:any;
+  
 }
 
-const AmAccordion: React.FC<AccordionSettingProps> = ({
+const AmInputFieldAccordian: React.FC<InputFieldAccordianProps> = ({
   data,
-  testId
+  testId,
+  cardStyle,
+  cardHeaderStyle,
+  cardBody,
+  accordionStyle,
 }) => {
   const { CardOuterContainer } = classes;
 
@@ -52,7 +50,16 @@ const AmAccordion: React.FC<AccordionSettingProps> = ({
 
                 <Accordion.Collapse eventKey={index} key={`accordionCollapse-${item.id}-${index}`} id={`accordionCollapse-${item.id}-${index}`}>
                   <Card.Body className={classes.CardBodyContent}>
-                    {item.children}
+                  <LinkList
+                        testId={`link_list_sprint_3_test-${index}`}
+                        defaultActiveKey={item.defaultActiveContentIndex}
+                        accordionStyle={{padding:'0rem 1.5rem',...accordionStyle}}
+                        cardBody={{padding:5,...cardBody}}
+                        cardStyle={{border: 'none',margin:'0rem',backgroundColor:'#ffffff',borderBottom: '1px solid rgba(0,0,0,.125)',...cardStyle}}
+                        cardHeaderStyle={{background: '#fff'
+                        ,margin:'0rem',padding: '0rem',border:'none',...cardHeaderStyle}}
+                        list={item.content}
+                      />
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -63,6 +70,7 @@ const AmAccordion: React.FC<AccordionSettingProps> = ({
     </Card>
   );
 };
+
 
 interface Props {
   testId?: string;
@@ -106,4 +114,5 @@ const CustomToggle: React.FC<Props> = ({ eventKey, testId, showIcon, title, open
   );
 };
 
-export default AmAccordion;
+
+export default AmInputFieldAccordian;

@@ -5,6 +5,9 @@ import passwordSecurity from './passwordSecurity.png';
 import profilePic from './profilePic.png';
 import editIcon from './editIcon.png';
 import card from './card.png';
+import boldArrowUp from './boldArrowUp.png';
+import boldArrowDown from './boldArrowDown.png';
+
 const LocalImages: any = {
   common: {
     amSecure,
@@ -14,6 +17,8 @@ const LocalImages: any = {
     profilePic,
     editIcon,
     card,
+    boldArrowUp,
+    boldArrowDown
   },
 };
 
