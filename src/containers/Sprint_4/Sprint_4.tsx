@@ -14,6 +14,10 @@ import InputField from 'src/components/inputs/inputFields/InputFields';
 
 import ViewRate from 'src/components/viewRate/ViewRate';
 import AmInputFieldAccordian from 'src/components/amInputFieldAccordian/amInputFieldAccordian';
+import Line from 'src/components/line/Line';
+import PrimaryButton from 'src/components/buttons/primaryButton/PrimaryButton';
+import Carousel from 'src/components/carousel/Carousel';
+
 const { B_13_ORANGE_463, B_13_BLACK, R_13_GREY444, B_13_GREY444 } = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
@@ -93,6 +97,7 @@ const Sprint3: React.FC<Props> = () => {
         ]}
       />
       <Title>View Rate Container</Title>
+      <PrimaryButton onButtonClick={() => {}} title="View Rate" />
       <CenteredDiv
         style={{
           margin: '0 auto',
@@ -131,11 +136,91 @@ const Sprint3: React.FC<Props> = () => {
           margin: '0 auto',
           width: '31.6rem',
           justifyContent: 'flex-start',
+          padding: 0,
+          marginBottom: '1.18rem',
         }}
       >
         <B_13_GREY444>Effective Date</B_13_GREY444>
         <B_13_BLACK>&nbsp;11 Mar 2020</B_13_BLACK>
       </CenteredDiv>
+      <CenteredDiv
+        style={{
+          margin: '0 auto',
+          width: '31.6rem',
+          justifyContent: 'flex-start',
+          padding: 0,
+          marginBottom: '1.81rem',
+        }}
+      >
+        <Line style={{ width: '100%' }} />
+      </CenteredDiv>
+      <CenteredDiv
+        style={{
+          margin: '0 auto',
+          width: '30rem',
+          padding: 0,
+        }}
+      >
+        <ViewRate
+          testId="sprint_4_view_rate"
+          title={{
+            content: '** Rates are subject to change',
+          }}
+          subtitle={{
+            content:
+              'Note: Customer with Reward Code may be entitled additional rate in AmOnline.',
+          }}
+          data={{
+            headers: [
+              {
+                style: {},
+                values: ['Tenure'],
+              },
+              {
+                style: { textAlign: 'center', fontWeight: 'bold' },
+                values: ['Board Rate', '(% p.a.)'],
+              },
+              {
+                style: { textAlign: 'center', fontWeight: 'bold' },
+                values: ['AmOnline Rate', '(% p.a.)'],
+              },
+            ],
+            values: [
+              ['1 Month', '2.95', '2.95'],
+              ['2 Month', '2.95', '2.95'],
+              ['3 Month', '2.95', '2.95'],
+              ['4 Month', '3.95', '2.95'],
+              ['5 Month', '2.95', '2.95'],
+              ['6 Month', '2.95', '2.95'],
+              ['7 Month', '6.95', '2.95'],
+            ],
+          }}
+        />
+      </CenteredDiv>
+      <CenteredDiv
+        style={{
+          margin: '0 auto',
+          width: '30rem',
+          padding: 0,
+        }}
+      >
+        <Carousel
+          items={[
+            [
+              {
+                children: <img src={require('src/assets/images/slider.png')} />,
+              },
+              {
+                children: <img src={require('src/assets/images/slider.png')} />,
+              },
+              {
+                children: <img src={require('src/assets/images/slider.png')} />,
+              },
+            ],
+          ]}
+        />
+      </CenteredDiv>
+
       <Title>View Rate</Title>
       <CenteredDiv
         style={{

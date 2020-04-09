@@ -1,6 +1,6 @@
-import React from "react";
-import Paragraphs from "../../assets/typography";
-import classes from "./ToggleButton.module.css";
+import React from 'react';
+import Paragraphs from '../../assets/typography';
+import classes from './ToggleButton.module.css';
 const { B_11_WHITE } = Paragraphs;
 interface Props {
   disabled?: boolean;
@@ -16,14 +16,14 @@ const ToggleButton: React.FC<Props> = ({
   toggleOffLabel,
   toggleOnLabel,
   value,
-  testId
+  testId,
 }) => {
   return (
     <>
       <div
         className={classes.ToggleButtonContainer}
         style={{
-          pointerEvents: disabled ? "none" : "all"
+          pointerEvents: disabled ? 'none' : 'all',
         }}
         onClick={onTogglePress && onTogglePress}
         id={testId}
@@ -31,11 +31,11 @@ const ToggleButton: React.FC<Props> = ({
         <div
           className={classes.ToggleButton}
           style={{
-            backgroundColor: value ? " #FF2626" : "#c4c4c4",
-            left: !!value ? "1.3rem" : ".2rem"
+            backgroundColor: value ? ' #FF2626' : '#c4c4c4',
+            left: !!value ? '1.3rem' : '.2rem',
           }}
         >
-          <B_11_WHITE style={{ fontWeight: "normal" }}>
+          <B_11_WHITE style={{ fontWeight: 'normal' }}>
             {value ? toggleOnLabel : toggleOffLabel}
           </B_11_WHITE>
         </div>
