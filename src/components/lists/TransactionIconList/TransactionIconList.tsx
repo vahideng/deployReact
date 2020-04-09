@@ -194,7 +194,7 @@ const AccountsList: React.FC<Props> = ({
                       justifyContent: "center"
                     }}
                   >
-                    <button
+                      { item.expandedIndexes.includes(index) && ( <button
                       style={{
                         border: "none",
                         background: `linear-gradient(180deg, #F6F6F3 0%, #EAE9E3 100%)`,
@@ -227,6 +227,7 @@ const AccountsList: React.FC<Props> = ({
                         </B_11_WHITE>
                       </div>
                     </button>
+                      )}
                   </div>
                 </div>
 
@@ -298,7 +299,8 @@ const AccountsList: React.FC<Props> = ({
                                 justifyContent: "center"
                               }}
                             >
-                              <button
+                             {   item.expandedIndexes.includes(index) && ( 
+                             <button
                                 style={{
                                   border: "none",
                                   background: `linear-gradient(180deg, #F6F6F3 0%, #EAE9E3 100%)`,
@@ -334,7 +336,8 @@ const AccountsList: React.FC<Props> = ({
                                   </B_11_WHITE>
                                 </div>
                               </button>
-                            </div>
+                             )} 
+                             </div>
                           </div>
                           {transaction.details &&
                             TDIndex === transaction.details.length - 1 && (
