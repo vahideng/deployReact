@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Navbar from 'src/components/headers/navbar/Navbar';
 import NavbarTransparent from 'src/components/headers/navbarTransparent/NavbarTransparent';
 import TextDropdown from 'src/components/inputs/texDropdown/TextDropdown';
+import AmDropdown from 'src/components/amDropdown/AmDropdown';
 import TextButton from 'src/components/buttons/textButton/TextButton';
 import AmAccordion from 'src/components/amAccordion/AmAccordion';
 import LinkList from 'src/components/lists/linkList/LinkList';
@@ -43,6 +44,8 @@ const Sprint3: React.FC<Props> = () => {
     top: '#BDBDBD',
     bottom: '#BDBDBD',
   });
+  const [viewRateType, setViewRateType] = useState('test_value3');
+  const [showDropdown, setShowDropDown] = useState(false);
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -93,6 +96,40 @@ const Sprint3: React.FC<Props> = () => {
           },
         ]}
       />
+      <Title>View Rate Container</Title>
+      <CenteredDiv
+        style={{
+          margin: '0 auto',
+          width: '36.25rem',
+        }}
+      >
+        <AmDropdown
+          dropdownData={[
+            { value: 'test_value', label: 'Conventional Fixed Deposit 1' },
+            { value: 'test_value2', label: 'Conventional Fixed Deposit 2' },
+            { value: 'test_value3', label: 'Conventional Fixed Deposit 3' },
+          ]}
+          value={viewRateType}
+          icon={{ name: 'Clock', color: '#ff2626', size: 30 }}
+          handleChange={(item: any) => {
+            const { value } = item;
+            setViewRateType(value);
+            setShowDropDown(false);
+          }}
+          placeholder="Select test"
+          clickOnArrow={() => {
+            setShowDropDown(!showDropdown);
+          }}
+          inputClickHandler={() => {
+            setShowDropDown(!showDropdown);
+          }}
+          onBlur={() => {
+            setShowDropDown(false);
+          }}
+          showDropdown={showDropdown}
+          arrowIcon
+        />
+      </CenteredDiv>
       <Title>View Rate</Title>
       <CenteredDiv
         style={{
