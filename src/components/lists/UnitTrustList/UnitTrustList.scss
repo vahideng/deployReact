@@ -1,0 +1,140 @@
+.CardBody {
+    padding: 0;
+  }
+  
+  .ContainerWhole {
+    border: none !important;
+  }
+  
+  .Header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .Header0 {
+    width: 11.9rem;
+  }
+  
+  .Header1 {
+    width: 11.75rem;
+  }
+  
+  .Header2 {
+    width: 9.4375rem;
+  }
+  
+  .HeaderIcon {
+    padding-left: 0.25rem;
+  }
+  
+  .BothIcon{
+    display:flex; 
+    flex-direction:column-reverse;
+  }
+  
+  
+  .BothIcon div:nth-child(2){
+   height: 9px;
+  }
+  
+  .ArrowDown {
+  
+    cursor: pointer;
+  }
+  
+  .ArrowUp {
+  
+    cursor: pointer;
+  }
+  
+  .LeftItemContainer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0;
+    width: 14.4375rem;
+  }
+  .MiddleItemContainer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0;
+    width: 11.5rem;
+  }
+  .RightItemContainer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0;
+    width: 9.4375rem;
+  }
+  
+  .CardHeader {
+    background: #f7f7f7;
+    border: none !important;
+    font-family: Nunito Sans;
+    font-style: normal;
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    color: #000000;
+    padding-left: 1.5rem;
+  }
+  
+  .HeaderInside {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: #ffffff;
+    border: none !important;
+  }
+  
+  .Inverted {
+    background-color: #f1f1f1 !important;
+  }
+  
+  .Content {
+    img {
+      padding-left: 10px;
+    }
+  
+    cursor: pointer;
+  }
+  
+  .ContentBody {
+    margin: 0 !important;
+    padding: 0 !important;
+    div {
+      background-color: transparent;
+    }
+  }
+  
+  .LeftBody {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    color: #696969;
+  }
+  
+  .RightBody {
+    display: flex;
+    align-items: center;
+    text-align: right;
+    font-weight: bold;
+    font-size: 13px;
+    color: #000000;
+  }
+  
+  .TransListIcon {
+    margin-left: 0.5rem;
+  }
+  
