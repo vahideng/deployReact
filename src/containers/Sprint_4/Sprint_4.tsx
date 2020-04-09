@@ -15,7 +15,7 @@ import Icon from 'src/components/assets/icons/icon';
 import InputField from 'src/components/inputs/inputFields/InputFields';
 import PrimaryButton from 'src/components/buttons/primaryButton/PrimaryButton';
 import ViewRate from 'src/components/viewRate/ViewRate';
-const { B_13_ORANGE_463 } = Paragraphs;
+const { B_13_ORANGE_463, B_13_BLACK, B_13_GREY444 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
   padding: 5px 0;
@@ -104,6 +104,7 @@ const Sprint3: React.FC<Props> = () => {
         }}
       >
         <AmDropdown
+          label="Product Type"
           dropdownData={[
             { value: 'test_value', label: 'Conventional Fixed Deposit 1' },
             { value: 'test_value2', label: 'Conventional Fixed Deposit 2' },
@@ -120,15 +121,24 @@ const Sprint3: React.FC<Props> = () => {
           clickOnArrow={() => {
             setShowDropDown(!showDropdown);
           }}
-          inputClickHandler={() => {
-            setShowDropDown(!showDropdown);
-          }}
+          inputClickHandler={() => {}}
           onBlur={() => {
             setShowDropDown(false);
           }}
           showDropdown={showDropdown}
           arrowIcon
         />
+      </CenteredDiv>
+
+      <CenteredDiv
+        style={{
+          margin: '0 auto',
+          width: '31.6rem',
+          justifyContent: 'flex-start',
+        }}
+      >
+        <B_13_GREY444>Effective Date</B_13_GREY444>
+        <B_13_BLACK>&nbsp;11 Mar 2020</B_13_BLACK>
       </CenteredDiv>
       <Title>View Rate</Title>
       <CenteredDiv

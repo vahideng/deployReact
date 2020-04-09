@@ -1,8 +1,8 @@
-import React, { Component, FormEvent, ChangeEvent } from "react";
-import Paragraphs from "../assets/typography";
-import classes from "./AmDropdown.module.css";
-import Icon from "src/components/assets/icons/icon";
-import InlineMessage from "src/components/infographic/inlineMessage/InlineMessage";
+import React, { Component, FormEvent, ChangeEvent } from 'react';
+import Paragraphs from '../assets/typography';
+import classes from './AmDropdown.module.css';
+import Icon from 'src/components/assets/icons/icon';
+import InlineMessage from 'src/components/infographic/inlineMessage/InlineMessage';
 const { B_13_BLACK, R_15_BLACK } = Paragraphs;
 interface Props {
   tacInput?: boolean;
@@ -101,14 +101,14 @@ class AmDropdown extends Component<Props, {}> {
             <B_13_BLACK className={classes.InputFieldLabel}>{label}</B_13_BLACK>
           )}
           <div
-            className={InputFieldIconDiv.join(" ")}
-            style={{ maxWidth: tacInput ? "34.81rem" : "31.6rem" }}
+            className={InputFieldIconDiv.join(' ')}
+            style={{ maxWidth: tacInput ? '34.81rem' : '31.6rem' }}
           >
             {!!icon && (
               <Icon
                 className={classes.InputFieldIcon}
                 icon={icon.name}
-                color={!!icon.color ? icon.color : "#ff2626"}
+                color={!!icon.color ? icon.color : '#ff2626'}
                 size={30}
               />
             )}
@@ -117,7 +117,7 @@ class AmDropdown extends Component<Props, {}> {
               readOnly={readOnly}
               placeholder={placeholder}
               disabled={disabled}
-              autoComplete={"off"}
+              autoComplete={'off'}
               minLength={minLength}
               maxLength={maxLength}
               onBlur={blurHandler}
@@ -125,16 +125,16 @@ class AmDropdown extends Component<Props, {}> {
               style={
                 autoFocus
                   ? {
-                      width: tacInput ? "34.81rem" : "31.6rem",
-                      paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                      boxShadow: "none",
+                      width: tacInput ? '34.81rem' : '31.6rem',
+                      paddingLeft: !icon ? '1.5rem' : '3.75rem',
+                      boxShadow: 'none',
                     }
                   : {
-                      paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                      width: tacInput ? "34.81rem" : "31.6rem",
+                      paddingLeft: !icon ? '1.5rem' : '3.75rem',
+                      width: tacInput ? '34.81rem' : '31.6rem',
                     }
               }
-              type={"text"}
+              type={'text'}
               value={value}
               autoFocus={!!autoFocus ? autoFocus : false}
               onChange={changeHandler}
@@ -151,11 +151,11 @@ class AmDropdown extends Component<Props, {}> {
               >
                 {!showDropdown ? (
                   <span className={classes.TextDropdownIcons}>
-                    <Icon icon="arrowDown" size={18} color={"#000000"} />
+                    <Icon icon="arrowDown" size={18} color={'#000000'} />
                   </span>
                 ) : (
                   <span className={classes.TextDropdownIcons}>
-                    <Icon icon="arrowUp" size={18} color={"#000000"} />
+                    <Icon icon="arrowUp" size={18} color={'#000000'} />
                   </span>
                 )}
               </span>
@@ -165,13 +165,13 @@ class AmDropdown extends Component<Props, {}> {
           {showDropdown ? (
             <div
               className={classes.DropdownContent}
-              style={!!max ? { maxHeight: `${max}` } : { maxHeight: "500px" }}
+              style={!!max ? { maxHeight: `${max}` } : { maxHeight: '500px' }}
             >
               {!!dropdownData &&
                 dropdownData.map((item) => {
                   return (
                     <div onClick={() => this.OnClickItemHandler(item)}>
-                      <R_15_BLACK>{item.value}</R_15_BLACK>{" "}
+                      <R_15_BLACK>{item.label}</R_15_BLACK>
                     </div>
                   );
                 })}
@@ -183,9 +183,9 @@ class AmDropdown extends Component<Props, {}> {
               <InlineMessage
                 testId={errorMessage?.testId}
                 errorText={
-                  errorMessage?.errorText ? errorMessage.errorText : ""
+                  errorMessage?.errorText ? errorMessage.errorText : ''
                 }
-                subText={errorMessage?.subText ? errorMessage.subText : ""}
+                subText={errorMessage?.subText ? errorMessage.subText : ''}
               />
             </div>
           )}
