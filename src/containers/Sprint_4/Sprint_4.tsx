@@ -220,8 +220,18 @@ const Sprint3: React.FC<Props> = () => {
               {
                 children: <img src={require("src/assets/images/slider.png")} />,
               },
+              {
+                children: <img src={require("src/assets/images/slider.png")} />,
+              },
             ],
           ]}
+        />
+      </CenteredDiv>
+      <CenteredDiv>
+        <PrimaryButton
+          width="25rem"
+          onButtonClick={() => {}}
+          title="Place New Deposit"
         />
       </CenteredDiv>
 
