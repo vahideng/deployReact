@@ -60,4 +60,6 @@
 
 .TableHeading {
   vertical-align: top !important;
+  font-size: 0.81rem;
+  font-weight: bold;
 }

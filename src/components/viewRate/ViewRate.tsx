@@ -2,7 +2,7 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 import Paragraphs from '../assets/typography';
 import classes from './ViewRate.module.css';
-const { R_13_GREY444, R_11_GREY444 } = Paragraphs;
+const { R_13_GREY444, R_11_GREY444, R_13_BLACK, B_13_BLACK } = Paragraphs;
 
 type Responsive = 'sm' | 'md' | 'lg' | 'xl';
 
@@ -60,9 +60,13 @@ const ViewRate: React.FC<Props> = ({ title, subtitle, testId, data }) => {
               headers.map((header: any, i: number) => {
                 const { style, values } = header;
                 return (
-                  <th key={i} className={classes.TableHeading} style={style}>
+                  <th key={i} className={classes.TableHeading}>
                     {values.map((h: string, ii: number) => {
-                      return <div key={ii}>{h}</div>;
+                      return (
+                        <div key={ii}>
+                          <B_13_BLACK style={style}>{h}</B_13_BLACK>
+                        </div>
+                      );
                     })}
                   </th>
                 );
@@ -79,7 +83,12 @@ const ViewRate: React.FC<Props> = ({ title, subtitle, testId, data }) => {
                       const { style } = headers[jj];
                       return (
                         <td key={jj} style={{ textAlign: style.textAlign }}>
-                          {v}
+                          <R_13_BLACK
+                            className={classes.TableCell}
+                            style={style}
+                          >
+                            {v}
+                          </R_13_BLACK>
                         </td>
                       );
                     })}

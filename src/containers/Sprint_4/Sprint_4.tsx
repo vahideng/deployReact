@@ -113,14 +113,14 @@ const Sprint3: React.FC<Props> = () => {
             headers: [
               {
                 style: {},
-                values: ['Tenure']
+                values: ['Tenure'],
               },
               {
-                style: {textAlign: 'center'},
+                style: { textAlign: 'center', fontWeight: 'bold' },
                 values: ['Board Rate', '(% p.a.)'],
               },
               {
-                style: {textAlign: 'center'},
+                style: { textAlign: 'center', fontWeight: 'bold' },
                 values: ['AmOnline Rate', '(% p.a.)'],
               },
             ],
