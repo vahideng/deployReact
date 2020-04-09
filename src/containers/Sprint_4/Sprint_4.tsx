@@ -39,10 +39,10 @@ const Sprint3: React.FC<Props> = () => {
   const [homeRedirect, setHomeRedirect] = useState(false);
   const [linkListClear, setLinkListClear] = useState(false);
   const [linkListInputValue, setLinkListInputValue] = useState('');
-  const [linkListBtnColor, setLinkListBtnColor] = useState({
-    top: '#BDBDBD',
-    bottom: '#BDBDBD',
-  });
+  // const [linkListBtnColor, setLinkListBtnColor] = useState({
+  //   top: '#BDBDBD',
+  //   bottom: '#BDBDBD',
+  // });
   const [viewRateType, setViewRateType] = useState('test_value3');
   const [showDropdown, setShowDropDown] = useState(false);
   if (sprint1 === true) {
