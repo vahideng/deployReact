@@ -96,16 +96,16 @@ import UnitTrustList from "./components/lists/UnitTrustList/UnitTrustList";
 
 import AmProfileSetting from "./components/amProfileSetting/amProfileSetting";
 
-/// below are sprint-3 components
+/// below are sprint-4 components
 
-import amInputFieldAccordian from "./components/amInputFieldAccordian/amInputFieldAccordian";
-import amResetPin from './components/amResetPin/amResetPin';
+import AmInputFieldAccordian from "./components/amInputFieldAccordian/amInputFieldAccordian";
+import AmResetPin from './components/amResetPin/amResetPin';
 /// exports
 export {
   ////
     /// below are sprint-4 components
-  amInputFieldAccordian,
-  amResetPin,
+  AmInputFieldAccordian,
+  AmResetPin,
   /// below are sprint-3 components
   AmProfileSetting,
   AmAccordion,
