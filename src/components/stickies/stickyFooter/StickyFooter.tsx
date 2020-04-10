@@ -15,6 +15,8 @@ interface Props {
   onButtonClick: () => void;
   icon?: { name: string; color: string; size?: number };
   iconText?: string;
+  iconSubText?: string;
+  iconSubTextNum?: string | number;
 }
 
 const StickyFooter = ({
@@ -25,7 +27,9 @@ const StickyFooter = ({
   buttonTitle,
   titleStyle,
   icon = { name: "Amy1", color: "#A9A9A9", size: 50 },
-  iconText
+  iconText,
+  iconSubText,
+  iconSubTextNum
 }: Props) => {
   return isOpen ? (
     <div className={classes.MainDiv} id={testId}>
@@ -42,7 +46,15 @@ const StickyFooter = ({
             size={icon.size}
             style={{ marginRight: "1.5rem" }}
           />
-          <R_17_BLACK>{iconText}</R_17_BLACK>
+          <div>
+            <R_17_BLACK>{iconText}</R_17_BLACK>
+            {iconSubText && (
+              <R_17_BLACK>
+                {iconSubText}
+                {iconSubTextNum && <strong> {iconSubTextNum}</strong>}
+              </R_17_BLACK>
+            )}
+          </div>
         </div>
 
         <PrimaryButton
