@@ -59,7 +59,7 @@
 }
 
 .ScrollTableHead {
-  background-color: #f7f7f7;
+  background-color: #fff;
 }
 
 .TableHeading {
@@ -69,10 +69,11 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: #f7f7f7;
+  background-color: #fff;
 }
 
 .TableWrapper {
   overflow-y: auto;
-  height: 21.875rem;
+  height: 15.875rem;
+  background-color: #fff;
 }

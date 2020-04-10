@@ -5,7 +5,6 @@ import styled from "styled-components";
 import Navbar from "src/components/headers/navbar/Navbar";
 import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTransparent";
 import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
-import AmDropdown from "src/components/amDropdown/AmDropdown";
 import TextButton from "src/components/buttons/textButton/TextButton";
 
 import ConfirmNotes from "src/components/confirmNotes/ConfirmNotes";
@@ -13,12 +12,15 @@ import Icon from "src/components/assets/icons/icon";
 import InputField from "src/components/inputs/inputFields/InputFields";
 
 import ViewRate from "src/components/viewRate/ViewRate";
+import ViewRateContainer from "src/components/viewRateContainer/ViewRateContainer";
 import AmInputFieldAccordian from "src/components/amInputFieldAccordian/amInputFieldAccordian";
-import Line from "src/components/line/Line";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
-import Carousel from "src/components/carousel/Carousel";
+import Modal from "src/components/modals/Modal";
 
-const { B_13_ORANGE_463, B_13_BLACK, R_13_GREY444, B_13_GREY444 } = Paragraphs;
+const {
+  B_13_ORANGE_463,
+  R_13_GREY444,
+} = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -48,8 +50,8 @@ const Sprint3: React.FC<Props> = () => {
   //   top: '#BDBDBD',
   //   bottom: '#BDBDBD',
   // });
-  const [viewRateType, setViewRateType] = useState("test_value3");
-  const [showDropdown, setShowDropDown] = useState(false);
+  const [rateType, setRateType] = useState("test_value3");
+  const [isViewRateModalOpen, setIsViewRateModalOpen] = useState(false);
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -101,140 +103,112 @@ const Sprint3: React.FC<Props> = () => {
         ]}
       />
       <Title>View Rate Container</Title>
-      <PrimaryButton onButtonClick={() => {}} title="View Rate" />
-      <CenteredDiv
-        style={{
-          margin: "0 auto",
-          width: "36.25rem",
+      <PrimaryButton
+        onButtonClick={() => {
+          setIsViewRateModalOpen(true);
         }}
-      >
-        <AmDropdown
-          label="Product Type"
-          dropdownData={[
-            { value: "test_value", label: "Conventional Fixed Deposit 1" },
-            { value: "test_value2", label: "Conventional Fixed Deposit 2" },
-            { value: "test_value3", label: "Conventional Fixed Deposit 3" },
-          ]}
-          value={viewRateType}
-          icon={{ name: "Clock", color: "#ff2626", size: 30 }}
-          handleChange={(item: any) => {
-            const { value } = item;
-            setViewRateType(value);
-            setShowDropDown(false);
-          }}
-          placeholder="Select test"
-          clickOnArrow={() => {
-            setShowDropDown(!showDropdown);
-          }}
-          inputClickHandler={() => {}}
-          onBlur={() => {
-            setShowDropDown(false);
-          }}
-          showDropdown={showDropdown}
-          arrowIcon
-        />
-      </CenteredDiv>
-
-      <CenteredDiv
-        style={{
-          margin: "0 auto",
-          width: "31.6rem",
-          justifyContent: "flex-start",
-          padding: 0,
-          marginBottom: "1.18rem",
+        title="View Rate"
+      />
+      <Modal
+        testId="sprint_4_modal_test"
+        modalChildren={
+          <div style={{ backgroundColor: "#fff", position: "relative" }}>
+            <ViewRateContainer
+              testId="sprint_4_view_rate_container_test"
+              title="View Rate Container"
+              rateTypeValue={rateType}
+              rateTypeList={[
+                {
+                  value: "test_value",
+                  label: "Conventional Fixed Deposit 1",
+                },
+                {
+                  value: "test_value2",
+                  label: "Conventional Fixed Deposit 2",
+                },
+                {
+                  value: "test_value3",
+                  label: "Conventional Fixed Deposit 3",
+                },
+              ]}
+              onRateTypeChange={(value: any) => {
+                setRateType(value);
+              }}
+              date="11 Mar 2020"
+              ads={[
+                [
+                  {
+                    children: (
+                      <img src={require("src/assets/images/slider.png")} />
+                    ),
+                  },
+                  {
+                    children: (
+                      <img src={require("src/assets/images/slider.png")} />
+                    ),
+                  },
+                  {
+                    children: (
+                      <img src={require("src/assets/images/slider.png")} />
+                    ),
+                  },
+                  {
+                    children: (
+                      <img src={require("src/assets/images/slider.png")} />
+                    ),
+                  },
+                ],
+              ]}
+              onClose={() => setIsViewRateModalOpen(false)}
+              buttonTitle="Place New Deposit"
+              onButtonClick={() => {
+                window.alert("lead you to do something.");
+              }}
+              viewRateComponent={
+                <ViewRate
+                  testId="sprint_4_view_rate"
+                  title={{
+                    content: "** Rates are subject to change",
+                  }}
+                  subtitle={{
+                    content:
+                      "Note: Customer with Reward Code may be entitled additional rate in AmOnline.",
+                  }}
+                  data={{
+                    headers: [
+                      {
+                        style: {},
+                        values: ["Tenure"],
+                      },
+                      {
+                        style: { textAlign: "center", fontWeight: "bold" },
+                        values: ["Board Rate", "(% p.a.)"],
+                      },
+                      {
+                        style: { textAlign: "center", fontWeight: "bold" },
+                        values: ["AmOnline Rate", "(% p.a.)"],
+                      },
+                    ],
+                    values: [
+                      ["1 Month", "2.95", "2.95"],
+                      ["2 Month", "2.95", "2.95"],
+                      ["3 Month", "2.95", "2.95"],
+                      ["4 Month", "3.95", "2.95"],
+                      ["5 Month", "2.95", "2.95"],
+                      ["6 Month", "2.95", "2.95"],
+                      ["7 Month", "6.95", "2.95"],
+                    ],
+                  }}
+                />
+              }
+            />
+          </div>
+        }
+        modalIsOpen={isViewRateModalOpen}
+        onRequestClose={() => {
+          setIsViewRateModalOpen(false);
         }}
-      >
-        <B_13_GREY444>Effective Date</B_13_GREY444>
-        <B_13_BLACK>&nbsp;11 Mar 2020</B_13_BLACK>
-      </CenteredDiv>
-      <CenteredDiv
-        style={{
-          margin: "0 auto",
-          width: "31.6rem",
-          justifyContent: "flex-start",
-          padding: 0,
-          marginBottom: "1.81rem",
-        }}
-      >
-        <Line style={{ width: "100%" }} />
-      </CenteredDiv>
-      <CenteredDiv
-        style={{
-          margin: "0 auto",
-          width: "30rem",
-          padding: 0,
-        }}
-      >
-        <ViewRate
-          testId="sprint_4_view_rate"
-          title={{
-            content: "** Rates are subject to change",
-          }}
-          subtitle={{
-            content:
-              "Note: Customer with Reward Code may be entitled additional rate in AmOnline.",
-          }}
-          data={{
-            headers: [
-              {
-                style: {},
-                values: ["Tenure"],
-              },
-              {
-                style: { textAlign: "center", fontWeight: "bold" },
-                values: ["Board Rate", "(% p.a.)"],
-              },
-              {
-                style: { textAlign: "center", fontWeight: "bold" },
-                values: ["AmOnline Rate", "(% p.a.)"],
-              },
-            ],
-            values: [
-              ["1 Month", "2.95", "2.95"],
-              ["2 Month", "2.95", "2.95"],
-              ["3 Month", "2.95", "2.95"],
-              ["4 Month", "3.95", "2.95"],
-              ["5 Month", "2.95", "2.95"],
-              ["6 Month", "2.95", "2.95"],
-              ["7 Month", "6.95", "2.95"],
-            ],
-          }}
-        />
-      </CenteredDiv>
-      <CenteredDiv
-        style={{
-          margin: "0 auto",
-          width: "30rem",
-          padding: 0,
-          marginTop: "2rem",
-        }}
-      >
-        <Carousel
-          items={[
-            [
-              {
-                children: <img src={require("src/assets/images/slider.png")} />,
-              },
-              {
-                children: <img src={require("src/assets/images/slider.png")} />,
-              },
-              {
-                children: <img src={require("src/assets/images/slider.png")} />,
-              },
-              {
-                children: <img src={require("src/assets/images/slider.png")} />,
-              },
-            ],
-          ]}
-        />
-      </CenteredDiv>
-      <CenteredDiv>
-        <PrimaryButton
-          width="25rem"
-          onButtonClick={() => {}}
-          title="Place New Deposit"
-        />
-      </CenteredDiv>
+      />
 
       <Title>View Rate</Title>
       <CenteredDiv

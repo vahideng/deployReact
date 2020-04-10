@@ -37,6 +37,7 @@ interface Props {
     headers: TableHeadingProps[];
     values: string[][];
   };
+  height?: string;
   tableContainerStyle?: any;
   tableStyle?: any;
   tableHeadingStyle?: any;
@@ -48,6 +49,7 @@ const ViewRate: React.FC<Props> = ({
   subtitle,
   testId,
   data,
+  height,
   tableContainerStyle,
   tableStyle,
   tableHeadingStyle,
@@ -66,7 +68,10 @@ const ViewRate: React.FC<Props> = ({
           <R_11_GREY444 style={subtitle.style}>{subtitle.content}</R_11_GREY444>
         </div>
       )}
-      <div className={classes.TableWrapper} style={tableContainerStyle}>
+      <div
+        className={classes.TableWrapper}
+        style={{ height, ...tableContainerStyle }}
+      >
         <Table
           className={classes.Table}
           style={tableStyle}
