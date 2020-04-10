@@ -307,7 +307,7 @@ const Sprint3: React.FC<Props> = () => {
               rightLabel: {
                 type: "loss",
                 percentage: "0.03%",
-                amount: "RM 12,189.56",
+                amount: "RM 23,312,189.56",
               },
               rightButtons: [
                 {

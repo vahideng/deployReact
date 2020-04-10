@@ -154,49 +154,58 @@ const UnitTrustList: React.FC<Props> = ({ data, header, testId }) => {
           );
 
           return (
-            <Accordion
-              key={index}
-              id={`${testId}-${index}`}
-              style={{ zIndex: 1 }}
-            >
-              <div style={{ display: "flex", alignItems: "center" }}>
+            <Accordion key={index} id={`${testId}-${index}`}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center"
+                }}
+              >
                 <Card className={classes.ContainerWhole}>
                   <Card.Header className={classes.HeaderInside}>
-                    <StyledDiv className={inverted}>
-                      <Col className={classes.LeftItemContainer}>
-                        {item.expandableLeft === true ? (
-                          <CustomToggle
-                            eventKey={`left-${index}`}
-                            testId={testId}
-                            content={item.leftLabel}
-                          />
-                        ) : (
-                          <SB_13_GREY444>{item.leftLabel}</SB_13_GREY444>
-                        )}
-                      </Col>
-                      <Col className={classes.MiddleItemContainer}>
-                        {item.expandableMiddle === true ? (
-                          <CustomToggle
-                            eventKey={`middle-${index}`}
-                            testId={testId}
-                            content={item.middleLabel}
-                          />
-                        ) : (
-                          <SB_13_GREY444>{item.middleLabel}</SB_13_GREY444>
-                        )}
-                        <br />
-                      </Col>
-                      <Col className={classes.RightItemContainer}>
-                        <div>
-                          <div className={classes.RightLabel}>
-                            ({profitOrLoss} {item.rightLabel.percentage})
+                      <StyledDiv className={inverted}>
+                        <Col className={classes.LeftItemContainer}>
+                          {item.expandableLeft === true ? (
+                            <CustomToggle
+                              eventKey={`left-${index}`}
+                              testId={testId}
+                              content={item.leftLabel}
+                            />
+                          ) : (
+                            <SB_13_GREY444>{item.leftLabel}</SB_13_GREY444>
+                          )}
+                        </Col>
+                        <Col className={classes.MiddleItemContainer}>
+                          {item.expandableMiddle === true ? (
+                            <CustomToggle
+                              eventKey={`middle-${index}`}
+                              testId={testId}
+                              content={item.middleLabel}
+                            />
+                          ) : (
+                            <SB_13_GREY444>{item.middleLabel}</SB_13_GREY444>
+                          )}
+                          <br />
+                        </Col>
+                        <Col className={classes.RightItemContainer}>
+                          <div>
+                            <div className={classes.RightLabel}>
+                              ({profitOrLoss} {item.rightLabel.percentage})
+                            </div>
+                            <div className={classes.RightLabel}>
+                              {item.rightLabel.amount}
+                            </div>
                           </div>
-                          <div className={classes.RightLabel}>
-                            {item.rightLabel.amount}
+                        </Col>
+                        {item.rightButtons && (
+                          <div
+                            className={classes.RightItemDotsContainer}
+                            style={{ zIndex: data.length - index, right: 10 }}
+                          >
+                            <TooltipDropdown iconButtons={item.rightButtons} />
                           </div>
-                        </div>
-                      </Col>
-                    </StyledDiv>
+                        )}
+                      </StyledDiv>
                   </Card.Header>
                   {item.leftContent !== undefined && (
                     <Accordion.Collapse eventKey={`left-${index}`}>
@@ -217,15 +226,6 @@ const UnitTrustList: React.FC<Props> = ({ data, header, testId }) => {
                     </Accordion.Collapse>
                   )}
                 </Card>
-
-                {item.rightButtons && (
-                  <div
-                    className={classes.RightItemDotsContainer}
-                    style={{ zIndex: 9, right: 40 }}
-                  >
-                    <TooltipDropdown iconButtons={item.rightButtons} />
-                  </div>
-                )}
               </div>
             </Accordion>
           );
