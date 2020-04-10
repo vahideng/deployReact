@@ -56,7 +56,7 @@ interface ToggleProps {
 const CustomToggle: React.FC<ToggleProps> = ({
   content,
   eventKey,
-  testId,
+  testId
 }: ToggleProps) => {
   const decoratedOnClick = useAccordionToggle(eventKey, () => null);
   const [isOpen, setIsOpen] = React.useState(false);
@@ -69,7 +69,7 @@ const CustomToggle: React.FC<ToggleProps> = ({
   return (
     <div
       className={classes.Content}
-      onClick={(e) => accordionClickHandler(e)}
+      onClick={e => accordionClickHandler(e)}
       id={testId}
     >
       {content}
@@ -79,10 +79,10 @@ const CustomToggle: React.FC<ToggleProps> = ({
           <Icon icon="arrowUp" size={14} />
         </span>
       ) : (
-          <span className={classes.TransListIcon}>
-            <Icon icon="arrowDown" size={14} />
-          </span>
-        )}
+        <span className={classes.TransListIcon}>
+          <Icon icon="arrowDown" size={14} />
+        </span>
+      )}
     </div>
   );
 };
@@ -112,15 +112,15 @@ const UnitTrustList: React.FC<Props> = ({ data, header, testId }) => {
                         {item.arrowDownBold ? (
                           <Icon icon="arrowDown" size={12} color="black" />
                         ) : (
-                            <Icon icon="arrowDown" size={12} color="gray" />
-                          )}
+                          <Icon icon="arrowDown" size={12} color="gray" />
+                        )}
                       </div>
                       <div className={classes.ArrowUp}>
                         {item.arrowUpBold ? (
                           <Icon icon="arrowUp" size={12} color="black" />
                         ) : (
-                            <Icon icon="arrowUp" size={12} color="gray" />
-                          )}
+                          <Icon icon="arrowUp" size={12} color="gray" />
+                        )}
                       </div>
                     </div>
                   </div>
@@ -146,7 +146,7 @@ const UnitTrustList: React.FC<Props> = ({ data, header, testId }) => {
           const profitOrLoss = (
             <span
               style={{
-                color: item.rightLabel.type === "loss" ? "#FF2222" : "#36A03E",
+                color: item.rightLabel.type === "loss" ? "#FF2222" : "#36A03E"
               }}
             >
               {item.rightLabel.type === "loss" ? "-" : "+"}
@@ -159,70 +159,74 @@ const UnitTrustList: React.FC<Props> = ({ data, header, testId }) => {
               id={`${testId}-${index}`}
               style={{ zIndex: 1 }}
             >
-              <Card className={classes.ContainerWhole}>
-                <Card.Header className={classes.HeaderInside}>
-                  <StyledDiv className={inverted}>
-                    <Col className={classes.LeftItemContainer}>
-                      {item.expandableLeft === true ? (
-                        <CustomToggle
-                          eventKey={`left-${index}`}
-                          testId={testId}
-                          content={item.leftLabel}
-                        />
-                      ) : (
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <Card className={classes.ContainerWhole}>
+                  <Card.Header className={classes.HeaderInside}>
+                    <StyledDiv className={inverted}>
+                      <Col className={classes.LeftItemContainer}>
+                        {item.expandableLeft === true ? (
+                          <CustomToggle
+                            eventKey={`left-${index}`}
+                            testId={testId}
+                            content={item.leftLabel}
+                          />
+                        ) : (
                           <SB_13_GREY444>{item.leftLabel}</SB_13_GREY444>
                         )}
-                    </Col>
-                    <Col className={classes.MiddleItemContainer}>
-                      {item.expandableMiddle === true ? (
-                        <CustomToggle
-                          eventKey={`middle-${index}`}
-                          testId={testId}
-                          content={item.middleLabel}
-                        />
-                      ) : (
+                      </Col>
+                      <Col className={classes.MiddleItemContainer}>
+                        {item.expandableMiddle === true ? (
+                          <CustomToggle
+                            eventKey={`middle-${index}`}
+                            testId={testId}
+                            content={item.middleLabel}
+                          />
+                        ) : (
                           <SB_13_GREY444>{item.middleLabel}</SB_13_GREY444>
                         )}
-                      <br />
-                    </Col>
-                    <Col className={classes.RightItemContainer}>
-                      <div>
-                        <div className={classes.RightLabel}>
-                          ({profitOrLoss} {item.rightLabel.percentage})
+                        <br />
+                      </Col>
+                      <Col className={classes.RightItemContainer}>
+                        <div>
+                          <div className={classes.RightLabel}>
+                            ({profitOrLoss} {item.rightLabel.percentage})
+                          </div>
+                          <div className={classes.RightLabel}>
+                            {item.rightLabel.amount}
+                          </div>
                         </div>
-                        <div className={classes.RightLabel}>
-                          {item.rightLabel.amount}
-                        </div>
-                      </div>
-                      {
-                        item.rightButtons &&
-                        <div
-                          className={classes.RightItemDotsContainer}
-                          style={{ zIndex: 9 }}
-                        >
-                          <TooltipDropdown
-                            iconButtons={item.rightButtons}
-                          />
-                        </div>
-                      }
-                    </Col>
-                  </StyledDiv>
-                </Card.Header>
-                {item.leftContent !== undefined && (
-                  <Accordion.Collapse eventKey={`left-${index}`}>
-                    <Card.Body className={`${classes.ContentBody} ${inverted}`}>
-                      {item.leftContent}
-                    </Card.Body>
-                  </Accordion.Collapse>
+                      </Col>
+                    </StyledDiv>
+                  </Card.Header>
+                  {item.leftContent !== undefined && (
+                    <Accordion.Collapse eventKey={`left-${index}`}>
+                      <Card.Body
+                        className={`${classes.ContentBody} ${inverted}`}
+                      >
+                        {item.leftContent}
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  )}
+                  {item.middleContent !== undefined && (
+                    <Accordion.Collapse eventKey={`middle-${index}`}>
+                      <Card.Body
+                        className={`${classes.ContentBody} ${inverted}`}
+                      >
+                        {item.middleContent}
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  )}
+                </Card>
+
+                {item.rightButtons && (
+                  <div
+                    className={classes.RightItemDotsContainer}
+                    style={{ zIndex: 9, right: 40 }}
+                  >
+                    <TooltipDropdown iconButtons={item.rightButtons} />
+                  </div>
                 )}
-                {item.middleContent !== undefined && (
-                  <Accordion.Collapse eventKey={`middle-${index}`}>
-                    <Card.Body className={`${classes.ContentBody} ${inverted}`}>
-                      {item.middleContent}
-                    </Card.Body>
-                  </Accordion.Collapse>
-                )}
-              </Card>
+              </div>
             </Accordion>
           );
         })}
