@@ -34,6 +34,7 @@ import StickyTimer from "./components/modals/stickyTimer/StickyTimer";
 import TacModal from "./components/modals/tacModal/TacModal";
 import PieChart from "./components/pies/PieChart";
 import SecureImage from "./components/secureImage/SecureImage";
+import SecureImageSelect from "./components/secureImageSelect/SecureImageSelect";
 import SelectionTile from "./components/selections/selectionTile/SelectionTile";
 import VerticalTabSelection from "./components/selections/verticalTabSelection/VerticalTabSelection";
 import Dock from "./components/stickies/dock/Dock";
@@ -95,6 +96,7 @@ import TooltipDropdown from "./components/tooltipDropdown/TooltipDropdown";
 export {
   ////
   /// below are sprint-3 components
+  SecureImageSelect,
   TooltipDropdown,
   BoxId,
   LabelToolTip,
