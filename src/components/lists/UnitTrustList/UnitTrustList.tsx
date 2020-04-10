@@ -23,6 +23,11 @@ interface Data {
     percentage: string;
     amount: string;
   };
+  rightButtons?: {
+    icon: string;
+    text: string;
+    onClick?: () => void;
+  }[];
 }
 
 interface HeaderProps {
@@ -74,10 +79,10 @@ const CustomToggle: React.FC<ToggleProps> = ({
           <Icon icon="arrowUp" size={14} />
         </span>
       ) : (
-        <span className={classes.TransListIcon}>
-          <Icon icon="arrowDown" size={14} />
-        </span>
-      )}
+          <span className={classes.TransListIcon}>
+            <Icon icon="arrowDown" size={14} />
+          </span>
+        )}
     </div>
   );
 };
@@ -107,38 +112,19 @@ const UnitTrustList: React.FC<Props> = ({ data, header, testId }) => {
                         {item.arrowDownBold ? (
                           <Icon icon="arrowDown" size={12} color="black" />
                         ) : (
-                          <Icon icon="arrowDown" size={12} color="gray" />
-                        )}
+                            <Icon icon="arrowDown" size={12} color="gray" />
+                          )}
                       </div>
                       <div className={classes.ArrowUp}>
                         {item.arrowUpBold ? (
                           <Icon icon="arrowUp" size={12} color="black" />
                         ) : (
-                          <Icon icon="arrowUp" size={12} color="gray" />
-                        )}
+                            <Icon icon="arrowUp" size={12} color="gray" />
+                          )}
                       </div>
                     </div>
                   </div>
                 </div>
-                <TooltipDropdown
-                          iconButtons={[
-                            {
-                              icon: "Edit",
-                              text: "Edit",
-                              onClick: () => alert("click"),
-                            },
-                            {
-                              icon: "delete",
-                              text: "Delete",
-                              onClick: () => alert("click"),
-                            },
-                            {
-                              icon: "Clear",
-                              text: "Deactivate",
-                              onClick: () => alert("click"),
-                            },
-                          ]}
-                        />
               </div>
             </div>
           );
@@ -184,8 +170,8 @@ const UnitTrustList: React.FC<Props> = ({ data, header, testId }) => {
                           content={item.leftLabel}
                         />
                       ) : (
-                        <SB_13_GREY444>{item.leftLabel}</SB_13_GREY444>
-                      )}
+                          <SB_13_GREY444>{item.leftLabel}</SB_13_GREY444>
+                        )}
                     </Col>
                     <Col className={classes.MiddleItemContainer}>
                       {item.expandableMiddle === true ? (
@@ -195,8 +181,8 @@ const UnitTrustList: React.FC<Props> = ({ data, header, testId }) => {
                           content={item.middleLabel}
                         />
                       ) : (
-                        <SB_13_GREY444>{item.middleLabel}</SB_13_GREY444>
-                      )}
+                          <SB_13_GREY444>{item.middleLabel}</SB_13_GREY444>
+                        )}
                       <br />
                     </Col>
                     <Col className={classes.RightItemContainer}>
@@ -208,30 +194,17 @@ const UnitTrustList: React.FC<Props> = ({ data, header, testId }) => {
                           {item.rightLabel.amount}
                         </div>
                       </div>
-                      <div
-                        className={classes.RightItemDotsContainer}
-                        style={{ zIndex: 9 }}
-                      >
-                        <TooltipDropdown
-                          iconButtons={[
-                            {
-                              icon: "Edit",
-                              text: "Edit",
-                              onClick: () => alert("click"),
-                            },
-                            {
-                              icon: "delete",
-                              text: "Delete",
-                              onClick: () => alert("click"),
-                            },
-                            {
-                              icon: "Clear",
-                              text: "Deactivate",
-                              onClick: () => alert("click"),
-                            },
-                          ]}
-                        />
-                      </div>
+                      {
+                        item.rightButtons &&
+                        <div
+                          className={classes.RightItemDotsContainer}
+                          style={{ zIndex: 9 }}
+                        >
+                          <TooltipDropdown
+                            iconButtons={item.rightButtons}
+                          />
+                        </div>
+                      }
                     </Col>
                   </StyledDiv>
                 </Card.Header>

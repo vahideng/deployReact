@@ -309,6 +309,18 @@ const Sprint3: React.FC<Props> = () => {
                 percentage: "0.03%",
                 amount: "RM 12,189.56",
               },
+              rightButtons: [
+                {
+                  icon: "Edit",
+                  text: "Edit",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "delete",
+                  text: "Delete",
+                  onClick: () => alert("click"),
+                }
+              ],
               leftContent: (
                 <PortfolioListContent
                   borderColor="#FFA463"
@@ -347,6 +359,18 @@ const Sprint3: React.FC<Props> = () => {
                 percentage: "0.03%",
                 amount: "RM 12,189.56",
               },
+              rightButtons: [
+                {
+                  icon: "Edit",
+                  text: "Edit",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "delete",
+                  text: "Delete",
+                  onClick: () => alert("click"),
+                }
+              ],
               middleLabel: "RM 406,318.98",
               leftContent: (
                 <PortfolioListContent
@@ -383,6 +407,18 @@ const Sprint3: React.FC<Props> = () => {
                 percentage: "0.03%",
                 amount: "RM 12,189.56",
               },
+              rightButtons: [
+                {
+                  icon: "Edit",
+                  text: "Edit",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "delete",
+                  text: "Delete",
+                  onClick: () => alert("click"),
+                }
+              ],
               middleLabel: "RM 406,318.98",
               leftContent: (
                 <PortfolioListContent

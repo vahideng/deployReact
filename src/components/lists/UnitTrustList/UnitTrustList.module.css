@@ -1,6 +1,7 @@
 .CardBody {
   padding: 0;
   z-index: 2;
+  overflow: visible;
 }
 
 .ContainerWhole {
