@@ -58,8 +58,21 @@
   line-height: 1.375rem;
 }
 
+.ScrollTableHead {
+  background-color: #f7f7f7;
+}
+
 .TableHeading {
   vertical-align: top !important;
   font-size: 0.81rem;
   font-weight: bold;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #f7f7f7;
+}
+
+.TableWrapper {
+  overflow-y: auto;
+  height: 21.875rem;
 }

@@ -206,6 +206,7 @@ const Sprint3: React.FC<Props> = () => {
           margin: "0 auto",
           width: "30rem",
           padding: 0,
+          marginTop: "2rem",
         }}
       >
         <Carousel
