@@ -7,27 +7,25 @@ import { Notify } from "../../assets/common/notification";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 const { B_15_BLACK, R_12_BLACK } = Paragraphs;
 
-interface ITransactionLimitList {
-  label: string;
-  subDetail?: string;
-  onClick: (item: ITransactionLimitList, index: number) => void;
-  icon?: { name: string; size: number; color: string };
-  rightLabelColor?: string;
-  rightLabel?: string;
-  notify?: boolean;
-  notifyStyle ?: CSSProperties;
-  cardImg?: string;
-  cardImgStyle?: {
-    height: number;
-    width: number;
-  };
-  hidden?: boolean;
-  onHiddenButtonClick?: () => void;
-  hiddenBtnLabel?: string;
-}
-
 interface Props {
-  list: ITransactionLimitList[];
+  list: {
+    label: string;
+    subDetail?: string;
+    onClick: (item: any, index: number) => void;
+    icon?: { name: string; size: number; color: string };
+    rightLabelColor?: string;
+    rightLabel?: string;
+    notify?: boolean;
+    notifyStyle ?: CSSProperties;
+    cardImg?: string;
+    cardImgStyle?: {
+      height: number;
+      width: number;
+    };
+    hidden?: boolean;
+    onHiddenButtonClick?: () => void;
+    hiddenBtnLabel?: string;
+  }[];
   testId?: string;
 }
 

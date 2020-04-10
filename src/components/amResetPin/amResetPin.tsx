@@ -4,11 +4,10 @@ import Paragraphs from '../assets/typography';
 import Icon from "src/components/assets/icons/icon";
 const { SB_18_BLACK } = Paragraphs;
 
-type numberProps = 1|2|3|4|5|6|7|8|9|0;
 
 interface ResetPinProps {
   testId: string;
-  keysArray:FixedArray<numberProps,10>
+  keysArray:FixedArray<1|2|3|4|5|6|7|8|9|0,10>
   onNumberSelected?:any;
   onEnterClick?:() => void;
   EnterIcon: { name: string; color?: string; size?: number };

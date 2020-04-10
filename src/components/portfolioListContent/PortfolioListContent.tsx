@@ -12,7 +12,7 @@ interface Content {
   leftLabelStyle?: CSSProperties;
   middleLabel?: string;
   middleLabelStyle?: CSSProperties;
-  rightLabel?: string;
+  rightLabel?: any;
   rightLabelStyle?: CSSProperties;
 }
 
