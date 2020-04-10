@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import Paragraphs from "../../components/assets/typography";
 
-import { TransactionList, FormContainer, List } from "amonline-reactjs-component";
+// import { TransactionList, FormContainer, List } from "amonline-reactjs-component";
 const { B_13_ORANGE_463 } = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
@@ -14,17 +14,17 @@ const Title = styled(B_13_ORANGE_463)`
   border-bottom: 1px solid #ffa463;
 `;
 
-const CenteredDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-top: 5rem;
-`;
+// const CenteredDiv = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   padding-top: 5rem;
+// `;
 
 const NodeModule: React.FC = () => {
   return (
     <div>
       <Title>TransactionList</Title>
-      <CenteredDiv style={{ backgroundColor: "white", padding: 50 }}>
+      {/* <CenteredDiv style={{ backgroundColor: "white", padding: 50 }}>
         <TransactionList
           testId={"testId"}
           data={[
@@ -130,7 +130,7 @@ const NodeModule: React.FC = () => {
             />
           }
         />
-      </CenteredDiv>
+      </CenteredDiv> */}
     </div>
   );
 };
