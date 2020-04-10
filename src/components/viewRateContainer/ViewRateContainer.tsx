@@ -13,6 +13,11 @@ const { B_24_BLACK, B_13_BLACK, B_13_GREY444 } = Paragraphs;
 interface Props {
   testId?: string;
   title?: string;
+  rateTypeIcon?: {
+    name: string;
+    color?: string;
+    size?: number;
+  };
   rateTypeValue?: any;
   rateTypeList?: {
     value?: string | number;
@@ -42,22 +47,17 @@ const CenteredDiv = styled.div`
 const ViewRate: React.FC<Props> = ({
   testId,
   title,
+  rateTypeIcon,
   rateTypeValue,
   rateTypeList,
   onRateTypeChange,
-
   date,
-
   dropDownProps,
-
   viewRateComponent,
-
   ads,
   carouselProps,
-
   closeIcon,
   onClose,
-
   buttonTitle,
   onButtonClick,
   buttonProps,
@@ -108,7 +108,7 @@ const ViewRate: React.FC<Props> = ({
           label="Product Type"
           dropdownData={rateTypeList}
           value={rateTypeValue}
-          icon={{ name: "Clock", color: "#ff2626", size: 30 }}
+          icon={rateTypeIcon || { name: "Clock", color: "#ff2626", size: 30 }}
           handleChange={(item: any) => {
             const { value } = item;
             handleRateTypeChange(value);
