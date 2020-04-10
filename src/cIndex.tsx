@@ -91,6 +91,7 @@ import DashboardCart from "./components/dashboardCart/DashboardCart";
 import LabelToolTip from "./components/labelToolTip/LabelToolTip";
 import BoxId from "./components/lists/BoxId/BoxId";
 import TooltipDropdown from "./components/tooltipDropdown/TooltipDropdown";
+import UnitTrustList from "./components/lists/UnitTrustList/UnitTrustList";
 
 /// exports
 export {
@@ -116,6 +117,7 @@ export {
   SimpleHeader,
   PortfolioList,
   DashboardCart,
+  UnitTrustList,
   ////
   /// below are sprint-2 components
   CalendarBox,
