@@ -1,5 +1,8 @@
+@import "../../assets/common/common.scss";
+
 .CardBody {
     padding: 0;
+    z-index: 2;
   }
   
   .ContainerWhole {
@@ -63,10 +66,19 @@
   }
   .RightItemContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-grow: 1;
     padding: 0;
     width: 9.4375rem;
+  }
+
+  .RightItemDotsContainer {
+    position: relative;
+    display: flex; 
+    flex: 1; 
+    align-items: center; 
+    justify-content: flex-end;
+    z-index: 10;
   }
   
   .CardHeader {

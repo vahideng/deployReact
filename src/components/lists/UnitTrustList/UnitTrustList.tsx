@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactNode } from "react";
 import { Card, Accordion, useAccordionToggle, Col } from "react-bootstrap";
-
+import TooltipDropdown from "src/components/tooltipDropdown/TooltipDropdown";
 import classes from "./UnitTrustList.module.css";
 import "react-tabs/style/react-tabs.css";
 import Icon from "src/components/assets/icons/icon";
@@ -99,17 +99,20 @@ const UnitTrustList: React.FC<Props> = ({ data, header, testId }) => {
                 </SB_13_GREY444>
                 <div className={classes.HeaderIcon}>
                   <div style={{ position: "relative" }}>
-                    <div onClick={item.onArrowClick} className={classes.BothIcon}>
-                      <div className={classes.ArrowDown} >
+                    <div
+                      onClick={item.onArrowClick}
+                      className={classes.BothIcon}
+                    >
+                      <div className={classes.ArrowDown}>
                         {item.arrowDownBold ? (
                           <Icon icon="arrowDown" size={12} color="black" />
                         ) : (
                           <Icon icon="arrowDown" size={12} color="gray" />
                         )}
                       </div>
-                      <div  className={classes.ArrowUp} >
+                      <div className={classes.ArrowUp}>
                         {item.arrowUpBold ? (
-                          <Icon icon="arrowUp" size={12} color="black"/>
+                          <Icon icon="arrowUp" size={12} color="black" />
                         ) : (
                           <Icon icon="arrowUp" size={12} color="gray" />
                         )}
@@ -117,6 +120,25 @@ const UnitTrustList: React.FC<Props> = ({ data, header, testId }) => {
                     </div>
                   </div>
                 </div>
+                <TooltipDropdown
+                          iconButtons={[
+                            {
+                              icon: "Edit",
+                              text: "Edit",
+                              onClick: () => alert("click"),
+                            },
+                            {
+                              icon: "delete",
+                              text: "Delete",
+                              onClick: () => alert("click"),
+                            },
+                            {
+                              icon: "Clear",
+                              text: "Deactivate",
+                              onClick: () => alert("click"),
+                            },
+                          ]}
+                        />
               </div>
             </div>
           );
@@ -146,7 +168,11 @@ const UnitTrustList: React.FC<Props> = ({ data, header, testId }) => {
           );
 
           return (
-            <Accordion key={index} id={`${testId}-${index}`}>
+            <Accordion
+              key={index}
+              id={`${testId}-${index}`}
+              style={{ zIndex: 1 }}
+            >
               <Card className={classes.ContainerWhole}>
                 <Card.Header className={classes.HeaderInside}>
                   <StyledDiv className={inverted}>
@@ -181,6 +207,30 @@ const UnitTrustList: React.FC<Props> = ({ data, header, testId }) => {
                         <div className={classes.RightLabel}>
                           {item.rightLabel.amount}
                         </div>
+                      </div>
+                      <div
+                        className={classes.RightItemDotsContainer}
+                        style={{ zIndex: 9 }}
+                      >
+                        <TooltipDropdown
+                          iconButtons={[
+                            {
+                              icon: "Edit",
+                              text: "Edit",
+                              onClick: () => alert("click"),
+                            },
+                            {
+                              icon: "delete",
+                              text: "Delete",
+                              onClick: () => alert("click"),
+                            },
+                            {
+                              icon: "Clear",
+                              text: "Deactivate",
+                              onClick: () => alert("click"),
+                            },
+                          ]}
+                        />
                       </div>
                     </Col>
                   </StyledDiv>
