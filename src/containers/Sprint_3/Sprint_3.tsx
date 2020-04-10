@@ -47,9 +47,11 @@ import PortfolioListContent from 'src/components/portfolioListContent/PortfolioL
 import TooltipDropdown from 'src/components/tooltipDropdown/TooltipDropdown';
 import TransactionLimitList from 'src/components/lists/TransactionLimitList/TransactionLimitList';
 
-import AmAccordion from 'src/components/amAccordion/AmAccordion';
-import AmListItem from 'src/components/amListItem/AmListItem';
-import DashboardCart from 'src/components/dashboardCart/DashboardCart';
+import AmAccordion from "src/components/amAccordion/AmAccordion";
+import AmListItem from "src/components/amListItem/AmListItem";
+import DashboardCart from "src/components/dashboardCart/DashboardCart";
+import UnitTrustList from "src/components/lists/UnitTrustList/UnitTrustList";
+
 const {
   B_13_ORANGE_463,
   R_12_WHITE,
@@ -269,6 +271,185 @@ const Sprint3: React.FC<Props> = () => {
           },
         ]}
       />
+      <Title>UnitTrustList</Title>
+      <CenteredDiv>
+        <UnitTrustList
+          header={[
+            {
+              title: "Fund Name",
+              icon: "sort",
+              onArrowClick: () => alert(" Handle sort and icon change"),
+
+              arrowDownBold: true,
+              arrowUpBold: false,
+            },
+            {
+              title: "Value",
+              icon: "sort",
+              onArrowClick: () => alert(" Handle sort and icon change"),
+              arrowDownBold: false,
+              arrowUpBold: true,
+            },
+            {
+              title: "Profit/Loss",
+              icon: "sort",
+              onArrowClick: () => alert(" Handle sort and icon change"),
+              arrowDownBold: true,
+              arrowUpBold: false,
+            },
+          ]}
+          testId={"testId"}
+          data={[
+            {
+              borderColor: "#FFA463",
+              expandableLeft: true,
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              middleLabel: "RM 406,318.98",
+              rightLabel: {
+                type: "loss",
+                percentage: "0.03%",
+                amount: "RM 23,312,189.56",
+              },
+              rightButtons: [
+                {
+                  icon: "Edit",
+                  text: "Edit",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "delete",
+                  text: "Delete",
+                  onClick: () => alert("click"),
+                }
+              ],
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#FFA463"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73",
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894",
+                    },
+                    {
+                      leftLabel: "Number of Units",
+                      rightLabel: "1,828.40",
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity",
+                      rightLabelStyle: {
+                        color: "#FFA463",
+                      },
+                    },
+                  ]}
+                />
+              ),
+            },
+            {
+              borderColor: "#8677D9",
+              expandableLeft: true,
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              rightLabel: {
+                type: "profit",
+                percentage: "0.03%",
+                amount: "RM 12,189.56",
+              },
+              rightButtons: [
+                {
+                  icon: "Edit",
+                  text: "Edit",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "delete",
+                  text: "Delete",
+                  onClick: () => alert("click"),
+                }
+              ],
+              middleLabel: "RM 406,318.98",
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#8677D9"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73",
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894",
+                    },
+                    {
+                      leftLabel: "Number of Unts",
+                      rightLabel: "1,828.40",
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity",
+                    },
+                  ]}
+                />
+              ),
+            },
+            {
+              borderColor: "#7AB497",
+              expandableLeft: true,
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              rightLabel: {
+                type: "loss",
+                percentage: "0.03%",
+                amount: "RM 12,189.56",
+              },
+              rightButtons: [
+                {
+                  icon: "Edit",
+                  text: "Edit",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "delete",
+                  text: "Delete",
+                  onClick: () => alert("click"),
+                }
+              ],
+              middleLabel: "RM 406,318.98",
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#7AB497"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73",
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894",
+                    },
+                    {
+                      leftLabel: "Number of Unts",
+                      rightLabel: "1,828.40",
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity",
+                    },
+                  ]}
+                />
+              ),
+            },
+          ]}
+        />
+      </CenteredDiv>
       <Title>PortfolioList</Title>
       <CenteredDiv>
         <PortfolioList
@@ -276,24 +457,24 @@ const Sprint3: React.FC<Props> = () => {
             {
               title: "Fund Name",
               icon: "sort",
-              onArrowClick : () => alert(" Handle sort and icon change"),
-              
-              arrowDownBold :true,
-              arrowUpBold : false
+              onArrowClick: () => alert(" Handle sort and icon change"),
+
+              arrowDownBold: true,
+              arrowUpBold: false,
             },
             {
               title: "Value",
               icon: "sort",
-              onArrowClick : () => alert(" Handle sort and icon change"),
-              arrowDownBold :false,
-              arrowUpBold : true
+              onArrowClick: () => alert(" Handle sort and icon change"),
+              arrowDownBold: false,
+              arrowUpBold: true,
             },
             {
               title: "Profit/Loss",
               icon: "sort",
-              onArrowClick : () => alert(" Handle sort and icon change"),
-              arrowDownBold :true,
-              arrowUpBold : false
+              onArrowClick: () => alert(" Handle sort and icon change"),
+              arrowDownBold: true,
+              arrowUpBold: false,
             },
           ]}
           testId={'testId'}
@@ -474,6 +655,8 @@ const Sprint3: React.FC<Props> = () => {
               onClick: (item, index) =>
                 alert(`${JSON.stringify(item)},Index: ${index}`),
               cardImg: images.common.Duitnow1,
+              showShadow: true,
+              // shadowStyle: {boxShadow: '2px 2px 7px rgba(0, 0, 0, 0.8)'},
               cardImgStyle: { height: 30, width: 30 },
               hidden: hiddenList,
               onHiddenButtonClick: () => {
@@ -646,6 +829,7 @@ const Sprint3: React.FC<Props> = () => {
                 <SecureImageSelect
                   testId="secure_image_select_testid"
                   label="Select your new security image"
+                  selectedImages={[3]}
                   images={[
                     {
                       uri: images.common.SampleSecureImage,

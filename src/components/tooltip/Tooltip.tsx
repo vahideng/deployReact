@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import classes from "./Tooltip.module.css";
 
 import Icon from "../assets/icons/icon";
-import OutsideClickHandler from "react-outside-click-handler";
+// import OutsideClickHandler from "react-outside-click-handler";
 
 interface TooltipProps {
   testId?: string;
@@ -30,11 +30,7 @@ class Tooltip extends Component<TooltipProps, State> {
     const tooltipSize = tipSize !== undefined ? tipSize : 23;
 
     return (
-      <OutsideClickHandler
-        onOutsideClick={() => {
-          this.setState({ clicked: false });
-        }}
-      >
+      <>
         {rightAlign ? (
           <div className={classes.tooltipRight} id={testId}>
             <div onClick={clickHandler} id={`${testId}-0`}>
@@ -72,7 +68,7 @@ class Tooltip extends Component<TooltipProps, State> {
             </div>
           </div>
         )}
-      </OutsideClickHandler>
+      </>
     );
   }
 }

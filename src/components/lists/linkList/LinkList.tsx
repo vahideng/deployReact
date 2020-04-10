@@ -116,7 +116,7 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
   } = item;
   const [isOpen, setIsOpen] = useState(defaultActiveKey === eventKey);
   const decoratedOnClick = useAccordionToggle(eventKey, () =>
-    console.log('totally custom!')
+    console.log("totally custom!")
   );
   const handleToggle = (e: any) => {
     onListClick(item);

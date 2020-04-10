@@ -34,6 +34,7 @@ import StickyTimer from "./components/modals/stickyTimer/StickyTimer";
 import TacModal from "./components/modals/tacModal/TacModal";
 import PieChart from "./components/pies/PieChart";
 import SecureImage from "./components/secureImage/SecureImage";
+import SecureImageSelect from "./components/secureImageSelect/SecureImageSelect";
 import SelectionTile from "./components/selections/selectionTile/SelectionTile";
 import VerticalTabSelection from "./components/selections/verticalTabSelection/VerticalTabSelection";
 import Dock from "./components/stickies/dock/Dock";
@@ -51,6 +52,7 @@ import StatusIcon from "./components/assets/icons/statusIcon/StatusIcon";
 import Logo from "./components/assets/logo/Logo";
 import TileListView from "./components/lists/TileListView/TileListView";
 import AmModal from "./components/modals/Modal";
+import TransactionIconList from "./components/lists/TransactionIconList/TransactionIconList";
 
 ///
 /// below are sprint-2 components
@@ -105,6 +107,7 @@ export {
   /// below are sprint-3 components
   AmProfileSetting,
   AmAccordion,
+  SecureImageSelect,
   TooltipDropdown,
   BoxId,
   LabelToolTip,
@@ -141,6 +144,7 @@ export {
   ArticleDetails,
   ////
   /// below are sprint-1 components
+  TransactionIconList,
   AmModal,
   ActionButtons,
   BackButton,

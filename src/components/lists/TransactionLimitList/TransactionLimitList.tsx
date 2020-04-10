@@ -1,4 +1,4 @@
-import React, { CSSProperties }  from "react";
+import React, { CSSProperties } from "react";
 import classes from "./TransactionLimitList.module.css";
 import Paragraphs from "../../assets/typography";
 import Icon from "src/components/assets/icons/icon";
@@ -17,6 +17,8 @@ interface Props {
     rightLabel?: string;
     notify?: boolean;
     notifyStyle ?: CSSProperties;
+    showShadow?: boolean;
+    shadowStyle?: CSSProperties;
     cardImg?: string;
     cardImgStyle?: {
       height: number;
@@ -37,6 +39,13 @@ const TransactionLimitList: React.FC<Props> = ({ list, testId }: Props) => {
           item.hidden ? (
             <div
               className={classes.ItemContainer}
+              style={
+                !!item.showShadow
+                  ? !!item.shadowStyle
+                    ? item.shadowStyle
+                    : { boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)" }
+                  : { }
+              }
               id={`${testId}-${index}`}
               key={index}
               onClick={() => item.onClick(item, index)}
@@ -54,8 +63,12 @@ const TransactionLimitList: React.FC<Props> = ({ list, testId }: Props) => {
 
                   <div className={classes.TextContainer}>
                     <B_15_BLACK>{item.label}</B_15_BLACK>
-                    {item.notify && 
-                    <Notify   className={classes.notify} style={item.notifyStyle? item.notifyStyle: null }/>}
+                    {item.notify && (
+                      <Notify
+                        className={classes.notify}
+                        style={item.notifyStyle ? item.notifyStyle : null}
+                      />
+                    )}
                     {item.subDetail && (
                       <R_12_BLACK style={{ marginTop: 5 }}>
                         {item.subDetail}
@@ -83,6 +96,13 @@ const TransactionLimitList: React.FC<Props> = ({ list, testId }: Props) => {
           ) : (
             <div
               className={classes.ItemContainer}
+              style={
+                !!item.showShadow
+                  ? !!item.shadowStyle
+                    ? item.shadowStyle
+                    : { boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)" }
+                  : { }
+              }
               id={`${testId}-${index}`}
               key={index}
               onClick={() => item.onClick(item, index)}
