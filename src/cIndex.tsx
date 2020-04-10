@@ -93,6 +93,7 @@ import BoxId from "./components/lists/BoxId/BoxId";
 import TooltipDropdown from "./components/tooltipDropdown/TooltipDropdown";
 import AmAccordion from './components/amAccordion/AmAccordion';
 import AmProfileSetting from "./components/amProfileSetting/amProfileSetting";
+import UnitTrustList from "./components/lists/UnitTrustList/UnitTrustList";
 
 /// below are sprint-3 components
 
@@ -127,6 +128,7 @@ export {
   SimpleHeader,
   PortfolioList,
   DashboardCart,
+  UnitTrustList,
   ////
   /// below are sprint-2 components
   CalendarBox,
