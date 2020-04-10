@@ -98,6 +98,7 @@ const Sprint3: React.FC<Props> = () => {
       <Title>InputField</Title>
       <div style={{ paddingLeft: "35vw" }}>
         <InputField
+          tipChildren={<p>tipChildren</p>}
           label="bottomLabel"
           notValid={false}
           errorMessage={{
