@@ -44,7 +44,7 @@ const CenteredDiv = styled.div`
   padding: 2rem 0;
 `;
 
-const ViewRate: React.FC<Props> = ({
+const ViewRateContainer: React.FC<Props> = ({
   testId,
   title,
   rateTypeIcon,
@@ -180,4 +180,4 @@ const ViewRate: React.FC<Props> = ({
   );
 };
 
-export default ViewRate;
+export default ViewRateContainer;
