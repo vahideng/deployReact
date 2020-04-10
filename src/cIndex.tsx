@@ -92,6 +92,8 @@ import LabelToolTip from "./components/labelToolTip/LabelToolTip";
 import BoxId from "./components/lists/BoxId/BoxId";
 import TooltipDropdown from "./components/tooltipDropdown/TooltipDropdown";
 import UnitTrustList from "./components/lists/UnitTrustList/UnitTrustList";
+import AmProfileSetting from "./components/amProfileSetting/amProfileSetting";
+import AmAccordion from "./components/amAccordion/AmAccordion";
 
 /// exports
 export {
@@ -188,4 +190,6 @@ export {
   LabeledIcon,
   StatusIcon,
   TileListView,
+  AmProfileSetting,
+  AmAccordion
 };
