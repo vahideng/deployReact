@@ -21,6 +21,8 @@ declare type ListItem = {
   cardStyle?: any;
   cardHeaderStyle?: any;
   cardHeaderInnerStyle?: any;
+  cardBody?: any;
+  accordionStyle?: any;
 };
 interface LinkListProps {
   testId?: string;
@@ -29,6 +31,8 @@ interface LinkListProps {
   cardStyle?: any;
   cardHeaderStyle?: any;
   cardHeaderInnerStyle?: any;
+  cardBody?: any;
+  accordionStyle?: any;
 }
 
 const LinkList: React.FC<LinkListProps> = ({
@@ -38,10 +42,15 @@ const LinkList: React.FC<LinkListProps> = ({
   cardStyle,
   cardHeaderStyle,
   cardHeaderInnerStyle,
+  cardBody,
+  accordionStyle,
 }) => {
   return (
     <div id={testId} className={classes.Container}>
-      <Accordion defaultActiveKey={defaultActiveKey}>
+      <Accordion
+        defaultActiveKey={defaultActiveKey}
+        style={{ ...accordionStyle }}
+      >
         {list &&
           list.map((item, index) => {
             const { expandable, expandableContent, leftBorderColor } = item;
@@ -75,7 +84,9 @@ const LinkList: React.FC<LinkListProps> = ({
                       backgroundColor: cardStyle && cardStyle.backgroundColor,
                     }}
                   >
-                    <Card.Body>{expandableContent}</Card.Body>
+                    <Card.Body style={{ ...cardBody, ...item.cardBody }}>
+                      {expandableContent}
+                    </Card.Body>
                   </Accordion.Collapse>
                 ) : null}
               </Card>
