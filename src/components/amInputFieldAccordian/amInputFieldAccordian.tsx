@@ -9,12 +9,26 @@ const { SB_15_BLACK } = Paragraphs;
 
 interface InputFieldAccordianProps {
   testId: string;
-  data:any;
   cardStyle?: any;
   cardHeaderStyle?: any;
   cardHeaderInnerStyle?: any;
   cardBody?:any;
   accordionStyle?:any;
+  data:{
+    id:string;
+    title:string;
+    defaultActiveContentIndex?:string;
+    content: {
+      label:string;
+      leftIcon:any;
+      bold:boolean;
+      onListClick:() => void;
+      expandable:boolean;
+      expandableContent:ReactNode;
+      subtitle?:any;
+      leftBorderColor?:string
+    }[];
+  }[]
   
 }
 

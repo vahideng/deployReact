@@ -431,6 +431,15 @@ const SB_17_BLACK = styled.p`
   line-height: 20px;
 `;
 
+const SB_18_BLACK = styled.p`
+  font-family: 'Nunito Sans';
+  margin: 0;
+  color: #000000;
+  font-size: 1.06rem;
+  font-weight: 700;
+  line-height: 25px;
+`;
+
 export default {
   SB_13_GREY444,
   B_13_GREY444,
@@ -490,4 +499,5 @@ export default {
   SB_13_BLACK,
   XB_11_WHITE,
   R_12_BLACK,
+  SB_18_BLACK
 };

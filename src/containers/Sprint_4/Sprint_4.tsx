@@ -6,21 +6,16 @@ import Navbar from "src/components/headers/navbar/Navbar";
 import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTransparent";
 import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
 import TextButton from "src/components/buttons/textButton/TextButton";
-
+import AmResetPin from "src/components/amResetPin/amResetPin";
 import ConfirmNotes from "src/components/confirmNotes/ConfirmNotes";
 import Icon from "src/components/assets/icons/icon";
 import InputField from "src/components/inputs/inputFields/InputFields";
-
 import ViewRate from "src/components/viewRate/ViewRate";
 import ViewRateContainer from "src/components/viewRateContainer/ViewRateContainer";
-import AmInputFieldAccordian from "src/components/amInputFieldAccordian/amInputFieldAccordian";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import Modal from "src/components/modals/Modal";
-
-const {
-  B_13_ORANGE_463,
-  R_13_GREY444,
-} = Paragraphs;
+import AmInputFieldAccordian from "src/components/amInputFieldAccordian/amInputFieldAccordian";
+const { B_13_ORANGE_463, R_13_GREY444 } = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -349,6 +344,25 @@ const Sprint3: React.FC<Props> = () => {
           />,
         ]}
       />
+
+      <Title>Reset Pin</Title>
+      <CenteredDiv
+        style={{ position: "relative", padding: "5rem 6rem", height: "25rem" }}
+      >
+        <AmResetPin
+          testId="testId"
+          keysArray={[5, 8, 1, 0, 4, 6, 2, 9, 3, 7]}
+          onEnterClick={() => {
+            alert("Enter click");
+          }}
+          onNumberSelected={(item: any) => {
+            alert(item);
+          }}
+          EnterIcon={{ name: "system-close-grey", size: 15, color: "#000000" }}
+          pointerTopVal={50}
+        />
+      </CenteredDiv>
+
       <Title>Input Accordian</Title>
       <CenteredDiv
         style={{

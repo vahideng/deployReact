@@ -7,21 +7,6 @@ import { MemoizedAmProfilePic as AmProfilePic } from 'src/components/amProfilePi
 
 const { B_32_BLACK, SB_15_BLACK, R_15_BLACK } = Paragraphs;
 
-interface ProfileItemProps {
-  profile_data: itemProps;
-}
-
-interface itemProps {
-  title: string;
-  subtitle: contentType[];
-  children?: ReactNode;
-  showAccordion: boolean;
-}
-
-interface contentType {
-  content: string;
-}
-
 interface ProfileSettingProps {
   testId: string;
   eventKey?: any;
@@ -35,7 +20,15 @@ interface ProfileSettingProps {
   editIcon: any;
   onEditClickHandler: () => void;
   fullName: string;
-  data?: ProfileItemProps[];
+  data?: {
+    profile_data:{
+      title: string;
+      subtitle: {  content: string}[];
+      children?: ReactNode;
+      showAccordion: boolean;
+    }
+    
+  }[];
   profile_name: string;
   profile_login_history: string;
 }

@@ -34,6 +34,7 @@ import StickyTimer from "./components/modals/stickyTimer/StickyTimer";
 import TacModal from "./components/modals/tacModal/TacModal";
 import PieChart from "./components/pies/PieChart";
 import SecureImage from "./components/secureImage/SecureImage";
+import SecureImageSelect from "./components/secureImageSelect/SecureImageSelect";
 import SelectionTile from "./components/selections/selectionTile/SelectionTile";
 import VerticalTabSelection from "./components/selections/verticalTabSelection/VerticalTabSelection";
 import Dock from "./components/stickies/dock/Dock";
@@ -51,6 +52,7 @@ import StatusIcon from "./components/assets/icons/statusIcon/StatusIcon";
 import Logo from "./components/assets/logo/Logo";
 import TileListView from "./components/lists/TileListView/TileListView";
 import AmModal from "./components/modals/Modal";
+import TransactionIconList from "./components/lists/TransactionIconList/TransactionIconList";
 
 ///
 /// below are sprint-2 components
@@ -90,6 +92,8 @@ import LabelToolTip from "./components/labelToolTip/LabelToolTip";
 import BoxId from "./components/lists/BoxId/BoxId";
 import TooltipDropdown from "./components/tooltipDropdown/TooltipDropdown";
 import AmAccordion from "./components/amAccordion/AmAccordion";
+import UnitTrustList from "./components/lists/UnitTrustList/UnitTrustList";
+
 import AmProfileSetting from "./components/amProfileSetting/amProfileSetting";
 import ConfirmNotes from "./components/confirmNotes/ConfirmNotes";
 import ViewRate from "./components/viewRate/ViewRate";
@@ -98,6 +102,7 @@ import ViewRateContainer from "./components/viewRateContainer/ViewRateContainer"
 /// below are sprint-3 components
 
 import amInputFieldAccordian from "./components/amInputFieldAccordian/amInputFieldAccordian";
+import amResetPin from "./components/amResetPin/amResetPin";
 /// exports
 export {
   ////
@@ -106,9 +111,11 @@ export {
   ConfirmNotes,
   ViewRate,
   ViewRateContainer,
+  amResetPin,
   /// below are sprint-3 components
   AmProfileSetting,
   AmAccordion,
+  SecureImageSelect,
   TooltipDropdown,
   BoxId,
   LabelToolTip,
@@ -128,6 +135,7 @@ export {
   SimpleHeader,
   PortfolioList,
   DashboardCart,
+  UnitTrustList,
   ////
   /// below are sprint-2 components
   CalendarBox,
@@ -145,6 +153,7 @@ export {
   ArticleDetails,
   ////
   /// below are sprint-1 components
+  TransactionIconList,
   AmModal,
   ActionButtons,
   BackButton,
