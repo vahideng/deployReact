@@ -89,18 +89,23 @@ import DashboardCart from "./components/dashboardCart/DashboardCart";
 import LabelToolTip from "./components/labelToolTip/LabelToolTip";
 import BoxId from "./components/lists/BoxId/BoxId";
 import TooltipDropdown from "./components/tooltipDropdown/TooltipDropdown";
-import AmAccordion from './components/amAccordion/AmAccordion';
+import AmAccordion from "./components/amAccordion/AmAccordion";
 import AmProfileSetting from "./components/amProfileSetting/amProfileSetting";
 
-/// below are sprint-3 components
+/// below are sprint-4 components
 
 import amInputFieldAccordian from "./components/amInputFieldAccordian/amInputFieldAccordian";
+import CenterText from "./components/assets/typography/CenterText/CenterText";
+import DynamicText from "./components/assets/typography/DynamicText/DynamicText";
+
 /// exports
 export {
   ////
-    /// below are sprint-4 components
+  /// below are sprint-4 components
+  DynamicText,
+  CenterText,
   amInputFieldAccordian,
-
+  ////
   /// below are sprint-3 components
   AmProfileSetting,
   AmAccordion,
@@ -191,5 +196,5 @@ export {
   Logo,
   LabeledIcon,
   StatusIcon,
-  TileListView,
+  TileListView
 };
