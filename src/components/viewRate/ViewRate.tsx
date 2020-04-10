@@ -53,7 +53,7 @@ const ViewRate: React.FC<Props> = ({
   tableContainerStyle,
   tableStyle,
   tableHeadingStyle,
-  tableCellStyle,
+  tableCellStyle
 }) => {
   const { headers, values, tableProps } = data;
   return (
@@ -114,7 +114,7 @@ const ViewRate: React.FC<Props> = ({
                             key={jj}
                             style={{
                               textAlign: style.textAlign,
-                              ...tableCellStyle,
+                              ...tableCellStyle
                             }}
                           >
                             <R_13_BLACK
