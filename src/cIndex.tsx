@@ -92,8 +92,9 @@ import LabelToolTip from "./components/labelToolTip/LabelToolTip";
 import BoxId from "./components/lists/BoxId/BoxId";
 import TooltipDropdown from "./components/tooltipDropdown/TooltipDropdown";
 import AmAccordion from './components/amAccordion/AmAccordion';
-import AmProfileSetting from "./components/amProfileSetting/amProfileSetting";
 import UnitTrustList from "./components/lists/UnitTrustList/UnitTrustList";
+
+import AmProfileSetting from "./components/amProfileSetting/amProfileSetting";
 
 /// below are sprint-3 components
 
