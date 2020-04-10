@@ -95,12 +95,13 @@ import AmProfileSetting from "./components/amProfileSetting/amProfileSetting";
 /// below are sprint-3 components
 
 import amInputFieldAccordian from "./components/amInputFieldAccordian/amInputFieldAccordian";
+import amResetPin from './components/amResetPin/amResetPin';
 /// exports
 export {
   ////
     /// below are sprint-4 components
   amInputFieldAccordian,
-
+  amResetPin,
   /// below are sprint-3 components
   AmProfileSetting,
   AmAccordion,
