@@ -96,7 +96,7 @@ import UnitTrustList from "./components/lists/UnitTrustList/UnitTrustList";
 
 import AmProfileSetting from "./components/amProfileSetting/amProfileSetting";
 
-/// below are sprint-3 components
+/// below are sprint-4 components
 
 import AmInputFieldAccordian from "./components/amInputFieldAccordian/amInputFieldAccordian";
 import AmResetPin from './components/amResetPin/amResetPin';
