@@ -1071,6 +1071,7 @@ const Sprint3: React.FC<Props> = () => {
       >
         <AmDropdown
           max="200px"
+          type="text"
           readOnly={true}
           disabled={false}
           clickOnArrow={() => setDropdown(!showDropdown)}
@@ -1102,7 +1103,11 @@ const Sprint3: React.FC<Props> = () => {
           label="dropdown label"
           icon={{ name: "Account-2" }}
           value={dropdownValue}
-          handleChange={item => handlerDropdown(item)}
+          handleChange={(event, item, testId) => {
+            console.log(event, testId)
+            handlerDropdown(item)
+          }}
+          inputHandleChange={(item)=>alert(item.target.value)}
           placeholder="place holder"
         />
       </div>
