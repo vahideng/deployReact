@@ -10,6 +10,7 @@ interface Props {
   testId?: string;
   title: string;
   titleStyle?: CSSProperties;
+  image?: { src?: string; imageStyle?: CSSProperties };
 }
 
 const TextWithDetails: React.FC<Props> = ({
@@ -18,7 +19,8 @@ const TextWithDetails: React.FC<Props> = ({
   direction,
   testId,
   title,
-  titleStyle
+  titleStyle,
+  image
 }) => {
   const paddingLeft = direction === "row" ? { paddingLeft: "0.25rem" } : {};
   const defaultDirection = direction !== undefined ? direction : "column";
@@ -26,16 +28,29 @@ const TextWithDetails: React.FC<Props> = ({
     display: flex;
     flex-direction: ${defaultDirection};
   `;
-
+  const Wrapper = styled.div`
+    display: flex;
+    align-items: center;
+  `;
+  const Image = styled.img`
+    margin-right: 1.5rem;
+    width: 5.31rem;
+    height: 3.25rem;
+  `;
   return (
-    <MainDiv id={testId}>
-      <B_15_BLACK style={titleStyle}>{title}</B_15_BLACK>
-      {content === undefined ? null : (
-        <R_15_BLACK style={{ ...paddingLeft, ...contentStyle }}>
-          {content}
-        </R_15_BLACK>
+    <Wrapper>
+      {image && (
+        <Image src={image.src ? image.src : ""} style={image.imageStyle} />
       )}
-    </MainDiv>
+      <MainDiv id={testId}>
+        <B_15_BLACK style={titleStyle}>{title}</B_15_BLACK>
+        {content === undefined ? null : (
+          <R_15_BLACK style={{ ...paddingLeft, ...contentStyle }}>
+            {content}
+          </R_15_BLACK>
+        )}
+      </MainDiv>
+    </Wrapper>
   );
 };
 

@@ -464,7 +464,10 @@ const Sprint2: React.FC<Props> = () => {
             tag="Security Alerts"
             testId="testId"
             title="Always be vigilant against scam threats."
-            link={{ label: "Learn more", url: "#" }}
+            link={{
+              label: "Learn more",
+              onLinkClick: () => alert("link clicked")
+            }}
           />
         </Col>
       </Row>

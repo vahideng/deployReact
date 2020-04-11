@@ -1411,6 +1411,7 @@ const Sprint3: React.FC<Props> = () => {
       <Title>Selection Tiles</Title>
       <div style={{ paddingLeft: "2rem" }}>
         <SelectionTile
+          rowStyle={{ flexWrap: "nowrap" }}
           testId={"testId"}
           onTileClick={(item, index) => {
             setSTileNum(index);
@@ -1419,20 +1420,31 @@ const Sprint3: React.FC<Props> = () => {
           selected={sTileNum}
           list={[
             {
-              accountTitle: "Saving Account A",
-              accountNumber: "RM 2,000.00"
+              children: (
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
+                  quasi libero placeat vel! Dicta modi accusamus, quo magnam
+                  pariatur doloremque.
+                </p>
+              )
             },
             {
-              accountTitle: "Ambank AmMoneyLine AmMoneyLine",
-              accountNumber: "RM 2,000.00"
+              children: (
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
+                  quasi libero placeat vel! Dicta modi accusamus, magnam
+                  pariatur doloremque magnam pariatur doloremque quo magnam
+                  pariatur doloremque.
+                </p>
+              )
             },
             {
-              accountTitle: "Ambank BonusLink Visa",
-              accountNumber: "RM 2,000.00"
-            },
-            {
-              accountTitle: "Saving Account B",
-              accountNumber: "RM 2,000.00"
+              children: (
+                <p>
+                  Lorem ipsuelit. Quos quasi libero placeat vel! Dic doloremque
+                  magnam pariatur doloremque quo magnam pariatur doloremque.
+                </p>
+              )
             }
           ]}
         />
@@ -1672,19 +1684,32 @@ const Sprint3: React.FC<Props> = () => {
           alignItems: "center"
         }}
       >
+        <br />
         <TextWithDetails
           title="Insurance"
           titleStyle={{ fontSize: "1.5rem" }}
           content={["Bill Account No.: 51T0409A0690279989"]}
           contentStyle={{ fontSize: "0.9375rem" }}
         />
-
+        <br />
+        thDetails title="Indah" content=
+        {["Bill Account No.: 51T0409A0690279989", "Ref-1: 65432145432"]}
+        />
+        <br />
         <TextWithDetails
-          title="Indah"
-          content={[
-            "Bill Account No.: 51T0409A0690279989",
-            "Ref-1: 65432145432"
-          ]}
+          title="AmBank Bonuslink Visa"
+          content={["5464 4364 7863 0797"]}
+          image={{ src: LocalImages.common.card }}
+        />
+        <br />
+        <TextWithDetails
+          title="AmBank Bonuslink Visa"
+          content={["5464 4364 7863 0797"]}
+          image={{
+            src:
+              "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
+            imageStyle: { width: "2.5rem", height: "2.5rem" }
+          }}
         />
       </div>
       <Title>ArrayCheckbox</Title>
