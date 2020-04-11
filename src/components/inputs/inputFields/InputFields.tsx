@@ -32,6 +32,7 @@ interface Props {
   onBlur?: (event: FormEvent) => void;
   onFocus?: (event: FormEvent) => void;
   tipChildren?: ReactNode;
+  placeholder?: string;
 }
 
 class InputField extends Component<Props, {}> {
@@ -56,6 +57,7 @@ class InputField extends Component<Props, {}> {
       onFocus,
       tacInput,
       tipChildren,
+      placeholder
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);
@@ -90,6 +92,7 @@ class InputField extends Component<Props, {}> {
           )}
 
           <input
+            placeholder={placeholder}
             autoComplete={"off"}
             minLength={minLength}
             maxLength={maxLength}
@@ -100,11 +103,11 @@ class InputField extends Component<Props, {}> {
                 ? {
                     width: tacInput ? "34.81rem" : "31.6rem",
                     paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                    boxShadow: "none",
+                    boxShadow: "none"
                   }
                 : {
                     paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                    width: tacInput ? "34.81rem" : "31.6rem",
+                    width: tacInput ? "34.81rem" : "31.6rem"
                   }
             }
             type={type}
