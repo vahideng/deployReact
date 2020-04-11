@@ -8,7 +8,7 @@ const { B_20_BLACK, B_13_BLACK, R_13_BLACK } = Paragraphs;
 
 interface Props {
   content: { title: string; content: string; icon: string }[];
-  link: { url: string; label: string };
+  link: { onLinkClick: () => void; label: string };
   style?: CSSProperties;
   tag: string;
   testId: string;
@@ -57,9 +57,9 @@ const BoxContent: React.FC<Props> = ({
             })}
           </div>
           {link === undefined ? null : (
-            <a href={link.url} className={classes.Link}>
+            <p className={classes.Link} onClick={link.onLinkClick}>
               {link.label}
-            </a>
+            </p>
           )}
         </div>
       </Col>

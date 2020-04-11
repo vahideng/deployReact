@@ -1,9 +1,11 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, CSSProperties } from "react";
 import classes from "./SelectionTile.module.css";
 import Paragraphs from "../../assets/typography";
 import Profile from "src/components/headers/profile/Profile";
+
 const { B_16_BLACK, R_14_BLACK, B_15_BLACK } = Paragraphs;
 interface Props {
+  rowStyle?: CSSProperties;
   onTileClick: (item: any, index: number) => void;
   centered?: boolean;
   testId?: string;
@@ -29,10 +31,11 @@ const SelectionTile: React.FC<Props> = ({
   selected,
   onTileClick,
   testId,
-  centered
+  centered,
+  rowStyle
 }) => {
   return !centered ? (
-    <div className={classes.SelectionTileRow} id={testId}>
+    <div className={classes.SelectionTileRow} id={testId} style={rowStyle}>
       {!!list &&
         list.map((item, index) => {
           return (

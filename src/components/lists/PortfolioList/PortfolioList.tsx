@@ -1,5 +1,5 @@
 import React, { CSSProperties, ReactNode } from "react";
-import { Card, Accordion, useAccordionToggle, Col } from "react-bootstrap";
+import { Card, Accordion, useAccordionToggle } from "react-bootstrap";
 
 import classes from "./PortfolioList.module.css";
 import "react-tabs/style/react-tabs.css";
@@ -51,7 +51,7 @@ interface ToggleProps {
 const CustomToggle: React.FC<ToggleProps> = ({
   content,
   eventKey,
-  testId,
+  testId
 }: ToggleProps) => {
   const decoratedOnClick = useAccordionToggle(eventKey, () => null);
   const [isOpen, setIsOpen] = React.useState(false);
@@ -64,7 +64,7 @@ const CustomToggle: React.FC<ToggleProps> = ({
   return (
     <div
       className={classes.Content}
-      onClick={(e) => accordionClickHandler(e)}
+      onClick={e => accordionClickHandler(e)}
       id={testId}
     >
       {content}
@@ -89,31 +89,28 @@ const PortfolioList: React.FC<Props> = ({ data, header, testId }) => {
         {header.map((item: HeaderProps, index: number) => {
           return (
             <div
-              className={classes[`Header${index}`]}
+              className={classes.HeaderContainer}
               key={index}
               style={item.style}
             >
-              <div className={classes.Header}>
-                <SB_13_GREY444 style={item.textStyle}>
-                  {item.title}
-                </SB_13_GREY444>
-                <div className={classes.HeaderIcon}>
-                  <div style={{ position: "relative" }}>
-                    <div onClick={item.onArrowClick} className={classes.BothIcon}>
-                      <div className={classes.ArrowDown} >
-                        {item.arrowDownBold ? (
-                          <Icon icon="arrowDown" size={12} color="black" />
-                        ) : (
-                          <Icon icon="arrowDown" size={12} color="gray" />
-                        )}
-                      </div>
-                      <div  className={classes.ArrowUp} >
-                        {item.arrowUpBold ? (
-                          <Icon icon="arrowUp" size={12} color="black"/>
-                        ) : (
-                          <Icon icon="arrowUp" size={12} color="gray" />
-                        )}
-                      </div>
+              <SB_13_GREY444 style={item.textStyle}>{item.title}</SB_13_GREY444>
+
+              <div className={classes.HeaderIcon}>
+                <div>
+                  <div onClick={item.onArrowClick} className={classes.BothIcon}>
+                    <div className={classes.ArrowDown}>
+                      {item.arrowDownBold ? (
+                        <Icon icon="arrowDown" size={12} color="black" />
+                      ) : (
+                        <Icon icon="arrowDown" size={12} color="gray" />
+                      )}
+                    </div>
+                    <div className={classes.ArrowUp}>
+                      {item.arrowUpBold ? (
+                        <Icon icon="arrowUp" size={12} color="black" />
+                      ) : (
+                        <Icon icon="arrowUp" size={12} color="gray" />
+                      )}
                     </div>
                   </div>
                 </div>
@@ -129,6 +126,7 @@ const PortfolioList: React.FC<Props> = ({ data, header, testId }) => {
             display: flex;
             flex-direction: row;
             align-items: center;
+
             border-left: 0.375rem ${item.borderColor} solid;
             height: 5rem;
             padding-left: 1.125rem;
@@ -138,7 +136,7 @@ const PortfolioList: React.FC<Props> = ({ data, header, testId }) => {
           const profitOrLoss = (
             <span
               style={{
-                color: item.rightLabel.type === "loss" ? "#FF2222" : "#36A03E",
+                color: item.rightLabel.type === "loss" ? "#FF2222" : "#36A03E"
               }}
             >
               {item.rightLabel.type === "loss" ? "-" : "+"}
@@ -150,7 +148,7 @@ const PortfolioList: React.FC<Props> = ({ data, header, testId }) => {
               <Card className={classes.ContainerWhole}>
                 <Card.Header className={classes.HeaderInside}>
                   <StyledDiv className={inverted}>
-                    <Col className={classes.LeftItemContainer}>
+                    <div className={classes.ItemContainer}>
                       {item.expandableLeft === true ? (
                         <CustomToggle
                           eventKey={`left-${index}`}
@@ -160,8 +158,8 @@ const PortfolioList: React.FC<Props> = ({ data, header, testId }) => {
                       ) : (
                         <SB_13_GREY444>{item.leftLabel}</SB_13_GREY444>
                       )}
-                    </Col>
-                    <Col className={classes.MiddleItemContainer}>
+                    </div>
+                    <div className={classes.ItemContainer}>
                       {item.expandableMiddle === true ? (
                         <CustomToggle
                           eventKey={`middle-${index}`}
@@ -172,8 +170,8 @@ const PortfolioList: React.FC<Props> = ({ data, header, testId }) => {
                         <SB_13_GREY444>{item.middleLabel}</SB_13_GREY444>
                       )}
                       <br />
-                    </Col>
-                    <Col className={classes.RightItemContainer}>
+                    </div>
+                    <div className={classes.ItemContainer}>
                       <div>
                         <div className={classes.RightLabel}>
                           ({profitOrLoss} {item.rightLabel.percentage})
@@ -182,7 +180,7 @@ const PortfolioList: React.FC<Props> = ({ data, header, testId }) => {
                           {item.rightLabel.amount}
                         </div>
                       </div>
-                    </Col>
+                    </div>
                   </StyledDiv>
                 </Card.Header>
                 {item.leftContent !== undefined && (
