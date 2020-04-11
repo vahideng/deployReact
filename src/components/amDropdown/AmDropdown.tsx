@@ -41,7 +41,7 @@ interface Props {
 
 class AmDropdown extends Component<Props, {}> {
   state = {
-    showDropdown: false,
+    showDropdown: false
   };
 
   clickHandler = () => {
@@ -78,7 +78,7 @@ class AmDropdown extends Component<Props, {}> {
       inputClickHandler,
       max,
       placeholder,
-      clickOnArrow,
+      clickOnArrow
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);
@@ -127,11 +127,11 @@ class AmDropdown extends Component<Props, {}> {
                   ? {
                       width: tacInput ? "34.81rem" : "31.6rem",
                       paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                      boxShadow: "none",
+                      boxShadow: "none"
                     }
                   : {
                       paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                      width: tacInput ? "34.81rem" : "31.6rem",
+                      width: tacInput ? "34.81rem" : "31.6rem"
                     }
               }
               type={"text"}
@@ -168,10 +168,10 @@ class AmDropdown extends Component<Props, {}> {
               style={!!max ? { maxHeight: `${max}` } : { maxHeight: "500px" }}
             >
               {!!dropdownData &&
-                dropdownData.map((item) => {
+                dropdownData.map(item => {
                   return (
                     <div onClick={() => this.OnClickItemHandler(item)}>
-                      <R_15_BLACK>{item.value}</R_15_BLACK>{" "}
+                      <R_15_BLACK>{item.label}</R_15_BLACK>
                     </div>
                   );
                 })}

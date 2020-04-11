@@ -1,8 +1,8 @@
-import React, { ReactNode, useState } from 'react';
-import { Card, Accordion, useAccordionToggle } from 'react-bootstrap';
-import Icon from 'src/components/assets/icons/icon';
-import Paragraphs from '../../assets/typography';
-import classes from './LinkList.module.css';
+import React, { ReactNode, useState } from "react";
+import { Card, Accordion, useAccordionToggle } from "react-bootstrap";
+import Icon from "src/components/assets/icons/icon";
+import Paragraphs from "../../assets/typography";
+import classes from "./LinkList.module.css";
 const { SB_15_BLACK, R_15_BLACK } = Paragraphs;
 
 declare type ListItem = {
@@ -21,9 +21,8 @@ declare type ListItem = {
   cardStyle?: any;
   cardHeaderStyle?: any;
   cardHeaderInnerStyle?: any;
-  cardBody?:any;
-  accordionStyle?:any;
-
+  cardBody?: any;
+  accordionStyle?: any;
 };
 interface LinkListProps {
   testId?: string;
@@ -32,8 +31,8 @@ interface LinkListProps {
   cardStyle?: any;
   cardHeaderStyle?: any;
   cardHeaderInnerStyle?: any;
-  cardBody?:any;
-  accordionStyle?:any;
+  cardBody?: any;
+  accordionStyle?: any;
 }
 
 const LinkList: React.FC<LinkListProps> = ({
@@ -44,11 +43,14 @@ const LinkList: React.FC<LinkListProps> = ({
   cardHeaderStyle,
   cardHeaderInnerStyle,
   cardBody,
-  accordionStyle
+  accordionStyle,
 }) => {
   return (
     <div id={testId} className={classes.Container}>
-      <Accordion defaultActiveKey={defaultActiveKey} style={{...accordionStyle}}>
+      <Accordion
+        defaultActiveKey={defaultActiveKey}
+        style={{ ...accordionStyle }}
+      >
         {list &&
           list.map((item, index) => {
             const { expandable, expandableContent, leftBorderColor } = item;
@@ -65,6 +67,7 @@ const LinkList: React.FC<LinkListProps> = ({
               >
                 <Card.Header
                   style={{ ...cardHeaderStyle, ...item.cardHeaderStyle }}
+                  className={classes.CardHeader}
                 >
                   <AccordionToggle
                     item={item}
@@ -81,7 +84,9 @@ const LinkList: React.FC<LinkListProps> = ({
                       backgroundColor: cardStyle && cardStyle.backgroundColor,
                     }}
                   >
-                    <Card.Body style={{...cardBody,...item.cardBody}}>{expandableContent}</Card.Body>
+                    <Card.Body style={{ ...cardBody, ...item.cardBody }}>
+                      {expandableContent}
+                    </Card.Body>
                   </Accordion.Collapse>
                 ) : null}
               </Card>

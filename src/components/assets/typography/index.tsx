@@ -312,6 +312,7 @@ const B_13_GREY444 = styled.p`
   margin: 0;
   color: #444444;
   font-weight: 700;
+  font-size: 0.81rem;
 `;
 const R_13_GREY969 = styled.p`
   margin: 0;

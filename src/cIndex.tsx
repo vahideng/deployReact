@@ -91,20 +91,26 @@ import DashboardCart from "./components/dashboardCart/DashboardCart";
 import LabelToolTip from "./components/labelToolTip/LabelToolTip";
 import BoxId from "./components/lists/BoxId/BoxId";
 import TooltipDropdown from "./components/tooltipDropdown/TooltipDropdown";
-import AmAccordion from './components/amAccordion/AmAccordion';
+import AmAccordion from "./components/amAccordion/AmAccordion";
 import UnitTrustList from "./components/lists/UnitTrustList/UnitTrustList";
 
 import AmProfileSetting from "./components/amProfileSetting/amProfileSetting";
+import ConfirmNotes from "./components/confirmNotes/ConfirmNotes";
+import ViewRate from "./components/viewRate/ViewRate";
+import ViewRateContainer from "./components/viewRateContainer/ViewRateContainer";
 
 /// below are sprint-4 components
 
 import AmInputFieldAccordian from "./components/amInputFieldAccordian/amInputFieldAccordian";
-import AmResetPin from './components/amResetPin/amResetPin';
+import AmResetPin from "./components/amResetPin/amResetPin";
 /// exports
 export {
   ////
-    /// below are sprint-4 components
+  /// below are sprint-4 components
   AmInputFieldAccordian,
+  ConfirmNotes,
+  ViewRate,
+  ViewRateContainer,
   AmResetPin,
   /// below are sprint-3 components
   AmProfileSetting,
