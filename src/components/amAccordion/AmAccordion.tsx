@@ -14,22 +14,20 @@ interface AccordionSettingProps {
       accordionOpenIcon?: { name: string; color: string, size: number };
       accordionCloseIcon?: { name: string; color: string, size: number };
       children?: ReactNode;
-      buttonContent?: {
-        clickHandler: () => void;
-        title: string;
-        titleColor?: string;
-        buttonColor?: {top: string, bottom: string};
-        icon?: { name: string; color: string; size?: number };
-      }
-    }[]
+    }[];
+    hasPadding?: boolean;
 }
 
 const AmAccordion: React.FC<AccordionSettingProps> = ({
   data,
-  testId
+  testId,
+  hasPadding = false
 }) => {
   const { CardOuterContainer } = classes;
-
+  const ContentArea = [classes.CardBodyContent];
+    if (hasPadding) {
+      ContentArea.push(classes.hasPadding);
+  }
   return (
     <Card className={CardOuterContainer} id={testId}>
         {
@@ -51,7 +49,7 @@ const AmAccordion: React.FC<AccordionSettingProps> = ({
                 </div>
 
                 <Accordion.Collapse eventKey={index} key={`accordionCollapse-${item.id}-${index}`} id={`accordionCollapse-${item.id}-${index}`}>
-                  <Card.Body className={classes.CardBodyContent}>
+                  <Card.Body className={ContentArea.join(" ")}>
                     {item.children}
                   </Card.Body>
                 </Accordion.Collapse>

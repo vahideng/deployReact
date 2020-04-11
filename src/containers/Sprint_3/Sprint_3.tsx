@@ -861,6 +861,7 @@ const Sprint3: React.FC<Props> = () => {
       >
         <AmAccordion
           testId={'testId'}
+          hasPadding={true}
           data={[
             {
               id: 'id-1',
@@ -886,22 +887,7 @@ const Sprint3: React.FC<Props> = () => {
                     status={<R_13_GREY969>{'inactive'}</R_13_GREY969>}
                   />
                 </div>
-              ),
-              buttonContent: {
-                clickHandler: () => {
-                  alert('Set device handler');
-                },
-                title: 'Setup now',
-                titleColor: '#000000',
-                buttonColor: {
-                  top: '#F6F6F3',
-                  bottom: '#EAE9E3',
-                },
-                icon: {
-                  name: 'Settings',
-                  color: '#000',
-                },
-              },
+              )
             },
             {
               id: 'id-2',
@@ -928,17 +914,6 @@ const Sprint3: React.FC<Props> = () => {
                   />
                 </div>
               ),
-              buttonContent: {
-                clickHandler: () => {
-                  alert('Remove device handler');
-                },
-                title: 'Remove Device',
-                titleColor: '#ffffff',
-                icon: {
-                  name: 'delete',
-                  color: '#ffffff',
-                },
-              },
             },
           ]}
         ></AmAccordion>
