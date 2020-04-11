@@ -58,7 +58,7 @@ const {
   B_14_WHITE,
   B_24_BLACK,
   B_15_WHITE,
-  SB_13_BLACK,
+  SB_13_BLACK
 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -100,13 +100,13 @@ const Sprint3: React.FC<Props> = () => {
   const [profileInputValue, setProfileInputValue] = useState("");
   const [buttonColor, setButtonColor] = useState({
     top: "#BDBDBD",
-    bottom: "#BDBDBD",
+    bottom: "#BDBDBD"
   });
   const [linkListClear, setLinkListClear] = useState(false);
   const [linkListInputValue, setLinkListInputValue] = useState("");
   const [linkListBtnColor, setLinkListBtnColor] = useState({
     top: "#BDBDBD",
-    bottom: "#BDBDBD",
+    bottom: "#BDBDBD"
   });
   const [hiddenList, setHiddenList] = useState(true);
 
@@ -143,99 +143,99 @@ const Sprint3: React.FC<Props> = () => {
       content: ["Biller Code: 68502", "0"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
-      onCheckClick: handleCheckBox,
+      onCheckClick: handleCheckBox
     },
     {
       title: "Kojadi",
       content: ["Biller Code: 68502", "1"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
-      onCheckClick: handleCheckBox,
+      onCheckClick: handleCheckBox
     },
     {
       title: "Indah",
       content: ["Biller Code: 68502", "2"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
-      onCheckClick: handleCheckBox,
+      onCheckClick: handleCheckBox
     },
     {
       title: "Indah",
       content: ["Biller Code: 68502", "3"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
-      onCheckClick: handleCheckBox,
+      onCheckClick: handleCheckBox
     },
     {
       title: "Astro",
       content: ["Biller Code: 68502", "4"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
-      onCheckClick: handleCheckBox,
+      onCheckClick: handleCheckBox
     },
     {
       title: "Syabas",
       content: ["Biller Code: 68502", "5"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
-      onCheckClick: handleCheckBox,
+      onCheckClick: handleCheckBox
     },
     {
       title: "Petronas",
       content: ["Biller Code: 68502", "6"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
-      onCheckClick: handleCheckBox,
+      onCheckClick: handleCheckBox
     },
     {
       title: "Time",
       content: ["Biller Code: 68502", "7"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
-      onCheckClick: handleCheckBox,
+      onCheckClick: handleCheckBox
     },
     {
       title: "UNIFI",
       content: ["Biller Code: 68502", "8"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
-      onCheckClick: handleCheckBox,
+      onCheckClick: handleCheckBox
     },
     {
       title: "TNB",
       content: ["Biller Code: 68502", "9"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
-      onCheckClick: handleCheckBox,
+      onCheckClick: handleCheckBox
     },
     {
       title: "Petronas",
       content: ["Biller Code: 68502", "10"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
-      onCheckClick: handleCheckBox,
+      onCheckClick: handleCheckBox
     },
     {
       title: "Time",
       content: ["Biller Code: 68502", "11"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
-      onCheckClick: handleCheckBox,
+      onCheckClick: handleCheckBox
     },
     {
       title: "UNIFI",
       content: ["Biller Code: 68502", "12"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
-      onCheckClick: handleCheckBox,
+      onCheckClick: handleCheckBox
     },
     {
       title: "TNB",
       content: ["Biller Code: 68502", "13"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
-      onCheckClick: handleCheckBox,
-    },
+      onCheckClick: handleCheckBox
+    }
   ];
 
   console.log(dropdownValue, "dropdownValue");
@@ -246,28 +246,28 @@ const Sprint3: React.FC<Props> = () => {
         icon={{
           onIconClick: () => {
             setHomeRedirect(true);
-          },
+          }
         }}
         profile={{
           greeting: "Good Morning",
           name: "Adam Constantine",
           alt: "AVATAR",
           src:
-            "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
+            "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
         }}
         rightButtons={[
           {
             iconName: "Time",
-            onButtonClick: () => alert("button-1-Clicked"),
+            onButtonClick: () => alert("button-1-Clicked")
           },
           {
             iconName: "Settings",
-            onButtonClick: () => alert("button-2-Clicked"),
+            onButtonClick: () => alert("button-2-Clicked")
           },
           {
             iconName: "Share",
-            onButtonClick: () => alert("button-3-Clicked"),
-          },
+            onButtonClick: () => alert("button-3-Clicked")
+          }
         ]}
       />
       <Title>UnitTrustList</Title>
@@ -280,22 +280,22 @@ const Sprint3: React.FC<Props> = () => {
               onArrowClick: () => alert(" Handle sort and icon change"),
 
               arrowDownBold: true,
-              arrowUpBold: false,
+              arrowUpBold: false
             },
             {
               title: "Value",
               icon: "sort",
               onArrowClick: () => alert(" Handle sort and icon change"),
               arrowDownBold: false,
-              arrowUpBold: true,
+              arrowUpBold: true
             },
             {
               title: "Profit/Loss",
               icon: "sort",
               onArrowClick: () => alert(" Handle sort and icon change"),
               arrowDownBold: true,
-              arrowUpBold: false,
-            },
+              arrowUpBold: false
+            }
           ]}
           testId={"testId"}
           data={[
@@ -307,18 +307,18 @@ const Sprint3: React.FC<Props> = () => {
               rightLabel: {
                 type: "loss",
                 percentage: "0.03%",
-                amount: "RM 23,312,189.56",
+                amount: "RM 23,312,189.56"
               },
               rightButtons: [
                 {
                   icon: "Edit",
                   text: "Edit",
-                  onClick: () => alert("click"),
+                  onClick: () => alert("click")
                 },
                 {
                   icon: "delete",
                   text: "Delete",
-                  onClick: () => alert("click"),
+                  onClick: () => alert("click")
                 }
               ],
               leftContent: (
@@ -329,26 +329,26 @@ const Sprint3: React.FC<Props> = () => {
                   data={[
                     {
                       leftLabel: "Invested",
-                      rightLabel: "RM 418,944.73",
+                      rightLabel: "RM 418,944.73"
                     },
                     {
                       leftLabel: "NAV",
-                      rightLabel: "4.7894",
+                      rightLabel: "4.7894"
                     },
                     {
                       leftLabel: "Number of Units",
-                      rightLabel: "1,828.40",
+                      rightLabel: "1,828.40"
                     },
                     {
                       leftLabel: "Asset Class",
                       rightLabel: "Equity",
                       rightLabelStyle: {
-                        color: "#FFA463",
-                      },
-                    },
+                        color: "#FFA463"
+                      }
+                    }
                   ]}
                 />
-              ),
+              )
             },
             {
               borderColor: "#8677D9",
@@ -357,18 +357,18 @@ const Sprint3: React.FC<Props> = () => {
               rightLabel: {
                 type: "profit",
                 percentage: "0.03%",
-                amount: "RM 12,189.56",
+                amount: "RM 12,189.56"
               },
               rightButtons: [
                 {
                   icon: "Edit",
                   text: "Edit",
-                  onClick: () => alert("click"),
+                  onClick: () => alert("click")
                 },
                 {
                   icon: "delete",
                   text: "Delete",
-                  onClick: () => alert("click"),
+                  onClick: () => alert("click")
                 }
               ],
               middleLabel: "RM 406,318.98",
@@ -380,23 +380,23 @@ const Sprint3: React.FC<Props> = () => {
                   data={[
                     {
                       leftLabel: "Invested",
-                      rightLabel: "RM 418,944.73",
+                      rightLabel: "RM 418,944.73"
                     },
                     {
                       leftLabel: "NAV",
-                      rightLabel: "4.7894",
+                      rightLabel: "4.7894"
                     },
                     {
                       leftLabel: "Number of Unts",
-                      rightLabel: "1,828.40",
+                      rightLabel: "1,828.40"
                     },
                     {
                       leftLabel: "Asset Class",
-                      rightLabel: "Equity",
-                    },
+                      rightLabel: "Equity"
+                    }
                   ]}
                 />
-              ),
+              )
             },
             {
               borderColor: "#7AB497",
@@ -405,18 +405,18 @@ const Sprint3: React.FC<Props> = () => {
               rightLabel: {
                 type: "loss",
                 percentage: "0.03%",
-                amount: "RM 12,189.56",
+                amount: "RM 12,189.56"
               },
               rightButtons: [
                 {
                   icon: "Edit",
                   text: "Edit",
-                  onClick: () => alert("click"),
+                  onClick: () => alert("click")
                 },
                 {
                   icon: "delete",
                   text: "Delete",
-                  onClick: () => alert("click"),
+                  onClick: () => alert("click")
                 }
               ],
               middleLabel: "RM 406,318.98",
@@ -428,29 +428,29 @@ const Sprint3: React.FC<Props> = () => {
                   data={[
                     {
                       leftLabel: "Invested",
-                      rightLabel: "RM 418,944.73",
+                      rightLabel: "RM 418,944.73"
                     },
                     {
                       leftLabel: "NAV",
-                      rightLabel: "4.7894",
+                      rightLabel: "4.7894"
                     },
                     {
                       leftLabel: "Number of Unts",
-                      rightLabel: "1,828.40",
+                      rightLabel: "1,828.40"
                     },
                     {
                       leftLabel: "Asset Class",
-                      rightLabel: "Equity",
-                    },
+                      rightLabel: "Equity"
+                    }
                   ]}
                 />
-              ),
-            },
+              )
+            }
           ]}
         />
       </CenteredDiv>
       <Title>PortfolioList</Title>
-      <CenteredDiv>
+      <>
         <PortfolioList
           header={[
             {
@@ -459,22 +459,22 @@ const Sprint3: React.FC<Props> = () => {
               onArrowClick: () => alert(" Handle sort and icon change"),
 
               arrowDownBold: true,
-              arrowUpBold: false,
+              arrowUpBold: false
             },
             {
               title: "Value",
               icon: "sort",
               onArrowClick: () => alert(" Handle sort and icon change"),
               arrowDownBold: false,
-              arrowUpBold: true,
+              arrowUpBold: true
             },
             {
               title: "Profit/Loss",
               icon: "sort",
               onArrowClick: () => alert(" Handle sort and icon change"),
               arrowDownBold: true,
-              arrowUpBold: false,
-            },
+              arrowUpBold: false
+            }
           ]}
           testId={"testId"}
           data={[
@@ -486,7 +486,7 @@ const Sprint3: React.FC<Props> = () => {
               rightLabel: {
                 type: "loss",
                 percentage: "0.03%",
-                amount: "RM 12,189.56",
+                amount: "RM 12,189.56"
               },
               leftContent: (
                 <PortfolioListContent
@@ -496,26 +496,26 @@ const Sprint3: React.FC<Props> = () => {
                   data={[
                     {
                       leftLabel: "Invested",
-                      rightLabel: "RM 418,944.73",
+                      rightLabel: "RM 418,944.73"
                     },
                     {
                       leftLabel: "NAV",
-                      rightLabel: "4.7894",
+                      rightLabel: "4.7894"
                     },
                     {
                       leftLabel: "Number of Units",
-                      rightLabel: "1,828.40",
+                      rightLabel: "1,828.40"
                     },
                     {
                       leftLabel: "Asset Class",
                       rightLabel: "Equity",
                       rightLabelStyle: {
-                        color: "#FFA463",
-                      },
-                    },
+                        color: "#FFA463"
+                      }
+                    }
                   ]}
                 />
-              ),
+              )
             },
             {
               borderColor: "#8677D9",
@@ -524,7 +524,7 @@ const Sprint3: React.FC<Props> = () => {
               rightLabel: {
                 type: "profit",
                 percentage: "0.03%",
-                amount: "RM 12,189.56",
+                amount: "RM 12,189.56"
               },
               middleLabel: "RM 406,318.98",
               leftContent: (
@@ -535,23 +535,23 @@ const Sprint3: React.FC<Props> = () => {
                   data={[
                     {
                       leftLabel: "Invested",
-                      rightLabel: "RM 418,944.73",
+                      rightLabel: "RM 418,944.73"
                     },
                     {
                       leftLabel: "NAV",
-                      rightLabel: "4.7894",
+                      rightLabel: "4.7894"
                     },
                     {
                       leftLabel: "Number of Unts",
-                      rightLabel: "1,828.40",
+                      rightLabel: "1,828.40"
                     },
                     {
                       leftLabel: "Asset Class",
-                      rightLabel: "Equity",
-                    },
+                      rightLabel: "Equity"
+                    }
                   ]}
                 />
-              ),
+              )
             },
             {
               borderColor: "#7AB497",
@@ -560,7 +560,7 @@ const Sprint3: React.FC<Props> = () => {
               rightLabel: {
                 type: "loss",
                 percentage: "0.03%",
-                amount: "RM 12,189.56",
+                amount: "RM 12,189.56"
               },
               middleLabel: "RM 406,318.98",
               leftContent: (
@@ -571,27 +571,27 @@ const Sprint3: React.FC<Props> = () => {
                   data={[
                     {
                       leftLabel: "Invested",
-                      rightLabel: "RM 418,944.73",
+                      rightLabel: "RM 418,944.73"
                     },
                     {
                       leftLabel: "NAV",
-                      rightLabel: "4.7894",
+                      rightLabel: "4.7894"
                     },
                     {
                       leftLabel: "Number of Unts",
-                      rightLabel: "1,828.40",
+                      rightLabel: "1,828.40"
                     },
                     {
                       leftLabel: "Asset Class",
-                      rightLabel: "Equity",
-                    },
+                      rightLabel: "Equity"
+                    }
                   ]}
                 />
-              ),
-            },
+              )
+            }
           ]}
         />
-      </CenteredDiv>
+      </>
       <Title>DashboardCart</Title>
       <CenteredDiv>
         <DashboardCart
@@ -600,20 +600,20 @@ const Sprint3: React.FC<Props> = () => {
           description="RM 100,084,208.66"
           descriptionRightLabel={{
             type: "loss",
-            percentage: "6.6%",
+            percentage: "6.6%"
           }}
           data={[
             {
               leftSide: {
                 title: "Profit/Loss",
                 content: "RM 6,205,220.93",
-                type: "profit",
+                type: "profit"
               },
               rightSide: {
                 title: "Invested",
-                content: "RM 93,878,987.73",
-              },
-            },
+                content: "RM 93,878,987.73"
+              }
+            }
           ]}
           onClickContainer={() => alert("Clicked")}
           tooltip={true}
@@ -636,7 +636,7 @@ const Sprint3: React.FC<Props> = () => {
               hidden: hiddenList,
               onHiddenButtonClick: () => {
                 setHiddenList(false);
-              },
+              }
             },
             {
               label: "Change Password",
@@ -646,7 +646,7 @@ const Sprint3: React.FC<Props> = () => {
               hidden: hiddenList,
               onHiddenButtonClick: () => {
                 setHiddenList(false);
-              },
+              }
             },
             {
               label: "Investments",
@@ -660,7 +660,7 @@ const Sprint3: React.FC<Props> = () => {
               hidden: hiddenList,
               onHiddenButtonClick: () => {
                 setHiddenList(false);
-              },
+              }
             },
             {
               label: "Online Shopping",
@@ -672,7 +672,7 @@ const Sprint3: React.FC<Props> = () => {
               hidden: hiddenList,
               onHiddenButtonClick: () => {
                 setHiddenList(false);
-              },
+              }
             },
             {
               label: "FPX Specific Merchant",
@@ -684,8 +684,8 @@ const Sprint3: React.FC<Props> = () => {
               hidden: hiddenList,
               onHiddenButtonClick: () => {
                 setHiddenList(false);
-              },
-            },
+              }
+            }
           ]}
           testId="testId"
         />
@@ -706,7 +706,7 @@ const Sprint3: React.FC<Props> = () => {
                   value={true}
                   onTogglePress={() => {}}
                 />
-              ),
+              )
             },
             { label: "Change Card PIN" },
             {
@@ -739,7 +739,7 @@ const Sprint3: React.FC<Props> = () => {
                     icon={{ name: "Lock" }}
                     errorMessage={{
                       errorText: "something wrong",
-                      subText: "detail error",
+                      subText: "detail error"
                     }}
                     {...{
                       type: "text", // change number
@@ -751,7 +751,7 @@ const Sprint3: React.FC<Props> = () => {
                         setLinkListClear(true);
                         setLinkListBtnColor({
                           top: "#FF0D0D",
-                          bottom: "#FD8585",
+                          bottom: "#FD8585"
                         });
                       },
                       clearClickHandler: () => {
@@ -760,7 +760,7 @@ const Sprint3: React.FC<Props> = () => {
                         setLinkListClear(false);
                         setLinkListBtnColor({
                           top: "#BDBDBD",
-                          bottom: "#BDBDBD",
+                          bottom: "#BDBDBD"
                         });
                       },
                       clearIcon: linkListInputValue ? true : linkListClear, // change false
@@ -768,8 +768,8 @@ const Sprint3: React.FC<Props> = () => {
                       icon: { name: "Lock" }, // change Amy
                       errorMessage: {
                         errorText: "something wrong",
-                        subText: "detail error",
-                      },
+                        subText: "detail error"
+                      }
                     }}
                   />
                   <PrimaryButton
@@ -780,7 +780,7 @@ const Sprint3: React.FC<Props> = () => {
                     titleColor={"#fff"}
                     buttonColor={{
                       top: "#BDBDBD",
-                      bottom: "#BDBDBD",
+                      bottom: "#BDBDBD"
                     }}
                     {...{
                       onButtonClick: () => {
@@ -788,20 +788,20 @@ const Sprint3: React.FC<Props> = () => {
                       },
                       title: "Update",
                       titleColor: "#fff",
-                      buttonColor: linkListBtnColor,
+                      buttonColor: linkListBtnColor
                     }}
                   />
                 </>
               ),
               subtitle: [
                 "AmBank BonusLink Visa",
-                "AmBank BonusLink Mastercard", // change
+                "AmBank BonusLink Mastercard" // change
                 // 'Another line of subtitle'
               ],
-              leftBorderColor: "red", // change green
+              leftBorderColor: "red" // change green
             },
             { label: "Block This Card" },
-            { label: "Block This Replace This Card" },
+            { label: "Block This Replace This Card" }
           ]}
         />
       </CenteredDiv>
@@ -831,20 +831,20 @@ const Sprint3: React.FC<Props> = () => {
                   selectedImages={[3]}
                   images={[
                     {
-                      uri: images.common.SampleSecureImage,
+                      uri: images.common.SampleSecureImage
                     },
                     {
-                      uri: images.common.SampleSecureImage,
+                      uri: images.common.SampleSecureImage
                     },
                     {
-                      uri: images.common.SampleSecureImage,
+                      uri: images.common.SampleSecureImage
                     },
                     {
-                      uri: images.common.SampleSecureImage,
+                      uri: images.common.SampleSecureImage
                     },
                     {
-                      uri: images.common.SampleSecureImage,
-                    },
+                      uri: images.common.SampleSecureImage
+                    }
                   ]}
                 />
               </CenteredDiv>
@@ -855,7 +855,7 @@ const Sprint3: React.FC<Props> = () => {
       <Title>AccordionSetting</Title>
       <CenteredDiv
         style={{
-          margin: "5rem",
+          margin: "5rem"
         }}
       >
         <AmAccordion
@@ -870,17 +870,17 @@ const Sprint3: React.FC<Props> = () => {
                   title: "ItemName",
                   leftIcon: { name: "Settings", color: "#000000" },
                   status: {
-                    label: "inactive",
-                  },
+                    label: "inactive"
+                  }
                 },
                 {
                   id: "id-1",
                   title: "ItemName",
                   leftIcon: { name: "Security2", color: "#000000" },
                   status: {
-                    label: "inactive",
-                  },
-                },
+                    label: "inactive"
+                  }
+                }
               ],
               buttonContent: {
                 clickHandler: () => {
@@ -890,13 +890,13 @@ const Sprint3: React.FC<Props> = () => {
                 titleColor: "#000000",
                 buttonColor: {
                   top: "#F6F6F3",
-                  bottom: "#EAE9E3",
+                  bottom: "#EAE9E3"
                 },
                 icon: {
                   name: "Settings",
-                  color: "#000",
-                },
-              },
+                  color: "#000"
+                }
+              }
             },
             {
               id: "id-2",
@@ -909,8 +909,8 @@ const Sprint3: React.FC<Props> = () => {
                   status: {
                     icon: (
                       <Icon icon={"CheckboxYes"} size={20} color={"#36A03E"} />
-                    ),
-                  },
+                    )
+                  }
                 },
                 {
                   id: "id-2",
@@ -919,9 +919,9 @@ const Sprint3: React.FC<Props> = () => {
                   status: {
                     icon: (
                       <Icon icon={"CheckboxYes"} size={20} color={"#36A03E"} />
-                    ),
-                  },
-                },
+                    )
+                  }
+                }
               ],
               buttonContent: {
                 clickHandler: () => {
@@ -931,10 +931,10 @@ const Sprint3: React.FC<Props> = () => {
                 titleColor: "#ffffff",
                 icon: {
                   name: "delete",
-                  color: "#ffffff",
-                },
-              },
-            },
+                  color: "#ffffff"
+                }
+              }
+            }
           ]}
         ></AmAccordion>
       </CenteredDiv>
@@ -944,7 +944,7 @@ const Sprint3: React.FC<Props> = () => {
         style={{
           margin: "5rem",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "center"
         }}
       >
         <AmListItem
@@ -1002,7 +1002,7 @@ const Sprint3: React.FC<Props> = () => {
         icon={{
           onIconClick: () => {
             setSprint1(true);
-          },
+          }
         }}
         rightButtons={[
           <TextButton
@@ -1013,7 +1013,7 @@ const Sprint3: React.FC<Props> = () => {
             buttonStyles={{
               color: "#000000",
               fontWeight: 400,
-              fontSize: 15,
+              fontSize: 15
             }}
           />,
           <TextButton
@@ -1024,7 +1024,7 @@ const Sprint3: React.FC<Props> = () => {
             buttonStyles={{
               color: "#000000",
               fontWeight: 400,
-              fontSize: 15,
+              fontSize: 15
             }}
           />,
           <TextButton
@@ -1035,7 +1035,7 @@ const Sprint3: React.FC<Props> = () => {
             buttonStyles={{
               color: "#000000",
               fontWeight: 400,
-              fontSize: 15,
+              fontSize: 15
             }}
           />,
           <TextDropdown
@@ -1051,9 +1051,9 @@ const Sprint3: React.FC<Props> = () => {
               { label: "English", value: "english" },
               { label: "Malay", value: "malay" },
               { label: "Persian", value: "persian" },
-              { label: "中文", value: "中文" },
+              { label: "中文", value: "中文" }
             ]}
-          />,
+          />
         ]}
       />
       <Title>Barcode</Title>
@@ -1066,7 +1066,7 @@ const Sprint3: React.FC<Props> = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "center"
         }}
       >
         <AmDropdown
@@ -1089,20 +1089,20 @@ const Sprint3: React.FC<Props> = () => {
             { value: "ambank", label: "am" },
             { value: "Alpeh", label: "alp" },
             { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
+            { value: "Alpeh", label: "alp" }
           ]}
           notValid={false}
           errorMessage={{
             testId: "testId",
             errorText: "The TAC is incorrect",
-            subText: "Please try again.",
+            subText: "Please try again."
           }}
           inputClickHandler={() => setDropdown(!showDropdown)}
           arrowIcon={true}
           label="dropdown label"
           icon={{ name: "Account-2" }}
           value={dropdownValue}
-          handleChange={(item) => handlerDropdown(item)}
+          handleChange={item => handlerDropdown(item)}
           placeholder="place holder"
         />
       </div>
@@ -1113,7 +1113,7 @@ const Sprint3: React.FC<Props> = () => {
           display: "flex",
           justifyContent: "space-between",
           backgroundColor: "#F7F7F7",
-          padding: "4rem",
+          padding: "4rem"
         }}
       >
         <PieChartBox
@@ -1121,7 +1121,7 @@ const Sprint3: React.FC<Props> = () => {
           pieLabels={["Fixed Income 100%", "Equity 0%", "Mixed Assets 0% "]}
           pieDataSets={{
             data: [100, 0, 0],
-            backgroundColor: ["#7AB497", "#FFA463", "#8677D9"],
+            backgroundColor: ["#7AB497", "#FFA463", "#8677D9"]
           }}
         />
         <PieChartBox
@@ -1129,7 +1129,7 @@ const Sprint3: React.FC<Props> = () => {
           pieLabels={["Fixed Income 100%", "Equity 0%"]}
           pieDataSets={{
             data: [100, 0],
-            backgroundColor: ["#7AB497", "#FFA463"],
+            backgroundColor: ["#7AB497", "#FFA463"]
           }}
         />
         <PieChartBox
@@ -1137,7 +1137,7 @@ const Sprint3: React.FC<Props> = () => {
           pieLabels={["Fixed Income 60%", "Equity 20%", "Mixed Assets 20% "]}
           pieDataSets={{
             data: [60, 20, 20],
-            backgroundColor: ["#7AB497", "#FFA463", "#8677D9"],
+            backgroundColor: ["#7AB497", "#FFA463", "#8677D9"]
           }}
         />
         <PieChartBox
@@ -1145,7 +1145,7 @@ const Sprint3: React.FC<Props> = () => {
           pieLabels={["Fixed Income 85%", "Equity 15%"]}
           pieDataSets={{
             data: [85, 15],
-            backgroundColor: ["#7AB497", "#FFA463"],
+            backgroundColor: ["#7AB497", "#FFA463"]
           }}
         />
       </div>
@@ -1166,7 +1166,7 @@ const Sprint3: React.FC<Props> = () => {
           errorMessage={{
             testId: "testId",
             errorText: "The Password is incorrect",
-            subText: "Please try again.",
+            subText: "Please try again."
           }}
           type="text"
           clearClickHandler={() => alert("clear clicked")}
@@ -1174,9 +1174,9 @@ const Sprint3: React.FC<Props> = () => {
           label="New Password"
           icon={{ name: "Lock" }}
           value={""}
-          handleChange={(event) => {
+          handleChange={event => {
             alert({
-              inputValue: event.target.value,
+              inputValue: event.target.value
             });
           }}
         />
@@ -1211,7 +1211,7 @@ const Sprint3: React.FC<Props> = () => {
         <div style={{ width: 620 }}>
           <HeaderWithIButtons
             headerStyle={{
-              backgroundColor: "rgba(196, 196, 196, 0.3)",
+              backgroundColor: "rgba(196, 196, 196, 0.3)"
             }}
             icon={{ name: "Amy", color: "#ff2626" }}
             label="Your DuitNow IDs (3/5)"
@@ -1226,7 +1226,7 @@ const Sprint3: React.FC<Props> = () => {
                     as reference only.
                   </R_12_WHITE>
                 </div>
-              ),
+              )
             }}
             buttonLabel={"Add Mobile Number"}
             buttonColor={{ top: "#F6F6F3", bottom: "#EAE9E3" }}
@@ -1236,7 +1236,7 @@ const Sprint3: React.FC<Props> = () => {
           <br />
           <HeaderWithIButtons
             headerStyle={{
-              backgroundColor: "rgba(196, 196, 196, 0.3)",
+              backgroundColor: "rgba(196, 196, 196, 0.3)"
             }}
             image={{ src: images.common.Duitnow1 }}
             label="Your DuitNow IDs (3/5)"
@@ -1251,7 +1251,7 @@ const Sprint3: React.FC<Props> = () => {
                     as reference only.
                   </R_12_WHITE>
                 </div>
-              ),
+              )
             }}
             buttonLabel={"Add Mobile Number"}
             buttonColor={{ top: "#F6F6F3", bottom: "#EAE9E3" }}
@@ -1273,7 +1273,7 @@ const Sprint3: React.FC<Props> = () => {
         style={{
           backgroundColor: "#f5f5f5",
           width: "600px",
-          marginLeft: "32%",
+          marginLeft: "32%"
         }}
       >
         <SearchBar
@@ -1281,7 +1281,7 @@ const Sprint3: React.FC<Props> = () => {
           searchIconClickHandler={() => alert("Search Icon clicked")}
           placeholder={"Search"}
           value={inputValue}
-          handleChange={(event) => {
+          handleChange={event => {
             setInputValue(event.target.value);
           }}
           autoFocus={false}
@@ -1294,19 +1294,19 @@ const Sprint3: React.FC<Props> = () => {
                 {
                   label: "AmOnline Transaction",
                   value: "AmOnline Transaction",
-                  selected: true,
+                  selected: true
                 },
                 {
                   label: "Branch Transaction",
                   value: "Branch Transaction",
-                  selected: false,
+                  selected: false
                 },
                 {
                   label: "All Transaction",
                   value: "All Transaction",
-                  selected: false,
-                },
-              ],
+                  selected: false
+                }
+              ]
             },
             {
               sectionTitle: "Period",
@@ -1314,24 +1314,24 @@ const Sprint3: React.FC<Props> = () => {
                 {
                   label: "Last 30 days",
                   value: "Last 30 days",
-                  selected: true,
+                  selected: true
                 },
                 {
                   label: "Last 60 days",
                   value: "Last 60 days",
-                  selected: false,
+                  selected: false
                 },
                 {
                   label: "Last 90 days",
                   value: "Last 90 days",
-                  selected: false,
+                  selected: false
                 },
                 {
                   label: "Last 1 year",
                   value: "Last 1 year",
-                  selected: false,
-                },
-              ],
+                  selected: false
+                }
+              ]
             },
             {
               sectionTitle: "Transaction Type",
@@ -1339,38 +1339,38 @@ const Sprint3: React.FC<Props> = () => {
                 {
                   label: "All",
                   value: "All",
-                  selected: false,
+                  selected: false
                 },
                 {
                   label: "Buy Fund",
                   value: "Buy Fund",
-                  selected: true,
+                  selected: true
                 },
                 {
                   label: "Redemption",
                   value: "Redemption",
-                  selected: true,
+                  selected: true
                 },
                 {
                   label: "Dividend",
                   value: "Dividend",
-                  selected: false,
-                },
-              ],
-            },
+                  selected: false
+                }
+              ]
+            }
           ]}
-          onFilterOptionClick={(obj) => alert(JSON.stringify(obj))}
+          onFilterOptionClick={obj => alert(JSON.stringify(obj))}
           selectedFilters={[
             {
               label: "Successful",
               value: "Successful",
-              closeIconClickHandler: () => alert("clear Successful"),
+              closeIconClickHandler: () => alert("clear Successful")
             },
             {
               label: "Unsuccessful",
               value: "Unsuccessful",
-              closeIconClickHandler: () => alert("clear Unsuccessful"),
-            },
+              closeIconClickHandler: () => alert("clear Unsuccessful")
+            }
           ]}
         />
       </CenteredDiv>
@@ -1379,7 +1379,7 @@ const Sprint3: React.FC<Props> = () => {
         <div style={{ width: 620 }}>
           <HeaderWithIcons
             headerStyle={{
-              backgroundColor: "rgba(196, 196, 196, 0.3)",
+              backgroundColor: "rgba(196, 196, 196, 0.3)"
             }}
             label={"DuitNow QR"}
             image={{ src: images.common.Duitnow1 }}
@@ -1388,7 +1388,7 @@ const Sprint3: React.FC<Props> = () => {
           <br />
           <HeaderWithIcons
             headerStyle={{
-              backgroundColor: "rgba(196, 196, 196, 0.3)",
+              backgroundColor: "rgba(196, 196, 196, 0.3)"
             }}
             label={"DuitNow QR"}
             labelStyle={{ fontWeight: "normal" }}
@@ -1403,7 +1403,7 @@ const Sprint3: React.FC<Props> = () => {
           <SimpleHeader
             label="Change Default Account"
             headerStyle={{
-              backgroundColor: "rgba(196, 196, 196, 0.3)",
+              backgroundColor: "rgba(196, 196, 196, 0.3)"
             }}
           />
         </div>
@@ -1420,20 +1420,20 @@ const Sprint3: React.FC<Props> = () => {
           list={[
             {
               accountTitle: "Saving Account A",
-              accountNumber: "RM 2,000.00",
+              accountNumber: "RM 2,000.00"
             },
             {
               accountTitle: "Ambank AmMoneyLine AmMoneyLine",
-              accountNumber: "RM 2,000.00",
+              accountNumber: "RM 2,000.00"
             },
             {
               accountTitle: "Ambank BonusLink Visa",
-              accountNumber: "RM 2,000.00",
+              accountNumber: "RM 2,000.00"
             },
             {
               accountTitle: "Saving Account B",
-              accountNumber: "RM 2,000.00",
-            },
+              accountNumber: "RM 2,000.00"
+            }
           ]}
         />
 
@@ -1448,26 +1448,26 @@ const Sprint3: React.FC<Props> = () => {
               avatar: {
                 name: "Myself Adam Constantine",
                 src:
-                  "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
-              },
+                  "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+              }
             },
             {
               avatar: {
                 name: "Christina Azalea Rossie",
                 initials: "CA",
-                initialsBg: "#f1f1f1",
-              },
+                initialsBg: "#f1f1f1"
+              }
             },
             {
-              children: <img src={images.common.sampleLogo} width={150} />,
+              children: <img src={images.common.sampleLogo} width={150} />
             },
 
             {
               avatar: {
                 name: "Kurniawan Suriawati",
-                initials: "KS",
-              },
-            },
+                initials: "KS"
+              }
+            }
           ]}
         />
         <SelectionTile
@@ -1480,23 +1480,23 @@ const Sprint3: React.FC<Props> = () => {
             {
               accountTitle: "Saving Account A",
               accountNumber: "RM 2,000.00",
-              amount: "RM 10,301.50",
+              amount: "RM 10,301.50"
             },
             {
               accountTitle: "Ambank AmMoneyLine AmMoneyLine",
               accountNumber: "RM 2,000.00",
-              amount: " RM 11,555.00",
+              amount: " RM 11,555.00"
             },
             {
               accountTitle: "Ambank BonusLink Visa",
               accountNumber: "RM 2,000.00",
-              amount: " RM 55,555.00",
+              amount: " RM 55,555.00"
             },
             {
               accountTitle: "Saving Account B",
               accountNumber: "RM 2,000.00",
-              amount: " RM 33,555.50",
-            },
+              amount: " RM 33,555.50"
+            }
           ]}
         />
         <SelectionTile
@@ -1508,14 +1508,14 @@ const Sprint3: React.FC<Props> = () => {
           selected={sTileNum3}
           list={[
             {
-              centeredText: "Lost",
+              centeredText: "Lost"
             },
             {
-              centeredText: "Stolen",
+              centeredText: "Stolen"
             },
             {
-              centeredText: "Suspicious Activity",
-            },
+              centeredText: "Suspicious Activity"
+            }
           ]}
         />
       </div>
@@ -1554,19 +1554,19 @@ const Sprint3: React.FC<Props> = () => {
                   {
                     icon: "Edit",
                     text: "Edit",
-                    onClick: () => alert("click"),
+                    onClick: () => alert("click")
                   },
                   {
                     icon: "delete",
                     text: "Delete",
-                    onClick: () => alert("click"),
+                    onClick: () => alert("click")
                   },
                   {
                     icon: "Clear",
                     text: "Deactivate",
-                    onClick: () => alert("click"),
-                  },
-                ],
+                    onClick: () => alert("click")
+                  }
+                ]
               },
               {
                 leftIcon: { name: "Mobile" },
@@ -1576,20 +1576,20 @@ const Sprint3: React.FC<Props> = () => {
                   {
                     icon: "Edit",
                     text: "Edit",
-                    onClick: () => alert("click"),
+                    onClick: () => alert("click")
                   },
                   {
                     icon: "delete",
                     text: "Delete",
-                    onClick: () => alert("click"),
+                    onClick: () => alert("click")
                   },
                   {
                     icon: "Clear",
                     text: "Deactivate",
-                    onClick: () => alert("click"),
-                  },
-                ],
-              },
+                    onClick: () => alert("click")
+                  }
+                ]
+              }
             ]}
           />
 
@@ -1605,20 +1605,20 @@ const Sprint3: React.FC<Props> = () => {
                   {
                     icon: "Edit",
                     text: "Edit",
-                    onClick: () => alert("click"),
+                    onClick: () => alert("click")
                   },
                   {
                     icon: "delete",
                     text: "Delete",
-                    onClick: () => alert("click"),
+                    onClick: () => alert("click")
                   },
                   {
                     icon: "Clear",
                     text: "Deactivate",
-                    onClick: () => alert("click"),
-                  },
-                ],
-              },
+                    onClick: () => alert("click")
+                  }
+                ]
+              }
             ]}
           />
 
@@ -1634,10 +1634,10 @@ const Sprint3: React.FC<Props> = () => {
                   {
                     icon: "Switch",
                     text: "Change Default Account",
-                    onClick: () => alert("click"),
-                  },
-                ],
-              },
+                    onClick: () => alert("click")
+                  }
+                ]
+              }
             ]}
           />
         </div>
@@ -1649,18 +1649,18 @@ const Sprint3: React.FC<Props> = () => {
             {
               icon: "Edit",
               text: "Edit",
-              onClick: () => alert("click"),
+              onClick: () => alert("click")
             },
             {
               icon: "delete",
               text: "Delete",
-              onClick: () => alert("click"),
+              onClick: () => alert("click")
             },
             {
               icon: "Clear",
               text: "Deactivate",
-              onClick: () => alert("click"),
-            },
+              onClick: () => alert("click")
+            }
           ]}
         />
       </CenteredDiv>
@@ -1669,7 +1669,7 @@ const Sprint3: React.FC<Props> = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "center"
         }}
       >
         <TextWithDetails
@@ -1683,7 +1683,7 @@ const Sprint3: React.FC<Props> = () => {
           title="Indah"
           content={[
             "Bill Account No.: 51T0409A0690279989",
-            "Ref-1: 65432145432",
+            "Ref-1: 65432145432"
           ]}
         />
       </div>
@@ -1692,7 +1692,7 @@ const Sprint3: React.FC<Props> = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "center"
         }}
       >
         <ArrayCheckBox
@@ -1716,7 +1716,7 @@ const Sprint3: React.FC<Props> = () => {
                   as reference only.
                 </R_12_WHITE>
               </div>
-            ),
+            )
           }}
         />
         <br />
@@ -1731,7 +1731,7 @@ const Sprint3: React.FC<Props> = () => {
                 <B_13_ORANGE_463>Try one</B_13_ORANGE_463>
                 <R_12_WHITE>test</R_12_WHITE>
               </div>
-            ),
+            )
           }}
         />
       </div>
@@ -1742,7 +1742,7 @@ const Sprint3: React.FC<Props> = () => {
         style={{
           margin: "0 auto",
           padding: 4,
-          width: "50%",
+          width: "50%"
         }}
       >
         <FormContainer
@@ -1752,8 +1752,8 @@ const Sprint3: React.FC<Props> = () => {
                 icon: {
                   name: "LOGO",
                   color: "#ff2626",
-                  iconText: "Review & Confirm",
-                },
+                  iconText: "Review & Confirm"
+                }
               }}
               list={[
                 {
@@ -1765,14 +1765,14 @@ const Sprint3: React.FC<Props> = () => {
                     content: "Dynamic",
                     styleContent: {},
                     value: "600RM",
-                    styleValue: {},
-                  },
+                    styleValue: {}
+                  }
                 },
 
                 {
                   leftLabel: "Date",
                   rightLabel: "Transfer Now",
-                  details: ["Today, 5 January 2019"],
+                  details: ["Today, 5 January 2019"]
                 },
 
                 {
@@ -1781,9 +1781,9 @@ const Sprint3: React.FC<Props> = () => {
                   details: ["2998202013", "Available Balance: RM 10,301.50"],
                   status: {
                     content: "UNSUCCESSFUL",
-                    color: "red",
-                  },
-                },
+                    color: "red"
+                  }
+                }
               ]}
             />
           }
@@ -1794,7 +1794,7 @@ const Sprint3: React.FC<Props> = () => {
         style={{
           margin: "0 auto",
           padding: 4,
-          width: "50%",
+          width: "50%"
         }}
       >
         <br />
@@ -1818,7 +1818,7 @@ const Sprint3: React.FC<Props> = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          padding: 20,
+          padding: 20
         }}
       >
         <LabeledIcon
@@ -1832,7 +1832,7 @@ const Sprint3: React.FC<Props> = () => {
         style={{
           margin: "0 auto",
           padding: 4,
-          width: "50%",
+          width: "50%"
         }}
       >
         <FormContainer
@@ -1842,13 +1842,13 @@ const Sprint3: React.FC<Props> = () => {
                 icon: {
                   name: "LOGO",
                   color: "#ff2626",
-                  iconText: "Review & Confirm",
+                  iconText: "Review & Confirm"
                 },
                 image: {
                   name: images.common.amyIcon,
                   alt: "logo",
-                  style: { paddingLeft: "40px" },
-                },
+                  style: { paddingLeft: "40px" }
+                }
               }}
               list={[
                 {
@@ -1858,8 +1858,8 @@ const Sprint3: React.FC<Props> = () => {
                   details: ["8881019596535 | AmBank"],
                   amount: {
                     content: "amount",
-                    value: "500RM",
-                  },
+                    value: "500RM"
+                  }
                 },
                 {
                   leftLabel: "From",
@@ -1869,9 +1869,9 @@ const Sprint3: React.FC<Props> = () => {
                     // provide color props
                     content: "Change Account",
                     onClick: () => alert("Change account"),
-                    style: { backgroundColor: "blue", color: "red" },
-                  },
-                },
+                    style: { backgroundColor: "blue", color: "red" }
+                  }
+                }
               ]}
             />
           }
@@ -1883,21 +1883,21 @@ const Sprint3: React.FC<Props> = () => {
       <div
         style={{
           backgroundColor: "#EEEEEE",
-          paddingTop: 100,
+          paddingTop: 100
         }}
       >
         <StatusFormContainer
           statusIcon={{
             icon: "Fail",
             iconColor: { top: "#FD8585", bottom: "#FF2222" },
-            outerIconColor: "#FFEBEE",
+            outerIconColor: "#FFEBEE"
           }}
           children={
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
-                padding: "2rem",
+                padding: "2rem"
               }}
             >
               <B_24_BLACK style={{ textAlign: "center" }}>
@@ -1918,27 +1918,27 @@ const Sprint3: React.FC<Props> = () => {
                   {
                     leftLabel: "To",
                     rightLabel: "Saving Account A",
-                    details: ["8881019596535 | AmBank"],
+                    details: ["8881019596535 | AmBank"]
                   },
                   {
                     leftLabel: "Amount",
                     rightLabel: "RM 500.00",
-                    details: ["Fees & Charges: RM 0.00"],
+                    details: ["Fees & Charges: RM 0.00"]
                   },
                   {
                     leftLabel: "Date",
                     rightLabel: "Transfer Now",
-                    details: ["Today, 5 January 2019"],
+                    details: ["Today, 5 January 2019"]
                   },
                   {
                     leftLabel: "Reference",
-                    rightLabel: "House Rental",
+                    rightLabel: "House Rental"
                   },
                   {
                     leftLabel: "From",
                     rightLabel: "Savings Account",
-                    details: ["2998202013", "Available Balance: RM 10,301.50"],
-                  },
+                    details: ["2998202013", "Available Balance: RM 10,301.50"]
+                  }
                 ]}
               />
             </div>
@@ -1948,7 +1948,7 @@ const Sprint3: React.FC<Props> = () => {
       <Title>Message (using CenterMessage component)</Title>
       <div
         style={{
-          height: 500,
+          height: 500
         }}
       >
         <CenterMessage // show props , positioning props
@@ -1973,9 +1973,9 @@ const Sprint3: React.FC<Props> = () => {
               iconColor: { top: "#DCEAEA", bottom: "#7FA2A2" },
               image: {
                 src: images.common.amyIcon,
-                alt: "logo",
+                alt: "logo"
               },
-              outerIconColor: "#EAF4F4",
+              outerIconColor: "#EAF4F4"
             }}
             children={
               <div
@@ -1984,7 +1984,7 @@ const Sprint3: React.FC<Props> = () => {
                   flexDirection: "column",
                   alignItems: "center",
                   padding: "0rem 2rem",
-                  marginTop: "1rem",
+                  marginTop: "1rem"
                 }}
               >
                 <div
@@ -1994,13 +1994,13 @@ const Sprint3: React.FC<Props> = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     textAlign: "center",
-                    padding: "1rem",
+                    padding: "1rem"
                   }}
                 >
                   <TextWithDetails
                     title="Forgotten your username and password?"
                     content={[
-                      "If you have forgotten your username and/or password, you can change them in AmOnline",
+                      "If you have forgotten your username and/or password, you can change them in AmOnline"
                     ]}
                     contentStyle={{ marginBottom: "1rem" }}
                   />
@@ -2015,12 +2015,12 @@ const Sprint3: React.FC<Props> = () => {
                       rightLabel="+603 2178 8888"
                       rightLabelStyle={{
                         fontWeight: 700,
-                        fontSize: "0.93rem",
+                        fontSize: "0.93rem"
                       }}
                       icon={{
                         name: "Call",
                         color: "#FF2626",
-                        size: 28,
+                        size: 28
                       }}
                     />
                   </div>
@@ -2030,7 +2030,7 @@ const Sprint3: React.FC<Props> = () => {
                     icon={{
                       name: "Inbox",
                       color: "#FF2626",
-                      size: 28,
+                      size: 28
                     }}
                   />
                 </div>
@@ -2051,7 +2051,7 @@ const Sprint3: React.FC<Props> = () => {
       <CenteredDiv
         style={{
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "center"
         }}
       >
         <AmProfileSetting
@@ -2068,14 +2068,14 @@ const Sprint3: React.FC<Props> = () => {
                 showAccordion: true,
                 subtitle: [
                   {
-                    content: "Adam Jake",
+                    content: "Adam Jake"
                   },
                   {
-                    content: "aslam Furich",
+                    content: "aslam Furich"
                   },
                   {
-                    content: "Furich",
-                  },
+                    content: "Furich"
+                  }
                 ],
                 children: (
                   <div>
@@ -2084,7 +2084,7 @@ const Sprint3: React.FC<Props> = () => {
                       errorMessage={{
                         testId: "testId",
                         errorText: "The Input Field is wrong",
-                        subText: "Please try again.",
+                        subText: "Please try again."
                       }}
                       type="text"
                       clearClickHandler={() => {
@@ -2092,14 +2092,14 @@ const Sprint3: React.FC<Props> = () => {
                         setLinkListClear(false);
                         setLinkListBtnColor({
                           top: "#BDBDBD",
-                          bottom: "#BDBDBD",
+                          bottom: "#BDBDBD"
                         });
                       }}
                       clearIcon={profileInputValue === "" ? tacClear : true}
                       label=""
                       icon={{ name: "Lock", color: "red" }}
                       value={profileInputValue}
-                      handleChange={(e) => {
+                      handleChange={e => {
                         setProfileInputValue(e.target.value);
                         setTacClear(true);
                         setButtonColor({ top: "#FF0D0D", bottom: "#FD8585" });
@@ -2118,7 +2118,7 @@ const Sprint3: React.FC<Props> = () => {
                       errorMessage={{
                         testId: "testId",
                         errorText: "The Input Field is wrong",
-                        subText: "Please try again.",
+                        subText: "Please try again."
                       }}
                       type="text"
                       clearClickHandler={() => {
@@ -2126,14 +2126,14 @@ const Sprint3: React.FC<Props> = () => {
                         setLinkListClear(false);
                         setLinkListBtnColor({
                           top: "#BDBDBD",
-                          bottom: "#BDBDBD",
+                          bottom: "#BDBDBD"
                         });
                       }}
                       clearIcon={profileInputValue === "" ? tacClear : true}
                       label=""
                       icon={{ name: "Lock", color: "red" }}
                       value={profileInputValue}
-                      handleChange={(e) => {
+                      handleChange={e => {
                         setProfileInputValue(e.target.value);
                         setTacClear(true);
                         setButtonColor({ top: "#FF0D0D", bottom: "#FD8585" });
@@ -2148,8 +2148,8 @@ const Sprint3: React.FC<Props> = () => {
                       />
                     </div>
                   </div>
-                ),
-              },
+                )
+              }
             },
             {
               profile_data: {
@@ -2157,8 +2157,8 @@ const Sprint3: React.FC<Props> = () => {
                 showAccordion: true,
                 subtitle: [
                   {
-                    content: "Adam_1234",
-                  },
+                    content: "Adam_1234"
+                  }
                 ],
                 children: (
                   <div>
@@ -2167,7 +2167,7 @@ const Sprint3: React.FC<Props> = () => {
                       errorMessage={{
                         testId: "testId",
                         errorText: "The Input Field is wrong",
-                        subText: "Please try again.",
+                        subText: "Please try again."
                       }}
                       type="text"
                       clearClickHandler={() => {
@@ -2175,14 +2175,14 @@ const Sprint3: React.FC<Props> = () => {
                         setLinkListClear(false);
                         setLinkListBtnColor({
                           top: "#BDBDBD",
-                          bottom: "#BDBDBD",
+                          bottom: "#BDBDBD"
                         });
                       }}
                       clearIcon={profileInputValue === "" ? tacClear : true}
                       label=""
                       icon={{ name: "Lock", color: "red" }}
                       value={profileInputValue}
-                      handleChange={(e) => {
+                      handleChange={e => {
                         setProfileInputValue(e.target.value);
                         setTacClear(true);
                         setButtonColor({ top: "#FF0D0D", bottom: "#FD8585" });
@@ -2199,8 +2199,8 @@ const Sprint3: React.FC<Props> = () => {
                       />
                     </div>
                   </div>
-                ),
-              },
+                )
+              }
             },
             {
               profile_data: {
@@ -2208,10 +2208,10 @@ const Sprint3: React.FC<Props> = () => {
                 showAccordion: false,
                 subtitle: [
                   {
-                    content: "******897",
-                  },
-                ],
-              },
+                    content: "******897"
+                  }
+                ]
+              }
             },
             {
               profile_data: {
@@ -2220,10 +2220,10 @@ const Sprint3: React.FC<Props> = () => {
                 subtitle: [
                   {
                     content:
-                      "41, Jalan PJU 1A/29A Ara Damansara,Kundanahalli,Banagalore,43701 Petaling Jaya,Selangor,Malaysia",
-                  },
-                ],
-              },
+                      "41, Jalan PJU 1A/29A Ara Damansara,Kundanahalli,Banagalore,43701 Petaling Jaya,Selangor,Malaysia"
+                  }
+                ]
+              }
             },
             {
               profile_data: {
@@ -2231,8 +2231,8 @@ const Sprint3: React.FC<Props> = () => {
                 title: "Email",
                 subtitle: [
                   {
-                    content: "*******5678@gmail.com",
-                  },
+                    content: "*******5678@gmail.com"
+                  }
                 ],
                 children: (
                   <div>
@@ -2241,7 +2241,7 @@ const Sprint3: React.FC<Props> = () => {
                       errorMessage={{
                         testId: "testId",
                         errorText: "The Input Field is wrong",
-                        subText: "Please try again.",
+                        subText: "Please try again."
                       }}
                       type="text"
                       clearClickHandler={() => {
@@ -2249,14 +2249,14 @@ const Sprint3: React.FC<Props> = () => {
                         setLinkListClear(false);
                         setLinkListBtnColor({
                           top: "#BDBDBD",
-                          bottom: "#BDBDBD",
+                          bottom: "#BDBDBD"
                         });
                       }}
                       clearIcon={profileInputValue === "" ? tacClear : true}
                       label=""
                       icon={{ name: "Lock", color: "red" }}
                       value={profileInputValue}
-                      handleChange={(e) => {
+                      handleChange={e => {
                         setProfileInputValue(e.target.value);
                         setTacClear(true);
                         setButtonColor({ top: "#FF0D0D", bottom: "#FD8585" });
@@ -2271,9 +2271,9 @@ const Sprint3: React.FC<Props> = () => {
                       />
                     </div>
                   </div>
-                ),
-              },
-            },
+                )
+              }
+            }
           ]}
           onEditClickHandler={() => {
             alert("on edit click");
@@ -2282,7 +2282,7 @@ const Sprint3: React.FC<Props> = () => {
           openAccordionIcon={{
             name: "system-close-grey",
             color: "#444444",
-            size: 12,
+            size: 12
           }}
           closeAccordionIcon={{ name: "arrowDown", color: "#444444", size: 12 }}
           tipChildren={
@@ -2292,7 +2292,7 @@ const Sprint3: React.FC<Props> = () => {
                   maxWidth: 439,
                   width: "100%",
                   paddingTop: "24px",
-                  paddingBottom: "24px",
+                  paddingBottom: "24px"
                 }}
               >
                 <SB_13_BLACK>
@@ -2305,7 +2305,7 @@ const Sprint3: React.FC<Props> = () => {
               <RowDiv
                 style={{
                   maxWidth: 439,
-                  width: "100%",
+                  width: "100%"
                 }}
               >
                 <SB_13_BLACK>
@@ -2326,20 +2326,20 @@ const Sprint3: React.FC<Props> = () => {
           data={[
             {
               leftLabel: "Invested",
-              rightLabel: "RM 418,944.73",
+              rightLabel: "RM 418,944.73"
             },
             {
               leftLabel: "NAV",
-              rightLabel: "4.7894",
+              rightLabel: "4.7894"
             },
             {
               leftLabel: "Number of Unts",
-              rightLabel: "1,828.40",
+              rightLabel: "1,828.40"
             },
             {
               leftLabel: "Asset Class",
-              rightLabel: "Equity",
-            },
+              rightLabel: "Equity"
+            }
           ]}
         />
       </div>

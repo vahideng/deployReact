@@ -6,67 +6,41 @@
   border: none !important;
 }
 
-.Header {
-  display: flex;
-  align-items: center;
-}
-
-.Header0 {
-  width: 11.9rem;
-}
-
-.Header1 {
-  width: 11.75rem;
-}
-
-.Header2 {
-  width: 9.4375rem;
-}
-
 .HeaderIcon {
   padding-left: 0.25rem;
 }
 
-.BothIcon{
-  display:flex; 
-  flex-direction:column-reverse;
+.BothIcon {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
-
-.BothIcon div:nth-child(2){
- height: 9px;
+.BothIcon div:nth-child(2) {
+  height: 9px;
 }
 
 .ArrowDown {
-
   cursor: pointer;
 }
 
 .ArrowUp {
-
   cursor: pointer;
 }
 
-.LeftItemContainer {
+.HeaderContainer {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   flex-grow: 1;
   padding: 0;
-  width: 14.4375rem;
+  width: 100%;
 }
-.MiddleItemContainer {
+.ItemContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   flex-grow: 1;
   padding: 0;
-  width: 11.5rem;
-}
-.RightItemContainer {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  padding: 0;
-  width: 9.4375rem;
+  width: 100%;
 }
 
 .CardHeader {
