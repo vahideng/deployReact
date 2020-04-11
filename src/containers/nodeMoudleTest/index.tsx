@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import Paragraphs from "../../components/assets/typography";
 
-import { TransactionList, FormContainer, List , UnitTrustList, PortfolioListContent} from "amonline-reactjs-component";
+import { TransactionList, FormContainer, List , UnitTrustList, PortfolioListContent, AmResetPin} from "amonline-reactjs-component";
 const { B_13_ORANGE_463 } = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
@@ -310,6 +310,17 @@ const NodeModule: React.FC = () => {
           ]}
         />
       </CenteredDiv>
+      <Title> Reset Pin</Title>  
+    <CenteredDiv style={{position:'relative',padding:'5rem 6rem',height:'25rem'}}>
+    <AmResetPin
+      testId="testId"
+      keysArray={[5,8,1,0,4,6,2,9,3,7]}
+      onEnterClick={() => {alert('Enter click')}}
+      onNumberSelected={(item:any) =>{alert(item)}}
+      EnterIcon={{name:"system-close-grey",size:15,color:'#000000'}}
+      pointerTopVal={50}
+    />    
+    </CenteredDiv>
     </div>
   );
 };
