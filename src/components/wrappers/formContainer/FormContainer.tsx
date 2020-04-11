@@ -5,7 +5,7 @@ import Tooltip from "src/components/tooltip/Tooltip";
 import Icon from "src/components/assets/icons/icon";
 import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
 import { Row } from "react-bootstrap";
-const { B_14_WHITE, B_15_ORANGE_463 } = Paragraphs;
+const { B_14_WHITE, B_15_ORANGE_463, B_24_BLACK, R_15_BLACK } = Paragraphs;
 
 interface Props {
   testId?: string;
@@ -18,6 +18,9 @@ interface Props {
     icon?: any;
     image?: any;
   };
+  headerText?: string;
+  headerSubText?: string;
+  headerTimeStamp?: string;
   label?: string;
   rightLabel?: {
     onClick?: () => void;
@@ -35,6 +38,9 @@ const FormContainer: React.FC<Props> = ({
   statusIcon,
   tooltip,
   testId,
+  headerText,
+  headerSubText,
+  headerTimeStamp
 }) => {
   const rightLabelPointer: CSSProperties =
     rightLabel !== undefined && rightLabel.onClick !== undefined
@@ -51,7 +57,7 @@ const FormContainer: React.FC<Props> = ({
               icon={!!statusIcon ? statusIcon.icon : ""}
               iconColor={{
                 top: statusIcon.iconColor.top,
-                bottom: statusIcon.iconColor.bottom,
+                bottom: statusIcon.iconColor.bottom
               }}
               image={!!statusIcon ? statusIcon.image : ""}
             />
@@ -62,7 +68,7 @@ const FormContainer: React.FC<Props> = ({
               color={"#FFFFFF"}
               size={58}
               style={{
-                width: "36.31rem",
+                width: "36.31rem"
               }}
             />
           </span>
@@ -77,10 +83,23 @@ const FormContainer: React.FC<Props> = ({
             : {
                 width: "36.31rem",
                 borderTopLeftRadius: 0,
-                borderTopRightRadius: 0,
+                borderTopRightRadius: 0
               }
         }
       >
+        {
+          <div className={classes.HeaderDiv}>
+            {headerText && (
+              <B_24_BLACK className={classes.Header}>{headerText}</B_24_BLACK>
+            )}
+            {headerSubText && (
+              <R_15_BLACK>
+                {headerSubText}
+                {headerTimeStamp && <span> {headerTimeStamp}</span>}
+              </R_15_BLACK>
+            )}
+          </div>
+        }
         {!!label && (
           <div className={classes.FormContainerLabel} id={`${testId}-0`}>
             <Row className={classes.LeftLabel}>
