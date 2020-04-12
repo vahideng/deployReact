@@ -93,16 +93,15 @@ import BoxId from "./components/lists/BoxId/BoxId";
 import TooltipDropdown from "./components/tooltipDropdown/TooltipDropdown";
 import AmAccordion from "./components/amAccordion/AmAccordion";
 import UnitTrustList from "./components/lists/UnitTrustList/UnitTrustList";
-
 import AmProfileSetting from "./components/amProfileSetting/amProfileSetting";
+
+
+/// below are sprint-4 components
+import AmInputFieldAccordian from "./components/amInputFieldAccordian/amInputFieldAccordian";
+import AmResetPin from "./components/amResetPin/amResetPin";
 import ConfirmNotes from "./components/confirmNotes/ConfirmNotes";
 import ViewRate from "./components/viewRate/ViewRate";
 import ViewRateContainer from "./components/viewRateContainer/ViewRateContainer";
-
-/// below are sprint-4 components
-
-import AmInputFieldAccordian from "./components/amInputFieldAccordian/amInputFieldAccordian";
-import AmResetPin from "./components/amResetPin/amResetPin";
 /// exports
 export {
   ////
@@ -113,8 +112,7 @@ export {
   ViewRateContainer,
   AmResetPin,
   /// below are sprint-3 components
-  AmProfileSetting,
-  AmAccordion,
+
   SecureImageSelect,
   TooltipDropdown,
   BoxId,
@@ -206,4 +204,6 @@ export {
   LabeledIcon,
   StatusIcon,
   TileListView,
+  AmProfileSetting,
+  AmAccordion
 };

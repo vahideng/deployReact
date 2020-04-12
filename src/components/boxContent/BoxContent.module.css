@@ -49,14 +49,14 @@
   text-transform: uppercase !important;
 }
 
-.Link,
-a.Link:hover {
+.Link {
   margin: 0 !important;
   padding-top: 0.5rem !important;
   color: #ffa463 !important;
   font-weight: 700 !important;
   font-size: 1.0625rem !important;
   text-decoration: none !important;
+  cursor: pointer;
 }
 
 .OuterColor {

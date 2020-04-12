@@ -42,3 +42,13 @@
   margin: 0;
   align-items: center;
 }
+.HeaderDiv {
+  margin-top: -2px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Header {
+  padding-top: 2.5rem;
+}
