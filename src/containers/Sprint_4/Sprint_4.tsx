@@ -13,7 +13,7 @@ import InputField from "src/components/inputs/inputFields/InputFields";
 import ViewRate from "src/components/viewRate/ViewRate";
 import ViewRateContainer from "src/components/viewRateContainer/ViewRateContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
-import Modal from "src/components/modals/Modal";
+import AmModal from "src/components/modals/Modal";
 import AmInputFieldAccordian from "src/components/amInputFieldAccordian/amInputFieldAccordian";
 import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 import DynamicText from "src/components/assets/typography/DynamicText/DynamicText";
@@ -166,7 +166,7 @@ const Sprint3: React.FC<Props> = () => {
         }}
         title="View Rate"
       />
-      <Modal
+      <AmModal
         testId="sprint_4_modal_test"
         modalChildren={
           <div style={{ backgroundColor: "#fff", position: "relative" }}>
