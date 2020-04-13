@@ -18,6 +18,9 @@ import Modal from "src/components/modals/Modal";
 import AmInputFieldAccordian from "src/components/amInputFieldAccordian/amInputFieldAccordian";
 import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
 import Box_V2 from "src/components/wrappers/box_V2/Box_V2";
+import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
+import DynamicText from "src/components/assets/typography/DynamicText/DynamicText";
+import CenterText from "src/components/assets/typography/CenterText/CenterText";
 const { B_13_ORANGE_463, R_13_GREY444 } = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
@@ -45,6 +48,7 @@ const Sprint3: React.FC<Props> = () => {
   const [linkListClear, setLinkListClear] = useState(false);
   const [linkListInputValue, setLinkListInputValue] = useState("");
   const [selectionTile, setSelectionTile] = useState(2);
+  const [stickyFooter, setStickyFooter] = useState(false);
   // const [linkListBtnColor, setLinkListBtnColor] = useState({
   //   top: '#BDBDBD',
   //   bottom: '#BDBDBD',
@@ -162,6 +166,64 @@ const Sprint3: React.FC<Props> = () => {
           </div>
         }
       />
+      <Title>InputField</Title>
+      <div style={{ paddingLeft: "35vw" }}>
+        <InputField
+          icon={{ name: "RM", color: "#000" }}
+          tipChildren={<p>tipChildren</p>}
+          label="bottomLabel"
+          notValid={false}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The Input Field is wrong",
+            subText: "Please try again."
+          }}
+          type="text"
+          clearClickHandler={() => {}}
+          value={""}
+          handleChange={e => {
+            alert(e);
+          }}
+          bottomLabel="Maximum Daily Limit RM 9,999,999.99"
+          // bottomLabelStyle={{ color: "red" }}
+        />
+      </div>
+      <Title>Sticky Footer</Title>
+      <div style={{ paddingLeft: "35vw" }}>
+        <PrimaryButton
+          title={"Open Sticky Footer"}
+          onButtonClick={() => {
+            setStickyFooter(!stickyFooter);
+          }}
+        />
+      </div>
+      <StickyFooter
+        isOpen={stickyFooter}
+        label="Hide Card"
+        buttonTitle="Yes, Disable"
+        onButtonClick={() => {
+          setStickyFooter(!stickyFooter);
+        }}
+        iconText="Disable online purchases for AmBank Debit Card?"
+        iconSubText="Number of transactions edited:"
+        iconSubTextNum={5}
+      />
+      <Title>DynamicText</Title>
+      <div style={{ paddingLeft: "35vw" }}>
+        <DynamicText
+          text="You will be redirected to FPX status page in"
+          counter={9}
+          inlineText="seconds."
+        />
+      </div>
+      <Title>CenterText</Title>
+      <div style={{ height: "35vw" }}>
+        <CenterText
+          mainStyle={{ background: "#eee" }}
+          title="You have been logged out"
+          detailText="Thank you for banking with AmOnline."
+        />
+      </div>
       <Title>View Rate Container</Title>
       <PrimaryButton
         onButtonClick={() => {

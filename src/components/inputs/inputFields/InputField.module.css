@@ -97,6 +97,10 @@ input::-ms-clear ::-ms-reveal {
   padding: 0 0 0.62rem 1.56rem;
 }
 
+.bottomLabel {
+  padding: 0.75rem 0 0 1.56rem;
+}
+
 @media (max-width: 400px) {
   .InputFieldIconDiv input {
     width: 90vw;

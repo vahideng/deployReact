@@ -1,3 +1,4 @@
+///////////////////////////////////////////////////////////////////////////////////////////
 /// below are sprint-1 components
 import ActionButtons from "./components/buttons/actionButtons/ActionButtons";
 import BackButton from "./components/buttons/backButton/BackButton";
@@ -54,7 +55,7 @@ import TileListView from "./components/lists/TileListView/TileListView";
 import AmModal from "./components/modals/Modal";
 import TransactionIconList from "./components/lists/TransactionIconList/TransactionIconList";
 
-///
+///////////////////////////////////////////////////////////////////////////////////////////////////
 /// below are sprint-2 components
 
 import BannerHero from "./components/banners/bannerHero/BannerHero";
@@ -70,6 +71,7 @@ import BoxSlider from "./components/carousel/boxSlider/BoxSlider";
 import ArticleDetails from "./components/articleDetails/ArticleDetails";
 import Box_V2 from "./components/wrappers/box_V2/Box_V2";
 import CalendarBox from "./components/inputs/calendarBox/CalendarBox";
+//////////////////////////////////////////////////////////////////////////////////////////////////
 /// below are sprint-3 components
 
 import TextWithDetails from "./components/infographic/textWithDetails/TextWithDetails";
@@ -92,27 +94,35 @@ import LabelToolTip from "./components/labelToolTip/LabelToolTip";
 import BoxId from "./components/lists/BoxId/BoxId";
 import TooltipDropdown from "./components/tooltipDropdown/TooltipDropdown";
 import AmAccordion from "./components/amAccordion/AmAccordion";
-import UnitTrustList from "./components/lists/UnitTrustList/UnitTrustList";
 import AmProfileSetting from "./components/amProfileSetting/amProfileSetting";
-
-
+import UnitTrustList from "./components/lists/UnitTrustList/UnitTrustList";
+/////////////////////////////////////////////////////////////////////////////////////////////////
 /// below are sprint-4 components
+
+import DynamicText from "./components/assets/typography/DynamicText/DynamicText";
+import CenterText from "./components/assets/typography/CenterText/CenterText";
 import AmInputFieldAccordian from "./components/amInputFieldAccordian/amInputFieldAccordian";
-import AmResetPin from "./components/amResetPin/amResetPin";
 import ConfirmNotes from "./components/confirmNotes/ConfirmNotes";
 import ViewRate from "./components/viewRate/ViewRate";
 import ViewRateContainer from "./components/viewRateContainer/ViewRateContainer";
+import AmResetPin from "./components/amResetPin/amResetPin";
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
 /// exports
 export {
-  ////
+  //////////////////////////////////////////////////////////////////////////////////////////////
   /// below are sprint-4 components
+
+  DynamicText,
+  CenterText,
   AmInputFieldAccordian,
   ConfirmNotes,
   ViewRate,
   ViewRateContainer,
   AmResetPin,
+  ///////////////////////////////////////////////////////////////////////////////////////////////
   /// below are sprint-3 components
-
+  AmProfileSetting,
   SecureImageSelect,
   TooltipDropdown,
   BoxId,
@@ -134,7 +144,7 @@ export {
   PortfolioList,
   DashboardCart,
   UnitTrustList,
-  ////
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////
   /// below are sprint-2 components
   CalendarBox,
   Box_V2,
@@ -149,7 +159,7 @@ export {
   FirstBanner,
   SecondBanner,
   ArticleDetails,
-  ////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////
   /// below are sprint-1 components
   TransactionIconList,
   AmModal,
@@ -204,6 +214,5 @@ export {
   LabeledIcon,
   StatusIcon,
   TileListView,
-  AmProfileSetting,
   AmAccordion
 };

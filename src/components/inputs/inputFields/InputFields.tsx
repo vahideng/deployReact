@@ -1,10 +1,16 @@
-import React, { Component, FormEvent, ChangeEvent, ReactNode } from "react";
+import React, {
+  Component,
+  FormEvent,
+  ChangeEvent,
+  ReactNode,
+  CSSProperties
+} from "react";
 import Paragraphs from "../../assets/typography";
 import classes from "./InputField.module.css";
 import Icon from "src/components/assets/icons/icon";
 import InlineMessage from "src/components/infographic/inlineMessage/InlineMessage";
 import Tooltip from "src/components/tooltip/Tooltip";
-const { B_13_BLACK } = Paragraphs;
+const { B_13_BLACK, R_13_GREY444 } = Paragraphs;
 interface Props {
   responsive?: boolean;
   tacInput?: boolean;
@@ -33,6 +39,8 @@ interface Props {
   onBlur?: (event: FormEvent) => void;
   onFocus?: (event: FormEvent) => void;
   tipChildren?: ReactNode;
+  bottomLabel?: string;
+  bottomLabelStyle?: CSSProperties;
   placeholder?: string;
 }
 
@@ -58,8 +66,10 @@ class InputField extends Component<Props, {}> {
       onFocus,
       tacInput,
       tipChildren,
-      placeholder,
-      responsive
+      responsive,
+      bottomLabel,
+      bottomLabelStyle,
+      placeholder
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);
@@ -164,6 +174,11 @@ class InputField extends Component<Props, {}> {
             </>
           )}
         </div>
+        {bottomLabel && (
+          <div className={classes.bottomLabel}>
+            <R_13_GREY444 style={bottomLabelStyle}>{bottomLabel}</R_13_GREY444>
+          </div>
+        )}
         {!!notValid && (
           <div className={classes.InputFieldError}>
             <InlineMessage
