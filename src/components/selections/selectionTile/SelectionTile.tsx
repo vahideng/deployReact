@@ -2,6 +2,7 @@ import React, { ReactNode, CSSProperties } from "react";
 import classes from "./SelectionTile.module.css";
 import Paragraphs from "../../assets/typography";
 import Profile from "src/components/headers/profile/Profile";
+import Icon from "src/components/assets/icons/icon";
 
 const { B_16_BLACK, R_14_BLACK, B_15_BLACK } = Paragraphs;
 interface Props {
@@ -11,6 +12,10 @@ interface Props {
   testId?: string;
   selected?: number;
   list: {
+    icon?: { name: string; color: string; size: number };
+    image?: any;
+    imageStyle?: CSSProperties;
+    iconLabel?: string;
     centeredText?: string;
     centeredChild?: ReactNode;
     avatar?: {
@@ -53,8 +58,49 @@ const SelectionTile: React.FC<Props> = ({
                   : { justifyContent: item.children ? "center" : "flex-start" }
               }
             >
-              <div className={classes.SelectionTileSelector}>
-                {item.children ? (
+              <div
+                className={classes.SelectionTileSelector}
+                style={{
+                  justifyContent: item.iconLabel ? "center" : "flex-start"
+                }}
+              >
+                {item.iconLabel ? (
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                      justifyContent: "center"
+                    }}
+                  >
+                    <B_15_BLACK
+                      className={classes.SelectionTileTitle}
+                      style={
+                        selected !== index
+                          ? {
+                              fontWeight: "normal"
+                            }
+                          : {}
+                      }
+                    >
+                      {item.iconLabel}
+                    </B_15_BLACK>
+                    {item.image && (
+                      <div style={item.imageStyle}>
+                        <img src={item.image} />
+                      </div>
+                    )}
+                    {item.icon && (
+                      <div style={{ marginLeft: 8 }}>
+                        <Icon
+                          icon={item.icon.name}
+                          size={item.icon.size}
+                          color={item.icon.color}
+                        />
+                      </div>
+                    )}
+                  </div>
+                ) : item.children ? (
                   <div className={classes.SelectionTileChild}>
                     {item.children}
                   </div>

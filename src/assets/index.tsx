@@ -10,6 +10,7 @@ import JomPay1 from "./images/JomPay1.png";
 import Duitnow1 from "./images/Duitnow1.png";
 import SampleQRCode from "./images/SampleQRCode.png";
 import SampleSecureImage from "./images/secure-image.png";
+import fpxIcon from "./images/fpx.png";
 
 const images: any = {
   common: {
@@ -24,7 +25,8 @@ const images: any = {
     JomPay1,
     Duitnow1,
     SampleQRCode,
-    SampleSecureImage
+    SampleSecureImage,
+    fpxIcon
   }
 };
 

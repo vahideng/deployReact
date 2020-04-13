@@ -1,7 +1,7 @@
-import React from 'react';
-import classes from './AmProfilePic.module.css';
-import Image from 'react-bootstrap/Image';
-import Paragraphs from '../assets/typography';
+import React from "react";
+import classes from "./AmProfilePic.module.css";
+import Image from "react-bootstrap/Image";
+import Paragraphs from "../assets/typography";
 const { B_32_WHITE } = Paragraphs;
 interface ProfilePicProps {
   testId?: string;
@@ -10,6 +10,7 @@ interface ProfilePicProps {
   ProfilePicBgColor: string;
   onEditClickHandler?: () => void;
   fullName: string;
+  initials?: string;
 }
 
 const AmProfilePic: React.FC<ProfilePicProps> = ({
@@ -19,21 +20,22 @@ const AmProfilePic: React.FC<ProfilePicProps> = ({
   editIcon,
   onEditClickHandler,
   fullName,
+  initials
 }) => {
   const {
     ProfilePicMain,
     ProfilePicImg,
     ProfilePicBg,
-    profileEditBtn,
+    profileEditBtn
   } = classes;
   const ProfilePicWithoutImgStyle = [];
   if (!profilePicImage) {
     ProfilePicWithoutImgStyle.push(ProfilePicBgColor);
   }
-  const initials = fullName
-    .split(' ')
+  const compoInitials = fullName
+    .split(" ")
     .map(n => n[0])
-    .join('');
+    .join("");
   return (
     <div id={testId}>
       <div className={ProfilePicMain}>
@@ -49,9 +51,9 @@ const AmProfilePic: React.FC<ProfilePicProps> = ({
         ) : (
           <div
             className={ProfilePicBg}
-            style={{ backgroundColor: `${ProfilePicWithoutImgStyle.join('')}` }}
+            style={{ backgroundColor: `${ProfilePicWithoutImgStyle.join("")}` }}
           >
-            <B_32_WHITE>{initials}</B_32_WHITE>
+            <B_32_WHITE>{initials ? initials : compoInitials}</B_32_WHITE>
           </div>
         )}
         <div className={profileEditBtn} onClick={onEditClickHandler}>

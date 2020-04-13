@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import Paragraphs from "../../components/assets/typography";
 import styled from "styled-components";
+import images from "src/assets";
 import Navbar from "src/components/headers/navbar/Navbar";
 import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTransparent";
 import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
@@ -15,11 +16,14 @@ import ViewRateContainer from "src/components/viewRateContainer/ViewRateContaine
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import Modal from "src/components/modals/Modal";
 import AmInputFieldAccordian from "src/components/amInputFieldAccordian/amInputFieldAccordian";
+import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
+import Box_V2 from "src/components/wrappers/box_V2/Box_V2";
 import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 import DynamicText from "src/components/assets/typography/DynamicText/DynamicText";
 import CenterText from "src/components/assets/typography/CenterText/CenterText";
 import ErrorPage from "src/components/ErrorPage/ErrorPage";
 
+import DetailList from "src/components/lists/DetailList/DetailList";
 const { B_13_ORANGE_463, R_13_GREY444 } = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
@@ -46,6 +50,7 @@ const Sprint3: React.FC<Props> = () => {
   const [homeRedirect, setHomeRedirect] = useState(false);
   const [linkListClear, setLinkListClear] = useState(false);
   const [linkListInputValue, setLinkListInputValue] = useState("");
+  const [selectionTile, setSelectionTile] = useState(2);
   const [stickyFooter, setStickyFooter] = useState(false);
   // const [linkListBtnColor, setLinkListBtnColor] = useState({
   //   top: '#BDBDBD',
@@ -102,6 +107,121 @@ const Sprint3: React.FC<Props> = () => {
             onButtonClick: () => alert("button-3-Clicked")
           }
         ]}
+      />
+      <Title>DetailList</Title>
+      <div style={{ width: "38.5rem", margin: "0 auto" }}>
+        <DetailList
+          testId={"testId"}
+          title={[
+            "*RM Amount is an indicative value and to be considered as reference only.",
+            "Protected by PIDM up to RM 250,000 for each depositor."
+          ]}
+          // title="*RM Amount is an indicative value and to be considered as reference only.
+          // Protected by PIDM up to RM 250,000 for each depositor."
+          list={[
+            {
+              leftText: "Account Type",
+              rightText: "Conventional Fixed Deposit"
+            },
+            {
+              leftText: "Holder Name",
+              rightText: "Adam Constantine"
+            },
+            {
+              leftText: "Tenure",
+              rightText: "24 Months"
+            },
+            {
+              leftText: "Interest Rate (p.a.)",
+              rightText: "4.55%"
+            },
+            {
+              leftText: "Placement Date",
+              rightText: "20 Feb 2020"
+            },
+            {
+              leftText: "Maturity Date",
+              rightText: "20 Feb 2023"
+            },
+            {
+              leftText: "Interest Payment Instruction",
+              rightText: "Auto Renewal"
+            },
+            {
+              leftText: "Currency",
+              rightText: "AUD"
+            },
+            {
+              leftText: "Exchange Rate",
+              rightText: "0.3545"
+            },
+            {
+              leftText: "Effective Date",
+              rightText: "1 Dec 2019"
+            }
+          ]}
+        />
+      </div>
+      <Title>SelectionTile (Update)</Title>
+      <CenteredDiv>
+        <SelectionTile
+          testId={"testId"}
+          onTileClick={(item, index) => {
+            setSelectionTile(index);
+            console.log(item);
+            // alert(`${item} with indexOf ${index} clicked`);
+          }}
+          selected={selectionTile}
+          list={[
+            {
+              iconLabel: "AmBank"
+            },
+            {
+              iconLabel: "Alliance Bank",
+              icon: {
+                name: "Announcement",
+                size: 32,
+                color: "#444444"
+              }
+            },
+            {
+              iconLabel: "Other Bank",
+              image: images.common.fpxIcon,
+              imageStyle: { height: 32, width: 66, marginLeft: 8 }
+            }
+          ]}
+        />
+      </CenteredDiv>
+      <Title>Box_V2 (Update - Responsive)</Title>
+      <Box_V2
+        responsive={true}
+        split={true}
+        leftTitle={"Cancel"}
+        onLeftButton={() => alert("Cancel")}
+        rightTitle={"Login"}
+        onRightButton={() => alert("Login")}
+        boxChildren={
+          <div style={{ padding: "3rem 1.5rem" }}>
+            <InputField
+              responsive={true}
+              notValid={true}
+              errorMessage={{
+                testId: "testId",
+                errorText: "The TAC is incorrect",
+                subText: "Please try again."
+              }}
+              type="text"
+              clearClickHandler={() => alert("clear clicked")}
+              clearIcon={true}
+              label="Username"
+              icon={{ name: "Account-2" }}
+              value={""}
+              handleChange={event => {
+                console.log(event.target.value);
+              }}
+            />
+          </div>
+        }
       />
       <Title>InputField</Title>
       <div style={{ paddingLeft: "35vw" }}>

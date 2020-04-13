@@ -1,11 +1,13 @@
 .DetailListMainDiv {
   width: auto;
-  height: 100vh;
+  height: auto;
   background-color: #f7f7f7;
 }
 
 .DetailListTitle {
   padding: 2rem 0;
+  max-width: 23.38rem;
+  margin: 0 auto;
 }
 .DetailListTitle #title {
   text-align: center;

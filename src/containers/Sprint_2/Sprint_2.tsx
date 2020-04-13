@@ -397,7 +397,8 @@ const Sprint2: React.FC<Props> = () => {
             sliderItems={[
               {
                 tagText: "ANNOUNCeMeNTS",
-                title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+                title:
+                  "Pay Bills to Majlis Bandaraya Seremban Majlis Bandaraya Seremban Majlis Bandaraya Bandaraya Bandaraya Bandaraya Bandaraya Bandaraya Bandaraya Bandaraya Bandaraya  JomPAYPay Bills to Majlis Bandaraya Seremban via JomPAYPay Bills to Majlis Bandaraya Sean via JomPAY  JomPAYPay Bills to Majlis Bandaraya Seremban via JomPAY ",
                 descriptions:
                   "Majlis Perbandaran Nilai and Majlis Perbandaran Seremban have combined to become Majlis Bandaraya Seremban (MBS). You can now pay to MBS via JomPAY on AmOnline through all the different channels such as Consectetur elit. At vero eos et accusamus et iusto odio. Sithfint occ. Neque porro quisquam est qui dolorem adipisci velit",
                 readMore: {
@@ -409,7 +410,8 @@ const Sprint2: React.FC<Props> = () => {
               },
               {
                 tagText: "ANNOUNCeMeNTS",
-                title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+                title:
+                  "A company that can streamline elegantly will (at some undefined point of time in the future) be able to orchestrate correctly.  company that can streamline elegantly will (at some undefined point of time in the future) future vfuture hbdss",
                 descriptions:
                   "The semiotics of the console in faded pinks and yellows. They were dropping, losing altitude in a canyon of rainbow foliage, a lurid communal mural that completely covered the hull of the previous century",
                 readMore: {
@@ -510,7 +512,47 @@ const Sprint2: React.FC<Props> = () => {
           />
         </div>
       </div>
-
+      <BoxSlider
+        sliderItems={[
+          {
+            tagText: "ANNOUNCeMeNTS",
+            title:
+              "Pay Bills to Majlis Bandaraya Seremban via JomPAYPay Bills to Majlis Bandaraya Seremban via JomPAYPay Bandaraya Bandaraya Bandaraya Bandaraya  Bills to Majlis Bandaraya Seremban via JomPAY  JomPAYPay Bills to Majlis Bandaraya Seremban via JomPAY ",
+            descriptions:
+              "Majlis Perbandaran Nilai and Majlis Perbandaran Seremban have combined to become Majlis Bandaraya Seremban (MBS). You can now pay to MBS via JomPAY on AmOnline through all the different channels such as Consectetur elit. At vero eos et accusamus et iusto odio. Sithfint occ. Neque porro quisquam est qui dolorem adipisci velit",
+            readMore: {
+              text: "read more",
+              onReadClick: () => {
+                alert("ReadMore");
+              }
+            }
+          },
+          {
+            tagText: "ANNOUNCeMeNTS",
+            title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+            descriptions:
+              "The semiotics of the console in faded pinks and yellows. They were dropping, losing altitude in a canyon of rainbow foliage, a lurid communal mural that completely covered the hull of the previous century",
+            readMore: {
+              text: "read more",
+              onReadClick: () => {
+                alert("ReadMore");
+              }
+            }
+          },
+          {
+            tagText: "ANNOUNCeMeNTS",
+            title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+            descriptions:
+              "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term"
+          },
+          {
+            tagText: "ANNOUNCeMeNTS",
+            title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+            descriptions:
+              "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term"
+          }
+        ]}
+      />
       <Title>Second Banner</Title>
       <div
         style={{
