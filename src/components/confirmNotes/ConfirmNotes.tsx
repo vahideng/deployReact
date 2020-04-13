@@ -6,6 +6,8 @@ const { B_15_BLACK, R_15_BLACK, B_15_GREY969, R_15_GREY444 } = Paragraphs;
 interface Props {
   testId?: string;
   disabled?: boolean;
+  responsive?: boolean;
+  width?: string;
   title?: {
     style?: any;
     content?: string;
@@ -13,10 +15,14 @@ interface Props {
   body?: { content?: string; style?: any }[];
 }
 
-const ConfirmNotes: React.FC<Props> = ({ title, body, testId, disabled }) => {
+const ConfirmNotes: React.FC<Props> = ({ title, body, testId, disabled, responsive, width }) => {
+  let containerCls = classes.Container
+  if (responsive) {
+    containerCls = `${classes.Container} ${classes.ContainerResponsive}`
+  }
   const { style, content } = title;
   return (
-    <div className={classes.Container} id={testId}>
+    <div className={containerCls} id={testId} style={{width}}>
       {content && (
         <div className={classes.Title}>
           {disabled ? (

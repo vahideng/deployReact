@@ -313,7 +313,8 @@ const Sprint3: React.FC<Props> = () => {
       <Title>Confirm Notes</Title>
       <CenteredDiv
         style={{
-          margin: "1rem 15rem"
+          margin: 0,
+          padding: 0
         }}
       >
         <ConfirmNotes
@@ -322,6 +323,8 @@ const Sprint3: React.FC<Props> = () => {
             content: "Important Notes",
             style: { fontSize: "2rem" }
           }}
+          width="40rem"
+          responsive
           body={[
             {
               content:

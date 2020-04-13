@@ -2,7 +2,11 @@
 @import '../assets/common/flex.scss';
 
 .Container {
-  width: 100%;
+  width: 33rem;
+}
+
+.ContainerResponsive {
+  width: 100% !important;
 }
 
 .Title {
