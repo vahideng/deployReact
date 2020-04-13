@@ -1,5 +1,4 @@
-import Carousel from "react-bootstrap/Carousel";
-import React, { CSSProperties, SetStateAction, useState } from "react";
+import React, { CSSProperties, useState } from "react";
 import classes from "./Carousel.module.css";
 import Icon from "../assets/icons/icon";
 interface Props {
@@ -9,39 +8,61 @@ interface Props {
 }
 const CustomCarousel = (props: Props) => {
   const [stateIndex, setStateIndex] = useState(0);
+  const [rightDisable, setRightDisable] = useState(false);
+  const [leftDisable, setLeftDisable] = useState(true);
 
-  const handleSelect = (selectedIndex: SetStateAction<number>, _e: any) => {
-    setStateIndex(selectedIndex);
+  const { items, carouselStyle } = props;
+
+  const onRightClick = (items: any, index: number) => {
+    setStateIndex(stateIndex + 1);
+    setLeftDisable(false);
+    if (items[0].length - 2 === index) {
+      setRightDisable(!rightDisable);
+    }
+  };
+  const onLeftClick = (index: number) => {
+    setStateIndex(stateIndex - 1);
+    setRightDisable(false);
+    if (index === 1) {
+      setLeftDisable(true);
+    }
   };
 
-  const { items, intervalSec, carouselStyle } = props;
-
   return (
-    <div>
-      <Carousel
-        // fade={true}
-        // slide={false}
-        indicators={false}
-        activeIndex={stateIndex}
-        onSelect={handleSelect}
-        style={!!carouselStyle ? carouselStyle : {}}
-        interval={!!intervalSec ? intervalSec : null}
-        prevIcon={
-          <span>
-            <Icon icon={"left"} size={30} color={"#FF2626"} />
-          </span>
-        }
-        nextIcon={<Icon icon={"Right1"} size={30} color={"#FF2626"} />}
-        wrap={false}
-      >
+    <div className={classes.MainDiv}>
+      <div>
         {items[0].map((item: any, index: any) => {
           return (
-            <Carousel.Item key={index} className={classes.CarouselItem}>
-              {item.children}
-            </Carousel.Item>
+            stateIndex === index && (
+              <div
+                key={index}
+                className={classes.CarouselItem}
+                style={!!carouselStyle ? carouselStyle : {}}
+              >
+                <span
+                  style={
+                    leftDisable ? { pointerEvents: "none", opacity: 0.4 } : {}
+                  }
+                  onClick={() => onLeftClick(index)}
+                  className={classes.Chevrons}
+                >
+                  <Icon icon="left" color="#FF2626" size={32} />
+                </span>
+                <div className={classes.Children}>{item.children}</div>
+                <span
+                  style={
+                    rightDisable ? { pointerEvents: "none", opacity: 0.4 } : {}
+                  }
+                  onClick={() => onRightClick(items, index)}
+                  className={classes.Chevrons}
+                >
+                  <Icon icon="Right1" color="#FF2626" size={32} />
+                </span>
+              </div>
+            )
           );
         })}
-      </Carousel>
+      </div>
 
       <div className={classes.CarouselIndicDiv}>
         {items[0].map((_item: any, index: any) => {

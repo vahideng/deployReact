@@ -18,8 +18,7 @@ const BoxSlider = (props: Props) => {
     <>
       <CustomCarousel
         carouselStyle={{
-          height: "20.12rem",
-          marginBottom: "-5rem"
+          minHeight: "20.12rem"
         }}
         items={[
           props.sliderItems?.map((item: any, index: any) => {
@@ -41,7 +40,10 @@ const BoxSlider = (props: Props) => {
                     }}
                   />
                   <div className={classes.BoxTitle}>
-                    <B_20_BLACK>{item.title}</B_20_BLACK>
+                    <B_20_BLACK>
+                      {item.title.substring(0, 240)}{" "}
+                      {item.title.length >= 240 && <span>...</span>}
+                    </B_20_BLACK>
                   </div>
                   <R_17_BLACK className={classes.descriptions}>
                     {item.descriptions}
