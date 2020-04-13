@@ -271,7 +271,6 @@ const Sprint3: React.FC<Props> = () => {
       <CenteredDiv
         style={{
           margin: "0 auto",
-          width: "30rem"
         }}
       >
         <ViewRate
