@@ -58,7 +58,7 @@ const {
   B_14_WHITE,
   R_11_WHITE,
   R_13_BLACK,
-  B_24_BLACK,
+  B_24_BLACK
 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -179,36 +179,33 @@ class Sprint1 extends Component<Props, State> {
                         <span> to </span>
                         <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
                       </div>
-                    ),
+                    )
                   }}
                   list={[
                     {
                       leftLabel: "To",
                       rightLabel: "Saving Account A",
-                      details: ["8881019596535 | AmBank"],
+                      details: ["8881019596535 | AmBank"]
                     },
                     {
                       leftLabel: "Amount",
                       rightLabel: "RM 500.00",
-                      details: ["Fees & Charges: RM 0.00"],
+                      details: ["Fees & Charges: RM 0.00"]
                     },
                     {
                       leftLabel: "Date",
                       rightLabel: "Transfer Now",
-                      details: ["Today, 5 January 2019"],
+                      details: ["Today, 5 January 2019"]
                     },
                     {
                       leftLabel: "Reference",
-                      rightLabel: "House Rental",
+                      rightLabel: "House Rental"
                     },
                     {
                       leftLabel: "From",
                       rightLabel: "Savings Account",
-                      details: [
-                        "2998202013",
-                        "Available Balance: RM 10,301.50",
-                      ],
-                    },
+                      details: ["2998202013", "Available Balance: RM 10,301.50"]
+                    }
                   ]}
                 />
               }
@@ -223,7 +220,7 @@ class Sprint1 extends Component<Props, State> {
               {
                 flag: {
                   color: "red",
-                  text: "Successful",
+                  text: "Successful"
                 },
                 leftLabel: "DoItNow tr DF",
                 middle: {
@@ -231,29 +228,29 @@ class Sprint1 extends Component<Props, State> {
                   content: [
                     {
                       leftLabel: "firstLeft",
-                      rightLabel: "firstRight",
+                      rightLabel: "firstRight"
                     },
                     {
                       leftLabel: "secondtLeft",
-                      rightLabel: "secondtRight",
+                      rightLabel: "secondtRight"
                     },
                     {
                       leftLabel: "thirdLeft",
-                      rightLabel: "thirdRight",
-                    },
-                  ],
+                      rightLabel: "thirdRight"
+                    }
+                  ]
                 },
                 rightLabel: {
                   iconName: "Plus",
                   iconColor: "#36A03E",
                   prefix: "RM",
-                  content: "18.00000000",
-                },
+                  content: "18.00000000"
+                }
               },
               {
                 flag: {
                   color: "green",
-                  text: "Successful",
+                  text: "Successful"
                 },
                 leftLabel: "doLaterNow tr DF",
                 middle: {
@@ -262,21 +259,21 @@ class Sprint1 extends Component<Props, State> {
                     {
                       leftLabel:
                         "this is sample long data fot testing purposes",
-                      rightLabel: "16 Jul 2020",
+                      rightLabel: "16 Jul 2020"
                     },
                     {
                       leftLabel: "HairShore Shanti",
-                      rightLabel: "10 Jul 2018",
-                    },
-                  ],
+                      rightLabel: "10 Jul 2018"
+                    }
+                  ]
                 },
                 rightLabel: {
                   iconName: "Minus",
                   iconColor: "#ff2626",
                   prefix: "RM",
-                  content: "38.00",
-                },
-              },
+                  content: "38.00"
+                }
+              }
             ]}
             title="Today"
           />
@@ -288,16 +285,16 @@ class Sprint1 extends Component<Props, State> {
             color: "#ff2626",
             onIconClick: () => {
               this.setState({
-                navbarScrolled: !navbarScrolled,
+                navbarScrolled: !navbarScrolled
               });
-            },
+            }
           }}
           icon={{
             onIconClick: () => {
               this.setState({
-                navbarScrolled: !navbarScrolled,
+                navbarScrolled: !navbarScrolled
               });
-            },
+            }
           }}
           profile={{
             greeting: "Good Morning",
@@ -306,7 +303,7 @@ class Sprint1 extends Component<Props, State> {
             initialsBg: "#ff2626",
             alt: "AVATAR",
             src:
-              "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
+              "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
           }}
           rightButtons={[
             {
@@ -314,23 +311,23 @@ class Sprint1 extends Component<Props, State> {
               onButtonClick: () => {
                 alert("Inbox-Clicked");
                 this.setState({ homRedirect: true });
-              },
+              }
             },
             {
               iconName: "Settings",
               onButtonClick: () => {
                 this.setState({
-                  sprint_3Direct: true,
+                  sprint_3Direct: true
                 });
-              },
+              }
             },
             {
               iconName: "logout",
               onButtonClick: () => {
                 alert("logout-Clicked");
                 this.setState({ homRedirect: true });
-              },
-            },
+              }
+            }
           ]}
         />
 
@@ -344,15 +341,15 @@ class Sprint1 extends Component<Props, State> {
                   list={[
                     {
                       label: "Jan 2020 eStatement",
-                      onListClick: () => alert("item-1-clicked"),
+                      onListClick: () => alert("item-1-clicked")
                     },
                     {
                       label: "Dec 2019 eStatement",
-                      onListClick: () => alert("item-2-clicked"),
+                      onListClick: () => alert("item-2-clicked")
                     },
                     {
                       label: "Nov 2019 eStatement",
-                      onListClick: () => alert("item-3-clicked"),
+                      onListClick: () => alert("item-3-clicked")
                     },
                     {
                       label: "Oct 2019 eStatement",
@@ -367,12 +364,12 @@ class Sprint1 extends Component<Props, State> {
                           toggleOnLabel="YES"
                           disabled={false}
                         />
-                      ),
+                      )
                     },
                     {
                       label: "Sep 2019 eStatement",
-                      onListClick: () => alert("item-5-clicked"),
-                    },
+                      onListClick: () => alert("item-5-clicked")
+                    }
                   ]}
                 />
               </div>
@@ -426,8 +423,8 @@ class Sprint1 extends Component<Props, State> {
                           value2: "-",
                           //  actionLabel: 'View Receipt',
                           // actionIcon: ''
-                        },
-                      ],
+                        }
+                      ]
                     },
                     {
                       icon: "Transfer",
@@ -450,7 +447,7 @@ class Sprint1 extends Component<Props, State> {
                           label2: "Recipient Reference",
                           value2: "May - Rental",
                           actionLabel: "Add to Fav",
-                          actionIcon: "",
+                          actionIcon: ""
                         },
                         {
                           label1: "",
@@ -458,11 +455,11 @@ class Sprint1 extends Component<Props, State> {
                           label2: "Other Details",
                           value2: "-",
                           actionLabel: "View Receipt",
-                          actionIcon: "",
-                        },
-                      ],
-                    },
-                  ],
+                          actionIcon: ""
+                        }
+                      ]
+                    }
+                  ]
                 },
                 {
                   date: "12 Jan 2020",
@@ -489,7 +486,7 @@ class Sprint1 extends Component<Props, State> {
                           label2: "Recipient Reference",
                           value2: "May - Rental",
                           actionLabel: "Add to Fav",
-                          actionIcon: "",
+                          actionIcon: ""
                         },
                         {
                           label1: "",
@@ -497,12 +494,12 @@ class Sprint1 extends Component<Props, State> {
                           label2: "Other Details",
                           value2: "-",
                           actionLabel: "View Receipt",
-                          actionIcon: "",
-                        },
-                      ],
-                    },
-                  ],
-                },
+                          actionIcon: ""
+                        }
+                      ]
+                    }
+                  ]
+                }
               ]}
               onTransactionClick={(item, sectionIndex, itemIndex) => {
                 alert("check : "+item);
@@ -523,7 +520,7 @@ class Sprint1 extends Component<Props, State> {
                 accountNumber: "123456890",
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
-                amount: "RM 10,135",
+                amount: "RM 10,135"
               },
               {
                 accountName: "Foreign Currency Account",
@@ -532,14 +529,14 @@ class Sprint1 extends Component<Props, State> {
                 statusLabelColor: "#FF2626",
                 countryFlagImage: images.common.countryFlag,
                 amount: "AUD 1,392",
-                equivalentAmount: "RM 4,583",
+                equivalentAmount: "RM 4,583"
               },
               {
                 accountName: "Conversion Account",
                 accountNumber: "20717524",
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
-                amount: "- RM 2,000",
+                amount: "- RM 2,000"
               },
               {
                 cardLogo:
@@ -548,7 +545,7 @@ class Sprint1 extends Component<Props, State> {
                 accountNumber: "20717524",
                 statusLabel: "RESTRICTED ACCESS",
                 statusLabelColor: "#FF2626",
-                amount: "RM 0.00",
+                amount: "RM 0.00"
               },
               {
                 cardLogo: images.common.masterCard,
@@ -556,7 +553,7 @@ class Sprint1 extends Component<Props, State> {
                 accountNumber: "5000 0220 5023 5678",
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
-                amount: "RM 5,000",
+                amount: "RM 5,000"
               },
               {
                 icon: "system-info",
@@ -566,7 +563,7 @@ class Sprint1 extends Component<Props, State> {
                 accountNumber: "3062 2401 2019 5678",
                 statusLabel: "OVERDUE",
                 statusLabelColor: "#FF2626",
-                amount: "RM 50",
+                amount: "RM 50"
               },
               {
                 cardLogo: images.common.masterCard,
@@ -579,8 +576,8 @@ class Sprint1 extends Component<Props, State> {
                 statusLabelColor: "#36A03E",
                 statusLabel2: "DUE SOON",
                 statusLabel2Color: "#FFA463",
-                amount: "RM 50",
-              },
+                amount: "RM 50"
+              }
             ]}
             onTileClick={(item, index) => {
               alert(JSON.stringify(item));
@@ -594,15 +591,15 @@ class Sprint1 extends Component<Props, State> {
             list={[
               {
                 label: "Jan 2020 eStatement",
-                onListClick: () => alert("item-1-clicked"),
+                onListClick: () => alert("item-1-clicked")
               },
               {
                 label: "Dec 2019 eStatement",
-                onListClick: () => alert("item-2-clicked"),
+                onListClick: () => alert("item-2-clicked")
               },
               {
                 label: "Nov 2019 eStatement",
-                onListClick: () => alert("item-3-clicked"),
+                onListClick: () => alert("item-3-clicked")
               },
               {
                 label: "Oct 2019 eStatement",
@@ -616,21 +613,33 @@ class Sprint1 extends Component<Props, State> {
                     toggleOnLabel="YES"
                     disabled={false}
                   />
-                ),
+                )
               },
               {
                 label: "Sep 2019 eStatement",
-                onListClick: () => alert("item-5-clicked"),
-              },
+                onListClick: () => alert("item-5-clicked")
+              }
             ]}
           />
         </>
+        <Title>FormContainer with Header</Title>
+        <div style={{ backgroundColor: "#EEEEEE", padding: 100 }}>
+          <FormContainer
+            statusIcon={{
+              icon: "Tick-1",
+              iconColor: { top: "#94EC9B", bottom: "#5BB362" }
+            }}
+            headerText="You have successfully logged out."
+            headerSubText="Logged out on Tuesday"
+            headerTimeStamp="14/05/2019, 03:06PM"
+          />
+        </div>
         <Title>List with Header inside FormContainer with statusIcon</Title>
         <div style={{ backgroundColor: "#EEEEEE", padding: 100 }}>
           <FormContainer
             statusIcon={{
               icon: "Tick-1",
-              iconColor: { top: "#94EC9B", bottom: "#5BB362" },
+              iconColor: { top: "#94EC9B", bottom: "#5BB362" }
             }}
             children={
               <List
@@ -644,33 +653,33 @@ class Sprint1 extends Component<Props, State> {
                       <span> to </span>
                       <p style={{ fontWeight: 700 }}>Adam Constantine.</p>
                     </div>
-                  ),
+                  )
                 }}
                 list={[
                   {
                     leftLabel: "To",
                     rightLabel: "Saving Account A",
-                    details: ["8881019596535 | AmBank"],
+                    details: ["8881019596535 | AmBank"]
                   },
                   {
                     leftLabel: "Amount",
                     rightLabel: "RM 500.00",
-                    details: ["Fees & Charges: RM 0.00"],
+                    details: ["Fees & Charges: RM 0.00"]
                   },
                   {
                     leftLabel: "Date",
                     rightLabel: "Transfer Now",
-                    details: ["Today, 5 January 2019"],
+                    details: ["Today, 5 January 2019"]
                   },
                   {
                     leftLabel: "Reference",
-                    rightLabel: "House Rental",
+                    rightLabel: "House Rental"
                   },
                   {
                     leftLabel: "From",
                     rightLabel: "Savings Account",
-                    details: ["2998202013", "Available Balance: RM 10,301.50"],
-                  },
+                    details: ["2998202013", "Available Balance: RM 10,301.50"]
+                  }
                 ]}
               />
             }
@@ -695,34 +704,34 @@ class Sprint1 extends Component<Props, State> {
                   icon: {
                     name: "LOGO",
                     color: "#ff2626",
-                    iconText: "Review & Confirm",
-                  },
+                    iconText: "Review & Confirm"
+                  }
                 }}
                 list={[
                   {
                     leftLabel: "To",
                     rightLabel: "Saving Account A",
-                    details: ["8881019596535 | AmBank"],
+                    details: ["8881019596535 | AmBank"]
                   },
                   {
                     leftLabel: "Amount",
                     rightLabel: "RM 500.00",
-                    details: ["Fees & Charges: RM 0.00"],
+                    details: ["Fees & Charges: RM 0.00"]
                   },
                   {
                     leftLabel: "Date",
                     rightLabel: "Transfer Now",
-                    details: ["Today, 5 January 2019"],
+                    details: ["Today, 5 January 2019"]
                   },
                   {
                     leftLabel: "Reference",
-                    rightLabel: "House Rental",
+                    rightLabel: "House Rental"
                   },
                   {
                     leftLabel: "From",
                     rightLabel: "Savings Account",
-                    details: ["2998202013", "Available Balance: RM 10,301.50"],
-                  },
+                    details: ["2998202013", "Available Balance: RM 10,301.50"]
+                  }
                 ]}
               />
             }
@@ -732,7 +741,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>FormContainer curvedTab</Title>
         <CenteredDiv
           style={{
-            backgroundColor: "#eeeeee",
+            backgroundColor: "#eeeeee"
           }}
         >
           <FormContainerCurved
@@ -740,6 +749,13 @@ class Sprint1 extends Component<Props, State> {
             curvedTab={{
               leftTab: "New Recipient",
               rightTab: "Own/Favorite",
+              rightSelected: true,
+              onLeftClick: () => {
+                alert("Left Clicked");
+              },
+              onRightClick: () => {
+                alert("Right Clicked");
+              },
               leftContent: (
                 <div>
                   <List
@@ -747,37 +763,37 @@ class Sprint1 extends Component<Props, State> {
                       icon: {
                         name: "LOGO",
                         color: "#ff2626",
-                        iconText: "Review & Confirm",
-                      },
+                        iconText: "Review & Confirm"
+                      }
                     }}
                     list={[
                       {
                         leftLabel: "To",
                         rightLabel: "Saving Account A",
-                        details: ["8881019596535 | AmBank"],
+                        details: ["8881019596535 | AmBank"]
                       },
                       {
                         leftLabel: "Amount",
                         rightLabel: "RM 500.00",
-                        details: ["Fees & Charges: RM 0.00"],
+                        details: ["Fees & Charges: RM 0.00"]
                       },
                       {
                         leftLabel: "Date",
                         rightLabel: "Transfer Now",
-                        details: ["Today, 5 January 2019"],
+                        details: ["Today, 5 January 2019"]
                       },
                       {
                         leftLabel: "Reference",
-                        rightLabel: "House Rental",
+                        rightLabel: "House Rental"
                       },
                       {
                         leftLabel: "From",
                         rightLabel: "Savings Account",
                         details: [
                           "2998202013",
-                          "Available Balance: RM 10,301.50",
-                        ],
-                      },
+                          "Available Balance: RM 10,301.50"
+                        ]
+                      }
                     ]}
                   />
                 </div>
@@ -788,15 +804,15 @@ class Sprint1 extends Component<Props, State> {
                     list={[
                       {
                         label: "Jan 2020 eStatement",
-                        onListClick: () => alert("item-1-clicked"),
+                        onListClick: () => alert("item-1-clicked")
                       },
                       {
                         label: "Dec 2019 eStatement",
-                        onListClick: () => alert("item-2-clicked"),
+                        onListClick: () => alert("item-2-clicked")
                       },
                       {
                         label: "Nov 2019 eStatement",
-                        onListClick: () => alert("item-3-clicked"),
+                        onListClick: () => alert("item-3-clicked")
                       },
                       {
                         label: "Oct 2019 eStatement",
@@ -810,16 +826,16 @@ class Sprint1 extends Component<Props, State> {
                             toggleOnLabel="YES"
                             disabled={false}
                           />
-                        ),
+                        )
                       },
                       {
                         label: "Sep 2019 eStatement",
-                        onListClick: () => alert("item-5-clicked"),
-                      },
+                        onListClick: () => alert("item-5-clicked")
+                      }
                     ]}
                   />
                 </div>
-              ),
+              )
             }}
           />
         </CenteredDiv>
@@ -837,11 +853,12 @@ class Sprint1 extends Component<Props, State> {
             children={
               <div style={{ padding: "2rem" }}>
                 <InputField
+                  placeholder="Input Your Input"
                   notValid={true}
                   errorMessage={{
                     testId: "testId",
                     errorText: "The TAC is incorrect",
-                    subText: "Please try again.",
+                    subText: "Please try again."
                   }}
                   type="text"
                   clearClickHandler={() => alert("clear clicked")}
@@ -849,9 +866,9 @@ class Sprint1 extends Component<Props, State> {
                   label="input label"
                   icon={{ name: "Account-2" }}
                   value={inputValue}
-                  handleChange={(event) => {
+                  handleChange={event => {
                     this.setState({
-                      inputValue: event.target.value,
+                      inputValue: event.target.value
                     });
                   }}
                 />
@@ -864,7 +881,7 @@ class Sprint1 extends Component<Props, State> {
                       fontWeight: 700,
                       color: "#ffa463",
                       paddingRight: 5,
-                      paddingLeft: 5,
+                      paddingLeft: 5
                     }}
                   >
                     Terms & Conditions
@@ -878,9 +895,9 @@ class Sprint1 extends Component<Props, State> {
                   label="input label"
                   icon={{ name: "Account-2" }}
                   value={inputValue}
-                  handleChange={(event) => {
+                  handleChange={event => {
                     this.setState({
-                      inputValue: event.target.value,
+                      inputValue: event.target.value
                     });
                   }}
                 />
@@ -898,7 +915,7 @@ class Sprint1 extends Component<Props, State> {
                 paddingLeft: "2rem",
                 display: "flex",
                 justifyContent: "center",
-                alignItems: "center",
+                alignItems: "center"
               }}
             >
               <CardList
@@ -912,7 +929,7 @@ class Sprint1 extends Component<Props, State> {
                     colorRight: "#131E5B",
                     active: false,
                     activeLabel: "ACTIVE",
-                    selected: false,
+                    selected: false
                   },
                   {
                     cardName: "AmBank TRUE VISA (Supp)",
@@ -923,7 +940,7 @@ class Sprint1 extends Component<Props, State> {
                     colorRight: "#31434A",
                     active: false,
                     activeLabel: "",
-                    selected: false,
+                    selected: false
                   },
                   {
                     cardName: "AmBank Platinum Card",
@@ -935,7 +952,7 @@ class Sprint1 extends Component<Props, State> {
                     colorRight: "#3D1A1A",
                     active: true,
                     activeLabel: "ACTIVE",
-                    selected: true,
+                    selected: true
                   },
                   {
                     cardName: "AmBank World MasterCard",
@@ -946,7 +963,7 @@ class Sprint1 extends Component<Props, State> {
                     colorRight: "#131E5B",
                     active: false,
                     activeLabel: "ACTIVE",
-                    selected: false,
+                    selected: false
                   },
                   {
                     cardName: "AmBank TRUE VISA (Supp)",
@@ -957,7 +974,7 @@ class Sprint1 extends Component<Props, State> {
                     colorRight: "#31434A",
                     active: false,
                     activeLabel: "",
-                    selected: false,
+                    selected: false
                   },
                   {
                     cardName: "AmBank Platinum Card",
@@ -969,7 +986,7 @@ class Sprint1 extends Component<Props, State> {
                     colorRight: "#000000",
                     active: false,
                     activeLabel: "",
-                    selected: false,
+                    selected: false
                   },
                   {
                     cardName: "AmBank TRUE VISA (Supp)",
@@ -980,8 +997,8 @@ class Sprint1 extends Component<Props, State> {
                     colorRight: "#31434A",
                     active: false,
                     activeLabel: "",
-                    selected: false,
-                  },
+                    selected: false
+                  }
                 ]}
                 onCardTileClick={(item, index) => {
                   alert(JSON.stringify(item));
@@ -1013,7 +1030,7 @@ class Sprint1 extends Component<Props, State> {
                 label="Username"
                 icon={{ name: "Account-2" }}
                 value={""}
-                handleChange={(event) => {
+                handleChange={event => {
                   alert(event);
                 }}
               />
@@ -1021,12 +1038,12 @@ class Sprint1 extends Component<Props, State> {
                 <TextButton
                   testId="testId"
                   buttonText="Forgot username/password?"
-                  onTextClick={(id) => {
+                  onTextClick={id => {
                     alert(`${id} clicked`);
                   }}
                 />
               </div>
-            </>,
+            </>
           ]}
         ></Box>
         <TacModal
@@ -1040,7 +1057,7 @@ class Sprint1 extends Component<Props, State> {
           }}
           inActiveMessage={{
             title: "Your profile is inactive.",
-            text: "TAC verification is required to activate your profile.",
+            text: "TAC verification is required to activate your profile."
           }}
           inActive={tacInactive}
           testId={"testId"}
@@ -1052,25 +1069,25 @@ class Sprint1 extends Component<Props, State> {
           value={inputValue}
           handleChange={(e: any) => {
             this.setState({
-              inputValue: e.target.value,
+              inputValue: e.target.value
             });
           }}
           notValid={inputValue === "" ? true : false}
           errorMessage={{
             testId: "testId",
             errorText: "The TAC is incorrect",
-            subText: "Please try again.",
+            subText: "Please try again."
           }}
           content="TAC was sent to your registered mobile number (**** 6867)"
           link={{
             text: "Did not receive TAC? Request new",
             onLinkClick: () => {
               alert("Tac link");
-            },
+            }
           }}
           buttonColor={{
             top: !tacInactive ? "#BDBDBD" : "#FD8585",
-            bottom: !tacInactive ? "#BDBDBD" : "#FF2222",
+            bottom: !tacInactive ? "#BDBDBD" : "#FF2222"
           }}
           buttonTitle={tacInactive ? "Request TAC" : "Continue"}
           activeStatus={tacClearActiveStatus}
@@ -1090,7 +1107,7 @@ class Sprint1 extends Component<Props, State> {
           title="Open TacModal"
           onButtonClick={() => {
             this.setState({
-              TacModalOpen: true,
+              TacModalOpen: true
             });
           }}
         />
@@ -1099,7 +1116,7 @@ class Sprint1 extends Component<Props, State> {
           onButtonClick={() => {
             this.setState({
               TacModalOpen: true,
-              tacClearActiveStatus: true,
+              tacClearActiveStatus: true
             });
           }}
         />
@@ -1121,7 +1138,7 @@ class Sprint1 extends Component<Props, State> {
           title="Open StickyTimer"
           onButtonClick={() => {
             this.setState({
-              StickyModalOpen: true,
+              StickyModalOpen: true
             });
           }}
         />
@@ -1129,7 +1146,7 @@ class Sprint1 extends Component<Props, State> {
           title="Open GeneralModal"
           onButtonClick={() => {
             this.setState({
-              generalModalOpen: true,
+              generalModalOpen: true
             });
           }}
         />
@@ -1147,7 +1164,7 @@ class Sprint1 extends Component<Props, State> {
                   this.setState({ verticalActiveTab: index }),
                 icon: {
                   name: "Account-2",
-                  color: "#ff2626",
+                  color: "#ff2626"
                 },
                 accountTitle: "Savings/Current Accounts",
                 children: (
@@ -1155,7 +1172,7 @@ class Sprint1 extends Component<Props, State> {
                     style={{
                       display: "flex",
                       padding: 30,
-                      flexDirection: "column",
+                      flexDirection: "column"
                     }}
                   >
                     <R_13_BLACK>Your outstanding</R_13_BLACK>
@@ -1171,14 +1188,14 @@ class Sprint1 extends Component<Props, State> {
                           accountNumber: "20717524",
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
-                          amount: "- RM 2,000",
+                          amount: "- RM 2,000"
                         },
                         {
                           accountName: "Conversion Account",
                           accountNumber: "20717524",
                           statusLabel: "RESTRICTED ACCESS",
                           statusLabelColor: "#FF2626",
-                          amount: "RM 0.00",
+                          amount: "RM 0.00"
                         },
                         {
                           cardLogo: images.common.masterCard,
@@ -1186,7 +1203,7 @@ class Sprint1 extends Component<Props, State> {
                           accountNumber: "5000 0220 5023 5678",
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
-                          amount: "RM 5,000",
+                          amount: "RM 5,000"
                         },
                         {
                           icon: "system-info",
@@ -1196,7 +1213,7 @@ class Sprint1 extends Component<Props, State> {
                           accountNumber: "3062 2401 2019 5678",
                           statusLabel: "OVERDUE",
                           statusLabelColor: "#FF2626",
-                          amount: "RM 50",
+                          amount: "RM 50"
                         },
                         {
                           cardLogo: images.common.masterCard,
@@ -1209,13 +1226,13 @@ class Sprint1 extends Component<Props, State> {
                           statusLabelColor: "#36A03E",
                           statusLabel2: "DUE SOON",
                           statusLabel2Color: "#FFA463",
-                          amount: "RM 50",
-                        },
+                          amount: "RM 50"
+                        }
                       ]}
-                      onTileClick={(item) => alert(JSON.stringify(item))}
+                      onTileClick={item => alert(JSON.stringify(item))}
                     />
                   </div>
-                ),
+                )
               },
               {
                 selected: verticalActiveTab === 1 ? true : false,
@@ -1223,14 +1240,14 @@ class Sprint1 extends Component<Props, State> {
                   this.setState({ verticalActiveTab: index }),
                 icon: {
                   name: "Car",
-                  color: "#444444",
+                  color: "#444444"
                 },
                 accountTitle: "DescriptionButton",
                 children: (
                   <div
                     style={{
                       width: "43rem",
-                      padding: 30,
+                      padding: 30
                     }}
                   >
                     <DescriptionButton
@@ -1244,12 +1261,12 @@ class Sprint1 extends Component<Props, State> {
                         {
                           title: "Pay Unpaid Statement Balance",
                           amount: "RM 2,000.00",
-                          icon: { name: "system-alert", color: "#ff2626" },
-                        },
+                          icon: { name: "system-alert", color: "#ff2626" }
+                        }
                       ]}
                     />
                   </div>
-                ),
+                )
               },
               {
                 selected: verticalActiveTab === 2 ? true : false,
@@ -1258,7 +1275,7 @@ class Sprint1 extends Component<Props, State> {
 
                 icon: {
                   name: "Account-2",
-                  color: "#ff2626",
+                  color: "#ff2626"
                 },
                 accountTitle: "Fixed/Term Deposits",
                 children: (
@@ -1266,7 +1283,7 @@ class Sprint1 extends Component<Props, State> {
                     style={{
                       display: "flex",
                       paddingTop: 30,
-                      flexDirection: "column",
+                      flexDirection: "column"
                     }}
                   >
                     <R_13_BLACK>Your outstanding</R_13_BLACK>
@@ -1281,7 +1298,7 @@ class Sprint1 extends Component<Props, State> {
                           accountNumber: "123456890",
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
-                          amount: "RM 10,135",
+                          amount: "RM 10,135"
                         },
                         {
                           accountName: "Foreign Currency Account",
@@ -1290,21 +1307,21 @@ class Sprint1 extends Component<Props, State> {
                           statusLabelColor: "#FF2626",
                           countryFlagImage: images.common.countryFlag,
                           amount: "AUD 1,392",
-                          equivalentAmount: "RM 4,583",
+                          equivalentAmount: "RM 4,583"
                         },
                         {
                           accountName: "Conversion Account",
                           accountNumber: "20717524",
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
-                          amount: "- RM 2,000",
+                          amount: "- RM 2,000"
                         },
                         {
                           accountName: "Conversion Account",
                           accountNumber: "20717524",
                           statusLabel: "RESTRICTED ACCESS",
                           statusLabelColor: "#FF2626",
-                          amount: "RM 0.00",
+                          amount: "RM 0.00"
                         },
                         {
                           cardLogo: images.common.masterCard,
@@ -1312,7 +1329,7 @@ class Sprint1 extends Component<Props, State> {
                           accountNumber: "5000 0220 5023 5678",
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
-                          amount: "RM 5,000",
+                          amount: "RM 5,000"
                         },
                         {
                           icon: "system-info",
@@ -1322,7 +1339,7 @@ class Sprint1 extends Component<Props, State> {
                           accountNumber: "3062 2401 2019 5678",
                           statusLabel: "OVERDUE",
                           statusLabelColor: "#FF2626",
-                          amount: "RM 50",
+                          amount: "RM 50"
                         },
                         {
                           cardLogo: images.common.masterCard,
@@ -1335,13 +1352,13 @@ class Sprint1 extends Component<Props, State> {
                           statusLabelColor: "#36A03E",
                           statusLabel2: "DUE SOON",
                           statusLabel2Color: "#FFA463",
-                          amount: "RM 50",
-                        },
+                          amount: "RM 50"
+                        }
                       ]}
-                      onTileClick={(item) => alert(JSON.stringify(item))}
+                      onTileClick={item => alert(JSON.stringify(item))}
                     />
                   </div>
-                ),
+                )
               },
               {
                 selected: verticalActiveTab === 3 ? true : false,
@@ -1350,10 +1367,10 @@ class Sprint1 extends Component<Props, State> {
 
                 icon: {
                   name: "Account-2",
-                  color: "#ff2626",
+                  color: "#ff2626"
                 },
                 accountTitle: "Loans/ Financing",
-                children: <p> its a second children </p>,
+                children: <p> its a second children </p>
               },
               {
                 selected: verticalActiveTab === 4 ? true : false,
@@ -1362,10 +1379,10 @@ class Sprint1 extends Component<Props, State> {
 
                 icon: {
                   name: "Account-2",
-                  color: "#ff2626",
+                  color: "#ff2626"
                 },
                 accountTitle: "Investment",
-                children: <p> its a second children </p>,
+                children: <p> its a second children </p>
               },
               {
                 selected: verticalActiveTab === 5 ? true : false,
@@ -1374,10 +1391,10 @@ class Sprint1 extends Component<Props, State> {
 
                 icon: {
                   name: "Account-2",
-                  color: "#ff2626",
+                  color: "#ff2626"
                 },
                 accountTitle: "Insurance",
-                children: <p> its a second children </p>,
+                children: <p> its a second children </p>
               },
               {
                 selected: verticalActiveTab === 6 ? true : false,
@@ -1386,11 +1403,11 @@ class Sprint1 extends Component<Props, State> {
 
                 icon: {
                   name: "Account-2",
-                  color: "#ff2626",
+                  color: "#ff2626"
                 },
                 accountTitle: "Debit Card",
-                children: <p> its a second children </p>,
-              },
+                children: <p> its a second children </p>
+              }
             ]}
           />
         </CenteredDiv>
@@ -1406,14 +1423,14 @@ class Sprint1 extends Component<Props, State> {
                 onClick: (index: any) => alert(index),
                 icon: {
                   name: "Card",
-                  color: "#ff2626",
+                  color: "#ff2626"
                 },
                 accountTitle: "Credit Cards",
                 bgImage: {
                   background:
                     "https://images.unsplash.com/photo-1502101872923-d48509bff386?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
                   title: "INVESTMENT",
-                  subTitle: "Freedom to invest in Unit Trust is now yours",
+                  subTitle: "Freedom to invest in Unit Trust is now yours"
                 },
                 children: (
                   <div
@@ -1422,7 +1439,7 @@ class Sprint1 extends Component<Props, State> {
                       width: "42.68rem",
                       display: "flex",
                       flexDirection: "column",
-                      alignItems: "center",
+                      alignItems: "center"
                     }}
                   >
                     <div>
@@ -1457,14 +1474,14 @@ class Sprint1 extends Component<Props, State> {
                       buttonColor={{ top: "#f1f1f1", bottom: "#BDBDBD" }}
                     />
                   </div>
-                ),
+                )
               },
               {
                 selected: true,
                 onClick: (index: any) => alert(index),
                 icon: {
                   name: "Account-2",
-                  color: "green",
+                  color: "green"
                 },
                 accountTitle: "Savings/Current Accounts",
                 children: (
@@ -1472,7 +1489,7 @@ class Sprint1 extends Component<Props, State> {
                     style={{
                       display: "flex",
                       paddingTop: 30,
-                      flexDirection: "column",
+                      flexDirection: "column"
                     }}
                   >
                     <R_13_BLACK>Your outstanding</R_13_BLACK>
@@ -1487,7 +1504,7 @@ class Sprint1 extends Component<Props, State> {
                           accountNumber: "123456890",
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
-                          amount: "RM 10,135",
+                          amount: "RM 10,135"
                         },
                         {
                           accountName: "Foreign Currency Account",
@@ -1496,21 +1513,21 @@ class Sprint1 extends Component<Props, State> {
                           statusLabelColor: "#FF2626",
                           countryFlagImage: images.common.countryFlag,
                           amount: "AUD 1,392",
-                          equivalentAmount: "RM 4,583",
+                          equivalentAmount: "RM 4,583"
                         },
                         {
                           accountName: "Conversion Account",
                           accountNumber: "20717524",
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
-                          amount: "- RM 2,000",
+                          amount: "- RM 2,000"
                         },
                         {
                           accountName: "Conversion Account",
                           accountNumber: "20717524",
                           statusLabel: "RESTRICTED ACCESS",
                           statusLabelColor: "#FF2626",
-                          amount: "RM 0.00",
+                          amount: "RM 0.00"
                         },
                         {
                           cardLogo: images.common.masterCard,
@@ -1518,7 +1535,7 @@ class Sprint1 extends Component<Props, State> {
                           accountNumber: "5000 0220 5023 5678",
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
-                          amount: "RM 5,000",
+                          amount: "RM 5,000"
                         },
                         {
                           icon: "system-info",
@@ -1528,7 +1545,7 @@ class Sprint1 extends Component<Props, State> {
                           accountNumber: "3062 2401 2019 5678",
                           statusLabel: "OVERDUE",
                           statusLabelColor: "#FF2626",
-                          amount: "RM 50",
+                          amount: "RM 50"
                         },
                         {
                           cardLogo: images.common.masterCard,
@@ -1541,14 +1558,14 @@ class Sprint1 extends Component<Props, State> {
                           statusLabelColor: "#36A03E",
                           statusLabel2: "DUE SOON",
                           statusLabel2Color: "#FFA463",
-                          amount: "RM 50",
-                        },
+                          amount: "RM 50"
+                        }
                       ]}
-                      onTileClick={(item) => alert(JSON.stringify(item))}
+                      onTileClick={item => alert(JSON.stringify(item))}
                     />
                   </div>
-                ),
-              },
+                )
+              }
             ]}
           />
         </CenteredDiv>
@@ -1563,7 +1580,7 @@ class Sprint1 extends Component<Props, State> {
                 onClick: (index: any) => alert(index),
                 icon: {
                   name: "Card",
-                  color: "#ff2626",
+                  color: "#ff2626"
                 },
                 accountTitle: "Credit Cards",
 
@@ -1576,13 +1593,13 @@ class Sprint1 extends Component<Props, State> {
                           label1: "Foreign Current Account",
                           label2: "79429284",
                           amount: "RM 10,648.50",
-                          selected: false,
+                          selected: false
                         },
                         {
                           label1: "Foreign Current Account",
                           label2: "79429284",
                           amount: "RM 10,648.50",
-                          selected: false,
+                          selected: false
                         },
                         {
                           label1: "Foreign Current Account",
@@ -1592,7 +1609,7 @@ class Sprint1 extends Component<Props, State> {
                           default: true,
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
-                          selected: true,
+                          selected: true
                         },
                         {
                           label1: "Foreign Current Account",
@@ -1600,8 +1617,8 @@ class Sprint1 extends Component<Props, State> {
                           amount: "RM 10,648.50",
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
-                          selected: false,
-                        },
+                          selected: false
+                        }
                       ]}
                       onAccountTileClick={(item, index) => {
                         alert(JSON.stringify(item));
@@ -1619,7 +1636,7 @@ class Sprint1 extends Component<Props, State> {
                           "Transactions",
                           "Settings",
                           "Security",
-                          "Contact Us",
+                          "Contact Us"
                         ]}
                         contents={[
                           <div style={{ padding: "2rem" }}>
@@ -1631,9 +1648,9 @@ class Sprint1 extends Component<Props, State> {
                               }
                               placeholder={"Search"}
                               value={this.state.inputValue}
-                              handleChange={(event) => {
+                              handleChange={event => {
                                 this.setState({
-                                  inputValue: event.target.value,
+                                  inputValue: event.target.value
                                 });
                               }}
                             />
@@ -1648,22 +1665,22 @@ class Sprint1 extends Component<Props, State> {
                             pieLabels={["Fixed Income 60%", "Equity 10%"]}
                             pieDataSets={{
                               data: [60, 10],
-                              backgroundColor: ["#7AB497", "#FFA463"],
+                              backgroundColor: ["#7AB497", "#FFA463"]
                             }}
                           />,
-                          "Contact Us",
+                          "Contact Us"
                         ]}
                       />
                     </div>
                   </div>
-                ),
+                )
               },
               {
                 selected: false,
                 onClick: (index: any) => alert(index),
                 icon: {
                   name: "Card",
-                  color: "#ff2626",
+                  color: "#ff2626"
                 },
                 accountTitle: "Credit Cards",
 
@@ -1675,13 +1692,13 @@ class Sprint1 extends Component<Props, State> {
                           label1: "Foreign Current Account",
                           label2: "79429284",
                           amount: "RM 10,648.50",
-                          selected: false,
+                          selected: false
                         },
                         {
                           label1: "Foreign Current Account",
                           label2: "79429284",
                           amount: "RM 10,648.50",
-                          selected: false,
+                          selected: false
                         },
                         {
                           label1: "Foreign Current Account",
@@ -1691,7 +1708,7 @@ class Sprint1 extends Component<Props, State> {
                           default: true,
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
-                          selected: true,
+                          selected: true
                         },
                         {
                           label1: "Foreign Current Account",
@@ -1699,8 +1716,8 @@ class Sprint1 extends Component<Props, State> {
                           amount: "RM 10,648.50",
                           statusLabel: "ACTIVE",
                           statusLabelColor: "#36A03E",
-                          selected: false,
-                        },
+                          selected: false
+                        }
                       ]}
                       onAccountTileClick={(item, index) => {
                         alert(JSON.stringify(item));
@@ -1714,7 +1731,7 @@ class Sprint1 extends Component<Props, State> {
                           "Transactions",
                           "Settings",
                           "Security",
-                          "Contact Us",
+                          "Contact Us"
                         ]}
                         titlesStyle={{ backgroundColor: "red" }}
                         contents={[
@@ -1725,9 +1742,9 @@ class Sprint1 extends Component<Props, State> {
                             }
                             placeholder={"Search"}
                             value={this.state.inputValue}
-                            handleChange={(event) => {
+                            handleChange={event => {
                               this.setState({
-                                inputValue: event.target.value,
+                                inputValue: event.target.value
                               });
                             }}
                           />,
@@ -1740,16 +1757,16 @@ class Sprint1 extends Component<Props, State> {
                             pieLabels={["Fixed Income 60%", "Equity 10%"]}
                             pieDataSets={{
                               data: [60, 10],
-                              backgroundColor: ["#7AB497", "#FFA463"],
+                              backgroundColor: ["#7AB497", "#FFA463"]
                             }}
                           />,
-                          "Contact Us",
+                          "Contact Us"
                         ]}
                       />
                     </div>
                   </div>
-                ),
-              },
+                )
+              }
             ]}
           />
         </CenteredDiv>
@@ -1821,9 +1838,9 @@ class Sprint1 extends Component<Props, State> {
             searchIconClickHandler={() => alert("Search Icon clicked")}
             placeholder={"Search"}
             value={this.state.inputValue}
-            handleChange={(event) => {
+            handleChange={event => {
               this.setState({
-                inputValue: event.target.value,
+                inputValue: event.target.value
               });
             }}
             autoFocus={false}
@@ -1834,21 +1851,21 @@ class Sprint1 extends Component<Props, State> {
               {
                 label: "Pending Verification",
                 value: "Pending Verification",
-                selected: false,
-              },
+                selected: false
+              }
             ]}
-            onFilterOptionClick={(obj) => alert(JSON.stringify(obj))}
+            onFilterOptionClick={obj => alert(JSON.stringify(obj))}
             selectedFilters={[
               {
                 label: "Successful",
                 value: "Successful",
-                closeIconClickHandler: () => alert("clear Successful"),
+                closeIconClickHandler: () => alert("clear Successful")
               },
               {
                 label: "Unsuccessful",
                 value: "Unsuccessful",
-                closeIconClickHandler: () => alert("clear Unsuccessful"),
-              },
+                closeIconClickHandler: () => alert("clear Unsuccessful")
+              }
             ]}
           />
         </CenteredDiv>
@@ -1865,7 +1882,7 @@ class Sprint1 extends Component<Props, State> {
                 colorRight: "#31434A",
                 active: false,
                 activeLabel: "",
-                selected: false,
+                selected: false
               },
               {
                 cardName: "AmBank Platinum Card Classic Two Lines Title",
@@ -1877,7 +1894,7 @@ class Sprint1 extends Component<Props, State> {
                 colorRight: "#3D1A1A",
                 active: true,
                 activeLabel: "ACTIVE",
-                selected: true,
+                selected: true
               },
               {
                 cardName: "AmBank World MasterCard",
@@ -1888,7 +1905,7 @@ class Sprint1 extends Component<Props, State> {
                 colorRight: "#131E5B",
                 active: false,
                 activeLabel: "ACTIVE",
-                selected: false,
+                selected: false
               },
               {
                 cardName: "AmBank Platinum Card",
@@ -1900,8 +1917,8 @@ class Sprint1 extends Component<Props, State> {
                 colorRight: "#000000",
                 active: false,
                 activeLabel: "",
-                selected: false,
-              },
+                selected: false
+              }
             ]}
             onCardTileClick={(item, index) => {
               alert(JSON.stringify(item));
@@ -1917,7 +1934,7 @@ class Sprint1 extends Component<Props, State> {
                 label1: "Foreign Current Account",
                 label2: "79429284",
                 amount: "RM 10,648.50",
-                selected: false,
+                selected: false
               },
               {
                 label1: "Foreign Current Account",
@@ -1925,7 +1942,7 @@ class Sprint1 extends Component<Props, State> {
                 amount: "RM 10,648.50",
                 selected: false,
                 countryFlagImage: images.common.countryFlag,
-                convertedAmount: "RM 50.000.00",
+                convertedAmount: "RM 50.000.00"
               },
               {
                 label1: "Foreign Current Account",
@@ -1937,7 +1954,7 @@ class Sprint1 extends Component<Props, State> {
                 statusLabelColor: "#36A03E",
                 selected: true,
                 convertedAmount: "RM 100.000.00",
-                countryFlagImage: images.common.countryFlag,
+                countryFlagImage: images.common.countryFlag
               },
               {
                 label1: "Foreign Current Account",
@@ -1945,8 +1962,8 @@ class Sprint1 extends Component<Props, State> {
                 amount: "RM 10,648.50",
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
-                selected: false,
-              },
+                selected: false
+              }
             ]}
             onAccountTileClick={(item, index) => {
               alert(JSON.stringify(item));
@@ -1991,7 +2008,7 @@ class Sprint1 extends Component<Props, State> {
           text="How may I help you?"
           image={{
             src:
-              "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
+              "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
           }}
         />
         <Tag text="How may I help you?" />
@@ -2008,11 +2025,11 @@ class Sprint1 extends Component<Props, State> {
             list={[
               {
                 leftText: "Total Balance",
-                rightText: "RM 100,000.00",
+                rightText: "RM 100,000.00"
               },
               {
                 leftText: "Available Balance",
-                rightText: "RM 99,980.00 <tooltip>",
+                rightText: "RM 99,980.00 <tooltip>"
               },
               {
                 leftText: "Account Type",
@@ -2021,16 +2038,16 @@ class Sprint1 extends Component<Props, State> {
                   <div>
                     <B_14_WHITE>Tips</B_14_WHITE>
                   </div>
-                ),
+                )
               },
               {
                 leftText: "Holder Name",
-                rightText: "Adam Constantine",
+                rightText: "Adam Constantine"
               },
               {
                 leftText: "Currency",
-                rightText: "MYR",
-              },
+                rightText: "MYR"
+              }
             ]}
           />
         </div>
@@ -2051,7 +2068,7 @@ class Sprint1 extends Component<Props, State> {
                 content: [
                   {
                     leftText: "Bonus Nov",
-                    rightText: "RM 40,000.00",
+                    rightText: "RM 40,000.00"
                   },
                   {
                     leftText: "Your Highest Qualifier so far",
@@ -2060,33 +2077,33 @@ class Sprint1 extends Component<Props, State> {
                       <div>
                         <B_14_WHITE>Tips</B_14_WHITE>
                       </div>
-                    ),
+                    )
                   },
                   {
                     leftText: "Lowest Balance of the Month",
-                    rightText: "RM 60,000.00",
+                    rightText: "RM 60,000.00"
                   },
                   {
                     leftText: "Total Balance",
-                    rightText: "RM 110,000.00",
+                    rightText: "RM 110,000.00"
                   },
                   {
                     leftText: "Available Balance",
-                    rightText: "RM 9,980.00",
+                    rightText: "RM 9,980.00"
                   },
                   {
                     leftText: "Account Type",
-                    rightText: "eFlex",
+                    rightText: "eFlex"
                   },
                   {
                     leftText: "Holder Name",
-                    rightText: "Adam Constantine",
+                    rightText: "Adam Constantine"
                   },
                   {
                     leftText: "Currency",
-                    rightText: "MYR",
-                  },
-                ],
+                    rightText: "MYR"
+                  }
+                ]
               },
               {
                 date: "Dec 2019",
@@ -2098,52 +2115,52 @@ class Sprint1 extends Component<Props, State> {
                       <div>
                         <B_14_WHITE>Tips</B_14_WHITE>
                       </div>
-                    ),
+                    )
                   },
                   {
                     leftText: "Your Highest Qualifier so far",
-                    rightText: "RM 10,000.00(Aug 2019)",
+                    rightText: "RM 10,000.00(Aug 2019)"
                   },
                   {
                     leftText: "Lowest Balance of the Month",
-                    rightText: "RM 10,000.00",
+                    rightText: "RM 10,000.00"
                   },
                   {
                     leftText: "Total Balance",
-                    rightText: "RM 10,000.00",
+                    rightText: "RM 10,000.00"
                   },
                   {
                     leftText: "Available Balance",
-                    rightText: "RM 9,980.00",
+                    rightText: "RM 9,980.00"
                   },
                   {
                     leftText: "Account Type",
-                    rightText: "eFlex",
+                    rightText: "eFlex"
                   },
                   {
                     leftText: "Holder Name",
-                    rightText: "Adam Constantine",
+                    rightText: "Adam Constantine"
                   },
                   {
                     leftText: "Currency",
-                    rightText: "MYR",
-                  },
-                ],
+                    rightText: "MYR"
+                  }
+                ]
               },
               {
                 date: "Jan 2020",
                 content: [
                   {
                     leftText: "Bonus Rate Jan",
-                    rightText: "RM 1,000.00",
+                    rightText: "RM 1,000.00"
                   },
                   {
                     leftText: "Your Highest Qualifier so far",
-                    rightText: "RM 1,000.00(Aug 2019)",
+                    rightText: "RM 1,000.00(Aug 2019)"
                   },
                   {
                     leftText: "Lowest Balance of the Month",
-                    rightText: "RM 40,000.00",
+                    rightText: "RM 40,000.00"
                   },
                   {
                     leftText: "Total Balance",
@@ -2152,48 +2169,48 @@ class Sprint1 extends Component<Props, State> {
                       <div>
                         <B_14_WHITE>Tips</B_14_WHITE>
                       </div>
-                    ),
+                    )
                   },
                   {
                     leftText: "noOfUnsuccessfulTransfer",
-                    rightText: "444,440",
+                    rightText: "444,440"
                   },
                   {
                     leftText: "Available Balance",
-                    rightText: "RM 500,0.00",
+                    rightText: "RM 500,0.00"
                   },
                   {
                     leftText: "scheduledEndDate",
-                    rightText: "End 12 Jun 2019",
-                  },
-                ],
+                    rightText: "End 12 Jun 2019"
+                  }
+                ]
               },
               {
                 date: "Feb 2020",
                 content: [
                   {
                     leftText: "Bonus Rate Feb",
-                    rightText: "RM 10,000.00",
+                    rightText: "RM 10,000.00"
                   },
                   {
                     leftText: "Your Highest Qualifier so far",
-                    rightText: "RM 10,000.00(Aug 2019)",
+                    rightText: "RM 10,000.00(Aug 2019)"
                   },
                   {
                     leftText: "Lowest Balance of the Month",
-                    rightText: "RM 10,000.00",
+                    rightText: "RM 10,000.00"
                   },
                   {
                     leftText: "Total Balance",
-                    rightText: "RM 10,000.00",
+                    rightText: "RM 10,000.00"
                   },
                   {
                     leftText: "Available Balance",
-                    rightText: "RM 9,980.00",
+                    rightText: "RM 9,980.00"
                   },
                   {
                     leftText: "Account Type",
-                    rightText: "eFlex",
+                    rightText: "eFlex"
                   },
                   {
                     leftText: "Holder Name",
@@ -2202,13 +2219,13 @@ class Sprint1 extends Component<Props, State> {
                       <div>
                         <B_14_WHITE>Tips</B_14_WHITE>
                       </div>
-                    ),
+                    )
                   },
                   {
                     leftText: "Currency",
-                    rightText: "MYR",
-                  },
-                ],
+                    rightText: "MYR"
+                  }
+                ]
               },
               {
                 date: "Mrc 2020",
@@ -2220,38 +2237,38 @@ class Sprint1 extends Component<Props, State> {
                       <div>
                         <B_14_WHITE>Tips</B_14_WHITE>
                       </div>
-                    ),
+                    )
                   },
                   {
                     leftText: "Your Highest Qualifier so far",
-                    rightText: "RM 60,000.00(Aug 2019)",
+                    rightText: "RM 60,000.00(Aug 2019)"
                   },
                   {
                     leftText: "Lowest Balance of the Month",
-                    rightText: "RM 20,000.00",
+                    rightText: "RM 20,000.00"
                   },
                   {
                     leftText: "Total Balance",
-                    rightText: "RM 70,000.00",
+                    rightText: "RM 70,000.00"
                   },
                   {
                     leftText: "Available Balance",
-                    rightText: "RM 9,980.00",
+                    rightText: "RM 9,980.00"
                   },
                   {
                     leftText: "Account Type",
-                    rightText: "eFlex",
+                    rightText: "eFlex"
                   },
                   {
                     leftText: "Holder Name",
-                    rightText: "Adam Constantine",
+                    rightText: "Adam Constantine"
                   },
                   {
                     leftText: "Currency",
-                    rightText: "MYR",
-                  },
-                ],
-              },
+                    rightText: "MYR"
+                  }
+                ]
+              }
             ]}
           />
         </div>
@@ -2273,24 +2290,24 @@ class Sprint1 extends Component<Props, State> {
           list={[
             {
               accountTitle: "Saving Account A",
-              accountNumber: "RM 2,000.00",
+              accountNumber: "RM 2,000.00"
             },
             {
               accountTitle: "Ambank AmMoneyLine AmMoneyLine",
-              accountNumber: "RM 2,000.00",
+              accountNumber: "RM 2,000.00"
             },
             {
               accountTitle: "Ambank BonusLink Visa",
-              accountNumber: "RM 2,000.00",
+              accountNumber: "RM 2,000.00"
             },
             {
               accountTitle: "Saving Account B",
-              accountNumber: "RM 2,000.00",
+              accountNumber: "RM 2,000.00"
             },
             {
               accountTitle: "Saving Account C",
-              accountNumber: "RM 2,000.00",
-            },
+              accountNumber: "RM 2,000.00"
+            }
           ]}
         />
 
@@ -2305,18 +2322,18 @@ class Sprint1 extends Component<Props, State> {
               avatar: {
                 name: "Myself Adam Constantine",
                 src:
-                  "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
-              },
+                  "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+              }
             },
             {
               avatar: {
                 name: "Christina Azalea Rossie",
                 initials: "CA",
-                initialsBg: "#f1f1f1",
-              },
+                initialsBg: "#f1f1f1"
+              }
             },
             {
-              children: <img src={images.common.sampleLogo} width={150} />,
+              children: <img src={images.common.sampleLogo} width={150} />
             },
             // {
             //   children: (
@@ -2329,21 +2346,21 @@ class Sprint1 extends Component<Props, State> {
             {
               avatar: {
                 name: "Kurniawan Suriawati",
-                initials: "KS",
-              },
+                initials: "KS"
+              }
             },
             {
               avatar: {
                 name: "Deevan Raja",
-                initials: "DR",
-              },
+                initials: "DR"
+              }
             },
             {
               avatar: {
                 name: "Lee Chong Wei",
-                initials: "LC",
-              },
-            },
+                initials: "LC"
+              }
+            }
           ]}
         />
         <SelectionTile
@@ -2356,28 +2373,28 @@ class Sprint1 extends Component<Props, State> {
             {
               accountTitle: "Saving Account A",
               accountNumber: "RM 2,000.00",
-              amount: "RM 10,301.50",
+              amount: "RM 10,301.50"
             },
             {
               accountTitle: "Ambank AmMoneyLine AmMoneyLine",
               accountNumber: "RM 2,000.00",
-              amount: " RM 11,555.00",
+              amount: " RM 11,555.00"
             },
             {
               accountTitle: "Ambank BonusLink Visa",
               accountNumber: "RM 2,000.00",
-              amount: " RM 55,555.00",
+              amount: " RM 55,555.00"
             },
             {
               accountTitle: "Saving Account B",
               accountNumber: "RM 2,000.00",
-              amount: " RM 33,555.50",
+              amount: " RM 33,555.50"
             },
             {
               accountTitle: "Saving Account C",
               accountNumber: "RM 2,000.00",
-              amount: " RM 245,555.50",
-            },
+              amount: " RM 245,555.50"
+            }
           ]}
         />
         <Title>DescriptionButton</Title>
@@ -2393,8 +2410,8 @@ class Sprint1 extends Component<Props, State> {
               {
                 title: "Pay Unpaid Statement Balance",
                 amount: "RM 2,000.00",
-                icon: { name: "system-alert", color: "#ff2626" },
-              },
+                icon: { name: "system-alert", color: "#ff2626" }
+              }
             ]}
           />
         </div>
@@ -2403,7 +2420,7 @@ class Sprint1 extends Component<Props, State> {
           testId={"testId"}
           onButtonClick={(item, index) => {
             this.setState({
-              IconButtonsNum: index,
+              IconButtonsNum: index
             });
             alert(`${item} with index of ${index} clicked`);
           }}
@@ -2413,33 +2430,33 @@ class Sprint1 extends Component<Props, State> {
             {
               text: "Account Account Account",
               icon: {
-                name: "Account",
-              },
+                name: "Account"
+              }
             },
             {
               text: "Card2",
               icon: {
-                name: "Card2",
-              },
+                name: "Card2"
+              }
             },
             {
               text: "Account",
               icon: {
-                name: "Account",
-              },
+                name: "Account"
+              }
             },
             {
               text: "Card2",
               icon: {
-                name: "Card2",
-              },
+                name: "Card2"
+              }
             },
             {
               text: "Account",
               icon: {
-                name: "Account",
-              },
-            },
+                name: "Account"
+              }
+            }
           ]}
         />
 
@@ -2451,9 +2468,9 @@ class Sprint1 extends Component<Props, State> {
           label="input label"
           icon={{ name: "Account-2" }}
           value={inputValue}
-          handleChange={(event) => {
+          handleChange={event => {
             this.setState({
-              inputValue: event.target.value,
+              inputValue: event.target.value
             });
           }}
         />
@@ -2461,9 +2478,9 @@ class Sprint1 extends Component<Props, State> {
           type="text"
           label="input label"
           value={inputValue}
-          handleChange={(event) => {
+          handleChange={event => {
             this.setState({
-              inputValue: event.target.value,
+              inputValue: event.target.value
             });
           }}
         />
@@ -2472,29 +2489,29 @@ class Sprint1 extends Component<Props, State> {
           label="input label"
           icon={{ name: "Account-2" }}
           value={inputValue}
-          handleChange={(event) => {
+          handleChange={event => {
             this.setState({
-              inputValue: event.target.value,
+              inputValue: event.target.value
             });
           }}
         />
         <InputField
           maxLength={10}
           minLength={2}
-          onBlur={(e) => {
+          onBlur={e => {
             console.log(e.target);
           }}
           value={inputValue}
-          handleChange={(event) => {
+          handleChange={event => {
             this.setState({
-              inputValue: event.target.value,
+              inputValue: event.target.value
             });
             // console.log(inputValue);
           }}
           isSecure
           clearClickHandler={() => {
             this.setState({
-              inputValue: "",
+              inputValue: ""
             });
           }}
           clearIcon={true}
@@ -2503,7 +2520,7 @@ class Sprint1 extends Component<Props, State> {
           icon={{ name: "Account-2" }}
           onSecureClick={() => {
             this.setState({
-              hidden: !hidden,
+              hidden: !hidden
             });
           }}
         />
@@ -2524,10 +2541,10 @@ class Sprint1 extends Component<Props, State> {
                 pieLabels={["Fixed Income 60%", "Equity 10%"]}
                 pieDataSets={{
                   data: [60, 10],
-                  backgroundColor: ["#7AB497", "#FFA463"],
+                  backgroundColor: ["#7AB497", "#FFA463"]
                 }}
               />,
-              "Contact Us",
+              "Contact Us"
             ]}
           />
         </CenteredDiv>
@@ -2536,7 +2553,7 @@ class Sprint1 extends Component<Props, State> {
           pieLabels={["Fixed Income 60%", "Equity 40%"]}
           pieDataSets={{
             data: [60, 40],
-            backgroundColor: ["#7AB497", "#FFA463"],
+            backgroundColor: ["#7AB497", "#FFA463"]
           }}
         />
 
@@ -2650,7 +2667,7 @@ class Sprint1 extends Component<Props, State> {
             "Privacy Notice",
             "Security Statement",
             "e-Banking Charter",
-            "Security Alert",
+            "Security Alert"
           ]}
           onTextClick={(text, _index, testId) => {
             alert(
@@ -2665,7 +2682,7 @@ class Sprint1 extends Component<Props, State> {
         <TextButton
           testId="testId"
           buttonText="Forgot username/password?"
-          onTextClick={(id) => {
+          onTextClick={id => {
             alert(`${id} clicked`);
           }}
         />
@@ -2678,7 +2695,7 @@ class Sprint1 extends Component<Props, State> {
             buttonStyles={{
               color: "#000000",
               fontWeight: 400,
-              fontSize: 15,
+              fontSize: 15
             }}
           />
         </CenteredDiv>
@@ -2691,7 +2708,7 @@ class Sprint1 extends Component<Props, State> {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
               width: 100,
-              height: 50,
+              height: 50
             }}
           />
         </CenteredDiv>
@@ -2700,7 +2717,7 @@ class Sprint1 extends Component<Props, State> {
           image={{
             src: images.common.sampleLogo,
             width: 200,
-            height: 50,
+            height: 50
           }}
         />
 
@@ -2711,7 +2728,7 @@ class Sprint1 extends Component<Props, State> {
           name="checkBox"
           onCheckClick={(event, testId) => {
             this.setState({
-              isCheckboxChecked: !isCheckboxChecked,
+              isCheckboxChecked: !isCheckboxChecked
             });
             alert(`${event.target.checked} ${event.target.name} ${testId}`);
           }}
@@ -2723,7 +2740,7 @@ class Sprint1 extends Component<Props, State> {
           name="checkBox"
           onCheckClick={(event, testId) => {
             this.setState({
-              isCheckboxChecked: !isCheckboxChecked,
+              isCheckboxChecked: !isCheckboxChecked
             });
             alert(`${event.target.checked} ${event.target.name} ${testId}`);
           }}
@@ -2737,80 +2754,80 @@ class Sprint1 extends Component<Props, State> {
           logos={[
             {
               src: images.common.bankingInfo_1,
-              id: "Id-0",
+              id: "Id-0"
             },
             {
               src: images.common.bankingInfo_2,
-              id: "Id-1",
+              id: "Id-1"
             },
             {
               src: images.common.bankingInfo_3,
-              id: "Id-2",
+              id: "Id-2"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1522827130596-971a53beeadc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-              id: "Id-3",
+              id: "Id-3"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1554463529-e27854014799?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
-              id: "Id-4",
+              id: "Id-4"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-5",
+              id: "Id-5"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-6",
+              id: "Id-6"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1522827130596-971a53beeadc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-              id: "Id-7",
+              id: "Id-7"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
-              id: "Id-8",
+              id: "Id-8"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-9",
+              id: "Id-9"
             },
             {
               src: images.common.sampleLogo,
-              id: "Id-10",
+              id: "Id-10"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1557053964-937650b63311?ixlib=rb-1.2.1&auto=format&fit=crop&w=2359&q=80",
-              id: "Id-11",
+              id: "Id-11"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-12",
+              id: "Id-12"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-13",
+              id: "Id-13"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-14",
+              id: "Id-14"
             },
             {
               src:
                 "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-15",
-            },
+              id: "Id-15"
+            }
           ]}
         />
 
@@ -2861,14 +2878,14 @@ class Sprint1 extends Component<Props, State> {
             iconColor={{ top: "#FD8585", bottom: "#FF2222" }}
             image={{
               src:
-                "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80",
+                "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80"
             }}
           />
           <StatusIcon
             iconColor={{ top: "#FD8585", bottom: "#FF2222" }}
             image={{
               src: images.common.amyIcon,
-              alt: "logo",
+              alt: "logo"
             }}
           />
         </RowDiv>
@@ -2888,7 +2905,7 @@ class Sprint1 extends Component<Props, State> {
           iconColor={{ top: "#FD8585", bottom: "#FF2222" }}
           image={{
             src: images.common.amyIcon,
-            alt: "logo",
+            alt: "logo"
           }}
           detailTitle="Looking Good"
           detail="Your lowest balance for this month is RM 10,000.00 Keep it up so you can earn the 3-month FD/TD-i prevailing interest/profit rate."
@@ -2910,73 +2927,73 @@ class Sprint1 extends Component<Props, State> {
                 color: "#ffffff",
                 backgroundColor: {
                   top: "#FFC5A2",
-                  bottom: "#EA5702",
+                  bottom: "#EA5702"
                 },
-                text: "Cash Advance",
+                text: "Cash Advance"
               },
               {
                 name: "AmSecure",
                 color: "#ffffff",
                 backgroundColor: {
                   top: "#FD8585",
-                  bottom: "#FF2222",
+                  bottom: "#FF2222"
                 },
-                text: "PlaceFD/TD",
+                text: "PlaceFD/TD"
               },
               {
                 name: "Car",
                 color: "#ffffff",
                 backgroundColor: {
                   top: "#798E96",
-                  bottom: "#31434A",
+                  bottom: "#31434A"
                 },
-                text: "Renew Car Insurance",
+                text: "Renew Car Insurance"
               },
               {
                 name: "Apply",
                 color: "#ffffff",
                 backgroundColor: {
                   top: "#DCEAEA",
-                  bottom: "#7FA2A2",
+                  bottom: "#7FA2A2"
                 },
-                text: "BrowseFunds",
+                text: "BrowseFunds"
               },
               {
                 name: "Health",
                 color: "#ffffff",
                 backgroundColor: {
                   top: "#FFC5A2",
-                  bottom: "#EA5702",
+                  bottom: "#EA5702"
                 },
-                text: "Cash Advance",
+                text: "Cash Advance"
               },
               {
                 name: "Bank",
                 color: "#ffffff",
                 backgroundColor: {
                   top: "#FD8585",
-                  bottom: "#FF2222",
+                  bottom: "#FF2222"
                 },
-                text: "Bank",
+                text: "Bank"
               },
               {
                 name: "Card",
                 color: "#ffffff",
                 backgroundColor: {
                   top: "#798E96",
-                  bottom: "#31434A",
+                  bottom: "#31434A"
                 },
-                text: "Card",
+                text: "Card"
               },
               {
                 name: "Apply",
                 color: "#ffffff",
                 backgroundColor: {
                   top: "#DCEAEA",
-                  bottom: "#7FA2A2",
+                  bottom: "#7FA2A2"
                 },
-                text: "Cash Advance",
-              },
+                text: "Cash Advance"
+              }
             ]}
           />
         </CenteredDiv>

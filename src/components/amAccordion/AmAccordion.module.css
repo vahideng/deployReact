@@ -39,7 +39,7 @@
   border-top: 1px solid #dedede;
   position: relative;
   overflow: hidden;
-  padding: 0px;
+  padding: 0;
 }
 
 .CardBodyContent:after {
@@ -52,6 +52,10 @@
   content: "";
   top: -10px;
   left: 0;
+}
+
+.hasPadding {
+  padding: 13px 24px 48px;
 }
 
 .primaryBtnStyle {

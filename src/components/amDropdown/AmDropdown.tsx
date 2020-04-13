@@ -12,12 +12,18 @@ interface Props {
   testId?: string;
   readOnly?: boolean;
   value: any;
+  type: string;
   label?: string;
   icon?: { name?: string; color?: string; size?: number };
   autoFocus?: boolean;
   isSecure?: boolean;
   onSecureClick?: () => void;
   handleChange: (
+    event: ChangeEvent<HTMLInputElement>,
+    item:{ value?: string; label?: string },
+    testId?: string | undefined
+  ) => void;
+  inputHandleChange?: (
     event: ChangeEvent<HTMLInputElement>,
     testId?: string | undefined
   ) => void;
@@ -41,15 +47,15 @@ interface Props {
 
 class AmDropdown extends Component<Props, {}> {
   state = {
-    showDropdown: false,
+    showDropdown: false
   };
 
   clickHandler = () => {
     this.setState({ showDropdown: !this.state.showDropdown });
   };
 
-  OnClickItemHandler = (item: any) => {
-    this.props.handleChange(item, this.props.testId);
+  OnClickItemHandler = (event: any, item: any) => {
+    this.props.handleChange(event, item, this.props.testId);
     // if (this.props.closeAfterSelect) {
     //   this.setState({ showDropdown: !this.state.showDropdown });
     // }
@@ -61,7 +67,8 @@ class AmDropdown extends Component<Props, {}> {
       readOnly,
       testId,
       value,
-      handleChange,
+      type,
+      inputHandleChange,
       label,
       icon,
       autoFocus,
@@ -78,10 +85,12 @@ class AmDropdown extends Component<Props, {}> {
       inputClickHandler,
       max,
       placeholder,
-      clickOnArrow,
+      clickOnArrow
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
-      handleChange(event, testId);
+      if(inputHandleChange){
+        inputHandleChange(event, testId);
+      } 
     }
     function focusHandler(event: FormEvent) {
       !!onFocus && onFocus(event);
@@ -127,14 +136,14 @@ class AmDropdown extends Component<Props, {}> {
                   ? {
                       width: tacInput ? "34.81rem" : "31.6rem",
                       paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                      boxShadow: "none",
+                      boxShadow: "none"
                     }
                   : {
                       paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                      width: tacInput ? "34.81rem" : "31.6rem",
+                      width: tacInput ? "34.81rem" : "31.6rem"
                     }
               }
-              type={"text"}
+              type={type}
               value={value}
               autoFocus={!!autoFocus ? autoFocus : false}
               onChange={changeHandler}
@@ -168,10 +177,10 @@ class AmDropdown extends Component<Props, {}> {
               style={!!max ? { maxHeight: `${max}` } : { maxHeight: "500px" }}
             >
               {!!dropdownData &&
-                dropdownData.map((item) => {
+                dropdownData.map(item => {
                   return (
-                    <div onClick={() => this.OnClickItemHandler(item)}>
-                      <R_15_BLACK>{item.value}</R_15_BLACK>{" "}
+                    <div onClick={(e) => this.OnClickItemHandler(e,item)}>
+                      <R_15_BLACK>{item.label}</R_15_BLACK>{" "}
                     </div>
                   );
                 })}

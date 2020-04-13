@@ -8,14 +8,21 @@ interface Props {
   curvedTab: {
     leftTab: string;
     rightTab: string;
+    onLeftClick?: () => void;
+    onRightClick?: () => void;
     leftContent?: ReactNode;
     rightContent?: ReactNode;
+    rightSelected?: boolean;
   };
 }
 
 const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
-  const [LeftSelected, setLeftSelected] = useState(true);
-  const [RightSelected, setRightSelected] = useState(false);
+  const [LeftSelected, setLeftSelected] = useState(
+    curvedTab.rightSelected ? false : true
+  );
+  const [RightSelected, setRightSelected] = useState(
+    curvedTab.rightSelected ? curvedTab.rightSelected : false
+  );
   return (
     <div id={testId}>
       <div className={classes.FormContainerCurvedMainCurve}>
@@ -30,6 +37,7 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
               onClick={() => {
                 setLeftSelected(true);
                 setRightSelected(false);
+                curvedTab.onLeftClick();
               }}
               className={classes.FormContainerCurvedFirstCurve}
               style={{
@@ -54,6 +62,7 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
                 onClick={() => {
                   setLeftSelected(false);
                   setRightSelected(true);
+                  curvedTab.onRightClick();
                 }}
                 className={classes.FormContainerCurvedSecondCurve}
                 style={{

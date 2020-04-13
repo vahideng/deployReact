@@ -40,6 +40,7 @@ interface Props {
   tipChildren?: ReactNode;
   bottomLabel?: string;
   bottomLabelStyle?: CSSProperties;
+  placeholder?: string;
 }
 
 class InputField extends Component<Props, {}> {
@@ -65,7 +66,8 @@ class InputField extends Component<Props, {}> {
       tacInput,
       tipChildren,
       bottomLabel,
-      bottomLabelStyle
+      bottomLabelStyle,
+      placeholder
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);
@@ -100,6 +102,7 @@ class InputField extends Component<Props, {}> {
           )}
 
           <input
+            placeholder={placeholder}
             autoComplete={"off"}
             minLength={minLength}
             maxLength={maxLength}

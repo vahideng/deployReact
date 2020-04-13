@@ -47,9 +47,11 @@ import PortfolioListContent from 'src/components/portfolioListContent/PortfolioL
 import TooltipDropdown from 'src/components/tooltipDropdown/TooltipDropdown';
 import TransactionLimitList from 'src/components/lists/TransactionLimitList/TransactionLimitList';
 
-import AmAccordion from 'src/components/amAccordion/AmAccordion';
-import AmListItem from 'src/components/amListItem/AmListItem';
-import DashboardCart from 'src/components/dashboardCart/DashboardCart';
+import AmAccordion from "src/components/amAccordion/AmAccordion";
+import AmListItem from "src/components/amListItem/AmListItem";
+import DashboardCart from "src/components/dashboardCart/DashboardCart";
+import UnitTrustList from "src/components/lists/UnitTrustList/UnitTrustList";
+
 const {
   B_13_ORANGE_463,
   R_12_WHITE,
@@ -245,7 +247,7 @@ const Sprint3: React.FC<Props> = () => {
         icon={{
           onIconClick: () => {
             setHomeRedirect(true);
-          },
+          }
         }}
         profile={{
           greeting: 'Good Morning',
@@ -269,32 +271,211 @@ const Sprint3: React.FC<Props> = () => {
           },
         ]}
       />
-      <Title>PortfolioList</Title>
+      <Title>UnitTrustList</Title>
       <CenteredDiv>
+        <UnitTrustList
+          header={[
+            {
+              title: "Fund Name",
+              icon: "sort",
+              onArrowClick: () => alert(" Handle sort and icon change"),
+
+              arrowDownBold: true,
+              arrowUpBold: false
+            },
+            {
+              title: "Value",
+              icon: "sort",
+              onArrowClick: () => alert(" Handle sort and icon change"),
+              arrowDownBold: false,
+              arrowUpBold: true
+            },
+            {
+              title: "Profit/Loss",
+              icon: "sort",
+              onArrowClick: () => alert(" Handle sort and icon change"),
+              arrowDownBold: true,
+              arrowUpBold: false
+            }
+          ]}
+          testId={"testId"}
+          data={[
+            {
+              borderColor: "#FFA463",
+              expandableLeft: true,
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              middleLabel: "RM 406,318.98",
+              rightLabel: {
+                type: "loss",
+                percentage: "0.03%",
+                amount: "RM 23,312,189.56"
+              },
+              rightButtons: [
+                {
+                  icon: "Edit",
+                  text: "Edit",
+                  onClick: () => alert("click")
+                },
+                {
+                  icon: "delete",
+                  text: "Delete",
+                  onClick: () => alert("click")
+                }
+              ],
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#FFA463"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73"
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894"
+                    },
+                    {
+                      leftLabel: "Number of Units",
+                      rightLabel: "1,828.40"
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity",
+                      rightLabelStyle: {
+                        color: "#FFA463"
+                      }
+                    }
+                  ]}
+                />
+              )
+            },
+            {
+              borderColor: "#8677D9",
+              expandableLeft: true,
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              rightLabel: {
+                type: "profit",
+                percentage: "0.03%",
+                amount: "RM 12,189.56"
+              },
+              rightButtons: [
+                {
+                  icon: "Edit",
+                  text: "Edit",
+                  onClick: () => alert("click")
+                },
+                {
+                  icon: "delete",
+                  text: "Delete",
+                  onClick: () => alert("click")
+                }
+              ],
+              middleLabel: "RM 406,318.98",
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#8677D9"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73"
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894"
+                    },
+                    {
+                      leftLabel: "Number of Unts",
+                      rightLabel: "1,828.40"
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity"
+                    }
+                  ]}
+                />
+              )
+            },
+            {
+              borderColor: "#7AB497",
+              expandableLeft: true,
+              leftLabel: "Advantage Global Equity Volatility Focused",
+              rightLabel: {
+                type: "loss",
+                percentage: "0.03%",
+                amount: "RM 12,189.56"
+              },
+              rightButtons: [
+                {
+                  icon: "Edit",
+                  text: "Edit",
+                  onClick: () => alert("click")
+                },
+                {
+                  icon: "delete",
+                  text: "Delete",
+                  onClick: () => alert("click")
+                }
+              ],
+              middleLabel: "RM 406,318.98",
+              leftContent: (
+                <PortfolioListContent
+                  borderColor="#7AB497"
+                  buttonText="View Performance"
+                  onClickButton={() => alert("button clicked")}
+                  data={[
+                    {
+                      leftLabel: "Invested",
+                      rightLabel: "RM 418,944.73"
+                    },
+                    {
+                      leftLabel: "NAV",
+                      rightLabel: "4.7894"
+                    },
+                    {
+                      leftLabel: "Number of Unts",
+                      rightLabel: "1,828.40"
+                    },
+                    {
+                      leftLabel: "Asset Class",
+                      rightLabel: "Equity"
+                    }
+                  ]}
+                />
+              )
+            }
+          ]}
+        />
+      </CenteredDiv>
+      <Title>PortfolioList</Title>
+      <>
         <PortfolioList
           header={[
             {
               title: "Fund Name",
               icon: "sort",
-              onArrowClick : () => alert(" Handle sort and icon change"),
-              
-              arrowDownBold :true,
-              arrowUpBold : false
+              onArrowClick: () => alert(" Handle sort and icon change"),
+
+              arrowDownBold: true,
+              arrowUpBold: false
             },
             {
               title: "Value",
               icon: "sort",
-              onArrowClick : () => alert(" Handle sort and icon change"),
-              arrowDownBold :false,
-              arrowUpBold : true
+              onArrowClick: () => alert(" Handle sort and icon change"),
+              arrowDownBold: false,
+              arrowUpBold: true
             },
             {
               title: "Profit/Loss",
               icon: "sort",
-              onArrowClick : () => alert(" Handle sort and icon change"),
-              arrowDownBold :true,
-              arrowUpBold : false
-            },
+              onArrowClick: () => alert(" Handle sort and icon change"),
+              arrowDownBold: true,
+              arrowUpBold: false
+            }
           ]}
           testId={'testId'}
           data={[
@@ -335,7 +516,7 @@ const Sprint3: React.FC<Props> = () => {
                     },
                   ]}
                 />
-              ),
+              )
             },
             {
               borderColor: '#8677D9',
@@ -371,7 +552,7 @@ const Sprint3: React.FC<Props> = () => {
                     },
                   ]}
                 />
-              ),
+              )
             },
             {
               borderColor: '#7AB497',
@@ -407,11 +588,11 @@ const Sprint3: React.FC<Props> = () => {
                     },
                   ]}
                 />
-              ),
-            },
+              )
+            }
           ]}
         />
-      </CenteredDiv>
+      </>
       <Title>DashboardCart</Title>
       <CenteredDiv>
         <DashboardCart
@@ -456,7 +637,7 @@ const Sprint3: React.FC<Props> = () => {
               hidden: hiddenList,
               onHiddenButtonClick: () => {
                 setHiddenList(false);
-              },
+              }
             },
             {
               label: 'Change Password',
@@ -466,7 +647,7 @@ const Sprint3: React.FC<Props> = () => {
               hidden: hiddenList,
               onHiddenButtonClick: () => {
                 setHiddenList(false);
-              },
+              }
             },
             {
               label: 'Investments',
@@ -474,11 +655,13 @@ const Sprint3: React.FC<Props> = () => {
               onClick: (item, index) =>
                 alert(`${JSON.stringify(item)},Index: ${index}`),
               cardImg: images.common.Duitnow1,
+              showShadow: true,
+              // shadowStyle: {boxShadow: '2px 2px 7px rgba(0, 0, 0, 0.8)'},
               cardImgStyle: { height: 30, width: 30 },
               hidden: hiddenList,
               onHiddenButtonClick: () => {
                 setHiddenList(false);
-              },
+              }
             },
             {
               label: 'Online Shopping',
@@ -490,7 +673,7 @@ const Sprint3: React.FC<Props> = () => {
               hidden: hiddenList,
               onHiddenButtonClick: () => {
                 setHiddenList(false);
-              },
+              }
             },
             {
               label: 'FPX Specific Merchant',
@@ -502,8 +685,8 @@ const Sprint3: React.FC<Props> = () => {
               hidden: hiddenList,
               onHiddenButtonClick: () => {
                 setHiddenList(false);
-              },
-            },
+              }
+            }
           ]}
           testId="testId"
         />
@@ -524,7 +707,7 @@ const Sprint3: React.FC<Props> = () => {
                   value={true}
                   onTogglePress={() => {}}
                 />
-              ),
+              )
             },
             { label: 'Change Card PIN' },
             {
@@ -646,22 +829,23 @@ const Sprint3: React.FC<Props> = () => {
                 <SecureImageSelect
                   testId="secure_image_select_testid"
                   label="Select your new security image"
+                  selectedImages={[3]}
                   images={[
                     {
-                      uri: images.common.SampleSecureImage,
+                      uri: images.common.SampleSecureImage
                     },
                     {
-                      uri: images.common.SampleSecureImage,
+                      uri: images.common.SampleSecureImage
                     },
                     {
-                      uri: images.common.SampleSecureImage,
+                      uri: images.common.SampleSecureImage
                     },
                     {
-                      uri: images.common.SampleSecureImage,
+                      uri: images.common.SampleSecureImage
                     },
                     {
-                      uri: images.common.SampleSecureImage,
-                    },
+                      uri: images.common.SampleSecureImage
+                    }
                   ]}
                 />
               </CenteredDiv>
@@ -677,6 +861,7 @@ const Sprint3: React.FC<Props> = () => {
       >
         <AmAccordion
           testId={'testId'}
+          hasPadding={true}
           data={[
             {
               id: 'id-1',
@@ -702,22 +887,7 @@ const Sprint3: React.FC<Props> = () => {
                     status={<R_13_GREY969>{'inactive'}</R_13_GREY969>}
                   />
                 </div>
-              ),
-              buttonContent: {
-                clickHandler: () => {
-                  alert('Set device handler');
-                },
-                title: 'Setup now',
-                titleColor: '#000000',
-                buttonColor: {
-                  top: '#F6F6F3',
-                  bottom: '#EAE9E3',
-                },
-                icon: {
-                  name: 'Settings',
-                  color: '#000',
-                },
-              },
+              )
             },
             {
               id: 'id-2',
@@ -744,17 +914,6 @@ const Sprint3: React.FC<Props> = () => {
                   />
                 </div>
               ),
-              buttonContent: {
-                clickHandler: () => {
-                  alert('Remove device handler');
-                },
-                title: 'Remove Device',
-                titleColor: '#ffffff',
-                icon: {
-                  name: 'delete',
-                  color: '#ffffff',
-                },
-              },
             },
           ]}
         ></AmAccordion>
@@ -823,7 +982,7 @@ const Sprint3: React.FC<Props> = () => {
         icon={{
           onIconClick: () => {
             setSprint1(true);
-          },
+          }
         }}
         rightButtons={[
           <TextButton
@@ -834,7 +993,7 @@ const Sprint3: React.FC<Props> = () => {
             buttonStyles={{
               color: '#000000',
               fontWeight: 400,
-              fontSize: 15,
+              fontSize: 15
             }}
           />,
           <TextButton
@@ -845,7 +1004,7 @@ const Sprint3: React.FC<Props> = () => {
             buttonStyles={{
               color: '#000000',
               fontWeight: 400,
-              fontSize: 15,
+              fontSize: 15
             }}
           />,
           <TextButton
@@ -856,7 +1015,7 @@ const Sprint3: React.FC<Props> = () => {
             buttonStyles={{
               color: '#000000',
               fontWeight: 400,
-              fontSize: 15,
+              fontSize: 15
             }}
           />,
           <TextDropdown
@@ -874,7 +1033,7 @@ const Sprint3: React.FC<Props> = () => {
               { label: 'Persian', value: 'persian' },
               { label: '中文', value: '中文' },
             ]}
-          />,
+          />
         ]}
       />
       <Title>Barcode</Title>
@@ -892,6 +1051,7 @@ const Sprint3: React.FC<Props> = () => {
       >
         <AmDropdown
           max="200px"
+          type="text"
           readOnly={true}
           disabled={false}
           clickOnArrow={() => setDropdown(!showDropdown)}
@@ -923,7 +1083,11 @@ const Sprint3: React.FC<Props> = () => {
           label="dropdown label"
           icon={{ name: 'Account-2' }}
           value={dropdownValue}
-          handleChange={(item) => handlerDropdown(item)}
+          handleChange={(event, item, testId) => {
+            console.log(event, testId)
+            handlerDropdown(item)
+          }}
+          inputHandleChange={(item)=>alert(item.target.value)}
           placeholder="place holder"
         />
       </div>
@@ -997,7 +1161,7 @@ const Sprint3: React.FC<Props> = () => {
           value={''}
           handleChange={(event) => {
             alert({
-              inputValue: event.target.value,
+              inputValue: event.target.value
             });
           }}
         />
@@ -1047,7 +1211,7 @@ const Sprint3: React.FC<Props> = () => {
                     as reference only.
                   </R_12_WHITE>
                 </div>
-              ),
+              )
             }}
             buttonLabel={'Add Mobile Number'}
             buttonColor={{ top: '#F6F6F3', bottom: '#EAE9E3' }}
@@ -1072,7 +1236,7 @@ const Sprint3: React.FC<Props> = () => {
                     as reference only.
                   </R_12_WHITE>
                 </div>
-              ),
+              )
             }}
             buttonLabel={'Add Mobile Number'}
             buttonColor={{ top: '#F6F6F3', bottom: '#EAE9E3' }}
@@ -1102,7 +1266,7 @@ const Sprint3: React.FC<Props> = () => {
           searchIconClickHandler={() => alert('Search Icon clicked')}
           placeholder={'Search'}
           value={inputValue}
-          handleChange={(event) => {
+          handleChange={event => {
             setInputValue(event.target.value);
           }}
           autoFocus={false}
@@ -1180,7 +1344,7 @@ const Sprint3: React.FC<Props> = () => {
               ],
             },
           ]}
-          onFilterOptionClick={(obj) => alert(JSON.stringify(obj))}
+          onFilterOptionClick={obj => alert(JSON.stringify(obj))}
           selectedFilters={[
             {
               label: 'Successful',
@@ -1232,7 +1396,8 @@ const Sprint3: React.FC<Props> = () => {
       <Title>Selection Tiles</Title>
       <div style={{ paddingLeft: '2rem' }}>
         <SelectionTile
-          testId={'testId'}
+          rowStyle={{ flexWrap: "nowrap" }}
+          testId={"testId"}
           onTileClick={(item, index) => {
             setSTileNum(index);
             alert(`${item.accountTitle} with indexOf ${index} clicked`);
@@ -1240,21 +1405,32 @@ const Sprint3: React.FC<Props> = () => {
           selected={sTileNum}
           list={[
             {
-              accountTitle: 'Saving Account A',
-              accountNumber: 'RM 2,000.00',
+              children: (
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
+                  quasi libero placeat vel! Dicta modi accusamus, quo magnam
+                  pariatur doloremque.
+                </p>
+              )
             },
             {
-              accountTitle: 'Ambank AmMoneyLine AmMoneyLine',
-              accountNumber: 'RM 2,000.00',
+              children: (
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
+                  quasi libero placeat vel! Dicta modi accusamus, magnam
+                  pariatur doloremque magnam pariatur doloremque quo magnam
+                  pariatur doloremque.
+                </p>
+              )
             },
             {
-              accountTitle: 'Ambank BonusLink Visa',
-              accountNumber: 'RM 2,000.00',
-            },
-            {
-              accountTitle: 'Saving Account B',
-              accountNumber: 'RM 2,000.00',
-            },
+              children: (
+                <p>
+                  Lorem ipsuelit. Quos quasi libero placeat vel! Dic doloremque
+                  magnam pariatur doloremque quo magnam pariatur doloremque.
+                </p>
+              )
+            }
           ]}
         />
 
@@ -1280,7 +1456,7 @@ const Sprint3: React.FC<Props> = () => {
               },
             },
             {
-              children: <img src={images.common.sampleLogo} width={150} />,
+              children: <img src={images.common.sampleLogo} width={150} />
             },
 
             {
@@ -1493,19 +1669,32 @@ const Sprint3: React.FC<Props> = () => {
           alignItems: 'center',
         }}
       >
+        <br />
         <TextWithDetails
           title="Insurance"
           titleStyle={{ fontSize: '1.5rem' }}
           content={['Bill Account No.: 51T0409A0690279989']}
           contentStyle={{ fontSize: '0.9375rem' }}
         />
-
+        <br />
+        thDetails title="Indah" content=
+        {["Bill Account No.: 51T0409A0690279989", "Ref-1: 65432145432"]}
+        />
+        <br />
         <TextWithDetails
-          title="Indah"
-          content={[
-            'Bill Account No.: 51T0409A0690279989',
-            'Ref-1: 65432145432',
-          ]}
+          title="AmBank Bonuslink Visa"
+          content={["5464 4364 7863 0797"]}
+          image={{ src: LocalImages.common.card }}
+        />
+        <br />
+        <TextWithDetails
+          title="AmBank Bonuslink Visa"
+          content={["5464 4364 7863 0797"]}
+          image={{
+            src:
+              "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
+            imageStyle: { width: "2.5rem", height: "2.5rem" }
+          }}
         />
       </div>
       <Title>ArrayCheckbox</Title>
@@ -1537,7 +1726,7 @@ const Sprint3: React.FC<Props> = () => {
                   as reference only.
                 </R_12_WHITE>
               </div>
-            ),
+            )
           }}
         />
         <br />
@@ -1552,7 +1741,7 @@ const Sprint3: React.FC<Props> = () => {
                 <B_13_ORANGE_463>Try one</B_13_ORANGE_463>
                 <R_12_WHITE>test</R_12_WHITE>
               </div>
-            ),
+            )
           }}
         />
       </div>
@@ -1769,7 +1958,7 @@ const Sprint3: React.FC<Props> = () => {
       <Title>Message (using CenterMessage component)</Title>
       <div
         style={{
-          height: 500,
+          height: 500
         }}
       >
         <CenterMessage // show props , positioning props
@@ -1920,7 +2109,7 @@ const Sprint3: React.FC<Props> = () => {
                       label=""
                       icon={{ name: 'Lock', color: 'red' }}
                       value={profileInputValue}
-                      handleChange={(e) => {
+                      handleChange={e => {
                         setProfileInputValue(e.target.value);
                         setTacClear(true);
                         setButtonColor({ top: '#FF0D0D', bottom: '#FD8585' });
@@ -1954,7 +2143,7 @@ const Sprint3: React.FC<Props> = () => {
                       label=""
                       icon={{ name: 'Lock', color: 'red' }}
                       value={profileInputValue}
-                      handleChange={(e) => {
+                      handleChange={e => {
                         setProfileInputValue(e.target.value);
                         setTacClear(true);
                         setButtonColor({ top: '#FF0D0D', bottom: '#FD8585' });
@@ -1969,8 +2158,8 @@ const Sprint3: React.FC<Props> = () => {
                       />
                     </div>
                   </div>
-                ),
-              },
+                )
+              }
             },
             {
               profile_data: {
@@ -2003,7 +2192,7 @@ const Sprint3: React.FC<Props> = () => {
                       label=""
                       icon={{ name: 'Lock', color: 'red' }}
                       value={profileInputValue}
-                      handleChange={(e) => {
+                      handleChange={e => {
                         setProfileInputValue(e.target.value);
                         setTacClear(true);
                         setButtonColor({ top: '#FF0D0D', bottom: '#FD8585' });
@@ -2020,8 +2209,8 @@ const Sprint3: React.FC<Props> = () => {
                       />
                     </div>
                   </div>
-                ),
-              },
+                )
+              }
             },
             {
               profile_data: {
@@ -2077,7 +2266,7 @@ const Sprint3: React.FC<Props> = () => {
                       label=""
                       icon={{ name: 'Lock', color: 'red' }}
                       value={profileInputValue}
-                      handleChange={(e) => {
+                      handleChange={e => {
                         setProfileInputValue(e.target.value);
                         setTacClear(true);
                         setButtonColor({ top: '#FF0D0D', bottom: '#FD8585' });
@@ -2092,9 +2281,9 @@ const Sprint3: React.FC<Props> = () => {
                       />
                     </div>
                   </div>
-                ),
-              },
-            },
+                )
+              }
+            }
           ]}
           onEditClickHandler={() => {
             alert('on edit click');

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../assets/typography";
 import classes from "./TooltipDropdown.module.css";
-import OutsideClickHandler from "react-outside-click-handler";
+// import OutsideClickHandler from "react-outside-click-handler";
 
 const { B_13_GREY444 } = Paragraphs;
 interface Props {
@@ -21,11 +21,7 @@ const TooltipDropdown = ({ testId, icon, iconButtons }: Props) => {
     setBoxIsOpen(!boxIsOpen);
   };
   return (
-    <OutsideClickHandler
-      onOutsideClick={() => {
-        setBoxIsOpen(false);
-      }}
-    >
+   <div>
       <div className={classes.MainDiv} id={testId}>
         <div className={classes.Icon} onClick={iconClickHandler}>
           {!icon ? (
@@ -57,7 +53,7 @@ const TooltipDropdown = ({ testId, icon, iconButtons }: Props) => {
           </div>
         )}
       </div>
-    </OutsideClickHandler>
+      </div>
   );
 };
 

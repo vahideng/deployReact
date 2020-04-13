@@ -5,21 +5,21 @@ import styled from "styled-components";
 import Navbar from "src/components/headers/navbar/Navbar";
 import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTransparent";
 import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
-import AmDropdown from "src/components/amDropdown/AmDropdown";
 import TextButton from "src/components/buttons/textButton/TextButton";
-
+import AmResetPin from "src/components/amResetPin/amResetPin";
 import ConfirmNotes from "src/components/confirmNotes/ConfirmNotes";
 import Icon from "src/components/assets/icons/icon";
 import InputField from "src/components/inputs/inputFields/InputFields";
-
 import ViewRate from "src/components/viewRate/ViewRate";
-import AmInputFieldAccordian from "src/components/amInputFieldAccordian/amInputFieldAccordian";
+import ViewRateContainer from "src/components/viewRateContainer/ViewRateContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
+import Modal from "src/components/modals/Modal";
+import AmInputFieldAccordian from "src/components/amInputFieldAccordian/amInputFieldAccordian";
 import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 import DynamicText from "src/components/assets/typography/DynamicText/DynamicText";
 import CenterText from "src/components/assets/typography/CenterText/CenterText";
-
 const { B_13_ORANGE_463, R_13_GREY444 } = Paragraphs;
+
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
   padding: 5px 0;
@@ -44,13 +44,13 @@ const Sprint3: React.FC<Props> = () => {
   const [homeRedirect, setHomeRedirect] = useState(false);
   const [linkListClear, setLinkListClear] = useState(false);
   const [linkListInputValue, setLinkListInputValue] = useState("");
+  const [stickyFooter, setStickyFooter] = useState(false);
   // const [linkListBtnColor, setLinkListBtnColor] = useState({
   //   top: '#BDBDBD',
   //   bottom: '#BDBDBD',
   // });
-  const [viewRateType, setViewRateType] = useState("test_value3");
-  const [showDropdown, setShowDropDown] = useState(false);
-  const [stickyFooter, setStickyFooter] = useState(false);
+  const [rateType, setRateType] = useState("test_value3");
+  const [isViewRateModalOpen, setIsViewRateModalOpen] = useState(false);
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -160,39 +160,113 @@ const Sprint3: React.FC<Props> = () => {
         />
       </div>
       <Title>View Rate Container</Title>
-      <CenteredDiv
-        style={{
-          margin: "0 auto",
-          width: "36.25rem"
+      <PrimaryButton
+        onButtonClick={() => {
+          setIsViewRateModalOpen(true);
         }}
-      >
-        <AmDropdown
-          dropdownData={[
-            { value: "test_value", label: "Conventional Fixed Deposit 1" },
-            { value: "test_value2", label: "Conventional Fixed Deposit 2" },
-            { value: "test_value3", label: "Conventional Fixed Deposit 3" }
-          ]}
-          value={viewRateType}
-          icon={{ name: "Clock", color: "#ff2626", size: 30 }}
-          handleChange={(item: any) => {
-            const { value } = item;
-            setViewRateType(value);
-            setShowDropDown(false);
-          }}
-          placeholder="Select test"
-          clickOnArrow={() => {
-            setShowDropDown(!showDropdown);
-          }}
-          inputClickHandler={() => {
-            setShowDropDown(!showDropdown);
-          }}
-          onBlur={() => {
-            setShowDropDown(false);
-          }}
-          showDropdown={showDropdown}
-          arrowIcon
-        />
-      </CenteredDiv>
+        title="View Rate"
+      />
+      <Modal
+        testId="sprint_4_modal_test"
+        modalChildren={
+          <div style={{ backgroundColor: "#fff", position: "relative" }}>
+            <ViewRateContainer
+              testId="sprint_4_view_rate_container_test"
+              title="View Rate Container"
+              rateTypeValue={rateType}
+              rateTypeList={[
+                {
+                  value: "test_value",
+                  label: "Conventional Fixed Deposit 1"
+                },
+                {
+                  value: "test_value2",
+                  label: "Conventional Fixed Deposit 2"
+                },
+                {
+                  value: "test_value3",
+                  label: "Conventional Fixed Deposit 3"
+                }
+              ]}
+              onRateTypeChange={(value: any) => {
+                setRateType(value);
+              }}
+              date="11 Mar 2020"
+              ads={[
+                [
+                  {
+                    children: (
+                      <img src={require("src/assets/images/slider.png")} />
+                    )
+                  },
+                  {
+                    children: (
+                      <img src={require("src/assets/images/slider.png")} />
+                    )
+                  },
+                  {
+                    children: (
+                      <img src={require("src/assets/images/slider.png")} />
+                    )
+                  },
+                  {
+                    children: (
+                      <img src={require("src/assets/images/slider.png")} />
+                    )
+                  }
+                ]
+              ]}
+              onClose={() => setIsViewRateModalOpen(false)}
+              buttonTitle="Place New Deposit"
+              onButtonClick={() => {
+                window.alert("lead you to do something.");
+              }}
+              viewRateComponent={
+                <ViewRate
+                  testId="sprint_4_view_rate"
+                  title={{
+                    content: "** Rates are subject to change"
+                  }}
+                  subtitle={{
+                    content:
+                      "Note: Customer with Reward Code may be entitled additional rate in AmOnline."
+                  }}
+                  data={{
+                    headers: [
+                      {
+                        style: {},
+                        values: ["Tenure"]
+                      },
+                      {
+                        style: { textAlign: "center", fontWeight: "bold" },
+                        values: ["Board Rate", "(% p.a.)"]
+                      },
+                      {
+                        style: { textAlign: "center", fontWeight: "bold" },
+                        values: ["AmOnline Rate", "(% p.a.)"]
+                      }
+                    ],
+                    values: [
+                      ["1 Month", "2.95", "2.95"],
+                      ["2 Month", "2.95", "2.95"],
+                      ["3 Month", "2.95", "2.95"],
+                      ["4 Month", "3.95", "2.95"],
+                      ["5 Month", "2.95", "2.95"],
+                      ["6 Month", "2.95", "2.95"],
+                      ["7 Month", "6.95", "2.95"]
+                    ]
+                  }}
+                />
+              }
+            />
+          </div>
+        }
+        modalIsOpen={isViewRateModalOpen}
+        onRequestClose={() => {
+          setIsViewRateModalOpen(false);
+        }}
+      />
+
       <Title>View Rate</Title>
       <CenteredDiv
         style={{
@@ -332,6 +406,25 @@ const Sprint3: React.FC<Props> = () => {
           />
         ]}
       />
+
+      <Title>Reset Pin</Title>
+      <CenteredDiv
+        style={{ position: "relative", padding: "5rem 6rem", height: "25rem" }}
+      >
+        <AmResetPin
+          testId="testId"
+          keysArray={[5, 8, 1, 0, 4, 6, 2, 9, 3, 7]}
+          onEnterClick={() => {
+            alert("Enter click");
+          }}
+          onNumberSelected={(item: any) => {
+            alert(item);
+          }}
+          EnterIcon={{ name: "system-close-grey", size: 15, color: "#000000" }}
+          pointerTopVal={50}
+        />
+      </CenteredDiv>
+
       <Title>Input Accordian</Title>
       <CenteredDiv
         style={{
