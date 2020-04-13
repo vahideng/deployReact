@@ -103,6 +103,9 @@ class AmDropdown extends Component<Props, {}> {
     if (showDropdown) {
       InputFieldIconDiv.push(classes.InputFieldIconWithoutBorder);
     }
+    if(readOnly){
+      InputFieldIconDiv.push(classes.WithoutTheCursor)
+    }
     return (
       <div className={classes.Container}>
         <div className={classes.InputFieldMain}>

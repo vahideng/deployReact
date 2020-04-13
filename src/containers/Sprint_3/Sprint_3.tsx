@@ -1052,7 +1052,7 @@ const Sprint3: React.FC<Props> = () => {
         <AmDropdown
           max="200px"
           type="text"
-          readOnly={true}
+          readOnly={false}
           disabled={false}
           clickOnArrow={() => setDropdown(!showDropdown)}
           showDropdown={showDropdown}
@@ -1089,6 +1089,7 @@ const Sprint3: React.FC<Props> = () => {
           }}
           inputHandleChange={(item)=>alert(item.target.value)}
           placeholder="place holder"
+          
         />
       </div>
 

@@ -5,7 +5,6 @@
 }
 
 .DropdownContent {
-
   top: 77px;
   box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5,
     0px 1px 5px #e5e5e5;
@@ -15,10 +14,7 @@
   background-color: #f9f9f9;
   width: 100%;
 
-  
   overflow-y: auto;
-
-
 }
 
 .DropdownContent p {
@@ -29,7 +25,7 @@
 
 .DropdownContent div:hover {
   cursor: pointer;
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
 }
 
 // .DropdownContent p:hover {
@@ -78,9 +74,15 @@
   // color: transparent;
   text-shadow: 0px 0px 0px black;
 }
-.InputFieldIconDiv input:focus {
+// .InputFieldIconDiv input:focus {
+//   outline: none;
+//   color: transparent;
+// }
+
+.WithoutTheCursor input:focus{
   outline: none;
-  color: transparent;
+    color: transparent;
+
 }
 .InputFieldLabel {
   padding: 0 0 0.62rem 1.56rem;
