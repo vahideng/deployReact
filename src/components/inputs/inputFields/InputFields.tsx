@@ -6,6 +6,7 @@ import InlineMessage from "src/components/infographic/inlineMessage/InlineMessag
 import Tooltip from "src/components/tooltip/Tooltip";
 const { B_13_BLACK } = Paragraphs;
 interface Props {
+  responsive?: boolean;
   tacInput?: boolean;
   testId?: string;
   value: any;
@@ -57,7 +58,8 @@ class InputField extends Component<Props, {}> {
       onFocus,
       tacInput,
       tipChildren,
-      placeholder
+      placeholder,
+      responsive
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);
@@ -69,7 +71,11 @@ class InputField extends Component<Props, {}> {
       !!onBlur && onBlur(event);
     }
     return (
-      <div className={classes.InputFieldMain}>
+      <div
+        className={
+          responsive ? classes.InputFieldMainFlex : classes.InputFieldMain
+        }
+      >
         {!!label && (
           <div className={classes.TitleDiv}>
             <B_13_BLACK className={classes.InputFieldLabel}>{label}</B_13_BLACK>
@@ -80,7 +86,10 @@ class InputField extends Component<Props, {}> {
         )}
         <div
           className={classes.InputFieldIconDiv}
-          style={{ maxWidth: tacInput ? "34.81rem" : "31.6rem" }}
+          style={{
+            maxWidth: tacInput ? "34.81rem" : "31.6rem",
+            minWidth: responsive ? "" : "22.6rem"
+          }}
         >
           {!!icon && (
             <Icon
