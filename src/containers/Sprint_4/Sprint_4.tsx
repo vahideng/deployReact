@@ -447,8 +447,6 @@ const Sprint3: React.FC<Props> = () => {
                   ),
                   bold: true, // chang false
                   onListClick: () => {
-                    // window.alert(`clicked on item ${item.label}`);
-                    // window.alert(`ITEM NAME:::: ${item.label}`)
                   },
                   expandable: true, // change false
                   expandableContent: (
