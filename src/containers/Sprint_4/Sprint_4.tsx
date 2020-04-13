@@ -14,7 +14,7 @@ import ViewRate from "src/components/viewRate/ViewRate";
 import ViewRateContainer from "src/components/viewRateContainer/ViewRateContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import Modal from "src/components/modals/Modal";
-import AmInputFieldAccordian from "src/components/amInputFieldAccordian/amInputFieldAccordian";
+import InputAccordian from "src/components/InputAccordian/InputAccordian";
 import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 import DynamicText from "src/components/assets/typography/DynamicText/DynamicText";
 import CenterText from "src/components/assets/typography/CenterText/CenterText";
@@ -432,7 +432,7 @@ const Sprint3: React.FC<Props> = () => {
           maxWidth: "699px"
         }}
       >
-        <AmInputFieldAccordian
+        <InputAccordian
           testId={"testId"}
           data={[
             {
@@ -2092,7 +2092,7 @@ const Sprint3: React.FC<Props> = () => {
               ]
             }
           ]}
-        ></AmInputFieldAccordian>
+        ></InputAccordian>
       </CenteredDiv>
     </div>
   );
