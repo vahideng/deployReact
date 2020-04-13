@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import Paragraphs from "../../components/assets/typography";
 import styled from "styled-components";
+import images from "src/assets";
 import Navbar from "src/components/headers/navbar/Navbar";
 import NavbarTransparent from "src/components/headers/navbarTransparent/NavbarTransparent";
 import TextDropdown from "src/components/inputs/texDropdown/TextDropdown";
@@ -15,6 +16,8 @@ import ViewRateContainer from "src/components/viewRateContainer/ViewRateContaine
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import Modal from "src/components/modals/Modal";
 import AmInputFieldAccordian from "src/components/amInputFieldAccordian/amInputFieldAccordian";
+import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
+import Box_V2 from "src/components/wrappers/box_V2/Box_V2";
 import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 import DynamicText from "src/components/assets/typography/DynamicText/DynamicText";
 import CenterText from "src/components/assets/typography/CenterText/CenterText";
@@ -45,6 +48,7 @@ const Sprint3: React.FC<Props> = () => {
   const [homeRedirect, setHomeRedirect] = useState(false);
   const [linkListClear, setLinkListClear] = useState(false);
   const [linkListInputValue, setLinkListInputValue] = useState("");
+  const [selectionTile, setSelectionTile] = useState(2);
   const [stickyFooter, setStickyFooter] = useState(false);
   // const [linkListBtnColor, setLinkListBtnColor] = useState({
   //   top: '#BDBDBD',
@@ -156,6 +160,67 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         />
       </div>
+      <Title>SelectionTile (Update)</Title>
+      <CenteredDiv>
+        <SelectionTile
+          testId={"testId"}
+          onTileClick={(item, index) => {
+            setSelectionTile(index);
+            console.log(item);
+            // alert(`${item} with indexOf ${index} clicked`);
+          }}
+          selected={selectionTile}
+          list={[
+            {
+              iconLabel: "AmBank"
+            },
+            {
+              iconLabel: "Alliance Bank",
+              icon: {
+                name: "Announcement",
+                size: 32,
+                color: "#444444"
+              }
+            },
+            {
+              iconLabel: "Other Bank",
+              image: images.common.fpxIcon,
+              imageStyle: { height: 32, width: 66, marginLeft: 8 }
+            }
+          ]}
+        />
+      </CenteredDiv>
+      <Title>Box_V2 (Update - Responsive)</Title>
+      <Box_V2
+        responsive={true}
+        split={true}
+        leftTitle={"Cancel"}
+        onLeftButton={() => alert("Cancel")}
+        rightTitle={"Login"}
+        onRightButton={() => alert("Login")}
+        boxChildren={
+          <div style={{ padding: "3rem 1.5rem" }}>
+            <InputField
+              responsive={true}
+              notValid={true}
+              errorMessage={{
+                testId: "testId",
+                errorText: "The TAC is incorrect",
+                subText: "Please try again."
+              }}
+              type="text"
+              clearClickHandler={() => alert("clear clicked")}
+              clearIcon={true}
+              label="Username"
+              icon={{ name: "Account-2" }}
+              value={""}
+              handleChange={event => {
+                console.log(event.target.value);
+              }}
+            />
+          </div>
+        }
+      />
       <Title>InputField</Title>
       <div style={{ paddingLeft: "35vw" }}>
         <InputField
