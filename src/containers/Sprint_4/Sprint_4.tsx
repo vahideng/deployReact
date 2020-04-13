@@ -18,6 +18,7 @@ import AmInputFieldAccordian from "src/components/amInputFieldAccordian/amInputF
 import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 import DynamicText from "src/components/assets/typography/DynamicText/DynamicText";
 import CenterText from "src/components/assets/typography/CenterText/CenterText";
+import DetailList from "src/components/lists/DetailList/DetailList";
 const { B_13_ORANGE_463, R_13_GREY444 } = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
@@ -101,6 +102,60 @@ const Sprint3: React.FC<Props> = () => {
           }
         ]}
       />
+      <Title>DetailList</Title>
+      <div style={{ width: "38.5rem", margin: "0 auto" }}>
+        <DetailList
+          testId={"testId"}
+          title={[
+            "*RM Amount is an indicative value and to be considered as reference only.",
+            "Protected by PIDM up to RM 250,000 for each depositor."
+          ]}
+          // title="*RM Amount is an indicative value and to be considered as reference only.
+          // Protected by PIDM up to RM 250,000 for each depositor."
+          list={[
+            {
+              leftText: "Account Type",
+              rightText: "Conventional Fixed Deposit"
+            },
+            {
+              leftText: "Holder Name",
+              rightText: "Adam Constantine"
+            },
+            {
+              leftText: "Tenure",
+              rightText: "24 Months"
+            },
+            {
+              leftText: "Interest Rate (p.a.)",
+              rightText: "4.55%"
+            },
+            {
+              leftText: "Placement Date",
+              rightText: "20 Feb 2020"
+            },
+            {
+              leftText: "Maturity Date",
+              rightText: "20 Feb 2023"
+            },
+            {
+              leftText: "Interest Payment Instruction",
+              rightText: "Auto Renewal"
+            },
+            {
+              leftText: "Currency",
+              rightText: "AUD"
+            },
+            {
+              leftText: "Exchange Rate",
+              rightText: "0.3545"
+            },
+            {
+              leftText: "Effective Date",
+              rightText: "1 Dec 2019"
+            }
+          ]}
+        />
+      </div>
       <Title>InputField</Title>
       <div style={{ paddingLeft: "35vw" }}>
         <InputField
