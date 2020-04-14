@@ -1104,10 +1104,10 @@ const Sprint3: React.FC<Props> = () => {
           icon={{ name: "Account-2" }}
           value={dropdownValue}
           handleChange={(event, item, testId) => {
-            console.log(event, testId)
-            handlerDropdown(item)
+            console.log(event, testId);
+            handlerDropdown(item);
           }}
-          inputHandleChange={(item)=>alert(item.target.value)}
+          inputHandleChange={item => alert(item.target.value)}
           placeholder="place holder"
         />
       </div>
@@ -1651,7 +1651,10 @@ const Sprint3: React.FC<Props> = () => {
                   {
                     icon: "Switch",
                     text: "Change Default Account",
-                    onClick: () => alert("click")
+                    onClick: () => alert("click"),
+                    onBlur: (e: { target: any }) =>
+                      console.log(e.target, "blur")
+                    // onFocus: e => console.log(e.target, "focus")
                   }
                 ]
               }
@@ -1666,7 +1669,8 @@ const Sprint3: React.FC<Props> = () => {
             {
               icon: "Edit",
               text: "Edit",
-              onClick: () => alert("click")
+              onClick: () => alert("click"),
+              onBlur: (e: { target: any }) => console.log(e.target, "blur")
             },
             {
               icon: "delete",

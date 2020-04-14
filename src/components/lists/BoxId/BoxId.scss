@@ -34,6 +34,10 @@
 
   align-items: center;
 }
+.ImageIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
 .TextContainer {
   margin-left: 1rem;
 }
@@ -61,21 +65,29 @@
 
   box-shadow: $mainBoxShadow;
 }
-.ButtonIcon {
+.ButtonDiv {
   display: flex;
   align-items: center;
-  padding: 1rem;
-  cursor: pointer;
 }
-.ButtonIcon:hover {
-  background-color: #f1f1f1;
-  transition: background-color 0.4s;
-}
+
 .ButtonIconText {
-  padding-top: 0.2rem;
-  padding-left: 0.5rem;
-}
-.ImageIcon {
-  width: 2.5rem;
-  height: 2.5rem;
+  display: flex;
+  font-family: "Nunito Sans";
+  align-items: center;
+  margin: 1px;
+  color: #444444;
+  font-weight: 700;
+  width: 100%;
+  padding: 1rem;
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.4s;
+  }
+  &:focus {
+    outline: none;
+  }
 }

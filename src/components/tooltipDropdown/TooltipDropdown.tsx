@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, FormEvent } from "react";
 import Icon from "src/components/assets/icons/icon";
-import Paragraphs from "../assets/typography";
 import classes from "./TooltipDropdown.module.css";
 import OutsideClickHandler from "react-outside-click-handler";
 
-const { B_13_GREY444 } = Paragraphs;
 interface Props {
   testId?: string;
   icon?: { name?: string; color?: string; size?: number };
@@ -12,6 +10,7 @@ interface Props {
     icon: string;
     text: string;
     onClick?: () => void;
+    onBlur?: (event: FormEvent) => void;
   }[];
 }
 
@@ -19,6 +18,10 @@ const TooltipDropdown = ({ testId, icon, iconButtons }: Props) => {
   const [boxIsOpen, setBoxIsOpen] = useState(false);
   const iconClickHandler = () => {
     setBoxIsOpen(!boxIsOpen);
+  };
+  const onblurHandler = (button: any, e: FormEvent) => {
+    !!button.onBlur && button.onBlur(e);
+    iconClickHandler();
   };
   return (
     <OutsideClickHandler
@@ -39,18 +42,21 @@ const TooltipDropdown = ({ testId, icon, iconButtons }: Props) => {
             {iconButtons &&
               iconButtons.map((button, index) => {
                 return (
-                  <div
-                    onClick={() => {
-                      button.onClick();
-                      iconClickHandler();
-                    }}
-                    key={index}
-                    className={classes.ButtonIcon}
-                  >
-                    <Icon icon={button.icon} size={25} />
-                    <B_13_GREY444 className={classes.ButtonIconText}>
+                  <div key={index} className={classes.ButtonDiv}>
+                    <button
+                      onClick={() => {
+                        button.onClick();
+                      }}
+                      onBlur={e => onblurHandler(button, e)}
+                      className={classes.ButtonIconText}
+                    >
+                      <Icon
+                        icon={button.icon}
+                        size={25}
+                        className={classes.ButtonIcon}
+                      />
                       {button.text}
-                    </B_13_GREY444>
+                    </button>
                   </div>
                 );
               })}

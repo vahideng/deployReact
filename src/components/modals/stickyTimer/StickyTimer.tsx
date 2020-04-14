@@ -8,8 +8,6 @@ import LocalImages from "src/components/assets/images";
 import Icon from "src/components/assets/icons/icon";
 const { R_17_BLACK, B_17_BLACK, R_15_BLACK } = Paragraphs;
 
-
-
 const customStyles = {
   content: {
     top: "auto",
@@ -18,11 +16,13 @@ const customStyles = {
     marginRight: "-50%",
     width: "100%",
     left: " 0px",
-    padding: "0px"
+    padding: "0px",
+    zIndex: 1000000000
   },
   overlay: {
     background: "rgba(0, 0, 0, 0.5)",
-    backgroundBlendMode: "multiply"
+    backgroundBlendMode: "multiply",
+    zIndex: 1000000000
   }
 };
 interface Props {
@@ -31,10 +31,10 @@ interface Props {
   expirationTime: number;
   expirationText?: string;
   text?: string;
-  closeTimeoutMS ?: number;
-  contentLabel ?: string;
-  textBefore ?: string;
-  onCLoseButtonCLick ?: ()=> void
+  closeTimeoutMS?: number;
+  contentLabel?: string;
+  textBefore?: string;
+  onCLoseButtonCLick?: () => void;
 }
 interface State {
   seconds: number;
@@ -66,8 +66,16 @@ class StickyTimer extends Component<Props, State> {
   // }
 
   render() {
-    const { text, testId,textBefore, expirationTime, modalIsOpen, closeTimeoutMS, contentLabel, onCLoseButtonCLick } = this.props;
-
+    const {
+      text,
+      testId,
+      textBefore,
+      expirationTime,
+      modalIsOpen,
+      closeTimeoutMS,
+      contentLabel,
+      onCLoseButtonCLick
+    } = this.props;
 
     return (
       <>
@@ -75,15 +83,18 @@ class StickyTimer extends Component<Props, State> {
           isOpen={modalIsOpen}
           closeTimeoutMS={closeTimeoutMS}
           style={customStyles}
-          contentLabel= {contentLabel ? contentLabel : "Example Modal"}
+          contentLabel={contentLabel ? contentLabel : "Example Modal"}
         >
           <div id={testId}>
             <div className={classes.StickyTimerTopDiv}>
               <img src={LocalImages.common.amSecure} alt="amSecure" />
               <div className={classes.StickyTimerExp}>
-                <R_17_BLACK> {textBefore ? textBefore : "Transaction will expire in"}</R_17_BLACK>
+                <R_17_BLACK>
+                  {" "}
+                  {textBefore ? textBefore : "Transaction will expire in"}
+                </R_17_BLACK>
                 <B_17_BLACK className={classes.StickyTimerExpTime}>
-                {expirationTime}
+                  {expirationTime}
                 </B_17_BLACK>
                 <div
                   style={{
@@ -91,7 +102,7 @@ class StickyTimer extends Component<Props, State> {
                     cursor: "pointer"
                   }}
                   onClick={() => {
-                    onCLoseButtonCLick()
+                    onCLoseButtonCLick();
                   }}
                 >
                   <Icon icon="Fail" size={25} />
