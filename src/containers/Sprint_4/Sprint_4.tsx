@@ -14,11 +14,13 @@ import InputField from "src/components/inputs/inputFields/InputFields";
 import ViewRate from "src/components/viewRate/ViewRate";
 import ViewRateContainer from "src/components/viewRateContainer/ViewRateContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
-import Modal from "src/components/modals/Modal";
+
 
 import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
 import Box_V2 from "src/components/wrappers/box_V2/Box_V2";
 import InputAccordian from "src/components/InputAccordian/InputAccordian";
+import AmModal from "src/components/modals/Modal";
+
 import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 import DynamicText from "src/components/assets/typography/DynamicText/DynamicText";
 import CenterText from "src/components/assets/typography/CenterText/CenterText";
@@ -287,7 +289,7 @@ const Sprint3: React.FC<Props> = () => {
         }}
         title="View Rate"
       />
-      <Modal
+      <AmModal
         testId="sprint_4_modal_test"
         modalChildren={
           <div style={{ backgroundColor: "#fff", position: "relative" }}>
@@ -392,7 +394,6 @@ const Sprint3: React.FC<Props> = () => {
       <CenteredDiv
         style={{
           margin: "0 auto",
-          width: "30rem"
         }}
       >
         <ViewRate
@@ -434,7 +435,8 @@ const Sprint3: React.FC<Props> = () => {
       <Title>Confirm Notes</Title>
       <CenteredDiv
         style={{
-          margin: "1rem 15rem"
+          margin: 0,
+          padding: 0
         }}
       >
         <ConfirmNotes
@@ -443,6 +445,8 @@ const Sprint3: React.FC<Props> = () => {
             content: "Important Notes",
             style: { fontSize: "2rem" }
           }}
+          width="40rem"
+          responsive
           body={[
             {
               content:
