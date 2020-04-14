@@ -101,7 +101,7 @@ import UnitTrustList from "./components/lists/UnitTrustList/UnitTrustList";
 
 import DynamicText from "./components/assets/typography/DynamicText/DynamicText";
 import CenterText from "./components/assets/typography/CenterText/CenterText";
-import AmInputFieldAccordian from "./components/amInputFieldAccordian/amInputFieldAccordian";
+import InputAccordian from "./components/InputAccordian/InputAccordian";
 import ConfirmNotes from "./components/confirmNotes/ConfirmNotes";
 import ViewRate from "./components/viewRate/ViewRate";
 import ViewRateContainer from "./components/viewRateContainer/ViewRateContainer";
@@ -115,7 +115,7 @@ export {
 
   DynamicText,
   CenterText,
-  AmInputFieldAccordian,
+  InputAccordian,
   ConfirmNotes,
   ViewRate,
   ViewRateContainer,

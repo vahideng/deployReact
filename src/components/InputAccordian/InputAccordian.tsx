@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
-import classes from './amInputFieldAccordian.module.css';
+import classes from './InputAccordian.module.css';
 import { Card, Accordion, useAccordionToggle, Col } from 'react-bootstrap';
 import Icon from 'src/components/assets/icons/icon';
-import Paragraphs from '../../components/assets/typography';
+import Paragraphs from '../assets/typography';
 import LinkList from 'src/components/lists/linkList/LinkList';
 
 const { SB_15_BLACK } = Paragraphs;
@@ -22,6 +22,7 @@ interface InputFieldAccordianProps {
       label:string;
       leftIcon:any;
       bold:boolean;
+      
       onListClick:() => void;
       expandable:boolean;
       expandableContent:ReactNode;
@@ -32,7 +33,7 @@ interface InputFieldAccordianProps {
   
 }
 
-const AmInputFieldAccordian: React.FC<InputFieldAccordianProps> = ({
+const InputAccordian: React.FC<InputFieldAccordianProps> = ({
   data,
   testId,
   cardStyle,
@@ -129,4 +130,4 @@ const CustomToggle: React.FC<Props> = ({ eventKey, testId, showIcon, title, open
 };
 
 
-export default AmInputFieldAccordian;
+export default InputAccordian;
