@@ -165,7 +165,7 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         />
       </div>
-      <Title>SelectionTile (Update)</Title>
+      <Title>SelectionTile (Update) & Responsive</Title>
       <CenteredDiv>
         <SelectionTile
           testId={"testId"}
@@ -177,7 +177,40 @@ const Sprint3: React.FC<Props> = () => {
           selected={selectionTile}
           list={[
             {
-              iconLabel: "AmBank"
+              iconLabel: "AmBank",
+              accountTitle: "accountTitle"
+            },
+            {
+              iconLabel: "Alliance Bank",
+              icon: {
+                name: "Announcement",
+                size: 32,
+                color: "#444444"
+              }
+            },
+            {
+              iconLabel: "Other Bank",
+              image: images.common.fpxIcon,
+              imageStyle: { height: 32, width: 66, marginLeft: 8 }
+            }
+          ]}
+        />
+      </CenteredDiv>
+      <Title>SelectionTile Responsive</Title>
+      <CenteredDiv>
+        <SelectionTile
+          responsive
+          testId={"testId"}
+          onTileClick={(item, index) => {
+            setSelectionTile(index);
+            console.log(item);
+            // alert(`${item} with indexOf ${index} clicked`);
+          }}
+          selected={selectionTile}
+          list={[
+            {
+              iconLabel: "AmBank",
+              accountTitle: "accountTitle"
             },
             {
               iconLabel: "Alliance Bank",

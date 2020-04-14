@@ -6,6 +6,7 @@ import Icon from "src/components/assets/icons/icon";
 
 const { B_16_BLACK, R_14_BLACK, B_15_BLACK } = Paragraphs;
 interface Props {
+  responsive?: boolean;
   rowStyle?: CSSProperties;
   onTileClick: (item: any, index: number) => void;
   centered?: boolean;
@@ -37,17 +38,24 @@ const SelectionTile: React.FC<Props> = ({
   onTileClick,
   testId,
   centered,
-  rowStyle
+  rowStyle,
+  responsive
 }) => {
+  let selectionTileRowCls = classes.SelectionTileRow;
+  let selectionTileWrapperCls = classes.SelectionTileWrapper;
+  if (responsive) {
+    selectionTileWrapperCls = `${selectionTileWrapperCls} ${classes.SelectionTileWrapperResponsive}`;
+    selectionTileRowCls = `${selectionTileRowCls} ${classes.SelectionTileRowResponsive}`;
+  }
   return !centered ? (
-    <div className={classes.SelectionTileRow} id={testId} style={rowStyle}>
+    <div className={selectionTileRowCls} id={testId} style={rowStyle}>
       {!!list &&
         list.map((item, index) => {
           return (
             <div
               id={`${testId}-${index}`}
               onClick={() => onTileClick(item, index)}
-              className={classes.SelectionTileWrapper}
+              className={selectionTileWrapperCls}
               key={index}
               style={
                 selected === index

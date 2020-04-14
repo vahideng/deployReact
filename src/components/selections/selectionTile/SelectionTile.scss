@@ -5,6 +5,11 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+.SelectionTileRowResponsive {
+  width: 100% !important;
+}
+
 .SelectionTileWrapper {
   display: flex;
   align-items: center;
@@ -15,6 +20,10 @@
   border-bottom: 0.37rem solid $greyEDE;
   margin: 0 2rem 1.5rem 0;
   cursor: pointer;
+}
+
+.SelectionTileWrapperResponsive {
+  width: 100% !important;
 }
 
 .SelectionTileSelector {
