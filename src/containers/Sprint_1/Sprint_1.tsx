@@ -1051,6 +1051,7 @@ class Sprint1 extends Component<Props, State> {
           onCloseClick={() => {
             alert("Tac Closed");
           }}
+          responsive={true}
           maxLength={6}
           clearIcon={inputValue === "" ? tacClear : !tacClear}
           clearClickHandler={() => {
