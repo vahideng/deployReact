@@ -24,6 +24,8 @@ import AmModal from "src/components/modals/Modal";
 import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 import DynamicText from "src/components/assets/typography/DynamicText/DynamicText";
 import CenterText from "src/components/assets/typography/CenterText/CenterText";
+import ErrorPage from "src/components/ErrorPage/ErrorPage";
+
 import DetailList from "src/components/lists/DetailList/DetailList";
 const { B_13_ORANGE_463, R_13_GREY444 } = Paragraphs;
 
@@ -2219,6 +2221,18 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         ></InputAccordian>
       </CenteredDiv>
+   
+      <Title>Error Page</Title>
+      <div style={{ height: "35vw" }}>
+        <ErrorPage
+          mainStyle={{ background: "#eee" }}
+          responsive={true}
+          icon={{ name: "Account", color: "#000000", size: 30 }}
+          title="403 Access Denied/Forbidden"
+          detailText="Please call our 24-hour Contact Center at 603-2178 8888 for assistance"
+        />
+      </div>
+   
     </div>
   );
 };
