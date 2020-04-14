@@ -2095,6 +2095,7 @@ const Sprint3: React.FC<Props> = () => {
           profile_name={"Adam_1234"}
           profile_login_history={"Last login on 2 Feb 2020 at 03:09pm"}
           editIcon={<Icon icon={"Right1"} size={20} color={"#000000"} />}
+          initials="HB"
           data={[
             {
               profile_data: {

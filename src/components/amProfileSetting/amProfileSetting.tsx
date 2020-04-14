@@ -1,9 +1,9 @@
-import React, { ReactNode } from 'react';
-import classes from './amProfileSetting.module.css';
-import { Card, Accordion, useAccordionToggle, Col } from 'react-bootstrap';
-import Icon from 'src/components/assets/icons/icon';
-import Paragraphs from '../assets/typography';
-import { MemoizedAmProfilePic as AmProfilePic } from 'src/components/amProfilePic/AmProfilePic';
+import React, { ReactNode } from "react";
+import classes from "./amProfileSetting.module.css";
+import { Card, Accordion, useAccordionToggle, Col } from "react-bootstrap";
+import Icon from "src/components/assets/icons/icon";
+import Paragraphs from "../assets/typography";
+import { MemoizedAmProfilePic as AmProfilePic } from "src/components/amProfilePic/AmProfilePic";
 
 const { B_32_BLACK, SB_15_BLACK, R_15_BLACK } = Paragraphs;
 
@@ -35,6 +35,7 @@ interface ProfileSettingProps {
   editIcon: any;
   onEditClickHandler: () => void;
   fullName: string;
+  initials?: string;
   data?: ProfileItemProps[];
   profile_name: string;
   profile_login_history: string;
@@ -49,17 +50,18 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
   editIcon,
   onEditClickHandler,
   fullName,
+  initials,
   openAccordionIcon,
   closeAccordionIcon,
   profile_login_history,
-  profile_name,
+  profile_name
 }) => {
   const {
     CardOuterContainer,
     CardBody,
     cardUserDetails,
     cardLastLogin,
-    mainContainer,
+    mainContainer
   } = classes;
 
   return (
@@ -72,6 +74,7 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
           editIcon={editIcon}
           onEditClickHandler={onEditClickHandler}
           fullName={fullName}
+          initials={initials}
         />
         <div className={cardUserDetails}>
           <B_32_BLACK>{profile_name}</B_32_BLACK>
@@ -85,7 +88,7 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
               <Accordion key={index} id={`${testId}-0-${index}`}>
                 <Card className={classes.CardContainer}>
                   <Card.Header className={classes.HeaderInside}>
-                    <div style={{ alignItems: 'center' }} className="d-flex">
+                    <div style={{ alignItems: "center" }} className="d-flex">
                       <Col
                         style={{ paddingLeft: 0, paddingRight: 0, margin: 0 }}
                         md={11}
@@ -99,14 +102,11 @@ const AmProfileSetting: React.FC<ProfileSettingProps> = ({
                                   <R_15_BLACK>{_item.content}</R_15_BLACK>
                                 </Col>
                               );
-                            },
+                            }
                           )}
                       </Col>
                       {item.profile_data.showAccordion && (
-                        <Col
-                      
-                          md={1}
-                        >
+                        <Col md={1}>
                           <CustomToggle
                             eventKey={`${index}`}
                             content={item.profile_data.title}
@@ -154,7 +154,7 @@ const CustomToggle: React.FC<Props> = ({
   testId,
   openAccordionIcon,
   closeAccordionIcon,
-  showAccordion,
+  showAccordion
 }) => {
   const decoratedOnClick = useAccordionToggle(eventKey, () => null);
   const [isOpen, setIsOpen] = React.useState(false);
