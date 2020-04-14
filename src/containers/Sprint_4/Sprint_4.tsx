@@ -14,7 +14,7 @@ import InputField from "src/components/inputs/inputFields/InputFields";
 import ViewRate from "src/components/viewRate/ViewRate";
 import ViewRateContainer from "src/components/viewRateContainer/ViewRateContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
-
+import FormContainer from "src/components/wrappers/formContainer/FormContainer";
 
 import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
 import Box_V2 from "src/components/wrappers/box_V2/Box_V2";
@@ -395,7 +395,7 @@ const Sprint3: React.FC<Props> = () => {
       <Title>View Rate</Title>
       <CenteredDiv
         style={{
-          margin: "0 auto",
+          margin: "0 auto"
         }}
       >
         <ViewRate
@@ -434,6 +434,15 @@ const Sprint3: React.FC<Props> = () => {
           }}
         />
       </CenteredDiv>
+      <Title>Form Container Responsive</Title>
+      <FormContainer
+        label="Change Security Image"
+        children={
+          <>
+            <CenteredDiv>dsaokdwkao</CenteredDiv>
+          </>
+        }
+      />
       <Title>Confirm Notes</Title>
       <CenteredDiv
         style={{
@@ -2221,7 +2230,7 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         ></InputAccordian>
       </CenteredDiv>
-   
+
       <Title>Error Page</Title>
       <div style={{ height: "35vw" }}>
         <ErrorPage
@@ -2232,7 +2241,6 @@ const Sprint3: React.FC<Props> = () => {
           detailText="Please call our 24-hour Contact Center at 603-2178 8888 for assistance"
         />
       </div>
-   
     </div>
   );
 };

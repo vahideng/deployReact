@@ -20,6 +20,14 @@
   background-color: #ffffff;
 }
 
+.FormContainerIconWrapResponsive {
+  width: 100% !important;
+}
+
+.FormContainerMainResponsive {
+  width: 100% !important;
+}
+
 .FormContainerLabel {
   display: -webkit-box;
   display: -ms-flexbox;
