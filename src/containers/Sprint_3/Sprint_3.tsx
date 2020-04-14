@@ -51,6 +51,7 @@ import AmAccordion from "src/components/amAccordion/AmAccordion";
 import AmListItem from "src/components/amListItem/AmListItem";
 import DashboardCart from "src/components/dashboardCart/DashboardCart";
 import UnitTrustList from "src/components/lists/UnitTrustList/UnitTrustList";
+import Loader from "src/components/assets/icons/Loader/Loader";
 
 const {
   B_13_ORANGE_463,
@@ -109,6 +110,7 @@ const Sprint3: React.FC<Props> = () => {
     bottom: "#BDBDBD"
   });
   const [hiddenList, setHiddenList] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handlerDropdown = (item: any) => {
     console.log(item, "dropdownValue");
@@ -270,6 +272,16 @@ const Sprint3: React.FC<Props> = () => {
           }
         ]}
       />
+      <Title>Loader</Title>
+      <PrimaryButton
+        title="Loader"
+        onButtonClick={() => {
+          setIsLoading(true);
+        }}
+        width={"25rem"}
+        buttonColor={{ top: "#FD8585", bottom: "#FF2222" }}
+      />
+      <Loader isLoading={isLoading} />
       <Title>UnitTrustList</Title>
       <CenteredDiv>
         <UnitTrustList
