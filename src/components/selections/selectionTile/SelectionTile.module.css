@@ -16,6 +16,10 @@
       flex-wrap: wrap;
 }
 
+.SelectionTileRowResponsive {
+  width: 100% !important;
+}
+
 .SelectionTileWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -30,6 +34,12 @@
   border-bottom: 0.37rem solid #dedede;
   margin: 0 2rem 1.5rem 0;
   cursor: pointer;
+}
+
+.SelectionTileWrapperResponsive {
+  -webkit-box-flex: 1 !important;
+      -ms-flex: 1 !important;
+          flex: 1 !important;
 }
 
 .SelectionTileSelector {

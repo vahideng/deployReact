@@ -9,6 +9,7 @@ const { B_14_WHITE, B_15_ORANGE_463, B_24_BLACK, R_15_BLACK } = Paragraphs;
 
 interface Props {
   testId?: string;
+  responsive?: boolean;
   statusIcon?: {
     testId?: string;
     iconColor: {
@@ -42,7 +43,8 @@ const FormContainer: React.FC<Props> = ({
   headerText,
   headerSubText,
   headerTimeStamp,
-  disabled = false
+  disabled = false,
+  responsive
 }) => {
   const rightLabelPointer: CSSProperties =
     rightLabel !== undefined && rightLabel.onClick !== undefined
@@ -51,11 +53,19 @@ const FormContainer: React.FC<Props> = ({
 
  const disabledStyle: CSSProperties = disabled && { opacity: 0.5, position: "relative" } || {};
 
+  let mainContainerCls = classes.FormContainerMain;
+  if (responsive) {
+    mainContainerCls = `${mainContainerCls} ${classes.FormContainerMainResponsive}`;
+  }
+  let iconContainerCls = classes.FormContainerIconWrap;
+  if (responsive) {
+    iconContainerCls = `${iconContainerCls} ${classes.FormContainerIconWrapResponsive}`;
+  }
   return (
     <div style={disabledStyle}>
       {disabled && <div className={classes.Overlay}></div>}
       {!!statusIcon && (
-        <div className={classes.FormContainerIconWrap}>
+        <div className={iconContainerCls}>
           <span className={classes.FormContainerStatusIcon}>
             <StatusIcon
               testId={statusIcon.testId}
@@ -73,20 +83,20 @@ const FormContainer: React.FC<Props> = ({
               color={"#FFFFFF"}
               size={58}
               style={{
-                width: "36.31rem"
+                width: !responsive ? "36.31rem" : "100%"
               }}
             />
           </span>
         </div>
       )}
       <div
-        className={classes.FormContainerMain}
+        className={mainContainerCls}
         id={testId}
         style={
           !statusIcon
             ? { borderRadius: "1rem" }
             : {
-                width: "36.31rem",
+                width: !responsive ? "36.31rem" : "100%",
                 borderTopLeftRadius: 0,
                 borderTopRightRadius: 0
               }
