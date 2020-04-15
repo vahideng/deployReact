@@ -5,7 +5,8 @@ import Tooltip from "src/components/tooltip/Tooltip";
 const { R_15_BLACK, B_15_BLACK, B_11_GREY393 } = Paragraphs;
 interface Props {
   testId?: string;
-  title?: string | string[];
+  title?: string;
+  titleList?: string[];
   list?: {
     leftText: string;
     rightText: string;
@@ -13,26 +14,30 @@ interface Props {
   }[];
 }
 
-const DetailList: React.FC<Props> = ({ list, title, testId }) => {
-  console.log(typeof title, "title");
+const DetailList: React.FC<Props> = ({ list, title, testId, titleList }) => {
   return (
     <div className={classes.DetailListMainDiv} id={testId}>
-      {!!title &&
-        (typeof title === "string" ? (
+      {title ? (
+        <div className={classes.DetailListTitle}>
+          <B_11_GREY393 id={classes.title}>{title}</B_11_GREY393>
+        </div>
+      ) : (
+        titleList && (
           <div className={classes.DetailListTitle}>
-            <B_11_GREY393 id={classes.title}>{title}</B_11_GREY393>
-          </div>
-        ) : (
-          <div className={classes.DetailListTitle}>
-            {title.map((t, index) => {
+            {titleList.map((t, index) => {
               return (
-                <B_11_GREY393 key={index} id={classes.title}>
+                <B_11_GREY393
+                  key={index}
+                  id={classes.title}
+                  className={classes.ListTitle}
+                >
                   {t}
                 </B_11_GREY393>
               );
             })}
           </div>
-        ))}
+        )
+      )}
 
       {!!list &&
         list.map((item, index) => {

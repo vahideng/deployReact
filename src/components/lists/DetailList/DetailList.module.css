@@ -1,3 +1,9 @@
+.ListTitle {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .DetailListMainDiv {
   width: auto;
   height: auto;

@@ -15,7 +15,7 @@ import ViewRate from "src/components/viewRate/ViewRate";
 import ViewRateContainer from "src/components/viewRateContainer/ViewRateContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import TacModal from "src/components/modals/tacModal/TacModal";
-
+import TransactionIconList from "src/components/lists/TransactionIconList/TransactionIconList";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
 import List from "src/components/lists/list/List";
 
@@ -63,8 +63,10 @@ const Sprint4: React.FC<Props> = () => {
   const [inputValue, setInputValue] = useState('');
   const [tacInactive,setTacInactive] = useState(true);
   const [TacModalOpen,setTacModalOpen] = useState(false);
+  const [actionBtnStatus,setActionBtnStatus] = useState(true);
   const tacClear = false;
   const tacClearActiveStatus = false;
+
   // const [linkListBtnColor, setLinkListBtnColor] = useState({
   //   top: '#BDBDBD',
   //   bottom: '#BDBDBD',
@@ -211,11 +213,11 @@ const Sprint4: React.FC<Props> = () => {
       <div style={{ width: "38.5rem", margin: "0 auto" }}>
         <DetailList
           testId={"testId"}
-          title={[
-            "*RM Amount is an indicative value and to be considered as reference only.",
+          titleList={[
+            "TitleList Amount is an indicative indicative and to be considered as reference only.",
             "Protected by PIDM up to RM 250,000 for each depositor."
           ]}
-          // title="*RM Amount is an indicative value and to be considered as reference only.
+          // title="Title Amount is an indicative value and to be considered as reference only.
           // Protected by PIDM up to RM 250,000 for each depositor."
           list={[
             {
@@ -2372,8 +2374,8 @@ const Sprint4: React.FC<Props> = () => {
       </div>
 
       <Title>TacModal(Update)-(Ref:Sprint1)</Title>
-       <CenteredDiv>
-       <TacModal
+      <CenteredDiv>
+        <TacModal
           onCloseClick={() => {
             alert("Tac Closed");
           }}
@@ -2381,7 +2383,7 @@ const Sprint4: React.FC<Props> = () => {
           maxLength={6}
           clearIcon={inputValue === "" ? tacClear : !tacClear}
           clearClickHandler={() => {
-            setInputValue('');
+            setInputValue("");
           }}
           inActiveMessage={{
             title: "Your profile is inactive.",
@@ -2396,7 +2398,6 @@ const Sprint4: React.FC<Props> = () => {
           label={"TAC verification"}
           value={inputValue}
           handleChange={(e: any) => {
-      
             setInputValue(e.target.value);
           }}
           notValid={inputValue === "" ? true : false}
@@ -2433,10 +2434,10 @@ const Sprint4: React.FC<Props> = () => {
         <PrimaryButton
           title="Open TacModal"
           onButtonClick={() => {
-          setTacModalOpen(true);
+            setTacModalOpen(true);
           }}
         />
-         </CenteredDiv>   
+      </CenteredDiv>
       <Title>FormContainer Disabled</Title>
         <CenteredDiv>
           <FormContainer
@@ -2485,7 +2486,184 @@ const Sprint4: React.FC<Props> = () => {
             }
           />
         </CenteredDiv>
-   
+        <Title>TransactionIconList(Update)</Title>
+        <CenteredDiv>
+          <div style={{ width: "57.1875em" }}>
+            <TransactionIconList
+              testId={"testId"}
+              list={[
+                {
+                  date: "Today",
+                  expandedIndexes: [0],
+                  transactions: [
+                    {
+                      icon: "Transfer",
+                      iconBgColor: "orange",
+                      iconColor: "white",
+                      iconSize: 28,
+                      label1: "TRANSFER TO",
+                      label2: "SEEN OPTICS ",
+                      statusLabel: "SUCCESSFUL",
+                      statusLabelColor: "#36A03E",
+                      changeLabel: "-",
+                      changeLabelColor: "#F73C4A",
+                      amount: "RM 236.78",
+                      actionLabel: "Repeat",
+                      actionIcon: "Repeat",
+                      onActionButtonClick: () => {
+                        alert("Repeat");
+                      },
+                      details: [
+                        {
+                          label1: "From Account",
+                          value1: "15806389266 - Savings Account A",
+                          label2: "Recipient Reference",
+                          value2: "May - Rental",
+                          actionLabel: "Add to Fav",
+                          actionIcon: "Love",
+                          onActionButtonClick: () => {
+                            alert("Fav");
+                            setActionBtnStatus(!actionBtnStatus);
+                          }
+                        },
+                        {
+                          label1: "",
+                          value1: "",
+                          label2: "Other Details",
+                          value2: "-"
+                          //  actionLabel: 'View Receipt',
+                          // actionIcon: ''
+                        }
+                      ]
+                    },
+                    {
+                      icon: "Transfer",
+                      iconBgColor: "blue",
+                      iconColor: "white",
+                      iconSize: 28,
+                      label1: "TRANSFER TO",
+                      label2: "SEEN OPTICS ",
+                      statusLabel: "SUCCESSFUL",
+                      statusLabelColor: "#36A03E",
+                      changeLabel: "-",
+                      changeLabelColor: "#F73C4A",
+                      amount: "RM 236.78",
+                      actionLabel: "Repeat",
+                      actionIcon: "Repeat",
+                      details: [
+                        {
+                          label1: "From Account",
+                          value1: "15806389266 - Savings Account A",
+                          label2: "Recipient Reference",
+                          value2: "May - Rental",
+                          actionLabel: "Add to Fav",
+                          actionIcon: ""
+                        },
+                        {
+                          label1: "",
+                          value1: "",
+                          label2: "Other Details",
+                          value2: "-",
+                          actionLabel: "View Receipt",
+                          actionIcon: ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  date: "12 Jan 2020",
+                  expandedIndexes: [],
+                  transactions: [
+                    {
+                      icon: "Loan",
+                      iconBgColor: "red",
+                      iconColor: "white",
+                      iconSize: 28,
+                      label1: "TRANSFER TO",
+                      label2: "LOREM IPSUM SIT DOLOR AMET DAMANSARA PERDANA ",
+                      statusLabel: "SUCCESSFUL",
+                      statusLabelColor: "#36A03E",
+                      changeLabel: "+",
+                      changeLabelColor: "#36A03E",
+                      amount: "RM 1,236.78",
+                      actionLabel: "Repeat",
+                      actionIcon: "Repeat",
+                      details: [
+                        {
+                          label1: "From Account",
+                          value1: "15806389266 - Savings Account A",
+                          label2: "Recipient Reference",
+                          value2: "May - Rental",
+                          actionLabel: "Add to Fav",
+                          actionIcon: ""
+                        },
+                        {
+                          label1: "",
+                          value1: "",
+                          label2: "Other Details",
+                          value2: "-",
+                          actionLabel: "View Receipt",
+                          actionIcon: ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]}
+              onTransactionClick={(item, sectionIndex, itemIndex) => {
+                alert("check : " + item);
+                alert(`${sectionIndex} - ${itemIndex}`);
+              }}
+            />
+          </div>
+        </CenteredDiv>
+     
+      <CenteredDiv>
+        <FormContainer
+          disabled
+          label={"Select your account/card type"}
+          tooltip={
+            <div>
+              <p style={{ color: "#ffffff" }}>Select your account/card type</p>
+            </div>
+          }
+          children={
+            <div style={{ padding: "0 0 0 2rem" }}>
+              <SelectionTile
+                testId={"testId"}
+                onTileClick={(item, index) => {
+                  setSelectionTileNum(index);
+                  alert(`${item.accountTitle} with indexOf ${index} clicked`);
+                }}
+                selected={selectionTileNum}
+                list={[
+                  {
+                    accountTitle: "Saving Account A",
+                    accountNumber: "RM 2,000.00"
+                  },
+                  {
+                    accountTitle: "Ambank AmMoneyLine AmMoneyLine",
+                    accountNumber: "RM 2,000.00"
+                  },
+                  {
+                    accountTitle: "Ambank BonusLink Visa",
+                    accountNumber: "RM 2,000.00"
+                  },
+                  {
+                    accountTitle: "Saving Account B",
+                    accountNumber: "RM 2,000.00"
+                  },
+                  {
+                    accountTitle: "Saving Account C",
+                    accountNumber: "RM 2,000.00"
+                  }
+                ]}
+              />
+            </div>
+          }
+        />
+      </CenteredDiv>
     </div>
   );
 };
