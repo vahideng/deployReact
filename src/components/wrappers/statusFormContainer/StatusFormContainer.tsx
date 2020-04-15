@@ -16,13 +16,21 @@ interface Props {
   };
 
   children?: ReactNode;
+  responsive?:boolean;
 }
 
 const StatusFormContainer: React.FC<Props> = ({
   children,
   statusIcon,
-  testId
+  testId,
+  responsive
 }) => {
+  let containerCls = classes.StatusFormContainerCurve;
+  let IconWidth =  "36.31rem";
+  if (responsive) {
+    containerCls = `${classes.StatusFormContainerCurve} ${classes.StatusFormContainerCurveResponive}`
+    IconWidth = '100%';
+  }
   return (
     <div className={classes.StatusFormContainerMain}>
       {!!statusIcon && (
@@ -41,14 +49,15 @@ const StatusFormContainer: React.FC<Props> = ({
           </span>
         </>
       )}
-      <div className={classes.StatusFormContainerCurve} id={testId}>
+      <div className={containerCls} id={testId}>
         <span>
           <Icon
             icon="popup-curve"
             color={"#FFFFFF"}
             size={58}
             style={{
-              width: "36.31rem"
+              width: IconWidth,
+          
             }}
           />
         </span>
@@ -59,3 +68,7 @@ const StatusFormContainer: React.FC<Props> = ({
 };
 
 export default StatusFormContainer;
+
+StatusFormContainer.defaultProps = {
+  responsive: false,
+}

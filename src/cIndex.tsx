@@ -106,13 +106,13 @@ import ConfirmNotes from "./components/confirmNotes/ConfirmNotes";
 import ViewRate from "./components/viewRate/ViewRate";
 import ViewRateContainer from "./components/viewRateContainer/ViewRateContainer";
 import AmResetPin from "./components/amResetPin/amResetPin";
-
+import TransactionWithNote from "./components/TransactionWithNote/TransactionWithNote";
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /// exports
 export {
   //////////////////////////////////////////////////////////////////////////////////////////////
   /// below are sprint-4 components
-
+  TransactionWithNote,
   DynamicText,
   CenterText,
   InputAccordian,

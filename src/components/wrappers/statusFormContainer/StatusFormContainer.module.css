@@ -12,8 +12,12 @@
 }
 
 .StatusFormContainerCurve {
-  width: 36.31rem;
+  max-width: 36.31rem;
   background-color: transparent;
+}
+
+.StatusFormContainerCurveResponive {
+  width: 100% !important;
 }
 
 .StatusFormContainerStatusIcon {
@@ -34,4 +38,16 @@
   border-bottom-left-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
   margin-top: -2px;
+}
+
+@media (max-width: 576px) {
+  .StatusFormContainerContent {
+    margin-top: -10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .StatusFormContainerContent {
+    margin-top: -16px;
+  }
 }

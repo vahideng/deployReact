@@ -15,6 +15,7 @@ interface Props {
   small?: boolean;
   icon?: { name: string; color: string; size?: number };
   shadowed?: boolean;
+  responsive?:boolean;
 }
 
 const PrimaryButton: React.FC<Props> = ({
@@ -92,5 +93,9 @@ const PrimaryButton: React.FC<Props> = ({
     </div>
   );
 };
+
+PrimaryButton.defaultProps = {
+  responsive : false,
+}
 
 export default PrimaryButton;
