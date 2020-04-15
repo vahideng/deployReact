@@ -52,6 +52,7 @@ import AmListItem from "src/components/amListItem/AmListItem";
 import DashboardCart from "src/components/dashboardCart/DashboardCart";
 import UnitTrustList from "src/components/lists/UnitTrustList/UnitTrustList";
 
+
 const {
   B_13_ORANGE_463,
   R_12_WHITE,
@@ -616,10 +617,10 @@ const Sprint3: React.FC<Props> = () => {
               }
             }
           ]}
-          onClickContainer={() => alert("Clicked")}
+          // onClickContainer={() => alert("Clicked")}
           tooltip={true}
           footerLabel="Last Updated: 11 Nov 2019"
-          tipChildren={<div>tip</div>}
+          tipChildren={<div style={{color : "white"}}><p>sadsd</p></div>}
         />
       </CenteredDiv>
       <Title>TransactionLimitList Hidden</Title>
@@ -2331,7 +2332,10 @@ const Sprint3: React.FC<Props> = () => {
       <Title>PortfolioListContent</Title>
       <div style={{ width: "50%", margin: "0 auto" }}>
         <PortfolioListContent
-          borderColor="#8677D9"
+        containerStyle ={{backgroundColor : "red"}} // new changes-1-vahideng
+        buttonStyle = {{color:  "rgba(0, 113, 130, 0.984)"} } // new changes-2-vahideng
+        buttonTextStyle= {{color :'white'}} //new changes-3-vahideng
+        borderColor="#8677D9"
           buttonText="View Performance"
           onClickButton={() => alert("button clicked")}
           data={[

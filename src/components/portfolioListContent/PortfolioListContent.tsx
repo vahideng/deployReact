@@ -22,6 +22,9 @@ interface Props {
   borderColor: string;
   onClickButton?: () => void;
   testId?: string;
+  containerStyle ?: CSSProperties;
+  buttonStyle ?: CSSProperties
+  buttonTextStyle ?:CSSProperties; 
 }
 
 const PortfolioListContent: React.FC<Props> = ({
@@ -29,7 +32,10 @@ const PortfolioListContent: React.FC<Props> = ({
   data,
   borderColor,
   onClickButton,
-  testId
+  testId,
+  containerStyle,
+  buttonStyle,
+  buttonTextStyle
 }) => {
   const StyledDiv = styled.div`
     background-color: #f1f1f1;
@@ -37,7 +43,7 @@ const PortfolioListContent: React.FC<Props> = ({
   `;
   console.log("button text", buttonText);
   return (
-    <StyledDiv id={`${testId}`}>
+    <StyledDiv style={containerStyle ?containerStyle : null } id={`${testId}`}>
       {data.map((item: Content, index: number) => (
         <Row className={classes.Item} id={`${testId}-${index}`} key={index}>
           <R_13_GREY969 style={item.leftLabelStyle}>
@@ -53,8 +59,8 @@ const PortfolioListContent: React.FC<Props> = ({
       ))}
       {buttonText === undefined || onClickButton === undefined ? null : (
         <div className={classes.ButtonContainer}>
-          <button className={classes.Button} onClick={onClickButton}>
-            <B_15_BLACK>{buttonText}</B_15_BLACK>
+          <button className={classes.Button} style = {buttonStyle ? buttonStyle : null}  onClick={onClickButton}>
+            <B_15_BLACK style={buttonTextStyle? buttonTextStyle :null}> {buttonText}</B_15_BLACK>
           </button>
         </div>
       )}
