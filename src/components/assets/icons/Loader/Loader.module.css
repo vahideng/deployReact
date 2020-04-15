@@ -1,8 +1,33 @@
+.Wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.Wrapper footer {
+  max-width: 50%;
+  margin-top: 1rem;
+}
+
 .Loader {
-  display: inline-block;
   position: relative;
-  width: 9.64rem;
-  height: 9.64rem;
+  width: 9.62rem;
+  height: 9.62rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .Loader div {
@@ -10,9 +35,9 @@
           box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 9.64rem;
-  height: 9.64rem;
-  border: 0.5rem solid #ff2626;
+  width: 8.75rem;
+  height: 8.75rem;
+  border: 0.4rem solid #ff2626;
   border-radius: 50%;
   -webkit-animation: Loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
           animation: Loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
@@ -32,6 +57,26 @@
 .Loader div:nth-child(3) {
   -webkit-animation-delay: -0.15s;
           animation-delay: -0.15s;
+}
+
+.Loader .ImageDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 8.75rem;
+  height: 8.75rem;
+}
+
+.Loader .ImageDiv img {
+  position: absolute;
+  width: 2.8rem;
+  height: 2.8rem;
 }
 
 @-webkit-keyframes Loader {

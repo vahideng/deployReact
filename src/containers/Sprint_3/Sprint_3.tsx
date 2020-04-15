@@ -281,7 +281,14 @@ const Sprint3: React.FC<Props> = () => {
         width={"25rem"}
         buttonColor={{ top: "#FD8585", bottom: "#FF2222" }}
       />
-      <Loader isLoading={isLoading} />
+      <Loader
+        isLoading={isLoading}
+        loaderText="Loading..."
+        onRequestClose={() => {
+          alert("onRequestClose");
+          setIsLoading(false);
+        }}
+      />
       <Title>UnitTrustList</Title>
       <CenteredDiv>
         <UnitTrustList
