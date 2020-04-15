@@ -29,6 +29,7 @@ interface Props {
   };
   tooltip?: ReactNode;
   children?: ReactNode;
+  disabled?: boolean;
 }
 
 const FormContainer: React.FC<Props> = ({
@@ -40,15 +41,19 @@ const FormContainer: React.FC<Props> = ({
   testId,
   headerText,
   headerSubText,
-  headerTimeStamp
+  headerTimeStamp,
+  disabled = false
 }) => {
   const rightLabelPointer: CSSProperties =
     rightLabel !== undefined && rightLabel.onClick !== undefined
       ? { cursor: "pointer" }
       : {};
 
+ const disabledStyle: CSSProperties = disabled && { opacity: 0.5, position: "relative" } || {};
+
   return (
-    <div>
+    <div style={disabledStyle}>
+      {disabled && <div className={classes.Overlay}></div>}
       {!!statusIcon && (
         <div className={classes.FormContainerIconWrap}>
           <span className={classes.FormContainerStatusIcon}>
