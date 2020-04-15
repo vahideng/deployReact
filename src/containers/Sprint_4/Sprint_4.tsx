@@ -514,6 +514,9 @@ const Sprint4: React.FC<Props> = () => {
                   }}
                 />
               }
+              carouselProps={{
+                type: 'wide'
+              }}
             />
           </div>
         }

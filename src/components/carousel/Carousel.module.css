@@ -1,11 +1,71 @@
-.CarouselItem {
+.FlexCenter, .FlexLeft, .InnerWide, .FlexRight, .FlexTop, .FlexBottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.FlexLeft, .InnerWide {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.FlexRight {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.FlexTop {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.FlexBottom {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.MainDiv {
+  width: 100%;
+}
+
+.InnerWide {
+  min-width: 34.375rem;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-x: scroll;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  scroll-behavior: smooth;
+}
+
+.CarouselItemWide {
+  min-width: 20rem;
+  max-width: 100%;
+  margin-right: 1rem;
+}
+
+.CarouselItem, .CarouselItemWide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
 }
 
-.CarouselItem .Chevrons {
+.CarouselItem .Chevrons, .CarouselItemWide .Chevrons {
   cursor: pointer;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -13,10 +73,15 @@
   padding: 1rem;
 }
 
-.CarouselItem .Children {
+.CarouselItem .Children, .CarouselItemWide .Children {
   width: 100%;
   -webkit-animation: Children 0.4s ease-in-out;
           animation: Children 0.4s ease-in-out;
+  position: relative;
+}
+
+.CarouselItem .ChildrenWide, .CarouselItemWide .ChildrenWide {
+  width: 100%;
   position: relative;
 }
 
