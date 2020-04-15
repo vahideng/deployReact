@@ -1,36 +1,36 @@
-import React, { CSSProperties, useState, useRef, useEffect } from "react"
-import classes from "./Carousel.module.css"
-import Icon from "../assets/icons/icon"
+import React, { CSSProperties, useState, useRef, useEffect } from "react";
+import classes from "./Carousel.module.css";
+import Icon from "../assets/icons/icon";
 interface Props {
-  type?: "wide" | "default"
-  carouselStyle?: CSSProperties
-  intervalSec?: number
-  items: any
+  type?: "wide" | "default";
+  carouselStyle?: CSSProperties;
+  intervalSec?: number;
+  items: any;
 }
 
 const CustomCarousel = (props: Props) => {
-  const { items, carouselStyle, type } = props
+  const { items, carouselStyle, type } = props;
 
   const RenderDefault = () => {
-    const [stateIndex, setStateIndex] = useState(0)
-    const [rightDisable, setRightDisable] = useState(false)
-    const [leftDisable, setLeftDisable] = useState(true)
+    const [stateIndex, setStateIndex] = useState(0);
+    const [rightDisable, setRightDisable] = useState(false);
+    const [leftDisable, setLeftDisable] = useState(true);
 
     const onRightClick = (items: any, index: number) => {
-      setStateIndex(stateIndex + 1)
-      setLeftDisable(false)
+      setStateIndex(stateIndex + 1);
+      setLeftDisable(false);
       if (items[0].length - 2 === index) {
-        setRightDisable(!rightDisable)
+        setRightDisable(!rightDisable);
       }
-    }
+    };
 
     const onLeftClick = (index: number) => {
-      setStateIndex(stateIndex - 1)
-      setRightDisable(false)
+      setStateIndex(stateIndex - 1);
+      setRightDisable(false);
       if (index === 1) {
-        setLeftDisable(true)
+        setLeftDisable(true);
       }
-    }
+    };
     return (
       <>
         <div>
@@ -65,7 +65,7 @@ const CustomCarousel = (props: Props) => {
                   </span>
                 </div>
               )
-            )
+            );
           })}
         </div>
         <div className={classes.CarouselIndicDiv}>
@@ -81,17 +81,17 @@ const CustomCarousel = (props: Props) => {
                 }
                 onClick={() => setStateIndex(index)}
               ></span>
-            )
+            );
           })}
         </div>
       </>
-    )
-  }
+    );
+  };
 
   const RenderWide = () => {
-    const [stateIndex, setStateIndex] = useState(0)
-    const CarouselScroller = useRef(null)
-    const CarouselItem = useRef(null)
+    const [stateIndex, setStateIndex] = useState(0);
+    const CarouselScroller = useRef(null);
+    const CarouselItem = useRef(null);
 
     useEffect(() => {
       if (
@@ -101,9 +101,9 @@ const CustomCarousel = (props: Props) => {
         CarouselItem.current
       ) {
         CarouselScroller.current.scrollLeft =
-          stateIndex * (CarouselItem.current.clientWidth + 16)
+          stateIndex * (CarouselItem.current.clientWidth + 16);
       }
-    }, [stateIndex])
+    }, [stateIndex]);
 
     return (
       <>
@@ -118,7 +118,7 @@ const CustomCarousel = (props: Props) => {
               >
                 <div className={classes.ChildrenWide}>{item.children}</div>
               </div>
-            )
+            );
           })}
         </div>
         <div className={classes.CarouselIndicDiv}>
@@ -134,27 +134,27 @@ const CustomCarousel = (props: Props) => {
                 }
                 onClick={() => setStateIndex(index)}
               ></span>
-            )
+            );
           })}
         </div>
       </>
-    )
-  }
+    );
+  };
 
   const Controller = () => {
     switch (type) {
       case "wide":
-        return <RenderWide />
+        return <RenderWide />;
       default:
-        return <RenderDefault />
+        return <RenderDefault />;
     }
-  }
+  };
 
   return (
     <div className={classes.MainDiv}>
       <Controller />
     </div>
-  )
-}
+  );
+};
 
-export default CustomCarousel
+export default CustomCarousel;

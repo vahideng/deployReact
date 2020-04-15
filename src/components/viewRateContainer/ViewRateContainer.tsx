@@ -1,48 +1,48 @@
-import React, { useState } from "react"
-import styled from "styled-components"
-import Paragraphs from "../assets/typography"
+import React, { useState } from "react";
+import styled from "styled-components";
+import Paragraphs from "../assets/typography";
 // import classes from "./ViewRateContainer.module.css";
-import Line from "src/components/line/Line"
-import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton"
-import Carousel from "src/components/carousel/Carousel"
-import AmDropdown from "src/components/amDropdown/AmDropdown"
-import Icon from "src/components/assets/icons/icon"
+import Line from "src/components/line/Line";
+import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
+import Carousel from "src/components/carousel/Carousel";
+import AmDropdown from "src/components/amDropdown/AmDropdown";
+import Icon from "src/components/assets/icons/icon";
 
-const { B_24_BLACK, B_13_BLACK, B_13_GREY444 } = Paragraphs
+const { B_24_BLACK, B_13_BLACK, B_13_GREY444 } = Paragraphs;
 
 interface Props {
-  testId?: string
-  title?: string
+  testId?: string;
+  title?: string;
   rateTypeIcon?: {
-    name: string
-    color?: string
-    size?: number
-  }
-  rateTypeValue?: any
+    name: string;
+    color?: string;
+    size?: number;
+  };
+  rateTypeValue?: any;
   rateTypeList?: {
-    value?: string | number
-    label?: string
-  }[]
-  onRateTypeChange?: (value: any) => void
-  date?: string
-  dropDownProps?: any
-  viewRateComponent?: React.ReactNode
+    value?: string | number;
+    label?: string;
+  }[];
+  onRateTypeChange?: (value: any) => void;
+  date?: string;
+  dropDownProps?: any;
+  viewRateComponent?: React.ReactNode;
   ads?: {
-    children: React.ReactNode
-  }[][]
-  carouselProps?: any
-  closeIcon?: React.ReactNode
-  onClose?: () => void
-  buttonTitle?: string
-  onButtonClick?: () => void
-  buttonProps?: any
+    children: React.ReactNode;
+  }[][];
+  carouselProps?: any;
+  closeIcon?: React.ReactNode;
+  onClose?: () => void;
+  buttonTitle?: string;
+  onButtonClick?: () => void;
+  buttonProps?: any;
 }
 
 const CenteredDiv = styled.div`
   display: flex;
   justify-content: center;
   padding: 2rem 0;
-`
+`;
 
 const ViewRateContainer: React.FC<Props> = ({
   testId,
@@ -62,18 +62,18 @@ const ViewRateContainer: React.FC<Props> = ({
   onButtonClick,
   buttonProps,
 }) => {
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false)
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const handleClose = () => {
     if (onClose) {
-      onClose()
+      onClose();
     }
-  }
+  };
 
   const handleRateTypeChange = (value: any) => {
     if (onRateTypeChange) {
-      onRateTypeChange(value)
+      onRateTypeChange(value);
     }
-  }
+  };
 
   return (
     <div id={testId} style={{ backgroundColor: "#fff", position: "relative" }}>
@@ -110,16 +110,16 @@ const ViewRateContainer: React.FC<Props> = ({
           value={rateTypeValue}
           icon={rateTypeIcon || { name: "Clock", color: "#ff2626", size: 30 }}
           handleChange={(item: any) => {
-            const { value } = item
-            handleRateTypeChange(value)
+            const { value } = item;
+            handleRateTypeChange(value);
           }}
           placeholder="Select test"
           clickOnArrow={() => {
-            setIsDropdownVisible(!isDropdownVisible)
+            setIsDropdownVisible(!isDropdownVisible);
           }}
           inputClickHandler={() => {}}
           onBlur={() => {
-            setIsDropdownVisible(false)
+            setIsDropdownVisible(false);
           }}
           showDropdown={isDropdownVisible}
           arrowIcon
@@ -177,7 +177,7 @@ const ViewRateContainer: React.FC<Props> = ({
         />
       </CenteredDiv>
     </div>
-  )
-}
+  );
+};
 
-export default ViewRateContainer
+export default ViewRateContainer;
