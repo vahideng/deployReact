@@ -15,7 +15,7 @@ import ViewRate from "src/components/viewRate/ViewRate";
 import ViewRateContainer from "src/components/viewRateContainer/ViewRateContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import TacModal from "src/components/modals/tacModal/TacModal";
-
+import TransactionIconList from "src/components/lists/TransactionIconList/TransactionIconList";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
 
 import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
@@ -62,8 +62,10 @@ const Sprint4: React.FC<Props> = () => {
   const [inputValue, setInputValue] = useState('');
   const [tacInactive,setTacInactive] = useState(true);
   const [TacModalOpen,setTacModalOpen] = useState(false);
+  const [actionBtnStatus,setActionBtnStatus] = useState(true);
   const tacClear = false;
   const tacClearActiveStatus = false;
+
   // const [linkListBtnColor, setLinkListBtnColor] = useState({
   //   top: '#BDBDBD',
   //   bottom: '#BDBDBD',
@@ -2356,7 +2358,139 @@ const Sprint4: React.FC<Props> = () => {
             }
           />
         </CenteredDiv>
-   
+        <Title>TransactionIconList</Title>
+        <CenteredDiv>
+          <div style={{ width: "57.1875em" }}>
+            <TransactionIconList
+              testId={"testId"}
+              list={[
+                {
+                  date: "Today",
+                  expandedIndexes: [0],
+                  transactions: [
+                    {
+                      icon: "Transfer",
+                      iconBgColor: "orange",
+                      iconColor: "white",
+                      iconSize: 28,
+                      label1: "TRANSFER TO",
+                      label2: "SEEN OPTICS ",
+                      statusLabel: "SUCCESSFUL",
+                      statusLabelColor: "#36A03E",
+                      changeLabel: "-",
+                      changeLabelColor: "#F73C4A",
+                      amount: "RM 236.78",
+                      actionLabel: "Repeat",
+                      actionIcon: "Repeat",
+                      onActionButtonClick: () => {
+                        alert("Repeat");
+                      },
+                      details: [
+                        {
+                          label1: "From Account",
+                          value1: "15806389266 - Savings Account A",
+                          label2: "Recipient Reference",
+                          value2: "May - Rental",
+                          actionLabel: "Add to Fav",
+                          actionIcon: "Love",
+                          onActionButtonClick: () => {
+                            alert("Fav");
+                            setActionBtnStatus(!actionBtnStatus);
+                          }
+                        },
+                        {
+                          label1: "",
+                          value1: "",
+                          label2: "Other Details",
+                          value2: "-"
+                          //  actionLabel: 'View Receipt',
+                          // actionIcon: ''
+                        }
+                      ]
+                    },
+                    {
+                      icon: "Transfer",
+                      iconBgColor: "blue",
+                      iconColor: "white",
+                      iconSize: 28,
+                      label1: "TRANSFER TO",
+                      label2: "SEEN OPTICS ",
+                      statusLabel: "SUCCESSFUL",
+                      statusLabelColor: "#36A03E",
+                      changeLabel: "-",
+                      changeLabelColor: "#F73C4A",
+                      amount: "RM 236.78",
+                      actionLabel: "Repeat",
+                      actionIcon: "Repeat",
+                      details: [
+                        {
+                          label1: "From Account",
+                          value1: "15806389266 - Savings Account A",
+                          label2: "Recipient Reference",
+                          value2: "May - Rental",
+                          actionLabel: "Add to Fav",
+                          actionIcon: ""
+                        },
+                        {
+                          label1: "",
+                          value1: "",
+                          label2: "Other Details",
+                          value2: "-",
+                          actionLabel: "View Receipt",
+                          actionIcon: ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  date: "12 Jan 2020",
+                  expandedIndexes: [],
+                  transactions: [
+                    {
+                      icon: "Loan",
+                      iconBgColor: "red",
+                      iconColor: "white",
+                      iconSize: 28,
+                      label1: "TRANSFER TO",
+                      label2: "LOREM IPSUM SIT DOLOR AMET DAMANSARA PERDANA ",
+                      statusLabel: "SUCCESSFUL",
+                      statusLabelColor: "#36A03E",
+                      changeLabel: "+",
+                      changeLabelColor: "#36A03E",
+                      amount: "RM 1,236.78",
+                      actionLabel: "Repeat",
+                      actionIcon: "Repeat",
+                      details: [
+                        {
+                          label1: "From Account",
+                          value1: "15806389266 - Savings Account A",
+                          label2: "Recipient Reference",
+                          value2: "May - Rental",
+                          actionLabel: "Add to Fav",
+                          actionIcon: ""
+                        },
+                        {
+                          label1: "",
+                          value1: "",
+                          label2: "Other Details",
+                          value2: "-",
+                          actionLabel: "View Receipt",
+                          actionIcon: ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]}
+              onTransactionClick={(item, sectionIndex, itemIndex) => {
+                alert("check : " + item);
+                alert(`${sectionIndex} - ${itemIndex}`);
+              }}
+            />
+          </div>
+        </CenteredDiv>
+     
     </div>
   );
 };
