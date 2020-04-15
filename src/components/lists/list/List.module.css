@@ -2,6 +2,10 @@
   font-family: Nunito Sans;
 }
 
+.ContainerResponsive {
+  width: 100% !important;
+}
+
 .ListTitleDiv {
   display: -webkit-box;
   display: -ms-flexbox;

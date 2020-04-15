@@ -16,7 +16,8 @@ const {
 } = Paragraphs;
 interface Props {
   testId?: string;
-
+  responsive?: boolean;
+  width?: string;
   header?: {
     icon?: { name: string; color?: string; iconText: string };
     title?: string;
@@ -56,10 +57,16 @@ const List: React.FC<Props> = ({
   header,
   itemContainerStyle,
   testId,
-  list
+  list,
+  responsive,
+  width
 }) => {
+  let containerCls = classes.Container;
+  if (responsive) {
+    containerCls = `${containerCls} ${classes.ContainerResponsive}`;
+  }
   return (
-    <div className={classes.Container} id={testId}>
+    <div className={containerCls} id={testId} style={{ width }}>
       {!!header && (
         <div>
           {!!header.title && (
