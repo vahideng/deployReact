@@ -15,6 +15,7 @@ import ViewRate from "src/components/viewRate/ViewRate";
 import ViewRateContainer from "src/components/viewRateContainer/ViewRateContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
+import List from "src/components/lists/list/List";
 
 import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
 import Box_V2 from "src/components/wrappers/box_V2/Box_V2";
@@ -38,8 +39,8 @@ const Title = styled(B_13_ORANGE_463)`
 `;
 const CenteredDiv = styled.div`
   display: flex;
+  flexdirection: row;
   justify-content: center;
-
   padding: 2rem 0;
 `;
 interface Props {}
@@ -111,6 +112,40 @@ const Sprint3: React.FC<Props> = () => {
           }
         ]}
       />
+      <Title>List - Responsive</Title>
+      <CenteredDiv>
+        <List
+          responsive
+          width="30rem"
+          itemContainerStyle={{ padding: 0 }}
+          list={[
+            {
+              leftLabel: "To",
+              rightLabel: "Saving Account A",
+              details: ["8881019596535 | AmBank"]
+            },
+            {
+              leftLabel: "Amount",
+              rightLabel: "RM 500.00",
+              details: ["Fees & Charges: RM 0.00"]
+            },
+            {
+              leftLabel: "Date",
+              rightLabel: "Transfer Now",
+              details: ["Today, 5 January 2019"]
+            },
+            {
+              leftLabel: "Reference",
+              rightLabel: "House Rental"
+            },
+            {
+              leftLabel: "From",
+              rightLabel: "Savings Account",
+              details: ["2998202013", "Available Balance: RM 10,301.50"]
+            }
+          ]}
+        />
+      </CenteredDiv>
       <Title>DetailList</Title>
       <div style={{ width: "38.5rem", margin: "0 auto" }}>
         <DetailList
