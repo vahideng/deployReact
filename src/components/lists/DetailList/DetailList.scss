@@ -1,3 +1,4 @@
+@import "../../assets/common/common.scss";
 .DetailListMainDiv {
   width: auto;
   height: auto;
@@ -9,9 +10,13 @@
   max-width: 23.38rem;
   margin: 0 auto;
 }
+.ListTitle {
+  @extend %truncatedText;
+}
 .DetailListTitle #title {
   text-align: center;
 }
+
 .DetailListRows {
   display: flex;
   justify-content: space-between;
