@@ -94,6 +94,7 @@ import TooltipDropdown from "./components/tooltipDropdown/TooltipDropdown";
 import UnitTrustList from "./components/lists/UnitTrustList/UnitTrustList";
 import AmProfileSetting from "./components/amProfileSetting/amProfileSetting";
 import AmAccordion from "./components/amAccordion/AmAccordion";
+import Loader from "./components/assets/icons/Loader/Loader";
 
 /// exports
 export {
@@ -120,6 +121,7 @@ export {
   PortfolioList,
   DashboardCart,
   UnitTrustList,
+  Loader,
   ////
   /// below are sprint-2 components
   CalendarBox,
