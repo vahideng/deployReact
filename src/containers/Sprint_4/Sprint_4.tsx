@@ -112,6 +112,58 @@ const Sprint3: React.FC<Props> = () => {
           }
         ]}
       />
+      <Title>Review & Confirm - Responsive</Title>
+      <div
+        style={{
+          margin: "0 auto"
+        }}
+      >
+        <FormContainer
+          responsive
+          children={
+            <List
+              responsive
+              header={{
+                icon: {
+                  name: "LOGO",
+                  color: "#ff2626",
+                  iconText: "Review & Confirm"
+                }
+              }}
+              list={[
+                {
+                  leftLabel: "To",
+                  rightLabel: "Saving Account A",
+                  approved: true,
+                  details: ["8881019596535 | AmBank"],
+                  amount: {
+                    content: "Dynamic",
+                    styleContent: {},
+                    value: "600RM",
+                    styleValue: {}
+                  }
+                },
+
+                {
+                  leftLabel: "Date",
+                  rightLabel: "Transfer Now",
+                  details: ["Today, 5 January 2019"]
+                },
+
+                {
+                  leftLabel: "From",
+                  rightLabel: "Savings Account",
+                  details: ["2998202013", "Available Balance: RM 10,301.50"],
+                  status: {
+                    content: "UNSUCCESSFUL",
+                    color: "red"
+                  }
+                }
+              ]}
+            />
+          }
+        />
+      </div>
       <Title>List - Responsive</Title>
       <CenteredDiv>
         <List
