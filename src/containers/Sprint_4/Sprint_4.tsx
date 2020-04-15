@@ -2358,7 +2358,7 @@ const Sprint4: React.FC<Props> = () => {
             }
           />
         </CenteredDiv>
-        <Title>TransactionIconList</Title>
+        <Title>TransactionIconList(Update)</Title>
         <CenteredDiv>
           <div style={{ width: "57.1875em" }}>
             <TransactionIconList
