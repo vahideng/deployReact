@@ -447,6 +447,8 @@ const SB_18_BLACK = styled.p`
   line-height: 25px;
 `;
 
+
+
 export default {
   R_20_WHITE,
   SB_13_GREY444,
@@ -507,5 +509,6 @@ export default {
   SB_13_BLACK,
   XB_11_WHITE,
   R_12_BLACK,
-  SB_18_BLACK
+  SB_18_BLACK,
+  
 };

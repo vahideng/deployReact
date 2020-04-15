@@ -24,6 +24,9 @@
 
 .SelectionTileWrapperResponsive {
   flex: 1 !important;
+  @media (max-width: 576px) {
+    margin: 0.5rem;
+  }
 }
 
 .SelectionTileSelector {
