@@ -76,7 +76,7 @@ const TransactionWithNote: React.FC<TransactionWithNoteProps> = ({
       />
 
       <CenteredDiv style={{ flexDirection: 'column', alignItems: 'center' }}>
-        <div style={{ maxWidth: '36.1rem' }}>
+        <div style={{ maxWidth: '36.3rem' }}>
           <ConfirmNotes
             testId="sprint_4_confirm_notes"
             title={confirmNotesTitle}
