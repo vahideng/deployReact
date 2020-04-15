@@ -126,11 +126,11 @@ const Sprint4: React.FC<Props> = () => {
       <div style={{ width: "38.5rem", margin: "0 auto" }}>
         <DetailList
           testId={"testId"}
-          title={[
-            "*RM Amount is an indicative value and to be considered as reference only.",
+          titleList={[
+            "TitleList Amount is an indicative indicative and to be considered as reference only.",
             "Protected by PIDM up to RM 250,000 for each depositor."
           ]}
-          // title="*RM Amount is an indicative value and to be considered as reference only.
+          // title="Title Amount is an indicative value and to be considered as reference only.
           // Protected by PIDM up to RM 250,000 for each depositor."
           list={[
             {
@@ -2287,8 +2287,8 @@ const Sprint4: React.FC<Props> = () => {
       </div>
 
       <Title>TacModal(Update)-(Ref:Sprint1)</Title>
-       <CenteredDiv>
-       <TacModal
+      <CenteredDiv>
+        <TacModal
           onCloseClick={() => {
             alert("Tac Closed");
           }}
@@ -2296,7 +2296,7 @@ const Sprint4: React.FC<Props> = () => {
           maxLength={6}
           clearIcon={inputValue === "" ? tacClear : !tacClear}
           clearClickHandler={() => {
-            setInputValue('');
+            setInputValue("");
           }}
           inActiveMessage={{
             title: "Your profile is inactive.",
@@ -2311,7 +2311,6 @@ const Sprint4: React.FC<Props> = () => {
           label={"TAC verification"}
           value={inputValue}
           handleChange={(e: any) => {
-      
             setInputValue(e.target.value);
           }}
           notValid={inputValue === "" ? true : false}
@@ -2348,10 +2347,10 @@ const Sprint4: React.FC<Props> = () => {
         <PrimaryButton
           title="Open TacModal"
           onButtonClick={() => {
-          setTacModalOpen(true);
+            setTacModalOpen(true);
           }}
         />
-         </CenteredDiv>   
+      </CenteredDiv>
       <Title>FormContainer Disabled</Title>
         <CenteredDiv>
           <FormContainer
@@ -2533,6 +2532,51 @@ const Sprint4: React.FC<Props> = () => {
           </div>
         </CenteredDiv>
      
+      <CenteredDiv>
+        <FormContainer
+          disabled
+          label={"Select your account/card type"}
+          tooltip={
+            <div>
+              <p style={{ color: "#ffffff" }}>Select your account/card type</p>
+            </div>
+          }
+          children={
+            <div style={{ padding: "0 0 0 2rem" }}>
+              <SelectionTile
+                testId={"testId"}
+                onTileClick={(item, index) => {
+                  setSelectionTileNum(index);
+                  alert(`${item.accountTitle} with indexOf ${index} clicked`);
+                }}
+                selected={selectionTileNum}
+                list={[
+                  {
+                    accountTitle: "Saving Account A",
+                    accountNumber: "RM 2,000.00"
+                  },
+                  {
+                    accountTitle: "Ambank AmMoneyLine AmMoneyLine",
+                    accountNumber: "RM 2,000.00"
+                  },
+                  {
+                    accountTitle: "Ambank BonusLink Visa",
+                    accountNumber: "RM 2,000.00"
+                  },
+                  {
+                    accountTitle: "Saving Account B",
+                    accountNumber: "RM 2,000.00"
+                  },
+                  {
+                    accountTitle: "Saving Account C",
+                    accountNumber: "RM 2,000.00"
+                  }
+                ]}
+              />
+            </div>
+          }
+        />
+      </CenteredDiv>
     </div>
   );
 };
