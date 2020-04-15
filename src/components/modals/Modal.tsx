@@ -17,18 +17,20 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     background: "transparent",
     border: "none",
+    zIndex: 1000000000
   },
   overlay: {
     background: "rgba(0, 0, 0, 0.5)",
     backgroundBlendMode: "multiply",
-  },
+    zIndex: 1000000000
+  }
 };
 
 const AmModal: React.FC<Props> = ({
   modalChildren,
   modalIsOpen,
   testId,
-  onRequestClose,
+  onRequestClose
 }) => {
   const [show, setShow] = useState(false);
   useEffect(() => {

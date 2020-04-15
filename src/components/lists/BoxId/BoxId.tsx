@@ -1,9 +1,9 @@
-import React, { CSSProperties, useState } from "react";
+import React, { CSSProperties, useState, FormEvent } from "react";
 import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../../assets/typography";
 import classes from "./BoxId.module.css";
 import { Notify } from "../../assets/common/notification";
-const { B_14_BLACK, B_15_BLACK, R_13_BLACK, B_13_GREY444 } = Paragraphs;
+const { B_14_BLACK, B_15_BLACK, R_13_BLACK } = Paragraphs;
 interface Props {
   testId?: string;
   title?: string;
@@ -19,6 +19,7 @@ interface Props {
       icon: string;
       text: string;
       onClick?: () => void;
+      onBlur?: (event: FormEvent) => void;
     }[];
   }[];
 }
@@ -33,6 +34,10 @@ const BoxId = ({ testId, title, titleStyle, list, isActive }: Props) => {
   const closeHandler = () => {
     setSelected(null);
   };
+  const onblurHandler = (button: any, e: FormEvent) => {
+    !!button.onBlur && button.onBlur(e);
+    closeHandler();
+  };
   const iconColor = () => {
     if (isActive) {
       return "#000000";
@@ -40,6 +45,7 @@ const BoxId = ({ testId, title, titleStyle, list, isActive }: Props) => {
       return "#696969";
     }
   };
+
   //   const onIconClick = {};
   return (
     <div id={testId} className={classes.MainDiv}>
@@ -89,7 +95,6 @@ const BoxId = ({ testId, title, titleStyle, list, isActive }: Props) => {
                     className={classes.rightIcon}
                     onClick={() => {
                       iconClickHandler(index);
-                      console.log(index);
                     }}
                   >
                     <Icon icon="Menu" size={32} color={iconColor()} />
@@ -99,18 +104,17 @@ const BoxId = ({ testId, title, titleStyle, list, isActive }: Props) => {
                       {item.iconButtons &&
                         item.iconButtons.map((button, index) => {
                           return (
-                            <div
-                              onClick={() => {
-                                closeHandler();
-                                button.onClick();
-                              }}
-                              key={index}
-                              className={classes.ButtonIcon}
-                            >
-                              <Icon icon={button.icon} size={25} />
-                              <B_13_GREY444 className={classes.ButtonIconText}>
+                            <div key={index} className={classes.ButtonDiv}>
+                              <button
+                                onClick={() => {
+                                  button.onClick();
+                                }}
+                                onBlur={e => onblurHandler(button, e)}
+                                className={classes.ButtonIconText}
+                              >
+                                <Icon icon={button.icon} size={25} />
                                 {button.text}
-                              </B_13_GREY444>
+                              </button>
                             </div>
                           );
                         })}
@@ -170,18 +174,17 @@ const BoxId = ({ testId, title, titleStyle, list, isActive }: Props) => {
                       {item.iconButtons &&
                         item.iconButtons.map((button, index) => {
                           return (
-                            <div
-                              onClick={() => {
-                                closeHandler();
-                                button.onClick();
-                              }}
-                              key={index}
-                              className={classes.ButtonIcon}
-                            >
-                              <Icon icon={button.icon} size={25} />
-                              <B_13_GREY444 className={classes.ButtonIconText}>
+                            <div key={index} className={classes.ButtonDiv}>
+                              <button
+                                onClick={() => {
+                                  button.onClick();
+                                }}
+                                onBlur={e => onblurHandler(button, e)}
+                                className={classes.ButtonIconText}
+                              >
+                                <Icon icon={button.icon} size={25} />
                                 {button.text}
-                              </B_13_GREY444>
+                              </button>
                             </div>
                           );
                         })}

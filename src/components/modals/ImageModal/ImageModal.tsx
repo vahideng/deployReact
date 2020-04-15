@@ -44,11 +44,13 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     background: "transparent",
-    border: "none"
+    border: "none",
+    zIndex: 1000000000
   },
   overlay: {
     background: "rgba(0, 0, 0, 0.5)",
-    backgroundBlendMode: "multiply"
+    backgroundBlendMode: "multiply",
+    zIndex: 1000000000
   }
 };
 
