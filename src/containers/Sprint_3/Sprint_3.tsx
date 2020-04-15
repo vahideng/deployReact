@@ -1437,6 +1437,16 @@ const Sprint3: React.FC<Props> = () => {
             headerStyle={{
               backgroundColor: "rgba(196, 196, 196, 0.3)",
             }}
+            children={
+              <AmListItem
+                testId="testId-123"
+                title="Item with no left but right icon"
+                icon={<Icon icon={"Right1"} size={20} color={"#000000"} />}
+                status={
+                  <Icon icon={"CheckboxYes"} size={20} color={"#000000"} />
+                }
+              />
+            }
           />
         </div>
       </CenteredDiv>
