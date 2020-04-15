@@ -47,7 +47,7 @@ const customStyles = {
     marginRight: "-50%",
     width: "100%",
     left: " 0px",
-    padding:'1.5rem'
+    padding:'1.5rem',
     zIndex: 1000000000
   },
   overlay: {
