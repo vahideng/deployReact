@@ -55,7 +55,7 @@
   text-align: center;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 576px) {
   .innerDivRes {
     max-width: 19.4375rem;
     width: 100%;

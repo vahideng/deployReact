@@ -1,15 +1,15 @@
 import React, { useState, useEffect, ReactNode, FormEvent } from "react";
 import Modal from "react-modal";
-import InputField from "../../inputs/inputFields/InputFields";
+import InputField from "src/components/inputs/inputFields/InputFields";
 import Paragraphs from "../../assets/typography";
 import FullButton from "../../buttons/primaryButton/PrimaryButton";
 import classes from "./TacModal.module.css";
 import Icon from "src/components/assets/icons/icon";
-
 const { R_15_GREY444, B_15_BLACK, R_14_BLACK, B_15_ORANGE_463 } = Paragraphs;
 
 interface Props {
   testId?: string;
+  responsive?:boolean;
   content?: string;
   link?: { text: string; onLinkClick: () => void };
   modalIsOpen?: boolean;
@@ -46,7 +46,8 @@ const customStyles = {
     bottom: "0",
     marginRight: "-50%",
     width: "100%",
-    left: " 0px"
+    left: " 0px",
+    padding:'1.5rem'
   },
   overlay: {
     background: "rgba(0, 0, 0, 0.5)",
@@ -76,22 +77,26 @@ const TacModal: React.FC<Props> = ({
   onCloseClick,
   maxLength,
   onBlur,
-  onFocus
+  onFocus,
+  responsive
+
 }) => {
   const [modalStatus, setModalStatus] = useState(modalIsOpen);
   useEffect(() => {
     setModalStatus(modalIsOpen);
   }, [modalIsOpen]);
+    const {TacMainInnerDiv,TacMainInnerDivRes,TacMainDiv,TacInActiveIcon,TacInActiveIconText,TacInputField,
+      TacInputFieldContent,TacInputFieldLink, TacButton, TacCrossButton, TacInActiveIconRes, TacButtonRes} = classes;
   return (
     <>
       <Modal isOpen={!!modalStatus && modalStatus} style={customStyles}>
-        <div id={testId} className={classes.TacMainDiv}>
+        <div id={testId} className={TacMainDiv}>
           {!!activeStatus ? (
             <>{activeStatusChild}</>
           ) : (
-            <div id={testId} className={classes.TacMainInnerDiv}>
+            <div id={testId} className={responsive ? TacMainInnerDivRes : TacMainInnerDiv }>
               {!!inActive ? (
-                <div className={classes.TacInActiveIcon}>
+                <div className={responsive? TacInActiveIconRes :TacInActiveIcon}>
                   {!!inActiveIcon ? (
                     <Icon
                       icon={inActiveIcon.name}
@@ -102,7 +107,7 @@ const TacModal: React.FC<Props> = ({
                     <Icon icon={"Amy1"} color={"#A9A9A9"} size={60} />
                   )}
 
-                  <div className={classes.TacInActiveIconText}>
+                  <div className={TacInActiveIconText}>
                     <B_15_BLACK>{inActiveMessage.title}</B_15_BLACK>
                     <R_14_BLACK>{inActiveMessage.text}</R_14_BLACK>
                   </div>
@@ -110,8 +115,9 @@ const TacModal: React.FC<Props> = ({
               ) : (
                 <>
                   <form>
-                    <div className={classes.TacInputField}>
+                    <div className={TacInputField}>
                       <InputField
+                        responsive={true}
                         clearIcon={clearIcon}
                         clearClickHandler={clearClickHandler}
                         testId={`${testId}-0`}
@@ -128,12 +134,12 @@ const TacModal: React.FC<Props> = ({
                         tacInput={true}
                       />
                     </div>
-                    <div className={classes.TacInputFieldContent}>
+                    <div className={TacInputFieldContent}>
                       <R_15_GREY444>{content}</R_15_GREY444>
                       {!!link && (
                         <B_15_ORANGE_463
                           onClick={link.onLinkClick}
-                          className={classes.TacInputFieldLink}
+                          className={TacInputFieldLink}
                         >
                           {link.text}
                         </B_15_ORANGE_463>
@@ -143,7 +149,7 @@ const TacModal: React.FC<Props> = ({
                 </>
               )}
 
-              <div className={classes.TacButton}>
+              <div className={responsive ? TacButtonRes : TacButton}>
                 <FullButton
                   testId={`${testId}-1`}
                   buttonColor={{
@@ -155,7 +161,7 @@ const TacModal: React.FC<Props> = ({
                 />
               </div>
               <span
-                className={classes.TacCrossButton}
+                className={TacCrossButton}
                 onClick={() => {
                   setModalStatus(false);
                   onCloseClick();
@@ -171,4 +177,7 @@ const TacModal: React.FC<Props> = ({
   );
 };
 
+TacModal.defaultProps ={
+  responsive:false
+}
 export default TacModal;
