@@ -98,6 +98,7 @@ import AmProfileSetting from "./components/amProfileSetting/amProfileSetting";
 import UnitTrustList from "./components/lists/UnitTrustList/UnitTrustList";
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /// below are sprint-4 components
+import Loader from "./components/assets/icons/Loader/Loader";
 
 import DynamicText from "./components/assets/typography/DynamicText/DynamicText";
 import CenterText from "./components/assets/typography/CenterText/CenterText";
@@ -144,7 +145,8 @@ export {
   PortfolioList,
   DashboardCart,
   UnitTrustList,
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+  Loader,
+  ////
   /// below are sprint-2 components
   CalendarBox,
   Box_V2,

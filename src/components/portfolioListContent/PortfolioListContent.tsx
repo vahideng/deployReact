@@ -41,7 +41,7 @@ const PortfolioListContent: React.FC<Props> = ({
     background-color: #f1f1f1;
     border-left: 0.375rem ${borderColor} solid;
   `;
-  console.log("button text", buttonText);
+
   return (
     <StyledDiv style={containerStyle ?containerStyle : null } id={`${testId}`}>
       {data.map((item: Content, index: number) => (

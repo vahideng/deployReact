@@ -48,10 +48,12 @@ const customStyles = {
     width: "100%",
     left: " 0px",
     padding:'1.5rem'
+    zIndex: 1000000000
   },
   overlay: {
     background: "rgba(0, 0, 0, 0.5)",
-    backgroundBlendMode: "multiply"
+    backgroundBlendMode: "multiply",
+    zIndex: 1000000000
   }
 };
 const TacModal: React.FC<Props> = ({

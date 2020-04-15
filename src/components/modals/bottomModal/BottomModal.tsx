@@ -4,7 +4,7 @@ interface Props {
   testId?: string;
   modalChildren?: ReactNode;
   modalIsOpen: boolean;
-  onRequestClose ?: ()=> void
+  onRequestClose?: () => void;
 }
 
 const customStyles = {
@@ -17,11 +17,13 @@ const customStyles = {
     padding: "0 0 1rem 0",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    zIndex: 1000000000
   },
   overlay: {
     background: "rgba(0, 0, 0, 0.5)",
-    backgroundBlendMode: "multiply"
+    backgroundBlendMode: "multiply",
+    zIndex: 1000000000
   }
 };
 const BottomModal: React.FC<Props> = ({
@@ -35,13 +37,11 @@ const BottomModal: React.FC<Props> = ({
     setShow(modalIsOpen);
   }, [modalIsOpen]);
   const handleCloseModal = () => {
-
-    if(onRequestClose){
-      onRequestClose()
-    }else{
+    if (onRequestClose) {
+      onRequestClose();
+    } else {
       setShow(false);
     }
-    
   };
   return (
     <div id={testId}>
