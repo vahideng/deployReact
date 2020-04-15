@@ -30,6 +30,7 @@ interface Props {
   };
   tooltip?: ReactNode;
   children?: ReactNode;
+  disabled?: boolean;
 }
 
 const FormContainer: React.FC<Props> = ({
@@ -42,12 +43,15 @@ const FormContainer: React.FC<Props> = ({
   headerText,
   headerSubText,
   headerTimeStamp,
+  disabled = false,
   responsive
 }) => {
   const rightLabelPointer: CSSProperties =
     rightLabel !== undefined && rightLabel.onClick !== undefined
       ? { cursor: "pointer" }
       : {};
+
+ const disabledStyle: CSSProperties = disabled && { opacity: 0.5, position: "relative" } || {};
 
   let mainContainerCls = classes.FormContainerMain;
   if (responsive) {
@@ -58,7 +62,8 @@ const FormContainer: React.FC<Props> = ({
     iconContainerCls = `${iconContainerCls} ${classes.FormContainerIconWrapResponsive}`;
   }
   return (
-    <div>
+    <div style={disabledStyle}>
+      {disabled && <div className={classes.Overlay}></div>}
       {!!statusIcon && (
         <div className={iconContainerCls}>
           <span className={classes.FormContainerStatusIcon}>

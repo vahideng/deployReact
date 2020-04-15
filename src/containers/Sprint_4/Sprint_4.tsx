@@ -14,6 +14,8 @@ import InputField from "src/components/inputs/inputFields/InputFields";
 import ViewRate from "src/components/viewRate/ViewRate";
 import ViewRateContainer from "src/components/viewRateContainer/ViewRateContainer";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
+import TacModal from "src/components/modals/tacModal/TacModal";
+
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
 import List from "src/components/lists/list/List";
 
@@ -21,13 +23,14 @@ import SelectionTile from "src/components/selections/selectionTile/SelectionTile
 import Box_V2 from "src/components/wrappers/box_V2/Box_V2";
 import InputAccordian from "src/components/InputAccordian/InputAccordian";
 import AmModal from "src/components/modals/Modal";
-
+import Prompt from "src/components/infographic/prompt/Prompt";
 import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 import DynamicText from "src/components/assets/typography/DynamicText/DynamicText";
 import CenterText from "src/components/assets/typography/CenterText/CenterText";
 import ErrorPage from "src/components/ErrorPage/ErrorPage";
 
 import DetailList from "src/components/lists/DetailList/DetailList";
+
 const { B_13_ORANGE_463, R_13_GREY444 } = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
@@ -45,17 +48,23 @@ const CenteredDiv = styled.div`
 `;
 interface Props {}
 
-const Sprint3: React.FC<Props> = () => {
+const Sprint4: React.FC<Props> = () => {
   const [selectedItem, setSelectedOption] = useState("Persian");
   const [sprint1, setSprint1] = useState(false);
   const [sprint2, setSprint2] = useState(false);
   const [sprint3, setSprint3] = useState(false);
   const [sprint4, setSprint4] = useState(false);
+  const [selectionTileNum, setSelectionTileNum] = useState(2);
   const [homeRedirect, setHomeRedirect] = useState(false);
   const [linkListClear, setLinkListClear] = useState(false);
   const [linkListInputValue, setLinkListInputValue] = useState("");
   const [selectionTile, setSelectionTile] = useState(2);
   const [stickyFooter, setStickyFooter] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+  const [tacInactive,setTacInactive] = useState(true);
+  const [TacModalOpen,setTacModalOpen] = useState(false);
+  const tacClear = false;
+  const tacClearActiveStatus = false;
   // const [linkListBtnColor, setLinkListBtnColor] = useState({
   //   top: '#BDBDBD',
   //   bottom: '#BDBDBD',
@@ -2361,8 +2370,124 @@ const Sprint3: React.FC<Props> = () => {
           detailText="Please call our 24-hour Contact Center at 603-2178 8888 for assistance"
         />
       </div>
+
+      <Title>TacModal(Update)-(Ref:Sprint1)</Title>
+       <CenteredDiv>
+       <TacModal
+          onCloseClick={() => {
+            alert("Tac Closed");
+          }}
+          responsive={true}
+          maxLength={6}
+          clearIcon={inputValue === "" ? tacClear : !tacClear}
+          clearClickHandler={() => {
+            setInputValue('');
+          }}
+          inActiveMessage={{
+            title: "Your profile is inactive.",
+            text: "TAC verification is required to activate your profile."
+          }}
+          inActive={tacInactive}
+          testId={"testId"}
+          onButtonClick={() => {
+            setTacInactive(!tacInactive);
+          }}
+          modalIsOpen={TacModalOpen}
+          label={"TAC verification"}
+          value={inputValue}
+          handleChange={(e: any) => {
+      
+            setInputValue(e.target.value);
+          }}
+          notValid={inputValue === "" ? true : false}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The TAC is incorrect",
+            subText: "Please try again."
+          }}
+          content="TAC was sent to your registered mobile number (**** 6867)"
+          link={{
+            text: "Did not receive TAC? Request new",
+            onLinkClick: () => {
+              alert("Tac link");
+            }
+          }}
+          buttonColor={{
+            top: !tacInactive ? "#BDBDBD" : "#FD8585",
+            bottom: !tacInactive ? "#BDBDBD" : "#FF2222"
+          }}
+          buttonTitle={tacInactive ? "Request TAC" : "Continue"}
+          activeStatus={tacClearActiveStatus}
+          activeStatusChild={
+            <div style={{ display: "flex" }}>
+              <Prompt
+                testId={"testId"}
+                iconColor={{ top: "#81D988", bottom: "#5BB362" }}
+                icon={{ name: "Tick-1", color: "#ffffff" }}
+                text="Your profile is successfully activated."
+              />
+            </div>
+          }
+        />
+
+        <PrimaryButton
+          title="Open TacModal"
+          onButtonClick={() => {
+          setTacModalOpen(true);
+          }}
+        />
+         </CenteredDiv>   
+      <Title>FormContainer Disabled</Title>
+        <CenteredDiv>
+          <FormContainer
+            disabled
+            label={"Select your account/card type"}
+            tooltip={
+              <div>
+                <p style={{ color: "#ffffff" }}>
+                  Select your account/card type
+                </p>
+              </div>
+            }
+            children={
+              <div style={{ padding: "0 0 0 2rem" }}>
+                 <SelectionTile
+                      testId={"testId"}
+                      onTileClick={(item, index) => {
+                       setSelectionTileNum(index);
+                        alert(`${item.accountTitle} with indexOf ${index} clicked`);
+                      }}
+                      selected={selectionTileNum}
+                      list={[
+                        {
+                          accountTitle: "Saving Account A",
+                          accountNumber: "RM 2,000.00"
+                        },
+                        {
+                          accountTitle: "Ambank AmMoneyLine AmMoneyLine",
+                          accountNumber: "RM 2,000.00"
+                        },
+                        {
+                          accountTitle: "Ambank BonusLink Visa",
+                          accountNumber: "RM 2,000.00"
+                        },
+                        {
+                          accountTitle: "Saving Account B",
+                          accountNumber: "RM 2,000.00"
+                        },
+                        {
+                          accountTitle: "Saving Account C",
+                          accountNumber: "RM 2,000.00"
+                        }
+                      ]}
+                    />
+              </div>
+            }
+          />
+        </CenteredDiv>
+   
     </div>
   );
 };
 
-export default Sprint3;
+export default Sprint4;
