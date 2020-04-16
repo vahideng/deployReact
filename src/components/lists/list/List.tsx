@@ -114,7 +114,7 @@ const List: React.FC<Props> = ({
         list.map((item, index) => {
           return (
             <div
-              className={classes.ListItemsContainer}
+              className={responsive ? classes.ListItemsContainer: classes.ListItemsContainerRes}
               style={itemContainerStyle}
               id={`${testId}-${index}`}
               key={index}

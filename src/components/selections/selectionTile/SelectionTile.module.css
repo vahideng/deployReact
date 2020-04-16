@@ -40,6 +40,12 @@
   width: 100% !important;
 }
 
+@media (max-width: 576px) {
+  .SelectionTileWrapperResponsive {
+    margin: 0.5rem;
+  }
+}
+
 .SelectionTileSelector {
   display: -webkit-box;
   display: -ms-flexbox;
