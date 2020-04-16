@@ -161,12 +161,12 @@ const ViewRateContainer: React.FC<Props> = ({
       <CenteredDiv
         style={{
           margin: "0 auto",
-          width: "30rem",
           padding: 0,
           marginTop: "2rem",
+          width: "34.375rem",
         }}
       >
-        <Carousel items={ads} {...carouselProps} />
+        <Carousel type="wide" items={ads} {...carouselProps} />
       </CenteredDiv>
       <CenteredDiv>
         <PrimaryButton

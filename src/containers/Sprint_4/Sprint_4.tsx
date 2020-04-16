@@ -60,10 +60,10 @@ const Sprint4: React.FC<Props> = () => {
   const [linkListInputValue, setLinkListInputValue] = useState("");
   const [selectionTile, setSelectionTile] = useState(2);
   const [stickyFooter, setStickyFooter] = useState(false);
-  const [inputValue, setInputValue] = useState('');
-  const [tacInactive,setTacInactive] = useState(true);
-  const [TacModalOpen,setTacModalOpen] = useState(false);
-  const [actionBtnStatus,setActionBtnStatus] = useState(true);
+  const [inputValue, setInputValue] = useState("");
+  const [tacInactive, setTacInactive] = useState(true);
+  const [TacModalOpen, setTacModalOpen] = useState(false);
+  const [actionBtnStatus, setActionBtnStatus] = useState(true);
   const tacClear = false;
   const tacClearActiveStatus = false;
 
@@ -350,7 +350,7 @@ const Sprint4: React.FC<Props> = () => {
               label="Username"
               icon={{ name: "Account-2" }}
               value={""}
-              handleChange={event => {
+              handleChange={(event) => {
                 console.log(event.target.value);
               }}
             />
@@ -372,7 +372,7 @@ const Sprint4: React.FC<Props> = () => {
           type="text"
           clearClickHandler={() => {}}
           value={""}
-          handleChange={e => {
+          handleChange={(e) => {
             alert(e);
           }}
           bottomLabel="Maximum Daily Limit RM 9,999,999.99"
@@ -514,6 +514,9 @@ const Sprint4: React.FC<Props> = () => {
                   }}
                 />
               }
+              carouselProps={{
+                type: "wide"
+              }}
             />
           </div>
         }
@@ -2439,186 +2442,184 @@ const Sprint4: React.FC<Props> = () => {
         />
       </CenteredDiv>
       <Title>FormContainer Disabled</Title>
-        <CenteredDiv>
-          <FormContainer
-            disabled
-            label={"Select your account/card type"}
-            tooltip={
-              <div>
-                <p style={{ color: "#ffffff" }}>
-                  Select your account/card type
-                </p>
-              </div>
-            }
-            children={
-              <div style={{ padding: "0 0 0 2rem" }}>
-                 <SelectionTile
-                      testId={"testId"}
-                      onTileClick={(item, index) => {
-                       setSelectionTileNum(index);
-                        alert(`${item.accountTitle} with indexOf ${index} clicked`);
-                      }}
-                      selected={selectionTileNum}
-                      list={[
-                        {
-                          accountTitle: "Saving Account A",
-                          accountNumber: "RM 2,000.00"
-                        },
-                        {
-                          accountTitle: "Ambank AmMoneyLine AmMoneyLine",
-                          accountNumber: "RM 2,000.00"
-                        },
-                        {
-                          accountTitle: "Ambank BonusLink Visa",
-                          accountNumber: "RM 2,000.00"
-                        },
-                        {
-                          accountTitle: "Saving Account B",
-                          accountNumber: "RM 2,000.00"
-                        },
-                        {
-                          accountTitle: "Saving Account C",
-                          accountNumber: "RM 2,000.00"
-                        }
-                      ]}
-                    />
-              </div>
-            }
-          />
-        </CenteredDiv>
-        <Title>TransactionIconList(Update)</Title>
-        <CenteredDiv>
-          <div style={{ width: "57.1875em" }}>
-            <TransactionIconList
-              testId={"testId"}
-              list={[
-                {
-                  date: "Today",
-                  expandedIndexes: [0],
-                  transactions: [
-                    {
-                      icon: "Transfer",
-                      iconBgColor: "orange",
-                      iconColor: "white",
-                      iconSize: 28,
-                      label1: "TRANSFER TO",
-                      label2: "SEEN OPTICS ",
-                      statusLabel: "SUCCESSFUL",
-                      statusLabelColor: "#36A03E",
-                      changeLabel: "-",
-                      changeLabelColor: "#F73C4A",
-                      amount: "RM 236.78",
-                      actionLabel: "Repeat",
-                      actionIcon: "Repeat",
-                      onActionButtonClick: () => {
-                        alert("Repeat");
-                      },
-                      details: [
-                        {
-                          label1: "From Account",
-                          value1: "15806389266 - Savings Account A",
-                          label2: "Recipient Reference",
-                          value2: "May - Rental",
-                          actionLabel: "Add to Fav",
-                          actionIcon: "Love",
-                          onActionButtonClick: () => {
-                            alert("Fav");
-                            setActionBtnStatus(!actionBtnStatus);
-                          }
-                        },
-                        {
-                          label1: "",
-                          value1: "",
-                          label2: "Other Details",
-                          value2: "-"
-                          //  actionLabel: 'View Receipt',
-                          // actionIcon: ''
-                        }
-                      ]
+      <CenteredDiv>
+        <FormContainer
+          disabled
+          label={"Select your account/card type"}
+          tooltip={
+            <div>
+              <p style={{ color: "#ffffff" }}>Select your account/card type</p>
+            </div>
+          }
+          children={
+            <div style={{ padding: "0 0 0 2rem" }}>
+              <SelectionTile
+                testId={"testId"}
+                onTileClick={(item, index) => {
+                  setSelectionTileNum(index);
+                  alert(`${item.accountTitle} with indexOf ${index} clicked`);
+                }}
+                selected={selectionTileNum}
+                list={[
+                  {
+                    accountTitle: "Saving Account A",
+                    accountNumber: "RM 2,000.00"
+                  },
+                  {
+                    accountTitle: "Ambank AmMoneyLine AmMoneyLine",
+                    accountNumber: "RM 2,000.00"
+                  },
+                  {
+                    accountTitle: "Ambank BonusLink Visa",
+                    accountNumber: "RM 2,000.00"
+                  },
+                  {
+                    accountTitle: "Saving Account B",
+                    accountNumber: "RM 2,000.00"
+                  },
+                  {
+                    accountTitle: "Saving Account C",
+                    accountNumber: "RM 2,000.00"
+                  }
+                ]}
+              />
+            </div>
+          }
+        />
+      </CenteredDiv>
+      <Title>TransactionIconList(Update)</Title>
+      <CenteredDiv>
+        <div style={{ width: "57.1875em" }}>
+          <TransactionIconList
+            testId={"testId"}
+            list={[
+              {
+                date: "Today",
+                expandedIndexes: [0],
+                transactions: [
+                  {
+                    icon: "Transfer",
+                    iconBgColor: "orange",
+                    iconColor: "white",
+                    iconSize: 28,
+                    label1: "TRANSFER TO",
+                    label2: "SEEN OPTICS ",
+                    statusLabel: "SUCCESSFUL",
+                    statusLabelColor: "#36A03E",
+                    changeLabel: "-",
+                    changeLabelColor: "#F73C4A",
+                    amount: "RM 236.78",
+                    actionLabel: "Repeat",
+                    actionIcon: "Repeat",
+                    onActionButtonClick: () => {
+                      alert("Repeat");
                     },
-                    {
-                      icon: "Transfer",
-                      iconBgColor: "blue",
-                      iconColor: "white",
-                      iconSize: 28,
-                      label1: "TRANSFER TO",
-                      label2: "SEEN OPTICS ",
-                      statusLabel: "SUCCESSFUL",
-                      statusLabelColor: "#36A03E",
-                      changeLabel: "-",
-                      changeLabelColor: "#F73C4A",
-                      amount: "RM 236.78",
-                      actionLabel: "Repeat",
-                      actionIcon: "Repeat",
-                      details: [
-                        {
-                          label1: "From Account",
-                          value1: "15806389266 - Savings Account A",
-                          label2: "Recipient Reference",
-                          value2: "May - Rental",
-                          actionLabel: "Add to Fav",
-                          actionIcon: ""
-                        },
-                        {
-                          label1: "",
-                          value1: "",
-                          label2: "Other Details",
-                          value2: "-",
-                          actionLabel: "View Receipt",
-                          actionIcon: ""
+                    details: [
+                      {
+                        label1: "From Account",
+                        value1: "15806389266 - Savings Account A",
+                        label2: "Recipient Reference",
+                        value2: "May - Rental",
+                        actionLabel: "Add to Fav",
+                        actionIcon: "Love",
+                        onActionButtonClick: () => {
+                          alert("Fav");
+                          setActionBtnStatus(!actionBtnStatus);
                         }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  date: "12 Jan 2020",
-                  expandedIndexes: [],
-                  transactions: [
-                    {
-                      icon: "Loan",
-                      iconBgColor: "red",
-                      iconColor: "white",
-                      iconSize: 28,
-                      label1: "TRANSFER TO",
-                      label2: "LOREM IPSUM SIT DOLOR AMET DAMANSARA PERDANA ",
-                      statusLabel: "SUCCESSFUL",
-                      statusLabelColor: "#36A03E",
-                      changeLabel: "+",
-                      changeLabelColor: "#36A03E",
-                      amount: "RM 1,236.78",
-                      actionLabel: "Repeat",
-                      actionIcon: "Repeat",
-                      details: [
-                        {
-                          label1: "From Account",
-                          value1: "15806389266 - Savings Account A",
-                          label2: "Recipient Reference",
-                          value2: "May - Rental",
-                          actionLabel: "Add to Fav",
-                          actionIcon: ""
-                        },
-                        {
-                          label1: "",
-                          value1: "",
-                          label2: "Other Details",
-                          value2: "-",
-                          actionLabel: "View Receipt",
-                          actionIcon: ""
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]}
-              onTransactionClick={(item, sectionIndex, itemIndex) => {
-                alert("check : " + item);
-                alert(`${sectionIndex} - ${itemIndex}`);
-              }}
-            />
-          </div>
-        </CenteredDiv>
-     
+                      },
+                      {
+                        label1: "",
+                        value1: "",
+                        label2: "Other Details",
+                        value2: "-"
+                        //  actionLabel: 'View Receipt',
+                        // actionIcon: ''
+                      }
+                    ]
+                  },
+                  {
+                    icon: "Transfer",
+                    iconBgColor: "blue",
+                    iconColor: "white",
+                    iconSize: 28,
+                    label1: "TRANSFER TO",
+                    label2: "SEEN OPTICS ",
+                    statusLabel: "SUCCESSFUL",
+                    statusLabelColor: "#36A03E",
+                    changeLabel: "-",
+                    changeLabelColor: "#F73C4A",
+                    amount: "RM 236.78",
+                    actionLabel: "Repeat",
+                    actionIcon: "Repeat",
+                    details: [
+                      {
+                        label1: "From Account",
+                        value1: "15806389266 - Savings Account A",
+                        label2: "Recipient Reference",
+                        value2: "May - Rental",
+                        actionLabel: "Add to Fav",
+                        actionIcon: ""
+                      },
+                      {
+                        label1: "",
+                        value1: "",
+                        label2: "Other Details",
+                        value2: "-",
+                        actionLabel: "View Receipt",
+                        actionIcon: ""
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                date: "12 Jan 2020",
+                expandedIndexes: [],
+                transactions: [
+                  {
+                    icon: "Loan",
+                    iconBgColor: "red",
+                    iconColor: "white",
+                    iconSize: 28,
+                    label1: "TRANSFER TO",
+                    label2: "LOREM IPSUM SIT DOLOR AMET DAMANSARA PERDANA ",
+                    statusLabel: "SUCCESSFUL",
+                    statusLabelColor: "#36A03E",
+                    changeLabel: "+",
+                    changeLabelColor: "#36A03E",
+                    amount: "RM 1,236.78",
+                    actionLabel: "Repeat",
+                    actionIcon: "Repeat",
+                    details: [
+                      {
+                        label1: "From Account",
+                        value1: "15806389266 - Savings Account A",
+                        label2: "Recipient Reference",
+                        value2: "May - Rental",
+                        actionLabel: "Add to Fav",
+                        actionIcon: ""
+                      },
+                      {
+                        label1: "",
+                        value1: "",
+                        label2: "Other Details",
+                        value2: "-",
+                        actionLabel: "View Receipt",
+                        actionIcon: ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]}
+            onTransactionClick={(item, sectionIndex, itemIndex) => {
+              alert("check : " + item);
+              alert(`${sectionIndex} - ${itemIndex}`);
+            }}
+          />
+        </div>
+      </CenteredDiv>
+
       <CenteredDiv>
         <FormContainer
           disabled
