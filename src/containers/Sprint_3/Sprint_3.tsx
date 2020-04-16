@@ -622,13 +622,13 @@ const Sprint3: React.FC<Props> = () => {
         />
       </>
       <Title>DashboardCart</Title>
-      <CenteredDiv>
+      <div style={{ width: "20%", margin: "2rem auto" }}>
         <DashboardCart
           title="My UT Account"
           subtitle={{ content: "123456", icon: "User1" }}
           description="RM 100,084,208.66"
           descriptionRightLabel={{
-            type: "loss",
+            type: "profit",
             percentage: "6.6%",
           }}
           data={[
@@ -649,7 +649,17 @@ const Sprint3: React.FC<Props> = () => {
           footerLabel="Last Updated: 11 Nov 2019"
           tipChildren={<div style={{color : "white"}}><p>sadsd</p></div>}
         />
-      </CenteredDiv>
+        <DashboardCart
+          title="My Joint UT Account 2001"
+          subtitle={{ content: "50 Unit Trust Funds" }}
+          description="RM 50,630,307.57"
+          descriptionRightLabel={{
+            type: "loss",
+            percentage: "1.6%",
+          }}
+          onClickContainer={() => alert("Clicked")}
+        />
+      </div>
       <Title>TransactionLimitList Hidden</Title>
       <div style={{ width: "60vw", margin: "auto" }}>
         <TransactionLimitList
