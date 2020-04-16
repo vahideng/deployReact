@@ -109,9 +109,9 @@ const ViewRateContainer: React.FC<Props> = ({
           dropdownData={rateTypeList}
           value={rateTypeValue}
           icon={rateTypeIcon || { name: "Clock", color: "#ff2626", size: 30 }}
-          handleChange={(item: any) => {
-            const { value } = item;
-            handleRateTypeChange(value);
+          handleChange={(_e: any, item: any) => {
+            handleRateTypeChange(item.value);
+            setIsDropdownVisible(false);
           }}
           placeholder="Select test"
           clickOnArrow={() => {

@@ -428,26 +428,26 @@ const Sprint4: React.FC<Props> = () => {
           <div style={{ backgroundColor: "#fff", position: "relative" }}>
             <ViewRateContainer
               testId="sprint_4_view_rate_container_test"
-              title="View Rate Container"
+              title="View Rate Container Test"
               rateTypeValue={rateType}
               rateTypeList={[
                 {
-                  value: "test_value",
+                  value: "test_value1",
                   label: "Conventional Fixed Deposit 1"
                 },
                 {
-                  value: "test_value2",
-                  label: "Conventional Fixed Deposit 2"
+                  value: "test_value2testvalue",
+                  label: "Conventional Fixed Deposit 2222"
                 },
                 {
                   value: "test_value3",
-                  label: "Conventional Fixed Deposit 3"
+                  label: "Conventional Fixed Deposit 3333"
                 }
               ]}
               onRateTypeChange={(value: any) => {
                 setRateType(value);
               }}
-              date="11 Mar 2020"
+              date="22 Mar 2040"
               ads={[
                 [
                   {
@@ -515,7 +515,7 @@ const Sprint4: React.FC<Props> = () => {
                 />
               }
               carouselProps={{
-                type: "wide"
+                type: 'default'
               }}
             />
           </div>
@@ -535,35 +535,36 @@ const Sprint4: React.FC<Props> = () => {
         <ViewRate
           testId="sprint_4_view_rate"
           title={{
-            content: "** Rates are subject to change"
+            content: "Change some text"
           }}
           subtitle={{
             content:
-              "Note: Customer with Reward Code may be entitled additional rate in AmOnline."
+              "I am the subtitle"
           }}
+          height="30rem"
           data={{
             headers: [
               {
                 style: {},
-                values: ["Tenure"]
+                values: ["First heading"]
               },
               {
                 style: { textAlign: "center", fontWeight: "bold" },
-                values: ["Board Rate", "(% p.a.)"]
+                values: ["Board Rate", "second line"]
               },
               {
                 style: { textAlign: "center", fontWeight: "bold" },
-                values: ["AmOnline Rate", "(% p.a.)"]
+                values: ["AmOnline Rate", "second line"]
               }
             ],
             values: [
-              ["1 Month", "2.95", "2.95"],
-              ["2 Month", "2.95", "2.95"],
-              ["3 Month", "2.95", "2.95"],
-              ["4 Month", "3.95", "2.95"],
-              ["5 Month", "2.95", "2.95"],
-              ["6 Month", "2.95", "2.95"],
-              ["7 Month", "6.95", "2.95"]
+              ["1999 Month", "2.95%", "2.95%"],
+              ["2 Month", "2.95%", "2.95%"],
+              ["3 Month", "2.95%", "2.95%"],
+              ["4 Month", "3.95", "2.95%"],
+              ["5 Month", "2.95%", "2.95%"],
+              ["6 Month", "2.95%", "2.95%"],
+              ["7 Month", "6.95", "2.95%"]
             ]
           }}
         />
@@ -587,15 +588,19 @@ const Sprint4: React.FC<Props> = () => {
         <ConfirmNotes
           testId="sprint_4_confirm_notes"
           title={{
-            content: "Important Notes",
-            style: { fontSize: "2rem" }
+            content: "Important Notes Notes",
+            style: { fontSize: "3rem" }
           }}
           width="40rem"
-          responsive
           body={[
             {
               content:
                 "This is not the final confirmation of your payment. Please check with your merchant for final status confirmation.",
+              style: {}
+            },
+            {
+              content:
+                "Please click on the “Continue with Transaction” button below and do not close the browser until final receipt is displayed",
               style: {}
             },
             {
