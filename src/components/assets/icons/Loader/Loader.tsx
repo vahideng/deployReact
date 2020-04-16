@@ -13,7 +13,6 @@ interface Props {
   optionalStyle?: {
     color?: string;
     thickness?: number;
-
     imageIcon?: string;
     imageIconStyle?: CSSProperties;
     textStyle?: CSSProperties;
