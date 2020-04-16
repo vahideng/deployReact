@@ -108,6 +108,8 @@ import ViewRate from "./components/viewRate/ViewRate";
 import ViewRateContainer from "./components/viewRateContainer/ViewRateContainer";
 import AmResetPin from "./components/amResetPin/amResetPin";
 import TransactionWithNote from "./components/TransactionWithNote/TransactionWithNote";
+import ListWithSelectionTile from "./components/ListWithSelectionTile/ListWithSelectionTile";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /// exports
 export {
@@ -121,6 +123,8 @@ export {
   ViewRate,
   ViewRateContainer,
   AmResetPin,
+  ListWithSelectionTile,
+  ErrorPage,
   ///////////////////////////////////////////////////////////////////////////////////////////////
   /// below are sprint-3 components
   AmProfileSetting,
