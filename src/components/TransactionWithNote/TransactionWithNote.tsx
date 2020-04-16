@@ -95,7 +95,7 @@ const TransactionWithNote: React.FC<TransactionWithNoteProps> = ({
          responsive={responsive}
           title={Btntitle}
           width={Btnwidth}
-          onButtonClick={() => onButtonClick}
+          onButtonClick={onButtonClick}
         />
       </CenteredDiv>
     </div>
