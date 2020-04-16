@@ -98,6 +98,7 @@ import AmProfileSetting from "./components/amProfileSetting/amProfileSetting";
 import UnitTrustList from "./components/lists/UnitTrustList/UnitTrustList";
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /// below are sprint-4 components
+import Loader from "./components/assets/icons/Loader/Loader";
 
 import DynamicText from "./components/assets/typography/DynamicText/DynamicText";
 import CenterText from "./components/assets/typography/CenterText/CenterText";
@@ -106,13 +107,15 @@ import ConfirmNotes from "./components/confirmNotes/ConfirmNotes";
 import ViewRate from "./components/viewRate/ViewRate";
 import ViewRateContainer from "./components/viewRateContainer/ViewRateContainer";
 import AmResetPin from "./components/amResetPin/amResetPin";
-
+import TransactionWithNote from "./components/TransactionWithNote/TransactionWithNote";
+import ListWithSelectionTile from "./components/ListWithSelectionTile/ListWithSelectionTile";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /// exports
 export {
   //////////////////////////////////////////////////////////////////////////////////////////////
   /// below are sprint-4 components
-
+  TransactionWithNote,
   DynamicText,
   CenterText,
   InputAccordian,
@@ -120,6 +123,8 @@ export {
   ViewRate,
   ViewRateContainer,
   AmResetPin,
+  ListWithSelectionTile,
+  ErrorPage,
   ///////////////////////////////////////////////////////////////////////////////////////////////
   /// below are sprint-3 components
   AmProfileSetting,
@@ -144,7 +149,8 @@ export {
   PortfolioList,
   DashboardCart,
   UnitTrustList,
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+  Loader,
+  ////
   /// below are sprint-2 components
   CalendarBox,
   Box_V2,

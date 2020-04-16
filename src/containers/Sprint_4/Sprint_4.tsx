@@ -18,7 +18,6 @@ import TacModal from "src/components/modals/tacModal/TacModal";
 import TransactionIconList from "src/components/lists/TransactionIconList/TransactionIconList";
 import FormContainer from "src/components/wrappers/formContainer/FormContainer";
 import List from "src/components/lists/list/List";
-
 import SelectionTile from "src/components/selections/selectionTile/SelectionTile";
 import Box_V2 from "src/components/wrappers/box_V2/Box_V2";
 import InputAccordian from "src/components/InputAccordian/InputAccordian";
@@ -28,10 +27,11 @@ import StickyFooter from "src/components/stickies/stickyFooter/StickyFooter";
 import DynamicText from "src/components/assets/typography/DynamicText/DynamicText";
 import CenterText from "src/components/assets/typography/CenterText/CenterText";
 import ErrorPage from "src/components/ErrorPage/ErrorPage";
-
+import TransactionWithNote from "src/components/TransactionWithNote/TransactionWithNote";
 import DetailList from "src/components/lists/DetailList/DetailList";
-
-const { B_13_ORANGE_463, R_13_GREY444 } = Paragraphs;
+import IconButtons from "src/components/buttons/iconButtons/IconButtons";
+import ListWithSelectionTile from 'src/components/ListWithSelectionTile/ListWithSelectionTile';
+const { B_13_ORANGE_463, R_13_GREY444,B_24_BLACK} = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -60,10 +60,11 @@ const Sprint4: React.FC<Props> = () => {
   const [linkListInputValue, setLinkListInputValue] = useState("");
   const [selectionTile, setSelectionTile] = useState(2);
   const [stickyFooter, setStickyFooter] = useState(false);
-  const [inputValue, setInputValue] = useState("");
-  const [tacInactive, setTacInactive] = useState(true);
-  const [TacModalOpen, setTacModalOpen] = useState(false);
-  const [actionBtnStatus, setActionBtnStatus] = useState(true);
+  const [inputValue, setInputValue] = useState('');
+  const [tacInactive,setTacInactive] = useState(true);
+  const [TacModalOpen,setTacModalOpen] = useState(false);
+  const [actionBtnStatus,setActionBtnStatus] = useState(true);
+  const [SelectionTileNum2,setSelectionTileNum2] = useState(3);
   const tacClear = false;
   const tacClearActiveStatus = false;
 
@@ -2670,6 +2671,207 @@ const Sprint4: React.FC<Props> = () => {
           }
         />
       </CenteredDiv>
+      <Title>
+        W2W ModalList using (StatusFormContainer , List component , CenterMessage , Primary Button)
+      </Title>
+      <div
+        style={{
+          backgroundColor: "#EEEEEE",
+          padding:'1.125rem',
+          marginTop:100,
+
+        }}
+      >
+        <TransactionWithNote 
+          testId={'testId'}
+          responsive
+          statusIcon={{
+            icon: "Fail",
+            iconColor: { top: "#FD8585", bottom: "#FF2222" },
+            outerIconColor: "#FFEBEE"
+          }}
+          formContainerchildren={
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                padding: "2rem"
+              }}
+            >
+              <B_24_BLACK style={{ textAlign: "center" }}>
+                Transfer Unsuccessful
+              </B_24_BLACK>
+              <br />
+              <p style={{ textAlign: "center" }}>
+                Your payment of RM 20.50 to Revenue Harvest Sdn. Bhd. is
+                unsuccessful
+              </p>
+              <p style={{ textAlign: "center" }}>
+                Unable to perform this transaction. Please call our Contact
+                Centre for assistance.
+              </p>
+              <List
+                itemContainerStyle={{ padding: 0 }}
+                list={[
+                  {
+                    leftLabel: "To",
+                    rightLabel: "Saving Account A",
+                    details: ["8881019596535 | AmBank"]
+                  },
+                  {
+                    leftLabel: "Amount",
+                    rightLabel: "RM 500.00",
+                    details: ["Fees & Charges: RM 0.00"]
+                  },
+                  {
+                    leftLabel: "Date",
+                    rightLabel: "Transfer Now",
+                    details: ["Today, 5 January 2019"]
+                  },
+                  {
+                    leftLabel: "Reference",
+                    rightLabel: "House Rental"
+                  },
+                  {
+                    leftLabel: "From",
+                    rightLabel: "Savings Account",
+                    details: ["2998202013", "Available Balance: RM 10,301.50"]
+                  }
+                ]}
+              />
+               <CenteredDiv>
+        <IconButtons
+      testId={"testId"}
+      onButtonClick={(item : any, index:any) => {
+      
+      alert(`${item} with index of ${index} clicked`);
+      }}
+    
+      list={[
+      
+      {
+      text: "View Receipt",
+      icon: {
+       name: "Card2"
+      }
+      }
+      
+      ]}
+      />
+      </CenteredDiv>
+            </div>
+          }
+          confirmNoteswidth={"40rem"}
+          confirmNotesTitle={{
+            content: "Important Notes",
+            style: { fontSize: "2rem" }
+          }}
+          confirmNotesBody={[
+            {
+              content:
+                "This is not the final confirmation of your payment. Please check with your merchant for final status confirmation.",
+              style: {}
+            },
+            {
+              content:
+                "Please click on the “Continue with Transaction” button below and do not close the browser until final receipt is displayed",
+              style: {}
+            }
+          ]}
+          Btntitle={"Continue With Transaction"}
+          Btnwidth={'20.43rem'}
+          onButtonClick={() => alert("check")}
+          statusText={" You will be redirected to FPX status page in 9 seconds"}
+        />
+
+    </div>
+    <Title>ListWithSelectionTile(List,Selection Tile, Primary Buttons)</Title>
+    <CenteredDiv style={{width:'100%',  backgroundColor: "#EEEEEE",}}>
+    <ListWithSelectionTile 
+      testId={'testId'}
+      responsive
+       listchildren={
+        <List
+          header={{
+            icon: {
+              name: "LOGO",
+              color: "#ff2626",
+              iconText: "Review & Confirm",
+            },
+          }}
+          list={[
+            {
+              leftLabel: "To",
+              rightLabel: "Revenue Lawrence Haim 140066",
+              details: [],
+            },
+            {
+              leftLabel: "Reference/Invoice No.",
+              rightLabel: "RT15678965",
+              details: [],
+            },
+            {
+              leftLabel: "Bill No.",
+              rightLabel: "Alipay Taobao",
+              details: [],
+            },
+            {
+              leftLabel: "Amount",
+              rightLabel: "RM 20.00",
+            },
+            {
+              leftLabel: "Effective payment Date",
+              rightLabel: "Today ,5 January 2020",
+              details: [],
+            },
+          ]}
+        />
+      } 
+      tileListLabel={"From which account?"}
+      selectionTileList={[
+        {
+          accountTitle: "Saving Account A",
+          accountNumber: "86867678678",
+          amount: "RM 10,301.50",
+        },
+        {
+          accountTitle: "Saving Account B",
+          accountNumber: "8686665878",
+          amount: " RM 11,555.00",
+        },
+        {
+          accountTitle: "Saving Account C",
+          accountNumber: "67577678678",
+          amount: " RM 55,555.00",
+        },
+        {
+          accountTitle: "Saving Account D",
+          accountNumber: "868676787897",
+          amount: " RM 33,555.50",
+        },
+        {
+          accountTitle: "Saving Account E",
+          accountNumber: "86999678678",
+          amount: " RM 245,555.50",
+        },
+      ]}
+      onTileClick={(item, index) => {
+        setSelectionTileNum2(index);
+        alert(`${item.accountTitle} with indexOf ${index} clicked`);
+      }}
+      selected={SelectionTileNum2}
+      btn1title={"Continue"}
+      onButton1Click={() => {
+        alert("Button Clicked")
+      }}
+      btn1width={"20.43rem"}
+      btn2title={"cancel"}
+      onButton2Click={() => {
+        alert("Button Clicked");
+      }}
+      btn2width={"20.43rem"}
+      />
+    </CenteredDiv>
     </div>
   );
 };

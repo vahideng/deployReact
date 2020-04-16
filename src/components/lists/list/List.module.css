@@ -54,6 +54,10 @@
   padding: 0rem 3.5rem;
 }
 
+.ListItemsContainerRes {
+  padding: 0rem 1rem;
+}
+
 .ListTextRight {
   text-align: right;
 }
