@@ -30,7 +30,9 @@
   margin-top: 1rem;
   justify-content: space-between;
   align-items: center;
-  padding-right: 0.75rem;
+  &:last-child {
+    margin-right: -1rem;
+  }
 }
 
 .FooterLabel {
