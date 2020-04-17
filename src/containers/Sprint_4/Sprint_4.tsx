@@ -31,6 +31,7 @@ import TransactionWithNote from "src/components/TransactionWithNote/TransactionW
 import DetailList from "src/components/lists/DetailList/DetailList";
 import IconButtons from "src/components/buttons/iconButtons/IconButtons";
 import ListWithSelectionTile from 'src/components/ListWithSelectionTile/ListWithSelectionTile';
+import Logout from 'src/components/Logout/Logout';
 const { B_13_ORANGE_463, R_13_GREY444,B_24_BLACK} = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
@@ -142,6 +143,7 @@ const Sprint4: React.FC<Props> = () => {
                   iconText: "Review & Confirm"
                 }
               }}
+
               list={[
                 {
                   leftLabel: "To",
@@ -2867,6 +2869,95 @@ const Sprint4: React.FC<Props> = () => {
       btn2width={"20.43rem"}
       />
     </CenteredDiv>
+    <div
+        style={{
+          backgroundColor: "#EEEEEE",
+          padding:'1.125rem',
+          marginTop:100,
+
+        }}
+      >
+        <Title>Logout</Title>
+          <Logout
+            testId={'testId'}
+            responsive
+            header = {{
+              title:"You have successfully logged out.",
+              subTitle:"Logged out on Tueday 14/05/2019, 03:06PM",
+              statusIcon : {
+                image: {
+                  src: images.common.amyIcon,
+                  alt: "logo",
+                },
+                iconColor: { top: "#94EC9B", bottom: "#5BB362" },
+                outerIconColor: "#E5FCE6"
+              }
+              
+            }}
+            listChildren={[
+              {
+                leftLabel: {
+                  contentType : 'TRANSFER TO',
+                  styleContent:{},
+                  value:"SEEN OPTICS",
+                  styleValue:{}
+                },
+                rightLabel: {
+                  TimeStamp : '09:53:55AM',
+                  styleTimeStamp:{},
+                  value:"RM 236.67",
+                  styleValue:{}
+                },
+                middleLabel:{
+                  content : 'SUCCESSFUL',
+                  styleContent:{},
+                }
+              },
+              {
+                leftLabel: {
+                  contentType : 'FPX TO',
+                  styleContent:{},
+                  value:"TRANSUNION CONVERSION",
+                  styleValue:{}
+                },
+                rightLabel: {
+                  TimeStamp : '08:48:01AM',
+                  styleTimeStamp:{},
+                  value:" RM10,0000.00",
+                  styleValue:{}
+                },
+                middleLabel:{
+                  content : 'SUCCESSFUL',
+                  styleContent:{},
+                }
+              },
+              {
+                leftLabel: {
+                  contentType : 'PAY TO LOAN',
+                  styleContent:{},
+                  value:"LOREM IPSUM",
+                  styleValue:{}
+                },
+                rightLabel: {
+                  TimeStamp : '08:05:00AM',
+                  styleTimeStamp:{},
+                  value:"RM 5420.27",
+                  styleValue:{}
+                },
+                middleLabel:{
+                  content : 'SUCCESSFUL',
+                  styleContent:{},
+                }
+              }
+            
+            ]}
+            btntitle="Back to Homepage"
+            btnwidth="25rem"
+            onButtonClick={() => {
+              alert("check");
+            }}
+          />
+      </div>
     </div>
   );
 };

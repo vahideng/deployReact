@@ -1,0 +1,66 @@
+@import "../assets/common/common.scss";
+
+.StatusFormContainerMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.StatusFormContainerCurve {
+  max-width: 36.31rem;
+  background-color: transparent;
+}
+.StatusFormContainerCurveResponive{
+  width: 100% !important;
+  
+}
+.StatusFormContainerStatusIcon {
+  margin-bottom: -2rem;
+}
+.StatusFormContainerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  margin-top: -2px;
+  padding: 2rem;
+  @media (max-width: 576px) {
+    margin-top: -12px;
+    padding: 1rem;
+  }
+  @media (max-width: 400px) {
+    margin-top: -16px;
+  }
+
+}
+  .headerTitle {
+    text-align: "center";
+    @media (max-width:576px){
+      text-align: "center";
+      font-size: 18px !important;
+    }
+  }
+  .subContent {
+    text-align: "center";
+    line-height: 18px;
+    margin-bottom: 2rem;
+    @media (max-width:576px){
+      text-align: "center";
+      font-size: 13px;
+      margin-bottom: 3.5rem;
+    }
+  }
+
+.btnClass{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3.25rem;
+  margin-bottom: 3.25rem;
+  @media (max-width:576px){
+    width:100% !important;
+    margin-top: 2.5rem !important;
+  }
+}

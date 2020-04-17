@@ -1,0 +1,109 @@
+.Container {
+  font-family: Nunito Sans;
+}
+
+.ContainerResponsive {
+  width: 100% !important;
+}
+.ListTitleDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2.5rem;
+}
+.ListTitle {
+  padding-bottom: 1.5rem;
+}
+.ListIconDiv {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.ListIcon {
+  margin: 0 0.62rem 0 2rem;
+}
+.ListItemsDiv {
+  display: flex;
+  justify-content: space-between;
+}
+.ListItemsContainer {
+  padding: 0rem 3.5rem;
+}
+.ListItemsContainerRes{
+  padding: 0rem 1rem;
+}
+.ListTextRight {
+  text-align: right;
+}
+.ListTextRightIcon {
+  padding-right: 0.5rem;
+}
+.leftlabel{
+  margin-top:0.38rem;
+  max-width:12.88rem;
+  width:100%;
+  @media (max-width:576px){
+    max-width: 12.93rem;
+  }
+
+}
+.rightLabel{
+  flex:1 ;
+  align-items:flex-end
+}
+.middleLabelClass{
+  flex:1;
+  margin-left:3.8rem;
+  display:flex;
+align-items:center;
+  @media (max-width:576px){
+      display: none;
+  }
+}
+
+.leftLabelTextRes{
+  margin-bottom: 0.375rem;
+  @media (max-width:576px){
+    font-size: 11px !important;
+    line-height: 15px !important;
+    text-transform: uppercase;
+}
+}
+.LeftLabel2TextRes{
+  margin-top:0.38rem;
+  @media (max-width:576px){
+    font-size: 12px !important;
+    line-height: 19px !important;
+}
+}
+
+.RightLabelRes{
+  display: none;
+  margin-top: 1rem;
+  @media (max-width:576px){
+    display: flex;
+    font-size: 12px !important;
+    line-height: 19px !important;
+}
+}
+
+.RightLabel2Res{
+  margin-top: 0.375rem;
+  @media (max-width:576px){
+    display: none;
+}
+}
+
+.middleLabelRes{
+  margin-top: 1.625rem;
+  display: none;
+  @media (max-width:576px){
+    margin-top: 1.625rem !important;
+    display: flex;
+      font-size: 12px;
+  line-height: 16px;
+  text-align: right;
+  letter-spacing: 0.184615px;
+}
+}

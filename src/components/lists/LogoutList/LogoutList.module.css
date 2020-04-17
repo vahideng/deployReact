@@ -1,0 +1,173 @@
+.Container {
+  font-family: Nunito Sans;
+}
+
+.ContainerResponsive {
+  width: 100% !important;
+}
+
+.ListTitleDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 2.5rem;
+}
+
+.ListTitle {
+  padding-bottom: 1.5rem;
+}
+
+.ListIconDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 1rem;
+}
+
+.ListIcon {
+  margin: 0 0.62rem 0 2rem;
+}
+
+.ListItemsDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.ListItemsContainer {
+  padding: 0rem 3.5rem;
+}
+
+.ListItemsContainerRes {
+  padding: 0rem 1rem;
+}
+
+.ListTextRight {
+  text-align: right;
+}
+
+.ListTextRightIcon {
+  padding-right: 0.5rem;
+}
+
+.leftlabel {
+  margin-top: 0.38rem;
+  max-width: 12.88rem;
+  width: 100%;
+}
+
+@media (max-width: 576px) {
+  .leftlabel {
+    max-width: 12.93rem;
+  }
+}
+
+.rightLabel {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.middleLabelClass {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 3.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 576px) {
+  .middleLabelClass {
+    display: none;
+  }
+}
+
+.leftLabelTextRes {
+  margin-bottom: 0.375rem;
+}
+
+@media (max-width: 576px) {
+  .leftLabelTextRes {
+    font-size: 11px !important;
+    line-height: 15px !important;
+    text-transform: uppercase;
+  }
+}
+
+.LeftLabel2TextRes {
+  margin-top: 0.38rem;
+}
+
+@media (max-width: 576px) {
+  .LeftLabel2TextRes {
+    font-size: 12px !important;
+    line-height: 19px !important;
+  }
+}
+
+.RightLabelRes {
+  display: none;
+  margin-top: 1rem;
+}
+
+@media (max-width: 576px) {
+  .RightLabelRes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 12px !important;
+    line-height: 19px !important;
+  }
+}
+
+.RightLabel2Res {
+  margin-top: 0.375rem;
+}
+
+@media (max-width: 576px) {
+  .RightLabel2Res {
+    display: none;
+  }
+}
+
+.middleLabelRes {
+  margin-top: 1.625rem;
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .middleLabelRes {
+    margin-top: 1.625rem !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+    letter-spacing: 0.184615px;
+  }
+}
