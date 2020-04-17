@@ -11,6 +11,7 @@ import Duitnow1 from "./images/Duitnow1.png";
 import SampleQRCode from "./images/SampleQRCode.png";
 import SampleSecureImage from "./images/secure-image.png";
 import fpxIcon from "./images/fpx.png";
+import redirectBg from "./images/redirect-bg.png";
 
 const images: any = {
   common: {
@@ -26,7 +27,8 @@ const images: any = {
     Duitnow1,
     SampleQRCode,
     SampleSecureImage,
-    fpxIcon
+    fpxIcon,
+    redirectBg
   }
 };
 
