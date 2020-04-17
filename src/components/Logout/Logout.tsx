@@ -11,8 +11,8 @@ interface LogoutProps {
   testId: string;
   responsive?:boolean;
   btntitle:string;
+  btnwidth?:string;
   onButtonClick: () => void;
-  btnwidth:string;
   header?: {
     statusIcon?: {
       testId?: string;
@@ -56,7 +56,7 @@ const Logout: React.FC<LogoutProps> = ({
   header,
   onButtonClick,
   btntitle,
-  btnwidth
+  btnwidth,
 
 }) => {
   let containerCls = classes.StatusFormContainerCurve;
@@ -65,7 +65,7 @@ const Logout: React.FC<LogoutProps> = ({
   if (responsive) {
     containerCls = `${classes.StatusFormContainerCurve} ${classes.StatusFormContainerCurveResponive}`
     IconWidth = '100%';
-    BtnWidth = '20.43rem';
+
   } 
 
   const {statusIcon,title,subTitle} = header;
@@ -121,7 +121,7 @@ const Logout: React.FC<LogoutProps> = ({
           <PrimaryButton
             onButtonClick={onButtonClick}
             title={btntitle}
-            responsive={responsive}
+            responsive
             width={BtnWidth}
           />
       </div>

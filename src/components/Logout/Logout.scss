@@ -55,12 +55,17 @@
 
 .btnClass{
   display: flex;
-  align-items: center;
   justify-content: center;
   margin-top: 3.25rem;
   margin-bottom: 3.25rem;
+  width: 100%;
+  max-width: 24rem;
+  margin-left: auto;
+  margin-right: auto;
   @media (max-width:576px){
     width:100% !important;
     margin-top: 2.5rem !important;
+    max-width: 20.4rem;
+  
   }
 }
