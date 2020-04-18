@@ -622,40 +622,44 @@ const Sprint3: React.FC<Props> = () => {
       <Title>DashboardCart</Title>
       <div style={{ width: "20%", margin: "2rem auto" }}>
         <DashboardCart
-          title="My UT Account"
-          subtitle={{ content: "123456", icon: "User1" }}
-          description="RM 100,084,208.66"
-          descriptionRightLabel={{
-            type: "profit",
-            percentage: "6.6%",
-          }}
-          data={[
+          cartList={[
             {
-              leftSide: {
-                title: "Profit/Loss",
-                content: "RM 6,205,220.93",
+              testId: "testId",
+              title: "My UT Account",
+              subtitle: { content: "123456", icon: "User1" },
+              description: "RM 100,084,208.66",
+              descriptionRightLabel: {
                 type: "profit",
+                percentage: "6.6%",
               },
-              rightSide: {
-                title: "Invested",
-                content: "RM 93,878,987.73",
+              data: [
+                {
+                  leftSide: {
+                    title: "Profit/Loss",
+                    content: "RM 6,205,220.93",
+                    type: "profit",
+                  },
+                  rightSide: {
+                    title: "Invested",
+                    content: "RM 93,878,987.73",
+                  },
+                },
+              ],
+              onClickContainer: () => alert("Clicked"),
+              tooltip: true,
+              footerLabel: "Last Updated: 11 Nov 2019",
+              tipChildren: <div>tip</div>,
+            },
+            {
+              title: "My Joint UT Account 2001",
+              subtitle: { content: "50 Unit Trust Funds" },
+              description: "RM 50,630,307.57",
+              descriptionRightLabel: {
+                type: "loss",
+                percentage: "1.6%",
               },
             },
           ]}
-          onClickContainer={() => alert("Clicked")}
-          tooltip={true}
-          footerLabel="Last Updated: 11 Nov 2019"
-          tipChildren={<div>tip</div>}
-        />
-        <DashboardCart
-          title="My Joint UT Account 2001"
-          subtitle={{ content: "50 Unit Trust Funds" }}
-          description="RM 50,630,307.57"
-          descriptionRightLabel={{
-            type: "loss",
-            percentage: "1.6%",
-          }}
-          onClickContainer={() => alert("Clicked")}
         />
       </div>
       <Title>TransactionLimitList Hidden</Title>
