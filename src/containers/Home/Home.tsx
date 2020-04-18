@@ -26,6 +26,7 @@ const Home: React.FC<Props> = () => {
   return (
     <>
       <BackgroundSingle
+        style={{ height: "70vh" }}
         testId={"testId"}
         image={
           "https://images.unsplash.com/photo-1584275556625-162f54df05b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
