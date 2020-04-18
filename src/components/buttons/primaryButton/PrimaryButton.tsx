@@ -30,13 +30,19 @@ const PrimaryButton: React.FC<Props> = ({
   icon = { name: "", color: "" },
   shadowed,
   titleStyle,
+  responsive
 }) => {
+  const primaryButton = [classes.PrimaryButton];
+    if (responsive) {
+      primaryButton.push(classes.fluid);
+  }
+
   return !small ? (
     <div id={testId}>
       <button
         id={`${testId}-0`}
         onClick={onButtonClick}
-        className={classes.PrimaryButton}
+        className={primaryButton.join(" ")}
         style={
           buttonColor
             ? {

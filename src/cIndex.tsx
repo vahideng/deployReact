@@ -110,6 +110,7 @@ import AmResetPin from "./components/amResetPin/amResetPin";
 import TransactionWithNote from "./components/TransactionWithNote/TransactionWithNote";
 import ListWithSelectionTile from "./components/ListWithSelectionTile/ListWithSelectionTile";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
+import RedirectToMobile from './components/RedirectToMobile/RedirectToMobile';
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /// exports
 export {
@@ -125,6 +126,7 @@ export {
   AmResetPin,
   ListWithSelectionTile,
   ErrorPage,
+  RedirectToMobile,
   ///////////////////////////////////////////////////////////////////////////////////////////////
   /// below are sprint-3 components
   AmProfileSetting,

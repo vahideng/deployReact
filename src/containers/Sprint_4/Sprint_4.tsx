@@ -31,6 +31,8 @@ import TransactionWithNote from "src/components/TransactionWithNote/TransactionW
 import DetailList from "src/components/lists/DetailList/DetailList";
 import IconButtons from "src/components/buttons/iconButtons/IconButtons";
 import ListWithSelectionTile from 'src/components/ListWithSelectionTile/ListWithSelectionTile';
+import RedirectToMobile from 'src/components/RedirectToMobile/RedirectToMobile';
+
 const { B_13_ORANGE_463, R_13_GREY444,B_24_BLACK} = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
@@ -2625,7 +2627,9 @@ const Sprint4: React.FC<Props> = () => {
           />
         </div>
       </CenteredDiv>
-
+      <Title>
+        Form Container disabled state.
+      </Title>
       <CenteredDiv>
         <FormContainer
           disabled
@@ -2870,6 +2874,31 @@ const Sprint4: React.FC<Props> = () => {
         alert("Button Clicked");
       }}
       btn2width={"20.43rem"}
+      />
+    </CenteredDiv>
+    <Title>Redirect to mobile</Title>
+    <CenteredDiv style={{width:'100%',  backgroundColor: "#EEEEEE",}}>
+      <RedirectToMobile
+        testId="test-id-1"
+        logo={{name: "amonline-white", size: 130}}
+        header={{
+          testId: 'content',
+          title: 'Banking Your Way',
+          content: 'There is more in the brand new AmOnline app. Unlock the full banking experience now.',
+        }}
+        button={
+          {
+            testId: 'buttonId',
+            title: 'Download The App Now',
+            onButtonClick: () => {alert('button clicked')}
+          }
+        }
+        continueWithWeb= {
+          {
+            content: 'Proceed to Desktop Version',
+            onClick: () => {alert('continue web clicked')}
+          }
+        }
       />
     </CenteredDiv>
     </div>
