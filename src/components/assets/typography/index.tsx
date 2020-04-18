@@ -447,6 +447,23 @@ const SB_18_BLACK = styled.p`
   line-height: 25px;
 `;
 
+const R_19_GREY444 = styled.p`
+  font-family: "Nunito Sans";
+  margin: 0;
+  color: #444444;
+  font-weight: 600;
+  font-size: 0.93rem;
+  line-height: 20px;
+`;
+
+const R_19_GREEN_444 = styled.p`
+  font-family: "Nunito Sans";
+  margin: 0;
+  color: #36A03E;
+  font-weight: 600;
+  font-size: 0.93rem;
+  line-height: 20px;
+`;
 
 
 export default {
@@ -510,5 +527,6 @@ export default {
   XB_11_WHITE,
   R_12_BLACK,
   SB_18_BLACK,
-  
+  R_19_GREY444,
+  R_19_GREEN_444
 };

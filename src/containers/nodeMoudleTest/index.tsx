@@ -3,7 +3,17 @@ import React from "react";
 import styled from "styled-components";
 import Paragraphs from "../../components/assets/typography";
 
-import { AmResetPin, UnitTrustList, PortfolioListContent,ConfirmNotes, PrimaryButton, ViewRateContainer, ViewRate, AmModal} from "amonline-reactjs-component";
+import {
+  AmResetPin,
+  UnitTrustList,
+  PortfolioListContent,
+  ConfirmNotes,
+  PrimaryButton,
+  ViewRateContainer,
+  ViewRate,
+  AmModal,
+  ErrorPage
+} from "amonline-reactjs-component";
 const { B_13_ORANGE_463 } = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
@@ -21,8 +31,6 @@ const CenteredDiv = styled.div`
 `;
 
 const NodeModule: React.FC = () => {
-
-
   const [rateType, setRateType] = React.useState("test_value3");
   const [isViewRateModalOpen, setIsViewRateModalOpen] = React.useState(false);
   return (
@@ -76,7 +84,7 @@ const NodeModule: React.FC = () => {
                   icon: "delete",
                   text: "Delete",
                   onClick: () => alert("click"),
-                }
+                },
               ],
               leftContent: (
                 <PortfolioListContent
@@ -126,7 +134,7 @@ const NodeModule: React.FC = () => {
                   icon: "delete",
                   text: "Delete",
                   onClick: () => alert("click"),
-                }
+                },
               ],
               middleLabel: "RM 406,318.98",
               leftContent: (
@@ -174,7 +182,7 @@ const NodeModule: React.FC = () => {
                   icon: "delete",
                   text: "Delete",
                   onClick: () => alert("click"),
-                }
+                },
               ],
               middleLabel: "RM 406,318.98",
               leftContent: (
@@ -206,18 +214,24 @@ const NodeModule: React.FC = () => {
           ]}
         />
       </CenteredDiv>
-      <Title> Reset Pin</Title>  
-    <CenteredDiv style={{position:'relative',padding:'5rem 6rem',height:'25rem'}}>
-    <AmResetPin
-      testId="testId"
-      keysArray={[5,8,1,0,4,6,2,9,3,7]}
-      onEnterClick={() => {alert('Enter click')}}
-      onNumberSelected={(item:any) =>{alert(item)}}
-      EnterIcon={{name:"system-close-grey",size:15,color:'#000000'}}
-      pointerTopVal={50}
-    />    
-    </CenteredDiv>
-    <Title>Confirm Notes</Title>
+      <Title> Reset Pin</Title>
+      <CenteredDiv
+        style={{ position: "relative", padding: "5rem 6rem", height: "25rem" }}
+      >
+        <AmResetPin
+          testId="testId"
+          keysArray={[5, 8, 1, 0, 4, 6, 2, 9, 3, 7]}
+          onEnterClick={() => {
+            alert("Enter click");
+          }}
+          onNumberSelected={(item: any) => {
+            alert(item);
+          }}
+          EnterIcon={{ name: "system-close-grey", size: 15, color: "#000000" }}
+          pointerTopVal={50}
+        />
+      </CenteredDiv>
+      <Title>Confirm Notes</Title>
       <CenteredDiv
         style={{
           margin: "1rem 15rem",
@@ -420,6 +434,16 @@ const NodeModule: React.FC = () => {
           ]}
         />
       </CenteredDiv>
+      <Title>Error Page</Title>
+      <div style={{ height: "35vw" }}>
+        <ErrorPage
+          mainStyle={{ background: "#eee" }}
+          responsive={true}
+          icon={{ name: "Account", color: "#000000", size: 30 }}
+          title="403 Access Denied/Forbidden"
+          detailText="Please call our 24-hour Contact Center at 603-2178 8888 for assistance"
+        />
+      </div>
     </div>
   );
 };

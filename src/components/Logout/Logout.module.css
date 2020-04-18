@@ -1,0 +1,107 @@
+.StatusFormContainerMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.StatusFormContainerCurve {
+  max-width: 36.31rem;
+  background-color: transparent;
+}
+
+.StatusFormContainerCurveResponive {
+  width: 100% !important;
+}
+
+.StatusFormContainerStatusIcon {
+  margin-bottom: -2rem;
+}
+
+.StatusFormContainerContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #ffffff;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  margin-top: -2px;
+  padding: 2rem;
+}
+
+@media (max-width: 576px) {
+  .StatusFormContainerContent {
+    margin-top: -12px;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .StatusFormContainerContent {
+    margin-top: -16px;
+  }
+}
+
+.headerTitle {
+  text-align: "center";
+}
+
+@media (max-width: 576px) {
+  .headerTitle {
+    text-align: "center";
+    font-size: 18px !important;
+  }
+}
+
+.subContent {
+  text-align: "center";
+  line-height: 18px;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 576px) {
+  .subContent {
+    text-align: "center";
+    font-size: 13px;
+    margin-bottom: 3.5rem;
+  }
+}
+
+.btnClass {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 3.25rem;
+  margin-bottom: 3.25rem;
+  width: 100%;
+  max-width: 24rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 576px) {
+  .btnClass {
+    width: 100% !important;
+    margin-top: 2.5rem !important;
+    max-width: 20.4rem;
+  }
+}

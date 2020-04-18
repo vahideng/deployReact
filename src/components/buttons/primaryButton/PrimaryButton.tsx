@@ -38,7 +38,7 @@ const PrimaryButton: React.FC<Props> = ({
   }
 
   return !small ? (
-    <div id={testId}>
+    <div id={testId} className={responsive && classes.fluid}>
       <button
         id={`${testId}-0`}
         onClick={onButtonClick}
