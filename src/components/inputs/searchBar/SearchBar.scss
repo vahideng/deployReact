@@ -123,16 +123,13 @@
 .SearchBarArrow {
   margin-left: 0.2rem;
 }
-input::-ms-clear ::-ms-reveal {
+
+input::-ms-clear {
   display: none;
-  width : 0;
+  width: 0;
   height: 0;
 }
-.InputField::-ms-clear ::-ms-reveal {
-  display: none;
-  width : 0;
-  height: 0;
-}
+
 @media (max-width: 400px) {
   .SearchBarContainer {
     width: 90vw;

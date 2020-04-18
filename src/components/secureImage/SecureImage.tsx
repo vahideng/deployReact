@@ -8,7 +8,7 @@ interface Props {
   label?: string;
 }
 
-const SecureImage: React.FC<Props> = props => {
+const SecureImage: React.FC<Props> = (props) => {
   const { image, label, testId } = props;
   return (
     <div id={testId}>
@@ -16,7 +16,7 @@ const SecureImage: React.FC<Props> = props => {
       <div className={classes.SecureImageMain}>
         <div
           style={{
-            backgroundImage: `url(${image})`
+            backgroundImage: `url(${image})`,
           }}
           className={classes.SecureImageBG}
         ></div>

@@ -37,7 +37,7 @@ const Home: React.FC<Props> = () => {
               color: "#FFFFFF",
               onIconClick: () => {
                 setSprint1(true);
-              }
+              },
             }}
             rightButtons={[
               <TextButton
@@ -48,7 +48,7 @@ const Home: React.FC<Props> = () => {
                 }}
                 buttonStyles={{
                   color: "#FFFFFF",
-                  fontWeight: 'bold',
+                  fontWeight: "bold",
                   fontSize: 15,
                 }}
               />,
@@ -61,21 +61,21 @@ const Home: React.FC<Props> = () => {
                   console.log(`Option:`, selectedOption);
                 }}
                 selectedOption={selectedItem}
-                defaultValue={ { label: "Malay", value: "malay" }}
+                defaultValue={{ label: "Malay", value: "malay" }}
                 // placeHolder={"English"}
                 options={[
                   { label: "English", value: "english" },
                   { label: "Malay", value: "malay" },
-                  { label: "中文", value: "中文" }
+                  { label: "中文", value: "中文" },
                 ]}
-              />
+              />,
             ]}
           />
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
-              padding: "9rem"
+              padding: "9rem",
             }}
           >
             <Header
@@ -116,14 +116,14 @@ const Home: React.FC<Props> = () => {
                 <div style={{ paddingTop: "2rem" }}>
                   <InputField
                     value={inputValue}
-                    handleChange={event => {
+                    handleChange={(event) => {
                       setInputValue(event.target.value);
                     }}
                     notValid={inputValue.length >= 4 ? true : false}
                     errorMessage={{
                       testId: "testId",
                       errorText: "Wrong Password",
-                      subText: "Please try again."
+                      subText: "Please try again.",
                     }}
                     isSecure
                     clearClickHandler={() => {
@@ -141,12 +141,12 @@ const Home: React.FC<Props> = () => {
                     <TextButton
                       testId="testId"
                       buttonText="Forgot username/password?"
-                      onTextClick={id => {
+                      onTextClick={(id) => {
                         alert(`${id} clicked`);
                       }}
                     />
                   </div>
-                </div>
+                </div>,
               ]}
             ></Box>
           </div>

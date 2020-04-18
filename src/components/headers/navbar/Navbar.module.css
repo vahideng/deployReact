@@ -10,7 +10,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100vw;
+  width: 100%;
   background-color: #ffffff;
   height: 4.31rem;
   -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
@@ -32,7 +32,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100vw;
+  width: 100%;
   background-color: #ffffff;
   height: 3rem;
   -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;

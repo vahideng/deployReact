@@ -47,12 +47,12 @@
 .InputFieldError {
   padding: 1rem 0 0 1rem;
 }
-input::-ms-clear ::-ms-reveal {
+input::-ms-reveal {
   display: none;
   width: 0;
   height: 0;
 }
-.InputFieldInput::-ms-clear ::-ms-reveal {
+input::-ms-clear {
   display: none;
   width: 0;
   height: 0;
