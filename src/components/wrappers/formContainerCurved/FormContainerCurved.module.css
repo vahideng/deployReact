@@ -98,6 +98,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -108,4 +109,14 @@
   border-top-right-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
   height: 3.18rem;
+}
+
+.leftCurveIcon {
+  -webkit-transform: rotate(360deg) scaleX(-1);
+          transform: rotate(360deg) scaleX(-1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #c4c4c4;
+  width: 1.5rem;
 }

@@ -30,7 +30,7 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
           <div
             className={classes.FormContainerCurvedFirstCurveWr}
             style={{
-              backgroundColor: !!RightSelected ? "#ffffff" : "#c4c4c4"
+              backgroundColor: "#c4c4c4",
             }}
           >
             <div
@@ -41,7 +41,7 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
               }}
               className={classes.FormContainerCurvedFirstCurve}
               style={{
-                backgroundColor: !!LeftSelected ? "#ffffff" : "#c4c4c4"
+                backgroundColor: !!LeftSelected ? "#ffffff" : "#c4c4c4",
               }}
             >
               {!!LeftSelected ? (
@@ -55,7 +55,7 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
             <div
               className={classes.FormContainerCurvedSecondCurveWr}
               style={{
-                backgroundColor: !!LeftSelected ? "#ffffff" : "#c4c4c4"
+                backgroundColor: !!LeftSelected ? "#ffffff" : "#c4c4c4",
               }}
             >
               <div
@@ -66,9 +66,22 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
                 }}
                 className={classes.FormContainerCurvedSecondCurve}
                 style={{
-                  backgroundColor: !!RightSelected ? "#ffffff" : "#c4c4c4"
+                  backgroundColor: !!RightSelected ? "#ffffff" : "#c4c4c4",
                 }}
               >
+                {!!RightSelected && (
+                  <div className={classes.leftCurveIcon}>
+                    <Icon
+                      // size={30}
+                      icon={"tab-curbe"}
+                      color={"#ffffff"}
+                      style={{
+                        height: "3.18rem",
+                        width: "3.8rem",
+                      }}
+                    />
+                  </div>
+                )}
                 {!!RightSelected ? (
                   <B_17_BLACK>{curvedTab.rightTab}</B_17_BLACK>
                 ) : (
@@ -83,7 +96,7 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
               style={{
                 marginLeft: "-1.5rem",
                 height: "3.18rem",
-                width: "3.8rem"
+                width: "3.8rem",
               }}
             />
           </span>

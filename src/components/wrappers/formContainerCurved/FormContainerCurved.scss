@@ -56,11 +56,19 @@
 }
 .FormContainerCurvedSecondCurve {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
-
   width: 11rem;
   border-top-right-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
   height: 3.18rem;
+}
+.leftCurveIcon {
+  transform: rotate(360deg) scaleX(-1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #c4c4c4;
+  width: 1.5rem;
 }

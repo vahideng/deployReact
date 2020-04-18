@@ -4,9 +4,8 @@ import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css";
 import "./CalendarBoxOverride.css";
 import classes from "./CalendarBox.module.css";
-import Icon from "src/components/assets/icons/icon";
+import Icon from "../../assets/icons/icon";
 import Paragraphs from "../../assets/typography";
-import styled from "styled-components";
 import InlineMessage from "src/components/infographic/inlineMessage/InlineMessage";
 
 const { B_15_BLACK, B_13_WHITE, B_13_GREY969, B_13_BLACK } = Paragraphs;
@@ -78,22 +77,6 @@ const Arrow = ({ onClick, icon, disabled, size }: ArrowProps) => {
   );
 };
 
-const StyledDayDiv = styled.div`
-  align-items: center !important;
-  border-radius: 50%;
-  color: #696969;
-  display: flex !important;
-  font-family: Nunito Sans;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: bold;
-  height: 1.875rem !important;
-  justify-content: center !important;
-  line-height: 18px;
-  text-align: center;
-  width: 1.875rem !important;
-`;
-
 const CalendarBox: React.FC<Props> = ({
   dateFormat,
   disabled,
@@ -119,7 +102,7 @@ const CalendarBox: React.FC<Props> = ({
   shouldCloseOnSelect,
   showCalendar,
   testId,
-  value
+  value,
 }: Props) => {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
@@ -168,7 +151,7 @@ const CalendarBox: React.FC<Props> = ({
     date,
     decreaseMonth,
     increaseMonth,
-    changeMonth
+    changeMonth,
   }: CustomHeaderProps) => {
     const monthNumber = moment(date).month();
 
@@ -227,13 +210,15 @@ const CalendarBox: React.FC<Props> = ({
         ? {
             backgroundColor:
               selectedColor !== undefined ? selectedColor : "#ff0006",
-            color: "#ffffff"
+            color: "#ffffff",
           }
         : {};
 
     return (
       <div className={classes.TodayContainer}>
-        <StyledDayDiv style={selectedDayStyle}>{dayOfMonth}</StyledDayDiv>
+        <div className={classes.StyledDayDiv} style={selectedDayStyle}>
+          {dayOfMonth}
+        </div>
       </div>
     );
   };
@@ -279,7 +264,7 @@ const CalendarBox: React.FC<Props> = ({
         dateFormat={defaultDateFormat}
         dayClassName={() => classes.NormalDay}
         disabled={disabled}
-        formatWeekDay={nameOfDay => nameOfDay.substr(0, 3)}
+        formatWeekDay={(nameOfDay) => nameOfDay.substr(0, 3)}
         maxDate={maxDate}
         minDate={minDate}
         onCalendarClose={handleCalendarClose}
@@ -292,17 +277,17 @@ const CalendarBox: React.FC<Props> = ({
         )}
         popperModifiers={{
           flip: {
-            behavior: ["bottom"] // don't allow it to flip to be above
+            behavior: ["bottom"], // don't allow it to flip to be above
           },
           preventOverflow: {
-            enabled: false // tell it not to try to stay within the view (this prevents the popper from covering the element you clicked)
+            enabled: false, // tell it not to try to stay within the view (this prevents the popper from covering the element you clicked)
           },
           hide: {
-            enabled: false // turn off since needs preventOverflow to be enabled
-          }
+            enabled: false, // turn off since needs preventOverflow to be enabled
+          },
         }}
         popperPlacement="bottom-start"
-        renderCustomHeader={props => {
+        renderCustomHeader={(props) => {
           return (
             <Fragment>
               <CustomYearHeader {...props} />

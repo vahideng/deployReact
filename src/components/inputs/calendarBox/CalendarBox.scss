@@ -1,3 +1,19 @@
+.StyledDayDiv {
+  align-items: center !important;
+  border-radius: 50%;
+  color: #696969;
+  display: flex !important;
+  font-family: Nunito Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: bold;
+  height: 1.875rem !important;
+  justify-content: center !important;
+  line-height: 18px;
+  text-align: center;
+  width: 1.875rem !important;
+}
+
 .YearHeader {
   background-color: #ededed;
   height: 4.5rem;
