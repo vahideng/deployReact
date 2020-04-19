@@ -21,6 +21,9 @@
 }
 .InnerLabel {
   width: 70rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .ContentDiv {
   display: flex;

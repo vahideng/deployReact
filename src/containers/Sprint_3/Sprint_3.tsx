@@ -1602,6 +1602,9 @@ const Sprint3: React.FC<Props> = () => {
         label="Hide Card"
         buttonTitle="Yes, Disable"
         onButtonClick={() => {
+          alert("button clicked");
+        }}
+        onCloseClick={() => {
           setStickyFooter(!stickyFooter);
         }}
         iconText="Disable online purchases for AmBank Debit Card?"
@@ -1783,6 +1786,8 @@ const Sprint3: React.FC<Props> = () => {
         <ArrayCheckBox
           data={checkBoxData}
           title={`Jompay (${checkBoxData.length})`}
+          titleStyle={{ marginLeft: 4 }}
+          logo={<Icon icon={"JomPay"} size={30} color={"#2A2852"} />}
           testId="testId"
         />
       </div>

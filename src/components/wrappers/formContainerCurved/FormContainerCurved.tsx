@@ -73,7 +73,7 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
                   <div className={classes.leftCurveIcon}>
                     <Icon
                       // size={30}
-                      icon={"tab-curbe"}
+                      icon={"tab-curve"}
                       color={"#ffffff"}
                       style={{
                         height: "3.18rem",
@@ -91,7 +91,7 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
             </div>
             <Icon
               // size={30}
-              icon={"tab-curbe"}
+              icon={"tab-curve"}
               color={!!RightSelected ? "#ffffff" : "#c4c4c4"}
               style={{
                 marginLeft: "-1.5rem",

@@ -13,6 +13,7 @@ interface Props {
   titleStyle?: CSSProperties;
   buttonColor?: any;
   onButtonClick: () => void;
+  onCloseClick?: () => void;
   icon?: { name: string; color: string; size?: number };
   iconText?: string;
 }
@@ -21,17 +22,23 @@ const StickyFooter = ({
   label,
   isOpen,
   onButtonClick,
+  onCloseClick,
   testId,
   buttonTitle,
   titleStyle,
   icon = { name: "Amy1", color: "#A9A9A9", size: 50 },
-  iconText
+  iconText,
 }: Props) => {
   return isOpen ? (
     <div className={classes.MainDiv} id={testId}>
       <div className={classes.LabelDiv}>
         <div className={classes.InnerLabel}>
           <B_17_WHITE>{label}</B_17_WHITE>
+          {!!onCloseClick && (
+            <div onClick={onCloseClick} style={{ cursor: "pointer" }}>
+              <Icon icon="Fail-2" size={15} color="#fff" />
+            </div>
+          )}
         </div>
       </div>
       <div className={classes.ContentDiv}>

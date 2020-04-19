@@ -859,7 +859,7 @@ class Sprint1 extends Component<Props, State> {
                   clearClickHandler={() => alert("clear clicked")}
                   clearIcon={true}
                   label="input label"
-                  icon={{ name: "Account-2" }}
+                  icon={{ name: "Details" }}
                   value={inputValue}
                   handleChange={(event) => {
                     this.setState({
