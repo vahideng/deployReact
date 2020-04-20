@@ -26,30 +26,47 @@
   z-index: 1000;
   transition: height 0.5s ease-in-out;
 }
+
 .InnerWidth {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 57.25rem;
-}
-.InnerWidth {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 57.25rem;
+  height: 100%;
 }
 
 .navbarIconDiv {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  height: 100%;
 }
 
 .navbarIcons {
-  padding-left: 2rem;
-}
-.NavbarOnClick {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2rem;
   cursor: pointer;
+  height: 100%;
+  margin-bottom: -4px;
+  &::after {
+    content: " ";
+    display: block;
+    height: 4px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    background: #fd8585;
+    animation: iconBorder ease 1s forwards;
+  }
+}
+@keyframes iconBorder {
+  to {
+    width: 100%;
+  }
 }
 
 .NavbarIcon {

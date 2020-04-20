@@ -21,6 +21,7 @@ interface Props {
   rightButtons?: {
     iconName: string;
     onButtonClick: () => void;
+    selected?:boolean;
   }[];
 }
 
@@ -30,7 +31,7 @@ const Navbar: React.FC<Props> = ({
   profile = {},
   rightButtons,
 
-  testId
+  testId,
 }) => {
   //@ts-ignore
   const [scrolled, setScrolled] = useState(false);
@@ -83,14 +84,9 @@ const Navbar: React.FC<Props> = ({
                   key={index}
                   className={classes.navbarIcons}
                   id={`${testId}-${index}`}
+                  onClick={button.onButtonClick}
                 >
-                  <div
-                    id={`${testId}-4`}
-                    onClick={button.onButtonClick}
-                    className={classes.NavbarOnClick}
-                  >
-                    <Icon icon={button.iconName} size={25} color={"#444444"} />
-                  </div>
+                  <Icon icon={button.iconName} size={25} color={"#444444"} />
                 </div>
               );
             })}
@@ -136,14 +132,9 @@ const Navbar: React.FC<Props> = ({
                   key={index}
                   className={classes.navbarIcons}
                   id={`${testId}-${index}`}
+                  onClick={button.onButtonClick}
                 >
-                  <div
-                    id={`${testId}-4`}
-                    onClick={button.onButtonClick}
-                    className={classes.NavbarOnClick}
-                  >
-                    <Icon icon={button.iconName} size={30} color={"#444444"} />
-                  </div>
+                  <Icon icon={button.iconName} size={30} color={"#444444"} />
                 </div>
               );
             })}
