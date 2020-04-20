@@ -19,6 +19,7 @@ interface Props {
     iconLabel?: string;
     centeredText?: string;
     centeredChild?: ReactNode;
+    disable ?: boolean;
     avatar?: {
       name: string;
       src?: string;
@@ -47,15 +48,24 @@ const SelectionTile: React.FC<Props> = ({
     selectionTileWrapperCls = `${selectionTileWrapperCls} ${classes.SelectionTileWrapperResponsive}`;
     selectionTileRowCls = `${selectionTileRowCls} ${classes.SelectionTileRowResponsive}`;
   }
+ 
+
+  
   return !centered ? (
-    <div className={selectionTileRowCls} id={testId} style={rowStyle}>
+    <div  className={selectionTileRowCls} id={testId} style={rowStyle}>
       {!!list &&
         list.map((item, index) => {
+
+          
+         let disable = null
+          if(item.disable){
+            disable = `${classes.Disable}`
+          }
           return (
             <div
               id={`${testId}-${index}`}
-              onClick={() => onTileClick(item, index)}
-              className={selectionTileWrapperCls}
+              onClick={!disable ? () => onTileClick(item, index) : null}
+              className={`${selectionTileWrapperCls} ${disable}` }
               key={index}
               style={
                 selected === index

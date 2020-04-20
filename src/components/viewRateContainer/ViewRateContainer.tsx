@@ -18,6 +18,7 @@ interface Props {
     color?: string;
     size?: number;
   };
+  dropdownBackground ?: string;
   rateTypeValue?: any;
   rateTypeList?: {
     value?: string | number;
@@ -47,6 +48,7 @@ const CenteredDiv = styled.div`
 const ViewRateContainer: React.FC<Props> = ({
   testId,
   title,
+  dropdownBackground,
   rateTypeIcon,
   rateTypeValue,
   rateTypeList,
@@ -106,6 +108,7 @@ const ViewRateContainer: React.FC<Props> = ({
         <AmDropdown
           testId={`${testId}_dropdown`}
           label="Product Type"
+          dropdownBackground ={dropdownBackground}
           dropdownData={rateTypeList}
           value={rateTypeValue}
           icon={rateTypeIcon || { name: "Clock", color: "#ff2626", size: 30 }}

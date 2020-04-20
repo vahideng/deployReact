@@ -8,6 +8,7 @@ interface Props {
   tacInput?: boolean;
   clickOnArrow?: (event: any) => void;
   showDropdown?: boolean;
+  dropdownBackground ?: string;
   dropdownData: { value?: string; label?: string }[];
   testId?: string;
   readOnly?: boolean;
@@ -65,6 +66,7 @@ class AmDropdown extends Component<Props, {}> {
     const {
       dropdownData,
       readOnly,
+      dropdownBackground,
       testId,
       value,
       type,
@@ -105,6 +107,12 @@ class AmDropdown extends Component<Props, {}> {
     }
     if(readOnly){
       InputFieldIconDiv.push(classes.WithoutTheCursor)
+    }
+  const DropdownContent = [classes.DropdownContent]
+    
+  if(dropdownBackground) {
+      DropdownContent.push(classes.backgroundDropdown)
+
     }
     return (
       <div className={classes.Container}>
@@ -162,7 +170,7 @@ class AmDropdown extends Component<Props, {}> {
                 // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
               >
                 {!showDropdown ? (
-                  <span className={classes.TextDropdownIcons}>
+                  <span  className={classes.TextDropdownIcons}>
                     <Icon icon="arrowDown" size={18} color={"#000000"} />
                   </span>
                 ) : (
@@ -176,8 +184,8 @@ class AmDropdown extends Component<Props, {}> {
 
           {showDropdown ? (
             <div
-              className={classes.DropdownContent}
-              style={!!max ? { maxHeight: `${max}` } : { maxHeight: "500px" }}
+              className={DropdownContent.join (" ")}
+              style={!!max ? { maxHeight: `${max}` } : { maxHeight: "500px" } }
             >
               {!!dropdownData &&
                 dropdownData.map(item => {

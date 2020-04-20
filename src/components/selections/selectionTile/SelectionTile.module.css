@@ -97,6 +97,12 @@
   cursor: pointer;
 }
 
+.Disable {
+  background-color: #ddd;
+  opacity: 0.3;
+  cursor: no-drop;
+}
+
 .CenteredSelector {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -281,7 +281,8 @@ const Sprint4: React.FC<Props> = () => {
           list={[
             {
               iconLabel: "AmBank",
-              accountTitle: "accountTitle"
+              accountTitle: "accountTitle",
+              disable: true
             },
             {
               iconLabel: "Alliance Bank",
@@ -435,6 +436,7 @@ const Sprint4: React.FC<Props> = () => {
               testId="sprint_4_view_rate_container_test"
               title="View Rate Container Test"
               rateTypeValue={rateType}
+              dropdownBackground = "white"
               rateTypeList={[
                 {
                   value: "test_value1",
