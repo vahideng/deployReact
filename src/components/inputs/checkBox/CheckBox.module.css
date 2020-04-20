@@ -13,7 +13,7 @@ div.checkboxRow input {
 }
 
 div.checkboxRow label {
-  padding: O;
+  padding: 0;
   margin: 0;
   cursor: pointer;
 }

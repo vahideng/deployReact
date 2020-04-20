@@ -1,13 +1,4 @@
-.FormContainerCurvedMain {
-  width: 52.18rem;
-  -webkit-box-shadow: 1px 1px 1px #dedede, -1px 1px 1px #dedede;
-          box-shadow: 1px 1px 1px #dedede, -1px 1px 1px #dedede;
-  border-radius: 0.7rem;
-  border-top-left-radius: 0;
-  background-color: #ffffff;
-}
-
-.FormContainerCurvedLabel {
+.Label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,18 +12,24 @@
   padding-left: 2rem;
 }
 
-.FormContainerCurvedContent {
+.Content {
+  width: 52.18rem;
+  -webkit-box-shadow: 1px 1px 1px #dedede, -1px 1px 1px #dedede;
+          box-shadow: 1px 1px 1px #dedede, -1px 1px 1px #dedede;
+  border-radius: 0.7rem;
+  border-top-left-radius: 0;
+  background-color: #ffffff;
   padding: 2rem 0;
 }
 
-.FormContainerCurvedMainCurve {
+.MainCurve {
   height: 3.18rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.FormContainerCurvedLeftCurve {
+.LeftCurve {
   border-top-left-radius: 1rem;
   cursor: pointer;
   display: -webkit-box;
@@ -43,7 +40,7 @@
           flex: 2;
 }
 
-.FormContainerCurvedRightCurve {
+.RightCurve {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,7 +49,7 @@
           flex: 4;
 }
 
-.FormContainerCurvedFirstCurve {
+.FirstCurve {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -68,7 +65,7 @@
   height: 3.18rem;
 }
 
-.FormContainerCurvedFirstCurveWr {
+.FirstCurveWr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -79,9 +76,10 @@
       -ms-flex-align: center;
           align-items: center;
   border-top-left-radius: 1rem;
+  background: #c4c4c4;
 }
 
-.FormContainerCurvedSecondCurveWr {
+.SecondCurveWr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -94,10 +92,11 @@
   border-top-right-radius: 1.5rem;
 }
 
-.FormContainerCurvedSecondCurve {
+.SecondCurve {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -108,4 +107,14 @@
   border-top-right-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
   height: 3.18rem;
+}
+
+.leftCurveIcon {
+  -webkit-transform: rotate(360deg) scaleX(-1);
+          transform: rotate(360deg) scaleX(-1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #c4c4c4;
+  width: 1.5rem;
 }

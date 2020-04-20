@@ -47,7 +47,7 @@ const Home: React.FC<Props> = () => {
               icon={{
                 onIconClick: () => {
                   setSprint1(true);
-                }
+                },
               }}
               rightButtons={[
                 <TextButton
@@ -58,7 +58,7 @@ const Home: React.FC<Props> = () => {
                   buttonStyles={{
                     color: "#000000",
                     fontWeight: 400,
-                    fontSize: 15
+                    fontSize: 15,
                   }}
                 />,
                 <TextButton
@@ -69,7 +69,7 @@ const Home: React.FC<Props> = () => {
                   buttonStyles={{
                     color: "#000000",
                     fontWeight: 400,
-                    fontSize: 15
+                    fontSize: 15,
                   }}
                 />,
                 <TextButton
@@ -80,7 +80,7 @@ const Home: React.FC<Props> = () => {
                   buttonStyles={{
                     color: "#000000",
                     fontWeight: 400,
-                    fontSize: 15
+                    fontSize: 15,
                   }}
                 />,
                 <TextButton
@@ -116,16 +116,16 @@ const Home: React.FC<Props> = () => {
                     { label: "English", value: "english" },
                     { label: "Malay", value: "malay" },
                     { label: "中文", value: "中文" },
-                    { label: "Persian", value: "persian" }
+                    { label: "Persian", value: "persian" },
                   ]}
-                />
+                />,
               ]}
             />
             <div
               style={{
                 display: "flex",
                 justifyContent: "space-between",
-                padding: "9rem"
+                padding: "9rem",
               }}
             >
               <Header
@@ -156,7 +156,7 @@ const Home: React.FC<Props> = () => {
                       errorMessage={{
                         testId: "testId",
                         errorText: "The TAC is incorrect",
-                        subText: "Please try again."
+                        subText: "Please try again.",
                       }}
                       type="text"
                       clearClickHandler={() => alert("clear clicked")}
@@ -164,7 +164,7 @@ const Home: React.FC<Props> = () => {
                       label="input label"
                       icon={{ name: "User1" }}
                       value={""}
-                      handleChange={event => {
+                      handleChange={(event) => {
                         console.log(event.target.value);
                       }}
                     />

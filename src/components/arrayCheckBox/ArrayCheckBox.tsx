@@ -21,7 +21,7 @@ interface CheckBoxProps {
 
 interface Props {
   data: CheckBoxProps[];
-  leftTitle?: ReactNode;
+  logo?: ReactNode;
   testId?: string;
   title: string;
   titleStyle?: CSSProperties;
@@ -29,10 +29,10 @@ interface Props {
 
 const ArrayCheckBox: React.FC<Props> = ({
   data,
-  leftTitle,
+  logo,
   testId,
   title,
-  titleStyle
+  titleStyle,
 }: Props) => {
   const [page, setPage] = useState(0);
 
@@ -54,10 +54,10 @@ const ArrayCheckBox: React.FC<Props> = ({
 
   return (
     <Col className={classes.Container}>
-      <Row className={classes.TitleContainer}>
-        {leftTitle}
+      <header className={classes.TitleContainer}>
+        {logo}
         <B_15_BLACK style={titleStyle}>{title}</B_15_BLACK>
-      </Row>
+      </header>
       <div className={classes.Content}>
         {data
           .slice(page * 6, page * 6 + 6)

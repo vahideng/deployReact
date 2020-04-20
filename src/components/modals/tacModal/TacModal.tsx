@@ -53,8 +53,8 @@ const customStyles = {
   overlay: {
     background: "rgba(0, 0, 0, 0.5)",
     backgroundBlendMode: "multiply",
-    zIndex: 1000000000
-  }
+    zIndex: 1000000000,
+  },
 };
 const TacModal: React.FC<Props> = ({
   modalIsOpen,
@@ -156,7 +156,7 @@ const TacModal: React.FC<Props> = ({
                   testId={`${testId}-1`}
                   buttonColor={{
                     top: buttonColor.top,
-                    bottom: buttonColor.bottom
+                    bottom: buttonColor.bottom,
                   }}
                   title={buttonTitle}
                   onButtonClick={!!onButtonClick && onButtonClick}

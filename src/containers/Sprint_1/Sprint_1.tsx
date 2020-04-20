@@ -122,7 +122,8 @@ class Sprint1 extends Component<Props, State> {
     tacClear: false,
     tacClearActiveStatus: false,
     navbarScrolled: false,
-    actionBtnStatus: true
+    actionBtnStatus: true,
+    rightSelect: true,
   };
   render() {
     const {
@@ -145,7 +146,8 @@ class Sprint1 extends Component<Props, State> {
       tacClear,
       tacClearActiveStatus,
       navbarScrolled,
-      actionBtnStatus
+      actionBtnStatus,
+      rightSelect,
     } = this.state;
 
     if (homRedirect === true) {
@@ -214,6 +216,107 @@ class Sprint1 extends Component<Props, State> {
             />
           }
         />
+        <Title>FormContainer curvedTab</Title>
+        <CenteredDiv
+          style={{
+            backgroundColor: "#eeeeee",
+          }}
+        >
+          <FormContainerCurved
+            testId={"testId"}
+            curvedTab={{
+              leftTab: "New Recipient",
+              rightTab: "Own/Favorite",
+              rightSelected: rightSelect,
+              onLeftClick: () => {
+                alert("Left Clicked");
+              },
+              onRightClick: () => {
+                alert("Right Clicked");
+              },
+              leftContent: (
+                <div>
+                  <List
+                    header={{
+                      icon: {
+                        name: "LOGO",
+                        color: "#ff2626",
+                        iconText: "Review & Confirm",
+                      },
+                    }}
+                    list={[
+                      {
+                        leftLabel: "To",
+                        rightLabel: "Saving Account A",
+                        details: ["8881019596535 | AmBank"],
+                      },
+                      {
+                        leftLabel: "Amount",
+                        rightLabel: "RM 500.00",
+                        details: ["Fees & Charges: RM 0.00"],
+                      },
+                      {
+                        leftLabel: "Date",
+                        rightLabel: "Transfer Now",
+                        details: ["Today, 5 January 2019"],
+                      },
+                      {
+                        leftLabel: "Reference",
+                        rightLabel: "House Rental",
+                      },
+                      {
+                        leftLabel: "From",
+                        rightLabel: "Savings Account",
+                        details: [
+                          "2998202013",
+                          "Available Balance: RM 10,301.50",
+                        ],
+                      },
+                    ]}
+                  />
+                </div>
+              ),
+              rightContent: (
+                <div>
+                  <LinkList
+                    list={[
+                      {
+                        label: "Jan 2020 eStatement",
+                        onListClick: () => alert("item-1-clicked"),
+                      },
+                      {
+                        label: "Dec 2019 eStatement",
+                        onListClick: () => alert("item-2-clicked"),
+                      },
+                      {
+                        label: "Nov 2019 eStatement",
+                        onListClick: () => alert("item-3-clicked"),
+                      },
+                      {
+                        label: "Oct 2019 eStatement",
+                        rightItem: (
+                          <ToggleButton
+                            value={toggled}
+                            onTogglePress={() => {
+                              this.setState({ toggled: !toggled });
+                            }}
+                            toggleOffLabel="NO"
+                            toggleOnLabel="YES"
+                            disabled={false}
+                          />
+                        ),
+                      },
+                      {
+                        label: "Sep 2019 eStatement",
+                        onListClick: () => alert("item-5-clicked"),
+                      },
+                    ]}
+                  />
+                </div>
+              ),
+            }}
+          />
+        </CenteredDiv>
         <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "white", padding: 50 }}>
           <TransactionList
@@ -742,107 +845,6 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
 
-        <Title>FormContainer curvedTab</Title>
-        <CenteredDiv
-          style={{
-            backgroundColor: "#eeeeee",
-          }}
-        >
-          <FormContainerCurved
-            testId={"testId"}
-            curvedTab={{
-              leftTab: "New Recipient",
-              rightTab: "Own/Favorite",
-              rightSelected: true,
-              onLeftClick: () => {
-                alert("Left Clicked");
-              },
-              onRightClick: () => {
-                alert("Right Clicked");
-              },
-              leftContent: (
-                <div>
-                  <List
-                    header={{
-                      icon: {
-                        name: "LOGO",
-                        color: "#ff2626",
-                        iconText: "Review & Confirm",
-                      },
-                    }}
-                    list={[
-                      {
-                        leftLabel: "To",
-                        rightLabel: "Saving Account A",
-                        details: ["8881019596535 | AmBank"],
-                      },
-                      {
-                        leftLabel: "Amount",
-                        rightLabel: "RM 500.00",
-                        details: ["Fees & Charges: RM 0.00"],
-                      },
-                      {
-                        leftLabel: "Date",
-                        rightLabel: "Transfer Now",
-                        details: ["Today, 5 January 2019"],
-                      },
-                      {
-                        leftLabel: "Reference",
-                        rightLabel: "House Rental",
-                      },
-                      {
-                        leftLabel: "From",
-                        rightLabel: "Savings Account",
-                        details: [
-                          "2998202013",
-                          "Available Balance: RM 10,301.50",
-                        ],
-                      },
-                    ]}
-                  />
-                </div>
-              ),
-              rightContent: (
-                <div>
-                  <LinkList
-                    list={[
-                      {
-                        label: "Jan 2020 eStatement",
-                        onListClick: () => alert("item-1-clicked"),
-                      },
-                      {
-                        label: "Dec 2019 eStatement",
-                        onListClick: () => alert("item-2-clicked"),
-                      },
-                      {
-                        label: "Nov 2019 eStatement",
-                        onListClick: () => alert("item-3-clicked"),
-                      },
-                      {
-                        label: "Oct 2019 eStatement",
-                        rightItem: (
-                          <ToggleButton
-                            value={toggled}
-                            onTogglePress={() => {
-                              this.setState({ toggled: !toggled });
-                            }}
-                            toggleOffLabel="NO"
-                            toggleOnLabel="YES"
-                            disabled={false}
-                          />
-                        ),
-                      },
-                      {
-                        label: "Sep 2019 eStatement",
-                        onListClick: () => alert("item-5-clicked"),
-                      },
-                    ]}
-                  />
-                </div>
-              ),
-            }}
-          />
-        </CenteredDiv>
         <Title>FormContainer</Title>
         <CenteredDiv>
           <FormContainer
@@ -868,7 +870,7 @@ class Sprint1 extends Component<Props, State> {
                   clearClickHandler={() => alert("clear clicked")}
                   clearIcon={true}
                   label="input label"
-                  icon={{ name: "Account-2" }}
+                  icon={{ name: "Details" }}
                   value={inputValue}
                   handleChange={(event) => {
                     this.setState({

@@ -1,22 +1,32 @@
-import React from "react";
+import React, { ReactNode, CSSProperties } from "react";
 import classes from "./BackgroundSingle.module.css";
 
 interface Props {
   testId?: string;
   image?: string;
-  children?: any;
+  children?: ReactNode;
+  style?: CSSProperties;
 }
 
-const BackgroundSingle: React.FC<Props> = ({ image, children, testId }) => {
+const BackgroundSingle: React.FC<Props> = ({
+  image,
+  children,
+  style,
+  testId,
+}) => {
   return (
     <div
       id={testId}
       className={classes.BackgroundSingleMain}
-      style={{
-        backgroundImage: `url(${image})`
-      }}
+      style={
+        style
+          ? { ...style, backgroundImage: `url(${image})` }
+          : {
+              backgroundImage: `url(${image})`,
+            }
+      }
     >
-      <div className={classes.BackgroundSingleChild}>{children}</div>
+      <div>{children}</div>
     </div>
   );
 };
