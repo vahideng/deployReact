@@ -53,7 +53,6 @@ import DashboardCart from "src/components/dashboardCart/DashboardCart";
 import UnitTrustList from "src/components/lists/UnitTrustList/UnitTrustList";
 import Loader from "src/components/assets/icons/Loader/Loader";
 
-
 const {
   B_13_ORANGE_463,
   R_12_WHITE,
@@ -61,7 +60,7 @@ const {
   B_24_BLACK,
   B_15_WHITE,
   R_13_GREY969,
-  SB_13_BLACK
+  SB_13_BLACK,
 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -621,6 +620,7 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         />
       </>
+
       <Title>DashboardCart</Title>
       <div style={{ width: "20%", margin: "2rem auto" }}>
         <DashboardCart
@@ -662,22 +662,9 @@ const Sprint3: React.FC<Props> = () => {
               },
             },
           ]}
-          // onClickContainer={() => alert("Clicked")}
-          tooltip={true}
-          footerLabel="Last Updated: 11 Nov 2019"
-          tipChildren={<div style={{color : "white"}}><p>sadsd</p></div>}
-        />
-        <DashboardCart
-          title="My Joint UT Account 2001"
-          subtitle={{ content: "50 Unit Trust Funds" }}
-          description="RM 50,630,307.57"
-          descriptionRightLabel={{
-            type: "loss",
-            percentage: "1.6%",
-          }}
-          onClickContainer={() => alert("Clicked")}
         />
       </div>
+
       <Title>TransactionLimitList Hidden</Title>
       <div style={{ width: "60vw", margin: "auto" }}>
         <TransactionLimitList
@@ -943,7 +930,7 @@ const Sprint3: React.FC<Props> = () => {
                     status={<R_13_GREY969>{"inactive"}</R_13_GREY969>}
                   />
                 </div>
-              )
+              ),
             },
             {
               id: "id-2",
@@ -969,8 +956,8 @@ const Sprint3: React.FC<Props> = () => {
                     }
                   />
                 </div>
-              )
-            }
+              ),
+            },
           ]}
         ></AmAccordion>
       </CenteredDiv>
@@ -1143,7 +1130,7 @@ const Sprint3: React.FC<Props> = () => {
             console.log(event, testId);
             handlerDropdown(item);
           }}
-          inputHandleChange={item => alert(item.target.value)}
+          inputHandleChange={(item) => alert(item.target.value)}
           placeholder="place holder"
         />
       </div>
@@ -2406,10 +2393,10 @@ const Sprint3: React.FC<Props> = () => {
       <Title>PortfolioListContent</Title>
       <div style={{ width: "50%", margin: "0 auto" }}>
         <PortfolioListContent
-        containerStyle ={{backgroundColor : "red"}} // new changes-1-vahideng
-        buttonStyle = {{color:  "rgba(0, 113, 130, 0.984)"} } // new changes-2-vahideng
-        buttonTextStyle= {{color :'white'}} //new changes-3-vahideng
-        borderColor="#8677D9"
+          containerStyle={{ backgroundColor: "red" }} // new changes-1-vahideng
+          buttonStyle={{ color: "rgba(0, 113, 130, 0.984)" }} // new changes-2-vahideng
+          buttonTextStyle={{ color: "white" }} //new changes-3-vahideng
+          borderColor="#8677D9"
           buttonText="View Performance"
           onClickButton={() => alert("button clicked")}
           data={[
