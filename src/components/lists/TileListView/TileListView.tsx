@@ -69,7 +69,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                   style={{
                     fontWeight: 600,
                     whiteSpace: "nowrap",
-                    maxWidth: "16.87rem",
+                    maxWidth: "13.15rem",
                     textOverflow: "ellipsis",
                     overflow: "hidden",
                   }}
@@ -141,6 +141,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                     icon={item.icon}
                     color={item.iconColor}
                     size={item.iconSize}
+                    style={{display:'block'}}
                   />
                 )}
                 <B_15_BLACK

@@ -16,13 +16,13 @@ const BackButton: React.FC<Props> = ({ buttonText, onButtonClick, testId }) => {
       id={testId}
       className="container row"
       onClick={onButtonClick}
-      style={{ cursor: "pointer" }}
+      style={{ cursor: "pointer",alignItems:'center' }}
     >
       <Icon
         icon="left"
         color="#000000"
         size={25}
-        style={{ marginRight: -3, marginLeft: -7 }}
+        style={{ marginRight: -3, marginLeft: -7 , display :'block'}}
       />
       <B_16_BLACK>{buttonText}</B_16_BLACK>
     </div>
