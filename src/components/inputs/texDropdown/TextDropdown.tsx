@@ -34,13 +34,14 @@ const customStyles = (
   }),
 
   placeholder: () => ({
-    color: !!themColor ? themColor : "#000000"
+    color: !!themColor ? themColor : "#000000",
+    fontWeight: !!boldFont ? 700 : 300
   }),
 
   singleValue: (base: any) => ({
     ...base,
     color: !!themColor ? themColor : "#000000",
-    fontWeight: !!boldFont ? "bold" : "normal"
+    fontWeight: !!boldFont ? 700 : 300
   }),
   menu: (provided: any) => ({
     ...provided,
