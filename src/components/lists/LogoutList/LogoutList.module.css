@@ -67,6 +67,9 @@
 }
 
 .leftlabel {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-top: 0.38rem;
   max-width: 12.88rem;
   width: 100%;
@@ -75,6 +78,9 @@
 @media (max-width: 576px) {
   .leftlabel {
     max-width: 12.93rem;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
   }
 }
 
@@ -85,6 +91,9 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .middleLabelClass {
@@ -95,14 +104,21 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 @media (max-width: 576px) {
   .middleLabelClass {
     display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .RightLabelFirst {
+    font-size: 11px !important;
+    text-transform: uppercase;
   }
 }
 
@@ -112,6 +128,7 @@
 
 @media (max-width: 576px) {
   .leftLabelTextRes {
+    padding-bottom: 4px;
     font-size: 11px !important;
     line-height: 15px !important;
     text-transform: uppercase;
@@ -120,12 +137,14 @@
 
 .LeftLabel2TextRes {
   margin-top: 0.38rem;
+  padding-top: 6px;
 }
 
 @media (max-width: 576px) {
   .LeftLabel2TextRes {
     font-size: 12px !important;
     line-height: 19px !important;
+    padding-top: 0px;
   }
 }
 
@@ -146,11 +165,13 @@
 
 .RightLabel2Res {
   margin-top: 0.375rem;
+  padding-top: 6px;
 }
 
 @media (max-width: 576px) {
   .RightLabel2Res {
     display: none;
+    padding-top: 0px;
   }
 }
 

@@ -8,7 +8,7 @@ interface Props {
   tacInput?: boolean;
   clickOnArrow?: (event: any) => void;
   showDropdown?: boolean;
-  dropdownBackground ?: string;
+  dropdownBackground?: string;
   dropdownData: { value?: string; label?: string }[];
   testId?: string;
   readOnly?: boolean;
@@ -21,7 +21,7 @@ interface Props {
   onSecureClick?: () => void;
   handleChange: (
     event: ChangeEvent<HTMLInputElement>,
-    item:{ value?: string; label?: string },
+    item: { value?: string; label?: string },
     testId?: string | undefined
   ) => void;
   inputHandleChange?: (
@@ -48,7 +48,7 @@ interface Props {
 
 class AmDropdown extends Component<Props, {}> {
   state = {
-    showDropdown: false
+    showDropdown: false,
   };
 
   clickHandler = () => {
@@ -87,12 +87,12 @@ class AmDropdown extends Component<Props, {}> {
       inputClickHandler,
       max,
       placeholder,
-      clickOnArrow
+      clickOnArrow,
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
-      if(inputHandleChange){
+      if (inputHandleChange) {
         inputHandleChange(event, testId);
-      } 
+      }
     }
     function focusHandler(event: FormEvent) {
       !!onFocus && onFocus(event);
@@ -105,15 +105,33 @@ class AmDropdown extends Component<Props, {}> {
     if (showDropdown) {
       InputFieldIconDiv.push(classes.InputFieldIconWithoutBorder);
     }
-    if(readOnly){
-      InputFieldIconDiv.push(classes.WithoutTheCursor)
+    if (readOnly) {
+      InputFieldIconDiv.push(classes.WithoutTheCursor);
     }
-  const DropdownContent = [classes.DropdownContent]
-    
-  if(dropdownBackground) {
-      DropdownContent.push(classes.backgroundDropdown)
+    const DropdownContent = [classes.DropdownContent];
 
+    if (dropdownBackground) {
+      DropdownContent.push(classes.backgroundDropdown);
     }
+
+    const dropdownCOntent = () => {
+      if (dropdownBackground && max) {
+        return {
+          backgroundColor: dropdownBackground,
+          maxHeight: `${max}`,
+        };
+      } else if (dropdownBackground) {
+        return { backgroundColor: dropdownBackground };
+      } else if (max) {
+        
+        return { maxHeight: `${max}` };
+      } else {
+        return {
+          backgroundColor: "white",
+          maxHeight: `500px`,
+        };
+      }
+    };
     return (
       <div className={classes.Container}>
         <div className={classes.InputFieldMain}>
@@ -147,11 +165,11 @@ class AmDropdown extends Component<Props, {}> {
                   ? {
                       width: tacInput ? "34.81rem" : "31.6rem",
                       paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                      boxShadow: "none"
+                      boxShadow: "none",
                     }
                   : {
                       paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                      width: tacInput ? "34.81rem" : "31.6rem"
+                      width: tacInput ? "34.81rem" : "31.6rem",
                     }
               }
               type={type}
@@ -170,7 +188,7 @@ class AmDropdown extends Component<Props, {}> {
                 // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
               >
                 {!showDropdown ? (
-                  <span  className={classes.TextDropdownIcons}>
+                  <span className={classes.TextDropdownIcons}>
                     <Icon icon="arrowDown" size={18} color={"#000000"} />
                   </span>
                 ) : (
@@ -184,13 +202,13 @@ class AmDropdown extends Component<Props, {}> {
 
           {showDropdown ? (
             <div
-              className={DropdownContent.join (" ")}
-              style={!!max ? { maxHeight: `${max}` } : { maxHeight: "500px" } }
+              className={DropdownContent.join(" ")}
+              style={dropdownCOntent()}
             >
               {!!dropdownData &&
-                dropdownData.map(item => {
+                dropdownData.map((item) => {
                   return (
-                    <div onClick={(e) => this.OnClickItemHandler(e,item)}>
+                    <div onClick={(e) => this.OnClickItemHandler(e, item)}>
                       <R_15_BLACK>{item.label}</R_15_BLACK>{" "}
                     </div>
                   );

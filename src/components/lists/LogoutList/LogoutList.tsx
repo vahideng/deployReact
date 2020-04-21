@@ -134,7 +134,7 @@ const LogoutList: React.FC<LogoutListProps> = ({
                 <R_19_GREEN_444 style={item.middleLabel.styleContent} >{item.middleLabel.content} </R_19_GREEN_444>
                 </Col>
                 <ColDiv className={classes.rightLabel}>
-                <R_19_GREY444 style={item.rightLabel.styleTimeStamp}>{item.rightLabel.TimeStamp}</R_19_GREY444>
+                <R_19_GREY444 className={classes.RightLabelFirst} style={item.rightLabel.styleTimeStamp}>{item.rightLabel.TimeStamp}</R_19_GREY444>
                 <SB_15_BLACK style={item.rightLabel.styleValue} className={classes.RightLabel2Res}>{item.rightLabel.value}</SB_15_BLACK>
                 <R_19_GREEN_444 style={item.middleLabel.styleContent} className={classes.middleLabelRes}>{item.middleLabel.content}</R_19_GREEN_444>
                 </ColDiv>

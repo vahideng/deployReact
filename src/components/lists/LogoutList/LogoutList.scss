@@ -40,31 +40,45 @@
   padding-right: 0.5rem;
 }
 .leftlabel{
+  justify-content: flex-end;
   margin-top:0.38rem;
   max-width:12.88rem;
   width:100%;
   @media (max-width:576px){
     max-width: 12.93rem;
+    justify-content: unset;
   }
 
 }
 .rightLabel{
   flex:1 ;
-  align-items:flex-end
+  align-items:flex-end;
+  justify-content: space-between;
 }
 .middleLabelClass{
   flex:1;
   margin-left:3.8rem;
   display:flex;
-align-items:center;
+  align-items: flex-end;
   @media (max-width:576px){
       display: none;
   }
 }
 
+.RightLabelFirst{
+
+  @media (max-width:576px){
+    
+    font-size: 11px !important;
+  
+    text-transform: uppercase;
+}
+
+}
 .leftLabelTextRes{
   margin-bottom: 0.375rem;
   @media (max-width:576px){
+    padding-bottom: 4px;
     font-size: 11px !important;
     line-height: 15px !important;
     text-transform: uppercase;
@@ -72,15 +86,19 @@ align-items:center;
 }
 .LeftLabel2TextRes{
   margin-top:0.38rem;
+  padding-top: 6px;
   @media (max-width:576px){
     font-size: 12px !important;
     line-height: 19px !important;
+    padding-top: 0px;
 }
 }
 
 .RightLabelRes{
   display: none;
   margin-top: 1rem;
+
+ 
   @media (max-width:576px){
     display: flex;
     font-size: 12px !important;
@@ -90,8 +108,10 @@ align-items:center;
 
 .RightLabel2Res{
   margin-top: 0.375rem;
+  padding-top: 6px;
   @media (max-width:576px){
     display: none;
+    padding-top: 0px;
 }
 }
 

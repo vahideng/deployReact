@@ -3,13 +3,14 @@ import classes from './RedirectToMobile.module.css';
 // import { Card, Col } from 'react-bootstrap';
 // import Icon from 'src/components/assets/icons/icon';
 import Paragraphs from '../../components/assets/typography';
-import images from "src/assets";
+
 import Icon from "src/components/assets/icons/icon";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 const { SB_32_BLACK, SB_15_BLACK, B_13_ORANGE_463 } = Paragraphs;
 
 interface RedirectToMobileProps {
   testId: string,
+  
   header?: {
     content?: string;
     contentStyle?: CSSProperties;
@@ -46,7 +47,7 @@ const RedirectToMobile: React.FC<RedirectToMobileProps> = ({
   logo,
   header,
   button,
-  backgroundImage = images.common.redirectBg,
+  backgroundImage ,
   continueWithWeb, 
   gradient = true
 }) => {

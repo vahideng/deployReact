@@ -403,7 +403,9 @@ const Sprint4: React.FC<Props> = () => {
         }}
         iconText="Disable online purchases for AmBank Debit Card?"
         iconSubText="Number of transactions edited:"
-        iconSubTextNum={5}
+        iconSubTextNum={8}
+        onCloseClick = {()=> alert("close")}
+
       />
       <Title>DynamicText</Title>
       <div style={{ paddingLeft: "35vw" }}>
@@ -437,6 +439,7 @@ const Sprint4: React.FC<Props> = () => {
               title="View Rate Container Test"
               rateTypeValue={rateType}
               dropdownBackground = "white"
+              
               rateTypeList={[
                 {
                   value: "test_value1",
@@ -2787,7 +2790,7 @@ const Sprint4: React.FC<Props> = () => {
             }
           ]}
           Btntitle={"Continue With Transaction"}
-          Btnwidth={'20.43rem'}
+          // Btnwidth={'22.43rem'}
           onButtonClick={() => alert("check")}
           statusText={" You will be redirected to FPX status page in 9 seconds"}
         />
@@ -2883,6 +2886,7 @@ const Sprint4: React.FC<Props> = () => {
     <Title>Redirect to mobile</Title>
     <CenteredDiv style={{width:'100%',  backgroundColor: "#EEEEEE",}}>
       <RedirectToMobile
+        backgroundImage = {images.common.redirectBg}
         testId="test-id-1"
         logo={{name: "amonline-white", size: 130}}
         header={{
@@ -2988,7 +2992,7 @@ const Sprint4: React.FC<Props> = () => {
             
             ]}
             btntitle="Back to Homepage"
-            btnwidth="20.4rem"
+            btnwidth="16.4rem"
             onButtonClick={() => {
               alert("check");
             }}
