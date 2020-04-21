@@ -62,7 +62,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  marginLeft: item.cardLogo ? 16 : 0
+                  marginLeft: item.cardLogo ? 16 : 0,
                 }}
               >
                 <R_15_GREY444
@@ -71,7 +71,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                     whiteSpace: "nowrap",
                     maxWidth: "16.87rem",
                     textOverflow: "ellipsis",
-                    overflow: "hidden"
+                    overflow: "hidden",
                   }}
                 >
                   {item.accountName}{" "}
@@ -90,7 +90,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                   color: item.statusLabelColor,
                   fontWeight: 600,
                   display: "flex",
-                  flexDirection: "row"
+                  flexDirection: "row",
                 }}
               >
                 {item.statusLabel}{" "}
@@ -103,7 +103,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                     <R_13_BLACK
                       style={{
                         color: item.statusLabel2Color,
-                        fontWeight: 600
+                        fontWeight: 600,
                       }}
                     >
                       {item.statusLabel2}
@@ -117,7 +117,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                 display: "flex",
                 flex: 0.8,
                 flexDirection: "column",
-                alignItems: "flex-end"
+                alignItems: "flex-end",
               }}
             >
               <div
@@ -125,7 +125,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                   display: "flex",
                   flex: 1,
                   flexDirection: "row",
-                  alignItems: "center"
+                  alignItems: "center",
                 }}
               >
                 {item.countryFlagImage && (
@@ -147,7 +147,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                   style={{
                     marginLeft:
                       item.icon && item.iconColor && item.iconSize ? 8 : 4,
-                    letterSpacing: 0.4
+                    letterSpacing: 0.4,
                   }}
                 >
                   {item.amount}
@@ -162,7 +162,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                 justifyContent: "center",
                 alignItems: "center",
                 display: "flex",
-                marginLeft: 8
+                marginLeft: 8,
               }}
             >
               <Icon icon={"Right1"} color={"#000"} size={28} />

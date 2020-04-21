@@ -18,7 +18,7 @@ const VerticalTabSelection: React.FC<Props> = ({
   onTileClick,
   icon,
   accountTitle,
-  tabStyle
+  tabStyle,
   // selectedBorderColor
 }) => {
   return (
@@ -33,16 +33,22 @@ const VerticalTabSelection: React.FC<Props> = ({
             className={classes.Icon}
             icon={!!icon.name ? icon.name : "Alert"}
             size={50}
-            color={!!icon.color ? icon.color : "#ff2626"}
+            color={icon.color}
           />
           {!!accountTitle && (
             <div className={classes.SelectionTileTDiv}>
               {selected ? (
-                <B_17_BLACK className={classes.SelectionTileTitle} style={{fontSize: 15}}>
+                <B_17_BLACK
+                  className={classes.SelectionTileTitle}
+                  style={{ fontSize: 15 }}
+                >
                   {accountTitle}
                 </B_17_BLACK>
               ) : (
-                <B_17_GREY969 className={classes.SelectionTileTitle} style={{fontSize: 15}}>
+                <B_17_GREY969
+                  className={classes.SelectionTileTitle}
+                  style={{ fontSize: 15 }}
+                >
                   {accountTitle}
                 </B_17_GREY969>
               )}
