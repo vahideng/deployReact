@@ -21,7 +21,7 @@ interface Props {
   rightButtons?: {
     iconName: string;
     onButtonClick: () => void;
-    selected?:boolean;
+    selected?: boolean;
   }[];
 }
 
@@ -87,6 +87,7 @@ const Navbar: React.FC<Props> = ({
                   onClick={button.onButtonClick}
                 >
                   <Icon icon={button.iconName} size={25} color={"#444444"} />
+                  {button.selected && <div className={classes.selected}></div>}
                 </div>
               );
             })}
@@ -135,6 +136,7 @@ const Navbar: React.FC<Props> = ({
                   onClick={button.onButtonClick}
                 >
                   <Icon icon={button.iconName} size={30} color={"#444444"} />
+                  {button.selected && <div className={classes.selected}></div>}
                 </div>
               );
             })}

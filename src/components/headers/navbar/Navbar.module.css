@@ -87,7 +87,7 @@
   margin-bottom: -4px;
 }
 
-.navbarIcons::after {
+.navbarIcons .selected {
   content: " ";
   display: block;
   height: 4px;
@@ -95,8 +95,8 @@
   position: absolute;
   bottom: 0;
   background: #fd8585;
-  -webkit-animation: iconBorder ease 1s forwards;
-          animation: iconBorder ease 1s forwards;
+  -webkit-animation: iconBorder ease-in-out 1s forwards;
+          animation: iconBorder ease-in-out 1s forwards;
 }
 
 @-webkit-keyframes iconBorder {

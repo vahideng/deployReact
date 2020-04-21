@@ -52,7 +52,7 @@
   cursor: pointer;
   height: 100%;
   margin-bottom: -4px;
-  &::after {
+  .selected {
     content: " ";
     display: block;
     height: 4px;
@@ -60,7 +60,7 @@
     position: absolute;
     bottom: 0;
     background: #fd8585;
-    animation: iconBorder ease 1s forwards;
+    animation: iconBorder ease-in-out 1s forwards;
   }
 }
 @keyframes iconBorder {

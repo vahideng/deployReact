@@ -488,5 +488,5 @@ export default {
   R_12_WHITE,
   SB_13_BLACK,
   XB_11_WHITE,
-  R_12_BLACK
+  R_12_BLACK,
 };

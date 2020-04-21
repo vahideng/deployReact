@@ -52,6 +52,7 @@ import TileListView from "src/components/lists/TileListView/TileListView";
 
 import { Redirect } from "react-router-dom";
 import Box from "src/components/wrappers/box/Box";
+import IconTest from "src/assets/iconTest/IconTest";
 
 const {
   B_13_ORANGE_463,
@@ -214,6 +215,7 @@ class Sprint1 extends Component<Props, State> {
             />
           }
         />
+
         <Title>FormContainer curvedTab</Title>
         <CenteredDiv
           style={{
@@ -1281,8 +1283,7 @@ class Sprint1 extends Component<Props, State> {
                   this.setState({ verticalActiveTab: index }),
 
                 icon: {
-                  name: "Account-2",
-                  color: "#ff2626",
+                  name: "Duitnow1",
                 },
                 accountTitle: "Fixed/Term Deposits",
                 children: (
@@ -2904,7 +2905,8 @@ class Sprint1 extends Component<Props, State> {
           icon={{ name: "Tick-1", color: "#ffffff" }}
           text="Your profile is successfully activated."
         />
-
+        <Title>Icons</Title>
+        <IconTest />
         <Title>DetailSummary</Title>
         <DetailSummary
           mainTitle="Protected by PIDM up to RM 250,000 for each depositor"

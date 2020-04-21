@@ -20,7 +20,7 @@ const TextWithDetails: React.FC<Props> = ({
   testId,
   title,
   titleStyle,
-  image
+  image,
 }) => {
   const paddingLeft = direction === "row" ? { paddingLeft: "0.25rem" } : {};
   const defaultDirection = direction !== undefined ? direction : "column";
@@ -44,11 +44,18 @@ const TextWithDetails: React.FC<Props> = ({
       )}
       <MainDiv id={testId}>
         <B_15_BLACK style={titleStyle}>{title}</B_15_BLACK>
-        {content === undefined ? null : (
-          <R_15_BLACK style={{ ...paddingLeft, ...contentStyle }}>
-            {content}
-          </R_15_BLACK>
-        )}
+        {content === undefined
+          ? null
+          : content.map((item, index) => {
+              return (
+                <R_15_BLACK
+                  style={{ ...paddingLeft, ...contentStyle }}
+                  key={index}
+                >
+                  {item}
+                </R_15_BLACK>
+              );
+            })}
       </MainDiv>
     </Wrapper>
   );

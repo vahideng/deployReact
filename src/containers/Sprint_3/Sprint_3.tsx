@@ -142,14 +142,14 @@ const Sprint3: React.FC<Props> = () => {
   const checkBoxData = [
     {
       title: "Indah",
-      content: ["Biller Code: 68502", "0"],
+      content: ["Biller Code: 68502", "Ref-1: 65432145432"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
       onCheckClick: handleCheckBox,
     },
     {
       title: "Kojadi",
-      content: ["Biller Code: 68502", "1"],
+      content: ["Biller Code: 68502", "Ref-1: 0989875654"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
       onCheckClick: handleCheckBox,
@@ -265,9 +265,10 @@ const Sprint3: React.FC<Props> = () => {
           {
             iconName: "Settings",
             onButtonClick: () => alert("button-2-Clicked"),
+            selected: true,
           },
           {
-            iconName: "Share",
+            iconName: "logout",
             onButtonClick: () => alert("button-3-Clicked"),
           },
         ]}
