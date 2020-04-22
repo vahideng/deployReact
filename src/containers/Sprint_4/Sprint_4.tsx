@@ -707,6 +707,9 @@ const Sprint4: React.FC<Props> = () => {
           }}
           EnterIcon={{ name: "system-close-grey", size: 15, color: "#000000" }}
           pointerTopVal={50}
+          onOutsideClickHandler={() => {
+            alert("Enter outside click");
+          }}
         />
       </CenteredDiv>
 

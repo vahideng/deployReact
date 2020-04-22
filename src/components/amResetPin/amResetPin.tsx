@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
 import classes from './amResetPin.module.css';
 import Paragraphs from '../assets/typography';
 import Icon from "src/components/assets/icons/icon";
+import OutsideClickHandler from "react-outside-click-handler";
 const { SB_18_BLACK } = Paragraphs;
 
 
@@ -12,6 +13,7 @@ interface ResetPinProps {
   onEnterClick?:() => void;
   EnterIcon: { name: string; color?: string; size?: number };
   pointerTopVal?:number;
+  onOutsideClickHandler?:() => void;
 }
 
 type Grow<T, A extends Array<T>> = ((x: T, ...xs: A) => void) extends ((...a: infer X) => void) ? X : never;
@@ -22,13 +24,17 @@ export type FixedArray<T, N extends number> = GrowToSize<T, [], N>;
 
 
 const AmResetPin: React.FC<ResetPinProps> = ({
-  keysArray,onNumberSelected,onEnterClick,EnterIcon,pointerTopVal
+  keysArray,onNumberSelected,onEnterClick,EnterIcon,pointerTopVal,onOutsideClickHandler
 }) => {
   const {mainContainer,outerContainer,numberContainer,extraPropsContainer,numberPadContainer,tipContentStyle
   } = classes;
 
+
   return (
-    <div className={mainContainer}>
+    <OutsideClickHandler
+    onOutsideClick={onOutsideClickHandler}
+  >
+    <div className={mainContainer} >
       <div className={tipContentStyle} style={{top:pointerTopVal}}/>
       <div className={outerContainer}>
       <div className={numberPadContainer}>
@@ -63,6 +69,7 @@ const AmResetPin: React.FC<ResetPinProps> = ({
       </div>
     
   </div>
+  </OutsideClickHandler>
   );
 };
 
