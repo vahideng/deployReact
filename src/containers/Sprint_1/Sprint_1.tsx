@@ -1166,6 +1166,7 @@ class Sprint1 extends Component<Props, State> {
             testId={"testId"}
             selectedBorderColor="#FD8585"
             minimize={false}
+            defaultIndex={verticalActiveTab}
             data={[
               {
                 selected: verticalActiveTab === 0 ? true : false,
@@ -1184,6 +1185,7 @@ class Sprint1 extends Component<Props, State> {
                       flexDirection: "column",
                     }}
                   >
+                    <B_13_ORANGE_463>CHILD-1</B_13_ORANGE_463>
                     <R_13_BLACK>Your outstanding</R_13_BLACK>
                     <B_24_BLACK>RM 55,555.00</B_24_BLACK>
                     <R_13_BLACK style={{ marginBottom: 16 }}>
@@ -1259,6 +1261,7 @@ class Sprint1 extends Component<Props, State> {
                       padding: 30,
                     }}
                   >
+                    <B_13_ORANGE_463>CHILD-2</B_13_ORANGE_463>
                     <DescriptionButton
                       testId={"testId"}
                       onButtonClick={(item, index) => {
@@ -1294,6 +1297,7 @@ class Sprint1 extends Component<Props, State> {
                       flexDirection: "column",
                     }}
                   >
+                    <B_13_ORANGE_463>CHILD-3</B_13_ORANGE_463>
                     <R_13_BLACK>Your outstanding</R_13_BLACK>
                     <B_24_BLACK>RM 55,555.00</B_24_BLACK>
                     <R_13_BLACK style={{ marginBottom: 16 }}>
