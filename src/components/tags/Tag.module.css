@@ -1,8 +1,9 @@
 .TagMainDiv {
   width: auto;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   background-color: #000000;
-  min-height: 3.12rem;
   border-radius: 4rem;
   padding: 0 1.43rem;
 }
@@ -14,7 +15,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 3.12rem;
   border-radius: 4rem;
 }
 

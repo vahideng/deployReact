@@ -3,6 +3,7 @@ import classes from "./Dock.module.css";
 import Tag from "src/components/tags/Tag";
 import ActionButtons from "src/components/buttons/actionButtons/ActionButtons";
 
+import images from "src/assets";
 interface Props {
   onButtonClick: (item: any, index: number) => void;
   testId?: string;
@@ -15,7 +16,7 @@ interface Props {
   }[];
 }
 
-const Dock: React.FC<Props> = props => {
+const Dock: React.FC<Props> = (props) => {
   const [isExpanded, setsIsExpanded] = useState(false);
   return (
     <div
@@ -26,7 +27,12 @@ const Dock: React.FC<Props> = props => {
     >
       {!!props.tagText && (
         <div className={classes.DockTag}>
-          <Tag text={props.tagText} testId={`${props.testId}-1`} />
+          <Tag
+            text={props.tagText}
+            testId={`${props.testId}-1`}
+            styles={{ minHeight: "3.12rem" }}
+            image={{ src: images.common.amyIcon }}
+          />
         </div>
       )}
       <div className={classes.DockInnerDiv}>
