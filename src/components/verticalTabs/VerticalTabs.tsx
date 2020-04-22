@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Tab, Nav } from "react-bootstrap";
 import VerticalTabSelection from "src/components/selections/verticalTabSelection/VerticalTabSelection";
 import Paragraphs from "../assets/typography";
@@ -10,16 +10,20 @@ interface Props {
   selectedBorderColor?: string;
   data: any;
   minimize: boolean;
+  defaultIndex?: number;
 }
 const VerticalTabs: React.FC<Props> = ({
   data,
   minimize,
   selectedBorderColor,
-  testId
+  testId,
+  defaultIndex,
 }) => {
-  const [defaultActiveKey, setDefaultActiveKey] = useState(0);
+  const [defaultActiveKey, setDefaultActiveKey] = useState(
+    defaultIndex ? defaultIndex : 0
+  );
   const lastIndex = data.length - 1;
-  React.useEffect(() => {
+  useEffect(() => {
     if (data) {
       data.map((item: any, index: number) => {
         if (item.selected) {
@@ -28,7 +32,6 @@ const VerticalTabs: React.FC<Props> = ({
       });
     }
   });
-
   return (
     <Tab.Container
       id={`verticalTabs ${testId}`}
@@ -57,14 +60,14 @@ const VerticalTabs: React.FC<Props> = ({
                                   index == lastIndex
                                     ? "1px solid transparent"
                                     : "1px solid #dedede",
-                                width: minimize ? "6rem" : "14.68rem"
+                                width: minimize ? "6rem" : "14.68rem",
                               }
                             : {
                                 borderBottom:
                                   index == lastIndex
                                     ? "1px solid transparent"
                                     : "1px solid #dedede",
-                                width: minimize ? "6rem" : "14.68rem"
+                                width: minimize ? "6rem" : "14.68rem",
                               }
                         }
                       />
@@ -86,7 +89,7 @@ const VerticalTabs: React.FC<Props> = ({
                         style={{
                           backgroundImage: `url(${
                             !!_item.bgImage ? _item.bgImage.background : ""
-                          })`
+                          })`,
                         }}
                         className={classes.RightChildBG}
                       >
