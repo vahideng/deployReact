@@ -7,8 +7,9 @@ import LocalImages from "src/components/assets/images";
 import Icon from "src/components/assets/icons/icon";
 import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
 import IconButtons from "src/components/buttons/iconButtons/IconButtons";
-
+import moment from 'moment'
 import {
+  CalendarBox,
   // sprint3
   Navbar,
   ArrayCheckBox,
@@ -119,6 +120,8 @@ const NodeModule: React.FC = () => {
     top: "#BDBDBD",
     bottom: "#BDBDBD",
   });
+  const [inputDate, setInputDate] = useState<string>("");
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>();
   const [buttonColor, setButtonColor] = useState({
     top: "#BDBDBD",
     bottom: "#BDBDBD",
@@ -145,6 +148,15 @@ const NodeModule: React.FC = () => {
 
   const handleCheckBox = () => {
     setIsCheckboxChecked(!isCheckboxChecked);
+  };
+  const handleInputDateChange = (input: string) => {
+    setInputDate(input);
+  };
+
+  const handleOnChange = (input: Date) => {
+    const date = moment(input).format("DD/MM/YYYY");
+    setSelectedDate(input);
+    setInputDate(date);
   };
   const checkBoxData = [
     {
@@ -283,6 +295,45 @@ const NodeModule: React.FC = () => {
           },
         ]}
       />
+      <Title>CalendarBox</Title>
+      <div
+        style={{
+          width: "50%",
+          margin: "0 auto",
+        }}
+      >
+        <FormContainer
+          label={"Select your account/card type"}
+          tooltip={
+            <div>
+              <p style={{ color: "#ffffff" }}>
+                When would you like to transfer?
+              </p>
+            </div>
+          }
+          children={
+            <div style={{ padding: "1rem" }}>
+              <div>Input Date: {`${inputDate}`}</div>
+              <div>Selected Date: {`${selectedDate}`}</div>
+
+              <CalendarBox
+                label="Effective Date"
+                minDate={moment()
+                  .add(1, "day")
+                  .toDate()}
+                maxDate={moment()
+                  .add(7, "day")
+                  .toDate()}
+                onChangeDate={handleOnChange}
+                onChangeInput={handleInputDateChange}
+                placeholderText="DD / MM / YYYY"
+                selectedDate={selectedDate}
+                value={inputDate}
+              />
+            </div>
+          }
+        />
+      </div>
       <Title>Sprint 3</Title>
 
       <Title>ArrayCheckbox</Title>
