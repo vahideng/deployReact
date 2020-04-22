@@ -6,6 +6,7 @@ import Profile from "src/components/headers/profile/Profile";
 const { B_16_BLACK, R_14_BLACK, B_15_BLACK } = Paragraphs;
 interface Props {
   rowStyle?: CSSProperties;
+  tileStyle?: CSSProperties;
   onTileClick: (item: any, index: number) => void;
   centered?: boolean;
   testId?: string;
@@ -32,8 +33,16 @@ const SelectionTile: React.FC<Props> = ({
   onTileClick,
   testId,
   centered,
-  rowStyle
+  rowStyle,
+  tileStyle,
 }) => {
+  function BorderClass(index: number) {
+    if (selected === index) {
+      return classes.SelectedBorder;
+    } else {
+      return null;
+    }
+  }
   return !centered ? (
     <div className={classes.SelectionTileRow} id={testId} style={rowStyle}>
       {!!list &&
@@ -42,16 +51,11 @@ const SelectionTile: React.FC<Props> = ({
             <div
               id={`${testId}-${index}`}
               onClick={() => onTileClick(item, index)}
-              className={classes.SelectionTileWrapper}
+              className={`${classes.SelectionTileWrapper} ${BorderClass(
+                index
+              )}`}
               key={index}
-              style={
-                selected === index
-                  ? {
-                      borderBottomColor: "#ff2626",
-                      justifyContent: item.children ? "center" : "flex-start"
-                    }
-                  : { justifyContent: item.children ? "center" : "flex-start" }
-              }
+              style={tileStyle}
             >
               <div className={classes.SelectionTileSelector}>
                 {item.children ? (
@@ -93,22 +97,16 @@ const SelectionTile: React.FC<Props> = ({
         })}
     </div>
   ) : (
-    <div className={classes.SelectionTileRow} id={testId}>
+    <div className={classes.SelectionTileRow} id={testId} style={rowStyle}>
       {!!list &&
         list.map((item, index) => {
           return (
             <div
               id={`${testId}-${index}`}
               onClick={() => onTileClick(item, index)}
-              className={classes.CenteredDiv}
+              className={`${classes.CenteredDiv} ${BorderClass(index)}`}
               key={index}
-              style={
-                selected === index
-                  ? {
-                      borderBottomColor: "#ff2626"
-                    }
-                  : {}
-              }
+              style={tileStyle}
             >
               <div className={classes.CenteredSelector}>
                 {item.centeredText && (
@@ -116,7 +114,7 @@ const SelectionTile: React.FC<Props> = ({
                     style={
                       selected !== index
                         ? {
-                            fontWeight: "normal"
+                            fontWeight: "normal",
                           }
                         : {}
                     }
