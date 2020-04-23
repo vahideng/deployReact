@@ -11,7 +11,7 @@ interface TooltipProps {
   color?: string;
   rightAlign?: boolean;
   tipSize?: number;
-  showTooltip?:boolean;
+  showTooltip?: boolean;
 }
 interface State {
   clicked: boolean;
@@ -23,13 +23,18 @@ class Tooltip extends Component<TooltipProps, State> {
   };
   render() {
     const { clicked } = this.state;
-    const { tipChildren, color, testId, rightAlign, tipSize , showTooltip} = this.props;
+    const {
+      tipChildren,
+      color,
+      testId,
+      rightAlign,
+      tipSize,
+      showTooltip,
+    } = this.props;
     const clickHandler = () => {
       this.setState({ clicked: !clicked });
     };
-
     const tooltipSize = tipSize !== undefined ? tipSize : 23;
-
     return (
       <>
         {rightAlign ? (
@@ -41,14 +46,15 @@ class Tooltip extends Component<TooltipProps, State> {
                 size={tooltipSize}
               />
             </div>
-
-            <div
-              id={`${testId}-1`}
-              className={classes.TooltipContentRight}
-              style={{ visibility: !!clicked ? "visible" : "hidden" }}
-            >
-              {tipChildren}
-            </div>
+            {showTooltip && (
+              <div
+                id={`${testId}-1`}
+                className={classes.TooltipContent}
+                style={{ visibility: !!clicked ? "visible" : "hidden" }}
+              >
+                {tipChildren}
+              </div>
+            )}
           </div>
         ) : (
           <div className={classes.tooltip} id={testId}>
@@ -56,37 +62,20 @@ class Tooltip extends Component<TooltipProps, State> {
               <Icon
                 icon={!clicked ? "system-info" : "system-close-grey"}
                 color={!!color ? color : "#000000"}
-                size={tooltipSize}
+                size={23}
               />
             </div>
-
-            <div
-              id={`${testId}-1`}
-              className={classes.TooltipContent}
-              style={{ visibility: !!clicked ? "visible" : "hidden" }}
-            >
-              {tipChildren}
-            </div>
+            {showTooltip && (
+              <div
+                id={`${testId}-1`}
+                className={classes.TooltipContent}
+                style={{ visibility: !!clicked ? "visible" : "hidden" }}
+              >
+                {tipChildren}
+              </div>
+            )}
           </div>
         )}
-      
-        <div className={classes.tooltip} id={testId}>
-          <div onClick={clickHandler} id={`${testId}-0`}>
-            <Icon
-              icon={!clicked ? "system-info" : "system-close-grey"}
-              color={!!color ? color : "#000000"}
-              size={23}
-            />
-          </div>
-          {showTooltip &&  (
-          <div
-            id={`${testId}-1`}
-            className={classes.TooltipContent}
-            style={{ visibility: !!clicked ? "visible" : "hidden" }}
-          >
-            {tipChildren}
-          </div> )}
-        </div>
       </>
     );
   }

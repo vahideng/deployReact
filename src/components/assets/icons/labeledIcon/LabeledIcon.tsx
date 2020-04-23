@@ -37,7 +37,7 @@ const LabeledIcon: React.FC<Props> = ({
         {!!imageIcon && (
           <img
             src={imageIcon.src}
-            width={imageIcon.size ? imageIcon.size : 100}
+            width={imageIcon.size ? imageIcon.size : 0}
             alt={!!imageIcon ? imageIcon.alt : "Logo"}
           />
         )}
