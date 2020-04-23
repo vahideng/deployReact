@@ -1380,7 +1380,8 @@ class Sprint1 extends Component<Props, State> {
                   this.setState({ verticalActiveTab: index }),
 
                 icon: {
-                  name: "Duitnow1",
+                  name: "Account-2",
+                  color: "#ff2626",
                 },
                 accountTitle: "Fixed/Term Deposits",
                 children: (
@@ -1476,7 +1477,45 @@ class Sprint1 extends Component<Props, State> {
                   color: "#ff2626",
                 },
                 accountTitle: "Loans/ Financing",
-                children: <B_13_ORANGE_463>CHILD-4</B_13_ORANGE_463>,
+                children: (
+                  <div style={{ width: "52.28rem", padding: "2rem" }}>
+                    <B_13_ORANGE_463>CHILD-4</B_13_ORANGE_463>,
+                    <SelectionTile
+                      // centered={true}
+                      tileStyle={{ margin: ".5rem", width: "15rem" }}
+                      testId={"testId"}
+                      onTileClick={(item, index) => {
+                        this.setState({ SelectionTileNum: index });
+                        alert(
+                          `${item.accountTitle} with indexOf ${index} clicked`
+                        );
+                      }}
+                      selected={SelectionTileNum}
+                      list={[
+                        {
+                          accountTitle: "Saving Account A",
+                          accountNumber: "RM 2,000.00",
+                        },
+                        {
+                          accountTitle: "Ambank AmMoneyLine AmMoneyLine",
+                          accountNumber: "RM 2,000.00",
+                        },
+                        {
+                          accountTitle: "Ambank BonusLink Visa",
+                          accountNumber: "RM 2,000.00",
+                        },
+                        {
+                          accountTitle: "Saving Account B",
+                          accountNumber: "RM 2,000.00",
+                        },
+                        {
+                          accountTitle: "Saving Account C",
+                          accountNumber: "RM 2,000.00",
+                        },
+                      ]}
+                    />
+                  </div>
+                ),
               },
               {
                 selected: verticalActiveTab === 4 ? true : false,

@@ -1908,13 +1908,27 @@ const Sprint3: React.FC<Props> = () => {
       <div
         style={{
           display: "flex",
-          justifyContent: "center",
-          padding: 20,
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "space-between",
+          height: "10rem",
         }}
       >
         <LabeledIcon
           leftLabel="Powered by"
           leftLabelStyle={{ fontWeight: 700 }}
+          imageIcon={{ src: images.common.JomPay1, size: 40 }}
+        />
+        <LabeledIcon
+          leftLabel="Powered by"
+          imageIcon={{ src: images.common.sampleLogo, size: 100 }}
+        />
+        <LabeledIcon
+          rightLabel="AmBank"
+          icon={{ name: "Account", color: "#000000", size: 30 }}
+        />
+        <LabeledIcon
+          rightLabel="DuitNow Id"
           imageIcon={{ src: images.common.JomPay1, size: 40 }}
         />
       </div>
