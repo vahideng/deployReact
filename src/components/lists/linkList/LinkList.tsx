@@ -199,7 +199,12 @@ const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, isOpen }) => {
     <div className={classes.Content} id={testId}>
       {isOpen ? (
         <span className={classes.ToggleIcon}>
-          <Icon icon="system-close-grey" size={12} color="#444444" />
+          <Icon
+            icon="Fail-2"
+            size={12}
+            color="#444444"
+            style={{ marginRight: 7 }}
+          />
         </span>
       ) : (
         <span className={classes.ToggleIcon}>

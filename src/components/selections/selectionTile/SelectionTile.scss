@@ -37,7 +37,6 @@
   border-top-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
   background-color: #ffffff;
-
   padding: 1rem;
 }
 .SelectionTileTDiv {
@@ -83,4 +82,7 @@
   border-top-right-radius: 0.75rem;
   background-color: #ffff;
   padding: 1rem;
+}
+.SelectedBorder {
+  border-bottom-color: #ff2626;
 }

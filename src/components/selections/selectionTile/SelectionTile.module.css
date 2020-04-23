@@ -120,3 +120,7 @@
   background-color: #ffff;
   padding: 1rem;
 }
+
+.SelectedBorder {
+  border-bottom-color: #ff2626;
+}
