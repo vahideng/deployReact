@@ -43,7 +43,7 @@ const TextWithDetails: React.FC<Props> = ({
         <Image src={image.src ? image.src : ""} style={image.imageStyle} />
       )}
       <MainDiv id={testId}>
-        <B_15_BLACK style={titleStyle}>{title}</B_15_BLACK>
+        <B_15_BLACK style={{ marginBottom: '4px', ...titleStyle }}>{title}</B_15_BLACK>
         {content === undefined
           ? null
           : content.map((item, index) => {

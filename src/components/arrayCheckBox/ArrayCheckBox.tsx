@@ -25,6 +25,7 @@ interface Props {
   testId?: string;
   title: string;
   titleStyle?: CSSProperties;
+  containerStyle?: CSSProperties;
 }
 
 const ArrayCheckBox: React.FC<Props> = ({
@@ -33,6 +34,7 @@ const ArrayCheckBox: React.FC<Props> = ({
   testId,
   title,
   titleStyle,
+  containerStyle,
 }: Props) => {
   const [page, setPage] = useState(0);
 
@@ -53,7 +55,7 @@ const ArrayCheckBox: React.FC<Props> = ({
   const nextClass = page + 1 === numberOfPage ? classes.PageDisabled : "";
 
   return (
-    <Col className={classes.Container}>
+    <Col className={classes.Container} style={containerStyle}>
       <header className={classes.TitleContainer}>
         {logo}
         <B_15_BLACK style={titleStyle}>{title}</B_15_BLACK>

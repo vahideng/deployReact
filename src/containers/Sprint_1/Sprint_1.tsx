@@ -2889,7 +2889,7 @@ class Sprint1 extends Component<Props, State> {
             });
             alert(`${event.target.checked} ${event.target.name} ${testId}`);
           }}
-          children={<p> I have read and agree to the</p>}
+          children={<div><p> I have read and agree to the</p><p> I have read and agree to the</p><p> I have read and agree to the</p></div>}
         />
         <Checkbox
           testId="testId"
