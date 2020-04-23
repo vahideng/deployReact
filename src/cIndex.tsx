@@ -111,11 +111,13 @@ import TransactionWithNote from "./components/TransactionWithNote/TransactionWit
 import ListWithSelectionTile from "./components/ListWithSelectionTile/ListWithSelectionTile";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import RedirectToMobile from './components/RedirectToMobile/RedirectToMobile';
+import Logout from './components/Logout/Logout'
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /// exports
 export {
   //////////////////////////////////////////////////////////////////////////////////////////////
   /// below are sprint-4 components
+  Logout,
   TransactionWithNote,
   DynamicText,
   CenterText,
