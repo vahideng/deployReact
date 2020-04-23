@@ -582,6 +582,11 @@ const Sprint4: React.FC<Props> = () => {
       <Title>Form Container Responsive</Title>
       <FormContainer
         label="Change Security Image"
+        rightLabel={{
+          onClick: () => {},
+          style: {},
+          label: 'Remove',
+        }}
         children={
           <>
             <CenteredDiv>dsaokdwkao</CenteredDiv>

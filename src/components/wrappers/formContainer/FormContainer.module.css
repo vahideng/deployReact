@@ -18,6 +18,7 @@
           box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
   border-radius: 1.1rem;
   background-color: #ffffff;
+  margin-bottom: 1.5rem;
 }
 
 .FormContainerIconWrapResponsive {
