@@ -13,8 +13,8 @@
 .Container {
   padding: 0 !important;
   margin: 0 !important;
-  padding-left: 2rem !important;
-  padding-right: 2rem !important;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .Content {

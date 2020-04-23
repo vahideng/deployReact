@@ -143,7 +143,8 @@ const Sprint3: React.FC<Props> = () => {
   const checkBoxData = [
     {
       title: "Indah",
-      content: ["Biller Code: 68502", "Ref-1: 65432145432"],
+      titleStyle: { marginBottom: '12px' },
+      content: ["Biller Code: 68502Ref-1: 65432145432Ref-1: 65432145432"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
       onCheckClick: handleCheckBox,
@@ -1772,6 +1773,7 @@ const Sprint3: React.FC<Props> = () => {
           titleStyle={{ marginLeft: 4 }}
           logo={<Icon icon={"JomPay"} size={30} color={"#2A2852"} />}
           testId="testId"
+          containerStyle={{ paddingLeft: 0, paddingRight: 0 }}
         />
       </div>
       <Title>Label Tool Tip</Title>
