@@ -838,6 +838,100 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
 
+        <Title>FormContainer curvedTab</Title>
+        <CenteredDiv
+          style={{
+            backgroundColor: "#eeeeee",
+          }}
+        >
+          <FormContainerCurved
+            testId={"testId"}
+            curvedTab={{
+              leftTab: "New Recipient",
+              rightTab: "Own/Favorite",
+              leftContent: (
+                <div>
+                  <List
+                    header={{
+                      icon: {
+                        name: "LOGO",
+                        color: "#ff2626",
+                        iconText: "Review & Confirm",
+                      },
+                    }}
+                    list={[
+                      {
+                        leftLabel: "To",
+                        rightLabel: "Saving Account A",
+                        details: ["8881019596535 | AmBank"],
+                      },
+                      {
+                        leftLabel: "Amount",
+                        rightLabel: "RM 500.00",
+                        details: ["Fees & Charges: RM 0.00"],
+                      },
+                      {
+                        leftLabel: "Date",
+                        rightLabel: "Transfer Now",
+                        details: ["Today, 5 January 2019"],
+                      },
+                      {
+                        leftLabel: "Reference",
+                        rightLabel: "House Rental",
+                      },
+                      {
+                        leftLabel: "From",
+                        rightLabel: "Savings Account",
+                        details: [
+                          "2998202013",
+                          "Available Balance: RM 10,301.50",
+                        ],
+                      },
+                    ]}
+                  />
+                </div>
+              ),
+              rightContent: (
+                <div>
+                  <LinkList
+                    list={[
+                      {
+                        label: "Jan 2020 eStatement",
+                        onListClick: () => alert("item-1-clicked"),
+                      },
+                      {
+                        label: "Dec 2019 eStatement",
+                        onListClick: () => alert("item-2-clicked"),
+                      },
+                      {
+                        label: "Nov 2019 eStatement",
+                        onListClick: () => alert("item-3-clicked"),
+                      },
+                      {
+                        label: "Oct 2019 eStatement",
+                        rightItem: (
+                          <ToggleButton
+                            value={toggled}
+                            onTogglePress={() => {
+                              this.setState({ toggled: !toggled });
+                            }}
+                            toggleOffLabel="NO"
+                            toggleOnLabel="YES"
+                            disabled={false}
+                          />
+                        ),
+                      },
+                      {
+                        label: "Sep 2019 eStatement",
+                        onListClick: () => alert("item-5-clicked"),
+                      },
+                    ]}
+                  />
+                </div>
+              ),
+            }}
+          />
+        </CenteredDiv>
         <Title>FormContainer</Title>
         <CenteredDiv>
           <FormContainer
@@ -1382,7 +1476,7 @@ class Sprint1 extends Component<Props, State> {
                   color: "#ff2626",
                 },
                 accountTitle: "Loans/ Financing",
-                children: <p> its a second children </p>,
+                children: <B_13_ORANGE_463>CHILD-4</B_13_ORANGE_463>,
               },
               {
                 selected: verticalActiveTab === 4 ? true : false,
@@ -1394,7 +1488,7 @@ class Sprint1 extends Component<Props, State> {
                   color: "#ff2626",
                 },
                 accountTitle: "Investment",
-                children: <p> its a second children </p>,
+                children: <B_13_ORANGE_463>CHILD-5</B_13_ORANGE_463>,
               },
               {
                 selected: verticalActiveTab === 5 ? true : false,
@@ -1406,7 +1500,7 @@ class Sprint1 extends Component<Props, State> {
                   color: "#ff2626",
                 },
                 accountTitle: "Insurance",
-                children: <p> its a second children </p>,
+                children: <B_13_ORANGE_463>CHILD-6</B_13_ORANGE_463>,
               },
               {
                 selected: verticalActiveTab === 6 ? true : false,
@@ -1418,7 +1512,7 @@ class Sprint1 extends Component<Props, State> {
                   color: "#ff2626",
                 },
                 accountTitle: "Debit Card",
-                children: <p> its a second children </p>,
+                children: <B_13_ORANGE_463>CHILD-7</B_13_ORANGE_463>,
               },
             ]}
           />

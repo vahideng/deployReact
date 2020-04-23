@@ -81,6 +81,7 @@ const Home: React.FC<Props> = () => {
                   }}
                   selectedOption={selectedItem}
                   placeHolder={"English"}
+                  boldFont
                   options={[
                     { label: "English", value: "english" },
                     { label: "Malay", value: "malay" },

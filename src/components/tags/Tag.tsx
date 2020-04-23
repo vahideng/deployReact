@@ -12,7 +12,7 @@ interface Props {
   textStyles?: CSSProperties;
 }
 
-const Tag: React.FC<Props> = props => {
+const Tag: React.FC<Props> = (props) => {
   const { text, image, testId, styles, textStyles } = props;
   return (
     <div className={classes.TagMainDiv} id={testId} style={styles}>
