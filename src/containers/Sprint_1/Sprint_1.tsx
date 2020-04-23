@@ -1737,6 +1737,7 @@ class Sprint1 extends Component<Props, State> {
         <CenteredDiv>
           <Tooltip
             testId={"testId"}
+            showTooltip={true}
             tipChildren={
               <div>
                 <B_14_WHITE>Tips</B_14_WHITE>
