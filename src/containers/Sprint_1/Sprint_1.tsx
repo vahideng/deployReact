@@ -1919,6 +1919,7 @@ class Sprint1 extends Component<Props, State> {
         <CenteredDiv>
           <Tooltip
             testId={"testId"}
+            showTooltip={true}
             tipChildren={
               <div>
                 <B_14_WHITE>Tips</B_14_WHITE>
@@ -2093,6 +2094,7 @@ class Sprint1 extends Component<Props, State> {
                 label1: "Foreign Current Account",
                 label2: "79429284",
                 amount: "RM 10,648.50",
+                label3: "Matures 20 Jan 2020",
                 defaultLabel: "DEFAULT",
                 default: true,
                 statusLabel: "ACTIVE",
