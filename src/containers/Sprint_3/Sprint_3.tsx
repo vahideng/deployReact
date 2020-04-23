@@ -1904,19 +1904,21 @@ const Sprint3: React.FC<Props> = () => {
 
         <br />
       </div>
-      <Title>TextWithIcon (using LabeledIcon component)</Title>
+      <Title>TextWithIcon</Title>
       <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-between",
-          height: "10rem",
-        }}
+        style={
+          {
+            // display: "flex",
+            // flexDirection: "column",
+            // alignItems: "center",
+            // justifyContent: "space-between",
+            // height: "10rem",
+          }
+        }
       >
         <LabeledIcon
           leftLabel="Powered by"
-          leftLabelStyle={{ fontWeight: 700 }}
+          // leftLabelStyle={{ fontWeight: 700 }}
           imageIcon={{ src: images.common.JomPay1, size: 40 }}
         />
         <LabeledIcon
