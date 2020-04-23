@@ -8,13 +8,14 @@ const {
   R_18_GREY444,
   B_24_BLACK,
   R_13_BLACK,
-  SB_15_GREY393
+  SB_15_GREY393,
 } = Paragraphs;
 interface Props {
   testId?: string;
   list: {
     label1: string;
     label2: string;
+    label3?: string;
     amount: string;
     defaultLabel?: string;
     default?: boolean;
@@ -28,6 +29,7 @@ interface Props {
     item: {
       label1: string;
       label2: string;
+      label3?: string;
       amount: string;
       defaultLabel?: string;
       default?: boolean;
@@ -44,7 +46,7 @@ interface Props {
 const AccountsList: React.FC<Props> = ({
   list,
   onAccountTileClick,
-  testId
+  testId,
 }) => {
   return (
     <div className={classes.AccountsListMainDiv}>
@@ -67,12 +69,19 @@ const AccountsList: React.FC<Props> = ({
                   <R_18_GREY444 style={{ fontWeight: 400, letterSpacing: 0.3 }}>
                     {item.label2}
                   </R_18_GREY444>
+                  {item.label3 && (
+                    <R_18_GREY444
+                      style={{ fontWeight: 400, letterSpacing: 0.3 }}
+                    >
+                      {item.label3}
+                    </R_18_GREY444>
+                  )}
                   <div
                     style={{
                       display: "flex",
                       flex: 1,
                       flexDirection: "row",
-                      alignItems: "center"
+                      alignItems: "center",
                     }}
                   >
                     {item.countryFlagImage && (
@@ -100,7 +109,7 @@ const AccountsList: React.FC<Props> = ({
                             : "#000",
                           flex: 1,
                           textAlign: "right",
-                          marginRight: 16
+                          marginRight: 16,
                         }}
                       >
                         {item.statusLabel}
@@ -116,7 +125,7 @@ const AccountsList: React.FC<Props> = ({
                     justifyContent: "center",
                     alignItems: "center",
                     display: "flex",
-                    marginRight: -2
+                    marginRight: -2,
                   }}
                 >
                   <Icon icon={"Right1"} color={"#000"} size={28} />
@@ -138,12 +147,19 @@ const AccountsList: React.FC<Props> = ({
                     {item.label1}
                   </R_15_GREY444>
                   <R_15_GREY444>{item.label2}</R_15_GREY444>
+                  {item.label3 && (
+                    <R_18_GREY444
+                      style={{ fontWeight: 400, letterSpacing: 0.3 }}
+                    >
+                      {item.label3}
+                    </R_18_GREY444>
+                  )}
                   <div
                     style={{
                       display: "flex",
                       flex: 1,
                       flexDirection: "row",
-                      alignItems: "center"
+                      alignItems: "center",
                     }}
                   >
                     {item.countryFlagImage && (
@@ -158,26 +174,26 @@ const AccountsList: React.FC<Props> = ({
                     <B_20_BLACK style={{ letterSpacing: 0.4 }}>
                       {item.amount}
                     </B_20_BLACK>
-                      {item.default && (
-                        <R_13_BLACK style={{ marginLeft: 24 }}>
-                          {item.defaultLabel}
-                        </R_13_BLACK>
-                      )}
-                      {item.statusLabel && (
-                        <R_13_BLACK
-                          style={{
-                            marginLeft: 16,
-                            color: item.statusLabelColor
-                              ? item.statusLabelColor
-                              : "#000",
-                            flex: 1,
-                            textAlign: "right",
-                            marginRight: 16
-                          }}
-                        >
-                          {item.statusLabel}
-                        </R_13_BLACK>
-                      )}
+                    {item.default && (
+                      <R_13_BLACK style={{ marginLeft: 24 }}>
+                        {item.defaultLabel}
+                      </R_13_BLACK>
+                    )}
+                    {item.statusLabel && (
+                      <R_13_BLACK
+                        style={{
+                          marginLeft: 16,
+                          color: item.statusLabelColor
+                            ? item.statusLabelColor
+                            : "#000",
+                          flex: 1,
+                          textAlign: "right",
+                          marginRight: 16,
+                        }}
+                      >
+                        {item.statusLabel}
+                      </R_13_BLACK>
+                    )}
                   </div>
                   {!!item.convertedAmount && (
                     <SB_15_GREY393>{`(${item.convertedAmount})*`}</SB_15_GREY393>
@@ -187,7 +203,7 @@ const AccountsList: React.FC<Props> = ({
                   style={{
                     justifyContent: "center",
                     alignItems: "center",
-                    display: "flex"
+                    display: "flex",
                   }}
                 >
                   <Icon icon={"Right1"} color={"#000"} size={28} />

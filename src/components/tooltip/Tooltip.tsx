@@ -8,6 +8,7 @@ interface TooltipProps {
   testId?: string;
   tipChildren?: any;
   color?: string;
+  showTooltip?:boolean;
 }
 interface State {
   clicked: boolean;
@@ -19,13 +20,14 @@ class Tooltip extends Component<TooltipProps, State> {
   };
   render() {
     const { clicked } = this.state;
-    const { tipChildren, color, testId } = this.props;
+    const { tipChildren, color, testId,showTooltip } = this.props;
     const clickHandler = () => {
       this.setState({ clicked: !clicked });
     };
 
     return (
       <>
+      
         <div className={classes.tooltip} id={testId}>
           <div onClick={clickHandler} id={`${testId}-0`}>
             <Icon
@@ -34,14 +36,14 @@ class Tooltip extends Component<TooltipProps, State> {
               size={23}
             />
           </div>
-
+          {showTooltip &&  (
           <div
             id={`${testId}-1`}
             className={classes.TooltipContent}
             style={{ visibility: !!clicked ? "visible" : "hidden" }}
           >
             {tipChildren}
-          </div>
+          </div> )}
         </div>
       </>
     );
