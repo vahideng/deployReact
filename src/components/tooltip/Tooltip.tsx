@@ -18,6 +18,8 @@ class Tooltip extends Component<TooltipProps, State> {
   state = {
     clicked: false
   };
+  static defaultProps: { showTooltip: boolean; };
+
   render() {
     const { clicked } = this.state;
     const { tipChildren, color, testId,showTooltip } = this.props;
@@ -51,4 +53,12 @@ class Tooltip extends Component<TooltipProps, State> {
   }
 }
 
+
+Tooltip.defaultProps = {
+  showTooltip : true,
+}
+
+
 export default Tooltip;
+
+
