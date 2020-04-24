@@ -119,7 +119,7 @@ const TacModal: React.FC<Props> = ({
                   <form>
                     <div className={TacInputField}>
                       <InputField
-                        responsive={true}
+                        responsive={responsive ? responsive : false }
                         clearIcon={clearIcon}
                         clearClickHandler={clearClickHandler}
                         testId={`${testId}-0`}
@@ -153,6 +153,7 @@ const TacModal: React.FC<Props> = ({
 
               <div className={responsive ? TacButtonRes : TacButton}>
                 <FullButton
+                responsive={responsive ? responsive : false}
                   testId={`${testId}-1`}
                   buttonColor={{
                     top: buttonColor.top,

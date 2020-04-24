@@ -386,8 +386,9 @@ const Sprint4: React.FC<Props> = () => {
         />
       </div>
       <Title>Sticky Footer</Title>
-      <div style={{ paddingLeft: "35vw" }}>
+      <div style={{  paddingLeft: "35vw" }}>
         <PrimaryButton
+        responsive ={true}
           title={"Open Sticky Footer"}
           onButtonClick={() => {
             setStickyFooter(!stickyFooter);
@@ -2809,6 +2810,7 @@ const Sprint4: React.FC<Props> = () => {
       responsive
        listchildren={
         <List
+       
           header={{
             icon: {
               name: "LOGO",

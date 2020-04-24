@@ -44,16 +44,16 @@ const PrimaryButton: React.FC<Props> = ({
         onClick={onButtonClick}
         className={primaryButton.join(" ")}
         style={
-          buttonColor
-            ? {
+          buttonColor && 
+             {
                 background: `linear-gradient(180deg, ${buttonColor.top} 0%,  ${buttonColor.bottom} 100%)`,
                 height: height,
-                minWidth: width ? width : "14rem",
+                // minWidth: width ? width : "14rem",
                 boxShadow: shadowed
                   ? "0px 4px 9px rgba(0, 0, 0, 0.140925)"
                   : "",
               }
-            : { minWidth: width ? width : "14rem" }
+           
         }
       >
         <div className={classes.IconDiv}>

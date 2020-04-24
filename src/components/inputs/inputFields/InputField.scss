@@ -27,6 +27,8 @@
 }
 .InputFieldInput {
   padding-right: 5.2rem;
+  
+  
 }
 .InputFieldIconDiv input:focus {
   outline: none;
@@ -71,6 +73,10 @@ input::-ms-clear {
 }
 @media (max-width: 400px) {
   .InputFieldIconDiv input {
-    width: 90vw;
+    width: 100% !important;
   }
+
+
+
+ 
 }

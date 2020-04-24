@@ -54,13 +54,15 @@ const FormContainer: React.FC<Props> = ({
  const disabledStyle: CSSProperties = disabled && { opacity: 0.5, position: "relative" } || {};
 
   let mainContainerCls = classes.FormContainerMain;
+  let iconContainerCls = classes.FormContainerIconWrap;
+  let FormContainerContent = [classes.FormContainerContent]
   if (responsive) {
     mainContainerCls = `${mainContainerCls} ${classes.FormContainerMainResponsive}`;
-  }
-  let iconContainerCls = classes.FormContainerIconWrap;
-  if (responsive) {
     iconContainerCls = `${iconContainerCls} ${classes.FormContainerIconWrapResponsive}`;
+    FormContainerContent.push(classes.FormContainerContentResponsive) 
   }
+  
+ 
   return (
     <div style={disabledStyle}>
       {disabled && <div className={classes.Overlay}></div>}
@@ -141,7 +143,7 @@ const FormContainer: React.FC<Props> = ({
         )}
 
         <div className={classes.FormContainerCurve} id={testId}>
-          <div className={classes.FormContainerContent}>{children}</div>
+          <div className={FormContainerContent.join(" ")}>{children}</div>
         </div>
       </div>
     </div>

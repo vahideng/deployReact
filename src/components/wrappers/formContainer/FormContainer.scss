@@ -18,6 +18,16 @@
 }
 .FormContainerMainResponsive {
   width: 100% !important;
+ 
+}
+
+.FormContainerContentResponsive{
+
+  @media (max-width: 576px) {
+    padding: 0 !important;
+  }
+
+
 }
 .FormContainerLabel {
   display: flex;
