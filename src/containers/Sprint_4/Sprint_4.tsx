@@ -30,11 +30,12 @@ import ErrorPage from "src/components/ErrorPage/ErrorPage";
 import TransactionWithNote from "src/components/TransactionWithNote/TransactionWithNote";
 import DetailList from "src/components/lists/DetailList/DetailList";
 import IconButtons from "src/components/buttons/iconButtons/IconButtons";
-import ListWithSelectionTile from 'src/components/ListWithSelectionTile/ListWithSelectionTile';
-import RedirectToMobile from 'src/components/RedirectToMobile/RedirectToMobile';
+import ListWithSelectionTile from "src/components/ListWithSelectionTile/ListWithSelectionTile";
+import RedirectToMobile from "src/components/RedirectToMobile/RedirectToMobile";
 
-import Logout from 'src/components/Logout/Logout';
-const { B_13_ORANGE_463, R_13_GREY444,B_24_BLACK} = Paragraphs;
+import Logout from "src/components/Logout/Logout";
+import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
+const { B_13_ORANGE_463, R_13_GREY444, B_24_BLACK } = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -63,11 +64,12 @@ const Sprint4: React.FC<Props> = () => {
   const [linkListInputValue, setLinkListInputValue] = useState("");
   const [selectionTile, setSelectionTile] = useState(2);
   const [stickyFooter, setStickyFooter] = useState(false);
-  const [inputValue, setInputValue] = useState('');
-  const [tacInactive,setTacInactive] = useState(true);
-  const [TacModalOpen,setTacModalOpen] = useState(false);
-  const [actionBtnStatus,setActionBtnStatus] = useState(true);
-  const [SelectionTileNum2,setSelectionTileNum2] = useState(3);
+  const [inputValue, setInputValue] = useState("");
+  const [tacInactive, setTacInactive] = useState(true);
+  const [TacModalOpen, setTacModalOpen] = useState(false);
+  const [actionBtnStatus, setActionBtnStatus] = useState(true);
+  const [SelectionTileNum2, setSelectionTileNum2] = useState(3);
+  const [stickyTimer, setStickyTimer] = useState(false);
   const tacClear = false;
   const tacClearActiveStatus = false;
 
@@ -103,34 +105,62 @@ const Sprint4: React.FC<Props> = () => {
         icon={{
           onIconClick: () => {
             setHomeRedirect(true);
-          }
+          },
         }}
         profile={{
           greeting: "Good Morning",
           name: "Adam Constantine",
           alt: "AVATAR",
           src:
-            "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+            "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
         }}
         rightButtons={[
           {
             iconName: "Time",
-            onButtonClick: () => alert("button-1-Clicked")
+            onButtonClick: () => alert("button-1-Clicked"),
           },
           {
             iconName: "Settings",
-            onButtonClick: () => alert("button-2-Clicked")
+            onButtonClick: () => alert("button-2-Clicked"),
           },
           {
             iconName: "Share",
-            onButtonClick: () => alert("button-3-Clicked")
-          }
+            onButtonClick: () => alert("button-3-Clicked"),
+          },
         ]}
+      />
+      <PrimaryButton
+        title="Open StickyTimer"
+        onButtonClick={() => {
+          setStickyTimer(!stickyTimer);
+        }}
+      />
+      <StickyTimer
+        responsive
+        testId={"testId"}
+        closeTimeoutMS={1000}
+        contentLabel="example"
+        textBefore="Transaction will expire in"
+        onCLoseButtonCLick={() => {
+          setStickyTimer(!stickyTimer);
+        }}
+        modalIsOpen={stickyTimer}
+        expirationTime={20}
+        expirationText="Seconds"
+        text={
+          "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
+        }
+        // children={
+        //   <PrimaryButton
+        //     title="Open StickyTimer"
+        //     onButtonClick={() => {
+        //       alert("onButtonClick");
+        //     }}
       />
       <Title>Review & Confirm - Responsive</Title>
       <div
         style={{
-          margin: "0 auto"
+          margin: "0 auto",
         }}
       >
         <FormContainer
@@ -142,10 +172,9 @@ const Sprint4: React.FC<Props> = () => {
                 icon: {
                   name: "LOGO",
                   color: "#ff2626",
-                  iconText: "Review & Confirm"
-                }
+                  iconText: "Review & Confirm",
+                },
               }}
-
               list={[
                 {
                   leftLabel: "To",
@@ -156,14 +185,14 @@ const Sprint4: React.FC<Props> = () => {
                     content: "Dynamic",
                     styleContent: {},
                     value: "600RM",
-                    styleValue: {}
-                  }
+                    styleValue: {},
+                  },
                 },
 
                 {
                   leftLabel: "Date",
                   rightLabel: "Transfer Now",
-                  details: ["Today, 5 January 2019"]
+                  details: ["Today, 5 January 2019"],
                 },
 
                 {
@@ -172,9 +201,9 @@ const Sprint4: React.FC<Props> = () => {
                   details: ["2998202013", "Available Balance: RM 10,301.50"],
                   status: {
                     content: "UNSUCCESSFUL",
-                    color: "red"
-                  }
-                }
+                    color: "red",
+                  },
+                },
               ]}
             />
           }
@@ -190,27 +219,27 @@ const Sprint4: React.FC<Props> = () => {
             {
               leftLabel: "To",
               rightLabel: "Saving Account A",
-              details: ["8881019596535 | AmBank"]
+              details: ["8881019596535 | AmBank"],
             },
             {
               leftLabel: "Amount",
               rightLabel: "RM 500.00",
-              details: ["Fees & Charges: RM 0.00"]
+              details: ["Fees & Charges: RM 0.00"],
             },
             {
               leftLabel: "Date",
               rightLabel: "Transfer Now",
-              details: ["Today, 5 January 2019"]
+              details: ["Today, 5 January 2019"],
             },
             {
               leftLabel: "Reference",
-              rightLabel: "House Rental"
+              rightLabel: "House Rental",
             },
             {
               leftLabel: "From",
               rightLabel: "Savings Account",
-              details: ["2998202013", "Available Balance: RM 10,301.50"]
-            }
+              details: ["2998202013", "Available Balance: RM 10,301.50"],
+            },
           ]}
         />
       </CenteredDiv>
@@ -220,51 +249,51 @@ const Sprint4: React.FC<Props> = () => {
           testId={"testId"}
           titleList={[
             "TitleList Amount is an indicative indicative and to be considered as reference only.",
-            "Protected by PIDM up to RM 250,000 for each depositor."
+            "Protected by PIDM up to RM 250,000 for each depositor.",
           ]}
           // title="Title Amount is an indicative value and to be considered as reference only.
           // Protected by PIDM up to RM 250,000 for each depositor."
           list={[
             {
               leftText: "Account Type",
-              rightText: "Conventional Fixed Deposit"
+              rightText: "Conventional Fixed Deposit",
             },
             {
               leftText: "Holder Name",
-              rightText: "Adam Constantine"
+              rightText: "Adam Constantine",
             },
             {
               leftText: "Tenure",
-              rightText: "24 Months"
+              rightText: "24 Months",
             },
             {
               leftText: "Interest Rate (p.a.)",
-              rightText: "4.55%"
+              rightText: "4.55%",
             },
             {
               leftText: "Placement Date",
-              rightText: "20 Feb 2020"
+              rightText: "20 Feb 2020",
             },
             {
               leftText: "Maturity Date",
-              rightText: "20 Feb 2023"
+              rightText: "20 Feb 2023",
             },
             {
               leftText: "Interest Payment Instruction",
-              rightText: "Auto Renewal"
+              rightText: "Auto Renewal",
             },
             {
               leftText: "Currency",
-              rightText: "AUD"
+              rightText: "AUD",
             },
             {
               leftText: "Exchange Rate",
-              rightText: "0.3545"
+              rightText: "0.3545",
             },
             {
               leftText: "Effective Date",
-              rightText: "1 Dec 2019"
-            }
+              rightText: "1 Dec 2019",
+            },
           ]}
         />
       </div>
@@ -282,21 +311,21 @@ const Sprint4: React.FC<Props> = () => {
             {
               iconLabel: "AmBank",
               accountTitle: "accountTitle",
-              disable: true
+              disable: true,
             },
             {
               iconLabel: "Alliance Bank",
               icon: {
                 name: "Announcement",
                 size: 32,
-                color: "#444444"
-              }
+                color: "#444444",
+              },
             },
             {
               iconLabel: "Other Bank",
               image: images.common.fpxIcon,
-              imageStyle: { height: 32, width: 66, marginLeft: 8 }
-            }
+              imageStyle: { height: 32, width: 66, marginLeft: 8 },
+            },
           ]}
         />
       </CenteredDiv>
@@ -314,21 +343,21 @@ const Sprint4: React.FC<Props> = () => {
           list={[
             {
               iconLabel: "AmBank",
-              accountTitle: "accountTitle"
+              accountTitle: "accountTitle",
             },
             {
               iconLabel: "Alliance Bank",
               icon: {
                 name: "Announcement",
                 size: 32,
-                color: "#444444"
-              }
+                color: "#444444",
+              },
             },
             {
               iconLabel: "Other Bank",
               image: images.common.fpxIcon,
-              imageStyle: { height: 32, width: 66, marginLeft: 8 }
-            }
+              imageStyle: { height: 32, width: 66, marginLeft: 8 },
+            },
           ]}
         />
       </CenteredDiv>
@@ -348,7 +377,7 @@ const Sprint4: React.FC<Props> = () => {
               errorMessage={{
                 testId: "testId",
                 errorText: "The TAC is incorrect",
-                subText: "Please try again."
+                subText: "Please try again.",
               }}
               type="text"
               clearClickHandler={() => alert("clear clicked")}
@@ -373,7 +402,7 @@ const Sprint4: React.FC<Props> = () => {
           errorMessage={{
             testId: "testId",
             errorText: "The Input Field is wrong",
-            subText: "Please try again."
+            subText: "Please try again.",
           }}
           type="text"
           clearClickHandler={() => {}}
@@ -386,9 +415,9 @@ const Sprint4: React.FC<Props> = () => {
         />
       </div>
       <Title>Sticky Footer</Title>
-      <div style={{  paddingLeft: "35vw" }}>
+      <div style={{ paddingLeft: "35vw" }}>
         <PrimaryButton
-        responsive ={true}
+          responsive={true}
           title={"Open Sticky Footer"}
           onButtonClick={() => {
             setStickyFooter(!stickyFooter);
@@ -405,8 +434,7 @@ const Sprint4: React.FC<Props> = () => {
         iconText="Disable online purchases for AmBank Debit Card?"
         iconSubText="Number of transactions edited:"
         iconSubTextNum={8}
-        onCloseClick = {()=> alert("close")}
-
+        onCloseClick={() => alert("close")}
       />
       <Title>DynamicText</Title>
       <div style={{ paddingLeft: "35vw" }}>
@@ -439,21 +467,20 @@ const Sprint4: React.FC<Props> = () => {
               testId="sprint_4_view_rate_container_test"
               title="View Rate Container Test"
               rateTypeValue={rateType}
-              dropdownBackground = "white"
-              
+              dropdownBackground="white"
               rateTypeList={[
                 {
                   value: "test_value1",
-                  label: "Conventional Fixed Deposit 1"
+                  label: "Conventional Fixed Deposit 1",
                 },
                 {
                   value: "test_value2testvalue",
-                  label: "Conventional Fixed Deposit 2222"
+                  label: "Conventional Fixed Deposit 2222",
                 },
                 {
                   value: "test_value3",
-                  label: "Conventional Fixed Deposit 3333"
-                }
+                  label: "Conventional Fixed Deposit 3333",
+                },
               ]}
               onRateTypeChange={(value: any) => {
                 setRateType(value);
@@ -464,24 +491,24 @@ const Sprint4: React.FC<Props> = () => {
                   {
                     children: (
                       <img src={require("src/assets/images/slider.png")} />
-                    )
+                    ),
                   },
                   {
                     children: (
                       <img src={require("src/assets/images/slider.png")} />
-                    )
+                    ),
                   },
                   {
                     children: (
                       <img src={require("src/assets/images/slider.png")} />
-                    )
+                    ),
                   },
                   {
                     children: (
                       <img src={require("src/assets/images/slider.png")} />
-                    )
-                  }
-                ]
+                    ),
+                  },
+                ],
               ]}
               onClose={() => setIsViewRateModalOpen(false)}
               buttonTitle="Place New Deposit"
@@ -492,26 +519,26 @@ const Sprint4: React.FC<Props> = () => {
                 <ViewRate
                   testId="sprint_4_view_rate"
                   title={{
-                    content: "** Rates are subject to change"
+                    content: "** Rates are subject to change",
                   }}
                   subtitle={{
                     content:
-                      "Note: Customer with Reward Code may be entitled additional rate in AmOnline."
+                      "Note: Customer with Reward Code may be entitled additional rate in AmOnline.",
                   }}
                   data={{
                     headers: [
                       {
                         style: {},
-                        values: ["Tenure"]
+                        values: ["Tenure"],
                       },
                       {
                         style: { textAlign: "center", fontWeight: "bold" },
-                        values: ["Board Rate", "(% p.a.)"]
+                        values: ["Board Rate", "(% p.a.)"],
                       },
                       {
                         style: { textAlign: "center", fontWeight: "bold" },
-                        values: ["AmOnline Rate", "(% p.a.)"]
-                      }
+                        values: ["AmOnline Rate", "(% p.a.)"],
+                      },
                     ],
                     values: [
                       ["1 Month", "2.95", "2.95"],
@@ -520,13 +547,13 @@ const Sprint4: React.FC<Props> = () => {
                       ["4 Month", "3.95", "2.95"],
                       ["5 Month", "2.95", "2.95"],
                       ["6 Month", "2.95", "2.95"],
-                      ["7 Month", "6.95", "2.95"]
-                    ]
+                      ["7 Month", "6.95", "2.95"],
+                    ],
                   }}
                 />
               }
               carouselProps={{
-                type: 'default'
+                type: "default",
               }}
             />
           </div>
@@ -536,37 +563,35 @@ const Sprint4: React.FC<Props> = () => {
           setIsViewRateModalOpen(false);
         }}
       />
-
       <Title>View Rate</Title>
       <CenteredDiv
         style={{
-          margin: "0 auto"
+          margin: "0 auto",
         }}
       >
         <ViewRate
           testId="sprint_4_view_rate"
           title={{
-            content: "Change some text"
+            content: "Change some text",
           }}
           subtitle={{
-            content:
-              "I am the subtitle"
+            content: "I am the subtitle",
           }}
           height="30rem"
           data={{
             headers: [
               {
                 style: {},
-                values: ["First heading"]
+                values: ["First heading"],
               },
               {
                 style: { textAlign: "center", fontWeight: "bold" },
-                values: ["Board Rate", "second line"]
+                values: ["Board Rate", "second line"],
               },
               {
                 style: { textAlign: "center", fontWeight: "bold" },
-                values: ["AmOnline Rate", "second line"]
-              }
+                values: ["AmOnline Rate", "second line"],
+              },
             ],
             values: [
               ["1999 Month", "2.95%", "2.95%"],
@@ -575,8 +600,8 @@ const Sprint4: React.FC<Props> = () => {
               ["4 Month", "3.95", "2.95%"],
               ["5 Month", "2.95%", "2.95%"],
               ["6 Month", "2.95%", "2.95%"],
-              ["7 Month", "6.95", "2.95%"]
-            ]
+              ["7 Month", "6.95", "2.95%"],
+            ],
           }}
         />
       </CenteredDiv>
@@ -586,7 +611,7 @@ const Sprint4: React.FC<Props> = () => {
         rightLabel={{
           onClick: () => {},
           style: {},
-          label: 'Remove',
+          label: "Remove",
         }}
         children={
           <>
@@ -598,32 +623,32 @@ const Sprint4: React.FC<Props> = () => {
       <CenteredDiv
         style={{
           margin: 0,
-          padding: 0
+          padding: 0,
         }}
       >
         <ConfirmNotes
           testId="sprint_4_confirm_notes"
           title={{
             content: "Important Notes Notes",
-            style: { fontSize: "3rem" }
+            style: { fontSize: "3rem" },
           }}
           width="40rem"
           body={[
             {
               content:
                 "This is not the final confirmation of your payment. Please check with your merchant for final status confirmation.",
-              style: {}
+              style: {},
             },
             {
               content:
                 "Please click on the “Continue with Transaction” button below and do not close the browser until final receipt is displayed",
-              style: {}
+              style: {},
             },
             {
               content:
                 "Please click on the “Continue with Transaction” button below and do not close the browser until final receipt is displayed",
-              style: {}
-            }
+              style: {},
+            },
           ]}
         />
       </CenteredDiv>
@@ -632,7 +657,7 @@ const Sprint4: React.FC<Props> = () => {
         icon={{
           onIconClick: () => {
             setSprint1(true);
-          }
+          },
         }}
         rightButtons={[
           <TextButton
@@ -643,7 +668,7 @@ const Sprint4: React.FC<Props> = () => {
             buttonStyles={{
               color: "#000000",
               fontWeight: 400,
-              fontSize: 15
+              fontSize: 15,
             }}
           />,
           <TextButton
@@ -654,7 +679,7 @@ const Sprint4: React.FC<Props> = () => {
             buttonStyles={{
               color: "#000000",
               fontWeight: 400,
-              fontSize: 15
+              fontSize: 15,
             }}
           />,
           <TextButton
@@ -665,7 +690,7 @@ const Sprint4: React.FC<Props> = () => {
             buttonStyles={{
               color: "#000000",
               fontWeight: 400,
-              fontSize: 15
+              fontSize: 15,
             }}
           />,
           <TextButton
@@ -676,7 +701,7 @@ const Sprint4: React.FC<Props> = () => {
             buttonStyles={{
               color: "#000000",
               fontWeight: 400,
-              fontSize: 15
+              fontSize: 15,
             }}
           />,
           <TextDropdown
@@ -692,12 +717,11 @@ const Sprint4: React.FC<Props> = () => {
               { label: "English", value: "english" },
               { label: "Malay", value: "malay" },
               { label: "Persian", value: "persian" },
-              { label: "中文", value: "中文" }
+              { label: "中文", value: "中文" },
             ]}
-          />
+          />,
         ]}
       />
-
       <Title>Reset Pin</Title>
       <CenteredDiv
         style={{ position: "relative", padding: "5rem 6rem", height: "25rem" }}
@@ -716,12 +740,11 @@ const Sprint4: React.FC<Props> = () => {
           showKeyPad={true}
         />
       </CenteredDiv>
-
       <Title>Input Accordian</Title>
       <CenteredDiv
         style={{
           margin: "5rem",
-          maxWidth: "699px"
+          maxWidth: "699px",
         }}
       >
         <InputAccordian
@@ -757,7 +780,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -780,8 +803,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -791,11 +814,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00"
+                    "RM 250.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "Own Ambank Account", // change Lastname
@@ -822,7 +845,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -845,8 +868,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -856,11 +879,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "Current Limit RM 5,00,000"
+                    "Current Limit RM 5,00,000",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "Other Bank Account", // change Lastname
@@ -887,7 +910,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -910,8 +933,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -921,11 +944,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 50,000.00"
+                    "RM 50,000.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "IBG/ DuitNow/ QR", // change Lastname
@@ -952,7 +975,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -975,8 +998,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -986,11 +1009,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00"
+                    "RM 250.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "Overseas Account(Remittance)", // change Lastname
@@ -1017,7 +1040,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -1040,8 +1063,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -1051,13 +1074,13 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00"
+                    "RM 250.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
-                }
-              ]
+                  leftBorderColor: "red", // change green
+                },
+              ],
             },
             {
               id: "id-2",
@@ -1088,7 +1111,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -1111,8 +1134,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -1122,11 +1145,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00"
+                    "RM 250.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "Own Ambank Account", // change Lastname
@@ -1153,7 +1176,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -1176,8 +1199,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -1187,11 +1210,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "Current Limit RM 5,00,000"
+                    "Current Limit RM 5,00,000",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "Other Bank Account", // change Lastname
@@ -1218,7 +1241,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -1241,8 +1264,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -1252,11 +1275,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 50,000.00"
+                    "RM 50,000.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "IBG/ DuitNow/ QR", // change Lastname
@@ -1283,7 +1306,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -1306,8 +1329,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -1317,11 +1340,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00"
+                    "RM 250.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "Overseas Account(Remittance)", // change Lastname
@@ -1348,7 +1371,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -1371,8 +1394,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -1382,13 +1405,13 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00"
+                    "RM 250.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
-                }
-              ]
+                  leftBorderColor: "red", // change green
+                },
+              ],
             },
             {
               id: "id-2",
@@ -1419,7 +1442,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -1442,8 +1465,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -1453,11 +1476,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00"
+                    "RM 250.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "Own Ambank Account", // change Lastname
@@ -1484,7 +1507,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -1507,8 +1530,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -1518,11 +1541,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "Current Limit RM 5,00,000"
+                    "Current Limit RM 5,00,000",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "Other Bank Account", // change Lastname
@@ -1549,7 +1572,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -1572,8 +1595,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -1583,11 +1606,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 50,000.00"
+                    "RM 50,000.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "IBG/ DuitNow/ QR", // change Lastname
@@ -1614,7 +1637,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -1637,8 +1660,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -1648,11 +1671,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00"
+                    "RM 250.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "Overseas Account(Remittance)", // change Lastname
@@ -1679,7 +1702,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -1702,8 +1725,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -1713,13 +1736,13 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00"
+                    "RM 250.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
-                }
-              ]
+                  leftBorderColor: "red", // change green
+                },
+              ],
             },
             {
               id: "id-2",
@@ -1750,7 +1773,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -1773,8 +1796,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -1784,11 +1807,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00"
+                    "RM 250.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "Own Ambank Account", // change Lastname
@@ -1815,7 +1838,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -1838,8 +1861,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -1849,11 +1872,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "Current Limit RM 5,00,000"
+                    "Current Limit RM 5,00,000",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "Other Bank Account", // change Lastname
@@ -1880,7 +1903,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -1903,8 +1926,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -1914,11 +1937,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 50,000.00"
+                    "RM 50,000.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "IBG/ DuitNow/ QR", // change Lastname
@@ -1945,7 +1968,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -1968,8 +1991,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -1979,11 +2002,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00"
+                    "RM 250.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "Overseas Account(Remittance)", // change Lastname
@@ -2010,7 +2033,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -2033,8 +2056,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -2044,13 +2067,13 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00"
+                    "RM 250.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
-                }
-              ]
+                  leftBorderColor: "red", // change green
+                },
+              ],
             },
             {
               id: "id-2",
@@ -2081,7 +2104,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -2104,8 +2127,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -2115,11 +2138,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00"
+                    "RM 250.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "Own Ambank Account", // change Lastname
@@ -2146,7 +2169,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -2169,8 +2192,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -2180,11 +2203,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "Current Limit RM 5,00,000"
+                    "Current Limit RM 5,00,000",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "Other Bank Account", // change Lastname
@@ -2211,7 +2234,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -2234,8 +2257,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -2245,11 +2268,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 50,000.00"
+                    "RM 50,000.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "IBG/ DuitNow/ QR", // change Lastname
@@ -2276,7 +2299,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -2299,8 +2322,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -2310,11 +2333,11 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00"
+                    "RM 250.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
+                  leftBorderColor: "red", // change green
                 },
                 {
                   label: "Overseas Account(Remittance)", // change Lastname
@@ -2341,7 +2364,7 @@ const Sprint4: React.FC<Props> = () => {
                           icon={{ name: "Lock" }}
                           errorMessage={{
                             errorText: "something wrong",
-                            subText: "detail error"
+                            subText: "detail error",
                           }}
                           {...{
                             type: "text", // change number
@@ -2364,8 +2387,8 @@ const Sprint4: React.FC<Props> = () => {
                             icon: { name: "Lock" }, // change Amy
                             errorMessage: {
                               errorText: "something wrong",
-                              subText: "detail error"
-                            }
+                              subText: "detail error",
+                            },
                           }}
                         />
                         <R_13_GREY444 style={{ marginTop: "12px" }}>
@@ -2375,18 +2398,17 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00"
+                    "RM 250.00",
 
                     // 'Another line of subtitle'
                   ],
-                  leftBorderColor: "red" // change green
-                }
-              ]
-            }
+                  leftBorderColor: "red", // change green
+                },
+              ],
+            },
           ]}
         ></InputAccordian>
       </CenteredDiv>
-
       <Title>Error Page</Title>
       <div style={{ height: "35vw" }}>
         <ErrorPage
@@ -2397,7 +2419,6 @@ const Sprint4: React.FC<Props> = () => {
           detailText="Please call our 24-hour Contact Center at 603-2178 8888 for assistance"
         />
       </div>
-
       <Title>TacModal(Update)-(Ref:Sprint1)</Title>
       <CenteredDiv>
         <TacModal
@@ -2412,7 +2433,7 @@ const Sprint4: React.FC<Props> = () => {
           }}
           inActiveMessage={{
             title: "Your profile is inactive.",
-            text: "TAC verification is required to activate your profile."
+            text: "TAC verification is required to activate your profile.",
           }}
           inActive={tacInactive}
           testId={"testId"}
@@ -2429,18 +2450,18 @@ const Sprint4: React.FC<Props> = () => {
           errorMessage={{
             testId: "testId",
             errorText: "The TAC is incorrect",
-            subText: "Please try again."
+            subText: "Please try again.",
           }}
           content="TAC was sent to your registered mobile number (**** 6867)"
           link={{
             text: "Did not receive TAC? Request new",
             onLinkClick: () => {
               alert("Tac link");
-            }
+            },
           }}
           buttonColor={{
             top: !tacInactive ? "#BDBDBD" : "#FD8585",
-            bottom: !tacInactive ? "#BDBDBD" : "#FF2222"
+            bottom: !tacInactive ? "#BDBDBD" : "#FF2222",
           }}
           buttonTitle={tacInactive ? "Request TAC" : "Continue"}
           activeStatus={tacClearActiveStatus}
@@ -2485,24 +2506,24 @@ const Sprint4: React.FC<Props> = () => {
                 list={[
                   {
                     accountTitle: "Saving Account A",
-                    accountNumber: "RM 2,000.00"
+                    accountNumber: "RM 2,000.00",
                   },
                   {
                     accountTitle: "Ambank AmMoneyLine AmMoneyLine",
-                    accountNumber: "RM 2,000.00"
+                    accountNumber: "RM 2,000.00",
                   },
                   {
                     accountTitle: "Ambank BonusLink Visa",
-                    accountNumber: "RM 2,000.00"
+                    accountNumber: "RM 2,000.00",
                   },
                   {
                     accountTitle: "Saving Account B",
-                    accountNumber: "RM 2,000.00"
+                    accountNumber: "RM 2,000.00",
                   },
                   {
                     accountTitle: "Saving Account C",
-                    accountNumber: "RM 2,000.00"
-                  }
+                    accountNumber: "RM 2,000.00",
+                  },
                 ]}
               />
             </div>
@@ -2547,17 +2568,17 @@ const Sprint4: React.FC<Props> = () => {
                         onActionButtonClick: () => {
                           alert("Fav");
                           setActionBtnStatus(!actionBtnStatus);
-                        }
+                        },
                       },
                       {
                         label1: "",
                         value1: "",
                         label2: "Other Details",
-                        value2: "-"
+                        value2: "-",
                         //  actionLabel: 'View Receipt',
                         // actionIcon: ''
-                      }
-                    ]
+                      },
+                    ],
                   },
                   {
                     icon: "Transfer",
@@ -2580,7 +2601,7 @@ const Sprint4: React.FC<Props> = () => {
                         label2: "Recipient Reference",
                         value2: "May - Rental",
                         actionLabel: "Add to Fav",
-                        actionIcon: ""
+                        actionIcon: "",
                       },
                       {
                         label1: "",
@@ -2588,11 +2609,11 @@ const Sprint4: React.FC<Props> = () => {
                         label2: "Other Details",
                         value2: "-",
                         actionLabel: "View Receipt",
-                        actionIcon: ""
-                      }
-                    ]
-                  }
-                ]
+                        actionIcon: "",
+                      },
+                    ],
+                  },
+                ],
               },
               {
                 date: "12 Jan 2020",
@@ -2619,7 +2640,7 @@ const Sprint4: React.FC<Props> = () => {
                         label2: "Recipient Reference",
                         value2: "May - Rental",
                         actionLabel: "Add to Fav",
-                        actionIcon: ""
+                        actionIcon: "",
                       },
                       {
                         label1: "",
@@ -2627,12 +2648,12 @@ const Sprint4: React.FC<Props> = () => {
                         label2: "Other Details",
                         value2: "-",
                         actionLabel: "View Receipt",
-                        actionIcon: ""
-                      }
-                    ]
-                  }
-                ]
-              }
+                        actionIcon: "",
+                      },
+                    ],
+                  },
+                ],
+              },
             ]}
             onTransactionClick={(item, sectionIndex, itemIndex) => {
               alert("check : " + item);
@@ -2641,9 +2662,7 @@ const Sprint4: React.FC<Props> = () => {
           />
         </div>
       </CenteredDiv>
-      <Title>
-        Form Container disabled state.
-      </Title>
+      <Title>Form Container disabled state.</Title>
       <CenteredDiv>
         <FormContainer
           disabled
@@ -2665,24 +2684,24 @@ const Sprint4: React.FC<Props> = () => {
                 list={[
                   {
                     accountTitle: "Saving Account A",
-                    accountNumber: "RM 2,000.00"
+                    accountNumber: "RM 2,000.00",
                   },
                   {
                     accountTitle: "Ambank AmMoneyLine AmMoneyLine",
-                    accountNumber: "RM 2,000.00"
+                    accountNumber: "RM 2,000.00",
                   },
                   {
                     accountTitle: "Ambank BonusLink Visa",
-                    accountNumber: "RM 2,000.00"
+                    accountNumber: "RM 2,000.00",
                   },
                   {
                     accountTitle: "Saving Account B",
-                    accountNumber: "RM 2,000.00"
+                    accountNumber: "RM 2,000.00",
                   },
                   {
                     accountTitle: "Saving Account C",
-                    accountNumber: "RM 2,000.00"
-                  }
+                    accountNumber: "RM 2,000.00",
+                  },
                 ]}
               />
             </div>
@@ -2690,30 +2709,30 @@ const Sprint4: React.FC<Props> = () => {
         />
       </CenteredDiv>
       <Title>
-        W2W ModalList using (StatusFormContainer , List component , CenterMessage , Primary Button)
+        W2W ModalList using (StatusFormContainer , List component ,
+        CenterMessage , Primary Button)
       </Title>
       <div
         style={{
           backgroundColor: "#EEEEEE",
-          padding:'1.125rem',
-          marginTop:100,
-
+          padding: "1.125rem",
+          marginTop: 100,
         }}
       >
-        <TransactionWithNote 
-          testId={'testId'}
+        <TransactionWithNote
+          testId={"testId"}
           responsive
           statusIcon={{
             icon: "Fail",
             iconColor: { top: "#FD8585", bottom: "#FF2222" },
-            outerIconColor: "#FFEBEE"
+            outerIconColor: "#FFEBEE",
           }}
           formContainerchildren={
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
-                padding: "2rem"
+                padding: "2rem",
               }}
             >
               <B_24_BLACK style={{ textAlign: "center" }}>
@@ -2734,277 +2753,269 @@ const Sprint4: React.FC<Props> = () => {
                   {
                     leftLabel: "To",
                     rightLabel: "Saving Account A",
-                    details: ["8881019596535 | AmBank"]
+                    details: ["8881019596535 | AmBank"],
                   },
                   {
                     leftLabel: "Amount",
                     rightLabel: "RM 500.00",
-                    details: ["Fees & Charges: RM 0.00"]
+                    details: ["Fees & Charges: RM 0.00"],
                   },
                   {
                     leftLabel: "Date",
                     rightLabel: "Transfer Now",
-                    details: ["Today, 5 January 2019"]
+                    details: ["Today, 5 January 2019"],
                   },
                   {
                     leftLabel: "Reference",
-                    rightLabel: "House Rental"
+                    rightLabel: "House Rental",
                   },
                   {
                     leftLabel: "From",
                     rightLabel: "Savings Account",
-                    details: ["2998202013", "Available Balance: RM 10,301.50"]
-                  }
+                    details: ["2998202013", "Available Balance: RM 10,301.50"],
+                  },
                 ]}
               />
-               <CenteredDiv>
-        <IconButtons
-      testId={"testId"}
-      onButtonClick={(item : any, index:any) => {
-      
-      alert(`${item} with index of ${index} clicked`);
-      }}
-    
-      list={[
-      
-      {
-      text: "View Receipt",
-      icon: {
-       name: "Card2"
-      }
-      }
-      
-      ]}
-      />
-      </CenteredDiv>
+              <CenteredDiv>
+                <IconButtons
+                  testId={"testId"}
+                  onButtonClick={(item: any, index: any) => {
+                    alert(`${item} with index of ${index} clicked`);
+                  }}
+                  list={[
+                    {
+                      text: "View Receipt",
+                      icon: {
+                        name: "Card2",
+                      },
+                    },
+                  ]}
+                />
+              </CenteredDiv>
             </div>
           }
           confirmNoteswidth={"40rem"}
           confirmNotesTitle={{
             content: "Important Notes",
-            style: { fontSize: "2rem" }
+            style: { fontSize: "2rem" },
           }}
           confirmNotesBody={[
             {
               content:
                 "This is not the final confirmation of your payment. Please check with your merchant for final status confirmation.",
-              style: {}
+              style: {},
             },
             {
               content:
                 "Please click on the “Continue with Transaction” button below and do not close the browser until final receipt is displayed",
-              style: {}
-            }
+              style: {},
+            },
           ]}
           Btntitle={"Continue With Transaction"}
           // Btnwidth={'22.43rem'}
           onButtonClick={() => alert("check")}
           statusText={" You will be redirected to FPX status page in 9 seconds"}
         />
-
-    </div>
-    <Title>ListWithSelectionTile(List,Selection Tile, Primary Buttons)</Title>
-    <CenteredDiv style={{width:'100%',  backgroundColor: "#EEEEEE",}}>
-    <ListWithSelectionTile 
-      testId={'testId'}
-      responsive
-       listchildren={
-        <List
-       
-          header={{
-            icon: {
-              name: "LOGO",
-              color: "#ff2626",
-              iconText: "Review & Confirm",
-            },
-          }}
-          list={[
+      </div>
+      <Title>ListWithSelectionTile(List,Selection Tile, Primary Buttons)</Title>
+      <CenteredDiv style={{ width: "100%", backgroundColor: "#EEEEEE" }}>
+        <ListWithSelectionTile
+          testId={"testId"}
+          responsive
+          listchildren={
+            <List
+              header={{
+                icon: {
+                  name: "LOGO",
+                  color: "#ff2626",
+                  iconText: "Review & Confirm",
+                },
+              }}
+              list={[
+                {
+                  leftLabel: "To",
+                  rightLabel: "Revenue Lawrence Haim 140066",
+                  details: [],
+                },
+                {
+                  leftLabel: "Reference/Invoice No.",
+                  rightLabel: "RT15678965",
+                  details: [],
+                },
+                {
+                  leftLabel: "Bill No.",
+                  rightLabel: "Alipay Taobao",
+                  details: [],
+                },
+                {
+                  leftLabel: "Amount",
+                  rightLabel: "RM 20.00",
+                },
+                {
+                  leftLabel: "Effective payment Date",
+                  rightLabel: "Today ,5 January 2020",
+                  details: [],
+                },
+              ]}
+            />
+          }
+          tileListLabel={"From which account?"}
+          selectionTileList={[
             {
-              leftLabel: "To",
-              rightLabel: "Revenue Lawrence Haim 140066",
-              details: [],
+              accountTitle: "Saving Account A",
+              accountNumber: "86867678678",
+              amount: "RM 10,301.50",
             },
             {
-              leftLabel: "Reference/Invoice No.",
-              rightLabel: "RT15678965",
-              details: [],
+              accountTitle: "Saving Account B",
+              accountNumber: "8686665878",
+              amount: " RM 11,555.00",
             },
             {
-              leftLabel: "Bill No.",
-              rightLabel: "Alipay Taobao",
-              details: [],
+              accountTitle: "Saving Account C",
+              accountNumber: "67577678678",
+              amount: " RM 55,555.00",
             },
             {
-              leftLabel: "Amount",
-              rightLabel: "RM 20.00",
+              accountTitle: "Saving Account D",
+              accountNumber: "868676787897",
+              amount: " RM 33,555.50",
             },
             {
-              leftLabel: "Effective payment Date",
-              rightLabel: "Today ,5 January 2020",
-              details: [],
+              accountTitle: "Saving Account E",
+              accountNumber: "86999678678",
+              amount: " RM 245,555.50",
             },
           ]}
+          onTileClick={(item, index) => {
+            setSelectionTileNum2(index);
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={SelectionTileNum2}
+          btn1title={"Continue"}
+          onButton1Click={() => {
+            alert("Button Clicked");
+          }}
+          btn1width={"20.43rem"}
+          btn2title={"cancel"}
+          onButton2Click={() => {
+            alert("Button Clicked");
+          }}
+          btn2width={"20.43rem"}
         />
-      } 
-      tileListLabel={"From which account?"}
-      selectionTileList={[
-        {
-          accountTitle: "Saving Account A",
-          accountNumber: "86867678678",
-          amount: "RM 10,301.50",
-        },
-        {
-          accountTitle: "Saving Account B",
-          accountNumber: "8686665878",
-          amount: " RM 11,555.00",
-        },
-        {
-          accountTitle: "Saving Account C",
-          accountNumber: "67577678678",
-          amount: " RM 55,555.00",
-        },
-        {
-          accountTitle: "Saving Account D",
-          accountNumber: "868676787897",
-          amount: " RM 33,555.50",
-        },
-        {
-          accountTitle: "Saving Account E",
-          accountNumber: "86999678678",
-          amount: " RM 245,555.50",
-        },
-      ]}
-      onTileClick={(item, index) => {
-        setSelectionTileNum2(index);
-        alert(`${item.accountTitle} with indexOf ${index} clicked`);
-      }}
-      selected={SelectionTileNum2}
-      btn1title={"Continue"}
-      onButton1Click={() => {
-        alert("Button Clicked")
-      }}
-      btn1width={"20.43rem"}
-      btn2title={"cancel"}
-      onButton2Click={() => {
-        alert("Button Clicked");
-      }}
-      btn2width={"20.43rem"}
-      />
-    </CenteredDiv>
-    <Title>Redirect to mobile</Title>
-    <CenteredDiv style={{width:'100%',  backgroundColor: "#EEEEEE",}}>
-      <RedirectToMobile
-        backgroundImage = {images.common.redirectBg}
-        testId="test-id-1"
-        logo={{name: "amonline-white", size: 130}}
-        header={{
-          testId: 'content',
-          title: 'Banking Your Way',
-          content: 'There is more in the brand new AmOnline app. Unlock the full banking experience now.',
-        }}
-        button={
-          {
-            testId: 'buttonId',
-            title: 'Download The App Now',
-            onButtonClick: () => {alert('button clicked')}
-          }
-        }
-        continueWithWeb= {
-          {
-            content: 'Proceed to Desktop Version',
-            onClick: () => {alert('continue web clicked')}
-          }
-        }
-      />
-    </CenteredDiv>
-    <div
+      </CenteredDiv>
+      <Title>Redirect to mobile</Title>
+      <CenteredDiv style={{ width: "100%", backgroundColor: "#EEEEEE" }}>
+        <RedirectToMobile
+          backgroundImage={images.common.redirectBg}
+          testId="test-id-1"
+          logo={{ name: "amonline-white", size: 130 }}
+          header={{
+            testId: "content",
+            title: "Banking Your Way",
+            content:
+              "There is more in the brand new AmOnline app. Unlock the full banking experience now.",
+          }}
+          button={{
+            testId: "buttonId",
+            title: "Download The App Now",
+            onButtonClick: () => {
+              alert("button clicked");
+            },
+          }}
+          continueWithWeb={{
+            content: "Proceed to Desktop Version",
+            onClick: () => {
+              alert("continue web clicked");
+            },
+          }}
+        />
+      </CenteredDiv>
+      <div
         style={{
           backgroundColor: "#EEEEEE",
-          padding:'1.125rem',
-          marginTop:100,
-
+          padding: "1.125rem",
+          marginTop: 100,
         }}
       >
         <Title>Logout</Title>
-          <Logout
-            testId={'testId'}
-            responsive
-            header = {{
-              title:"You have successfully logged out.",
-              subTitle:"Logged out on Tueday 14/05/2019, 03:06PM",
-              statusIcon : {
-                image: {
-                  src: images.common.amyIcon,
-                  alt: "logo",
-                },
-                iconColor: { top: "#94EC9B", bottom: "#5BB362" },
-                outerIconColor: "#E5FCE6"
-              }
-              
-            }}
-            listChildren={[
-              {
-                leftLabel: {
-                  contentType : 'TRANSFER TO',
-                  styleContent:{},
-                  value:"SEEN OPTICS",
-                  styleValue:{}
-                },
-                rightLabel: {
-                  TimeStamp : '09:53:55AM',
-                  styleTimeStamp:{},
-                  value:"RM 236.67",
-                  styleValue:{}
-                },
-                middleLabel:{
-                  content : 'SUCCESSFUL',
-                  styleContent:{},
-                }
+        <Logout
+          testId={"testId"}
+          responsive
+          header={{
+            title: "You have successfully logged out.",
+            subTitle: "Logged out on Tueday 14/05/2019, 03:06PM",
+            statusIcon: {
+              image: {
+                src: images.common.amyIcon,
+                alt: "logo",
               },
-              {
-                leftLabel: {
-                  contentType : 'FPX TO',
-                  styleContent:{},
-                  value:"TRANSUNION CONVERSION",
-                  styleValue:{}
-                },
-                rightLabel: {
-                  TimeStamp : '08:48:01AM',
-                  styleTimeStamp:{},
-                  value:" RM10,0000.00",
-                  styleValue:{}
-                },
-                middleLabel:{
-                  content : 'SUCCESSFUL',
-                  styleContent:{},
-                }
+              iconColor: { top: "#94EC9B", bottom: "#5BB362" },
+              outerIconColor: "#E5FCE6",
+            },
+          }}
+          listChildren={[
+            {
+              leftLabel: {
+                contentType: "TRANSFER TO",
+                styleContent: {},
+                value: "SEEN OPTICS",
+                styleValue: {},
               },
-              {
-                leftLabel: {
-                  contentType : 'PAY TO LOAN',
-                  styleContent:{},
-                  value:"LOREM IPSUM",
-                  styleValue:{}
-                },
-                rightLabel: {
-                  TimeStamp : '08:05:00AM',
-                  styleTimeStamp:{},
-                  value:"RM 5420.27",
-                  styleValue:{}
-                },
-                middleLabel:{
-                  content : 'SUCCESSFUL',
-                  styleContent:{},
-                }
-              }
-            
-            ]}
-            btntitle="Back to Homepage"
-            btnwidth="16.4rem"
-            onButtonClick={() => {
-              alert("check");
-            }}
-          />
+              rightLabel: {
+                TimeStamp: "09:53:55AM",
+                styleTimeStamp: {},
+                value: "RM 236.67",
+                styleValue: {},
+              },
+              middleLabel: {
+                content: "SUCCESSFUL",
+                styleContent: {},
+              },
+            },
+            {
+              leftLabel: {
+                contentType: "FPX TO",
+                styleContent: {},
+                value: "TRANSUNION CONVERSION",
+                styleValue: {},
+              },
+              rightLabel: {
+                TimeStamp: "08:48:01AM",
+                styleTimeStamp: {},
+                value: " RM10,0000.00",
+                styleValue: {},
+              },
+              middleLabel: {
+                content: "SUCCESSFUL",
+                styleContent: {},
+              },
+            },
+            {
+              leftLabel: {
+                contentType: "PAY TO LOAN",
+                styleContent: {},
+                value: "LOREM IPSUM",
+                styleValue: {},
+              },
+              rightLabel: {
+                TimeStamp: "08:05:00AM",
+                styleTimeStamp: {},
+                value: "RM 5420.27",
+                styleValue: {},
+              },
+              middleLabel: {
+                content: "SUCCESSFUL",
+                styleContent: {},
+              },
+            },
+          ]}
+          btntitle="Back to Homepage"
+          btnwidth="16.4rem"
+          onButtonClick={() => {
+            alert("check");
+          }}
+        />
       </div>
     </div>
   );
