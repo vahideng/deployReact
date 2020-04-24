@@ -50,7 +50,6 @@
   -webkit-transition: all ease 0.3s;
   transition: all ease 0.3s;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
 }
 
 .CarouselItemWide {
