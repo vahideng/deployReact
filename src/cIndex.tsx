@@ -112,6 +112,8 @@ import ListWithSelectionTile from "./components/ListWithSelectionTile/ListWithSe
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import RedirectToMobile from './components/RedirectToMobile/RedirectToMobile';
 import Logout from './components/Logout/Logout'
+import BannerCarousel from 'src/components/banners/bannerCarousel/BannerCarousel';
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /// exports
 export {
@@ -129,6 +131,7 @@ export {
   ListWithSelectionTile,
   ErrorPage,
   RedirectToMobile,
+  BannerCarousel,
   ///////////////////////////////////////////////////////////////////////////////////////////////
   /// below are sprint-3 components
   AmProfileSetting,

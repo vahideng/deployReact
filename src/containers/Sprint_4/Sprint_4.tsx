@@ -30,8 +30,9 @@ import ErrorPage from "src/components/ErrorPage/ErrorPage";
 import TransactionWithNote from "src/components/TransactionWithNote/TransactionWithNote";
 import DetailList from "src/components/lists/DetailList/DetailList";
 import IconButtons from "src/components/buttons/iconButtons/IconButtons";
-import ListWithSelectionTile from "src/components/ListWithSelectionTile/ListWithSelectionTile";
-import RedirectToMobile from "src/components/RedirectToMobile/RedirectToMobile";
+import ListWithSelectionTile from 'src/components/ListWithSelectionTile/ListWithSelectionTile';
+import RedirectToMobile from 'src/components/RedirectToMobile/RedirectToMobile';
+import BannerCarousel from 'src/components/banners/bannerCarousel/BannerCarousel';
 
 import Logout from "src/components/Logout/Logout";
 import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
@@ -490,25 +491,53 @@ const Sprint4: React.FC<Props> = () => {
                 [
                   {
                     children: (
-                      <img src={require("src/assets/images/slider.png")} />
-                    ),
+                      <BannerCarousel 
+                        title="Title"
+                        subtitle="Subtitle"
+                        backgroundImage="https://picsum.photos/320/100"
+                        onClick={() => {
+                          console.log('click on banner')
+                        }}
+                      />
+                    )
                   },
                   {
                     children: (
-                      <img src={require("src/assets/images/slider.png")} />
-                    ),
+                      <BannerCarousel 
+                        title="Title"
+                        subtitle="Subtitle"
+                        backgroundImage="https://picsum.photos/320/100"
+                        onClick={() => {
+                          console.log('click on banner')
+                        }}
+                      />
+                    )
                   },
                   {
                     children: (
-                      <img src={require("src/assets/images/slider.png")} />
-                    ),
+                      <BannerCarousel 
+                        title="Title"
+                        subtitle="Subtitle"
+                        backgroundImage="https://picsum.photos/320/100"
+                        onClick={() => {
+                          console.log('click on banner')
+                        }}
+                      />
+                    )
                   },
                   {
                     children: (
-                      <img src={require("src/assets/images/slider.png")} />
-                    ),
-                  },
-                ],
+                      <BannerCarousel 
+                        title="Title"
+                        subtitle="Subtitle"
+                        backgroundImage="https://picsum.photos/320/100"
+                        onClick={() => {
+                          console.log('click on banner')
+                        }}
+                      />
+                    )
+                  }
+                ]
               ]}
               onClose={() => setIsViewRateModalOpen(false)}
               buttonTitle="Place New Deposit"
@@ -553,7 +582,7 @@ const Sprint4: React.FC<Props> = () => {
                 />
               }
               carouselProps={{
-                type: "default",
+                type: 'wide'
               }}
             />
           </div>
