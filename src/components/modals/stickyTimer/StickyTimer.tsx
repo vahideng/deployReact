@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 import Modal from "react-modal";
 
@@ -26,6 +26,7 @@ const customStyles = {
   },
 };
 interface Props {
+  responsive?: boolean;
   testId?: string;
   modalIsOpen: boolean;
   expirationTime: number;
@@ -37,88 +38,67 @@ interface Props {
   children?: ReactNode;
   onCLoseButtonCLick?: () => void;
 }
-interface State {
-  seconds: number;
-  closeModal: boolean;
-}
 
-class StickyTimer extends Component<Props, State> {
-  state = {
-    seconds: this.props.expirationTime,
-    closeModal: this.props.modalIsOpen,
-  };
-
-  // componentDidMount() {
-  //   myTimer = setInterval(() => {
-  //     this.setState({ seconds: this.state.seconds - 1 });
-  //   }, 1000);
-  // }
-
-  // componentDidUpdate(prevProps: any, prevState: any) {
-  //   if (this.state.seconds !== prevState.seconds && this.state.seconds === 0) {
-  //     this.setState({ closeModal: false }, () => {
-  //       clearInterval(myTimer);
-  //     });
-  //   }
-
-  //   if (this.props.modalIsOpen !== prevProps.modalIsOpen) {
-  //     this.setState({ closeModal: this.props.modalIsOpen });
-  //   }
-  // }
-
-  render() {
-    const {
-      text,
-      testId,
-      textBefore,
-      expirationTime,
-      modalIsOpen,
-      closeTimeoutMS,
-      contentLabel,
-      onCLoseButtonCLick,
-      children,
-    } = this.props;
-
-    return (
-      <>
-        <Modal
-          isOpen={modalIsOpen}
-          closeTimeoutMS={closeTimeoutMS}
-          style={customStyles}
-          contentLabel={contentLabel ? contentLabel : "Example Modal"}
-        >
-          <div id={testId}>
-            <div className={classes.StickyTimerTopDiv}>
-              <img src={LocalImages.common.amSecure} alt="amSecure" />
-              <div className={classes.StickyTimerExp}>
-                <R_17_BLACK>
-                  {" "}
-                  {textBefore ? textBefore : "Transaction will expire in"}
-                </R_17_BLACK>
-                <B_17_BLACK className={classes.StickyTimerExpTime}>
-                  {expirationTime}
-                </B_17_BLACK>
-                <div
-                  style={{
-                    padding: "1rem",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => {
-                    onCLoseButtonCLick();
-                  }}
-                >
-                  <Icon icon="Fail" size={25} />
-                </div>
+const StickyTimer: React.FC<Props> = (props) => {
+  const {
+    text,
+    testId,
+    textBefore,
+    expirationTime,
+    modalIsOpen,
+    closeTimeoutMS,
+    contentLabel,
+    onCLoseButtonCLick,
+    children,
+    responsive,
+  } = props;
+  let mainDiv = classes.StickyTimerTopDiv;
+  let timer = classes.StickyTimerExp;
+  let bottomDiv = classes.StickyTimerBottomDiv;
+  if (responsive) {
+    mainDiv = `${classes.StickyTimerTopDiv} ${classes.TopDivResponsive}`;
+    timer = `${classes.StickyTimerExp} ${classes.TimerExpResponsive}`;
+    bottomDiv = `${classes.StickyTimerBottomDiv} ${classes.BottomDivResponsive}`;
+  }
+  return (
+    <>
+      <Modal
+        isOpen={modalIsOpen}
+        closeTimeoutMS={closeTimeoutMS}
+        style={customStyles}
+        contentLabel={contentLabel ? contentLabel : "Example Modal"}
+      >
+        <div id={testId}>
+          <div className={mainDiv}>
+            <img src={LocalImages.common.amSecure} alt="amSecure" />
+            <div className={timer}>
+              <R_17_BLACK>
+                {" "}
+                {textBefore ? textBefore : "Transaction will expire in"}
+              </R_17_BLACK>
+              <B_17_BLACK className={classes.StickyTimerExpTime}>
+                {expirationTime}
+              </B_17_BLACK>
+              <div
+                style={{
+                  padding: "1rem",
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  onCLoseButtonCLick();
+                }}
+              >
+                <Icon icon="Fail" size={25} />
               </div>
             </div>
-            <div className={classes.StickyTimerBottomDiv}>
-              {children ? children : <R_15_BLACK>{text}</R_15_BLACK>}
-            </div>
           </div>
-        </Modal>
-      </>
-    );
-  }
-}
+          <div className={bottomDiv}>
+            {children ? children : <R_15_BLACK>{text}</R_15_BLACK>}
+          </div>
+        </div>
+      </Modal>
+    </>
+  );
+};
 
 export default StickyTimer;
