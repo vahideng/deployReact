@@ -18,6 +18,8 @@ class Tooltip extends Component<TooltipProps, State> {
   state = {
     clicked: false
   };
+  static defaultProps: { showTooltip: boolean; };
+
   render() {
     const { clicked } = this.state;
     const { tipChildren, color, testId,showTooltip } = this.props;
@@ -27,7 +29,7 @@ class Tooltip extends Component<TooltipProps, State> {
 
     return (
       <>
-      
+            {showTooltip &&  (
         <div className={classes.tooltip} id={testId}>
           <div onClick={clickHandler} id={`${testId}-0`}>
             <Icon
@@ -36,18 +38,27 @@ class Tooltip extends Component<TooltipProps, State> {
               size={23}
             />
           </div>
-          {showTooltip &&  (
+    
           <div
             id={`${testId}-1`}
             className={classes.TooltipContent}
             style={{ visibility: !!clicked ? "visible" : "hidden" }}
           >
             {tipChildren}
-          </div> )}
+          </div>
         </div>
+         )}
       </>
     );
   }
 }
 
+
+Tooltip.defaultProps = {
+  showTooltip : true,
+}
+
+
 export default Tooltip;
+
+
