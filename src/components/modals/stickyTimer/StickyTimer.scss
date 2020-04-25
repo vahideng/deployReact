@@ -4,7 +4,7 @@
   justify-content: space-between;
   background-color: #d8d8d8;
   padding: 1.5rem 18.93rem;
-  width: 100vw;
+  width: 100%;
 }
 .StickyTimerExp {
   display: flex;
@@ -16,4 +16,25 @@
 .StickyTimerBottomDiv {
   padding: 1.5rem 18.93rem 3rem 18.93rem;
   background-color: #ffffff;
+}
+
+@media (max-width: 400px) {
+  .TopDivResponsive {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem 1rem 0 1rem;
+  }
+  .BottomDivResponsive {
+    padding: 1rem 1rem 2.5rem 1rem;
+    overflow: hidden;
+  }
+  .TimerExpResponsive {
+    :first-child {
+      line-height: 3rem;
+    }
+    div {
+      display: none;
+    }
+  }
 }
