@@ -21,6 +21,8 @@ class Tooltip extends Component<TooltipProps, State> {
   state = {
     clicked: false,
   };
+  static defaultProps: { showTooltip: boolean; };
+
   render() {
     const { clicked } = this.state;
     const {
@@ -58,7 +60,8 @@ class Tooltip extends Component<TooltipProps, State> {
           </div>
         ) : (
           <div className={classes.tooltip} id={testId}>
-            <div onClick={clickHandler} id={`${testId}-0`}>
+            {showTooltip && (
+              <div onClick={clickHandler} id={`${testId}-0`}>
               <Icon
                 icon={!clicked ? "system-info" : "system-close-grey"}
                 color={!!color ? color : "#000000"}
@@ -75,10 +78,20 @@ class Tooltip extends Component<TooltipProps, State> {
               </div>
             )}
           </div>
+            ) }
+            
         )}
       </>
     );
   }
 }
 
+
+Tooltip.defaultProps = {
+  showTooltip : true,
+}
+
+
 export default Tooltip;
+
+
