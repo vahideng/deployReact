@@ -28,6 +28,7 @@ const List: React.FC<Props> = ({ header, testId, list }) => {
           {!!header.title && (
             <div className={classes.ListTitleDiv}>
               <B_24_BLACK
+                x-ms-format-detection="none" 
                 className={classes.ListTitle}
                 style={header.titleStyle ? header.titleStyle : {}}
               >
