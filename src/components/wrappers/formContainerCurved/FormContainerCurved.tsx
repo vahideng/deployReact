@@ -40,7 +40,16 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
   const onRightClick = () => {
     setLeftSelected(false);
     setRightSelected(true);
-    curvedTab.onRightClick();
+    if (curvedTab.onRightClick) {
+      return curvedTab.onRightClick();
+    }
+  };
+  const onLeftClick = () => {
+    setLeftSelected(true);
+    setRightSelected(false);
+    if (curvedTab.onLeftClick) {
+      return curvedTab.onLeftClick();
+    }
   };
   useEffect(() => {
     if (!!curvedTab.rightSelected && curvedTab.rightSelected) {
@@ -58,11 +67,7 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
         <div className={classes.LeftCurve}>
           <div className={classes.FirstCurveWr}>
             <div
-              onClick={() => {
-                setLeftSelected(true);
-                setRightSelected(false);
-                curvedTab.onLeftClick();
-              }}
+              onClick={onLeftClick}
               className={classes.FirstCurve}
               style={{
                 backgroundColor: leftColors(),
@@ -92,7 +97,6 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
                 {!!RightSelected && (
                   <div className={classes.leftCurveIcon}>
                     <Icon
-                      // size={30}
                       icon={"tab-curve"}
                       color={"#ffffff"}
                       style={{
@@ -110,7 +114,6 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
               </div>
             </div>
             <Icon
-              // size={30}
               icon={"tab-curve"}
               color={rightColors()}
               style={{
