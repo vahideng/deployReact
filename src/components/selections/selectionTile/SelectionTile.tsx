@@ -141,16 +141,22 @@ const SelectionTile: React.FC<Props> = ({
                   <div id={`${testId}-0${index}`}>
                     {!!item.accountTitle && (
                       <div className={classes.SelectionTileTDiv}>
-                        <B_16_BLACK className={classes.SelectionTileTitle}>
+                        <B_16_BLACK
+                        x-ms-format-detection="none" 
+                        className={classes.SelectionTileTitle}>
                           {item.accountTitle}
                         </B_16_BLACK>
                       </div>
                     )}
                     {!!item.accountNumber && (
-                      <R_14_BLACK>{item.accountNumber}</R_14_BLACK>
+                      <R_14_BLACK   
+                       x-ms-format-detection="none" 
+                       >{item.accountNumber}</R_14_BLACK>
                     )}
                     {!!item.amount && (
-                      <B_16_BLACK className={classes.SelectionTAmount}>
+                      <B_16_BLACK className={classes.SelectionTAmount}
+                      x-ms-format-detection="none" 
+                      >
                         {item.amount}
                       </B_16_BLACK>
                     )}

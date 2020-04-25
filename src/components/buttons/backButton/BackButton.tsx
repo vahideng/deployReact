@@ -22,7 +22,7 @@ const BackButton: React.FC<Props> = ({ buttonText, onButtonClick, testId }) => {
         icon="left"
         color="#000000"
         size={25}
-        style={{ marginRight: -3, marginLeft: -7 , display :'block'}}
+        style={{ marginRight: '0.5rem', marginLeft: -7 , display :'block'}}
       />
       <B_16_BLACK>{buttonText}</B_16_BLACK>
     </div>
