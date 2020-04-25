@@ -83,7 +83,6 @@ class Tooltip extends Component<TooltipProps, State> {
           </div>
         ) : (
           <div> {output}</div>
-      
         )}
       </>
     );
