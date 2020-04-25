@@ -21,7 +21,7 @@ class Tooltip extends Component<TooltipProps, State> {
   state = {
     clicked: false,
   };
-  static defaultProps: { showTooltip: boolean; };
+  static defaultProps: { showTooltip: boolean };
 
   render() {
     const { clicked } = this.state;
@@ -37,6 +37,29 @@ class Tooltip extends Component<TooltipProps, State> {
       this.setState({ clicked: !clicked });
     };
     const tooltipSize = tipSize !== undefined ? tipSize : 23;
+
+    let output = null;
+    if (showTooltip) {
+      output = (
+        <div className={classes.tooltip} id={testId}>
+          <div onClick={clickHandler} id={`${testId}-0`}>
+            <Icon
+              icon={!clicked ? "system-info" : "system-close-grey"}
+              color={!!color ? color : "#000000"}
+              size={23}
+            />
+          </div>
+
+          <div
+            id={`${testId}-1`}
+            className={classes.TooltipContent}
+            style={{ visibility: !!clicked ? "visible" : "hidden" }}
+          >
+            {tipChildren}
+          </div>
+        </div>
+      );
+    }
     return (
       <>
         {rightAlign ? (
@@ -59,39 +82,16 @@ class Tooltip extends Component<TooltipProps, State> {
             )}
           </div>
         ) : (
-          <div className={classes.tooltip} id={testId}>
-            {showTooltip && (
-              <div onClick={clickHandler} id={`${testId}-0`}>
-              <Icon
-                icon={!clicked ? "system-info" : "system-close-grey"}
-                color={!!color ? color : "#000000"}
-                size={23}
-              />
-            </div>
-            {showTooltip && (
-              <div
-                id={`${testId}-1`}
-                className={classes.TooltipContent}
-                style={{ visibility: !!clicked ? "visible" : "hidden" }}
-              >
-                {tipChildren}
-              </div>
-            )}
-          </div>
-            ) }
-            
+          <div> {output}</div>
+        )}
         )}
       </>
     );
   }
 }
 
-
 Tooltip.defaultProps = {
-  showTooltip : true,
-}
-
+  showTooltip: true,
+};
 
 export default Tooltip;
-
-
