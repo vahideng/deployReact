@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useState, useEffect } from "react";
 import classes from "./FormContainerCurved.module.css";
 import Paragraphs from "../../assets/typography";
 import Icon from "src/components/assets/icons/icon";
@@ -8,32 +8,69 @@ interface Props {
   curvedTab: {
     leftTab: string;
     rightTab: string;
+    onLeftClick?: () => void;
+    onRightClick?: () => void;
     leftContent?: ReactNode;
     rightContent?: ReactNode;
+    rightSelected?: boolean;
   };
 }
 
 const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
-  const [LeftSelected, setLeftSelected] = useState(true);
-  const [RightSelected, setRightSelected] = useState(false);
+  const [LeftSelected, setLeftSelected] = useState(
+    curvedTab.rightSelected ? false : true
+  );
+  const [RightSelected, setRightSelected] = useState(
+    curvedTab.rightSelected ? curvedTab.rightSelected : false
+  );
+  const leftColors = () => {
+    if (!!LeftSelected) {
+      return "#fff";
+    } else {
+      return "#c4c4c4";
+    }
+  };
+  const rightColors = () => {
+    if (!!RightSelected) {
+      return "#fff";
+    } else {
+      return "#c4c4c4";
+    }
+  };
+  const onRightClick = () => {
+    setLeftSelected(false);
+    setRightSelected(true);
+    if (curvedTab.onRightClick) {
+      return curvedTab.onRightClick();
+    }
+  };
+  const onLeftClick = () => {
+    setLeftSelected(true);
+    setRightSelected(false);
+    if (curvedTab.onLeftClick) {
+      return curvedTab.onLeftClick();
+    }
+  };
+  useEffect(() => {
+    if (!!curvedTab.rightSelected && curvedTab.rightSelected) {
+      setRightSelected(true);
+      setLeftSelected(false);
+    } else {
+      setLeftSelected(true);
+      setRightSelected(false);
+    }
+  }, [curvedTab.rightSelected]);
+
   return (
     <div id={testId}>
-      <div className={classes.FormContainerCurvedMainCurve}>
-        <div className={classes.FormContainerCurvedLeftCurve}>
-          <div
-            className={classes.FormContainerCurvedFirstCurveWr}
-            style={{
-              backgroundColor: !!RightSelected ? "#ffffff" : "#c4c4c4"
-            }}
-          >
+      <div className={classes.MainCurve}>
+        <div className={classes.LeftCurve}>
+          <div className={classes.FirstCurveWr}>
             <div
-              onClick={() => {
-                setLeftSelected(true);
-                setRightSelected(false);
-              }}
-              className={classes.FormContainerCurvedFirstCurve}
+              onClick={onLeftClick}
+              className={classes.FirstCurve}
               style={{
-                backgroundColor: !!LeftSelected ? "#ffffff" : "#c4c4c4"
+                backgroundColor: leftColors(),
               }}
             >
               {!!LeftSelected ? (
@@ -45,21 +82,30 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
           </div>
           <span style={{ backgroundColor: "transparent", display: "flex" }}>
             <div
-              className={classes.FormContainerCurvedSecondCurveWr}
+              className={classes.SecondCurveWr}
               style={{
-                backgroundColor: !!LeftSelected ? "#ffffff" : "#c4c4c4"
+                backgroundColor: leftColors(),
               }}
             >
               <div
-                onClick={() => {
-                  setLeftSelected(false);
-                  setRightSelected(true);
-                }}
-                className={classes.FormContainerCurvedSecondCurve}
+                onClick={onRightClick}
+                className={classes.SecondCurve}
                 style={{
-                  backgroundColor: !!RightSelected ? "#ffffff" : "#c4c4c4"
+                  backgroundColor: rightColors(),
                 }}
               >
+                {!!RightSelected && (
+                  <div className={classes.leftCurveIcon}>
+                    <Icon
+                      icon={"tab-curve"}
+                      color={"#ffffff"}
+                      style={{
+                        height: "3.18rem",
+                        width: "3.8rem",
+                      }}
+                    />
+                  </div>
+                )}
                 {!!RightSelected ? (
                   <B_17_BLACK>{curvedTab.rightTab}</B_17_BLACK>
                 ) : (
@@ -68,29 +114,26 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
               </div>
             </div>
             <Icon
-              // size={30}
-              icon={"tab-curbe"}
-              color={!!RightSelected ? "#ffffff" : "#c4c4c4"}
+              icon={"tab-curve"}
+              color={rightColors()}
               style={{
                 marginLeft: "-1.5rem",
                 height: "3.18rem",
-                width: "3.8rem"
+                width: "3.8rem",
               }}
             />
           </span>
         </div>
 
-        <div className={classes.FormContainerCurvedRightCurve}></div>
+        <div className={classes.RightCurve}></div>
       </div>
 
-      <div className={classes.FormContainerCurvedMain} id={`${testId}-0`}>
-        <div className={classes.FormContainerCurvedContent}>
-          {!!LeftSelected ? (
-            <div id={`${testId}-1`}>{curvedTab.leftContent}</div>
-          ) : (
-            <div id={`${testId}-2`}>{curvedTab.rightContent}</div>
-          )}
-        </div>
+      <div className={classes.Content} id={`${testId}-0`}>
+        {!!LeftSelected ? (
+          <div id={`${testId}-1`}>{curvedTab.leftContent}</div>
+        ) : (
+          <div id={`${testId}-2`}>{curvedTab.rightContent}</div>
+        )}
       </div>
     </div>
   );

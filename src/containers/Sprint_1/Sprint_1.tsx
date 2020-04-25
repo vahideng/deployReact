@@ -661,7 +661,11 @@ class Sprint1 extends Component<Props, State> {
         <Title>FloatingButton</Title>
         <div>
           <div style={{ position: "fixed", bottom: 15, right: "15%" }}>
-            <FloatingButton />
+            <FloatingButton
+              onButtonClick={() =>
+                window.scroll({ top: 0, behavior: "smooth" })
+              }
+            />
           </div>
 
           <FloatingButton darkButton={true} testId={"testId"} />
@@ -722,6 +726,14 @@ class Sprint1 extends Component<Props, State> {
             curvedTab={{
               leftTab: "New Recipient",
               rightTab: "Own/Favorite",
+
+              onLeftClick: () => {
+                alert("onLeftClick");
+              },
+              onRightClick: () => {
+                alert("onRightClick");
+              },
+              rightSelected: true,
               leftContent: (
                 <div>
                   <List
