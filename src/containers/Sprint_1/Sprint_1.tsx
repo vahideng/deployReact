@@ -1023,108 +1023,14 @@ class Sprint1 extends Component<Props, State> {
             </>,
           ]}
         ></Box>
-        <TacModal
-          onCloseClick={() => {
-            alert("Tac Closed");
-          }}
-          maxLength={6}
-          clearIcon={inputValue === "" ? tacClear : !tacClear}
-          clearClickHandler={() => {
-            this.setState({ inputValue: "" });
-          }}
-          inActiveMessage={{
-            title: "Your profile is inactive.",
-            text: "TAC verification is required to activate your profile.",
-          }}
-          inActive={tacInactive}
-          testId={"testId"}
-          onButtonClick={() => {
-            this.setState({ tacInactive: !tacInactive });
-          }}
-          modalIsOpen={TacModalOpen}
-          label={"TAC verification"}
-          value={inputValue}
-          handleChange={(e: any) => {
-            this.setState({
-              inputValue: e.target.value,
-            });
-          }}
-          notValid={inputValue === "" ? true : false}
-          errorMessage={{
-            testId: "testId",
-            errorText: "The TAC is incorrect",
-            subText: "Please try again.",
-          }}
-          content="TAC was sent to your registered mobile number (**** 6867)"
-          link={{
-            text: "Did not receive TAC? Request new",
-            onLinkClick: () => {
-              alert("Tac link");
-            },
-          }}
-          buttonColor={{
-            top: !tacInactive ? "#BDBDBD" : "#FD8585",
-            bottom: !tacInactive ? "#BDBDBD" : "#FF2222",
-          }}
-          buttonTitle={tacInactive ? "Request TAC" : "Continue"}
-          activeStatus={tacClearActiveStatus}
-          activeStatusChild={
-            <div style={{ display: "flex" }}>
-              <Prompt
-                testId={"testId"}
-                iconColor={{ top: "#81D988", bottom: "#5BB362" }}
-                icon={{ name: "Tick-1", color: "#ffffff" }}
-                text="Your profile is successfully activated."
-              />
-            </div>
-          }
-        />
-
-        <PrimaryButton
-          title="Open TacModal"
-          onButtonClick={() => {
-            this.setState({
-              TacModalOpen: true,
-            });
-          }}
-        />
-        <PrimaryButton
-          title="Open TacModal Status"
-          onButtonClick={() => {
-            this.setState({
-              TacModalOpen: true,
-              tacClearActiveStatus: true,
-            });
-          }}
-        />
-        {/* {console.log(this.state.StickyModalOpen)} */}
-        <StickyTimer
-          testId={"testId"}
-          closeTimeoutMS={1000}
-          contentLabel="example"
-          textBefore="Transaction will expire in"
-          onCLoseButtonCLick={() => alert("clicked")}
-          modalIsOpen={StickyModalOpen}
-          expirationTime={20}
-          expirationText="Seconds"
-          text={
-            "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
-          }
-        />
-        <PrimaryButton
-          title="Open StickyTimer"
-          onButtonClick={() => {
-            this.setState({
-              StickyModalOpen: true,
-            });
-          }}
-        />
-        <PrimaryButton
-          title="Open GeneralModal"
-          onButtonClick={() => {
-            this.setState({
-              generalModalOpen: true,
-            });
+        <Title>Modals</Title>
+        <div
+          style={{
+            padding: "40px 0",
+            height: 350,
+            display: "flex",
+            justifyContent: "space-between",
+            flexDirection: "column",
           }}
         >
           <TacModal
@@ -1229,7 +1135,6 @@ class Sprint1 extends Component<Props, State> {
             }
           />
         </div>
-        
         <Title>Vertical tab</Title>
         <CenteredDiv>
           <VerticalTab
