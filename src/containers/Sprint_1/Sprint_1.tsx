@@ -237,80 +237,126 @@ class Sprint1 extends Component<Props, State> {
                 alert("Right Clicked");
               },
               leftContent: (
-                <div>
-                  <List
-                    header={{
-                      icon: {
-                        name: "LOGO",
-                        color: "#ff2626",
-                        iconText: "Review & Confirm",
-                      },
+                <div style={{ padding: "1.5rem" }}>
+                  <IconButtons
+                    testId={"testId"}
+                    onButtonClick={(item, index) => {
+                      this.setState({
+                        IconButtonsNum: index,
+                      });
+                      alert(`${item} with index of ${index} clicked`);
                     }}
+                    selected={IconButtonsNum}
+                    label="Transfer To"
                     list={[
                       {
-                        leftLabel: "To",
-                        rightLabel: "Saving Account A",
-                        details: ["8881019596535 | AmBank"],
+                        text: "Account",
+                        icon: {
+                          name: "Account",
+                        },
                       },
                       {
-                        leftLabel: "Amount",
-                        rightLabel: "RM 500.00",
-                        details: ["Fees & Charges: RM 0.00"],
+                        text: "Card2",
+                        icon: {
+                          name: "Card2",
+                        },
                       },
                       {
-                        leftLabel: "Date",
-                        rightLabel: "Transfer Now",
-                        details: ["Today, 5 January 2019"],
+                        text: "Account",
+                        icon: {
+                          name: "Account",
+                        },
                       },
                       {
-                        leftLabel: "Reference",
-                        rightLabel: "House Rental",
+                        text: "Card2",
+                        icon: {
+                          name: "Card2",
+                        },
                       },
                       {
-                        leftLabel: "From",
-                        rightLabel: "Savings Account",
-                        details: [
-                          "2998202013",
-                          "Available Balance: RM 10,301.50",
-                        ],
+                        text: "Account",
+                        icon: {
+                          name: "Account",
+                        },
                       },
                     ]}
+                  />
+
+                  <div style={{ padding: "2rem 0" }}>
+                    <InputField
+                      type="text"
+                      clearClickHandler={() => alert("clear cliked")}
+                      clearIcon={true}
+                      label="input label"
+                      icon={{ name: "Account-2" }}
+                      value={inputValue}
+                      handleChange={(event) => {
+                        this.setState({
+                          inputValue: event.target.value,
+                        });
+                      }}
+                    />
+                  </div>
+                  <InputField
+                    type="text"
+                    label="input label"
+                    value={inputValue}
+                    handleChange={(event) => {
+                      this.setState({
+                        inputValue: event.target.value,
+                      });
+                    }}
                   />
                 </div>
               ),
               rightContent: (
-                <div>
-                  <LinkList
+                <div style={{ padding: "1.5rem" }}>
+                  <SelectionTile
+                    tileStyle={{ margin: ".5rem" }}
+                    onTileClick={(item, index) => {
+                      this.setState({ SelectionTileNum1: index });
+                      alert(
+                        `${item.accountTitle} with indexOf ${index} clicked`
+                      );
+                    }}
+                    selected={SelectionTileNum1}
                     list={[
                       {
-                        label: "Jan 2020 eStatement",
-                        onListClick: () => alert("item-1-clicked"),
+                        avatar: {
+                          name: "Myself Adam Constantine",
+                          src:
+                            "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
+                        },
                       },
                       {
-                        label: "Dec 2019 eStatement",
-                        onListClick: () => alert("item-2-clicked"),
+                        avatar: {
+                          name: "Christina Azalea Rossie",
+                          initials: "CA",
+                          initialsBg: "#f1f1f1",
+                        },
                       },
                       {
-                        label: "Nov 2019 eStatement",
-                        onListClick: () => alert("item-3-clicked"),
-                      },
-                      {
-                        label: "Oct 2019 eStatement",
-                        rightItem: (
-                          <ToggleButton
-                            value={toggled}
-                            onTogglePress={() => {
-                              this.setState({ toggled: !toggled });
-                            }}
-                            toggleOffLabel="NO"
-                            toggleOnLabel="YES"
-                            disabled={false}
-                          />
+                        children: (
+                          <img src={images.common.sampleLogo} width={150} />
                         ),
                       },
                       {
-                        label: "Sep 2019 eStatement",
-                        onListClick: () => alert("item-5-clicked"),
+                        avatar: {
+                          name: "Kurniawan Suriawati",
+                          initials: "KS",
+                        },
+                      },
+                      {
+                        avatar: {
+                          name: "Deevan Raja",
+                          initials: "DR",
+                        },
+                      },
+                      {
+                        avatar: {
+                          name: "Lee Chong Wei",
+                          initials: "LC",
+                        },
                       },
                     ]}
                   />
@@ -797,7 +843,11 @@ class Sprint1 extends Component<Props, State> {
         <Title>FloatingButton</Title>
         <div>
           <div style={{ position: "fixed", bottom: 15, right: "15%" }}>
-            <FloatingButton />
+            <FloatingButton
+              onButtonClick={() =>
+                window.scroll({ top: 0, behavior: "smooth" })
+              }
+            />
           </div>
 
           <FloatingButton darkButton={true} testId={"testId"} />
@@ -858,6 +908,14 @@ class Sprint1 extends Component<Props, State> {
             curvedTab={{
               leftTab: "New Recipient",
               rightTab: "Own/Favorite",
+
+              onLeftClick: () => {
+                alert("onLeftClick");
+              },
+              onRightClick: () => {
+                alert("onRightClick");
+              },
+              rightSelected: true,
               leftContent: (
                 <div>
                   <List
