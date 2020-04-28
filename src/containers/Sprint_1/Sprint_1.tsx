@@ -52,6 +52,7 @@ import TileListView from "src/components/lists/TileListView/TileListView";
 
 import { Redirect } from "react-router-dom";
 import Box from "src/components/wrappers/box/Box";
+import IconTest from "src/assets/iconTest/iconTest";
 
 const {
   B_13_ORANGE_463,
@@ -202,6 +203,8 @@ class Sprint1 extends Component<Props, State> {
             />
           }
         />
+        <Title>Icons</Title>
+        <IconTest />
         <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "white", padding: 50 }}>
           <TransactionList
