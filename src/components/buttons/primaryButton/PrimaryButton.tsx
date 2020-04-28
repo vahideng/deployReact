@@ -8,6 +8,7 @@ interface Props {
   title?: string;
   titleColor?: string;
   buttonColor?: any;
+  height?: number | string;
   width?: number | string;
   onButtonClick: () => void;
   small?: boolean;
@@ -19,6 +20,7 @@ const PrimaryButton: React.FC<Props> = ({
   title = "",
   buttonColor,
   titleColor,
+  height,
   width,
   onButtonClick,
   small,
@@ -33,7 +35,7 @@ const PrimaryButton: React.FC<Props> = ({
         id={`${testId}-0`}
         onClick={onButtonClick}
         className={classes.PrimaryButton}
-        style={{ background: buttonBg, width: width }}
+        style={{ background: buttonBg, width: width, height: height }}
       >
         <B_15_WHITE style={titleColor ? { color: titleColor } : {}}>
           {title}
@@ -46,7 +48,7 @@ const PrimaryButton: React.FC<Props> = ({
         id={testId}
         onClick={onButtonClick}
         className={classes.PrimaryButtonSmall}
-        style={{ background: buttonBg, width: width }}
+        style={{ background: buttonBg, width: width, height: height }}
       >
         <Icon
           icon={icon.name ? icon.name : "Download"}
