@@ -19,6 +19,8 @@ declare type listItem = {
   title?: string;
   tipChildren?: ReactNode;
   titleStyle?: CSSProperties;
+  onTooltipClicked ?: ()=> void
+  showTooltip ?: boolean;
   tooltip?: boolean;
   containerStyle?: CSSProperties;
   data?: {
@@ -131,7 +133,7 @@ const DashboardCart = (props: Props) => {
                     </R_11_GREY969>
                     {cart.tooltip === true &&
                       cart.tipChildren !== undefined && (
-                        <Tooltip tipChildren={cart.tipChildren} tipSize={18} />
+                        <Tooltip showTooltip={cart.showTooltip} onTooltipClicked={cart.onTooltipClicked} tipChildren={cart.tipChildren} tipSize={18} />
                       )}
                   </Row>
                 )}
