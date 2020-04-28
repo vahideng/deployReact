@@ -6,7 +6,6 @@ import Icon from "src/components/assets/icons/icon";
 const { B_17_BLACK, B_17_GREY969 } = Paragraphs;
 interface Props {
   onTileClick: any;
-  // selectedBorderColor?: string;
   selected?: boolean;
   icon?: any;
   accountTitle?: string;
@@ -18,8 +17,7 @@ const VerticalTabSelection: React.FC<Props> = ({
   onTileClick,
   icon,
   accountTitle,
-  tabStyle
-  // selectedBorderColor
+  tabStyle,
 }) => {
   return (
     <div
@@ -38,11 +36,17 @@ const VerticalTabSelection: React.FC<Props> = ({
           {!!accountTitle && (
             <div className={classes.SelectionTileTDiv}>
               {selected ? (
-                <B_17_BLACK className={classes.SelectionTileTitle} style={{fontSize: 15}}>
+                <B_17_BLACK
+                  className={classes.SelectionTileTitle}
+                  style={{ fontSize: 15 }}
+                >
                   {accountTitle}
                 </B_17_BLACK>
               ) : (
-                <B_17_GREY969 className={classes.SelectionTileTitle} style={{fontSize: 15}}>
+                <B_17_GREY969
+                  className={classes.SelectionTileTitle}
+                  style={{ fontSize: 15 }}
+                >
                   {accountTitle}
                 </B_17_GREY969>
               )}

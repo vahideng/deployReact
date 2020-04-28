@@ -52,6 +52,7 @@ import TileListView from "src/components/lists/TileListView/TileListView";
 
 import { Redirect } from "react-router-dom";
 import Box from "src/components/wrappers/box/Box";
+import IconTest from "src/assets/iconTest/IconTest";
 
 const {
   B_13_ORANGE_463,
@@ -203,6 +204,8 @@ class Sprint1 extends Component<Props, State> {
             />
           }
         />
+        <Title>Icons</Title>
+        <IconTest />
         <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "white", padding: 50 }}>
           <TransactionList
@@ -1403,6 +1406,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>VerticalTab with background image</Title>
         <CenteredDiv>
           <VerticalTab
+            tabWidth={"12rem"}
             selectedBorderColor="#FD8585"
             minimize={false}
             data={[
