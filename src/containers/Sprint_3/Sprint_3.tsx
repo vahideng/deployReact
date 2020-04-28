@@ -1097,6 +1097,91 @@ const Sprint3: React.FC<Props> = () => {
         }}
       >
         <AmDropdown
+          containerStyle={{
+            marginBottom: '1rem'
+          }}
+          max="200px"
+          type="text"
+          readOnly={false}
+          disabled={false}
+          clickOnArrow={() => setDropdown(!showDropdown)}
+          showDropdown={showDropdown}
+          dropdownData={[
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+          ]}
+          notValid={false}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The TAC is incorrect",
+            subText: "Please try again.",
+          }}
+          inputClickHandler={() => setDropdown(!showDropdown)}
+          arrowIcon={true}
+          label="dropdown label"
+          icon={{ name: "Account-2" }}
+          value={dropdownValue}
+          handleChange={(event, item, testId) => {
+            console.log(event, testId);
+            handlerDropdown(item);
+          }}
+          inputHandleChange={(item) => alert(item.target.value)}
+          placeholder="place holder"
+        />
+        <AmDropdown
+          max="200px"
+          type="text"
+          readOnly={false}
+          disabled={false}
+          clickOnArrow={() => setDropdown(!showDropdown)}
+          showDropdown={showDropdown}
+          dropdownData={[
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+          ]}
+          notValid={false}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The TAC is incorrect",
+            subText: "Please try again.",
+          }}
+          inputClickHandler={() => setDropdown(!showDropdown)}
+          arrowIcon={true}
+          label="dropdown label"
+          icon={{ name: "Account-2" }}
+          value={dropdownValue}
+          handleChange={(event, item, testId) => {
+            console.log(event, testId);
+            handlerDropdown(item);
+          }}
+          inputHandleChange={(item) => alert(item.target.value)}
+          placeholder="place holder"
+        />
+        <AmDropdown
           max="200px"
           type="text"
           readOnly={false}
