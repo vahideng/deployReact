@@ -1229,6 +1229,7 @@ class Sprint1 extends Component<Props, State> {
             }
           />
         </div>
+        
         <Title>Vertical tab</Title>
         <CenteredDiv>
           <VerticalTab
