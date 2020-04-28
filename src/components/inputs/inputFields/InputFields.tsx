@@ -33,6 +33,8 @@ interface Props {
   onFocus?: (event: FormEvent) => void;
   tipChildren?: ReactNode;
   placeholder?: string;
+  showTooltip ?: boolean;
+  onTooltipClicked ?: ()=> void;
 }
 
 class InputField extends Component<Props, {}> {
@@ -57,7 +59,9 @@ class InputField extends Component<Props, {}> {
       onFocus,
       tacInput,
       tipChildren,
-      placeholder
+      placeholder,
+      showTooltip ,
+  onTooltipClicked 
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);
@@ -74,7 +78,7 @@ class InputField extends Component<Props, {}> {
           <div className={classes.TitleDiv}>
             <B_13_BLACK className={classes.InputFieldLabel}>{label}</B_13_BLACK>
             {tipChildren && (
-              <Tooltip tipChildren={tipChildren} rightAlign={true} />
+              <Tooltip showTooltip={showTooltip} onTooltipClicked={onTooltipClicked}  tipChildren={tipChildren} rightAlign={true} />
             )}
           </div>
         )}
