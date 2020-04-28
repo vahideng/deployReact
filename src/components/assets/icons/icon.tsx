@@ -9,7 +9,7 @@ const Icon: React.FC<{
   icon?: string;
   className?: string;
   style?: CSSProperties;
-}> = ({ testId, color, size = 50, icon, className = "", style = {} }) => {
+}> = ({ testId, color, size = 50, icon, className = "", style }) => {
   return (
     <span id={testId}>
       <IcomoonReact
@@ -18,7 +18,7 @@ const Icon: React.FC<{
         color={color}
         size={size}
         icon={icon!}
-        style={style}
+        style={!!style? style : {display : 'block'}}
       />
     </span>
   );
