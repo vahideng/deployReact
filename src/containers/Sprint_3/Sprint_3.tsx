@@ -908,6 +908,7 @@ const Sprint3: React.FC<Props> = () => {
       >
         <AmAccordion
           testId={"testId"}
+          expandFirst={true}
           hasPadding={true}
           data={[
             {
