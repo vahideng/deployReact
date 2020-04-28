@@ -22,22 +22,18 @@ const PrimaryButton: React.FC<Props> = ({
   width,
   onButtonClick,
   small,
-  icon = { name: "", color: "" }
+  icon = { name: "", color: "" },
 }) => {
+  const buttonBg = !!buttonColor
+    ? `linear-gradient(180deg, ${buttonColor.top} 0%,  ${buttonColor.bottom} 100%)`
+    : "";
   return !small ? (
     <div id={testId}>
       <button
         id={`${testId}-0`}
         onClick={onButtonClick}
         className={classes.PrimaryButton}
-        style={
-          !!buttonColor || width
-            ? {
-                background: `linear-gradient(180deg, ${buttonColor.top} 0%,  ${buttonColor.bottom} 100%)`,
-                width: width
-              }
-            : {}
-        }
+        style={{ background: buttonBg, width: width }}
       >
         <B_15_WHITE style={titleColor ? { color: titleColor } : {}}>
           {title}
@@ -50,14 +46,7 @@ const PrimaryButton: React.FC<Props> = ({
         id={testId}
         onClick={onButtonClick}
         className={classes.PrimaryButtonSmall}
-        style={
-          !!buttonColor || width
-            ? {
-                background: `linear-gradient(180deg, ${buttonColor.top} 0%,  ${buttonColor.bottom} 100%)`,
-                width: width
-              }
-            : {}
-        }
+        style={{ background: buttonBg, width: width }}
       >
         <Icon
           icon={icon.name ? icon.name : "Download"}
