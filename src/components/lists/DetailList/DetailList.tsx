@@ -11,6 +11,8 @@ interface Props {
     leftText: string;
     rightText: string;
     tipChildren?: ReactNode;
+    showTooltip ?: boolean;
+    onTooltipClicked ?: ()=> void;
   }[];
 }
 
@@ -57,7 +59,7 @@ const DetailList: React.FC<Props> = ({ list, title, testId, titleList }) => {
                       className={classes.DetailListToolIcon}
                       id={`${testId}-0${index}`}
                     >
-                      <Tooltip tipChildren={item.tipChildren} testId={testId} />
+                      <Tooltip showTooltip={item.showTooltip} onTooltipClicked={item.onTooltipClicked} tipChildren={item.tipChildren} testId={testId} />
                     </div>
                   )}
                 </div>

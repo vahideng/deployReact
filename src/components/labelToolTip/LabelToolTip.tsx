@@ -12,13 +12,17 @@ interface Props {
   label: string;
   labelStyle?: CSSProperties;
   spaceBetween?: boolean;
+  showTooltip ?: boolean;
+  onTooltipClicked ?: () => void
 }
 
 const LabelToolTip: React.FC<Props> = ({
   tooltipData,
   label,
   labelStyle,
-  spaceBetween
+  spaceBetween,
+  showTooltip,
+  onTooltipClicked
 }) => {
   return (
     <div
@@ -30,6 +34,8 @@ const LabelToolTip: React.FC<Props> = ({
       </div>
       <div>
         <Tooltip
+        onTooltipClicked ={onTooltipClicked}
+          showTooltip ={showTooltip}
           testId={tooltipData.testId}
           tipChildren={tooltipData.tipChildren}
         />

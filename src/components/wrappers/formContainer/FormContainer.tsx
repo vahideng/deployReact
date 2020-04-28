@@ -31,6 +31,8 @@ interface Props {
   tooltip?: ReactNode;
   children?: ReactNode;
   disabled?: boolean;
+  onTooltipClicked ?: ()=> void
+  showTooltip ?: boolean;
 }
 
 const FormContainer: React.FC<Props> = ({
@@ -44,7 +46,9 @@ const FormContainer: React.FC<Props> = ({
   headerSubText,
   headerTimeStamp,
   disabled = false,
-  responsive
+  responsive,
+  onTooltipClicked,
+  showTooltip
 }) => {
   const rightLabelPointer: CSSProperties =
     rightLabel !== undefined && rightLabel.onClick !== undefined
@@ -124,6 +128,8 @@ const FormContainer: React.FC<Props> = ({
               {!!tooltip && (
                 <span className={classes.FormContainerTooltip}>
                   <Tooltip
+                  showTooltip ={showTooltip}
+                  onTooltipClicked={onTooltipClicked}
                     tipChildren={tooltip}
                     color="#FFFFFF"
                     testId={`${testId}-1`}

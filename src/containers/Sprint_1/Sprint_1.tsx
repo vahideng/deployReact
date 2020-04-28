@@ -521,15 +521,15 @@ class Sprint1 extends Component<Props, State> {
                           onActionButtonClick: () => {
                             alert("Fav");
                             this.setState({
-                              actionBtnStatus: !actionBtnStatus
+                              actionBtnStatus: !actionBtnStatus,
                             });
-                          }
+                          },
                         },
                         {
                           label1: "",
                           value1: "",
                           label2: "Other Details",
-                          value2: "-"
+                          value2: "-",
                           //  actionLabel: 'View Receipt',
                           // actionIcon: ''
                         },
@@ -945,6 +945,8 @@ class Sprint1 extends Component<Props, State> {
         <CenteredDiv>
           <FormContainer
             label={"Select your account/card type"}
+            showTooltip={true}
+            onTooltipClicked={()=>alert("clicked!!")}
             tooltip={
               <div>
                 <p style={{ color: "#ffffff" }}>
@@ -1928,6 +1930,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>Tooltips</Title>
         <CenteredDiv>
           <Tooltip
+            showTooltip={true}
             testId={"testId"}
             tipChildren={
               <div>
@@ -2190,6 +2193,8 @@ class Sprint1 extends Component<Props, State> {
               {
                 leftText: "Account Type",
                 rightText: "TRUE Savings Account-i",
+                showTooltip: true,
+                onTooltipClicked: () => alert("clicked"),
                 tipChildren: (
                   <div>
                     <B_14_WHITE>Tips</B_14_WHITE>
@@ -2212,6 +2217,8 @@ class Sprint1 extends Component<Props, State> {
           <DetailListMonthly
             divider={2}
             testId={"testId"}
+            showTooltip={true}
+            onTooltipClicked={() => alert("clicked!!")}
             tipChildren={
               <div>
                 <B_14_WHITE>Tips</B_14_WHITE>
@@ -2227,8 +2234,10 @@ class Sprint1 extends Component<Props, State> {
                     rightText: "RM 40,000.00",
                   },
                   {
-                    leftText: "Your Highest Qualifier so far",
-                    rightText: "RM 20,000.00(Aug 2019)",
+                    leftText: "Your Highest Qualifier so f 200000",
+                    rightText: "RM 20,000.00(Aug 20100)",
+                    showTooltip: true,
+                    onTooltipClicked: () => alert("clicked!!"),
                     tipChildren: (
                       <div>
                         <B_14_WHITE>Tips</B_14_WHITE>
@@ -2369,8 +2378,11 @@ class Sprint1 extends Component<Props, State> {
                     rightText: "eFlex",
                   },
                   {
-                    leftText: "Holder Name",
+                    leftText: "Holder Name vahid",
                     rightText: "Adam Constantine",
+                    showTooltip: true,
+                    onTooltipClicked: () => alert("clicked!!"),
+
                     tipChildren: (
                       <div>
                         <B_14_WHITE>Tips</B_14_WHITE>
@@ -2888,7 +2900,13 @@ class Sprint1 extends Component<Props, State> {
             });
             alert(`${event.target.checked} ${event.target.name} ${testId}`);
           }}
-          children={<div><p> I have read and agree to the</p><p> I have read and agree to the</p><p> I have read and agree to the</p></div>}
+          children={
+            <div>
+              <p> I have read and agree to the</p>
+              <p> I have read and agree to the</p>
+              <p> I have read and agree to the</p>
+            </div>
+          }
         />
         <Checkbox
           testId="testId"

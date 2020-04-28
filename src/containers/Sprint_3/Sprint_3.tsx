@@ -628,6 +628,8 @@ const Sprint3: React.FC<Props> = () => {
         <DashboardCart
           cartList={[
             {
+              showTooltip: true,
+              onTooltipClicked :()=> alert("clickedTooltip"),
               testId: "testId",
               title: "My UT Account",
               subtitle: { content: "123456", icon: "User1" },
@@ -652,7 +654,7 @@ const Sprint3: React.FC<Props> = () => {
               onClickContainer: () => alert("Clicked"),
               tooltip: true,
               footerLabel: "Last Updated: 11 Nov 2019",
-              tipChildren: <div>tip</div>,
+              tipChildren: <div>tip tooltip</div>,
             },
             {
               title: "My Joint UT Account 2001",
@@ -1183,6 +1185,8 @@ const Sprint3: React.FC<Props> = () => {
 
       <CenteredDiv>
         <InputField
+        onTooltipClicked ={()=> alert("tooltipCLicked")}
+        showTooltip ={true}
           tipChildren={
             <div>
               <B_15_WHITE>Password</B_15_WHITE>
@@ -1779,6 +1783,8 @@ const Sprint3: React.FC<Props> = () => {
       <Title>Label Tool Tip</Title>
       <div style={{ padding: "0 25%" }}>
         <LabelToolTip
+          showTooltip={false}
+          onTooltipClicked ={() =>alert("tooltipClicked")}
           label="Portfolio Comparison"
           tooltipData={{
             testId: "101",
@@ -1797,6 +1803,7 @@ const Sprint3: React.FC<Props> = () => {
         <br />
         <LabelToolTip
           spaceBetween={true}
+          showTooltip={true}
           label="Select your proffered account to send and received money"
           labelStyle={{ color: "#444444", fontWeight: 400 }}
           tooltipData={{

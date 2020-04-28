@@ -2518,6 +2518,7 @@ const Sprint4: React.FC<Props> = () => {
         <FormContainer
           disabled
           label={"Select your account/card type"}
+          showTooltip={false}
           tooltip={
             <div>
               <p style={{ color: "#ffffff" }}>Select your account/card type</p>

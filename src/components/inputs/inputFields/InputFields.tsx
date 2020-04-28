@@ -42,6 +42,8 @@ interface Props {
   bottomLabel?: string;
   bottomLabelStyle?: CSSProperties;
   placeholder?: string;
+  showTooltip ?: boolean;
+  onTooltipClicked ?: ()=> void;
 }
 
 class InputField extends Component<Props, {}> {
@@ -65,11 +67,13 @@ class InputField extends Component<Props, {}> {
       onBlur,
       onFocus,
       tacInput,
+      showTooltip,
       tipChildren,
       responsive,
       bottomLabel,
       bottomLabelStyle,
-      placeholder
+      placeholder,
+      onTooltipClicked
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);
@@ -90,7 +94,7 @@ class InputField extends Component<Props, {}> {
           <div className={classes.TitleDiv}>
             <B_13_BLACK className={classes.InputFieldLabel}>{label}</B_13_BLACK>
             {tipChildren && (
-              <Tooltip tipChildren={tipChildren} rightAlign={true} />
+              <Tooltip  onTooltipClicked ={onTooltipClicked} showTooltip ={showTooltip} tipChildren={tipChildren} rightAlign={true} />
             )}
           </div>
         )}
