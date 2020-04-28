@@ -9,14 +9,7 @@ const Icon: React.FC<{
   icon?: string;
   className?: string;
   style?: CSSProperties;
-}> = ({
-  testId,
-  color = "#000000",
-  size = 50,
-  icon,
-  className = "",
-  style = {}
-}) => {
+}> = ({ testId, color, size = 50, icon, className = "", style = {} }) => {
   return (
     <span id={testId}>
       <IcomoonReact

@@ -52,7 +52,7 @@ import TileListView from "src/components/lists/TileListView/TileListView";
 
 import { Redirect } from "react-router-dom";
 import Box from "src/components/wrappers/box/Box";
-import IconTest from "src/assets/iconTest/iconTest";
+import IconTest from "src/assets/iconTest/IconTest";
 
 const {
   B_13_ORANGE_463,
