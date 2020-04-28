@@ -1405,6 +1405,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>VerticalTab with background image</Title>
         <CenteredDiv>
           <VerticalTab
+            tabWidth={"12rem"}
             selectedBorderColor="#FD8585"
             minimize={false}
             data={[
