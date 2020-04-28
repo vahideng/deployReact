@@ -72,3 +72,5 @@ const DetailList: React.FC<Props> = ({ list, title, testId, titleList }) => {
 };
 
 export default DetailList;
+
+

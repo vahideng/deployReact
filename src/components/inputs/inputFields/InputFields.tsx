@@ -67,13 +67,16 @@ class InputField extends Component<Props, {}> {
       onBlur,
       onFocus,
       tacInput,
-      showTooltip,
+  
       tipChildren,
       responsive,
       bottomLabel,
       bottomLabelStyle,
       placeholder,
-      onTooltipClicked
+    
+     
+      showTooltip ,
+  onTooltipClicked 
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);

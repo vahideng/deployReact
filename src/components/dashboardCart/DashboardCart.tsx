@@ -22,6 +22,8 @@ declare type listItem = {
   onTooltipClicked ?: ()=> void;
   
   titleStyle?: CSSProperties;
+  onTooltipClicked ?: ()=> void
+  showTooltip ?: boolean;
   tooltip?: boolean;
   containerStyle?: CSSProperties;
   data?: {

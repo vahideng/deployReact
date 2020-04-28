@@ -79,12 +79,8 @@ class Tooltip extends Component<TooltipProps, {}> {
   }
 }
 
-
-
 export default Tooltip;
 
-
-
-Tooltip.defaultProps={
-  showTooltip:false
-}
+Tooltip.defaultProps = {
+  showTooltip: false,
+};
