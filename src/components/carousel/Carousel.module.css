@@ -1,5 +1,23 @@
 .CarouselItem {
-  padding: 0 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.CarouselItem .Chevrons {
+  cursor: pointer;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 1rem;
+}
+
+.CarouselItem .Children {
+  width: 100%;
+  -webkit-animation: Children 0.4s ease-in-out;
+          animation: Children 0.4s ease-in-out;
+  position: relative;
 }
 
 .CarouselIndicDiv {
@@ -15,11 +33,31 @@
 }
 
 .CarouselIndic {
-  width: 0.37rem;
-  height: 0.37rem;
-  margin: 0.75rem;
+  width: 6px;
+  height: 6px;
+  margin: 12px;
   border: 1px solid #000000;
   border-radius: 50%;
   background-color: transparent;
   z-index: 11;
+  -webkit-transition: background 0.5s ease-in-out, border 1s ease-in-out;
+  transition: background 0.5s ease-in-out, border 1s ease-in-out;
+}
+
+@-webkit-keyframes Children {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes Children {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
 }
