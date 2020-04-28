@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, ReactNode } from "react";
 
 import Modal from "react-modal";
 
@@ -17,10 +17,12 @@ const customStyles = {
     width: "100%",
     left: " 0px",
     padding: "0px",
+    zIndex: 1000000000,
   },
   overlay: {
     background: "rgba(0, 0, 0, 0.5)",
     backgroundBlendMode: "multiply",
+    zIndex: 1000000000,
   },
 };
 interface Props {
@@ -32,6 +34,7 @@ interface Props {
   closeTimeoutMS?: number;
   contentLabel?: string;
   textBefore?: string;
+  children?: ReactNode;
   onCLoseButtonCLick?: () => void;
 }
 interface State {
@@ -55,6 +58,7 @@ class StickyTimer extends Component<Props, State> {
       closeTimeoutMS,
       contentLabel,
       onCLoseButtonCLick,
+      children,
     } = this.props;
 
     return (
@@ -87,7 +91,7 @@ class StickyTimer extends Component<Props, State> {
               </div>
             </div>
             <div className={classes.StickyTimerBottomDiv}>
-              <R_15_BLACK>{text}</R_15_BLACK>
+              {children ? children : <R_15_BLACK>{text}</R_15_BLACK>}
             </div>
           </div>
         </Modal>
