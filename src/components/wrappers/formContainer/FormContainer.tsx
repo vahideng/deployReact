@@ -19,6 +19,8 @@ interface Props {
   label?: string;
   tooltip?: ReactNode;
   children?: ReactNode;
+  onTooltipClicked ?: ()=> void
+  showTooltip ?: boolean;
 }
 
 const FormContainer: React.FC<Props> = ({
@@ -26,7 +28,9 @@ const FormContainer: React.FC<Props> = ({
   label,
   statusIcon,
   tooltip,
-  testId
+  testId,
+  onTooltipClicked,
+  showTooltip 
 }) => {
   return (
     <div>
@@ -74,10 +78,12 @@ const FormContainer: React.FC<Props> = ({
             {!!tooltip && (
               <span className={classes.FormContainerTooltip}>
                 <Tooltip
-                  tipChildren={tooltip}
-                  color="#FFFFFF"
-                  testId={`${testId}-1`}
-                />
+                  showTooltip ={showTooltip}
+                  onTooltipClicked={onTooltipClicked}
+                    tipChildren={tooltip}
+                    color="#FFFFFF"
+                    testId={`${testId}-1`}
+                  />
               </span>
             )}
           </div>
