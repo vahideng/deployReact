@@ -18,8 +18,7 @@ declare type listItem = {
   testId?: string;
   title?: string;
   tipChildren?: ReactNode;
-  showTooltip ?: boolean;
-  onTooltipClicked ?: ()=> void;
+  
   
   titleStyle?: CSSProperties;
   onTooltipClicked ?: ()=> void
