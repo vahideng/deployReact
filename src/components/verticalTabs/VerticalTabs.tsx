@@ -11,6 +11,7 @@ interface Props {
   data: any;
   minimize: boolean;
   defaultIndex?: number;
+  tabWidth?: string;
 }
 const VerticalTabs: React.FC<Props> = ({
   data,
@@ -18,6 +19,7 @@ const VerticalTabs: React.FC<Props> = ({
   selectedBorderColor,
   testId,
   defaultIndex,
+  tabWidth,
 }) => {
   const [defaultActiveKey, setDefaultActiveKey] = useState(
     defaultIndex ? defaultIndex : 0
@@ -32,6 +34,18 @@ const VerticalTabs: React.FC<Props> = ({
       });
     }
   });
+
+  const customStyle = (index: number, borderRight: boolean) => ({
+    borderBottom:
+      index == lastIndex ? "1px solid transparent" : "1px solid #dedede",
+    width: minimize ? "6rem" : tabWidth ? tabWidth : "14.68rem",
+    borderRightColor: borderRight
+      ? selectedBorderColor
+        ? selectedBorderColor
+        : "#ff2626"
+      : "",
+  });
+
   return (
     <Tab.Container
       id={`verticalTabs ${testId}`}
@@ -50,26 +64,7 @@ const VerticalTabs: React.FC<Props> = ({
                         onTileClick={() => item.onClick(index)}
                         icon={{ name: item.icon.name, color: item.icon.color }}
                         accountTitle={`${minimize ? "" : item.accountTitle}`}
-                        tabStyle={
-                          item.selected
-                            ? {
-                                borderRightColor: selectedBorderColor
-                                  ? selectedBorderColor
-                                  : "#ff2626",
-                                borderBottom:
-                                  index == lastIndex
-                                    ? "1px solid transparent"
-                                    : "1px solid #dedede",
-                                width: minimize ? "6rem" : "14.68rem",
-                              }
-                            : {
-                                borderBottom:
-                                  index == lastIndex
-                                    ? "1px solid transparent"
-                                    : "1px solid #dedede",
-                                width: minimize ? "6rem" : "14.68rem",
-                              }
-                        }
+                        tabStyle={customStyle(index, item.selected)}
                       />
                     </Nav.Link>
                   </Nav.Item>
