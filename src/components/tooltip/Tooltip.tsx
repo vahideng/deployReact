@@ -61,7 +61,7 @@ class Tooltip extends Component<TooltipProps, {}> {
               <Icon
                 icon={!showTooltip ? "system-info" : "system-close-grey"}
                 color={!!color ? color : "#000000"}
-                size={23}
+                size={tooltipSize}
               />
             </div>
             {showTooltip && (
