@@ -365,6 +365,7 @@ const Sprint4: React.FC<Props> = () => {
       <Title>Box_V2 (Update - Responsive)</Title>
       <Box_V2
         responsive={true}
+        darkShadow
         split={true}
         leftTitle={"Cancel"}
         onLeftButton={() => alert("Cancel")}
