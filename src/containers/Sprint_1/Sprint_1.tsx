@@ -204,7 +204,6 @@ class Sprint1 extends Component<Props, State> {
             />
           }
         />
-
         <Title>FormContainer curvedTab</Title>
         <CenteredDiv
           style={{
@@ -216,7 +215,7 @@ class Sprint1 extends Component<Props, State> {
             curvedTab={{
               leftTab: "New Recipient",
               rightTab: "Own/Favorite",
-              rightSelected: rightSelect,
+              rightSelected: true,
               onLeftClick: () => {
                 alert("Left Clicked");
               },
@@ -471,7 +470,6 @@ class Sprint1 extends Component<Props, State> {
             },
           ]}
         />
-
         <Title>LinkList</Title>
         <CenteredDiv style={{ backgroundColor: "#EEEEEE" }}>
           <FormContainer
@@ -821,9 +819,7 @@ class Sprint1 extends Component<Props, State> {
 
           <FloatingButton darkButton={true} testId={"testId"} />
         </div>
-
         <Title>List</Title>
-
         <CenteredDiv>
           <FormContainer
             children={
@@ -865,7 +861,6 @@ class Sprint1 extends Component<Props, State> {
             }
           />
         </CenteredDiv>
-
         <Title>FormContainer curvedTab</Title>
         <CenteredDiv
           style={{
@@ -1033,7 +1028,6 @@ class Sprint1 extends Component<Props, State> {
             }
           />
         </CenteredDiv>
-
         <MenuBanner
           testId={"testId"}
           notification={true}
@@ -1230,7 +1224,6 @@ class Sprint1 extends Component<Props, State> {
             </div>
           }
         />
-
         <PrimaryButton
           title="Open TacModal"
           onButtonClick={() => {
@@ -1280,7 +1273,7 @@ class Sprint1 extends Component<Props, State> {
             });
           }}
         />
-          <PrimaryButton
+        <PrimaryButton
           title="Open GeneralModal"
           onButtonClick={() => {
             this.setState({
@@ -1288,7 +1281,6 @@ class Sprint1 extends Component<Props, State> {
             });
           }}
         />
-       
         />
         <Title>Modals</Title>
         <div
@@ -1666,7 +1658,6 @@ class Sprint1 extends Component<Props, State> {
             ]}
           />
         </CenteredDiv>
-
         <Title>VerticalTab with background image</Title>
         <CenteredDiv>
           <VerticalTab
@@ -1825,7 +1816,6 @@ class Sprint1 extends Component<Props, State> {
             ]}
           />
         </CenteredDiv>
-
         <CenteredDiv>
           <VerticalTab
             selectedBorderColor="#FD8585"
@@ -2536,7 +2526,6 @@ class Sprint1 extends Component<Props, State> {
             icon={{ name: "Account", color: "#000000", size: 30 }}
           />
         </div>
-
         <SelectionTile
           testId={"testId"}
           onTileClick={(item, index) => {
@@ -2567,7 +2556,6 @@ class Sprint1 extends Component<Props, State> {
             },
           ]}
         />
-
         <SelectionTile
           onTileClick={(item, index) => {
             this.setState({ SelectionTileNum1: index });
@@ -2716,7 +2704,6 @@ class Sprint1 extends Component<Props, State> {
             },
           ]}
         />
-
         <Title>InputField</Title>
         <InputField
           type="text"
@@ -2781,7 +2768,6 @@ class Sprint1 extends Component<Props, State> {
             });
           }}
         />
-
         <Title>AMTabs</Title>
         <CenteredDiv>
           <AMTabs
@@ -2813,13 +2799,11 @@ class Sprint1 extends Component<Props, State> {
             backgroundColor: ["#7AB497", "#FFA463"],
           }}
         />
-
         <Title>ZeroResult</Title>
         <ZeroResult
           text={`We can’t seem to find any result for 
           “Damansara Heights”`}
         />
-
         <Title>LabeledIcon</Title>
         <LabeledIcon
           leftLabel="Powered by"
@@ -2829,9 +2813,7 @@ class Sprint1 extends Component<Props, State> {
           rightLabel="AmBank"
           icon={{ name: "Account", color: "#000000", size: 30 }}
         />
-
         <Title>InlineMessage</Title>
-
         <CenteredDiv>
           <InlineMessage
             testId={"testId"}
@@ -2839,9 +2821,7 @@ class Sprint1 extends Component<Props, State> {
             subText="Please try again."
           />
         </CenteredDiv>
-
         <Title>PrimaryButton</Title>
-
         <div>
           <PrimaryButton
             title="Load More"
@@ -2915,7 +2895,6 @@ class Sprint1 extends Component<Props, State> {
           What would you like
           to do today?"
         />
-
         <Title>TextButtonList</Title>
         <TextButtonList
           testId="testId"
@@ -2934,7 +2913,6 @@ class Sprint1 extends Component<Props, State> {
           footerText="  Copyright © AmBank (M) Berhad (Company No. 8515-D) All Rights
           Reserved."
         />
-
         <Title>TextButton</Title>
         <TextButton
           testId="testId"
@@ -2956,7 +2934,6 @@ class Sprint1 extends Component<Props, State> {
             }}
           />
         </CenteredDiv>
-
         <Title>Logo</Title>
         <Logo icon={{ name: "QR", size: 40, color: "black" }} testId="testId" />
         <CenteredDiv>
@@ -2969,7 +2946,6 @@ class Sprint1 extends Component<Props, State> {
             }}
           />
         </CenteredDiv>
-
         <Logo
           image={{
             src: images.common.sampleLogo,
@@ -2977,7 +2953,6 @@ class Sprint1 extends Component<Props, State> {
             height: 50,
           }}
         />
-
         <Title>Checkbox</Title>
         <Checkbox
           testId="testId"
@@ -3002,7 +2977,6 @@ class Sprint1 extends Component<Props, State> {
             alert(`${event.target.checked} ${event.target.name} ${testId}`);
           }}
         />
-
         <Title>FooterLogo</Title>
         <FooterLogo
           onLogoClick={(logo, index) => {
@@ -3087,7 +3061,6 @@ class Sprint1 extends Component<Props, State> {
             },
           ]}
         />
-
         <Title>BackButton</Title>
         <BackButton
           testId={"testId"}
@@ -3096,7 +3069,6 @@ class Sprint1 extends Component<Props, State> {
             alert("BackButton clicked");
           }}
         />
-
         <Title>Profile</Title>
         <Profile
           testId={"testId"}
@@ -3118,9 +3090,7 @@ class Sprint1 extends Component<Props, State> {
             "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
           }
         />
-
         <Title>StatusIcon</Title>
-
         <RowDiv>
           <StatusIcon
             icon={{ name: "Tick-1" }}
@@ -3146,7 +3116,6 @@ class Sprint1 extends Component<Props, State> {
             }}
           />
         </RowDiv>
-
         <Title>Prompt</Title>
         <Prompt
           testId={"testId"}
@@ -3154,7 +3123,6 @@ class Sprint1 extends Component<Props, State> {
           icon={{ name: "Tick-1", color: "#ffffff" }}
           text="Your profile is successfully activated."
         />
-
         <Title>DetailSummary</Title>
         <DetailSummary
           mainTitle="Protected by PIDM up to RM 250,000 for each depositor"
