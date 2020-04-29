@@ -62,7 +62,11 @@ const VerticalTabs: React.FC<Props> = ({
                       <VerticalTabSelection
                         selected={item.selected}
                         onTileClick={() => item.onClick(index)}
-                        icon={{ name: item.icon.name, color: item.icon.color }}
+                        icon={{
+                          name: item.icon.name,
+                          color: item.icon.color,
+                          size: item.icon.size,
+                        }}
                         accountTitle={`${minimize ? "" : item.accountTitle}`}
                         tabStyle={customStyle(index, item.selected)}
                       />
