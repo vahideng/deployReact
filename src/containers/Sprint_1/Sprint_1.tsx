@@ -997,7 +997,9 @@ class Sprint1 extends Component<Props, State> {
                     subText: "Please try again.",
                   }}
                   type="text"
-                  clearClickHandler={() => alert("clear clicked")}
+                  clearClickHandler={() => {
+                    console.log('clicked')
+                  }}
                   clearIcon={true}
                   label="input label"
                   icon={{ name: "Account-2" }}
