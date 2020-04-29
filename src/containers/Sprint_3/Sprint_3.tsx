@@ -625,6 +625,34 @@ const Sprint3: React.FC<Props> = () => {
         <DashboardCart
           cartList={[
             {
+              selected: true,
+              testId: "testId",
+              title: "My Joint UT Account",
+              subtitle: { content: "112001", icon: "JointAccount" },
+              description: "RM 50,307.57",
+              descriptionRightLabel: {
+                type: "loss",
+                percentage: "1.3%",
+              },
+              data: [
+                {
+                  leftSide: {
+                    title: "Profit/Loss",
+                    content: "RM 50,630.30",
+                    type: "loss",
+                  },
+                  rightSide: {
+                    title: "Invested",
+                    content: "RM 50,680,937.87",
+                  },
+                },
+              ],
+              onClickContainer: () => alert("Clicked"),
+              tooltip: true,
+              footerLabel: "Last Updated: 11 Nov 2019",
+              tipChildren: <div>tip</div>,
+            },
+            {
               testId: "testId",
               title: "My UT Account",
               subtitle: { content: "123456", icon: "User1" },
@@ -650,6 +678,16 @@ const Sprint3: React.FC<Props> = () => {
               tooltip: true,
               footerLabel: "Last Updated: 11 Nov 2019",
               tipChildren: <div>tip</div>,
+            },
+            {
+              selected: true,
+              title: "My Joint UT Account 2001",
+              subtitle: { content: "50 Unit Trust Funds" },
+              description: "RM 50,630,307.57",
+              descriptionRightLabel: {
+                type: "loss",
+                percentage: "1.6%",
+              },
             },
             {
               title: "My Joint UT Account 2001",

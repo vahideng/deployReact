@@ -15,12 +15,13 @@ interface SideLabel {
   type?: "profit" | "loss";
 }
 declare type listItem = {
+  selected?: boolean;
   testId?: string;
   title?: string;
   tipChildren?: ReactNode;
   titleStyle?: CSSProperties;
-  onTooltipClicked ?: ()=> void
-  showTooltip ?: boolean;
+  onTooltipClicked?: () => void;
+  showTooltip?: boolean;
   tooltip?: boolean;
   containerStyle?: CSSProperties;
   data?: {
@@ -45,9 +46,6 @@ interface Props {
   cartList?: listItem[];
 }
 
-const cursorPointer = (cart: any) => {
-  return cart.onClickContainer !== undefined ? classes.CursorPointer : "";
-};
 const DashboardCart = (props: Props) => {
   const ProfitOrLoss = (type: "loss" | "profit" | undefined) => {
     if (type === "loss") {
@@ -67,20 +65,25 @@ const DashboardCart = (props: Props) => {
             <div
               key={index}
               id={`${cart.testId}`}
-              className={`${classes.Container} ${cursorPointer(cart)}`}
+              className={`${classes.Container} ${!cart.selected &&
+                classes.notSelected}`}
               style={cart.containerStyle}
               onClick={cart.onClickContainer}
             >
               <section>
                 <R_18_GREY444>{cart.title}</R_18_GREY444>
-                <Row className={classes.Subtitle}>
-                  {cart.subtitle.icon !== undefined ? (
-                    <Icon icon={cart.subtitle.icon} size={20} />
-                  ) : null}
+                <div className={classes.Subtitle}>
+                  {cart.subtitle.icon && (
+                    <Icon
+                      icon={cart.subtitle.icon}
+                      size={25}
+                      style={{ marginLeft: -4 }}
+                    />
+                  )}
                   <R_13_BLACK style={cart.subtitle.style}>
                     {cart.subtitle.content}
                   </R_13_BLACK>
-                </Row>
+                </div>
                 <div
                   className={classes.Description}
                   style={!cart.data ? { padding: 0 } : {}}
@@ -133,13 +136,19 @@ const DashboardCart = (props: Props) => {
                     </R_11_GREY969>
                     {cart.tooltip === true &&
                       cart.tipChildren !== undefined && (
-                        <Tooltip showTooltip={cart.showTooltip} onTooltipClicked={cart.onTooltipClicked} tipChildren={cart.tipChildren} tipSize={18} />
+                        <Tooltip
+                          showTooltip={cart.showTooltip}
+                          onTooltipClicked={cart.onTooltipClicked}
+                          tipChildren={cart.tipChildren}
+                          tipSize={18}
+                        />
                       )}
                   </Row>
                 )}
               </section>
-
-              <Icon icon="Right1" size={28} />
+              <span className={classes.chevron}>
+                <Icon icon="Right1" size={28} />
+              </span>
             </div>
           );
         })}
