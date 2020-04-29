@@ -30,7 +30,7 @@
 }
 
 .stDetail {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 
 .stLink {
@@ -39,7 +39,7 @@
 }
 
 .stIconDetail {
-  padding-left: 1rem;
+  padding-left: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
