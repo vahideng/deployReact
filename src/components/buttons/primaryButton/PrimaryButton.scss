@@ -39,5 +39,7 @@
 .fluid {
   width: 100% !important;
   min-width: 10rem !important;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

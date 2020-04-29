@@ -86,17 +86,19 @@ const TransactionWithNote: React.FC<TransactionWithNoteProps> = ({
           />
         </div>
 
-        <div style={{ marginBottom: '1.5em' }}>
+        <div>
           <R_15_BLACK>
            {statusText}
         </R_15_BLACK>
-        </div>
+        <div  style={{ marginTop: '1.5em' }}>
         <PrimaryButton
          responsive={responsive}
           title={Btntitle}
-          width={Btnwidth}
+          width={Btnwidth ? Btnwidth : '25rem'}
           onButtonClick={onButtonClick}
         />
+        </div>
+        </div>
       </CenteredDiv>
     </div>
   );
