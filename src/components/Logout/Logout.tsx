@@ -107,7 +107,7 @@ const Logout: React.FC<LogoutProps> = ({
         <B_24_BLACK className={classes.headerTitle} style={header.titleStyle}>
             {title}
       </B_24_BLACK>
-      <br />
+
                 <p className={classes.subContent}>
                  {subTitle}
                 </p>     
