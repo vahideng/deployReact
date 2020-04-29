@@ -8,6 +8,9 @@ interface Props {
   outerIconColor?: string;
   icon?: any;
   image?: any;
+  outerRoundSize?:any;
+  innerRoundSize?:any;
+  iconSize?:number;
 }
 
 const StatusIcon: React.FC<Props> = ({
@@ -15,34 +18,50 @@ const StatusIcon: React.FC<Props> = ({
   icon,
   image,
   testId,
-  outerIconColor
+  outerIconColor,
+  outerRoundSize,
+  innerRoundSize,
+  iconSize
 }) => {
+    let outer:{} = !!outerRoundSize && {width:outerRoundSize,height:outerRoundSize};
+    let inner:{} = !!innerRoundSize && {width:innerRoundSize,height:innerRoundSize};
   return (
     <>
       <div
         id={!!testId ? testId : ""}
         className={classes.outerRound}
-        style={{
+        style={
+          {
+          ...outer,  
           backgroundColor: outerIconColor
             ? outerIconColor
-            : `${iconColor.top}70`
-        }}
+            : `${iconColor.top}70`,
+            borderRadius : !!outerRoundSize ? outerRoundSize/2 : '3.125rem',
+        }
+      }
       >
         <div
           className={classes.innerRound}
           style={
             !!iconColor
               ? {
-                  background: `linear-gradient(180deg, ${iconColor.top} 0%,  ${iconColor.bottom} 100%)`
+                ...inner,
+              background: `linear-gradient(180deg, ${iconColor.top} 0%,  ${iconColor.bottom} 100%)`,
+              borderRadius : !!innerRoundSize ? innerRoundSize/2 : '2.31rem',
+            
                 }
-              : {}
+              : {
+                ...inner,
+                borderRadius : !!innerRoundSize ? innerRoundSize/2 : '2.31rem'
+              }
+              
           }
         >
           {!!icon && (
             <Icon
               icon={icon.name ? icon.name : "Tick-1"}
               color={icon.color ? icon.color : "#ffffff"}
-              size={26}
+              size={!!iconSize ? iconSize :26}
             />
           )}
           {!!image && (
