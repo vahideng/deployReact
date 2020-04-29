@@ -167,7 +167,7 @@ const RightComponent: React.FC<RightComponentProps> = ({ item, isOpen }) => {
   if (expandable) {
     return (
       <ExpandIcon
-        testId="link-list-test-toggle"
+        testId="link-list-toggle"
         isOpen={isOpen}
         content={rightItem}
       />
@@ -177,7 +177,7 @@ const RightComponent: React.FC<RightComponentProps> = ({ item, isOpen }) => {
     <>{rightItem}</>
   ) : (
     <span className={classes.ToggleIcon}>
-      <Icon icon="Right1" size={22} color="#444444" />
+      <Icon icon="Right1" size={22} color="#000" />
     </span>
   );
 };
@@ -202,13 +202,13 @@ const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, isOpen }) => {
           <Icon
             icon="Fail-2"
             size={12}
-            color="#444444"
+            color="#000"
             style={{ marginRight: 7 }}
           />
         </span>
       ) : (
         <span className={classes.ToggleIcon}>
-          <Icon icon="Edit" size={25} color="#444444" />
+          <Icon icon="Edit" size={25} color="#000" />
         </span>
       )}
     </div>

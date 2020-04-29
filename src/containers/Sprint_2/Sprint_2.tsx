@@ -173,7 +173,7 @@ const Sprint2: React.FC<Props> = () => {
       </div>
       <Title>SettingModalCenter</Title>
       <SettingModalCenter
-        onRequestClose={() => alert("close")}
+        onRequestClose={() => setSettingModalCenter(false)}
         testId={"testId"}
         modalIsOpen={settingModalCenter}
         modalChildren={
@@ -192,33 +192,7 @@ const Sprint2: React.FC<Props> = () => {
                   padding: "2rem",
                 }}
               >
-                <p style={{ textAlign: "center" }}>
-                  The amount entered exceeds the transaction limit set in your
-                  settings. Would you like to change your limit now?
-                </p>
-                <div
-                  style={{
-                    display: "flex",
-                    width: "100%",
-                    justifyContent: "space-between",
-                    padding: "1rem 0",
-                  }}
-                >
-                  <PrimaryButton
-                    title="No, thanks"
-                    onButtonClick={() => {
-                      alert("Button Clicked");
-                    }}
-                  />
-                  <PrimaryButton
-                    onButtonClick={() => {
-                      alert("Button Clicked");
-                    }}
-                    title="Change Limit"
-                    titleColor="#000000"
-                    buttonColor={{ top: "#F6F6F3", bottom: "#EAE9E3" }}
-                  />
-                </div>
+                  <PrimaryButton onButtonClick={() => {}} />
               </div>
             }
           />
