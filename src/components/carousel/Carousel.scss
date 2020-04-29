@@ -46,6 +46,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .CarouselIndic {
   width: 6px;
   height: 6px;
@@ -55,7 +56,9 @@
   background-color: transparent;
   z-index: 11;
   transition: background 0.5s ease-in-out, border 1s ease-in-out;
+  cursor: pointer;
 }
+
 @keyframes Children {
   0% {
     left: -100%;
