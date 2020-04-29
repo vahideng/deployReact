@@ -94,8 +94,6 @@ interface State {
   toggled: boolean;
   tacInactive: boolean;
   homRedirect: boolean;
-  sprint_2Direct: boolean;
-  sprint_3Direct: boolean;
   tacClear: boolean;
   tacClearActiveStatus: boolean;
   navbarScrolled: boolean;
@@ -117,8 +115,6 @@ class Sprint1 extends Component<Props, State> {
     verticalActiveTab: 3,
     toggled: false,
     homRedirect: false,
-    sprint_2Direct: false,
-    sprint_3Direct: false,
     tacInactive: true,
     tacClear: false,
     tacClearActiveStatus: false,
@@ -141,8 +137,6 @@ class Sprint1 extends Component<Props, State> {
       verticalActiveTab,
       toggled,
       homRedirect,
-      sprint_2Direct,
-      sprint_3Direct,
       tacInactive,
       tacClear,
       tacClearActiveStatus,
@@ -154,12 +148,9 @@ class Sprint1 extends Component<Props, State> {
     if (homRedirect === true) {
       return <Redirect to="/" />;
     }
-    if (sprint_2Direct === true) {
-      return <Redirect to="/sprint-2" />;
-    }
-    if (sprint_3Direct === true) {
-      return <Redirect to="/sprint-3" />;
-    }
+    // if (sprint_2Direct === true) {
+    //   return <Redirect to="/sprint-2" />;
+    // }
 
     return (
       <div style={{ paddingTop: "4rem" }}>
@@ -365,6 +356,8 @@ class Sprint1 extends Component<Props, State> {
             }}
           />
         </CenteredDiv>
+        <Title>Icons</Title>
+        <IconTest />
         <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "white", padding: 50 }}>
           <TransactionList
@@ -469,9 +462,8 @@ class Sprint1 extends Component<Props, State> {
             {
               iconName: "Settings",
               onButtonClick: () => {
-                this.setState({
-                  sprint_3Direct: true,
-                });
+                alert("Settings-Clicked");
+                this.setState({ homRedirect: true });
               },
             },
             {
@@ -777,18 +769,6 @@ class Sprint1 extends Component<Props, State> {
             ]}
           />
         </>
-        <Title>FormContainer with Header</Title>
-        <div style={{ backgroundColor: "#EEEEEE", padding: 100 }}>
-          <FormContainer
-            statusIcon={{
-              icon: "Tick-1",
-              iconColor: { top: "#94EC9B", bottom: "#5BB362" },
-            }}
-            headerText="You have successfully logged out."
-            headerSubText="Logged out on Tuesday"
-            headerTimeStamp="14/05/2019, 03:06PM"
-          />
-        </div>
         <Title>List with Header inside FormContainer with statusIcon</Title>
         <div style={{ backgroundColor: "#EEEEEE", padding: 100 }}>
           <FormContainer
@@ -1015,7 +995,6 @@ class Sprint1 extends Component<Props, State> {
             children={
               <div style={{ padding: "2rem" }}>
                 <InputField
-                  placeholder="Input Your Input"
                   notValid={true}
                   errorMessage={{
                     testId: "testId",
@@ -1026,7 +1005,7 @@ class Sprint1 extends Component<Props, State> {
                   clearClickHandler={() => alert("clear clicked")}
                   clearIcon={true}
                   label="input label"
-                  icon={{ name: "Details" }}
+                  icon={{ name: "Account-2" }}
                   value={inputValue}
                   handleChange={(event) => {
                     this.setState({
@@ -1315,7 +1294,7 @@ class Sprint1 extends Component<Props, State> {
             });
           }}
         />
-        <PrimaryButton
+          <PrimaryButton
           title="Open GeneralModal"
           onButtonClick={() => {
             this.setState({
@@ -1323,7 +1302,120 @@ class Sprint1 extends Component<Props, State> {
             });
           }}
         />
+       
+        />
+        <Title>Modals</Title>
+        <div
+          style={{
+            padding: "40px 0",
+            height: 350,
+            display: "flex",
+            justifyContent: "space-between",
+            flexDirection: "column",
+          }}
+        >
+          <TacModal
+            onCloseClick={() => {
+              alert("Tac Closed");
+            }}
+            maxLength={6}
+            clearIcon={inputValue === "" ? tacClear : !tacClear}
+            clearClickHandler={() => {
+              this.setState({ inputValue: "" });
+            }}
+            inActiveMessage={{
+              title: "Your profile is inactive.",
+              text: "TAC verification is required to activate your profile.",
+            }}
+            inActive={tacInactive}
+            testId={"testId"}
+            onButtonClick={() => {
+              this.setState({ tacInactive: !tacInactive });
+            }}
+            modalIsOpen={TacModalOpen}
+            label={"TAC verification"}
+            value={inputValue}
+            handleChange={(e: any) => {
+              this.setState({
+                inputValue: e.target.value,
+              });
+            }}
+            notValid={inputValue === "" ? true : false}
+            errorMessage={{
+              testId: "testId",
+              errorText: "The TAC is incorrect",
+              subText: "Please try again.",
+            }}
+            content="TAC was sent to your registered mobile number (**** 6867)"
+            link={{
+              text: "Did not receive TAC? Request new",
+              onLinkClick: () => {
+                alert("Tac link");
+              },
+            }}
+            buttonColor={{
+              top: !tacInactive ? "#BDBDBD" : "#FD8585",
+              bottom: !tacInactive ? "#BDBDBD" : "#FF2222",
+            }}
+            buttonTitle={tacInactive ? "Request TAC" : "Continue"}
+            activeStatus={tacClearActiveStatus}
+            activeStatusChild={
+              <div style={{ display: "flex" }}>
+                <Prompt
+                  testId={"testId"}
+                  iconColor={{ top: "#81D988", bottom: "#5BB362" }}
+                  icon={{ name: "Tick-1", color: "#ffffff" }}
+                  text="Your profile is successfully activated."
+                />
+              </div>
+            }
+          />
 
+          <PrimaryButton
+            width={"40rem"}
+            title="Open TacModal"
+            onButtonClick={() => {
+              this.setState({
+                TacModalOpen: true,
+              });
+            }}
+          />
+          <PrimaryButton
+            width={400}
+            title="Open TacModal Status"
+            onButtonClick={() => {
+              this.setState({
+                TacModalOpen: true,
+                tacClearActiveStatus: true,
+              });
+            }}
+          />
+          <PrimaryButton
+            width={"100%"}
+            title="Open StickyTimer"
+            onButtonClick={() => {
+              this.setState({
+                StickyModalOpen: true,
+              });
+            }}
+          />
+          <PrimaryButton
+            title="Open GeneralModal"
+            onButtonClick={() => {
+              this.setState({
+                generalModalOpen: true,
+              });
+            }}
+          />
+          <StickyTimer
+            testId={"testId"}
+            modalIsOpen={StickyModalOpen}
+            expirationTime={20}
+            text={
+              "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
+            }
+          />
+        </div>
         <Title>Vertical tab</Title>
         <CenteredDiv>
           <VerticalTab
@@ -1547,45 +1639,7 @@ class Sprint1 extends Component<Props, State> {
                   color: "#ff2626",
                 },
                 accountTitle: "Loans/ Financing",
-                children: (
-                  <div style={{ width: "52.28rem", padding: "2rem" }}>
-                    <B_13_ORANGE_463>CHILD-4</B_13_ORANGE_463>,
-                    <SelectionTile
-                      // centered={true}
-                      tileStyle={{ margin: ".5rem", width: "15rem" }}
-                      testId={"testId"}
-                      onTileClick={(item, index) => {
-                        this.setState({ SelectionTileNum: index });
-                        alert(
-                          `${item.accountTitle} with indexOf ${index} clicked`
-                        );
-                      }}
-                      selected={SelectionTileNum}
-                      list={[
-                        {
-                          accountTitle: "Saving Account A",
-                          accountNumber: "RM 2,000.00",
-                        },
-                        {
-                          accountTitle: "Ambank AmMoneyLine AmMoneyLine",
-                          accountNumber: "RM 2,000.00",
-                        },
-                        {
-                          accountTitle: "Ambank BonusLink Visa",
-                          accountNumber: "RM 2,000.00",
-                        },
-                        {
-                          accountTitle: "Saving Account B",
-                          accountNumber: "RM 2,000.00",
-                        },
-                        {
-                          accountTitle: "Saving Account C",
-                          accountNumber: "RM 2,000.00",
-                        },
-                      ]}
-                    />
-                  </div>
-                ),
+                children: <B_13_ORANGE_463>CHILD-4</B_13_ORANGE_463>,
               },
               {
                 selected: verticalActiveTab === 4 ? true : false,
@@ -1630,6 +1684,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>VerticalTab with background image</Title>
         <CenteredDiv>
           <VerticalTab
+            tabWidth={"12rem"}
             selectedBorderColor="#FD8585"
             minimize={false}
             data={[
@@ -2654,7 +2709,7 @@ class Sprint1 extends Component<Props, State> {
           label="Transfer To"
           list={[
             {
-              text: "Account Account Account",
+              text: "Account",
               icon: {
                 name: "Account",
               },
@@ -3129,8 +3184,7 @@ class Sprint1 extends Component<Props, State> {
           icon={{ name: "Tick-1", color: "#ffffff" }}
           text="Your profile is successfully activated."
         />
-        <Title>Icons</Title>
-        <IconTest />
+
         <Title>DetailSummary</Title>
         <DetailSummary
           mainTitle="Protected by PIDM up to RM 250,000 for each depositor"

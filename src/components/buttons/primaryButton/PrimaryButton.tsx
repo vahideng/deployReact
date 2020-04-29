@@ -37,24 +37,22 @@ const PrimaryButton: React.FC<Props> = ({
       primaryButton.push(classes.fluid);
   }
 
+  const buttonBg = !!buttonColor
+    ? `linear-gradient(180deg, ${buttonColor.top} 0%,  ${buttonColor.bottom} 100%)`
+    : "";
+  const shadow = shadowed ? "0px 4px 9px rgba(0, 0, 0, 0.140925)" : "";
   return !small ? (
     <div id={testId} className={responsive && classes.fluid}>
       <button
         id={`${testId}-0`}
         onClick={onButtonClick}
-        className={primaryButton.join(" ")}
-        style={
-          buttonColor && 
-             {
-                background: `linear-gradient(180deg, ${buttonColor.top} 0%,  ${buttonColor.bottom} 100%)`,
-                height: height,
-                // minWidth: width ? width : "14rem",
-                boxShadow: shadowed
-                  ? "0px 4px 9px rgba(0, 0, 0, 0.140925)"
-                  : "",
-              }
-           
-        }
+        className={classes.PrimaryButton}
+        style={{
+          background: buttonBg,
+          width: width,
+          height: height,
+          boxShadow: shadow,
+        }}
       >
         <div className={classes.IconDiv}>
           {icon && (
@@ -81,14 +79,12 @@ const PrimaryButton: React.FC<Props> = ({
         id={testId}
         onClick={onButtonClick}
         className={classes.PrimaryButtonSmall}
-        style={
-          !!buttonColor || width
-            ? {
-                background: `linear-gradient(180deg, ${buttonColor.top} 0%,  ${buttonColor.bottom} 100%)`,
-                width: width,
-              }
-            : {}
-        }
+        style={{
+          background: buttonBg,
+          width: width,
+          height: height,
+          boxShadow: shadow,
+        }}
       >
         <Icon
           icon={icon.name ? icon.name : "Download"}
