@@ -33,10 +33,12 @@ import IconButtons from "src/components/buttons/iconButtons/IconButtons";
 import ListWithSelectionTile from "src/components/ListWithSelectionTile/ListWithSelectionTile";
 import RedirectToMobile from "src/components/RedirectToMobile/RedirectToMobile";
 import BannerCarousel from "src/components/banners/bannerCarousel/BannerCarousel";
+import LocalImages from "src/components/assets/images";
 
 import Logout from "src/components/Logout/Logout";
 import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
-const { B_13_ORANGE_463, R_13_GREY444, B_24_BLACK } = Paragraphs;
+import TextWithDetails from "src/components/infographic/textWithDetails/TextWithDetails";
+const { B_13_ORANGE_463, R_13_GREY444, B_24_BLACK} = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -71,6 +73,8 @@ const Sprint4: React.FC<Props> = () => {
   const [actionBtnStatus, setActionBtnStatus] = useState(true);
   const [SelectionTileNum2, setSelectionTileNum2] = useState(3);
   const [stickyTimer, setStickyTimer] = useState(false);
+  const [KeypadTopVal, setKeypadTopVal] = useState(130);
+  const [KeyPadShow, setKeypadShow] = useState(true);
   const tacClear = false;
   const tacClearActiveStatus = false;
 
@@ -3047,6 +3051,101 @@ const Sprint4: React.FC<Props> = () => {
             alert("check");
           }}
         />
+      </div>
+      <div
+        style={{
+          margin: "0 auto",
+          padding: 4,
+          width: "50%",
+          position:'relative'
+        }}
+      >
+        <br />
+        <FormContainer
+          label="Please create a new PIN for your card"
+          children={
+            <div style={{ padding: "2rem",position:'relative' }}>
+                <TextWithDetails
+          title="AmBank Bonuslink Visa"
+          content={["5464 4364 7863 0797"]}
+          image={{ src: LocalImages.common.card }}
+        />
+           <br />
+        <R_13_GREY444>Set your PIN by clicking on the NumPad</R_13_GREY444>
+          <br />
+          <div style={{width:'31.6rem'}}>
+        <InputField
+          notValid={false}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The Password is incorrect",
+            subText: "Please try again.",
+          }}
+          type="text"
+          clearClickHandler={() => alert("clear clicked")}
+          clearIcon={true}
+          label="New Pin"
+          autoFocus
+          icon={{ name: "Lock" }}
+          onFocus={() => {
+            setKeypadShow(true);
+            setKeypadTopVal(130);
+          }}
+          value={""}
+          handleChange={(event) => {
+            alert({
+              inputValue: event.target.value,
+            });
+          }}
+        /></div>
+          <div style={{right:0}}>
+          <AmResetPin
+          testId="testId"
+          keysArray={[5, 8, 1, 0, 4, 6, 2, 9, 3, 7]}
+          onEnterClick={() => {
+            setKeypadShow(false);
+          }}
+          onNumberSelected={(item: any) => {
+            alert(item);
+          }}
+          EnterIcon={{ name: "back-arrow", size: 30, color: "#000000" }}
+          pointerTopVal={KeypadTopVal}
+          showKeyPad={KeyPadShow}
+          keypadStyle={{bottom:0,right:0}}
+        />
+        </div>
+       <br />
+       <div style={{width:'31.6rem'}}>
+        <InputField
+          notValid={false}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The Password is incorrect",
+            subText: "Please try again.",
+          }}
+          type="text"
+          clearClickHandler={() => alert("clear clicked")}
+          clearIcon={true}
+          label="Confirm New Pin"
+          icon={{ name: "Lock" }}
+          value={""}
+          onFocus={() => {
+            setKeypadShow(true);
+            setKeypadTopVal(240);
+          }}
+          handleChange={(event) => {
+            alert({
+              inputValue: event.target.value,
+            });
+           
+          }}
+        />
+     </div>
+            </div>
+          }
+        />
+
+        <br />
       </div>
     </div>
   );
