@@ -50,6 +50,10 @@
 .CardHeader {
   border-bottom: none !important;
   margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-right: 1.5rem !important;
+  padding-left: 1.56rem !important;
 }
 
 .LabelWrapper {

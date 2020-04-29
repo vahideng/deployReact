@@ -1133,7 +1133,7 @@ const Sprint3: React.FC<Props> = () => {
             { value: "ambank", label: "am" },
             { value: "Alpeh", label: "alp" },
           ]}
-          notValid={false}
+          notValid
           errorMessage={{
             testId: "testId",
             errorText: "The TAC is incorrect",
