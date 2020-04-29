@@ -12,6 +12,9 @@ interface Props {
   outerIconColor?: string;
   icon?: { name: string; color?: string };
   image?: { src: string; alt?: string };
+  outerRoundSize?:any;
+  innerRoundSize?:any;
+  iconSize?:number;
 }
 
 const SettingSummary: React.FC<Props> = ({
@@ -21,7 +24,10 @@ const SettingSummary: React.FC<Props> = ({
   iconColor,
   icon,
   image,
-  outerIconColor
+  outerIconColor,
+  outerRoundSize,
+  innerRoundSize,
+  iconSize
 }) => {
   return (
     <div id={testId}>
@@ -34,6 +40,9 @@ const SettingSummary: React.FC<Props> = ({
               icon={icon}
               image={image}
               outerIconColor={outerIconColor}
+              outerRoundSize={outerRoundSize}
+              innerRoundSize={innerRoundSize}
+              iconSize={iconSize}
             />
           </div>
 
