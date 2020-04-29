@@ -7,7 +7,7 @@ const { B_17_BLACK, B_17_GREY969 } = Paragraphs;
 interface Props {
   onTileClick: any;
   selected?: boolean;
-  icon?: any;
+  icon?: { name: string; size?: number; color?: string };
   accountTitle?: string;
   tabStyle: CSSProperties;
 }
@@ -30,8 +30,8 @@ const VerticalTabSelection: React.FC<Props> = ({
           <Icon
             className={classes.Icon}
             icon={!!icon.name ? icon.name : "Alert"}
-            size={50}
-            color={icon.color}
+            size={!!icon.size ? icon.size : 40}
+            color={!!icon.color ? icon.color : "#ff2626"}
           />
           {!!accountTitle && (
             <div className={classes.SelectionTileTDiv}>

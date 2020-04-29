@@ -143,7 +143,7 @@ const Sprint3: React.FC<Props> = () => {
   const checkBoxData = [
     {
       title: "Indah",
-      titleStyle: { marginBottom: '12px' },
+      titleStyle: { marginBottom: "12px" },
       content: ["Biller Code: 68502Ref-1: 65432145432Ref-1: 65432145432"],
       isCheckboxChecked: isCheckboxChecked,
       name: "checkBox",
@@ -629,7 +629,7 @@ const Sprint3: React.FC<Props> = () => {
           cartList={[
             {
               showTooltip: true,
-              onTooltipClicked :()=> alert("clickedTooltip"),
+              onTooltipClicked: () => alert("clickedTooltip"),
               testId: "testId",
               title: "My UT Account",
               subtitle: { content: "123456", icon: "User1" },
@@ -655,6 +655,16 @@ const Sprint3: React.FC<Props> = () => {
               tooltip: true,
               footerLabel: "Last Updated: 11 Nov 2019",
               tipChildren: <div>tip tooltip</div>,
+            },
+            {
+              selected: true,
+              title: "My Joint UT Account 2001",
+              subtitle: { content: "50 Unit Trust Funds" },
+              description: "RM 50,630,307.57",
+              descriptionRightLabel: {
+                type: "loss",
+                percentage: "1.6%",
+              },
             },
             {
               title: "My Joint UT Account 2001",
@@ -1099,7 +1109,7 @@ const Sprint3: React.FC<Props> = () => {
       >
         <AmDropdown
           containerStyle={{
-            marginBottom: '1rem'
+            marginBottom: "1rem",
           }}
           max="200px"
           type="text"
@@ -1271,8 +1281,8 @@ const Sprint3: React.FC<Props> = () => {
 
       <CenteredDiv>
         <InputField
-        onTooltipClicked ={()=> alert("tooltipCLicked")}
-        showTooltip ={true}
+          onTooltipClicked={() => alert("tooltipCLicked")}
+          showTooltip={true}
           tipChildren={
             <div>
               <B_15_WHITE>Password</B_15_WHITE>
@@ -1870,7 +1880,7 @@ const Sprint3: React.FC<Props> = () => {
       <div style={{ padding: "0 25%" }}>
         <LabelToolTip
           showTooltip={false}
-          onTooltipClicked ={() =>alert("tooltipClicked")}
+          onTooltipClicked={() => alert("tooltipClicked")}
           label="Portfolio Comparison"
           tooltipData={{
             testId: "101",
