@@ -42,7 +42,7 @@ const StatusIcon: React.FC<Props> = ({
             <Icon
               icon={icon.name ? icon.name : "Tick-1"}
               color={icon.color ? icon.color : "#ffffff"}
-              size={40}
+              size={26}
             />
           )}
           {!!image && (
