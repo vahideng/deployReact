@@ -15,7 +15,7 @@
     width: 0;
     top:9rem;
     z-index: 1;
-    left:-0.625rem;
+    left:-0.6rem;
     border: medium solid #474747;
     border-width: 10px 10px 10px 0;
     border-color: transparent #474747 transparent transparent;
@@ -41,6 +41,9 @@
     margin-right: 0.625rem;
     margin-bottom: 0.625rem;
     padding: 0.8125rem 1.1875rem 0.75rem 1.25rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     cursor: pointer !important;
     &:active{
       opacity: 0.5;

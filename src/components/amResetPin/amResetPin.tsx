@@ -2,6 +2,7 @@ import React from "react";
 import classes from './amResetPin.module.css';
 import Paragraphs from '../assets/typography';
 import Icon from "src/components/assets/icons/icon";
+import { CSSProperties } from "styled-components";
 const { SB_18_BLACK } = Paragraphs;
 
 
@@ -13,6 +14,7 @@ interface ResetPinProps {
   EnterIcon: { name: string; color?: string; size?: number };
   pointerTopVal?:number;
   showKeyPad:boolean;
+  keypadStyle?:CSSProperties;
 }
 
 type Grow<T, A extends Array<T>> = ((x: T, ...xs: A) => void) extends ((...a: infer X) => void) ? X : never;
@@ -23,7 +25,7 @@ export type FixedArray<T, N extends number> = GrowToSize<T, [], N>;
 
 
 const AmResetPin: React.FC<ResetPinProps> = ({
-  keysArray,onNumberSelected,onEnterClick,EnterIcon,pointerTopVal,showKeyPad
+  keysArray,onNumberSelected,onEnterClick,EnterIcon,pointerTopVal,showKeyPad,keypadStyle
 }) => {
   const {mainContainer,outerContainer,numberContainer,extraPropsContainer,numberPadContainer,tipContentStyle
   } = classes;
@@ -32,7 +34,7 @@ const AmResetPin: React.FC<ResetPinProps> = ({
   return (
     <>
     {showKeyPad && (
-      <div className={mainContainer} >
+      <div className={mainContainer} style={keypadStyle}>
       <div className={tipContentStyle} style={{top:pointerTopVal}}/>
       <div className={outerContainer}>
       <div className={numberPadContainer}>
@@ -61,7 +63,7 @@ const AmResetPin: React.FC<ResetPinProps> = ({
       <SB_18_BLACK>{keysArray[9]}</SB_18_BLACK>
       </div>
      <div className={numberContainer} onClick={onEnterClick}>
-      { !!EnterIcon &&  <Icon icon={EnterIcon.name || "system-close-grey"} color={EnterIcon.color || "#444444"} size={EnterIcon.size || 15} /> }
+      { !!EnterIcon &&  <Icon icon={EnterIcon.name || "back-arrow"} color={EnterIcon.color || "#444444"} size={EnterIcon.size || 15} /> }
      </div>
       </div>
       </div>
