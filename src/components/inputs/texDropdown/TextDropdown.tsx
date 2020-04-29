@@ -35,7 +35,9 @@ const customStyles = (
 
   placeholder: () => ({
     color: !!themColor ? themColor : "#000000",
-    fontWeight: !!boldFont ? 700 : 300
+    fontWeight: !!boldFont ? 700 : 300,
+    fontFamily: "Nunito Sans",
+    fontSize : '13px'
   }),
 
   singleValue: (base: any) => ({
