@@ -49,7 +49,8 @@ const PrimaryButton: React.FC<Props> = ({
         className={classes.PrimaryButton}
         style={{
           background: buttonBg,
-          width: width,
+          maxWidth: !!width?width:'18.4375rem',
+          width:"100%",
           height: height,
           boxShadow: shadow,
         }}
@@ -81,7 +82,7 @@ const PrimaryButton: React.FC<Props> = ({
         className={classes.PrimaryButtonSmall}
         style={{
           background: buttonBg,
-          width: width,
+          width:width,
           height: height,
           boxShadow: shadow,
         }}

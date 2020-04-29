@@ -89,22 +89,24 @@ const ListWithSelectionTile: React.FC<ListWithSelectionTileProps> = ({
           />
           </div>
          <div style={{display:'flex',alignItems:'center',flexDirection:'column'}}>
-          <div style={{padding:'0rem 0rem 1rem 0rem'}}>
+          <div style={{padding:'0rem 0rem 1rem 0rem',width:'100%'}}>
           <PrimaryButton
             title={btn1title}
+            responsive={responsive}
             onButtonClick={onButton1Click}
-            width={btn1width}
+            width={btn1width ? btn1width : "20.43rem"}
           />
        </div>
-       <div>
+           <div style={{width:'100%'}}>
           <PrimaryButton
             onButtonClick={onButton2Click}
+            responsive={responsive}
             title={btn2title}
             titleColor="#000000"
             buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
-            width={btn2width}
+            width={btn2width ? btn2width : "20.43rem"}
           />
-      </div>
+   </div> 
       </div>
       </div>
      
