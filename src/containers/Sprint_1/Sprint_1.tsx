@@ -1408,7 +1408,8 @@ class Sprint1 extends Component<Props, State> {
                   this.setState({ verticalActiveTab: index }),
                 icon: {
                   name: "Account-2",
-                  color: "#ff2626",
+                  color: "#ff1000",
+                  size: 30,
                 },
                 accountTitle: "Savings/Current Accounts",
                 children: (
@@ -1520,8 +1521,9 @@ class Sprint1 extends Component<Props, State> {
                   this.setState({ verticalActiveTab: index }),
 
                 icon: {
-                  name: "Account-2",
+                  name: "Account3",
                   color: "#ff2626",
+                  size: 30,
                 },
                 accountTitle: "Fixed/Term Deposits",
                 children: (
@@ -1727,8 +1729,9 @@ class Sprint1 extends Component<Props, State> {
                 selected: true,
                 onClick: (index: any) => alert(index),
                 icon: {
-                  name: "Account-2",
+                  name: "Account3",
                   color: "green",
+                  size: 20,
                 },
                 accountTitle: "Savings/Current Accounts",
                 children: (
@@ -1825,7 +1828,8 @@ class Sprint1 extends Component<Props, State> {
                 selected: true,
                 onClick: (index: any) => alert(index),
                 icon: {
-                  name: "Card",
+                  name: "Account3",
+                  size: 20,
                   color: "#ff2626",
                 },
                 accountTitle: "Credit Cards",
