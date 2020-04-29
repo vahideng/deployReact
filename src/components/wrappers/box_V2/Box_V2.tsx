@@ -19,6 +19,7 @@ interface Props {
   leftTitle?: string;
   rightTitle?: string;
   boxChildren?: ReactNode;
+  darkShadow?: boolean;
 }
 
 const Box_V2: React.FC<Props> = ({
@@ -36,11 +37,19 @@ const Box_V2: React.FC<Props> = ({
   onRightButton,
   buttonColor,
   boxChildren,
-  responsive
+  responsive,
+  darkShadow,
 }) => {
+  let containerCls = classes.BoxMainDiv
+  if (responsive) {
+    containerCls = `${containerCls} ${classes.BoxMainDivFlexible}`
+  }
+  if (darkShadow) {
+    containerCls = `${containerCls} ${classes.DarkShadow}`
+  }
   return (
     <div
-      className={responsive ? classes.BoxMainDivFlexible : classes.BoxMainDiv}
+      className={containerCls}
     >
       {!!content && (
         <div className={classes.Container}>
