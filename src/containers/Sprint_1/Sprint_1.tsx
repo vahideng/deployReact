@@ -1122,12 +1122,16 @@ class Sprint1 extends Component<Props, State> {
             });
           }}
         />
-        <PrimaryButton
+          <PrimaryButton
           title="Open GeneralModal"
           onButtonClick={() => {
             this.setState({
               generalModalOpen: true,
             });
+          }}
+        />
+       
+        />
         <Title>Modals</Title>
         <div
           style={{

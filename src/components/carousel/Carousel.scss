@@ -1,17 +1,38 @@
 .CarouselItem {
-  padding: 0 6rem;
+  display: flex;
+  overflow: hidden;
+  .Chevrons {
+    cursor: pointer;
+    align-self: center;
+    padding: 1rem;
+  }
+  .Children {
+    width: 100%;
+    animation: Children 0.4s ease-in-out;
+    position: relative;
+  }
 }
+
 .CarouselIndicDiv {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .CarouselIndic {
-  width: 0.37rem;
-  height: 0.37rem;
-  margin: 0.75rem;
+  width: 6px;
+  height: 6px;
+  margin: 12px;
   border: 1px solid #000000;
   border-radius: 50%;
   background-color: transparent;
   z-index: 11;
+  transition: background 0.5s ease-in-out, border 1s ease-in-out;
+}
+@keyframes Children {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
 }
