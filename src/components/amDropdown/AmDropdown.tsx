@@ -1,4 +1,4 @@
-import React, { Component, FormEvent, ChangeEvent } from "react";
+import React, { Component, FormEvent, ChangeEvent, CSSProperties } from "react";
 import Paragraphs from "../assets/typography";
 import classes from "./AmDropdown.module.css";
 import Icon from "src/components/assets/icons/icon";
@@ -44,6 +44,7 @@ interface Props {
   inputClickHandler?: () => void;
   max?: string;
   placeholder?: string;
+  containerStyle?: CSSProperties
 }
 
 class AmDropdown extends Component<Props, {}> {
@@ -88,6 +89,7 @@ class AmDropdown extends Component<Props, {}> {
       max,
       placeholder,
       clickOnArrow,
+      containerStyle,
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       if (inputHandleChange) {
@@ -133,7 +135,7 @@ class AmDropdown extends Component<Props, {}> {
       }
     };
     return (
-      <div className={classes.Container}>
+      <div className={classes.Container} style={containerStyle}>
         <div className={classes.InputFieldMain}>
           {!!label && (
             <B_13_BLACK className={classes.InputFieldLabel}>{label}</B_13_BLACK>
