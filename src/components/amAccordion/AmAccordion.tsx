@@ -16,12 +16,14 @@ interface AccordionSettingProps {
       children?: ReactNode;
     }[];
     hasPadding?: boolean;
+    expandFirst?: boolean;
 }
 
 const AmAccordion: React.FC<AccordionSettingProps> = ({
   data,
   testId,
-  hasPadding = false
+  hasPadding = false,
+  expandFirst = true
 }) => {
   const { CardOuterContainer } = classes;
   const ContentArea = [classes.CardBodyContent];
@@ -33,12 +35,13 @@ const AmAccordion: React.FC<AccordionSettingProps> = ({
         {
           data.map((item: any, index: any) => {
           return (
-            <Accordion key={`accordion-${item.id}-${index}`} id={item.id}>
+            <Accordion key={`accordion-${item.id}-${index}`} id={item.id} defaultActiveKey={expandFirst && "0"}>
               <Card className={classes.CardContainer}>
                 <div className="d-flex">
                   <Col md={12} className={classes.noPad}>
                     <CustomToggle
-                      eventKey={index}
+                      eventKey={`${index}`}
+                      expandFirst={expandFirst}
                       testId={`accordionToggle-${item.id}-${index}`}
                       title={item.title}
                       showIcon={true}
@@ -48,7 +51,7 @@ const AmAccordion: React.FC<AccordionSettingProps> = ({
                   </Col>
                 </div>
 
-                <Accordion.Collapse eventKey={index} key={`accordionCollapse-${item.id}-${index}`} id={`accordionCollapse-${item.id}-${index}`}>
+                <Accordion.Collapse eventKey={`${index}`} key={`accordionCollapse-${item.id}-${index}`} id={`accordionCollapse-${item.id}-${index}`}>
                   <Card.Body className={ContentArea.join(" ")}>
                     {item.children}
                   </Card.Body>
@@ -71,9 +74,10 @@ interface Props {
   showIcon?: boolean;
   closeIcon?: ReactNode;
   openIcon?: ReactNode;
+  expandFirst?: boolean;
 }
 
-const CustomToggle: React.FC<Props> = ({ eventKey, testId, showIcon, title, openIcon, closeIcon }) => {
+const CustomToggle: React.FC<Props> = ({ eventKey, testId, showIcon, title, openIcon, closeIcon, expandFirst }) => {
   const decoratedOnClick = useAccordionToggle(eventKey, () => null);
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -90,7 +94,7 @@ const CustomToggle: React.FC<Props> = ({ eventKey, testId, showIcon, title, open
     >
       <SB_15_BLACK>{title}</SB_15_BLACK>
       {showIcon ? (
-        isOpen ? (
+        isOpen || (eventKey === "0" && expandFirst) ? (
           <span>
             {openIcon || <Icon icon="arrowUp" size={18} color="#444444" />}
           </span>
