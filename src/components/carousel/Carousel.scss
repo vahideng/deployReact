@@ -38,9 +38,12 @@
   .ChildrenWide {
     width: 100%;
     position: relative;
-  }
+  
 }
 
+.leftAnimation {
+  animation: leftAnimation 0.4s ease-in-out;
+}
 .CarouselIndicDiv {
   display: flex;
   justify-content: center;
@@ -65,5 +68,13 @@
   }
   100% {
     left: 0;
+  }
+}
+@keyframes leftAnimation {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
   }
 }
