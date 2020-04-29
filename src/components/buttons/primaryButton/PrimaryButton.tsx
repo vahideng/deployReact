@@ -30,24 +30,22 @@ const PrimaryButton: React.FC<Props> = ({
   shadowed,
   titleStyle,
 }) => {
+  const buttonBg = !!buttonColor
+    ? `linear-gradient(180deg, ${buttonColor.top} 0%,  ${buttonColor.bottom} 100%)`
+    : "";
+  const shadow = shadowed ? "0px 4px 9px rgba(0, 0, 0, 0.140925)" : "";
   return !small ? (
     <div id={testId}>
       <button
         id={`${testId}-0`}
         onClick={onButtonClick}
         className={classes.PrimaryButton}
-        style={
-          buttonColor
-            ? {
-                background: `linear-gradient(180deg, ${buttonColor.top} 0%,  ${buttonColor.bottom} 100%)`,
-                height: height,
-                minWidth: width ? width : "14rem",
-                boxShadow: shadowed
-                  ? "0px 4px 9px rgba(0, 0, 0, 0.140925)"
-                  : "",
-              }
-            : { minWidth: width ? width : "14rem" }
-        }
+        style={{
+          background: buttonBg,
+          width: width,
+          height: height,
+          boxShadow: shadow,
+        }}
       >
         <div className={classes.IconDiv}>
           {icon && (
@@ -74,14 +72,12 @@ const PrimaryButton: React.FC<Props> = ({
         id={testId}
         onClick={onButtonClick}
         className={classes.PrimaryButtonSmall}
-        style={
-          !!buttonColor || width
-            ? {
-                background: `linear-gradient(180deg, ${buttonColor.top} 0%,  ${buttonColor.bottom} 100%)`,
-                width: width,
-              }
-            : {}
-        }
+        style={{
+          background: buttonBg,
+          width: width,
+          height: height,
+          boxShadow: shadow,
+        }}
       >
         <Icon
           icon={icon.name ? icon.name : "Download"}

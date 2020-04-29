@@ -48,24 +48,6 @@ class StickyTimer extends Component<Props, State> {
     closeModal: this.props.modalIsOpen,
   };
 
-  // componentDidMount() {
-  //   myTimer = setInterval(() => {
-  //     this.setState({ seconds: this.state.seconds - 1 });
-  //   }, 1000);
-  // }
-
-  // componentDidUpdate(prevProps: any, prevState: any) {
-  //   if (this.state.seconds !== prevState.seconds && this.state.seconds === 0) {
-  //     this.setState({ closeModal: false }, () => {
-  //       clearInterval(myTimer);
-  //     });
-  //   }
-
-  //   if (this.props.modalIsOpen !== prevProps.modalIsOpen) {
-  //     this.setState({ closeModal: this.props.modalIsOpen });
-  //   }
-  // }
-
   render() {
     const {
       text,
@@ -91,10 +73,7 @@ class StickyTimer extends Component<Props, State> {
             <div className={classes.StickyTimerTopDiv}>
               <img src={LocalImages.common.amSecure} alt="amSecure" />
               <div className={classes.StickyTimerExp}>
-                <R_17_BLACK>
-                  {" "}
-                  {textBefore ? textBefore : "Transaction will expire in"}
-                </R_17_BLACK>
+                {!!textBefore && <R_17_BLACK>{textBefore}</R_17_BLACK>}
                 <B_17_BLACK className={classes.StickyTimerExpTime}>
                   {expirationTime}
                 </B_17_BLACK>
