@@ -28,7 +28,6 @@ import CalendarBox from "src/components/inputs/calendarBox/CalendarBox";
 import images from "src/assets";
 import moment from "moment";
 
-
 const { B_13_ORANGE_463 } = Paragraphs;
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -76,28 +75,28 @@ const Sprint2: React.FC<Props> = () => {
         icon={{
           onIconClick: () => {
             setHomeRedirect(true);
-          }
+          },
         }}
         profile={{
           greeting: "Good Morning",
           name: "Adam Constantine",
           alt: "AVATAR",
           src:
-            "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80"
+            "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
         }}
         rightButtons={[
           {
             iconName: "Time",
-            onButtonClick: () => alert("button-1-Clicked")
+            onButtonClick: () => alert("button-1-Clicked"),
           },
           {
             iconName: "Settings",
-            onButtonClick: () => alert("button-2-Clicked")
+            onButtonClick: () => alert("button-2-Clicked"),
           },
           {
             iconName: "Share",
-            onButtonClick: () => alert("button-3-Clicked")
-          }
+            onButtonClick: () => alert("button-3-Clicked"),
+          },
         ]}
       />
 
@@ -117,7 +116,7 @@ const Sprint2: React.FC<Props> = () => {
       </div>
 
       <BottomModal
-      onRequestClose ={ ()=> alert("close")}
+        onRequestClose={() => alert("close")}
         testId={"testId"}
         modalIsOpen={settingModal}
         modalChildren={
@@ -132,7 +131,7 @@ const Sprint2: React.FC<Props> = () => {
       <Title>SettingModalCenter</Title>
 
       <SettingModalCenter
-      onRequestClose ={ ()=> alert("close")}
+        onRequestClose={() => alert("close")}
         testId={"testId"}
         modalIsOpen={settingModalCenter}
         modalChildren={
@@ -140,7 +139,7 @@ const Sprint2: React.FC<Props> = () => {
             statusIcon={{
               icon: "Tick-1",
               iconColor: { top: "#94EC9B", bottom: "#5BB362" },
-              outerIconColor: "#E5FCE6"
+              outerIconColor: "#E5FCE6",
             }}
             children={
               <div
@@ -148,7 +147,7 @@ const Sprint2: React.FC<Props> = () => {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  padding: "2rem"
+                  padding: "2rem",
                 }}
               >
                 <p style={{ textAlign: "center" }}>
@@ -160,7 +159,7 @@ const Sprint2: React.FC<Props> = () => {
                     display: "flex",
                     width: "100%",
                     justifyContent: "space-between",
-                    padding: "1rem 0"
+                    padding: "1rem 0",
                   }}
                 >
                   <PrimaryButton
@@ -189,7 +188,7 @@ const Sprint2: React.FC<Props> = () => {
         icon={{
           onIconClick: () => {
             setSprint1(true);
-          }
+          },
         }}
         rightButtons={[
           <TextButton
@@ -200,7 +199,7 @@ const Sprint2: React.FC<Props> = () => {
             buttonStyles={{
               color: "#000000",
               fontWeight: 400,
-              fontSize: 15
+              fontSize: 15,
             }}
           />,
           <TextButton
@@ -211,7 +210,7 @@ const Sprint2: React.FC<Props> = () => {
             buttonStyles={{
               color: "#000000",
               fontWeight: 400,
-              fontSize: 15
+              fontSize: 15,
             }}
           />,
           <TextDropdown
@@ -227,9 +226,9 @@ const Sprint2: React.FC<Props> = () => {
               { label: "English", value: "english" },
               { label: "Malay", value: "malay" },
               { label: "Persian", value: "persian" },
-              { label: "中文", value: "中文" }
+              { label: "中文", value: "中文" },
             ]}
-          />
+          />,
         ]}
       />
       <Title>Box_V2</Title>
@@ -242,7 +241,7 @@ const Sprint2: React.FC<Props> = () => {
               errorMessage={{
                 testId: "testId",
                 errorText: "The TAC is incorrect",
-                subText: "Please try again."
+                subText: "Please try again.",
               }}
               type="text"
               clearClickHandler={() => alert("clear clicked")}
@@ -250,7 +249,7 @@ const Sprint2: React.FC<Props> = () => {
               label="input label"
               icon={{ name: "Account-2" }}
               value={""}
-              handleChange={event => {
+              handleChange={(event) => {
                 console.log(event.target.value);
               }}
             />
@@ -263,35 +262,35 @@ const Sprint2: React.FC<Props> = () => {
           icon: {
             name: "LOGO",
             color: "#ff2626",
-            iconText: "Review & Confirm"
-          }
+            iconText: "Review & Confirm",
+          },
         }}
         list={[
           {
             leftLabel: "To",
             rightLabel: "Saving Account A",
-            details: ["8881019596535 | AmBank"]
+            details: ["8881019596535 | AmBank"],
           },
           {
             leftLabel: "Amount",
             rightLabel: "RM 500.00",
             approved: true,
-            details: ["Fees & Charges: RM 0.00"]
+            details: ["Fees & Charges: RM 0.00"],
           },
           {
             leftLabel: "Date",
             rightLabel: "Transfer Now",
-            details: ["Today, 5 January 2019"]
+            details: ["Today, 5 January 2019"],
           },
           {
             leftLabel: "Reference",
-            rightLabel: "House Rental"
+            rightLabel: "House Rental",
           },
           {
             leftLabel: "From",
             rightLabel: "Savings Account",
-            details: ["2998202013", "Available Balance: RM 10,301.50"]
-          }
+            details: ["2998202013", "Available Balance: RM 10,301.50"],
+          },
         ]}
       />
       <Title>BannerHero</Title>
@@ -301,8 +300,8 @@ const Sprint2: React.FC<Props> = () => {
         }}
         buttonText="Learn More"
         content="Total of RM2.5 Million to be won. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab."
-        label="Hero Promotion" 
-        leftImage= {images.common.masterCard}
+        label="Hero Promotion"
+        leftImage={images.common.masterCard}
         showButton={true}
         testId="testId"
         title="Grand Prize RM 1 Million Cash"
@@ -314,14 +313,14 @@ const Sprint2: React.FC<Props> = () => {
           background: "#FFFFFF",
           boxShadow: "0px 2px 7px rgba(0, 0, 0, 0.123279)",
           borderRadius: "20px 20px 0px 0px",
-          margin: "24px 20% auto"
+          margin: "24px 20% auto",
         }}
       >
         <Col
           sm={3}
           style={{
             borderRight: "1px solid #DEDEDE",
-            padding: "0"
+            padding: "0",
           }}
         ></Col>
         <Col sm={9} style={{ padding: "0" }}>
@@ -329,24 +328,24 @@ const Sprint2: React.FC<Props> = () => {
             list={[
               {
                 label: "Transfers",
-                onClick: () => alert("click")
+                onClick: () => alert("click"),
               },
               {
                 label: "Payments",
-                onClick: () => alert("click")
+                onClick: () => alert("click"),
               },
               {
                 label: "Investments",
-                onClick: () => alert("click")
+                onClick: () => alert("click"),
               },
               {
                 label: "Online Shopping",
-                onClick: () => alert("click")
+                onClick: () => alert("click"),
               },
               {
                 label: "FPX Specific Merchant",
-                onClick: () => alert("click")
-              }
+                onClick: () => alert("click"),
+              },
             ]}
             testId="testId"
           />
@@ -358,7 +357,7 @@ const Sprint2: React.FC<Props> = () => {
           <BoxSlider
             sliderItems={[
               {
-                tagText: "ANNOUNCeMeNTS",
+                tagText: "ANNOUNCeMeNTS-1",
                 title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
                 descriptions:
                   "Majlis Perbandaran Nilai and Majlis Perbandaran Seremban have combined to become Majlis Bandaraya Seremban (MBS). You can now pay to MBS via JomPAY on AmOnline through all the different channels such as Consectetur elit. At vero eos et accusamus et iusto odio. Sithfint occ. Neque porro quisquam est qui dolorem adipisci velit",
@@ -366,33 +365,33 @@ const Sprint2: React.FC<Props> = () => {
                   text: "read more",
                   onReadClick: () => {
                     alert("ReadMore");
-                  }
-                }
+                  },
+                },
               },
               {
-                tagText: "ANNOUNCeMeNTS",
-                title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+                tagText: "ANNOUNCeMeNTS-2",
+                title: "And that no State, without its Consent, shall be",
                 descriptions:
                   "The semiotics of the console in faded pinks and yellows. They were dropping, losing altitude in a canyon of rainbow foliage, a lurid communal mural that completely covered the hull of the previous century",
                 readMore: {
                   text: "read more",
                   onReadClick: () => {
                     alert("ReadMore");
-                  }
-                }
+                  },
+                },
               },
               {
-                tagText: "ANNOUNCeMeNTS",
-                title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+                tagText: "ANNOUNCeMeNTS-3",
+                title: "shall be valid to all Cases affecting Ambassadors",
                 descriptions:
-                  "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term"
+                  "We will enlarge our ability to iterate virtually.100 percent accurate!. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term",
               },
               {
-                tagText: "ANNOUNCeMeNTS",
-                title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+                tagText: "ANNOUNCeMeNTS-4",
+                title: "Pay Bills to Majlis Seremban via JomPAY",
                 descriptions:
-                  "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term"
-              }
+                  "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term",
+              },
             ]}
           />
         </Col>
@@ -403,25 +402,25 @@ const Sprint2: React.FC<Props> = () => {
                 title: "Phone Scam",
                 content:
                   "Never respond to phone calls asking for your sensitive banking information.",
-                icon: "Call"
+                icon: "Call",
               },
               {
                 title: "SMS Scam",
                 content:
                   "Never respond to SMS-es informing you have won a contest/reward that you did not participate in",
-                icon: "Inbox"
+                icon: "Inbox",
               },
               {
                 title: "Malware",
                 content: "Never “jailbreak” or “root” your smart phones.",
-                icon: "Hold"
+                icon: "Hold",
               },
               {
                 title: "Email Scam",
                 content:
                   "Never click website links from unknown and suspicious senders",
-                icon: "Target"
-              }
+                icon: "Target",
+              },
             ]}
             tag="Security Alerts"
             testId="testId"
@@ -437,33 +436,31 @@ const Sprint2: React.FC<Props> = () => {
           display: "flex",
           flexDirection: "row",
           marginLeft: "58px",
-          marginRight: "58px"
+          marginRight: "58px",
           // alignItems: "center"
         }}
       >
-        <div style={{ width:"300PX", marginRight:"10px" }}>
+        <div style={{ width: "300PX", marginRight: "10px" }}>
           <FirstBanner
-          onClick={()=>alert("clicked")}
-            
+            onClick={() => alert("clicked")}
             content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
             image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
             tag="tempor incidunt"
             title="Why pick between yield and liquidity? "
           />
         </div>
-        <div  style={{ width:"300PX" , marginRight:"10px"}}>
+        <div style={{ width: "300PX", marginRight: "10px" }}>
           <FirstBanner
-           onClick={()=>alert("clicked")}
+            onClick={() => alert("clicked")}
             content="Consecsadsadsadbdsabkdbaskbdkasbkbadskbdkasbksabbasdasdasdasdadsavasvdusabvhubuybguybgtetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
             image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
             tag="tempor incidunt"
             title="Why pick between yield and liquidity? "
           />
         </div>
-         <div  style={{ width:"300PX", marginRight:"10px" }}>
-      
+        <div style={{ width: "300PX", marginRight: "10px" }}>
           <FirstBanner
-            onClick={()=>alert("clicked")}
+            onClick={() => alert("clicked")}
             content="Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occaecat cupidatat no..."
             image="https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
             tag="tempor incidunt"
@@ -476,7 +473,7 @@ const Sprint2: React.FC<Props> = () => {
       <div
         style={{
           marginLeft: "58px",
-          marginRight: "58px"
+          marginRight: "58px",
         }}
       >
         <SecondBanner
@@ -487,15 +484,16 @@ const Sprint2: React.FC<Props> = () => {
                 "Consectetur Consectetur ConsecteturConsectetur Consectetur  Consectetur  Consectetur Consectetur Consectetur Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
               video:
                 "https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80",
-                
-                title:"Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
+
+              title:
+                "Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion",
             },
             {
               content:
                 "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-               image: images.common.masterCard,
-               title:
-                "em ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloLorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
+              image: images.common.masterCard,
+              title:
+                "em ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloem ipsum doloLorem ipsum dolor sit amet, surreal awesome gabr builds conver assion",
             },
             {
               content:
@@ -503,8 +501,8 @@ const Sprint2: React.FC<Props> = () => {
               image:
                 "https://images.unsplash.com/photo-1532033375034-a29004ea9769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80",
               title:
-                "Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion"
-            }
+                "Lorem ipsum dolor sit amet, surreal awesome gabr builds conver assion",
+            },
           ]}
           linkText="View More"
           title="Lorem Ipsum"
@@ -516,7 +514,7 @@ const Sprint2: React.FC<Props> = () => {
         <div
           style={{
             display: "flex",
-            justifyContent: "center"
+            justifyContent: "center",
           }}
         >
           <CalendarBox
@@ -541,7 +539,7 @@ const Sprint2: React.FC<Props> = () => {
             // margin-bottom: 2rem;
             marginLeft: "55rem",
             marginBottom: "20.44rem",
-            marginRight: "3.62rem"
+            marginRight: "3.62rem",
             // padding-left: 0.93rem;
           }}
         >
@@ -557,16 +555,16 @@ const Sprint2: React.FC<Props> = () => {
                   "Lorem ipsum dolor sit amet, surreal awesome gabr builds",
                 content:
                   "Consectetur elit. At vero eos et accusamus et iusto odio. Excepteur sint occ. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-                highlighted: true
+                highlighted: true,
               },
               {
                 title:
-                  "Lorem ipsum dolor sit amet, surreal awesome gabr builds conversion"
+                  "Lorem ipsum dolor sit amet, surreal awesome gabr builds conversion",
               },
               {
                 title:
-                  "Lorem ipsum dolor sit amet, surreal awesome gabr builds conversion"
-              }
+                  "Lorem ipsum dolor sit amet, surreal awesome gabr builds conversion",
+              },
             ]}
           />
         </div>

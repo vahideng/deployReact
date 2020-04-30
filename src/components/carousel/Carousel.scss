@@ -8,11 +8,10 @@
   }
   .Children {
     width: 100%;
-    animation: Children 0.4s ease-in-out;
     position: relative;
   }
   .leftAnimation {
-    animation: leftAnimation 0.4s ease-in-out;
+    animation: leftAnimation 1.4s ease-in-out;
   }
 }
 
@@ -30,20 +29,4 @@
   background-color: transparent;
   z-index: 11;
   transition: background 0.5s ease-in-out, border 1s ease-in-out;
-}
-@keyframes Children {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 0;
-  }
-}
-@keyframes leftAnimation {
-  0% {
-    right: -100%;
-  }
-  100% {
-    right: 0;
-  }
 }
