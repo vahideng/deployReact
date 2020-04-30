@@ -38,7 +38,7 @@ import LocalImages from "src/components/assets/images";
 import Logout from "src/components/Logout/Logout";
 import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
 import TextWithDetails from "src/components/infographic/textWithDetails/TextWithDetails";
-const { B_13_ORANGE_463, R_13_GREY444, B_24_BLACK} = Paragraphs;
+const { B_13_ORANGE_463, R_13_GREY444, B_24_BLACK, R_19_BLACK_444} = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -2770,18 +2770,18 @@ const Sprint4: React.FC<Props> = () => {
                 padding: "2rem",
               }}
             >
-              <B_24_BLACK style={{ textAlign: "center" }}>
+              <B_24_BLACK style={{ textAlign: "center",marginBottom:'1.5rem' }}>
                 Transfer Unsuccessful
               </B_24_BLACK>
-              <br />
-              <p style={{ textAlign: "center" }}>
+           
+              <R_19_BLACK_444 style={{ textAlign: "center" }}>
                 Your payment of RM 20.50 to Revenue Harvest Sdn. Bhd. is
                 unsuccessful
-              </p>
-              <p style={{ textAlign: "center" }}>
+              </R_19_BLACK_444>
+              <R_19_BLACK_444 style={{ textAlign: "center" }}>
                 Unable to perform this transaction. Please call our Contact
                 Centre for assistance.
-              </p>
+              </R_19_BLACK_444>
               <List
                 itemContainerStyle={{ padding: 0 }}
                 list={[
