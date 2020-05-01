@@ -434,14 +434,14 @@ const Sprint2: React.FC<Props> = () => {
                 },
               },
               {
-                tagText: "ANNOUNCeMeNTS",
-                title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+                tagText: "ANNOUNCeMeNTS-3",
+                title: "shall be valid to all Cases affecting Ambassadors",
                 descriptions:
                   "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term",
               },
               {
-                tagText: "ANNOUNCeMeNTS",
-                title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+                tagText: "ANNOUNCeMeNTS-4",
+                title: "Pay Bills to Majlis Seremban via JomPAY",
                 descriptions:
                   "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term",
               },
@@ -604,7 +604,6 @@ const Sprint2: React.FC<Props> = () => {
           title="Lorem Ipsum"
           linkOnClick={() => alert("click")}
         />
-
         <div
           style={{
             display: "flex",

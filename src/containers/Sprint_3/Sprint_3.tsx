@@ -1697,6 +1697,7 @@ const Sprint3: React.FC<Props> = () => {
       <CenteredDiv>
         <div>
           <BoxId
+            width="30rem"
             title="Active IDs"
             isActive={true}
             list={[
@@ -1749,6 +1750,7 @@ const Sprint3: React.FC<Props> = () => {
           />
 
           <BoxId
+            width={400}
             title="Inactive IDs"
             list={[
               {

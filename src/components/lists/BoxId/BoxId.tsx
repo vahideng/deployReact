@@ -7,6 +7,7 @@ const { B_14_BLACK, B_15_BLACK, R_13_BLACK } = Paragraphs;
 interface Props {
   testId?: string;
   title?: string;
+  width?: number | string;
   titleStyle?: CSSProperties;
   isActive?: boolean;
   list: {
@@ -24,7 +25,7 @@ interface Props {
   }[];
 }
 
-const BoxId = ({ testId, title, titleStyle, list, isActive }: Props) => {
+const BoxId = ({ testId, title, titleStyle, list, isActive, width }: Props) => {
   const [selected, setSelected] = useState(null);
 
   const iconClickHandler = (index: number) => {
@@ -48,7 +49,11 @@ const BoxId = ({ testId, title, titleStyle, list, isActive }: Props) => {
 
   //   const onIconClick = {};
   return (
-    <div id={testId} className={classes.MainDiv}>
+    <div
+      id={testId}
+      className={classes.MainDiv}
+      style={width ? { width: width } : {}}
+    >
       <B_14_BLACK
         className={classes.Title}
         style={
@@ -109,7 +114,7 @@ const BoxId = ({ testId, title, titleStyle, list, isActive }: Props) => {
                                 onClick={() => {
                                   button.onClick();
                                 }}
-                                onBlur={e => onblurHandler(button, e)}
+                                onBlur={(e) => onblurHandler(button, e)}
                                 className={classes.ButtonIconText}
                               >
                                 <Icon icon={button.icon} size={25} />
@@ -179,7 +184,7 @@ const BoxId = ({ testId, title, titleStyle, list, isActive }: Props) => {
                                 onClick={() => {
                                   button.onClick();
                                 }}
-                                onBlur={e => onblurHandler(button, e)}
+                                onBlur={(e) => onblurHandler(button, e)}
                                 className={classes.ButtonIconText}
                               >
                                 <Icon icon={button.icon} size={25} />

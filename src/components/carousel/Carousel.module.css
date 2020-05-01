@@ -65,7 +65,7 @@
   overflow: hidden;
 }
 
-.CarouselItem .Chevrons, .CarouselItemWide .Chevrons {
+.Chevrons {
   cursor: pointer;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -73,16 +73,19 @@
   padding: 1rem;
 }
 
-.CarouselItem .Children, .CarouselItemWide .Children {
+.Children {
   width: 100%;
-  -webkit-animation: Children 0.4s ease-in-out;
-          animation: Children 0.4s ease-in-out;
   position: relative;
 }
 
-.CarouselItem .ChildrenWide, .CarouselItemWide .ChildrenWide {
+.ChildrenWide {
   width: 100%;
   position: relative;
+}
+
+.leftAnimation {
+  -webkit-animation: leftAnimation 0.4s ease-in-out;
+          animation: leftAnimation 0.4s ease-in-out;
 }
 
 .CarouselIndicDiv {
@@ -108,40 +111,4 @@
   -webkit-transition: background 0.5s ease-in-out, border 1s ease-in-out;
   transition: background 0.5s ease-in-out, border 1s ease-in-out;
   cursor: pointer;
-}
-
-@-webkit-keyframes Children {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 0;
-  }
-}
-
-@keyframes Children {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 0;
-  }
-}
-
-@-webkit-keyframes leftAnimation {
-  0% {
-    right: -100%;
-  }
-  100% {
-    right: 0;
-  }
-}
-
-@keyframes leftAnimation {
-  0% {
-    right: -100%;
-  }
-  100% {
-    right: 0;
-  }
 }

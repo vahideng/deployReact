@@ -25,6 +25,7 @@ const CustomCarousel = (props: Props) => {
     };
 
     const onLeftClick = (index: number) => {
+ 
       setStateIndex(stateIndex - 1);
       setRightDisable(false);
       if (index === 1) {
@@ -51,7 +52,7 @@ const CustomCarousel = (props: Props) => {
                   >
                     <Icon icon="left" color="#FF2626" size={32} />
                   </span>
-                  <div className={classes.Children}>{item.children}</div>
+                  <div className={`${classes.Children}`}>{item.children}</div>
                   <span
                     style={
                       rightDisable
@@ -79,7 +80,7 @@ const CustomCarousel = (props: Props) => {
                     ? { backgroundColor: "#000", padding: ".25rem" }
                     : {}
                 }
-                onClick={() => setStateIndex(index)}
+                // onClick={() => setStateIndex(index)}
               ></span>
             );
           })}

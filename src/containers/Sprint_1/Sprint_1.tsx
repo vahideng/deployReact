@@ -676,11 +676,21 @@ class Sprint1 extends Component<Props, State> {
                 equivalentAmount: "RM 4,583",
               },
               {
+                icon: "Plus",
+                iconColor: "#36A03E",
+                iconSize: 40,
                 accountName: "Conversion Account",
                 accountNumber: "20717524",
                 statusLabel: "ACTIVE",
-                statusLabelColor: "#36A03E",
-                amount: "- RM 2,000",
+                amount: "RM 2,000",
+                amountStatus: "Minus",
+              },
+              {
+                accountName: "Conversion Account",
+                accountNumber: "20717524",
+                statusLabel: "ACTIVE",
+                amount: "RM 9,000",
+                amountStatus: "Plus",
               },
               {
                 cardLogo:
