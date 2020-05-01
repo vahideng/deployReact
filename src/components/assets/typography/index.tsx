@@ -465,6 +465,16 @@ const R_19_GREEN_444 = styled.p`
   line-height: 20px;
 `;
 
+const R_19_BLACK_444 = styled.p`
+  font-family: "Nunito Sans";
+  margin: 0;
+  color: #000000;
+  font-weight: 400;
+  font-size: 0.93rem;
+  line-height: 18px;
+`;
+
+
 
 export default {
   R_20_WHITE,
@@ -528,5 +538,6 @@ export default {
   R_12_BLACK,
   SB_18_BLACK,
   R_19_GREY444,
-  R_19_GREEN_444
+  R_19_GREEN_444,
+  R_19_BLACK_444
 };
