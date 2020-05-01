@@ -88,7 +88,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
             <div style={{ display: "flex", flex: 0.7 }}>
               <R_13_BLACK
                 style={{
-                  color: item.statusLabelColor,
+                  color: !!item.statusLabelColor && item.statusLabelColor,
                   fontWeight: 600,
                   display: "flex",
                   flexDirection: "row",
