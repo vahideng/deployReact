@@ -12,7 +12,7 @@ interface Props {
     accountNickName?: string;
     accountNumber: string;
     statusLabel: string;
-    statusLabelColor: string;
+    statusLabelColor?: string;
     statusLabel2?: string;
     statusLabel2Color?: string;
     countryFlagImage?: any;
@@ -20,6 +20,7 @@ interface Props {
     iconSize?: number;
     iconColor?: string;
     amount: string;
+    amountStatus?: "Plus" | "Minus";
     equivalentAmount?: string;
   }[];
   onTileClick: (
@@ -29,7 +30,7 @@ interface Props {
       accountNickName?: string;
       accountNumber: string;
       statusLabel: string;
-      statusLabelColor: string;
+      statusLabelColor?: string;
       countryFlagImage?: any;
       icon?: string;
       iconSize?: number;
@@ -87,7 +88,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
             <div style={{ display: "flex", flex: 0.7 }}>
               <R_13_BLACK
                 style={{
-                  color: item.statusLabelColor,
+                  color: !!item.statusLabelColor && item.statusLabelColor,
                   fontWeight: 600,
                   display: "flex",
                   flexDirection: "row",
@@ -141,7 +142,15 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                     icon={item.icon}
                     color={item.iconColor}
                     size={item.iconSize}
-                    style={{display:'block'}}
+                    style={{ display: "block" }}
+                  />
+                )}
+                {!!item.amountStatus && (
+                  <Icon
+                    icon={item.amountStatus}
+                    color={item.amountStatus === "Plus" ? "#36A03E" : "#ff2626"}
+                    size={30}
+                    style={{ marginRight: -10 }}
                   />
                 )}
                 <B_15_BLACK
