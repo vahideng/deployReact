@@ -219,7 +219,7 @@ class Sprint1 extends Component<Props, State> {
             curvedTab={{
               leftTab: "New Recipient",
               rightTab: "Own/Favorite",
-              rightSelected: true,
+              rightSelected: rightSelect,
               onLeftClick: () => {
                 alert("Left Clicked");
               },

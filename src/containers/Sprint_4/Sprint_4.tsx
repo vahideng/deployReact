@@ -3046,7 +3046,7 @@ const Sprint4: React.FC<Props> = () => {
             },
           ]}
           btntitle="Back to Homepage"
-          btnwidth="25rem"
+          btnwidth="30rem"
           onButtonClick={() => {
             alert("check");
           }}
