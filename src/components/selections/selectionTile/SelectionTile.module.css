@@ -12,6 +12,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .SelectionTileRowResponsive {
@@ -34,12 +36,15 @@
   cursor: pointer;
   -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.129726), 0px 4px 7px rgba(0, 0, 0, 0.11574);
           box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.129726), 0px 4px 7px rgba(0, 0, 0, 0.11574);
+  margin-right: 1rem;
+  width: 14rem;
 }
 
 .SelectionTileWrapperResponsive {
   -webkit-box-flex: 1 !important;
       -ms-flex: 1 !important;
           flex: 1 !important;
+  max-width: 14rem !important;
 }
 
 @media (max-width: 576px) {
