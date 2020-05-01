@@ -23,6 +23,7 @@ interface Props {
       amount: string;
       actionLabel?: string;
       actionIcon?: string;
+      hideButtons?:boolean;
       onActionButtonClick?: () => void;
       details?: {
         label1?: string;
@@ -41,7 +42,8 @@ interface Props {
 const AccountsList: React.FC<Props> = ({
   list,
   onTransactionClick,
-  testId
+  testId,
+  
 }) => {
   return (
     <div className={classes.TransactionIconListMainDiv} id={testId}>
@@ -184,8 +186,9 @@ const AccountsList: React.FC<Props> = ({
                       <R_13_BLACK style={{ fontWeight: 700 }}>
                         {transaction.amount}
                       </R_13_BLACK>
-                    </div>
+                    </div> 
                   </div>
+                { !!transaction.hideButtons ? !transaction.hideButtons : true  &&
                   <div
                     style={{
                       display: "flex",
@@ -228,8 +231,9 @@ const AccountsList: React.FC<Props> = ({
                       </div>
                     </button>
                   </div>
+}
                 </div>
-
+                        
                 {item.expandedIndexes.includes(index) && (
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     {transaction.details &&
@@ -289,7 +293,7 @@ const AccountsList: React.FC<Props> = ({
                                 {transactionDetail.value2}
                               </B_13_BLACK>
                             </div>
-
+                            { !!transaction.hideButtons ? !transaction.hideButtons : true  &&
                             <div
                               style={{
                                 display: "flex",
@@ -335,7 +339,8 @@ const AccountsList: React.FC<Props> = ({
                                 </div>
                               </button>
                             </div>
-                          </div>
+}
+                        </div>
                           {transaction.details &&
                             TDIndex === transaction.details.length - 1 && (
                               <div
