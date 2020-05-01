@@ -3,7 +3,6 @@
 .SelectionTileRow {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
 }
 .SelectionTileWrapper {
   display: flex;
@@ -14,6 +13,7 @@
   border-radius: 0.75rem;
   border-bottom: 0.37rem solid $greyEDE;
   margin: 0 2rem 1.5rem 0;
+  box-shadow: $darkBoxShadow;
 }
 .SelectionTileSelector {
   display: flex;
