@@ -9,6 +9,7 @@ interface Props {
   iconButtons?: {
     icon: string;
     text: string;
+    size?: number;
     onClick?: () => void;
     onBlur?: (event: FormEvent) => void;
   }[];
@@ -37,6 +38,7 @@ const TooltipDropdown = ({ testId, icon, iconButtons }: Props) => {
           <div className={classes.BoxDiv}>
             {iconButtons &&
               iconButtons.map((button, index) => {
+                const { size = 25 } = button
                 return (
                   <div key={index} className={classes.ButtonDiv}>
                     <button
@@ -48,7 +50,7 @@ const TooltipDropdown = ({ testId, icon, iconButtons }: Props) => {
                     >
                       <Icon
                         icon={button.icon}
-                        size={25}
+                        size={size}
                         className={classes.ButtonIcon}
                       />
                       {button.text}
