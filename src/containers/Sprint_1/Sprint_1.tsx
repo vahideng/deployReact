@@ -218,7 +218,7 @@ class Sprint1 extends Component<Props, State> {
             curvedTab={{
               leftTab: "New Recipient",
               rightTab: "Own/Favorite",
-              rightSelected: rightSelect,
+              rightSelected: true,
               onLeftClick: () => {
                 alert("Left Clicked");
               },
@@ -542,9 +542,8 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
-                      onActionButtonClick: () => {
-                        alert("Repeat");
-                      },
+                      hideButtons:true,
+                      onActionButtonClick: () => alert("Repeat"),
                       details: [
                         {
                           label1: "From Account",
@@ -584,6 +583,7 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
+                      hideButtons:false,
                       details: [
                         {
                           label1: "From Account",
@@ -623,6 +623,7 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 1,236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
+                      hideButtons:false,
                       details: [
                         {
                           label1: "From Account",
