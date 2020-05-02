@@ -18,11 +18,6 @@
   position: relative;
 }
 
-.CarouselItem .leftAnimation {
-  -webkit-animation: leftAnimation 1.4s ease-in-out;
-          animation: leftAnimation 1.4s ease-in-out;
-}
-
 .CarouselIndicDiv {
   display: -webkit-box;
   display: -ms-flexbox;
