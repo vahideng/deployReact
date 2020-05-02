@@ -3,7 +3,7 @@ import classes from "./TransactionIconList.module.css";
 import Paragraphs from "../../assets/typography";
 import Icon from "src/components/assets/icons/icon";
 
-const { R_13_BLACK, B_13_BLACK, B_11_WHITE, R_15_BLACK } = Paragraphs;
+const { R_13_BLACK, B_13_BLACK, B_11_WHITE, R_15_BLACK, } = Paragraphs;
 interface Props {
   testId?: string;
   list: {
@@ -148,14 +148,14 @@ const AccountsList: React.FC<Props> = ({
                       SUCCESSFUL
                     </R_13_BLACK>{" "}
                     {/* <--- Spacer with opacity 0*/}
-                    <R_13_BLACK
+                    <B_13_BLACK
                       style={{
                         color: transaction.statusLabelColor,
-                        fontWeight: 450
+                        fontWeight: 'bolder',
                       }}
                     >
                       {transaction.statusLabel}
-                    </R_13_BLACK>
+                    </B_13_BLACK>
                   </div>
 
                   <div

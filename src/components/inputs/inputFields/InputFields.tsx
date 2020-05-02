@@ -26,6 +26,7 @@ interface Props {
     errorText: string;
     subText: string;
   };
+  autoComplete?: string;
   minLength?: number;
   maxLength?: number;
   onBlur?: (event: FormEvent) => void;
@@ -48,6 +49,7 @@ class InputField extends Component<Props, {}> {
       clearClickHandler,
       notValid,
       errorMessage,
+      autoComplete,
       minLength,
       maxLength,
       onBlur,
@@ -82,7 +84,7 @@ class InputField extends Component<Props, {}> {
           )}
 
           <input
-            autoComplete={"off"}
+            autoComplete={autoComplete ? autoComplete : "off"}
             minLength={minLength}
             maxLength={maxLength}
             onBlur={blurHandler}
