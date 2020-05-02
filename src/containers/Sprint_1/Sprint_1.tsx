@@ -539,6 +539,7 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
+                      hideButtons:true,
                       onActionButtonClick: () => alert("Repeat"),
                       details: [
                         {
@@ -574,6 +575,7 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
+                      hideButtons:false,
                       details: [
                         {
                           label1: "From Account",
@@ -613,6 +615,7 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 1,236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
+                      hideButtons:false,
                       details: [
                         {
                           label1: "From Account",
