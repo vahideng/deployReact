@@ -9,6 +9,7 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 1.87rem 1.5rem;
+  background: rgba(196, 196, 196, 0.3);
 }
 
 .LeftDiv {

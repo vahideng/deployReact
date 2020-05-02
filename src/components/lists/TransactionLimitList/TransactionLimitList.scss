@@ -1,3 +1,5 @@
+@import "../../assets/common/common.scss";
+
 .ListContainer {
   padding: 1.5rem;
 }
@@ -13,6 +15,9 @@
   justify-content: space-between;
   margin-bottom: 1rem;
   padding: 1.25rem;
+}
+.ItemContainerSelected {
+  background: $white8F8;
 }
 .ImageContainer {
   display: flex;

@@ -34,7 +34,7 @@ const HeaderWithIButtons = ({
   return (
     <div
       className={classes.MainDiv}
-      style={headerStyle ? headerStyle : {}}
+      style={headerStyle ? headerStyle : { marginTop: '2.5rem' }}
       id={testId}
     >
       <div className={classes.LeftDiv}>
