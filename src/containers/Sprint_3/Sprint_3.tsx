@@ -683,14 +683,13 @@ const Sprint3: React.FC<Props> = () => {
       <Title>TransactionLimitList Hidden</Title>
       <div style={{ width: "60vw", margin: "auto" }}>
         <TransactionLimitList
+          selectedIndex={2}
           list={[
             {
               notify: true,
               label: "AmBank BonusLink Visa BlackGold",
               subDetail: "7565 8767 5821 5409",
-              onClick: (item, index) =>
-                alert(`${JSON.stringify(item)},Index: ${index}`),
-
+              onClick: (_item, index) => console.log(index),
               cardImg: LocalImages.common.card,
               hidden: hiddenList,
               onHiddenButtonClick: () => {
@@ -1344,6 +1343,7 @@ const Sprint3: React.FC<Props> = () => {
         <div style={{ width: 620 }}>
           <HeaderWithIButtons
             headerStyle={{
+              marginTop: '1rem',
               backgroundColor: "rgba(196, 196, 196, 0.3)",
             }}
             icon={{ name: "Amy", color: "#ff2626" }}

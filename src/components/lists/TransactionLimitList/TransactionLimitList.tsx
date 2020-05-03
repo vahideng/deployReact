@@ -29,16 +29,22 @@ interface Props {
     hiddenBtnLabel?: string;
   }[];
   testId?: string;
+  selectedIndex?: number;
 }
 
-const TransactionLimitList: React.FC<Props> = ({ list, testId }: Props) => {
+const TransactionLimitList: React.FC<Props> = ({ list, testId, selectedIndex }: Props) => {
   return (
     <div className={classes.ListContainer} id={`${testId}`}>
       {list &&
-        list.map((item, index) =>
-          item.hidden ? (
+        list.map((item, index) => {
+          const isSelected = index === selectedIndex;
+          let ItemContainerCls = classes.ItemContainer;
+          if (isSelected) {
+            ItemContainerCls = `${classes.ItemContainer} ${classes.ItemContainerSelected}`
+          }
+          return item.hidden ? (
             <div
-              className={classes.ItemContainer}
+              className={ItemContainerCls}
               style={
                 !!item.showShadow
                   ? !!item.shadowStyle
@@ -95,7 +101,7 @@ const TransactionLimitList: React.FC<Props> = ({ list, testId }: Props) => {
             </div>
           ) : (
             <div
-              className={classes.ItemContainer}
+              className={ItemContainerCls}
               style={
                 !!item.showShadow
                   ? !!item.shadowStyle
@@ -141,7 +147,8 @@ const TransactionLimitList: React.FC<Props> = ({ list, testId }: Props) => {
               </div>
             </div>
           )
-        )}
+        })
+      }
     </div>
   );
 };

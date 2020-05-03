@@ -22,6 +22,10 @@
   padding: 1.25rem;
 }
 
+.ItemContainerSelected {
+  background: #f8f8f8;
+}
+
 .ImageContainer {
   display: -webkit-box;
   display: -ms-flexbox;
