@@ -2577,6 +2577,7 @@ class Sprint1 extends Component<Props, State> {
         <ZeroResult
           text={`We can’t seem to find any result for 
           “Damansara Heights”`}
+          textStyle={{ fontWeight: "normal" }}
         />
 
         <Title>LabeledIcon</Title>
