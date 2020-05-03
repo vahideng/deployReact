@@ -626,10 +626,11 @@ const Sprint3: React.FC<Props> = () => {
       <Title>DashboardCart</Title>
       <div style={{ width: "20%", margin: "2rem auto" }}>
         <DashboardCart
+          onBlur={() => console.log("onBlurDashboardCart")}
           cartList={[
             {
               showTooltip: true,
-              onTooltipClicked: () => alert("clickedTooltip"),
+              onTooltipClicked: () => console.log("clickedTooltip"),
               testId: "testId",
               title: "My UT Account",
               subtitle: { content: "123456", icon: "User1" },
@@ -651,7 +652,7 @@ const Sprint3: React.FC<Props> = () => {
                   },
                 },
               ],
-              onClickContainer: () => alert("Clicked"),
+              onClickContainer: () => console.log("clickedTooltip"),
               tooltip: true,
               footerLabel: "Last Updated: 11 Nov 2019",
               tipChildren: <div>tip tooltip</div>,
@@ -1108,6 +1109,7 @@ const Sprint3: React.FC<Props> = () => {
         }}
       >
         <AmDropdown
+        onBlurDropdown={()=>setDropdown(false)}
           containerStyle={{
             marginBottom: "1rem",
           }}
@@ -1283,6 +1285,7 @@ const Sprint3: React.FC<Props> = () => {
         <InputField
           onTooltipClicked={() => alert("tooltipCLicked")}
           showTooltip={true}
+          onBlurTooltip={()=> console.log("OutsideClick")}
           tipChildren={
             <div>
               <B_15_WHITE>Password</B_15_WHITE>
@@ -1881,6 +1884,7 @@ const Sprint3: React.FC<Props> = () => {
       <Title>Label Tool Tip</Title>
       <div style={{ padding: "0 25%" }}>
         <LabelToolTip
+          onBlur={() => console.log("onBlur")}
           showTooltip={false}
           onTooltipClicked={() => alert("tooltipClicked")}
           label="Portfolio Comparison"
@@ -1900,6 +1904,7 @@ const Sprint3: React.FC<Props> = () => {
         />
         <br />
         <LabelToolTip
+          onBlur={() => console.log("onBlur")}
           spaceBetween={true}
           showTooltip={true}
           label="Select your proffered account to send and received money"

@@ -35,6 +35,7 @@ interface Props {
     subText: string;
   };
   minLength?: number;
+  onBlurTooltip?: () => void; 
   maxLength?: number;
   onBlur?: (event: FormEvent) => void;
   onFocus?: (event: FormEvent) => void;
@@ -64,10 +65,10 @@ class InputField extends Component<Props, {}> {
       errorMessage,
       minLength,
       maxLength,
-      onBlur,
+      onBlurTooltip,
       onFocus,
       tacInput,
-  
+      onBlur,
       tipChildren,
       responsive,
       bottomLabel,
@@ -97,7 +98,7 @@ class InputField extends Component<Props, {}> {
           <div className={classes.TitleDiv}>
             <B_13_BLACK className={classes.InputFieldLabel}>{label}</B_13_BLACK>
             {tipChildren && (
-              <Tooltip  onTooltipClicked ={onTooltipClicked} showTooltip ={showTooltip} tipChildren={tipChildren} rightAlign={true} />
+              <Tooltip  onBlur={onBlurTooltip}  onTooltipClicked ={onTooltipClicked} showTooltip ={showTooltip} tipChildren={tipChildren} rightAlign={true} />
             )}
           </div>
         )}

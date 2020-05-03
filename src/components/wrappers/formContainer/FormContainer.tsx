@@ -23,6 +23,7 @@ interface Props {
   headerSubText?: string;
   headerTimeStamp?: string;
   label?: string;
+  onBlur?: ()=> void;
   rightLabel?: {
     onClick?: () => void;
     style?: CSSProperties;
@@ -48,7 +49,8 @@ const FormContainer: React.FC<Props> = ({
   disabled = false,
   responsive,
   onTooltipClicked,
-  showTooltip
+  showTooltip,
+  onBlur
 }) => {
   const rightLabelPointer: CSSProperties =
     rightLabel !== undefined && rightLabel.onClick !== undefined
@@ -128,6 +130,7 @@ const FormContainer: React.FC<Props> = ({
               {!!tooltip && (
                 <span className={classes.FormContainerTooltip}>
                   <Tooltip
+                  onBlur={onBlur}
                   showTooltip ={showTooltip}
                   onTooltipClicked={onTooltipClicked}
                     tipChildren={tooltip}

@@ -2049,6 +2049,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>Tooltips</Title>
         <CenteredDiv>
           <Tooltip
+           onBlur={()=> console.log("onclicked")}
             showTooltip={true}
             testId={"testId"}
             tipChildren={

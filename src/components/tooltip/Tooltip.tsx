@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-
 import classes from "./Tooltip.module.css";
-
 import Icon from "../assets/icons/icon";
 // import OutsideClickHandler from "react-outside-click-handler";
 
@@ -12,6 +10,7 @@ interface TooltipProps {
   rightAlign?: boolean;
   tipSize?: number;
   showTooltip?: boolean;
+  onBlur?: () => void;
   onTooltipClicked?: () => void;
 }
 
@@ -27,18 +26,19 @@ class Tooltip extends Component<TooltipProps, {}> {
       tipSize,
       showTooltip,
       onTooltipClicked,
+      onBlur,
     } = this.props;
-
-    console.log(showTooltip, "showTooltip");
-
-   
-    
 
     const tooltipSize = tipSize !== undefined ? tipSize : 23;
     return (
       <>
         {rightAlign ? (
-          <div className={classes.tooltipRight} id={testId}>
+          <div
+            tabIndex={0}
+            className={classes.tooltipRight}
+            id={testId}
+            onBlur={onBlur}
+          >
             <div
               onClick={!!onTooltipClicked && onTooltipClicked}
               id={`${testId}-0`}
@@ -56,7 +56,12 @@ class Tooltip extends Component<TooltipProps, {}> {
             )}
           </div>
         ) : (
-          <div className={classes.tooltip} id={testId}>
+          <div
+            tabIndex={0}
+            onBlur={onBlur}
+            className={classes.tooltip}
+            id={testId}
+          >
             <div
               onClick={!!onTooltipClicked && onTooltipClicked}
               id={`${testId}-0`}

@@ -30,7 +30,6 @@ const Navbar: React.FC<Props> = ({
   scrolledIcon = {},
   profile = {},
   rightButtons,
-
   testId,
 }) => {
   //@ts-ignore

@@ -19,8 +19,7 @@ declare type listItem = {
   testId?: string;
   title?: string;
   tipChildren?: ReactNode;
-  
-  
+ 
   titleStyle?: CSSProperties;
   onTooltipClicked?: () => void;
   showTooltip?: boolean;
@@ -43,10 +42,10 @@ declare type listItem = {
     content: string;
     style?: CSSProperties;
   };
- 
 };
 interface Props {
   cartList?: listItem[];
+  onBlur?: () => void; 
 }
 
 const DashboardCart = (props: Props) => {
@@ -139,7 +138,8 @@ const DashboardCart = (props: Props) => {
                     </R_11_GREY969>
                     {cart.tooltip === true &&
                       cart.tipChildren !== undefined && (
-                        <Tooltip
+                        <Tooltip                  
+                         onBlur ={props.onBlur? props.onBlur :  null }
                           showTooltip={cart.showTooltip}
                           onTooltipClicked={cart.onTooltipClicked}
                           tipChildren={cart.tipChildren}

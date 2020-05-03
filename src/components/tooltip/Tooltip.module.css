@@ -2,6 +2,7 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
+  outline: none;
 }
 
 .tooltip .TooltipContent {
@@ -19,6 +20,7 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
+  outline: none;
 }
 
 .TooltipContentRight {

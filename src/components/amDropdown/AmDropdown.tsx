@@ -39,6 +39,7 @@ interface Props {
   disabled?: boolean;
   minLength?: number;
   maxLength?: number;
+  onBlurDropdown ?: ()=> void;
   onBlur?: (event: FormEvent) => void;
   onFocus?: (event: FormEvent) => void;
   inputClickHandler?: () => void;
@@ -81,6 +82,7 @@ class AmDropdown extends Component<Props, {}> {
       minLength,
       maxLength,
       onBlur,
+      onBlurDropdown,
       onFocus,
       disabled,
       showDropdown,
@@ -135,7 +137,7 @@ class AmDropdown extends Component<Props, {}> {
       }
     };
     return (
-      <div className={classes.Container} style={containerStyle}>
+      <div tabIndex={0} onBlur={onBlurDropdown} className={classes.Container} style={containerStyle}>
         <div className={classes.InputFieldMain}>
           {!!label && (
             <B_13_BLACK className={classes.InputFieldLabel}>{label}</B_13_BLACK>

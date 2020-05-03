@@ -2521,7 +2521,8 @@ const Sprint4: React.FC<Props> = () => {
       <Title>FormContainer Disabled</Title>
       <CenteredDiv>
         <FormContainer
-          disabled
+          onBlur = { () => console.log("clickedOnBlur")}
+          
           label={"Select your account/card type"}
           showTooltip={false}
           tooltip={
