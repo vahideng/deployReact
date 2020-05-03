@@ -97,7 +97,6 @@ interface State {
   tacClear: boolean;
   tacClearActiveStatus: boolean;
   navbarScrolled: boolean;
-  dockExpanded: boolean;
 }
 
 class Sprint1 extends Component<Props, State> {
@@ -119,7 +118,6 @@ class Sprint1 extends Component<Props, State> {
     tacClear: false,
     tacClearActiveStatus: false,
     navbarScrolled: false,
-    dockExpanded: false,
   };
   render() {
     const {
@@ -140,7 +138,6 @@ class Sprint1 extends Component<Props, State> {
       tacClear,
       tacClearActiveStatus,
       navbarScrolled,
-      dockExpanded,
     } = this.state;
 
     if (homRedirect === true) {
@@ -205,15 +202,7 @@ class Sprint1 extends Component<Props, State> {
         />
         <Title>Icons</Title>
         <IconTest />
-        <PrimaryButton
-          width={"40rem"}
-          title="Toggle Dock"
-          onButtonClick={() => {
-            this.setState({
-              dockExpanded: !dockExpanded,
-            });
-          }}
-        />
+
         <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "white", padding: 50 }}>
           <TransactionList
