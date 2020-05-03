@@ -1703,6 +1703,7 @@ const Sprint3: React.FC<Props> = () => {
             width="30rem"
             title="Active IDs"
             isActive={true}
+            align='center'
             list={[
               {
                 leftIcon: { name: "ID-2" },
