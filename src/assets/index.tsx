@@ -12,6 +12,7 @@ import SampleQRCode from "./images/SampleQRCode.png";
 import SampleSecureImage from "./images/secure-image.png";
 import fpxIcon from "./images/fpx.png";
 import redirectBg from "./images/redirect-bg.png";
+import amOnlineLogoWithRedBg from "./images/amonline-with-red-bg.png";
 import sadAmyIcon from "./images/sad-amy.png";
 import googleChromeLogo from "./images/Google-Chrome.png";
 import safariLogo from "./images/Safari.png";
@@ -43,7 +44,8 @@ const images: any = {
     safariLogo,
     firefoxLogo,
     downloadOnAppStore,
-    downloadOnGPlay
+    downloadOnGPlay,
+    amOnlineLogoWithRedBg
   }
 };
 
