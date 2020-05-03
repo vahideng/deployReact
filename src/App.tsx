@@ -5,6 +5,7 @@ import Sprint2 from "./containers/Sprint_2/Sprint_2";
 import Home from "./containers/Home/Home";
 import Sprint3 from "./containers/Sprint_3/Sprint_3";
 import Sprint4 from "./containers/Sprint_4/Sprint_4";
+import NotSupportedPage from "./components/NotSupportedPage/NotSupportedPage";
 
 import NodeModule from './containers/nodeMoudleTest'
 const App: React.FC = () => {
@@ -28,6 +29,11 @@ const App: React.FC = () => {
         </Route>
         <Route path="/NodeModule" exact>
           <NodeModule />
+        </Route>
+        <Route path="/not-supported" exact>
+          <NotSupportedPage 
+           backgroundColor="red"
+          />
         </Route>
 
 

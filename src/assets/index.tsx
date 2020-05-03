@@ -12,6 +12,14 @@ import SampleQRCode from "./images/SampleQRCode.png";
 import SampleSecureImage from "./images/secure-image.png";
 import fpxIcon from "./images/fpx.png";
 import redirectBg from "./images/redirect-bg.png";
+import sadAmyIcon from "./images/sad-amy.png";
+import googleChromeLogo from "./images/Google-Chrome.png";
+import safariLogo from "./images/Safari.png";
+import microsoftEdgeLogo from "./images/Microsoft-Edge.png";
+import firefoxLogo from "./images/Firefox.png";
+import downloadOnAppStore from "./images/downloadOnAppStore.png";
+import downloadOnGPlay from "./images/downloadOnGPlay.png";
+
 
 const images: any = {
   common: {
@@ -28,7 +36,14 @@ const images: any = {
     SampleQRCode,
     SampleSecureImage,
     fpxIcon,
-    redirectBg
+    redirectBg,
+    googleChromeLogo,
+    microsoftEdgeLogo,
+    sadAmyIcon,
+    safariLogo,
+    firefoxLogo,
+    downloadOnAppStore,
+    downloadOnGPlay
   }
 };
 
