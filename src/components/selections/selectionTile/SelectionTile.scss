@@ -6,25 +6,47 @@
 }
 .SelectionTileWrapper {
   display: flex;
-  align-items: center;
-  width: 15.06rem;
-  min-height: 5.31rem;
-  border: 1px solid $greyEDE;
+  flex-direction: column;
+  justify-content: center;
   border-radius: 0.75rem;
-  border-bottom: 0.37rem solid $greyEDE;
+
   margin: 0 2rem 1.5rem 0;
   box-shadow: $darkBoxShadow;
+  position: relative;
 }
 .SelectionTileSelector {
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 99%;
-  border-top-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-  background-color: #ffffff;
-
+  width: 15.06rem;
+  min-height: 5.31rem;
   padding: 1rem;
+}
+.borderBottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1rem;
+  background: linear-gradient(
+    to bottom,
+    #fff 0%,
+    #fff 70%,
+    $greyEDE 70%,
+    $greyEDE 70%,
+    $greyEDE 100%
+  );
+
+  border-bottom-right-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+.borderBottomSelected {
+  background: linear-gradient(
+    to bottom,
+    #fff 0%,
+    #fff 70%,
+    #ff2626 70%,
+    #ff2626 70%,
+    #ff2626 100%
+  );
 }
 .SelectionTileTDiv {
   max-width: 13rem;
@@ -33,11 +55,7 @@
 .SelectionTAmount {
   padding-top: 1rem;
 }
-.SelectionTileChild {
-  display: inline-block;
-  overflow: hidden;
-  padding: 1rem;
-}
+
 .SelectionTileTitle {
   @extend %truncatedText;
 }
