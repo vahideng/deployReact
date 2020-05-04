@@ -20,7 +20,7 @@ interface Props {
     iconLabel?: string;
     centeredText?: string;
     centeredChild?: ReactNode;
-    disable ?: boolean;
+    disable?: boolean;
     avatar?: {
       name: string;
       src?: string;
@@ -50,9 +50,6 @@ const SelectionTile: React.FC<Props> = ({
     selectionTileWrapperCls = `${selectionTileWrapperCls} ${classes.SelectionTileWrapperResponsive}`;
     selectionTileRowCls = `${selectionTileRowCls} ${classes.SelectionTileRowResponsive}`;
   }
- 
-
-
 
   function BorderClass(index: number) {
     if (selected === index) {
@@ -62,19 +59,17 @@ const SelectionTile: React.FC<Props> = ({
     }
   }
   return !centered ? (
-    <div  className={selectionTileRowCls} id={testId} style={rowStyle}>
+    <div className={selectionTileRowCls} id={testId} style={rowStyle}>
       {!!list &&
         list.map((item, index) => {
-
-          
-         let disable = null
-          if(item.disable){
-            disable = `${classes.Disable}`
+          let disable = null;
+          if (item.disable) {
+            disable = `${classes.Disable}`;
           }
           return (
             <div
               id={`${testId}-${index}`}
-            onClick={!disable ? () => onTileClick(item, index) : null}
+              onClick={!disable ? () => onTileClick(item, index) : null}
               className={`${selectionTileWrapperCls} ${disable} ${BorderClass(
                 index
               )}`}
@@ -84,7 +79,7 @@ const SelectionTile: React.FC<Props> = ({
               <div
                 className={classes.SelectionTileSelector}
                 style={{
-                  justifyContent: item.iconLabel ? "center" : "flex-start"
+                  justifyContent: item.iconLabel ? "center" : "flex-start",
                 }}
               >
                 {item.iconLabel ? (
@@ -93,7 +88,7 @@ const SelectionTile: React.FC<Props> = ({
                       display: "flex",
                       flexDirection: "row",
                       alignItems: "center",
-                      justifyContent: "center"
+                      justifyContent: "center",
                     }}
                   >
                     <B_15_BLACK
@@ -101,7 +96,7 @@ const SelectionTile: React.FC<Props> = ({
                       style={
                         selected !== index
                           ? {
-                              fontWeight: "normal"
+                              fontWeight: "normal",
                             }
                           : {}
                       }
@@ -124,9 +119,7 @@ const SelectionTile: React.FC<Props> = ({
                     )}
                   </div>
                 ) : item.children ? (
-                  <>
-                    {item.children}
-                  </>
+                  <>{item.children}</>
                 ) : !!item.avatar ? (
                   <div>
                     <Profile
@@ -142,20 +135,22 @@ const SelectionTile: React.FC<Props> = ({
                     {!!item.accountTitle && (
                       <div className={classes.SelectionTileTDiv}>
                         <B_16_BLACK
-                        x-ms-format-detection="none" 
-                        className={classes.SelectionTileTitle}>
+                          x-ms-format-detection="none"
+                          className={classes.SelectionTileTitle}
+                        >
                           {item.accountTitle}
                         </B_16_BLACK>
                       </div>
                     )}
                     {!!item.accountNumber && (
-                      <R_14_BLACK   
-                       x-ms-format-detection="none" 
-                       >{item.accountNumber}</R_14_BLACK>
+                      <R_14_BLACK x-ms-format-detection="none">
+                        {item.accountNumber}
+                      </R_14_BLACK>
                     )}
                     {!!item.amount && (
-                      <B_16_BLACK className={classes.SelectionTAmount}
-                      x-ms-format-detection="none" 
+                      <B_16_BLACK
+                        className={classes.SelectionTAmount}
+                        x-ms-format-detection="none"
                       >
                         {item.amount}
                       </B_16_BLACK>
@@ -163,13 +158,15 @@ const SelectionTile: React.FC<Props> = ({
                   </div>
                 )}
               </div>
-              <div
-                className={
-                  selected === index
-                    ? `${classes.borderBottomSelected} ${classes.borderBottom}`
-                    : classes.borderBottom
-                }
-              ></div>
+              {!item.disable && (
+                <div
+                  className={
+                    selected === index
+                      ? `${classes.borderBottomSelected} ${classes.borderBottom}`
+                      : classes.borderBottom
+                  }
+                ></div>
+              )}
             </div>
           );
         })}
