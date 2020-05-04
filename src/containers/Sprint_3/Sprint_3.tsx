@@ -1108,7 +1108,7 @@ const Sprint3: React.FC<Props> = () => {
         }}
       >
         <AmDropdown
-        onBlurDropdown={()=>setDropdown(false)}
+          onBlurDropdown={() => setDropdown(false)}
           containerStyle={{
             marginBottom: "1rem",
           }}
@@ -1284,7 +1284,7 @@ const Sprint3: React.FC<Props> = () => {
         <InputField
           onTooltipClicked={() => alert("tooltipCLicked")}
           showTooltip={true}
-          onBlurTooltip={()=> console.log("OutsideClick")}
+          onBlurTooltip={() => console.log("OutsideClick")}
           tipChildren={
             <div>
               <B_15_WHITE>Password</B_15_WHITE>
@@ -1343,7 +1343,7 @@ const Sprint3: React.FC<Props> = () => {
         <div style={{ width: 620 }}>
           <HeaderWithIButtons
             headerStyle={{
-              marginTop: '1rem',
+              marginTop: "1rem",
               backgroundColor: "rgba(196, 196, 196, 0.3)",
             }}
             icon={{ name: "Amy", color: "#ff2626" }}
@@ -1697,115 +1697,114 @@ const Sprint3: React.FC<Props> = () => {
         iconText="Disable online purchases for AmBank Debit Card?"
       />
       <Title>BoxId</Title>
-      <CenteredDiv>
-        <div>
-          <BoxId
-            width="30rem"
-            title="Active IDs"
-            isActive={true}
-            align='center'
-            list={[
-              {
-                leftIcon: { name: "ID-2" },
-                boldText: "ID Number ••••••9876",
-                subText: "Maybank  |  ••••••••4321",
-                notification: true,
-                iconButtons: [
-                  {
-                    icon: "Edit",
-                    text: "Edit",
-                    onClick: () => alert("click"),
-                  },
-                  {
-                    icon: "delete",
-                    text: "Delete",
-                    onClick: () => alert("click"),
-                  },
-                  {
-                    icon: "Clear",
-                    text: "Deactivate",
-                    onClick: () => alert("click"),
-                  },
-                ],
-              },
-              {
-                leftIcon: { name: "Mobile" },
-                boldText: "Mobile Number ••••••1234",
-                subText: "Ambank  |  ••••••••3463",
-                iconButtons: [
-                  {
-                    icon: "Edit",
-                    text: "Edit",
-                    onClick: () => alert("click"),
-                  },
-                  {
-                    icon: "delete",
-                    text: "Delete",
-                    onClick: () => alert("click"),
-                  },
-                  {
-                    icon: "Clear",
-                    text: "Deactivate",
-                    onClick: () => alert("click"),
-                  },
-                ],
-              },
-            ]}
-          />
 
-          <BoxId
-            width={400}
-            title="Inactive IDs"
-            list={[
-              {
-                leftImage:
-                  "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
-                boldText: "Mobile Number ••••••4546",
+      <div>
+        <BoxId
+          width="30rem"
+          title="Active IDs"
+          isActive={true}
+          align="center"
+          list={[
+            {
+              leftIcon: { name: "ID-2" },
+              boldText: "ID Number ••••••9876",
+              subText: "Maybank  |  ••••••••4321",
+              notification: true,
+              iconButtons: [
+                {
+                  icon: "Edit",
+                  text: "Edit",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "delete",
+                  text: "Delete",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "Clear",
+                  text: "Deactivate",
+                  onClick: () => alert("click"),
+                },
+              ],
+            },
+            {
+              leftIcon: { name: "Mobile" },
+              boldText: "Mobile Number ••••••1234",
+              subText: "Ambank  |  ••••••••3463",
+              iconButtons: [
+                {
+                  icon: "Edit",
+                  text: "Edit",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "delete",
+                  text: "Delete",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "Clear",
+                  text: "Deactivate",
+                  onClick: () => alert("click"),
+                },
+              ],
+            },
+          ]}
+        />
 
-                iconButtons: [
-                  {
-                    icon: "Edit",
-                    text: "Edit",
-                    onClick: () => alert("click"),
-                  },
-                  {
-                    icon: "delete",
-                    text: "Delete",
-                    onClick: () => alert("click"),
-                  },
-                  {
-                    icon: "Clear",
-                    text: "Deactivate",
-                    onClick: () => alert("click"),
-                  },
-                ],
-              },
-            ]}
-          />
+        <BoxId
+          width={400}
+          title="Inactive IDs"
+          list={[
+            {
+              leftImage:
+                "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
+              boldText: "Mobile Number ••••••4546",
 
-          <BoxId
-            title="Active"
-            isActive={true}
-            list={[
-              {
-                leftImage: images.common.Duitnow1,
-                boldText: "DuitNow QR",
-                subText: "Savings Account A  |  ••••••••4321",
-                iconButtons: [
-                  {
-                    icon: "Switch",
-                    text: "Change Default Account",
-                    onClick: () => alert("click"),
-                    onBlur: (e: { target: any }) =>
-                      console.log(e.target, "blur"),
-                    // onFocus: e => console.log(e.target, "focus")
-                  },
-                ],
-              },
-            ]}
-          />
-        </div>
-      </CenteredDiv>
+              iconButtons: [
+                {
+                  icon: "Edit",
+                  text: "Edit",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "delete",
+                  text: "Delete",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "Clear",
+                  text: "Deactivate",
+                  onClick: () => alert("click"),
+                },
+              ],
+            },
+          ]}
+        />
+
+        <BoxId
+          title="Active"
+          isActive={true}
+          list={[
+            {
+              leftImage: images.common.Duitnow1,
+              boldText: "DuitNow QR",
+              subText: "Savings Account A  |  ••••••••4321",
+              iconButtons: [
+                {
+                  icon: "Switch",
+                  text: "Change Default Account",
+                  onClick: () => alert("click"),
+                  onBlur: (e: { target: any }) => console.log(e.target, "blur"),
+                  // onFocus: e => console.log(e.target, "focus")
+                },
+              ],
+            },
+          ]}
+        />
+      </div>
+
       <Title>TooltipDropdown</Title>
       <CenteredDiv>
         <TooltipDropdown
