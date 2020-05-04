@@ -84,27 +84,27 @@ const Home: React.FC<Props> = () => {
                   }}
                 />,
                 <TextButton
-                buttonText="Sprint-4"
-                onTextClick={() => {
-                  setSprint4(true);
-                }}
-                buttonStyles={{
-                  color: "#000000",
-                  fontWeight: 400,
-                  fontSize: 15
-                }}
-              />,
-              <TextButton
-                buttonText="NodeModule"
-                onTextClick={() => {
-                  setNodeModule(true);
-                }}
-                buttonStyles={{
-                  color: "#000000",
-                  fontWeight: 400,
-                  fontSize: 15
-                }}
-              />,
+                  buttonText="Sprint-4"
+                  onTextClick={() => {
+                    setSprint4(true);
+                  }}
+                  buttonStyles={{
+                    color: "#000000",
+                    fontWeight: 400,
+                    fontSize: 15,
+                  }}
+                />,
+                <TextButton
+                  buttonText="NodeModule"
+                  onTextClick={() => {
+                    setNodeModule(true);
+                  }}
+                  buttonStyles={{
+                    color: "#000000",
+                    fontWeight: 400,
+                    fontSize: 15,
+                  }}
+                />,
                 <TextDropdown
                   handleChange={(selectedOption: any) => {
                     setSelectedOption(selectedOption);
@@ -137,6 +137,7 @@ const Home: React.FC<Props> = () => {
           to do today?"
               />
               <Box_V2
+                hideButton={true}
                 title={"Login"}
                 split={split}
                 onButtonClick={() => {
