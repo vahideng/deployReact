@@ -124,9 +124,9 @@ const SelectionTile: React.FC<Props> = ({
                     )}
                   </div>
                 ) : item.children ? (
-                  <div className={classes.SelectionTileChild}>
+                  <>
                     {item.children}
-                  </div>
+                  </>
                 ) : !!item.avatar ? (
                   <div>
                     <Profile
@@ -163,6 +163,13 @@ const SelectionTile: React.FC<Props> = ({
                   </div>
                 )}
               </div>
+              <div
+                className={
+                  selected === index
+                    ? `${classes.borderBottomSelected} ${classes.borderBottom}`
+                    : classes.borderBottom
+                }
+              ></div>
             </div>
           );
         })}

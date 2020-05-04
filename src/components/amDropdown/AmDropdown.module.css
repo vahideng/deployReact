@@ -1,6 +1,7 @@
 .Container {
   position: relative;
   margin-bottom: 1rem;
+  outline: none;
 }
 
 .DropdownContent {
@@ -89,7 +90,7 @@
 .InputFieldClear {
   cursor: pointer;
   position: absolute;
-  top: 0.8rem;
+  top: 1rem;
   right: 1rem;
 }
 

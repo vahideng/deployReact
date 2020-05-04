@@ -193,11 +193,11 @@ class AmDropdown extends Component<Props, {}> {
               >
                 {!showDropdown ? (
                   <span className={classes.TextDropdownIcons}>
-                    <Icon icon="arrowDown" size={18} color={"#000000"} />
+                    <Icon icon="arrowDown" size={16} color={"#000000"} />
                   </span>
                 ) : (
                   <span className={classes.TextDropdownIcons}>
-                    <Icon icon="arrowUp" size={18} color={"#000000"} />
+                    <Icon icon="arrowUp" size={16} color={"#000000"} />
                   </span>
                 )}
               </span>
@@ -219,7 +219,6 @@ class AmDropdown extends Component<Props, {}> {
                 })}
             </div>
           ) : null}
-
           {!!notValid && (
             <div className={classes.InputFieldError}>
               <InlineMessage

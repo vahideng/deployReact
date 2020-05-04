@@ -16,8 +16,8 @@
   -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
           box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
   z-index: 1000;
-  -webkit-transition: height 0.5s ease-in-out;
-  transition: height 0.5s ease-in-out;
+  -webkit-transition: height 150ms ease-in-out;
+  transition: height 150ms ease-in-out;
 }
 
 .NavbarMainDivScrolled {
@@ -38,8 +38,8 @@
   -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
           box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
   z-index: 1000;
-  -webkit-transition: height 0.5s ease-in-out;
-  transition: height 0.5s ease-in-out;
+  -webkit-transition: height 150ms ease-in-out;
+  transition: height 150ms ease-in-out;
 }
 
 .InnerWidth {
@@ -112,71 +112,9 @@
 }
 
 .NavbarIcon {
-  opacity: 1;
-  -webkit-animation-name: Profile;
-          animation-name: Profile;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
   cursor: pointer;
 }
 
 .NavbarScrolledIcon {
-  opacity: 1;
-  -webkit-animation-name: navScrIcon;
-          animation-name: navScrIcon;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
   cursor: pointer;
-}
-
-.scrolledProfile {
-  opacity: 1;
-  -webkit-animation-name: navScrIcon;
-          animation-name: navScrIcon;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-}
-
-.Profile {
-  opacity: 1;
-  -webkit-animation-name: Profile;
-          animation-name: Profile;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-}
-
-@-webkit-keyframes navScrIcon {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes navScrIcon {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes Profile {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes Profile {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
