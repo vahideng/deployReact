@@ -148,7 +148,7 @@
 
 .SelectedFilterClearIcon {
   display: flex;
-  padding-bottom: 0.3rem;
+  // padding-bottom: 0.3rem;
   cursor: pointer;
 }
 
@@ -163,6 +163,8 @@
 
 .IconContainer {
   margin-right: 1.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .InputFieldPassword {

@@ -50,7 +50,7 @@ class SearchBar extends Component<Props, State> {
     super(props);
     this.state = {
       inputFocused: false,
-      filterExpanded: false
+      filterExpanded: false,
     };
   }
   handleClickOutside = (evt: any) => {
@@ -71,7 +71,7 @@ class SearchBar extends Component<Props, State> {
       selectedFilters,
       showFilter,
       sectionFilter,
-      sectionFilterOptions
+      sectionFilterOptions,
     } = this.props;
 
     const {
@@ -95,7 +95,7 @@ class SearchBar extends Component<Props, State> {
               <R_13_BLACK style={{ fontWeight: 600, marginRight: 5 }}>
                 Filter
               </R_13_BLACK>
-              <div>
+              <div style={{ display: "flex" }}>
                 {this.state.filterExpanded ? (
                   <span className={classes.SearchBarArrow}>
                     <Icon icon="arrowUp" size={10} />

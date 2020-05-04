@@ -10,6 +10,7 @@ const { B_24_BLACK } = Paragraphs;
 interface LogoutProps {
   testId: string;
   responsive?:boolean;
+  btnContainerStyle?: CSSProperties;
   btntitle:string;
   btnwidth?:string;
   onButtonClick: () => void;
@@ -55,6 +56,7 @@ const Logout: React.FC<LogoutProps> = ({
   listChildren,
   header,
   onButtonClick,
+  btnContainerStyle,
   btntitle,
   btnwidth,
 
@@ -117,7 +119,7 @@ const Logout: React.FC<LogoutProps> = ({
                   list={listChildren}
                 />
         </div>
-        <div className={classes.btnClass}>
+        <div className={classes.btnClass} style={btnContainerStyle}>
           <PrimaryButton
             onButtonClick={onButtonClick}
             title={btntitle}
