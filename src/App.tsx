@@ -36,7 +36,7 @@ const App: React.FC = () => {
         </Route>
         <Route path="/not-supported" exact>
           <NotSupportedPage
-            // backgroundColor="red"
+            backgroundColor="#F0F2F6"
             leftItem={{
               // icon: {
               //   name: "amonline-white",
@@ -44,14 +44,16 @@ const App: React.FC = () => {
               // },
               image: {
                 source: assets.common.amOnlineLogoWithRedBg,
-                imageStyle: { height: 41  },
+                imageStyle: { height: 41 },
               },
               onLeftItemClick: () => alert("Clicked on Logo"),
             }}
             rightItems={[
               <TextButton
                 buttonText="Contact Us"
-                onTextClick={() => {}}
+                onTextClick={() => {
+                  alert("Contact Us");
+                }}
                 buttonStyles={{
                   color: "#000000",
                   fontWeight: 400,
@@ -60,7 +62,9 @@ const App: React.FC = () => {
               />,
               <TextButton
                 buttonText="FAQ"
-                onTextClick={() => {}}
+                onTextClick={() => {
+                  alert("FAQ");
+                }}
                 buttonStyles={{
                   color: "#000000",
                   fontWeight: 400,
@@ -68,12 +72,18 @@ const App: React.FC = () => {
                 }}
               />,
             ]}
+            //  icon={{
+            //     name: "amonline-white",
+            //     color: "#ff2626",
+            //   }}
             image={{
               source: assets.common.sadAmyIcon,
               imageStyle: { height: "90px", width: "103px" },
             }}
             title={"Oops! This browser is not supported."}
+            // titleStyle={{ fontSize: 20, color: '#EEE' }}
             subtitle={"Please use the following supported browsers:"}
+            // subtitleStyle={{ fontSize: 14 }}
             browserList={[
               {
                 image: {
@@ -98,7 +108,11 @@ const App: React.FC = () => {
                 },
                 name: "Mozilla Firefox",
                 note: "Ver. 50 & above",
-                onClick: () =>  window.open('https://www.mozilla.org/en-US/firefox/new/', '_blank')
+                onClick: () =>
+                  window.open(
+                    "https://www.mozilla.org/en-US/firefox/new/",
+                    "_blank"
+                  ),
               },
               {
                 image: {
@@ -110,17 +124,26 @@ const App: React.FC = () => {
               },
             ]}
             noteText={"...or switch to our AmOnline Mobile App today!"}
+            // noteTextStyle={{ fontSize: 14 }}
             appLinks={[
               {
                 source: assets.common.downloadOnGPlay,
                 imageStyle: { height: 34 },
-                onClick: () => alert('Goes to Google Play Store')
+                onClick: () =>
+                  window.open(
+                    "https://play.google.com/store/apps/details?id=com.ambank.ambankonline&hl=en",
+                    "_blank"
+                  ),
               },
               {
                 source: assets.common.downloadOnAppStore,
                 imageStyle: { height: 34 },
-                onClick: () => alert('Goes to App Store')
-              }
+                onClick: () =>
+                  window.open(
+                    "https://apps.apple.com/my/app/amonline/id1174142234",
+                    "_blank"
+                  ),
+              },
             ]}
           />
         </Route>
