@@ -80,10 +80,20 @@
   cursor: pointer;
 }
 
-.Disable{
+.Disable {
   background-color: #ddd;
-    opacity: 0.3;
-    cursor: no-drop;
+  opacity: 0.3;
+  cursor: no-drop;
+}
+.borderDisable {
+  background: linear-gradient(
+    to bottom,
+    #ddd 0%,
+    #ddd 70%,
+    $greyEDE 70%,
+    $greyEDE 70%,
+    $greyEDE 100%
+  );
 }
 .CenteredSelector {
   display: flex;

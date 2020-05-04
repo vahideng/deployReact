@@ -13,25 +13,29 @@ const CustomCarousel = (props: Props) => {
 
   const RenderDefault = () => {
     const [stateIndex, setStateIndex] = useState(0);
-    const [rightDisable, setRightDisable] = useState(false);
-    const [leftDisable, setLeftDisable] = useState(true);
+    const [rightDisable, setRightDisable] = useState(null);
+    const [leftDisable, setLeftDisable] = useState(null);
 
-    const onRightClick = (items: any, index: number) => {
+    const onRightClick = () => {
       setStateIndex(stateIndex + 1);
-      setLeftDisable(false);
-      if (items[0].length - 2 === index) {
-        setRightDisable(!rightDisable);
-      }
     };
 
-    const onLeftClick = (index: number) => {
- 
+    const onLeftClick = () => {
       setStateIndex(stateIndex - 1);
-      setRightDisable(false);
-      if (index === 1) {
-        setLeftDisable(true);
-      }
     };
+    useEffect(() => {
+      if (items[0].length - 1 === stateIndex) {
+        setRightDisable(true);
+        setLeftDisable(false);
+      } else if (stateIndex === 0) {
+        setLeftDisable(true);
+        setRightDisable(false);
+      } else {
+        setLeftDisable(false);
+        setRightDisable(false);
+      }
+    }, [stateIndex]);
+
     return (
       <>
         <div>
@@ -47,7 +51,7 @@ const CustomCarousel = (props: Props) => {
                     style={
                       leftDisable ? { pointerEvents: "none", opacity: 0.4 } : {}
                     }
-                    onClick={() => onLeftClick(index)}
+                    onClick={onLeftClick}
                     className={classes.Chevrons}
                   >
                     <Icon icon="left" color="#FF2626" size={32} />
@@ -59,7 +63,7 @@ const CustomCarousel = (props: Props) => {
                         ? { pointerEvents: "none", opacity: 0.4 }
                         : {}
                     }
-                    onClick={() => onRightClick(items, index)}
+                    onClick={onRightClick}
                     className={classes.Chevrons}
                   >
                     <Icon icon="Right1" color="#FF2626" size={32} />
@@ -80,7 +84,7 @@ const CustomCarousel = (props: Props) => {
                     ? { backgroundColor: "#000", padding: ".25rem" }
                     : {}
                 }
-                // onClick={() => setStateIndex(index)}
+                onClick={() => setStateIndex(index)}
               ></span>
             );
           })}

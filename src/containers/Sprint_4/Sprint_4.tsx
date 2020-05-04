@@ -38,7 +38,12 @@ import LocalImages from "src/components/assets/images";
 import Logout from "src/components/Logout/Logout";
 import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
 import TextWithDetails from "src/components/infographic/textWithDetails/TextWithDetails";
-const { B_13_ORANGE_463, R_13_GREY444, B_24_BLACK, R_19_BLACK_444} = Paragraphs;
+const {
+  B_13_ORANGE_463,
+  R_13_GREY444,
+  B_24_BLACK,
+  R_19_BLACK_444,
+} = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -127,6 +132,7 @@ const Sprint4: React.FC<Props> = () => {
           {
             iconName: "Settings",
             onButtonClick: () => alert("button-2-Clicked"),
+            selected: true,
           },
           {
             iconName: "Share",
@@ -141,7 +147,7 @@ const Sprint4: React.FC<Props> = () => {
         }}
       />
       <StickyTimer
-        showCrossIcon ={true}
+        showCrossIcon={true}
         responsive={true}
         testId={"testId"}
         closeTimeoutMS={1000}
@@ -369,6 +375,7 @@ const Sprint4: React.FC<Props> = () => {
       </CenteredDiv>
       <Title>Box_V2 (Update - Responsive)</Title>
       <Box_V2
+        hideButton={true}
         responsive={true}
         darkShadow
         split={true}
@@ -2522,8 +2529,7 @@ const Sprint4: React.FC<Props> = () => {
       <Title>FormContainer Disabled</Title>
       <CenteredDiv>
         <FormContainer
-          onBlur = { () => console.log("clickedOnBlur")}
-          
+          onBlur={() => console.log("clickedOnBlur")}
           label={"Select your account/card type"}
           showTooltip={false}
           tooltip={
@@ -2772,10 +2778,12 @@ const Sprint4: React.FC<Props> = () => {
                 padding: "2rem",
               }}
             >
-              <B_24_BLACK style={{ textAlign: "center",marginBottom:'1.5rem' }}>
+              <B_24_BLACK
+                style={{ textAlign: "center", marginBottom: "1.5rem" }}
+              >
                 Transfer Unsuccessful
               </B_24_BLACK>
-           
+
               <R_19_BLACK_444 style={{ textAlign: "center" }}>
                 Your payment of RM 20.50 to Revenue Harvest Sdn. Bhd. is
                 unsuccessful
@@ -3059,90 +3067,92 @@ const Sprint4: React.FC<Props> = () => {
           margin: "0 auto",
           padding: 4,
           width: "50%",
-          position:'relative'
+          position: "relative",
         }}
       >
         <br />
         <FormContainer
           label="Please create a new PIN for your card"
           children={
-            <div style={{ padding: "2rem",position:'relative' }}>
-                <TextWithDetails
-          title="AmBank Bonuslink Visa"
-          content={["5464 4364 7863 0797"]}
-          image={{ src: LocalImages.common.card }}
-        />
-           <br />
-        <R_13_GREY444>Set your PIN by clicking on the NumPad</R_13_GREY444>
-          <br />
-          <div style={{width:'31.6rem'}}>
-        <InputField
-          notValid={false}
-          errorMessage={{
-            testId: "testId",
-            errorText: "The Password is incorrect",
-            subText: "Please try again.",
-          }}
-          type="text"
-          clearClickHandler={() => alert("clear clicked")}
-          clearIcon={true}
-          label="New Pin"
-          autoFocus
-          icon={{ name: "Lock" }}
-          onFocus={() => {
-            setKeypadShow(true);
-            setKeypadTopVal(130);
-          }}
-          value={""}
-          handleChange={(event) => {
-            alert({
-              inputValue: event.target.value,
-            });
-          }}
-        /></div>
-          <div style={{right:0}}>
-          <AmResetPin
-          testId="testId"
-          keysArray={[5, 8, 1, 0, 4, 6, 2, 9, 3, 7]}
-          onEnterClick={() => {
-            setKeypadShow(false);
-          }}
-          onNumberSelected={(item: any) => {
-            alert(item);
-          }}
-          EnterIcon={{ name: "back-arrow", size: 30, color: "#000000" }}
-          pointerTopVal={KeypadTopVal}
-          showKeyPad={KeyPadShow}
-          keypadStyle={{bottom:0,right:0}}
-        />
-        </div>
-       <br />
-       <div style={{width:'31.6rem'}}>
-        <InputField
-          notValid={false}
-          errorMessage={{
-            testId: "testId",
-            errorText: "The Password is incorrect",
-            subText: "Please try again.",
-          }}
-          type="text"
-          clearClickHandler={() => alert("clear clicked")}
-          clearIcon={true}
-          label="Confirm New Pin"
-          icon={{ name: "Lock" }}
-          value={""}
-          onFocus={() => {
-            setKeypadShow(true);
-            setKeypadTopVal(240);
-          }}
-          handleChange={(event) => {
-            alert({
-              inputValue: event.target.value,
-            });
-           
-          }}
-        />
-     </div>
+            <div style={{ padding: "2rem", position: "relative" }}>
+              <TextWithDetails
+                title="AmBank Bonuslink Visa"
+                content={["5464 4364 7863 0797"]}
+                image={{ src: LocalImages.common.card }}
+              />
+              <br />
+              <R_13_GREY444>
+                Set your PIN by clicking on the NumPad
+              </R_13_GREY444>
+              <br />
+              <div style={{ width: "31.6rem" }}>
+                <InputField
+                  notValid={false}
+                  errorMessage={{
+                    testId: "testId",
+                    errorText: "The Password is incorrect",
+                    subText: "Please try again.",
+                  }}
+                  type="text"
+                  clearClickHandler={() => alert("clear clicked")}
+                  clearIcon={true}
+                  label="New Pin"
+                  autoFocus
+                  icon={{ name: "Lock" }}
+                  onFocus={() => {
+                    setKeypadShow(true);
+                    setKeypadTopVal(130);
+                  }}
+                  value={""}
+                  handleChange={(event) => {
+                    alert({
+                      inputValue: event.target.value,
+                    });
+                  }}
+                />
+              </div>
+              <div style={{ right: 0 }}>
+                <AmResetPin
+                  testId="testId"
+                  keysArray={[5, 8, 1, 0, 4, 6, 2, 9, 3, 7]}
+                  onEnterClick={() => {
+                    setKeypadShow(false);
+                  }}
+                  onNumberSelected={(item: any) => {
+                    alert(item);
+                  }}
+                  EnterIcon={{ name: "back-arrow", size: 30, color: "#000000" }}
+                  pointerTopVal={KeypadTopVal}
+                  showKeyPad={KeyPadShow}
+                  keypadStyle={{ bottom: 0, right: 0 }}
+                />
+              </div>
+              <br />
+              <div style={{ width: "31.6rem" }}>
+                <InputField
+                  notValid={false}
+                  errorMessage={{
+                    testId: "testId",
+                    errorText: "The Password is incorrect",
+                    subText: "Please try again.",
+                  }}
+                  type="text"
+                  clearClickHandler={() => alert("clear clicked")}
+                  clearIcon={true}
+                  label="Confirm New Pin"
+                  icon={{ name: "Lock" }}
+                  value={""}
+                  onFocus={() => {
+                    setKeypadShow(true);
+                    setKeypadTopVal(240);
+                  }}
+                  handleChange={(event) => {
+                    alert({
+                      inputValue: event.target.value,
+                    });
+                  }}
+                />
+              </div>
             </div>
           }
         />

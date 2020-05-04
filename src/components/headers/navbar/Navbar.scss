@@ -56,16 +56,10 @@
     content: " ";
     display: block;
     height: 4px;
-    width: 0;
+    width: 100%;
     position: absolute;
     bottom: 0;
     background: #fd8585;
-    animation: iconBorder ease-in-out 1s forwards;
-  }
-}
-@keyframes iconBorder {
-  to {
-    width: 100%;
   }
 }
 

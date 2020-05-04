@@ -153,6 +153,7 @@ const Home: React.FC<Props> = () => {
           to do today?"
               />
               <Box_V2
+                hideButton={true}
                 title={"Login"}
                 split={split}
                 onButtonClick={() => {
