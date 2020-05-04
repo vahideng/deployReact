@@ -16,6 +16,7 @@ interface Props {
   icon?: { name: string; color: string; size?: number };
   shadowed?: boolean;
   responsive?:boolean;
+  buttonStyle?: CSSProperties;
 }
 
 const PrimaryButton: React.FC<Props> = ({
@@ -30,7 +31,8 @@ const PrimaryButton: React.FC<Props> = ({
   icon = { name: "", color: "" },
   shadowed,
   titleStyle,
-  responsive
+  responsive,
+  buttonStyle,
 }) => {
   const primaryButton = [classes.PrimaryButton];
     if (responsive) {
@@ -53,6 +55,7 @@ const PrimaryButton: React.FC<Props> = ({
           width:"100%",
           height: height,
           boxShadow: shadow,
+          ...buttonStyle,
         }}
       >
         <div className={classes.IconDiv}>
@@ -85,6 +88,7 @@ const PrimaryButton: React.FC<Props> = ({
           width:width,
           height: height,
           boxShadow: shadow,
+          ...buttonStyle
         }}
       >
         <Icon
