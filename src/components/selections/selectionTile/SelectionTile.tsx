@@ -57,11 +57,14 @@ const SelectionTile: React.FC<Props> = ({
               key={index}
               style={tileStyle}
             >
-              <div className={classes.SelectionTileSelector}>
+              <div
+                className={classes.SelectionTileSelector}
+                style={{
+                  justifyContent: item.children ? "center" : "flex-start",
+                }}
+              >
                 {item.children ? (
-                  <div className={classes.SelectionTileChild}>
-                    {item.children}
-                  </div>
+                  <>{item.children}</>
                 ) : !!item.avatar ? (
                   <div>
                     <Profile
@@ -98,6 +101,13 @@ const SelectionTile: React.FC<Props> = ({
                   </div>
                 )}
               </div>
+              <div
+                className={
+                  selected === index
+                    ? `${classes.borderBottomSelected} ${classes.borderBottom}`
+                    : classes.borderBottom
+                }
+              ></div>
             </div>
           );
         })}

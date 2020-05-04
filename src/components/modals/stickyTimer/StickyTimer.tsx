@@ -28,7 +28,7 @@ const customStyles = {
 interface Props {
   testId?: string;
   modalIsOpen: boolean;
-  expirationTime: number;
+  expirationTime: string;
   expirationText?: string;
   text?: string;
   closeTimeoutMS?: number;
@@ -36,9 +36,10 @@ interface Props {
   textBefore?: string;
   children?: ReactNode;
   onCLoseButtonCLick?: () => void;
+  showCrossIcon: boolean;
 }
 interface State {
-  seconds: number;
+  seconds: string;
   closeModal: boolean;
 }
 
@@ -59,6 +60,7 @@ class StickyTimer extends Component<Props, State> {
       contentLabel,
       onCLoseButtonCLick,
       children,
+      showCrossIcon
     } = this.props;
 
     return (
@@ -77,17 +79,19 @@ class StickyTimer extends Component<Props, State> {
                 <B_17_BLACK className={classes.StickyTimerExpTime}>
                   {expirationTime}
                 </B_17_BLACK>
-                <div
-                  style={{
-                    padding: "1rem",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => {
-                    onCLoseButtonCLick();
-                  }}
-                >
-                  <Icon icon="Fail" size={25} />
-                </div>
+                  {showCrossIcon &&
+                    <div
+                      style={{
+                        padding: "1rem",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => {
+                        onCLoseButtonCLick && onCLoseButtonCLick();
+                      }}
+                    >
+                      <Icon icon="Fail" size={25} />
+                    </div>
+                  }
               </div>
             </div>
             <div className={classes.StickyTimerBottomDiv}>
