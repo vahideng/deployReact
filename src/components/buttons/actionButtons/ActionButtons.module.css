@@ -24,6 +24,8 @@
   border-radius: 0.9rem;
   margin-right: 1.5rem;
   cursor: pointer;
+  -webkit-transition: width 150ms ease-in-out, height 150ms ease-in-out;
+  transition: width 150ms ease-in-out, height 150ms ease-in-out;
 }
 
 .ActionButtonsIconExpanded {
@@ -44,6 +46,8 @@
   width: 2.81rem;
   height: 2.81rem;
   border-radius: 1.1rem;
+  -webkit-transition: width 150ms ease-in-out, height 150ms ease-in-out;
+  transition: width 150ms ease-in-out, height 150ms ease-in-out;
   cursor: pointer;
 }
 

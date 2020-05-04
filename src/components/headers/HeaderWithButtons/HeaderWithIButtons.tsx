@@ -53,6 +53,7 @@ const HeaderWithIButtons = ({
 
         <LabelToolTip
           label={label}
+          
           tooltipData={tooltipData ? tooltipData : ""}
         />
       </div>

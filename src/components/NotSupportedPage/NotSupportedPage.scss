@@ -1,0 +1,61 @@
+.Container {
+  height: 100vh;
+  width: 100%;
+  padding-top: 1.75rem;
+  background-color: #F0F2F6;
+}
+
+.NavbarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  height: 4.31rem;
+  z-index: 1;
+  padding-right: 15.375rem;
+  padding-left: 8.75rem;
+}
+
+.IconContainer {
+  cursor: pointer;
+}
+.NavbarRightItemsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.NavbarRightItem {
+  margin-left: 2rem;
+}
+
+
+.bodyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  margin-top: 2.375rem;
+}
+
+
+.browserContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+
+.browserItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.imagesContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+}

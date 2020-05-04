@@ -18,6 +18,8 @@ const Home: React.FC<Props> = () => {
   const [sprint3, setSprint3] = useState(false);
   const [sprint4, setSprint4] = useState(false);
   const [NodeModule, setNodeModule] = useState(false);
+  const [notSupported, setNotSupported] = useState(false);
+
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -33,6 +35,9 @@ const Home: React.FC<Props> = () => {
 
   if (NodeModule === true) {
     return <Redirect to="/NodeModule" />;
+  }
+  if (notSupported === true) {
+    return <Redirect to="/not-supported" />;
   }
   return (
     <>
@@ -84,27 +89,38 @@ const Home: React.FC<Props> = () => {
                   }}
                 />,
                 <TextButton
-                buttonText="Sprint-4"
-                onTextClick={() => {
-                  setSprint4(true);
-                }}
-                buttonStyles={{
-                  color: "#000000",
-                  fontWeight: 400,
-                  fontSize: 15
-                }}
-              />,
-              <TextButton
-                buttonText="NodeModule"
-                onTextClick={() => {
-                  setNodeModule(true);
-                }}
-                buttonStyles={{
-                  color: "#000000",
-                  fontWeight: 400,
-                  fontSize: 15
-                }}
-              />,
+                  buttonText="Sprint-4"
+                  onTextClick={() => {
+                    setSprint4(true);
+                  }}
+                  buttonStyles={{
+                    color: "#000000",
+                    fontWeight: 400,
+                    fontSize: 15,
+                  }}
+                />,
+                <TextButton
+                  buttonText="NodeModule"
+                  onTextClick={() => {
+                    setNodeModule(true);
+                  }}
+                  buttonStyles={{
+                    color: "#000000",
+                    fontWeight: 400,
+                    fontSize: 15,
+                  }}
+                />,
+                <TextButton
+                  buttonText="Not supported Page"
+                  onTextClick={() => {
+                    setNotSupported(true);
+                  }}
+                  buttonStyles={{
+                    color: "#000000",
+                    fontWeight: 400,
+                    fontSize: 15,
+                  }}
+                />,
                 <TextDropdown
                   handleChange={(selectedOption: any) => {
                     setSelectedOption(selectedOption);
