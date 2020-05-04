@@ -25,7 +25,7 @@ const SelectionTile: React.FC<Props> = ({
   list,
   selected,
   onTileClick,
-  testId
+  testId,
 }) => {
   return (
     <div className={classes.SelectionTileRow} id={testId}>
@@ -37,20 +37,15 @@ const SelectionTile: React.FC<Props> = ({
               onClick={() => onTileClick(item, index)}
               className={classes.SelectionTileWrapper}
               key={index}
-              style={
-                selected === index
-                  ? {
-                      borderBottomColor: "#ff2626",
-                      justifyContent: item.children ? "center" : "flex-start"
-                    }
-                  : { justifyContent: item.children ? "center" : "flex-start" }
-              }
             >
-              <div className={classes.SelectionTileSelector}>
+              <div
+                className={classes.SelectionTileSelector}
+                style={{
+                  justifyContent: item.children ? "center" : "flex-start",
+                }}
+              >
                 {item.children ? (
-                  <div className={classes.SelectionTileChild}>
-                    {item.children}
-                  </div>
+                  <>{item.children}</>
                 ) : !!item.avatar ? (
                   <div>
                     <Profile
@@ -87,6 +82,13 @@ const SelectionTile: React.FC<Props> = ({
                   </div>
                 )}
               </div>
+              <div
+                className={
+                  selected === index
+                    ? `${classes.borderBottomSelected} ${classes.borderBottom}`
+                    : classes.borderBottom
+                }
+              ></div>
             </div>
           );
         })}

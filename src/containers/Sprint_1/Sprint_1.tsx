@@ -115,7 +115,6 @@ class Sprint1 extends Component<Props, State> {
     toggled: false,
     homRedirect: false,
     tacInactive: true,
-
     tacClear: false,
     tacClearActiveStatus: false,
     navbarScrolled: false,
@@ -206,6 +205,7 @@ class Sprint1 extends Component<Props, State> {
         />
         <Title>Icons</Title>
         <IconTest />
+
         <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "white", padding: 50 }}>
           <TransactionList
@@ -2397,6 +2397,37 @@ class Sprint1 extends Component<Props, State> {
           selected={SelectionTileNum}
           list={[
             {
+              children: (
+                <p>
+                  Is it more important for something to be dynamic or to be
+                  dynamic or to be dynamic or to be customer-directed? What does
+                  the term 'e-tailers' really mean?
+                </p>
+              ),
+            },
+            {
+              children: <p>Is it more important</p>,
+            },
+            {
+              children: (
+                <p>
+                  Is it more important for something to be dynamic or to be
+                  dynamic or to be dynamic or to be customer-directed? What does
+                  the term 'e-tailers' really mean?
+                </p>
+              ),
+            },
+          ]}
+        />
+        <SelectionTile
+          testId={"testId"}
+          onTileClick={(item, index) => {
+            this.setState({ SelectionTileNum: index });
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={SelectionTileNum}
+          list={[
+            {
               accountTitle: "Saving Account A",
               accountNumber: "RM 2,000.00",
             },
@@ -2440,16 +2471,8 @@ class Sprint1 extends Component<Props, State> {
               },
             },
             {
-              children: <img src={images.common.sampleLogo} width={150} />,
+              children: <img src={images.common.sampleLogo} width={100} />,
             },
-            // {
-            //   children: (
-            //     <div style={{ display: "flex", justifyContent: "center" }}>
-            //       <p>JomPay</p>
-            //       <img src={images.common.JomPay1} />
-            //     </div>
-            //   )
-            // },
             {
               avatar: {
                 name: "Kurniawan Suriawati",
@@ -2665,6 +2688,7 @@ class Sprint1 extends Component<Props, State> {
         <ZeroResult
           text={`We can’t seem to find any result for 
           “Damansara Heights”`}
+          textStyle={{ fontWeight: "normal" }}
         />
         <Title>LabeledIcon</Title>
         <LabeledIcon
@@ -3001,8 +3025,10 @@ class Sprint1 extends Component<Props, State> {
             alert("link clicked");
           }}
         />
+
         <CenteredDiv>
           <Dock
+            isExpanded={true}
             onButtonClick={(item, index) => {
               alert(`${item.name} with index of${index} clicked`);
             }}
