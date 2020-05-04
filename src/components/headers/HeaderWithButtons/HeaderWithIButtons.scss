@@ -1,14 +1,22 @@
+@import '../../assets/common/flex.scss';
+
 .MainDiv {
-  display: flex;
+  @extend .FlexLeft;
   justify-content: space-between;
-  align-items: center;
-  padding: 1.87rem 1.5rem;
+  padding: 1.25rem 1.5rem;
   background: rgba(196, 196, 196, 0.3);
 }
-.LeftDiv {
-  display: flex;
-  align-items: center;
+
+.ContentContainer {
+  @extend .FlexLeft;
+  flex: 1;
 }
+
+.ButtonContainer {
+  @extend .FlexRight;
+  flex: 1;
+}
+
 .IconDiv {
   padding-right: 1rem;
 }
