@@ -1510,6 +1510,7 @@ const Sprint3: React.FC<Props> = () => {
           <HeaderWithIcons
             headerStyle={{
               backgroundColor: "rgba(196, 196, 196, 0.3)",
+              borderTopRightRadius: '1rem',
             }}
             label={"DuitNow QR"}
             image={{ src: images.common.Duitnow1 }}
