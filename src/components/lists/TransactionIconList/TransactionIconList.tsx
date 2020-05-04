@@ -23,7 +23,7 @@ interface Props {
       amount: string;
       actionLabel?: string;
       actionIcon?: string;
-      hideButtons?:boolean;
+      hideActionButton?:boolean;
       onActionButtonClick?: () => void;
       details?: {
         label1?: string;
@@ -32,6 +32,7 @@ interface Props {
         value2?: string;
         actionLabel?: string;
         actionIcon?: string;
+        hideActionButton?:boolean;
         onActionButtonClick?: () => void;
       }[];
     }[];
@@ -188,16 +189,16 @@ const AccountsList: React.FC<Props> = ({
                       </R_13_BLACK>
                     </div> 
                   </div>
-                { !!transaction.hideButtons ? !transaction.hideButtons : true  &&
                   <div
                     style={{
                       display: "flex",
                       flexDirection: "row",
                       alignItems: "center",
-                      justifyContent: "center"
+                      justifyContent: "center",
+                      opacity: transaction.hideActionButton ? 0 : 1
                     }}
                   >
-                      { item.expandedIndexes.includes(index) && ( <button
+                    <button
                       style={{
                         border: "none",
                         background: `linear-gradient(180deg, #F6F6F3 0%, #EAE9E3 100%)`,
@@ -205,6 +206,7 @@ const AccountsList: React.FC<Props> = ({
                         height: "1.9375em",
                         width: "7.5em"
                       }}
+                      disabled={transaction.hideActionButton}
                       onClick={
                         transaction.onActionButtonClick &&
                         transaction.onActionButtonClick
@@ -230,9 +232,8 @@ const AccountsList: React.FC<Props> = ({
                         </B_11_WHITE>
                       </div>
                     </button>
-                      )}
                   </div>
-}
+
                 </div>
                         
                 {item.expandedIndexes.includes(index) && (
@@ -294,17 +295,16 @@ const AccountsList: React.FC<Props> = ({
                                 {transactionDetail.value2}
                               </B_13_BLACK>
                             </div>
-                            { !!transaction.hideButtons ? !transaction.hideButtons : true  &&
                             <div
                               style={{
                                 display: "flex",
                                 flexDirection: "row",
                                 alignItems: "center",
-                                justifyContent: "center"
+                                justifyContent: "center",
+                                opacity: transactionDetail.hideActionButton ? 0 : 1
                               }}
                             >
-                             {   item.expandedIndexes.includes(index) && ( 
-                             <button
+                              <button
                                 style={{
                                   border: "none",
                                   background: `linear-gradient(180deg, #F6F6F3 0%, #EAE9E3 100%)`,
@@ -313,6 +313,7 @@ const AccountsList: React.FC<Props> = ({
                                   width: "7.5em",
                                   opacity: transactionDetail.actionLabel ? 1 : 0
                                 }}
+                                disabled={transactionDetail.hideActionButton}
                                 onClick={
                                   transactionDetail.onActionButtonClick &&
                                   transactionDetail.onActionButtonClick
@@ -340,10 +341,7 @@ const AccountsList: React.FC<Props> = ({
                                   </B_11_WHITE>
                                 </div>
                               </button>
-                             )} 
-                             </div>
-                          
-}
+                            </div>
                         </div>
                           {transaction.details &&
                             TDIndex === transaction.details.length - 1 && (

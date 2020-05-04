@@ -522,12 +522,12 @@ class Sprint1 extends Component<Props, State> {
         <Title>TransactionIconList</Title>
         <CenteredDiv>
           <div style={{ width: "57.1875em" }}>
-            <TransactionIconList
+          <TransactionIconList
               testId={"testId"}
               list={[
                 {
                   date: "Today",
-                  expandedIndexes: [0],
+                  expandedIndexes: [0,1],
                   transactions: [
                     {
                       icon: "Transfer",
@@ -543,7 +543,7 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
-                      hideButtons:true,
+                      hideActionButton: false,
                       onActionButtonClick: () => alert("Repeat"),
                       details: [
                         {
@@ -553,19 +553,15 @@ class Sprint1 extends Component<Props, State> {
                           value2: "May - Rental",
                           actionLabel: "Add to Fav",
                           actionIcon: "Love",
-                          onActionButtonClick: () => {
-                            alert("Fav");
-                            this.setState({
-                              actionBtnStatus: !actionBtnStatus,
-                            });
-                          },
+                          onActionButtonClick: () => alert("Fav"),
                         },
                         {
                           label1: "",
                           value1: "",
                           label2: "Other Details",
                           value2: "-",
-                          //  actionLabel: 'View Receipt',
+                          hideActionButton: true
+                          // actionLabel: 'View Receipt',
                           // actionIcon: ''
                         },
                       ],
@@ -584,7 +580,7 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
-                      hideButtons:false,
+                      hideActionButton: true,
                       details: [
                         {
                           label1: "From Account",
@@ -601,6 +597,7 @@ class Sprint1 extends Component<Props, State> {
                           value2: "-",
                           actionLabel: "View Receipt",
                           actionIcon: "",
+                          hideActionButton: true
                         },
                       ],
                     },
@@ -624,7 +621,7 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 1,236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
-                      hideButtons:false,
+                      hideActionButton: true,
                       details: [
                         {
                           label1: "From Account",
@@ -641,6 +638,7 @@ class Sprint1 extends Component<Props, State> {
                           value2: "-",
                           actionLabel: "View Receipt",
                           actionIcon: "",
+                          hideActionButton: true
                         },
                       ],
                     },
