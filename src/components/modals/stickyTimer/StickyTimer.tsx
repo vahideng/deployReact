@@ -37,7 +37,7 @@ interface Props {
   textBefore?: string;
   children?: ReactNode;
   onCLoseButtonCLick?: () => void;
-  showCrossIcon: boolean;
+  showCrossIcon : boolean;
   
 }
 

@@ -141,6 +141,7 @@ const Sprint4: React.FC<Props> = () => {
         }}
       />
       <StickyTimer
+        showCrossIcon ={true}
         responsive={true}
         testId={"testId"}
         closeTimeoutMS={1000}
@@ -150,7 +151,7 @@ const Sprint4: React.FC<Props> = () => {
           setStickyTimer(!stickyTimer);
         }}
         modalIsOpen={stickyTimer}
-        expirationTime={20}
+        expirationTime={"20"}
         expirationText="Seconds"
         text={
           "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
