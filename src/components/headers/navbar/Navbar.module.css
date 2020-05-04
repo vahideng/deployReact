@@ -91,24 +91,10 @@
   content: " ";
   display: block;
   height: 4px;
-  width: 0;
+  width: 100%;
   position: absolute;
   bottom: 0;
   background: #fd8585;
-  -webkit-animation: iconBorder ease-in-out 1s forwards;
-          animation: iconBorder ease-in-out 1s forwards;
-}
-
-@-webkit-keyframes iconBorder {
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes iconBorder {
-  to {
-    width: 100%;
-  }
 }
 
 .NavbarIcon {

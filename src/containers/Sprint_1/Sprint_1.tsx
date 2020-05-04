@@ -356,7 +356,6 @@ class Sprint1 extends Component<Props, State> {
         </CenteredDiv>
         <Title>Icons</Title>
         <IconTest />
-
         <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "white", padding: 50 }}>
           <TransactionList
@@ -1007,7 +1006,7 @@ class Sprint1 extends Component<Props, State> {
                   }}
                   type="text"
                   clearClickHandler={() => {
-                    console.log('clicked')
+                    console.log("clicked");
                   }}
                   clearIcon={true}
                   label="input label"
@@ -1274,7 +1273,7 @@ class Sprint1 extends Component<Props, State> {
           textBefore="Transaction will expire in"
           onCLoseButtonCLick={() => alert("clicked")}
           modalIsOpen={StickyModalOpen}
-          expirationTime={'05:00'}
+          expirationTime={"05:00"}
           expirationText="Seconds"
           text={
             "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
@@ -1414,7 +1413,7 @@ class Sprint1 extends Component<Props, State> {
           <StickyTimer
             testId={"testId"}
             modalIsOpen={StickyModalOpen}
-            expirationTime={'05:00'}
+            expirationTime={"05:00"}
             text={
               "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
             }
@@ -2050,7 +2049,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>Tooltips</Title>
         <CenteredDiv>
           <Tooltip
-           onBlur={()=> console.log("onclicked")}
+            onBlur={() => console.log("onclicked")}
             showTooltip={true}
             testId={"testId"}
             tipChildren={
@@ -3211,7 +3210,6 @@ class Sprint1 extends Component<Props, State> {
             alert("link clicked");
           }}
         />
-
         <CenteredDiv>
           <Dock
             isExpanded={true}
