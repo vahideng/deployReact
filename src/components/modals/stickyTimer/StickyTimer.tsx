@@ -29,7 +29,7 @@ interface Props {
   responsive?: boolean;
   testId?: string;
   modalIsOpen: boolean;
-  expirationTime: number;
+  expirationTime: string;
   expirationText?: string;
   text?: string;
   closeTimeoutMS?: number;
@@ -37,6 +37,8 @@ interface Props {
   textBefore?: string;
   children?: ReactNode;
   onCLoseButtonCLick?: () => void;
+  showCrossIcon: boolean;
+  
 }
 
 const StickyTimer: React.FC<Props> = (props) => {
@@ -50,6 +52,7 @@ const StickyTimer: React.FC<Props> = (props) => {
     contentLabel,
     onCLoseButtonCLick,
     children,
+    showCrossIcon,
     responsive,
   } = props;
   let mainDiv = classes.StickyTimerTopDiv;
@@ -77,19 +80,23 @@ const StickyTimer: React.FC<Props> = (props) => {
                 {textBefore ? textBefore : "Transaction will expire in"}
               </R_17_BLACK>
               <B_17_BLACK className={classes.StickyTimerExpTime}>
+                
                 {expirationTime}
               </B_17_BLACK>
-              <div
-                style={{
-                  padding: "1rem",
-                  cursor: "pointer",
-                }}
-                onClick={() => {
-                  onCLoseButtonCLick();
-                }}
-              >
-                <Icon icon="Fail" size={25} />
-              </div>
+
+              {showCrossIcon &&
+                    <div
+                      style={{
+                        padding: "1rem",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => {
+                        onCLoseButtonCLick && onCLoseButtonCLick();
+                      }}
+                    >
+                      <Icon icon="Fail" size={25} />
+                    </div>
+                  }
             </div>
           </div>
           <div className={bottomDiv}>

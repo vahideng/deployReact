@@ -356,6 +356,7 @@ class Sprint1 extends Component<Props, State> {
         </CenteredDiv>
         <Title>Icons</Title>
         <IconTest />
+
         <Title>TransactionList</Title>
         <CenteredDiv style={{ backgroundColor: "white", padding: 50 }}>
           <TransactionList
@@ -1275,7 +1276,7 @@ class Sprint1 extends Component<Props, State> {
           textBefore="Transaction will expire in"
           onCLoseButtonCLick={() => alert("clicked")}
           modalIsOpen={StickyModalOpen}
-          expirationTime={20}
+          expirationTime={'05:00'}
           expirationText="Seconds"
           text={
             "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
@@ -1290,6 +1291,7 @@ class Sprint1 extends Component<Props, State> {
               }}
             />
           }
+          showCrossIcon={true}
         />
         <PrimaryButton
           title="Open StickyTimer"
@@ -1414,10 +1416,11 @@ class Sprint1 extends Component<Props, State> {
           <StickyTimer
             testId={"testId"}
             modalIsOpen={StickyModalOpen}
-            expirationTime={20}
+            expirationTime={'05:00'}
             text={
               "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
             }
+            showCrossIcon={true}
           />
         </div>
         <Title>Vertical tab</Title>
@@ -2122,7 +2125,7 @@ class Sprint1 extends Component<Props, State> {
               });
             }}
             autoFocus={false}
-            showFilter={true}
+            showFilter={false}
             filterOptions={[
               { label: "Successful", value: "Successful", selected: true },
               { label: "Unsuccessful", value: "Unsuccessful", selected: true },
@@ -2576,6 +2579,37 @@ class Sprint1 extends Component<Props, State> {
           selected={SelectionTileNum}
           list={[
             {
+              children: (
+                <p>
+                  Is it more important for something to be dynamic or to be
+                  dynamic or to be dynamic or to be customer-directed? What does
+                  the term 'e-tailers' really mean?
+                </p>
+              ),
+            },
+            {
+              children: <p>Is it more important</p>,
+            },
+            {
+              children: (
+                <p>
+                  Is it more important for something to be dynamic or to be
+                  dynamic or to be dynamic or to be customer-directed? What does
+                  the term 'e-tailers' really mean?
+                </p>
+              ),
+            },
+          ]}
+        />
+        <SelectionTile
+          testId={"testId"}
+          onTileClick={(item, index) => {
+            this.setState({ SelectionTileNum: index });
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={SelectionTileNum}
+          list={[
+            {
               accountTitle: "Saving Account A",
               accountNumber: "RM 2,000.00",
             },
@@ -2619,16 +2653,8 @@ class Sprint1 extends Component<Props, State> {
               },
             },
             {
-              children: <img src={images.common.sampleLogo} width={150} />,
+              children: <img src={images.common.sampleLogo} width={100} />,
             },
-            // {
-            //   children: (
-            //     <div style={{ display: "flex", justifyContent: "center" }}>
-            //       <p>JomPay</p>
-            //       <img src={images.common.JomPay1} />
-            //     </div>
-            //   )
-            // },
             {
               avatar: {
                 name: "Kurniawan Suriawati",
@@ -2844,6 +2870,7 @@ class Sprint1 extends Component<Props, State> {
         <ZeroResult
           text={`We can’t seem to find any result for 
           “Damansara Heights”`}
+          textStyle={{ fontWeight: "normal" }}
         />
         <Title>LabeledIcon</Title>
         <LabeledIcon
@@ -3186,8 +3213,10 @@ class Sprint1 extends Component<Props, State> {
             alert("link clicked");
           }}
         />
+
         <CenteredDiv>
           <Dock
+            isExpanded={true}
             onButtonClick={(item, index) => {
               alert(`${item.name} with index of${index} clicked`);
             }}

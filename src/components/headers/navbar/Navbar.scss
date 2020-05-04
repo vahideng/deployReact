@@ -11,7 +11,7 @@
   height: 4.31rem;
   box-shadow: $mainBoxShadow;
   z-index: 1000;
-  transition: height 0.5s ease-in-out;
+  transition: height 150ms ease-in-out;
 }
 .NavbarMainDivScrolled {
   display: flex;
@@ -24,7 +24,7 @@
   height: 3rem;
   box-shadow: $mainBoxShadow;
   z-index: 1000;
-  transition: height 0.5s ease-in-out;
+  transition: height 150ms ease-in-out;
 }
 
 .InnerWidth {
@@ -70,42 +70,9 @@
 }
 
 .NavbarIcon {
-  opacity: 1;
-  animation-name: Profile;
-  animation-duration: 2s;
   cursor: pointer;
 }
 
 .NavbarScrolledIcon {
-  opacity: 1;
-  animation-name: navScrIcon;
-  animation-duration: 2s;
   cursor: pointer;
-}
-.scrolledProfile {
-  opacity: 1;
-  animation-name: navScrIcon;
-  animation-duration: 2s;
-}
-.Profile {
-  opacity: 1;
-  animation-name: Profile;
-  animation-duration: 2s;
-}
-@keyframes navScrIcon {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes Profile {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
