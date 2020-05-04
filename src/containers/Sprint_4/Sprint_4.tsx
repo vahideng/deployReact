@@ -132,6 +132,7 @@ const Sprint4: React.FC<Props> = () => {
           {
             iconName: "Settings",
             onButtonClick: () => alert("button-2-Clicked"),
+            selected: true,
           },
           {
             iconName: "Share",
