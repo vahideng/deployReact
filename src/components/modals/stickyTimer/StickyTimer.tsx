@@ -77,7 +77,7 @@ const StickyTimer: React.FC<Props> = (props) => {
             <div className={timer}>
               <R_17_BLACK>
                 {" "}
-                {textBefore ? textBefore : "Transaction will expire in"}
+                {textBefore && textBefore}
               </R_17_BLACK>
               <B_17_BLACK className={classes.StickyTimerExpTime}>
                 
