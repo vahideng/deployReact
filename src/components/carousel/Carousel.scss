@@ -25,21 +25,23 @@
 .CarouselItem {
   display: flex;
   overflow: hidden;
-
 }
-  .Chevrons {
-    cursor: pointer;
-    align-self: center;
-    padding: 1rem;
-  }
-  .Children {
-    width: 100%;
-    position: relative;
-  }
-  .ChildrenWide {
-    width: 100%;
-    position: relative;
-  
+.Chevrons {
+  cursor: pointer;
+  align-self: center;
+  padding: 1rem;
+}
+.SingleItemClass {
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+.Children {
+  width: 100%;
+  position: relative;
+}
+.ChildrenWide {
+  width: 100%;
+  position: relative;
 }
 
 .leftAnimation {

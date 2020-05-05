@@ -73,6 +73,11 @@
   padding: 1rem;
 }
 
+.SingleItemClass {
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
 .Children {
   width: 100%;
   position: relative;

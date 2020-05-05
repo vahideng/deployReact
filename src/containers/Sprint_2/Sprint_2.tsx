@@ -522,6 +522,7 @@ const Sprint2: React.FC<Props> = () => {
           />
         </div>
       </div>
+      <Title>BoxSlider Single Item</Title>
       <BoxSlider
         sliderItems={[
           {
@@ -536,30 +537,6 @@ const Sprint2: React.FC<Props> = () => {
                 alert("ReadMore");
               },
             },
-          },
-          {
-            tagText: "ANNOUNCeMeNTS",
-            title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
-            descriptions:
-              "The semiotics of the console in faded pinks and yellows. They were dropping, losing altitude in a canyon of rainbow foliage, a lurid communal mural that completely covered the hull of the previous century",
-            readMore: {
-              text: "read more",
-              onReadClick: () => {
-                alert("ReadMore");
-              },
-            },
-          },
-          {
-            tagText: "ANNOUNCeMeNTS",
-            title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
-            descriptions:
-              "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term",
-          },
-          {
-            tagText: "ANNOUNCeMeNTS",
-            title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
-            descriptions:
-              "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term",
           },
         ]}
       />
