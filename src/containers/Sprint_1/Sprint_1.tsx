@@ -1253,6 +1253,7 @@ class Sprint1 extends Component<Props, State> {
         />
         {/* {console.log(this.state.StickyModalOpen)} */}
         <StickyTimer
+          // zIndex={-1}
           testId={"testId"}
           closeTimeoutMS={1000}
           contentLabel="example"
@@ -1394,15 +1395,6 @@ class Sprint1 extends Component<Props, State> {
                 generalModalOpen: true,
               });
             }}
-          />
-          <StickyTimer
-            testId={"testId"}
-            modalIsOpen={StickyModalOpen}
-            expirationTime={"05:00"}
-            text={
-              "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
-            }
-            showCrossIcon={true}
           />
         </div>
         <Title>Vertical tab</Title>
