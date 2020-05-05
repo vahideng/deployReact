@@ -649,6 +649,8 @@ class Sprint1 extends Component<Props, State> {
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
                 amount: "RM 10,135",
+                percentageVal:"6.6",
+                percentageStatus : "Plus"
               },
               {
                 accountName: "Foreign Currency Account",
@@ -658,6 +660,8 @@ class Sprint1 extends Component<Props, State> {
                 countryFlagImage: images.common.countryFlag,
                 amount: "AUD 1,392",
                 equivalentAmount: "RM 4,583",
+                percentageVal:"6.6",
+                percentageStatus : "Plus"
               },
               {
                 icon: "Plus",
@@ -668,6 +672,8 @@ class Sprint1 extends Component<Props, State> {
                 statusLabel: "ACTIVE",
                 amount: "RM 2,000",
                 amountStatus: "Minus",
+                 percentageVal:"6.6",
+                percentageStatus : "Plus"
               },
               {
                 accountName: "Conversion Account",
@@ -675,6 +681,8 @@ class Sprint1 extends Component<Props, State> {
                 statusLabel: "ACTIVE",
                 amount: "RM 9,000",
                 amountStatus: "Plus",
+                percentageVal:"6.6",
+                percentageStatus : "Plus"
               },
               {
                 cardLogo:
@@ -684,6 +692,8 @@ class Sprint1 extends Component<Props, State> {
                 statusLabel: "RESTRICTED ACCESS",
                 statusLabelColor: "#FF2626",
                 amount: "RM 0.00",
+                percentageVal:"6.6",
+                percentageStatus : "Plus"
               },
               {
                 cardLogo: images.common.masterCard,
