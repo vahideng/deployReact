@@ -129,9 +129,8 @@ const Sprint2: React.FC<Props> = () => {
             iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
             detailTitle="Successfully Activated"
             detail="Your account has been activated successfully."
-            outerRoundSize={'3.9375rem'}
-            innerRoundSize={'3.01875rem'}
-            
+            outerRoundSize={"3.9375rem"}
+            innerRoundSize={"3.01875rem"}
           />
         }
       />
@@ -174,8 +173,8 @@ const Sprint2: React.FC<Props> = () => {
           }
         />
       </div>
-      <Title>SettingModalCenter</Title>
       <SettingModalCenter
+        // zIndex={-1}
         onRequestClose={() => setSettingModalCenter(false)}
         testId={"testId"}
         modalIsOpen={settingModalCenter}
@@ -195,7 +194,7 @@ const Sprint2: React.FC<Props> = () => {
                   padding: "2rem",
                 }}
               >
-                  <PrimaryButton onButtonClick={() => {}} />
+                <PrimaryButton onButtonClick={() => {}} />
               </div>
             }
           />
@@ -523,6 +522,7 @@ const Sprint2: React.FC<Props> = () => {
           />
         </div>
       </div>
+      <Title>BoxSlider Single Item</Title>
       <BoxSlider
         sliderItems={[
           {
@@ -537,30 +537,6 @@ const Sprint2: React.FC<Props> = () => {
                 alert("ReadMore");
               },
             },
-          },
-          {
-            tagText: "ANNOUNCeMeNTS",
-            title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
-            descriptions:
-              "The semiotics of the console in faded pinks and yellows. They were dropping, losing altitude in a canyon of rainbow foliage, a lurid communal mural that completely covered the hull of the previous century",
-            readMore: {
-              text: "read more",
-              onReadClick: () => {
-                alert("ReadMore");
-              },
-            },
-          },
-          {
-            tagText: "ANNOUNCeMeNTS",
-            title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
-            descriptions:
-              "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term",
-          },
-          {
-            tagText: "ANNOUNCeMeNTS",
-            title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
-            descriptions:
-              "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term",
           },
         ]}
       />

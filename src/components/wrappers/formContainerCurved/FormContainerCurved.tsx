@@ -102,6 +102,7 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
                       style={{
                         height: "3.18rem",
                         width: "3.8rem",
+                        marginLeft: "-2px",
                       }}
                     />
                   </div>
