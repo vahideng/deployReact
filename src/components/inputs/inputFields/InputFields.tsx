@@ -27,7 +27,7 @@ interface Props {
     testId?: string | undefined
   ) => void;
   clearIcon?: boolean;
-  clearClickHandler?: () => void;
+  clearClickHandler?: (event: any) => void;
   notValid?: boolean;
   errorMessage?: {
     testId?: string;
@@ -40,6 +40,7 @@ interface Props {
   maxLength?: number;
   onBlur?: (event: FormEvent) => void;
   onFocus?: (event: FormEvent) => void;
+  onClearIconHover?: (event: MouseEvent, isHover?: boolean) => void;
   tipChildren?: ReactNode;
   bottomLabel?: string;
   bottomLabelStyle?: CSSProperties;
@@ -60,6 +61,7 @@ class InputField extends Component<Props, {}> {
       autoFocus,
       isSecure,
       onSecureClick,
+      onClearIconHover,
       clearIcon,
       clearClickHandler,
       notValid,
@@ -150,6 +152,8 @@ class InputField extends Component<Props, {}> {
             <span
               id={`${testId}-1`}
               onClick={clearClickHandler}
+              onMouseEnter={(e: any) => onClearIconHover(e, true)}
+              onMouseLeave={(e: any) => onClearIconHover(e, false)}
               className={classes.InputFieldClear}
               // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
             >
