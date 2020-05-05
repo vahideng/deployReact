@@ -96,7 +96,6 @@ interface State {
   homRedirect: boolean;
   tacClear: boolean;
   tacClearActiveStatus: boolean;
-  navbarScrolled: boolean;
   actionBtnStatus: boolean;
 }
 
@@ -118,7 +117,6 @@ class Sprint1 extends Component<Props, State> {
     tacInactive: true,
     tacClear: false,
     tacClearActiveStatus: false,
-    navbarScrolled: false,
     actionBtnStatus: true,
     rightSelect: true,
   };
@@ -140,8 +138,6 @@ class Sprint1 extends Component<Props, State> {
       tacInactive,
       tacClear,
       tacClearActiveStatus,
-      navbarScrolled,
-      actionBtnStatus,
     } = this.state;
 
     if (homRedirect === true) {
@@ -427,19 +423,8 @@ class Sprint1 extends Component<Props, State> {
           scrolledIcon={{
             name: "LOGO",
             color: "#ff2626",
-            onIconClick: () => {
-              this.setState({
-                navbarScrolled: !navbarScrolled,
-              });
-            },
           }}
-          icon={{
-            onIconClick: () => {
-              this.setState({
-                navbarScrolled: !navbarScrolled,
-              });
-            },
-          }}
+          icon={{}}
           profile={{
             greeting: "Good Morning",
             name: "Adam Constantine",
@@ -521,12 +506,12 @@ class Sprint1 extends Component<Props, State> {
         <Title>TransactionIconList</Title>
         <CenteredDiv>
           <div style={{ width: "57.1875em" }}>
-          <TransactionIconList
+            <TransactionIconList
               testId={"testId"}
               list={[
                 {
                   date: "Today",
-                  expandedIndexes: [0,1],
+                  expandedIndexes: [0, 1],
                   transactions: [
                     {
                       icon: "Transfer",
@@ -559,7 +544,7 @@ class Sprint1 extends Component<Props, State> {
                           value1: "",
                           label2: "Other Details",
                           value2: "-",
-                          hideActionButton: true
+                          hideActionButton: true,
                           // actionLabel: 'View Receipt',
                           // actionIcon: ''
                         },
@@ -596,7 +581,7 @@ class Sprint1 extends Component<Props, State> {
                           value2: "-",
                           actionLabel: "View Receipt",
                           actionIcon: "",
-                          hideActionButton: true
+                          hideActionButton: true,
                         },
                       ],
                     },
@@ -637,7 +622,7 @@ class Sprint1 extends Component<Props, State> {
                           value2: "-",
                           actionLabel: "View Receipt",
                           actionIcon: "",
-                          hideActionButton: true
+                          hideActionButton: true,
                         },
                       ],
                     },
