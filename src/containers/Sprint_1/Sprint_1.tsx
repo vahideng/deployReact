@@ -1178,6 +1178,7 @@ class Sprint1 extends Component<Props, State> {
           ]}
         ></Box>
         <TacModal
+          // zIndex={-1}
           onCloseClick={() => {
             alert("Tac Closed");
           }}
@@ -1304,6 +1305,7 @@ class Sprint1 extends Component<Props, State> {
           }}
         >
           <TacModal
+            // zIndex={-1}
             onCloseClick={() => {
               alert("Tac Closed");
             }}
