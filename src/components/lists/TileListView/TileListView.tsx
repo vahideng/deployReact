@@ -22,6 +22,8 @@ interface Props {
     amount: string;
     amountStatus?: "Plus" | "Minus";
     equivalentAmount?: string;
+    percentageVal?:string;
+    percentageStatus?: "Plus" | "Minus";
   }[];
   onTileClick: (
     item: {
@@ -37,6 +39,8 @@ interface Props {
       iconColor?: string;
       amount: string;
       equivalentAmount?: string;
+      percentageVal?:string;
+      percentageStatus?: "Plus" | "Minus";
     },
     index: number
   ) => void;
@@ -127,6 +131,8 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                   flex: 1,
                   flexDirection: "row",
                   alignItems: "center",
+                  minWidth: '13rem',
+                  justifyContent:'flex-end'
                 }}
               >
                 {item.countryFlagImage && (
@@ -162,6 +168,29 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                 >
                   {item.amount}
                 </B_15_BLACK>
+                {!!item.percentageVal && (
+                <B_15_BLACK
+                  style={{
+                    marginLeft:
+                      item.icon && item.iconColor && item.iconSize ? 8 : 4,
+                    letterSpacing: 0.4,
+                    display: 'flex',
+                    alignItems:"center"
+          
+                  }}
+                >
+                  (
+                    {!!item.percentageStatus && (
+                  <Icon
+                    icon={item.percentageStatus}
+                    color={item.percentageStatus === "Plus" ? "#36A03E" : "#ff2626"}
+                    size={30}
+                    style={{ marginRight: '-0.5rem',marginLeft:'-0.5rem' }}
+                  />
+                )}
+                {item.percentageVal}&#37;)
+                </B_15_BLACK>
+                 )}
               </div>
               <R_13_BLACK style={{ letterSpacing: 0.4 }}>
                 {item.equivalentAmount}
