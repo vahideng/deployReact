@@ -5,7 +5,7 @@ interface Props {
   testId?: string;
   modalIsOpen: boolean;
   modalChildren?: ReactNode;
-  onRequestClose?: ()=> void;
+  onRequestClose?: () => void;
 }
 
 const SettingModalCenter = (props: Props) => {
@@ -13,7 +13,7 @@ const SettingModalCenter = (props: Props) => {
   return (
     <div id={testId}>
       <AmModal
-      onRequestClose ={onRequestClose}
+        onRequestClose={onRequestClose}
         modalChildren={modalChildren}
         testId={testId}
         modalIsOpen={modalIsOpen}

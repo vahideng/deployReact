@@ -151,6 +151,7 @@ class Sprint1 extends Component<Props, State> {
       <div style={{ paddingTop: "4rem" }}>
         <AmModal
           testId={"testId"}
+          zIndex={-1} // testing zIndex prop
           modalIsOpen={generalModalOpen}
           modalChildren={
             <FormContainer
@@ -1290,7 +1291,6 @@ class Sprint1 extends Component<Props, State> {
               generalModalOpen: true,
             });
           }}
-        />
         />
         <Title>Modals</Title>
         <div
