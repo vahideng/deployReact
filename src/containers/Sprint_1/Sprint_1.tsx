@@ -1744,7 +1744,8 @@ class Sprint1 extends Component<Props, State> {
                   color: "green",
                   size: 20,
                 },
-                accountTitle: "Savings/Current Accounts",
+                accountTitle: "Accounts",
+                accountTitle2: "& Card Settings",
                 children: (
                   <div
                     style={{
@@ -1836,7 +1837,7 @@ class Sprint1 extends Component<Props, State> {
             minimize={true}
             data={[
               {
-                selected: true,
+                selected: false,
                 onClick: (index: any) => alert(index),
                 icon: {
                   name: "Account3",
@@ -1919,8 +1920,7 @@ class Sprint1 extends Component<Props, State> {
 
                           <ZeroResult
                             testId={"testId"}
-                            text={`We can’t seem to find any result for 
-              “Damansara Heights”`}
+                            text={`We can’t seem to find any result for “Damansara Heights”`}
                           />,
                           <PieChart
                             pieLabels={["Fixed Income 60%", "Equity 10%"]}
@@ -1937,7 +1937,7 @@ class Sprint1 extends Component<Props, State> {
                 ),
               },
               {
-                selected: false,
+                selected: true,
                 onClick: (index: any) => alert(index),
                 icon: {
                   name: "Card",
@@ -2107,7 +2107,7 @@ class Sprint1 extends Component<Props, State> {
               });
             }}
             autoFocus={false}
-            showFilter={false}
+            showFilter={true}
             filterOptions={[
               { label: "Successful", value: "Successful", selected: true },
               { label: "Unsuccessful", value: "Unsuccessful", selected: true },

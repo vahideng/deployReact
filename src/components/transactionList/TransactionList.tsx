@@ -91,7 +91,11 @@ const TransactionList: React.FC<Props> = ({ title, data, testId }) => {
                           whiteSpace: "nowrap",
                           float: "right",
                           padding: 0,
-                          fontWeight: 900
+                          fontWeight: 900,
+                          flexDirection: 'row',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center'
                         }}
                       >
                         <span

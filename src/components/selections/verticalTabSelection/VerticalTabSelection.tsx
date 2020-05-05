@@ -9,6 +9,7 @@ interface Props {
   selected?: boolean;
   icon?: { name: string; size?: number; color?: string };
   accountTitle?: string;
+  accountTitle2?: string;
   tabStyle: CSSProperties;
 }
 
@@ -17,6 +18,7 @@ const VerticalTabSelection: React.FC<Props> = ({
   onTileClick,
   icon,
   accountTitle,
+  accountTitle2,
   tabStyle,
 }) => {
   return (
@@ -41,6 +43,12 @@ const VerticalTabSelection: React.FC<Props> = ({
                   style={{ fontSize: 15 }}
                 >
                   {accountTitle}
+                  {!!accountTitle2 && (
+                    <>
+                      <br />
+                      {accountTitle2}
+                    </>
+                  )}
                 </B_17_BLACK>
               ) : (
                 <B_17_GREY969
@@ -48,6 +56,12 @@ const VerticalTabSelection: React.FC<Props> = ({
                   style={{ fontSize: 15 }}
                 >
                   {accountTitle}
+                  {!!accountTitle2 && (
+                    <>
+                      <br />
+                      {accountTitle2}
+                    </>
+                  )}
                 </B_17_GREY969>
               )}
             </div>

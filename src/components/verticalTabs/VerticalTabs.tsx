@@ -68,6 +68,7 @@ const VerticalTabs: React.FC<Props> = ({
                           size: item.icon.size,
                         }}
                         accountTitle={`${minimize ? "" : item.accountTitle}`}
+                        accountTitle2={`${minimize ? "" : item.accountTitle2 ? item.accountTitle2 : "" }`}
                         tabStyle={customStyle(index, item.selected)}
                       />
                     </Nav.Link>

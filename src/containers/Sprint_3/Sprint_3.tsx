@@ -629,7 +629,8 @@ const Sprint3: React.FC<Props> = () => {
           onBlur={() => console.log("onBlurDashboardCart")}
           cartList={[
             {
-              showTooltip: true,
+              selected: true,
+              showTooltip: false,
               onTooltipClicked: () => console.log("clickedTooltip"),
               testId: "testId",
               title: "My UT Account",
@@ -1255,7 +1256,8 @@ const Sprint3: React.FC<Props> = () => {
         />
         <PieChartBox
           title={"Your Ideal Portfolio"}
-          pieLabels={["Fixed Income 100%", "Equity 0%"]}
+          pieLabels={["Fixed Income 0%", "Equity 0%"]}
+          empty={true}
           pieDataSets={{
             data: [100, 0],
             backgroundColor: ["#7AB497", "#FFA463"],

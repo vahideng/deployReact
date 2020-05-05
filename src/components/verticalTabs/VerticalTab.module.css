@@ -25,6 +25,7 @@
 
 .Wrapper {
   width: 100%;
+  border-bottom: 1px solid #dedede;
 }
 
 .Wrapper a {
@@ -53,4 +54,5 @@
 
 .verticalLine {
   border-right: 1px solid #dedded;
+  z-index: 10;
 }
