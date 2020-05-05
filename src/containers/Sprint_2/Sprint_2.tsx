@@ -129,9 +129,8 @@ const Sprint2: React.FC<Props> = () => {
             iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
             detailTitle="Successfully Activated"
             detail="Your account has been activated successfully."
-            outerRoundSize={'3.9375rem'}
-            innerRoundSize={'3.01875rem'}
-            
+            outerRoundSize={"3.9375rem"}
+            innerRoundSize={"3.01875rem"}
           />
         }
       />
@@ -174,8 +173,8 @@ const Sprint2: React.FC<Props> = () => {
           }
         />
       </div>
-      <Title>SettingModalCenter</Title>
       <SettingModalCenter
+        // zIndex={-1}
         onRequestClose={() => setSettingModalCenter(false)}
         testId={"testId"}
         modalIsOpen={settingModalCenter}
@@ -195,7 +194,7 @@ const Sprint2: React.FC<Props> = () => {
                   padding: "2rem",
                 }}
               >
-                  <PrimaryButton onButtonClick={() => {}} />
+                <PrimaryButton onButtonClick={() => {}} />
               </div>
             }
           />
