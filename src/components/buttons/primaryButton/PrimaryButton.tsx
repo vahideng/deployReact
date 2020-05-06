@@ -11,6 +11,7 @@ interface Props {
   buttonColor?: { top: string; bottom: string };
   height?: number | string;
   width?: number | string;
+  minWidth?: number | string;
   onButtonClick: () => void;
   small?: boolean;
   icon?: { name: string; color: string; size?: number };
@@ -33,6 +34,7 @@ const PrimaryButton: React.FC<Props> = ({
   titleStyle,
   responsive,
   buttonStyle,
+  minWidth,
 }) => {
   const primaryButton = [classes.PrimaryButton];
   if (responsive) {
@@ -52,9 +54,9 @@ const PrimaryButton: React.FC<Props> = ({
         style={{
           background: buttonBg,
           maxWidth: !!width ? width : "18.4375rem",
-          width: "100%",
           height: height,
           boxShadow: shadow,
+          minWidth: minWidth && minWidth,
           ...buttonStyle,
         }}
       >

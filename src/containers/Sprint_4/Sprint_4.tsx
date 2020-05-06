@@ -82,9 +82,9 @@ const Sprint4: React.FC<Props> = () => {
   const [KeyPadShow, setKeypadShow] = useState(true);
   const tacClear = false;
   const tacClearActiveStatus = false;
-  const [newValue, setNewValue] = useState('');
-  const [newValClear, setNewValClear] = useState(false)
-  const [isClearIconHover, setIsClearIconHover] = useState(false)
+  const [newValue, setNewValue] = useState("");
+  const [newValClear, setNewValClear] = useState(false);
+  const [isClearIconHover, setIsClearIconHover] = useState(false);
 
   // const [linkListBtnColor, setLinkListBtnColor] = useState({
   //   top: '#BDBDBD',
@@ -2529,7 +2529,7 @@ const Sprint4: React.FC<Props> = () => {
           }}
         />
       </CenteredDiv>
-      <Title>FormContainer Disabled</Title>
+      <Title>FormContainer</Title>
       <CenteredDiv>
         <FormContainer
           onBlur={() => console.log("clickedOnBlur")}
@@ -3100,7 +3100,7 @@ const Sprint4: React.FC<Props> = () => {
                   clearClickHandler={() => alert("clear clicked")}
                   clearIcon={true}
                   label="New Pin"
-                  autoFocus
+                  // autoFocus
                   icon={{ name: "Lock" }}
                   onFocus={() => {
                     setKeypadShow(true);
@@ -3162,49 +3162,48 @@ const Sprint4: React.FC<Props> = () => {
 
         <br />
       </div>
-          <Title>Input Field Latest </Title>
-          <CenteredDiv>
-          <div style={{width:'31.6rem'}}>
-        <InputField
-          notValid={false}
-          errorMessage={{
-            testId: "testId",
-            errorText: "The Password is incorrect",
-            subText: "Please try again.",
-          }}
-          type="text"
-          onClearIconHover={(_e: any, isHover: boolean) => {
-            console.log('hover', isHover)
-            setIsClearIconHover(isHover)
-          }}
-          clearClickHandler={(_e: any) => {
-            setNewValue('')
-            setNewValClear(false)
-          }}
-          clearIcon={newValClear}
-          label="Enter Value"
-          icon={{ name: "Lock" }}
-          value={newValue}
-          onFocus={() => {
-            setNewValClear(!!setNewValue)
-            setKeypadShow(true);
-            setKeypadTopVal(240);
-          }}
-          onBlur={(_e: any) => {
-            if (!isClearIconHover) {
-              setNewValClear(false)
-            } else {
-              // _e.target.focus()
-            }
-          }}
-          handleChange={(event) => {
-            setNewValue(event.target.value)
-            setNewValClear(!!event.target.value)
-          }}
-        />
-     </div>
-          </CenteredDiv>
-    
+      <Title>Input Field Latest </Title>
+      <CenteredDiv>
+        <div style={{ width: "31.6rem" }}>
+          <InputField
+            notValid={false}
+            errorMessage={{
+              testId: "testId",
+              errorText: "The Password is incorrect",
+              subText: "Please try again.",
+            }}
+            type="text"
+            onClearIconHover={(_e: any, isHover: boolean) => {
+              console.log("hover", isHover);
+              setIsClearIconHover(isHover);
+            }}
+            clearClickHandler={(_e: any) => {
+              setNewValue("");
+              setNewValClear(false);
+            }}
+            clearIcon={newValClear}
+            label="Enter Value"
+            icon={{ name: "Lock" }}
+            value={newValue}
+            onFocus={() => {
+              setNewValClear(!!setNewValue);
+              setKeypadShow(true);
+              setKeypadTopVal(240);
+            }}
+            onBlur={(_e: any) => {
+              if (!isClearIconHover) {
+                setNewValClear(false);
+              } else {
+                // _e.target.focus()
+              }
+            }}
+            handleChange={(event) => {
+              setNewValue(event.target.value);
+              setNewValClear(!!event.target.value);
+            }}
+          />
+        </div>
+      </CenteredDiv>
     </div>
   );
 };

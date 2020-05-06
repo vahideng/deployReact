@@ -112,6 +112,7 @@ const Sprint3: React.FC<Props> = () => {
   });
   const [hiddenList, setHiddenList] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [headerTool, setHeaderToll] = useState(false);
 
   const handlerDropdown = (item: any) => {
     console.log(item, "dropdownValue");
@@ -684,7 +685,7 @@ const Sprint3: React.FC<Props> = () => {
       <Title>TransactionLimitList Hidden</Title>
       <div style={{ width: "60vw", margin: "auto" }}>
         <TransactionLimitList
-          selectedIndex={2}
+          selectedIndex={3}
           list={[
             {
               notify: true,
@@ -1345,11 +1346,15 @@ const Sprint3: React.FC<Props> = () => {
         <div style={{ width: 620 }}>
           <HeaderWithIButtons
             headerStyle={{
+              width: "40rem",
               marginTop: "1rem",
               backgroundColor: "rgba(196, 196, 196, 0.3)",
             }}
             icon={{ name: "Amy", color: "#ff2626" }}
             label="Your DuitNow IDs (3/5)"
+            onBlur={() => setHeaderToll(!headerTool)}
+            onTooltipClicked={() => setHeaderToll(!headerTool)}
+            showTooltip={headerTool}
             tooltipData={{
               testId: "101",
               tipChildren: (
@@ -1515,7 +1520,7 @@ const Sprint3: React.FC<Props> = () => {
           <HeaderWithIcons
             headerStyle={{
               backgroundColor: "rgba(196, 196, 196, 0.3)",
-              borderTopRightRadius: '1rem',
+              borderTopRightRadius: "1rem",
             }}
             label={"DuitNow QR"}
             image={{ src: images.common.Duitnow1 }}
@@ -1617,10 +1622,6 @@ const Sprint3: React.FC<Props> = () => {
               },
             },
             {
-              children: <img src={images.common.sampleLogo} width={150} />,
-            },
-
-            {
               avatar: {
                 name: "Kurniawan Suriawati",
                 initials: "KS",
@@ -1665,6 +1666,9 @@ const Sprint3: React.FC<Props> = () => {
           }}
           selected={sTileNum3}
           list={[
+            {
+              centeredChild: <img src={images.common.sampleLogo} width={70} />,
+            },
             {
               centeredText: "Lost",
             },

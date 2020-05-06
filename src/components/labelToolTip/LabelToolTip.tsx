@@ -34,15 +34,13 @@ const LabelToolTip: React.FC<Props> = ({
       <div className={classes.toolTipLabel}>
         <B_16_BLACK style={labelStyle ? labelStyle : {}}>{label}</B_16_BLACK>
       </div>
-      <div>
-        <Tooltip
-          onBlur={onBlur}
-          onTooltipClicked={onTooltipClicked}
-          showTooltip={showTooltip}
-          testId={tooltipData.testId}
-          tipChildren={tooltipData.tipChildren}
-        />
-      </div>
+      <Tooltip
+        onBlur={onBlur}
+        onTooltipClicked={onTooltipClicked}
+        showTooltip={showTooltip}
+        testId={tooltipData.testId}
+        tipChildren={tooltipData.tipChildren}
+      />
     </div>
   );
 };
