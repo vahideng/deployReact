@@ -36,16 +36,16 @@
   width: 2rem;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 576px) {
   .outerRound {
-    width: 4.81rem;
-    height: 4.81rem;
-    border-radius: calc(4.81rem / 2);
+    width: 5.625rem;
+    height: 5.625rem;
+    border-radius: calc(5.625remrem / 2);
   }
   .innerRound {
-    width: 3.62rem;
-    height: 3.62rem;
-    border-radius: calc(3.62rem / 2);
+    width: 4.3125rem;
+    height: 4.3125rem;
+    border-radius: calc(4.3125remrem / 2);
   }
   .outerRound img {
     width: 1.75rem;

@@ -2778,7 +2778,7 @@ const Sprint4: React.FC<Props> = () => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                padding: "2rem",
+                
               }}
             >
               <B_24_BLACK
@@ -2814,8 +2814,8 @@ const Sprint4: React.FC<Props> = () => {
                     details: ["Today, 5 January 2019"],
                   },
                   {
-                    leftLabel: "Reference",
-                    rightLabel: "House Rental",
+                    leftLabel: "Reference No/Invoice No",
+                    rightLabel: "House Rental Bangalore",
                   },
                   {
                     leftLabel: "From",
@@ -2824,7 +2824,7 @@ const Sprint4: React.FC<Props> = () => {
                   },
                 ]}
               />
-              <CenteredDiv>
+              <div style={{marginTop:'2.5rem',display:'flex',justifyContent:'center'}}>
                 <IconButtons
                   testId={"testId"}
                   onButtonClick={(item: any, index: any) => {
@@ -2839,7 +2839,7 @@ const Sprint4: React.FC<Props> = () => {
                     },
                   ]}
                 />
-              </CenteredDiv>
+              </div>
             </div>
           }
           confirmNoteswidth={"40rem"}
@@ -2860,7 +2860,7 @@ const Sprint4: React.FC<Props> = () => {
             },
           ]}
           Btntitle={"Continue With Transaction"}
-          // Btnwidth={'22.43rem'}
+          Btnwidth={'20.43rem'}
           onButtonClick={() => alert("check")}
           statusText={" You will be redirected to FPX status page in 9 seconds"}
         />
@@ -2882,7 +2882,7 @@ const Sprint4: React.FC<Props> = () => {
               list={[
                 {
                   leftLabel: "To",
-                  rightLabel: "Revenue Lawrence Haim 140066",
+                  rightLabel: "Revenue Lawrence Haim",
                   details: [],
                 },
                 {
