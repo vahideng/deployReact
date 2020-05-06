@@ -391,7 +391,7 @@ const Sprint4: React.FC<Props> = () => {
         boxChildren={
           <div style={{ padding: "3rem 1.5rem" }}>
             <InputField
-              responsive={false}
+              responsive={true}
               notValid={true}
               isSecure
               errorMessage={{
