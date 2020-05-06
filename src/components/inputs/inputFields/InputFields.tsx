@@ -134,7 +134,7 @@ class InputField extends Component<Props, {}> {
                 ? {
                     width: tacInput ? "34.81rem" : "31.6rem",
                     paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                    boxShadow: "none"
+                 
                   }
                 : {
                     paddingLeft: !icon ? "1.5rem" : "3.75rem",
