@@ -352,6 +352,7 @@ const Sprint2: React.FC<Props> = () => {
         ></Col>
         <Col sm={9} style={{ padding: "0" }}>
           <TransactionLimitList
+            selectedIndex={3}
             list={[
               {
                 label: "AmBank BonusLink Visa BlackGold",
@@ -392,9 +393,26 @@ const Sprint2: React.FC<Props> = () => {
                 subDetail: "Password last change: 0 day ago",
                 onClick: (item, index) =>
                   alert(`${JSON.stringify(item)},Index: ${index}`),
-
                 rightLabelColor: "#000000",
                 rightLabel: "Show",
+              },
+            ]}
+            testId="testId"
+          />
+          <TransactionLimitList
+            selectedIndex={1}
+            small
+            list={[
+              {
+                label: "DuitNow ID",
+
+                onClick: (item, index) =>
+                  alert(`${JSON.stringify(item)},Index: ${index}`),
+              },
+              {
+                label: "DuitNow QR",
+                onClick: (item, index) =>
+                  alert(`${JSON.stringify(item)},Index: ${index}`),
               },
             ]}
             testId="testId"
@@ -539,6 +557,64 @@ const Sprint2: React.FC<Props> = () => {
             },
           },
         ]}
+      />
+      <FormContainer
+        label={"Select your account/card type"}
+        tooltip={
+          <div>
+            <p style={{ color: "#ffffff" }}>When would you like to transfer?</p>
+          </div>
+        }
+        children={
+          <div style={{ padding: "1rem" }}>
+            <div>Input Date: {`${inputDate}`}</div>
+            <div>Selected Date: {`${selectedDate}`}</div>
+
+            <CalendarBox
+              label="Effective Date"
+              minDate={moment()
+                .add(1, "day")
+                .toDate()}
+              maxDate={moment()
+                .add(7, "day")
+                .toDate()}
+              onChangeDate={handleOnChange}
+              onChangeInput={handleInputDateChange}
+              placeholderText="DD / MM / YYYY"
+              selectedDate={selectedDate}
+              value={inputDate}
+            />
+          </div>
+        }
+      />
+      <FormContainer
+        label={"Select your account/card type"}
+        tooltip={
+          <div>
+            <p style={{ color: "#ffffff" }}>When would you like to transfer?</p>
+          </div>
+        }
+        children={
+          <div style={{ padding: "1rem" }}>
+            <div>Input Date: {`${inputDate}`}</div>
+            <div>Selected Date: {`${selectedDate}`}</div>
+
+            <CalendarBox
+              label="Effective Date"
+              minDate={moment()
+                .add(1, "day")
+                .toDate()}
+              maxDate={moment()
+                .add(7, "day")
+                .toDate()}
+              onChangeDate={handleOnChange}
+              onChangeInput={handleInputDateChange}
+              placeholderText="DD / MM / YYYY"
+              selectedDate={selectedDate}
+              value={inputDate}
+            />
+          </div>
+        }
       />
       <Title>Second Banner</Title>
       <div
