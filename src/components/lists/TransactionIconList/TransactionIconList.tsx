@@ -23,7 +23,7 @@ interface Props {
       amount: string;
       actionLabel?: string;
       actionIcon?: string;
-      hideActionButton?:boolean;
+      hideButtons?:boolean;
       onActionButtonClick?: () => void;
       details?: {
         label1?: string;
@@ -32,7 +32,7 @@ interface Props {
         value2?: string;
         actionLabel?: string;
         actionIcon?: string;
-        hideActionButton?:boolean;
+        hideButtons?:boolean;
         onActionButtonClick?: () => void;
       }[];
     }[];
@@ -195,7 +195,7 @@ const AccountsList: React.FC<Props> = ({
                       flexDirection: "row",
                       alignItems: "center",
                       justifyContent: "center",
-                      opacity: transaction.hideActionButton ? 0 : 1
+                      opacity: transaction.hideButtons ? 0 : 1
                     }}
                   >
                     <button
@@ -206,7 +206,7 @@ const AccountsList: React.FC<Props> = ({
                         height: "1.9375em",
                         width: "7.5em"
                       }}
-                      disabled={transaction.hideActionButton}
+                      disabled={transaction.hideButtons}
                       onClick={
                         transaction.onActionButtonClick &&
                         transaction.onActionButtonClick
@@ -301,7 +301,7 @@ const AccountsList: React.FC<Props> = ({
                                 flexDirection: "row",
                                 alignItems: "center",
                                 justifyContent: "center",
-                                opacity: transactionDetail.hideActionButton ? 0 : 1
+                                opacity: transactionDetail.hideButtons ? 0 : 1
                               }}
                             >
                               <button
@@ -313,7 +313,7 @@ const AccountsList: React.FC<Props> = ({
                                   width: "7.5em",
                                   opacity: transactionDetail.actionLabel ? 1 : 0
                                 }}
-                                disabled={transactionDetail.hideActionButton}
+                                disabled={transactionDetail.hideButtons}
                                 onClick={
                                   transactionDetail.onActionButtonClick &&
                                   transactionDetail.onActionButtonClick

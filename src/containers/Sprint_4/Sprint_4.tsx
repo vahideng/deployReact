@@ -92,6 +92,8 @@ const Sprint4: React.FC<Props> = () => {
   // });
   const [rateType, setRateType] = useState("test_value3");
   const [isViewRateModalOpen, setIsViewRateModalOpen] = useState(false);
+
+  const [formValue, setFormValue] = useState("");
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -389,20 +391,22 @@ const Sprint4: React.FC<Props> = () => {
         boxChildren={
           <div style={{ padding: "3rem 1.5rem" }}>
             <InputField
-              responsive={true}
+              responsive={false}
               notValid={true}
+              isSecure
               errorMessage={{
                 testId: "testId",
                 errorText: "The TAC is incorrect",
                 subText: "Please try again.",
               }}
-              type="text"
-              clearClickHandler={() => alert("clear clicked")}
+              type="password"
+              clearClickHandler={() => setFormValue("")}
               clearIcon={true}
               label="Username"
               icon={{ name: "Account-2" }}
-              value={""}
+              value={formValue}
               handleChange={(event) => {
+                setFormValue(event.target.value)
                 console.log(event.target.value);
               }}
             />
@@ -3100,7 +3104,7 @@ const Sprint4: React.FC<Props> = () => {
                   clearClickHandler={() => alert("clear clicked")}
                   clearIcon={true}
                   label="New Pin"
-                  autoFocus
+                  autoFocus={false}
                   icon={{ name: "Lock" }}
                   onFocus={() => {
                     setKeypadShow(true);

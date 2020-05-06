@@ -528,7 +528,7 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
-                      hideActionButton: false,
+                      hideButtons: false,
                       onActionButtonClick: () => alert("Repeat"),
                       details: [
                         {
@@ -545,7 +545,7 @@ class Sprint1 extends Component<Props, State> {
                           value1: "",
                           label2: "Other Details",
                           value2: "-",
-                          hideActionButton: true,
+                          hideButtons: true,
                           // actionLabel: 'View Receipt',
                           // actionIcon: ''
                         },
@@ -565,7 +565,7 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
-                      hideActionButton: true,
+                      hideButtons: true,
                       details: [
                         {
                           label1: "From Account",
@@ -582,7 +582,7 @@ class Sprint1 extends Component<Props, State> {
                           value2: "-",
                           actionLabel: "View Receipt",
                           actionIcon: "",
-                          hideActionButton: true,
+                          hideButtons: true,
                         },
                       ],
                     },
@@ -606,7 +606,7 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 1,236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
-                      hideActionButton: true,
+                      hideButtons: true,
                       details: [
                         {
                           label1: "From Account",
@@ -623,7 +623,7 @@ class Sprint1 extends Component<Props, State> {
                           value2: "-",
                           actionLabel: "View Receipt",
                           actionIcon: "",
-                          hideActionButton: true,
+                          hideButtons: true,
                         },
                       ],
                     },

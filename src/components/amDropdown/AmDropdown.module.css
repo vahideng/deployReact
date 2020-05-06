@@ -13,6 +13,9 @@
   background-color: #f9f9f9;
   width: 100%;
   overflow-y: auto;
+  overflow: scroll;
+  -webkit-overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .DropdownContent p {

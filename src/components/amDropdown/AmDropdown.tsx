@@ -137,7 +137,7 @@ class AmDropdown extends Component<Props, {}> {
       }
     };
     return (
-      <div tabIndex={0} onBlur={onBlurDropdown} className={classes.Container} style={containerStyle}>
+      <div tabIndex={0} onBlur={onBlurDropdown} className={classes.Container} style={{...containerStyle, maxWidth: tacInput ? "34.81rem" : "31.6rem" }}>
         <div className={classes.InputFieldMain}>
           {!!label && (
             <B_13_BLACK className={classes.InputFieldLabel}>{label}</B_13_BLACK>
