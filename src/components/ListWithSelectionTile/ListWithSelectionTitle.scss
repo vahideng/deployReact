@@ -1,5 +1,26 @@
 .mainContainer{
     width: 100%;
-    max-width: 52.18rem;
+    max-width: 54rem;
     padding: 1rem;
 } 
+
+
+.listBtnStyle{
+    margin-bottom: 0;
+    margin-right: 1rem;
+    @media (max-width:576px) {
+       margin-bottom: 1rem;
+       margin-right: 0;
+       width: 100%;
+    }
+}
+
+.listGroupBtnStyl{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    @media (max-width:576px) {
+        flex-direction: column;
+    }
+}
