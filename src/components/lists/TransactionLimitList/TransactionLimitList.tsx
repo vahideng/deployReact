@@ -16,7 +16,7 @@ interface Props {
     rightLabelColor?: string;
     rightLabel?: string;
     notify?: boolean;
-    notifyStyle ?: CSSProperties;
+    notifyStyle?: CSSProperties;
     showShadow?: boolean;
     shadowStyle?: CSSProperties;
     cardImg?: string;
@@ -30,9 +30,15 @@ interface Props {
   }[];
   testId?: string;
   selectedIndex?: number;
+  small?: boolean;
 }
 
-const TransactionLimitList: React.FC<Props> = ({ list, testId, selectedIndex }: Props) => {
+const TransactionLimitList: React.FC<Props> = ({
+  list,
+  testId,
+  selectedIndex,
+  small,
+}: Props) => {
   return (
     <div className={classes.ListContainer} id={`${testId}`}>
       {list &&
@@ -40,7 +46,13 @@ const TransactionLimitList: React.FC<Props> = ({ list, testId, selectedIndex }: 
           const isSelected = index === selectedIndex;
           let ItemContainerCls = classes.ItemContainer;
           if (isSelected) {
-            ItemContainerCls = `${classes.ItemContainer} ${classes.ItemContainerSelected}`
+            ItemContainerCls = `${classes.ItemContainer} ${classes.ItemContainerSelected}`;
+          }
+          if (small) {
+            ItemContainerCls = `${classes.ItemContainer} ${classes.smallCart}`;
+          }
+          if (small && isSelected) {
+            ItemContainerCls = `${classes.ItemContainer} ${classes.smallCartSelected}`;
           }
           return item.hidden ? (
             <div
@@ -50,7 +62,7 @@ const TransactionLimitList: React.FC<Props> = ({ list, testId, selectedIndex }: 
                   ? !!item.shadowStyle
                     ? item.shadowStyle
                     : { boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)" }
-                  : { }
+                  : {}
               }
               id={`${testId}-${index}`}
               key={index}
@@ -95,7 +107,7 @@ const TransactionLimitList: React.FC<Props> = ({ list, testId, selectedIndex }: 
                 onButtonClick={item.onHiddenButtonClick}
                 icon={{ name: "field-open-eye", size: 15, color: "#000000" }}
                 buttonColor={{ top: "#F6F6F3", bottom: "#EAE9E3" }}
-                width={"7.4rem"}
+                minWidth={"7.4rem"}
                 height="2rem"
               />
             </div>
@@ -107,7 +119,7 @@ const TransactionLimitList: React.FC<Props> = ({ list, testId, selectedIndex }: 
                   ? !!item.shadowStyle
                     ? item.shadowStyle
                     : { boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)" }
-                  : { }
+                  : {}
               }
               id={`${testId}-${index}`}
               key={index}
@@ -143,12 +155,15 @@ const TransactionLimitList: React.FC<Props> = ({ list, testId, selectedIndex }: 
                   </B_15_BLACK>
                 )}
 
-                {<Icon icon="Right1" color="#000" size={28} />}
+                {
+                  <div className={isSelected && classes.SelectedChevron}>
+                    <Icon icon="Right1" color="#000" size={28} />
+                  </div>
+                }
               </div>
             </div>
-          )
-        })
-      }
+          );
+        })}
     </div>
   );
 };
