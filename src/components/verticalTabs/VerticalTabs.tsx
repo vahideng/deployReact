@@ -38,7 +38,7 @@ const VerticalTabs: React.FC<Props> = ({
   const customStyle = (index: number, borderRight: boolean) => ({
     borderBottom:
       index == lastIndex ? "1px solid transparent" : "1px solid #dedede",
-    width: minimize ? "6rem" : tabWidth ? tabWidth : "14.68rem",
+    width: minimize ? tabWidth || "5.31rem" : tabWidth || "14.68rem",
     borderRightColor: borderRight
       ? selectedBorderColor
         ? selectedBorderColor
@@ -68,7 +68,13 @@ const VerticalTabs: React.FC<Props> = ({
                           size: item.icon.size,
                         }}
                         accountTitle={`${minimize ? "" : item.accountTitle}`}
-                        accountTitle2={`${minimize ? "" : item.accountTitle2 ? item.accountTitle2 : "" }`}
+                        accountTitle2={`${
+                          minimize
+                            ? ""
+                            : item.accountTitle2
+                            ? item.accountTitle2
+                            : ""
+                        }`}
                         tabStyle={customStyle(index, item.selected)}
                       />
                     </Nav.Link>
