@@ -53,6 +53,13 @@ const CenteredDiv = styled.div`
   padding: 2rem 0;
 `;
 
+const CenteredCol = styled.div`
+width: 100%;
+display:flex;
+flex-direction: column;
+align-items:center;
+`;
+
 const TransactionWithNote: React.FC<TransactionWithNoteProps> = ({
   testId,
   formContainerchildren,
@@ -86,19 +93,17 @@ const TransactionWithNote: React.FC<TransactionWithNoteProps> = ({
           />
         </div>
 
-        <div>
-          <R_15_BLACK>
+        <CenteredCol>
+          <R_15_BLACK style={{marginBottom:'1.5rem'}}>
            {statusText}
         </R_15_BLACK>
-        <div  style={{ marginTop: '1.5em' }}>
         <PrimaryButton
          responsive={responsive}
           title={Btntitle}
           width={!!Btnwidth ? Btnwidth : '20.43rem'}
           onButtonClick={onButtonClick}
         />
-        </div>
-        </div>
+        </CenteredCol>
       </CenteredDiv>
     </div>
   );

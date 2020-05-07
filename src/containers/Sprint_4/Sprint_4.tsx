@@ -2795,7 +2795,7 @@ const Sprint4: React.FC<Props> = () => {
                 Your payment of RM 20.50 to Revenue Harvest Sdn. Bhd. is
                 unsuccessful
               </R_19_BLACK_444>
-              <R_19_BLACK_444 style={{ textAlign: "center" }}>
+              <R_19_BLACK_444 style={{ textAlign: "center" ,marginBottom: "1rem"}}>
                 Unable to perform this transaction. Please call our Contact
                 Centre for assistance.
               </R_19_BLACK_444>
@@ -2864,7 +2864,7 @@ const Sprint4: React.FC<Props> = () => {
             },
           ]}
           Btntitle={"Continue With Transaction"}
-          Btnwidth={'20.43rem'}
+          Btnwidth={'25rem'}
           onButtonClick={() => alert("check")}
           statusText={" You will be redirected to FPX status page in 9 seconds"}
         />
@@ -2874,6 +2874,7 @@ const Sprint4: React.FC<Props> = () => {
         <ListWithSelectionTile
           testId={"testId"}
           responsive
+          TilerowStyle={{width:'100%'}}
           listchildren={
             <List
               header={{
@@ -2948,12 +2949,12 @@ const Sprint4: React.FC<Props> = () => {
           onButton1Click={() => {
             alert("Button Clicked");
           }}
-          btn1width={"20.43rem"}
+          btn1width={"14.69rem"}
           btn2title={"cancel"}
           onButton2Click={() => {
             alert("Button Clicked");
           }}
-          btn2width={"20.43rem"}
+          btn2width={"14.69rem"}
         />
       </CenteredDiv>
       <Title>Redirect to mobile</Title>
