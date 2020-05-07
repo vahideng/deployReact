@@ -16,6 +16,7 @@ interface Props {
       color?: string;
     };
   }[];
+  removeBorder?: boolean;
 }
 
 const IconButtons: React.FC<Props> = ({
@@ -24,6 +25,7 @@ const IconButtons: React.FC<Props> = ({
   selected,
   onButtonClick,
   testId,
+  removeBorder,
 }) => {
   return (
     <div id={testId}>
@@ -43,13 +45,15 @@ const IconButtons: React.FC<Props> = ({
                   size={!!item.icon.size ? item.icon.size : 30}
                   color={!!item.icon.color ? item.icon.color : "#ff2626"}
                 />
-                <div
-                  className={
-                    selected === index
-                      ? `${classes.selectedBtn} ${classes.Btn}`
-                      : classes.Btn
-                  }
-                ></div>
+                {!removeBorder && (
+                  <div
+                    className={
+                      selected === index
+                        ? `${classes.selectedBtn} ${classes.Btn}`
+                        : classes.Btn
+                    }
+                  ></div>
+                )}
               </div>
               <div className={classes.TextWrapper}>
                 {selected === index ? (

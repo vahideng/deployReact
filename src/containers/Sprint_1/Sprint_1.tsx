@@ -651,8 +651,8 @@ class Sprint1 extends Component<Props, State> {
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
                 amount: "RM 10,135",
-                percentageVal:"6.6",
-                percentageStatus : "Plus"
+                percentageVal: "6.6",
+                percentageStatus: "Plus",
               },
               {
                 accountName: "Foreign Currency Account",
@@ -662,8 +662,8 @@ class Sprint1 extends Component<Props, State> {
                 countryFlagImage: images.common.countryFlag,
                 amount: "AUD 1,392",
                 equivalentAmount: "RM 4,583",
-                percentageVal:"6.6",
-                percentageStatus : "Plus"
+                percentageVal: "6.6",
+                percentageStatus: "Plus",
               },
               {
                 icon: "Plus",
@@ -674,8 +674,8 @@ class Sprint1 extends Component<Props, State> {
                 statusLabel: "ACTIVE",
                 amount: "RM 2,000",
                 amountStatus: "Minus",
-                 percentageVal:"6.6",
-                percentageStatus : "Plus"
+                percentageVal: "6.6",
+                percentageStatus: "Plus",
               },
               {
                 accountName: "Conversion Account",
@@ -683,8 +683,8 @@ class Sprint1 extends Component<Props, State> {
                 statusLabel: "ACTIVE",
                 amount: "RM 9,000",
                 amountStatus: "Plus",
-                percentageVal:"6.6",
-                percentageStatus : "Plus"
+                percentageVal: "6.6",
+                percentageStatus: "Plus",
               },
               {
                 cardLogo:
@@ -694,8 +694,8 @@ class Sprint1 extends Component<Props, State> {
                 statusLabel: "RESTRICTED ACCESS",
                 statusLabelColor: "#FF2626",
                 amount: "RM 0.00",
-                percentageVal:"6.6",
-                percentageStatus : "Plus"
+                percentageVal: "6.6",
+                percentageStatus: "Plus",
               },
               {
                 cardLogo: images.common.masterCard,
@@ -1156,8 +1156,8 @@ class Sprint1 extends Component<Props, State> {
           title={"Login"}
           leftTitle={"LeftTitle"}
           rightTitle={"rightTitle"}
-          tabTitles={["Security", "Login", "Contact Us"]}
           onSelect={(obj: any) => console.log(obj)}
+          tabTitles={["Security", "Login", "Contact Us"]}
           content={[
             <ZeroResult
               hideIcon
@@ -1349,7 +1349,10 @@ class Sprint1 extends Component<Props, State> {
               errorText: "The TAC is incorrect",
               subText: "Please try again.",
             }}
-            content="TAC was sent to your registered mobile number (**** 6867)"
+            content={[
+              "TAC was sent to your registered mobile number (**** 6867)",
+              "You should receive a tac within two minuets",
+            ]}
             link={{
               text: "Did not receive TAC? Request new",
               onLinkClick: () => {
@@ -2759,6 +2762,51 @@ class Sprint1 extends Component<Props, State> {
             },
           ]}
         />
+        <Title>IconButtons No Border</Title>
+        <IconButtons
+          removeBorder={true}
+          testId={"testId"}
+          onButtonClick={(item, index) => {
+            this.setState({
+              IconButtonsNum: index,
+            });
+            alert(`${item} with index of ${index} clicked`);
+          }}
+          selected={IconButtonsNum}
+          label="Transfer To"
+          list={[
+            {
+              text: "Account",
+              icon: {
+                name: "Account",
+              },
+            },
+            {
+              text: "Card2",
+              icon: {
+                name: "Card2",
+              },
+            },
+            {
+              text: "Account",
+              icon: {
+                name: "Account",
+              },
+            },
+            {
+              text: "Card2",
+              icon: {
+                name: "Card2",
+              },
+            },
+            {
+              text: "Account",
+              icon: {
+                name: "Account",
+              },
+            },
+          ]}
+        />
         <Title>InputField</Title>
         <InputField
           type="text"
@@ -2951,24 +2999,7 @@ class Sprint1 extends Component<Props, State> {
           What would you like
           to do today?"
         />
-        <Title>TextButtonList</Title>
-        <TextButtonList
-          testId="testId"
-          data={[
-            "Terms & Conditions",
-            "Privacy Notice",
-            "Security Statement",
-            "e-Banking Charter",
-            "Security Alert",
-          ]}
-          onTextClick={(text, _index, testId) => {
-            alert(
-              `${text} with index of ${_index} have been clicked ${testId}`
-            );
-          }}
-          footerText="  Copyright © AmBank (M) Berhad (Company No. 8515-D) All Rights
-          Reserved."
-        />
+
         <Title>TextButton</Title>
         <TextButton
           testId="testId"
@@ -3039,87 +3070,92 @@ class Sprint1 extends Component<Props, State> {
             alert(`${event.target.checked} ${event.target.name} ${testId}`);
           }}
         />
-        <Title>FooterLogo</Title>
+        <Title>TextButtonList -- FooterLogo</Title>
+        <TextButtonList
+          testId="testId"
+          data={[
+            "Terms & Conditions",
+            "Privacy Notice",
+            "Security Statement",
+            "e-Banking Charter",
+            "Security Alert",
+          ]}
+          onTextClick={(text, _index, testId) => {
+            alert(
+              `${text} with index of ${_index} have been clicked ${testId}`
+            );
+          }}
+          footerText="  Copyright © AmBank (M) Berhad (Company No. 8515-D) All Rights
+          Reserved."
+        />
         <FooterLogo
           onLogoClick={(logo, index) => {
             alert(`${logo.src}<=-link  id-=>${logo.id} index-=>${index}`);
           }}
           logos={[
             {
-              src: images.common.bankingInfo_1,
+              src: images.common.AKPK,
               id: "Id-0",
             },
             {
-              src: images.common.bankingInfo_2,
+              src: images.common.ATM,
               id: "Id-1",
             },
             {
-              src: images.common.bankingInfo_3,
+              src: images.common.BNM,
+              id: "Id-1",
+            },
+            {
+              src: images.common.BNMFinancialConsumerAlert,
+              id: "Id-1",
+            },
+            {
+              src: images.common.MasterCard,
+              id: "Id-1",
+            },
+            {
+              src: images.common.MEPS,
+              id: "Id-1",
+            },
+            {
+              src: images.common.MIFC,
+              id: "Id-1",
+            },
+            {
+              src: images.common.PerbankanIslam,
+              id: "Id-1",
+            },
+            {
+              src: images.common.PIDM,
+              id: "Id-1",
+            },
+            {
+              src: images.common.SIDREC,
+              id: "Id-1",
+            },
+            {
+              src: images.common.PoliceAlert,
+              id: "Id-1",
+            },
+            {
+              src: images.common.SMEInfo,
+              id: "Id-1",
+            },
+            {
+              src: images.common.Verisign,
+              id: "Id-1",
+            },
+            {
+              src: images.common.VISA,
+              id: "Id-1",
+            },
+            {
+              src: images.common.MyBayar,
+              id: "Id-1",
+            },
+            {
+              src: images.common.BankingInfo,
               id: "Id-2",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1522827130596-971a53beeadc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-              id: "Id-3",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1554463529-e27854014799?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
-              id: "Id-4",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-5",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-6",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1522827130596-971a53beeadc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-              id: "Id-7",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
-              id: "Id-8",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-9",
-            },
-            {
-              src: images.common.sampleLogo,
-              id: "Id-10",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1557053964-937650b63311?ixlib=rb-1.2.1&auto=format&fit=crop&w=2359&q=80",
-              id: "Id-11",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-12",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-13",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-14",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-15",
             },
           ]}
         />

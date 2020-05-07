@@ -3,7 +3,7 @@ import React, {
   FormEvent,
   ChangeEvent,
   ReactNode,
-  CSSProperties
+  CSSProperties,
 } from "react";
 import Paragraphs from "../../assets/typography";
 import classes from "./InputField.module.css";
@@ -36,7 +36,7 @@ interface Props {
   };
   autoComplete?: string;
   minLength?: number;
-  onBlurTooltip?: () => void; 
+  onBlurTooltip?: () => void;
   maxLength?: number;
   onBlur?: (event: FormEvent) => void;
   onFocus?: (event: FormEvent) => void;
@@ -45,8 +45,8 @@ interface Props {
   bottomLabel?: string;
   bottomLabelStyle?: CSSProperties;
   placeholder?: string;
-  showTooltip ?: boolean;
-  onTooltipClicked ?: ()=> void;
+  showTooltip?: boolean;
+  onTooltipClicked?: () => void;
 }
 
 class InputField extends Component<Props, {}> {
@@ -78,10 +78,9 @@ class InputField extends Component<Props, {}> {
       bottomLabel,
       bottomLabelStyle,
       placeholder,
-    
-     
-      showTooltip ,
-  onTooltipClicked 
+
+      showTooltip,
+      onTooltipClicked,
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);
@@ -102,7 +101,13 @@ class InputField extends Component<Props, {}> {
           <div className={classes.TitleDiv}>
             <B_13_BLACK className={classes.InputFieldLabel}>{label}</B_13_BLACK>
             {tipChildren && (
-              <Tooltip  onBlur={onBlurTooltip}  onTooltipClicked ={onTooltipClicked} showTooltip ={showTooltip} tipChildren={tipChildren} rightAlign={true} />
+              <Tooltip
+                onBlur={onBlurTooltip}
+                onTooltipClicked={onTooltipClicked}
+                showTooltip={showTooltip}
+                tipChildren={tipChildren}
+                rightAlign={true}
+              />
             )}
           </div>
         )}
@@ -110,16 +115,17 @@ class InputField extends Component<Props, {}> {
           className={classes.InputFieldIconDiv}
           style={{
             maxWidth: tacInput ? "34.81rem" : "31.6rem",
-            minWidth: responsive ? "" : "22.6rem"
+            minWidth: responsive ? "" : "22.6rem",
           }}
         >
           {!!icon && (
-            <Icon
-              className={classes.InputFieldIcon}
-              icon={icon.name}
-              color={!!icon.color ? icon.color : "#ff2626"}
-              size={30}
-            />
+            <div className={classes.InputFieldIcon}>
+              <Icon
+                icon={icon.name}
+                color={!!icon.color ? icon.color : "#ff2626"}
+                size={icon.size || 30}
+              />
+            </div>
           )}
 
           <input
@@ -134,11 +140,10 @@ class InputField extends Component<Props, {}> {
                 ? {
                     width: tacInput ? "34.81rem" : "31.6rem",
                     paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                 
                   }
                 : {
                     paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                    width: tacInput ? "34.81rem" : "31.6rem"
+                    width: tacInput ? "34.81rem" : "31.6rem",
                   }
             }
             type={type}

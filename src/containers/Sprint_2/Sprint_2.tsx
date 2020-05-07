@@ -262,21 +262,50 @@ const Sprint2: React.FC<Props> = () => {
       <Title>Box_V2</Title>
       <Box_V2
         title={"Login"}
+        hideButton
+        // tabTitles={["Security", "Login", "Contact Us"]}
+        // content={[
+        //   <p>We can’t seem to find any result for “Damansara Heights”</p>,
+        //   <>
+        //     <InputField
+        //       type="text"
+        //       clearClickHandler={() => alert("clear")}
+        //       clearIcon={false}
+        //       label="Username"
+        //       icon={{ name: "Account-2" }}
+        //       value={""}
+        //       handleChange={(event) => {
+        //         alert(event);
+        //       }}
+        //     />
+        //     <div style={{ paddingTop: 30 }}>
+        //       <TextButton
+        //         testId="testId"
+        //         buttonText="Forgot username/password?"
+        //         onTextClick={(id) => {
+        //           alert(`${id} clicked`);
+        //         }}
+        //       />
+        //     </div>
+        //   </>,
+        // ]}
         boxChildren={
           <div style={{ padding: "3rem 1.5rem" }}>
             <InputField
+              tipChildren={<p>tip</p>}
               notValid={true}
               errorMessage={{
                 testId: "testId",
                 errorText: "The TAC is incorrect",
                 subText: "Please try again.",
               }}
-              type="text"
+              type="password"
+              isSecure={true}
               clearClickHandler={() => alert("clear clicked")}
               clearIcon={true}
               label="input label"
-              icon={{ name: "Account-2" }}
-              value={""}
+              icon={{ name: "Lock" }}
+              value={"value"}
               handleChange={(event) => {
                 console.log(event.target.value);
               }}

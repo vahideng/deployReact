@@ -20,10 +20,44 @@ import microsoftEdgeLogo from "./images/Microsoft-Edge.png";
 import firefoxLogo from "./images/Firefox.png";
 import downloadOnAppStore from "./images/downloadOnAppStore.png";
 import downloadOnGPlay from "./images/downloadOnGPlay.png";
-
+// Footer Logos
+import AKPK from "./images/FooterLogos/AKPK.png";
+import ATM from "./images/FooterLogos/ATM.png";
+import BankingInfo from "./images/FooterLogos/BankingInfo.png";
+import BNM from "./images/FooterLogos/BNM.png";
+import BNMFinancialConsumerAlert from "./images/FooterLogos/BNMFinancialConsumerAlert.png";
+import MasterCard from "./images/FooterLogos/MasterCard.png";
+import MEPS from "./images/FooterLogos/MEPS.png";
+import MIFC from "./images/FooterLogos/MIFC.png";
+import PerbankanIslam from "./images/FooterLogos/PerbankanIslam.png";
+import PIDM from "./images/FooterLogos/PIDM.png";
+import PoliceAlert from "./images/FooterLogos/PoliceAlert.png";
+import SIDREC from "./images/FooterLogos/SIDREC.png";
+import SMEInfo from "./images/FooterLogos/SMEInfo.png";
+import Verisign from "./images/FooterLogos/Verisign.png";
+import VISA from "./images/FooterLogos/VISA.png";
+import MyBayar from "./images/FooterLogos/MyBayar.png";
 
 const images: any = {
   common: {
+    // Footer Logos
+    AKPK,
+    ATM,
+    BankingInfo,
+    BNM,
+    BNMFinancialConsumerAlert,
+    MasterCard,
+    MEPS,
+    MIFC,
+    PerbankanIslam,
+    PIDM,
+    SIDREC,
+    PoliceAlert,
+    SMEInfo,
+    Verisign,
+    VISA,
+    MyBayar,
+    /////////////
     sampleLogo,
     amyIcon,
     masterCard,
@@ -45,8 +79,8 @@ const images: any = {
     firefoxLogo,
     downloadOnAppStore,
     downloadOnGPlay,
-    amOnlineLogoWithRedBg
-  }
+    amOnlineLogoWithRedBg,
+  },
 };
 
 export default images;

@@ -10,7 +10,7 @@ const { R_15_GREY444, B_15_BLACK, R_14_BLACK, B_15_ORANGE_463 } = Paragraphs;
 interface Props {
   testId?: string;
   responsive?: boolean;
-  content?: string;
+  content?: string | string[];
   link?: { text: string; onLinkClick: () => void };
   modalIsOpen?: boolean;
   handleChange?: any;
@@ -155,7 +155,16 @@ const TacModal: React.FC<Props> = (props) => {
                       />
                     </div>
                     <div className={TacInputFieldContent}>
-                      <R_15_GREY444>{content}</R_15_GREY444>
+                      {!!content && typeof content === "object" ? (
+                        content.map((item, index) => {
+                          return (
+                            <R_15_GREY444 key={index}>{item}</R_15_GREY444>
+                          );
+                        })
+                      ) : (
+                        <R_15_GREY444>{content}</R_15_GREY444>
+                      )}
+
                       {!!link && (
                         <B_15_ORANGE_463
                           onClick={link.onLinkClick}
