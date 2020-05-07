@@ -100,6 +100,7 @@
   .ListItemRightContent {
     max-width: 12.0625rem;
     width: 100%;
+    word-break: break-all;
   }
 }
 
