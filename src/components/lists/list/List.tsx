@@ -9,10 +9,10 @@ const {
   B_18_BLACK,
   B_13_ORANGE_463,
   R_13_GREY444,
-  B_15_BLACK,
   R_14_GREY444,
   B_24_BLACK,
-  B_14_BLACK
+  B_14_BLACK,
+  B_15_BLACK_444
 } = Paragraphs;
 interface Props {
   testId?: string;
@@ -121,8 +121,9 @@ const List: React.FC<Props> = ({
               key={index}
             >
               <Line style={{ marginTop: "1rem", marginBottom: "1rem" }} />
+
               <div className={classes.ListItemsDiv}>
-                <R_13_GREY444>{item.leftLabel}</R_13_GREY444>
+                <R_13_GREY444 className={classes.ListItemLeft}>{item.leftLabel}</R_13_GREY444>
                 <div className={classes.ListItemRightContent}>
                   <Row className={classes.ItemTitleContainer}>
                     {item.approved && (
@@ -130,7 +131,7 @@ const List: React.FC<Props> = ({
                         <Icon icon="accent-tick" size={13} />
                       </span>
                     )}
-                    <B_15_BLACK>{item.rightLabel}</B_15_BLACK>
+                    <B_15_BLACK_444>{item.rightLabel}</B_15_BLACK_444>
                   </Row>
 
                   {!!item.details &&
