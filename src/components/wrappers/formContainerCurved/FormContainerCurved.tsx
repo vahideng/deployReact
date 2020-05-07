@@ -1,10 +1,11 @@
-import React, { ReactNode, useState, useEffect } from "react";
+import React, { ReactNode, useState, useEffect, CSSProperties } from "react";
 import classes from "./FormContainerCurved.module.css";
 import Paragraphs from "../../assets/typography";
 import Icon from "src/components/assets/icons/icon";
 const { B_17_BLACK, B_17_WHITE } = Paragraphs;
 interface Props {
   testId?: string;
+  contentStyle?: CSSProperties;
   curvedTab: {
     leftTab: string;
     rightTab: string;
@@ -16,7 +17,7 @@ interface Props {
   };
 }
 
-const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
+const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId, contentStyle }) => {
   const [LeftSelected, setLeftSelected] = useState(
     curvedTab.rightSelected ? false : true
   );
@@ -129,7 +130,7 @@ const FormContainerCurved: React.FC<Props> = ({ curvedTab, testId }) => {
         <div className={classes.RightCurve}></div>
       </div>
 
-      <div className={classes.Content} id={`${testId}-0`}>
+      <div className={classes.Content} id={`${testId}-0`} style={contentStyle}>
         {!!LeftSelected ? (
           <div id={`${testId}-1`}>{curvedTab.leftContent}</div>
         ) : (

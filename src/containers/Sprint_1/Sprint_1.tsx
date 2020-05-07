@@ -212,6 +212,7 @@ class Sprint1 extends Component<Props, State> {
         >
           <FormContainerCurved
             testId={"testId"}
+            // contentStyle={{ paddingRight: "0rem"}}
             curvedTab={{
               leftTab: "New Recipient",
               rightTab: "Own/Favorite",
@@ -981,6 +982,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>FormContainer</Title>
         <CenteredDiv>
           <FormContainer
+            // childrenWrapperStyle={{ padding: 0 }}
             label={"Select your account/card type"}
             showTooltip={true}
             onTooltipClicked={() => alert("clicked!!")}
