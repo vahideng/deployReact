@@ -26,10 +26,8 @@ const StatusFormContainer: React.FC<Props> = ({
   responsive
 }) => {
   let containerCls = classes.StatusFormContainerCurve;
-  let IconWidth =  "36.31rem";
   if (responsive) {
     containerCls = `${classes.StatusFormContainerCurve} ${classes.StatusFormContainerCurveResponive}`
-    IconWidth = '100%';
   }
   return (
     <div className={classes.StatusFormContainerMain}>
@@ -45,19 +43,28 @@ const StatusFormContainer: React.FC<Props> = ({
                 bottom: statusIcon.iconColor.bottom
               }}
               image={!!statusIcon ? statusIcon.image : ""}
+              outerRoundSize={"5.625rem"}
+              innerRoundSize={"4.3125rem"}
+              iconSize={35}
             />
           </span>
         </>
       )}
       <div className={containerCls} id={testId}>
-        <span>
+        <span className={classes.CurveStyle}>
           <Icon
             icon="popup-curve"
             color={"#FFFFFF"}
             size={58}
             style={{
-              width: IconWidth,
-          
+              width: '36.25rem',
+              position: 'absolute',
+              margin: 'auto',
+              display: 'block',
+              height: '100%',
+              left: '-100%',
+              right:' -100%'
+              
             }}
           />
         </span>

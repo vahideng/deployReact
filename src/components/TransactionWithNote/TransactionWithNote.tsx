@@ -94,7 +94,7 @@ const TransactionWithNote: React.FC<TransactionWithNoteProps> = ({
         <PrimaryButton
          responsive={responsive}
           title={Btntitle}
-          width={Btnwidth ? Btnwidth : '25rem'}
+          width={!!Btnwidth ? Btnwidth : '20.43rem'}
           onButtonClick={onButtonClick}
         />
         </div>

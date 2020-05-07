@@ -45,19 +45,6 @@
   padding: 2rem;
 }
 
-@media (max-width: 576px) {
-  .StatusFormContainerContent {
-    margin-top: -12px;
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .StatusFormContainerContent {
-    margin-top: -16px;
-  }
-}
-
 .headerTitle {
   text-align: "center";
 }
@@ -102,4 +89,12 @@
     margin-top: 2.5rem !important;
     max-width: 20.4rem;
   }
+}
+
+.CurveStyle {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  height: 58px;
+  border-radius: 20px 20px 0 0;
 }
