@@ -1159,12 +1159,12 @@ class Sprint1 extends Component<Props, State> {
           onSelect={(obj: any) => console.log(obj)}
           tabTitles={["Security", "Login", "Contact Us"]}
           content={[
-            <ZeroResult
-              hideIcon
-              text={`We can’t seem to find any result for 
-              “Damansara Heights”`}
-            />,
-
+            <div>
+              <SecureImage
+                testId="secure_image_testid"
+                image={images.common.SampleSecureImage}
+              />
+            </div>,
             <>
               <InputField
                 type="text"
@@ -1349,16 +1349,15 @@ class Sprint1 extends Component<Props, State> {
               errorText: "The TAC is incorrect",
               subText: "Please try again.",
             }}
-            content={[
-              "TAC was sent to your registered mobile number (**** 6867)",
-              "You should receive a tac within two minuets",
-            ]}
-            link={{
-              text: "Did not receive TAC? Request new",
-              onLinkClick: () => {
-                alert("Tac link");
-              },
-            }}
+            content={
+              "TAC was sent to your registered mobile number (**** 6867) You should receive a tac within two minuets"
+            }
+            // link={{
+            //   text: "Did not receive TAC? Request new",
+            //   onLinkClick: () => {
+            //     alert("Tac link");
+            //   },
+            // }}
             buttonColor={{
               top: !tacInactive ? "#BDBDBD" : "#FD8585",
               bottom: !tacInactive ? "#BDBDBD" : "#FF2222",
