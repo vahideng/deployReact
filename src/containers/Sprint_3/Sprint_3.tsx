@@ -2172,12 +2172,12 @@ const Sprint3: React.FC<Props> = () => {
         modalChildren={
           <StatusFormContainer
             statusIcon={{
-              iconColor: { top: "#DCEAEA", bottom: "#7FA2A2" },
+              iconColor: { top: "#FD8585", bottom: "#FF2222" },
               image: {
                 src: images.common.amyIcon,
                 alt: "logo",
               },
-              outerIconColor: "#EAF4F4",
+              outerIconColor: "#FFEBEE",
             }}
             children={
               <div
@@ -2237,6 +2237,12 @@ const Sprint3: React.FC<Props> = () => {
                   />
                 </div>
                 <div style={{ marginTop: "1rem", marginBottom: "3rem" }}>
+                  <PrimaryButton
+                    title="Close"
+                    onButtonClick={() => {
+                      setSettingsModalOpen(false);
+                    }}
+                  />
                   <PrimaryButton
                     title="Close"
                     onButtonClick={() => {
