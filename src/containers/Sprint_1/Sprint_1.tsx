@@ -1370,8 +1370,9 @@ class Sprint1 extends Component<Props, State> {
                 <Prompt
                   testId={"testId"}
                   iconColor={{ top: "#81D988", bottom: "#5BB362" }}
-                  icon={{ name: "Tick-1", color: "#ffffff" }}
+                  icon={{ name: "Tick-1", color: "#ffffff", size: 20 }}
                   text="Your profile is successfully activated."
+                  small
                 />
               </div>
             }
@@ -3110,7 +3111,7 @@ class Sprint1 extends Component<Props, State> {
               id: "Id-1",
             },
             {
-              src: images.common.MasterCard,
+              src: images.common.MasterCardFooter,
               id: "Id-1",
             },
             {
@@ -3193,11 +3194,12 @@ class Sprint1 extends Component<Props, State> {
           <StatusIcon
             icon={{ name: "Tick-1" }}
             iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
+            small={true}
           />
           <StatusIcon
             testId={"testId"}
             iconColor={{ top: "#FFA14E", bottom: "#FFA14E" }}
-            icon={{ name: "Fail", color: "#ff3" }}
+            icon={{ name: "Fail", color: "#ff3", size: 70 }}
           />
           <StatusIcon
             iconColor={{ top: "#FD8585", bottom: "#FF2222" }}

@@ -8,7 +8,7 @@ const {
   B_16_BLACK,
   B_13_BLACK,
   R_13_BLACK,
-  B_13_ORANGE_463
+  B_13_ORANGE_463,
 } = Paragraphs;
 interface Props {
   testId?: string;
@@ -20,7 +20,7 @@ interface Props {
   onLinkClick?: () => void;
   iconColor?: { top: string; bottom: string };
   outerIconColor?: string;
-  icon?: { name: string; color?: string };
+  icon?: { name: string; color?: string; size?: number };
   image?: { src: string; alt?: string };
 }
 
@@ -35,7 +35,7 @@ const DetailSummary: React.FC<Props> = ({
   iconColor,
   outerIconColor,
   icon,
-  image
+  image,
 }) => {
   return (
     <div id={testId}>
