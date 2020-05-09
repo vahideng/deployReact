@@ -230,7 +230,7 @@ const ActionPopover = ({item, onDocumentClick}: ActionPopoverProp) => {
               className={`${classes.ButtonIconText} ignore-click-bubble`}
             >
               <Icon icon={button.icon} size={25} />
-              {button.text}
+              <B_13_GREY444>{button.text}</B_13_GREY444>
             </button>
           </div>
         );
