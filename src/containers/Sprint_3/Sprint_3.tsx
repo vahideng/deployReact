@@ -1791,7 +1791,7 @@ const Sprint3: React.FC<Props> = () => {
           align="center"
           list={[
             {
-              leftIcon: { name: "ID-2" },
+              leftIcon: { name: "ID-2", size: 35 },
               boldText: "ID Number ••••••9876",
               subText: "Maybank  |  ••••••••4321",
               notification: true,
@@ -1799,7 +1799,9 @@ const Sprint3: React.FC<Props> = () => {
                 {
                   icon: "Edit",
                   text: "Edit",
-                  onClick: () => alert("click"),
+                  onClick: () => {
+                    console.log('console click')
+                  }
                 },
                 {
                   icon: "delete",
@@ -1843,6 +1845,7 @@ const Sprint3: React.FC<Props> = () => {
           title="Inactive IDs"
           list={[
             {
+              leftIcon: { name: "Mobile", size: 35 }, // example here
               leftImage:
                 "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
               boldText: "Mobile Number ••••••4546",
@@ -1851,7 +1854,9 @@ const Sprint3: React.FC<Props> = () => {
                 {
                   icon: "Edit",
                   text: "Edit",
-                  onClick: () => alert("click"),
+                  onClick: () => {
+                    console.log('console click')
+                  }
                 },
                 {
                   icon: "delete",
