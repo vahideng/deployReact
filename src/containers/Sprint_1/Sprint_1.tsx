@@ -1037,6 +1037,7 @@ class Sprint1 extends Component<Props, State> {
                   of AmOnline
                 </p>
                 <InputField
+                  disabled={true}
                   type="text"
                   clearClickHandler={() => alert("clear clicked")}
                   clearIcon={true}
@@ -1206,9 +1207,7 @@ class Sprint1 extends Component<Props, State> {
           clearClickHandler={() => {
             this.setState({ inputValue: "" });
           }}
-          onBlur={() => {
-            this.setState({ inputValue: "" });
-          }}
+          // disabledInput={true}
           inActiveMessage={{
             title: "Your profile is inactive.",
             text: "TAC verification is required to activate your profile.",
@@ -1326,6 +1325,7 @@ class Sprint1 extends Component<Props, State> {
           }}
         >
           <TacModal
+            // disabledInput={true}
             // zIndex={-1}
             onCloseClick={() => {
               this.setState({

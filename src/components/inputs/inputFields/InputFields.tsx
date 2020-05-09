@@ -47,6 +47,7 @@ interface Props {
   placeholder?: string;
   showTooltip?: boolean;
   onTooltipClicked?: () => void;
+  disabled?: boolean;
 }
 
 class InputField extends Component<Props, {}> {
@@ -78,9 +79,9 @@ class InputField extends Component<Props, {}> {
       bottomLabel,
       bottomLabelStyle,
       placeholder,
-
       showTooltip,
       onTooltipClicked,
+      disabled,
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);
@@ -91,7 +92,11 @@ class InputField extends Component<Props, {}> {
     function blurHandler(event: FormEvent) {
       !!onBlur && onBlur(event);
     }
-
+    console.log(disabled);
+    let inputClasses = classes.InputFieldIconDiv;
+    if (disabled) {
+      inputClasses = `${classes.InputFieldIconDiv} ${classes.DisabledInput}`;
+    }
     return (
       <div
         className={
@@ -113,7 +118,7 @@ class InputField extends Component<Props, {}> {
           </div>
         )}
         <div
-          className={classes.InputFieldIconDiv}
+          className={inputClasses}
           style={{
             maxWidth: tacInput ? "34.81rem" : "31.6rem",
             minWidth: responsive ? "" : "22.6rem",
