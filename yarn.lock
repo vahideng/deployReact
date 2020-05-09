@@ -2954,7 +2954,7 @@ amdefine@>=0.0.4:
 
 "amonline-reactjs-component@https://bitbucket.org/alephlabs/my-amonline-component":
   version "0.1.0"
-  resolved "https://bitbucket.org/alephlabs/my-amonline-component#9fb28a3904cca5c2055e18da0e62d8237b749688"
+  resolved "https://bitbucket.org/alephlabs/my-amonline-component#3533506691560be4efe172f0c8686e448124c47e"
   dependencies:
     "@redux-saga/types" "^1.1.0"
     "@testing-library/jest-dom" "^4.2.4"

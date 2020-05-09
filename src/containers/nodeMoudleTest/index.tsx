@@ -7,7 +7,7 @@ import LocalImages from "src/components/assets/images";
 import Icon from "src/components/assets/icons/icon";
 import LabeledIcon from "src/components/assets/icons/labeledIcon/LabeledIcon";
 import IconButtons from "src/components/buttons/iconButtons/IconButtons";
-import moment from 'moment'
+import moment from "moment";
 import {
   CalendarBox,
   // sprint3
@@ -16,7 +16,6 @@ import {
   TextWithDetails,
   List,
   Line,
-
   PortfolioList,
   PortfolioListContent,
   PieChartBox,
@@ -2795,7 +2794,7 @@ const NodeModule: React.FC = () => {
         style={{ position: "relative", padding: "5rem 6rem", height: "25rem" }}
       >
         <AmResetPin
-        showKeyPad={true}
+          showKeyPad={true}
           testId="testId"
           keysArray={[5, 8, 1, 0, 4, 6, 2, 9, 3, 7]}
           onEnterClick={() => {
