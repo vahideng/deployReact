@@ -11,6 +11,7 @@ interface Props {
   accountTitle?: string;
   accountTitle2?: string;
   tabStyle: CSSProperties;
+  tabHeight ?: string;
 }
 
 const VerticalTabSelection: React.FC<Props> = ({
@@ -20,6 +21,7 @@ const VerticalTabSelection: React.FC<Props> = ({
   accountTitle,
   accountTitle2,
   tabStyle,
+  
 }) => {
   return (
     <div
@@ -28,7 +30,7 @@ const VerticalTabSelection: React.FC<Props> = ({
       style={tabStyle}
     >
       {!!icon ? (
-        <div className={classes.WrapperContent}>
+        <div  className={classes.WrapperContent}>
           <Icon
             className={classes.Icon}
             icon={!!icon.name ? icon.name : "Alert"}

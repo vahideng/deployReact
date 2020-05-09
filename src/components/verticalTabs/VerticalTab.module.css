@@ -15,6 +15,10 @@
           box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.123279);
 }
 
+.NavLink {
+  height: 100%;
+}
+
 .LeftChild {
   padding: 0;
 }

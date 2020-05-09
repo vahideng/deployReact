@@ -1412,6 +1412,8 @@ class Sprint1 extends Component<Props, State> {
         <Title>Vertical tab</Title>
         <CenteredDiv>
           <VerticalTab
+          tabHeight ="100px"
+          WrapperStyle = {{backgroundColor : 'red'}}
             testId={"testId"}
             selectedBorderColor="#FD8585"
             minimize={false}
