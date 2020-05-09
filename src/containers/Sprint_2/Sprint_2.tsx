@@ -181,9 +181,13 @@ const Sprint2: React.FC<Props> = () => {
         modalChildren={
           <StatusFormContainer
             statusIcon={{
-              icon: "Tick-1",
+              // icon: "Register-1",
               iconColor: { top: "#94EC9B", bottom: "#5BB362" },
               outerIconColor: "#E5FCE6",
+              image: {
+                src: images.common.amyIcon,
+                alt: "logo",
+              },
             }}
             children={
               <div

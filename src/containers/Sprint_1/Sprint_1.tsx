@@ -776,8 +776,12 @@ class Sprint1 extends Component<Props, State> {
         <div style={{ backgroundColor: "#EEEEEE", padding: 100 }}>
           <FormContainer
             statusIcon={{
-              icon: "Tick-1",
+              // icon: "Register-1",
               iconColor: { top: "#94EC9B", bottom: "#5BB362" },
+              image: {
+                src: images.common.amyIcon,
+                alt: "logo",
+              },
             }}
             children={
               <List

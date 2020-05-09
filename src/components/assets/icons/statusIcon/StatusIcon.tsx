@@ -15,7 +15,7 @@ interface Props {
 
 const StatusIcon: React.FC<Props> = ({
   iconColor,
-  icon,
+  icon = { name: "" },
   image,
   testId,
   outerIconColor,
@@ -67,14 +67,17 @@ const StatusIcon: React.FC<Props> = ({
                 }
           }
         >
-          {!!icon && (
+          {console.log(icon, "icon")}
+
+          {!!icon && !image && (
             <Icon
-              icon={icon.name ? icon.name : "Tick-1"}
-              color={icon.color ? icon.color : "#ffffff"}
+              icon={icon.name || "Tick-1"}
+              color={icon.color || "#ffffff"}
               size={iconSize}
             />
           )}
-          {!!image && (
+          {console.log(image, "image")}
+          {!!image && !icon.name && (
             <img src={image.src} alt={image.alt ? image.alt : "Logo"} />
           )}
         </div>
