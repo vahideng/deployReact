@@ -42,8 +42,6 @@ const BoxId = ({
   };
 
   const closeHandler = (_e: any) => {
-    // check the existing popover
-    console.log('going into close')
     setSelected(null);
   };
 
@@ -200,9 +198,7 @@ interface ActionPopoverProp {
 const ActionPopover = ({item, onDocumentClick}: ActionPopoverProp) => {
 
   const handleDocumentClick = (e: any) => {
-    console.log('e', e.target)
     if (!e.target || !e.target.className || !e.target.className.match) return
-    console.log('e.target.className', e.target.className)
     if (e.target.className.match(/\bignore-click-bubble\b/)) {
       return
     }
