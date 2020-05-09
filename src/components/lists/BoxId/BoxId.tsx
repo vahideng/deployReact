@@ -116,7 +116,7 @@ const BoxId = ({ testId, title, align, titleStyle, list, isActive, width }: Prop
                     >
                       <Icon icon="Menu" size={32} color={iconColor()} />
                     </div>
-                    {selected === index && <ActionPopover item={item} />}
+                    {selected === index && <ActionPopover item={item} onDocumentClick={closeHandler} />}
                   </div>
                 </div>
               ) : (
