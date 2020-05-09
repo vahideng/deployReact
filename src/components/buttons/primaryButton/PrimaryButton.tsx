@@ -11,11 +11,12 @@ interface Props {
   buttonColor?: { top: string; bottom: string };
   height?: number | string;
   width?: number | string;
+  minWidth?: number | string;
   onButtonClick: () => void;
   small?: boolean;
   icon?: { name: string; color: string; size?: number };
   shadowed?: boolean;
-  responsive?:boolean;
+  responsive?: boolean;
   buttonStyle?: CSSProperties;
 }
 
@@ -33,10 +34,11 @@ const PrimaryButton: React.FC<Props> = ({
   titleStyle,
   responsive,
   buttonStyle,
+  minWidth,
 }) => {
   const primaryButton = [classes.PrimaryButton];
-    if (responsive) {
-      primaryButton.push(classes.fluid);
+  if (responsive) {
+    primaryButton.push(classes.fluid);
   }
 
   const buttonBg = !!buttonColor
@@ -51,10 +53,10 @@ const PrimaryButton: React.FC<Props> = ({
         className={classes.PrimaryButton}
         style={{
           background: buttonBg,
-          maxWidth: !!width?width:'18.4375rem',
-          width:"100%",
+          maxWidth: !!width ? width : "18.4375rem",
           height: height,
           boxShadow: shadow,
+          minWidth: minWidth && minWidth,
           ...buttonStyle,
         }}
       >
@@ -85,10 +87,10 @@ const PrimaryButton: React.FC<Props> = ({
         className={classes.PrimaryButtonSmall}
         style={{
           background: buttonBg,
-          width:width,
+          width: width,
           height: height,
           boxShadow: shadow,
-          ...buttonStyle
+          ...buttonStyle,
         }}
       >
         <Icon
@@ -102,7 +104,7 @@ const PrimaryButton: React.FC<Props> = ({
 };
 
 PrimaryButton.defaultProps = {
-  responsive : false,
-}
+  responsive: false,
+};
 
 export default PrimaryButton;

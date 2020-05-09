@@ -16,7 +16,7 @@ import {
   TextWithDetails,
   List,
   Line,
-  DashboardCart,
+
   PortfolioList,
   PortfolioListContent,
   PieChartBox,
@@ -462,10 +462,10 @@ const NodeModule: React.FC = () => {
         <Line testId={"testId"} />
       </div>
 
-      <Title>DashboardCart</Title>
+      {/* <Title>DashboardCart</Title>
       <CenteredDiv>
         <DashboardCart
-          title="My UT Account"
+          
           subtitle={{ content: "123456", icon: "User1" }}
           description="RM 100,084,208.66"
           descriptionRightLabel={{
@@ -490,7 +490,7 @@ const NodeModule: React.FC = () => {
           footerLabel="Last Updated: 11 Nov 2019"
           tipChildren={<div>tip</div>}
         />
-      </CenteredDiv>
+      </CenteredDiv> */}
 
       <Title>PortfolioList</Title>
       <CenteredDiv>
@@ -2795,6 +2795,7 @@ const NodeModule: React.FC = () => {
         style={{ position: "relative", padding: "5rem 6rem", height: "25rem" }}
       >
         <AmResetPin
+        showKeyPad={true}
           testId="testId"
           keysArray={[5, 8, 1, 0, 4, 6, 2, 9, 3, 7]}
           onEnterClick={() => {

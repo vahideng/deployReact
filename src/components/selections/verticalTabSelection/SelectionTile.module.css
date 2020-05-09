@@ -19,10 +19,10 @@
           justify-content: space-between;
   width: 100%;
   min-height: 6rem;
+  height: 100%;
   position: relative;
   border-right: 0.37rem solid transparent;
-  min-width: 6rem;
-  border-bottom: 1px solid #dedede;
+  min-width: 5.31rem;
 }
 
 .WrapperContent {

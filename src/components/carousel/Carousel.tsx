@@ -15,6 +15,7 @@ const CustomCarousel = (props: Props) => {
     const [stateIndex, setStateIndex] = useState(0);
     const [rightDisable, setRightDisable] = useState(null);
     const [leftDisable, setLeftDisable] = useState(null);
+    const [singleItem, setSingleItem] = useState(null);
 
     const onRightClick = () => {
       setStateIndex(stateIndex + 1);
@@ -23,6 +24,12 @@ const CustomCarousel = (props: Props) => {
     const onLeftClick = () => {
       setStateIndex(stateIndex - 1);
     };
+    const dataLength = items[0].length;
+    let singleItemClass: string = null;
+    if (singleItem) {
+      singleItemClass = classes.SingleItemClass;
+    }
+
     useEffect(() => {
       if (items[0].length - 1 === stateIndex) {
         setRightDisable(true);
@@ -35,6 +42,12 @@ const CustomCarousel = (props: Props) => {
         setRightDisable(false);
       }
     }, [stateIndex]);
+
+    useEffect(() => {
+      if (dataLength === 1) {
+        setSingleItem(true);
+      }
+    }, []);
 
     return (
       <>
@@ -52,11 +65,11 @@ const CustomCarousel = (props: Props) => {
                       leftDisable ? { pointerEvents: "none", opacity: 0.4 } : {}
                     }
                     onClick={onLeftClick}
-                    className={classes.Chevrons}
+                    className={`${classes.Chevrons} ${singleItemClass}`}
                   >
                     <Icon icon="left" color="#FF2626" size={32} />
                   </span>
-                  <div className={`${classes.Children}`}>{item.children}</div>
+                  <div className={`${classes.Children} `}>{item.children}</div>
                   <span
                     style={
                       rightDisable
@@ -64,7 +77,7 @@ const CustomCarousel = (props: Props) => {
                         : {}
                     }
                     onClick={onRightClick}
-                    className={classes.Chevrons}
+                    className={`${classes.Chevrons} ${singleItemClass}`}
                   >
                     <Icon icon="Right1" color="#FF2626" size={32} />
                   </span>
@@ -73,7 +86,7 @@ const CustomCarousel = (props: Props) => {
             );
           })}
         </div>
-        <div className={classes.CarouselIndicDiv}>
+        <div className={`${classes.CarouselIndicDiv}  ${singleItemClass}`}>
           {items[0].map((_item: any, index: any) => {
             return (
               <span

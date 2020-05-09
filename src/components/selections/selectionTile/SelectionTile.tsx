@@ -51,13 +51,6 @@ const SelectionTile: React.FC<Props> = ({
     selectionTileRowCls = `${selectionTileRowCls} ${classes.SelectionTileRowResponsive}`;
   }
 
-  function BorderClass(index: number) {
-    if (selected === index) {
-      return classes.SelectedBorder;
-    } else {
-      return null;
-    }
-  }
   return !centered ? (
     <div className={selectionTileRowCls} id={testId} style={rowStyle}>
       {!!list &&
@@ -70,9 +63,7 @@ const SelectionTile: React.FC<Props> = ({
             <div
               id={`${testId}-${index}`}
               onClick={!disable ? () => onTileClick(item, index) : null}
-              className={`${selectionTileWrapperCls} ${disable} ${BorderClass(
-                index
-              )}`}
+              className={`${selectionTileWrapperCls} ${disable}`}
               key={index}
               style={tileStyle}
             >
@@ -175,11 +166,15 @@ const SelectionTile: React.FC<Props> = ({
     <div className={classes.SelectionTileRow} id={testId} style={rowStyle}>
       {!!list &&
         list.map((item, index) => {
+          let disable = null;
+          if (item.disable) {
+            disable = `${classes.Disable}`;
+          }
           return (
             <div
               id={`${testId}-${index}`}
               onClick={() => onTileClick(item, index)}
-              className={`${classes.CenteredDiv} ${BorderClass(index)}`}
+              className={`${classes.CenteredDiv} ${disable} `}
               key={index}
               style={tileStyle}
             >
@@ -199,6 +194,13 @@ const SelectionTile: React.FC<Props> = ({
                 )}
                 {!!item.centeredChild && item.centeredChild}
               </div>
+              <div
+                className={
+                  selected === index
+                    ? `${classes.borderBottomSelected} ${classes.borderBottom}`
+                    : classes.borderBottom
+                }
+              ></div>
             </div>
           );
         })}

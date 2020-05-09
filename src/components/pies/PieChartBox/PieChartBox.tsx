@@ -8,13 +8,17 @@ interface Props {
   testId?: string;
   pieLabels?: string[];
   pieDataSets: { data: number[]; backgroundColor: string[] };
+  pieEmptyDataSets?: { data: number[]; backgroundColor: string[] };
+  empty?: boolean;
 }
 
 const PieChartBox: React.FC<Props> = ({
   pieLabels,
   pieDataSets,
   testId,
-  title
+  title,
+  pieEmptyDataSets,
+  empty,
 }) => {
   const [hundred, setHundred] = useState(false);
 
@@ -39,21 +43,25 @@ const PieChartBox: React.FC<Props> = ({
             height={90}
             data={{
               labels: pieLabels,
-              datasets: [pieDataSets]
+              datasets: empty
+                ? pieEmptyDataSets
+                  ? [pieEmptyDataSets]
+                  : [{ data: [100], backgroundColor: ["#dedede"] }]
+                : [pieDataSets],
             }}
             options={{
               elements: {
                 arc: {
-                  borderWidth: hundred ? 0 : 1
-                }
+                  borderWidth: hundred ? 0 : 1,
+                },
               },
               tooltips: { enabled: false },
               hover: { mode: null },
               defaultFontSize: "16px",
               maintainAspectRatio: false,
               legend: {
-                display: false
-              }
+                display: false,
+              },
             }}
           />
         </div>

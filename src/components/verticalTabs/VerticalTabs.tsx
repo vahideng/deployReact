@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, CSSProperties } from "react";
 import { Tab, Nav } from "react-bootstrap";
 import VerticalTabSelection from "src/components/selections/verticalTabSelection/VerticalTabSelection";
 import Paragraphs from "../assets/typography";
@@ -12,6 +12,8 @@ interface Props {
   minimize: boolean;
   defaultIndex?: number;
   tabWidth?: string;
+  tabHeight ?: string;
+  WrapperStyle ?: CSSProperties;
 }
 const VerticalTabs: React.FC<Props> = ({
   data,
@@ -20,6 +22,8 @@ const VerticalTabs: React.FC<Props> = ({
   testId,
   defaultIndex,
   tabWidth,
+  tabHeight,
+  WrapperStyle
 }) => {
   const [defaultActiveKey, setDefaultActiveKey] = useState(
     defaultIndex ? defaultIndex : 0
@@ -38,7 +42,7 @@ const VerticalTabs: React.FC<Props> = ({
   const customStyle = (index: number, borderRight: boolean) => ({
     borderBottom:
       index == lastIndex ? "1px solid transparent" : "1px solid #dedede",
-    width: minimize ? "6rem" : tabWidth ? tabWidth : "14.68rem",
+    width: minimize ? tabWidth || "5.31rem" : tabWidth || "14.68rem",
     borderRightColor: borderRight
       ? selectedBorderColor
         ? selectedBorderColor
@@ -46,20 +50,23 @@ const VerticalTabs: React.FC<Props> = ({
       : "",
   });
 
+  
+
   return (
     <Tab.Container
       id={`verticalTabs ${testId}`}
       defaultActiveKey={defaultActiveKey}
     >
-      <div className={classes.WholeWrapper}>
+      <div  style={WrapperStyle} className={classes.WholeWrapper}>
         <div className={classes.LeftChild}>
           <Nav variant="pills" className={`${classes.Container} flex-column `}>
             {!!data &&
               data.map((item: any, index: number) => {
                 return (
-                  <Nav.Item key={index} className={`${classes.Wrapper}`}>
+                  <Nav.Item key={index}  style={tabHeight  && { height :tabHeight }} className={`${classes.Wrapper}`}>
                     <Nav.Link eventKey={index} className={`${classes.NavLink}`}>
                       <VerticalTabSelection
+                      
                         selected={item.selected}
                         onTileClick={() => item.onClick(index)}
                         icon={{
@@ -68,6 +75,13 @@ const VerticalTabs: React.FC<Props> = ({
                           size: item.icon.size,
                         }}
                         accountTitle={`${minimize ? "" : item.accountTitle}`}
+                        accountTitle2={`${
+                          minimize
+                            ? ""
+                            : item.accountTitle2
+                            ? item.accountTitle2
+                            : ""
+                        }`}
                         tabStyle={customStyle(index, item.selected)}
                       />
                     </Nav.Link>

@@ -17,6 +17,9 @@ interface Props {
   onButtonClick: () => void;
   buttonIcon?: { name: string; color: string; size?: number };
   buttonProps?: any;
+  showTooltip?: boolean;
+  onTooltipClicked?: () => void;
+  onBlur?: () => void;
 }
 
 const HeaderWithIButtons = ({
@@ -32,11 +35,14 @@ const HeaderWithIButtons = ({
   titleColor,
   buttonIcon,
   buttonProps,
+  onBlur,
+  onTooltipClicked,
+  showTooltip,
 }: Props) => {
   return (
     <div
       className={classes.MainDiv}
-      style={headerStyle ? headerStyle : { marginTop: '2.5rem' }}
+      style={headerStyle ? headerStyle : { marginTop: "2.5rem" }}
       id={testId}
     >
       <div className={classes.ContentContainer}>
@@ -55,7 +61,9 @@ const HeaderWithIButtons = ({
 
         <LabelToolTip
           label={label}
-          
+          onBlur={onBlur}
+          onTooltipClicked={onTooltipClicked}
+          showTooltip={showTooltip}
           tooltipData={tooltipData ? tooltipData : ""}
         />
       </div>
@@ -70,6 +78,7 @@ const HeaderWithIButtons = ({
           icon={buttonIcon}
           shadowed={true}
           height={"2.5rem"}
+          minWidth={"10.12rem"}
           titleStyle={{ fontSize: 11, color: "#000000" }}
           {...buttonProps}
         />

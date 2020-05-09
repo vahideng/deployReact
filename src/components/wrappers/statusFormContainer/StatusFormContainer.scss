@@ -16,6 +16,14 @@
 .StatusFormContainerStatusIcon {
   margin-bottom: -2rem;
 }
+.CurveStyle{
+  position: relative;
+overflow: hidden;
+display: block;
+height: 58px;
+border-radius: 20px 20px 0 0;
+
+}
 .StatusFormContainerContent {
   display: flex;
   justify-content: center;
@@ -25,9 +33,7 @@
   border-bottom-right-radius: 1.5rem;
   margin-top: -2px;
   @media (max-width: 576px) {
-    margin-top: -10px;
+    padding: 1.56rem 1rem 2.5rem 1rem;
   }
-  @media (max-width: 400px) {
-    margin-top: -16px;
-  }
+  padding: 1.7rem 2.5rem 1rem 2.5rem;
 }

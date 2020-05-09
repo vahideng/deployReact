@@ -151,6 +151,7 @@ class Sprint1 extends Component<Props, State> {
       <div style={{ paddingTop: "4rem" }}>
         <AmModal
           testId={"testId"}
+          zIndex={-1} // testing zIndex prop
           modalIsOpen={generalModalOpen}
           modalChildren={
             <FormContainer
@@ -211,6 +212,7 @@ class Sprint1 extends Component<Props, State> {
         >
           <FormContainerCurved
             testId={"testId"}
+            // contentStyle={{ paddingRight: "0rem"}}
             curvedTab={{
               leftTab: "New Recipient",
               rightTab: "Own/Favorite",
@@ -527,7 +529,7 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
-                      hideActionButton: false,
+                      hideButtons: false,
                       onActionButtonClick: () => alert("Repeat"),
                       details: [
                         {
@@ -544,7 +546,7 @@ class Sprint1 extends Component<Props, State> {
                           value1: "",
                           label2: "Other Details",
                           value2: "-",
-                          hideActionButton: true,
+                          hideButtons: true,
                           // actionLabel: 'View Receipt',
                           // actionIcon: ''
                         },
@@ -564,7 +566,7 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
-                      hideActionButton: true,
+                      hideButtons: true,
                       details: [
                         {
                           label1: "From Account",
@@ -581,7 +583,7 @@ class Sprint1 extends Component<Props, State> {
                           value2: "-",
                           actionLabel: "View Receipt",
                           actionIcon: "",
-                          hideActionButton: true,
+                          hideButtons: true,
                         },
                       ],
                     },
@@ -605,7 +607,7 @@ class Sprint1 extends Component<Props, State> {
                       amount: "RM 1,236.78",
                       actionLabel: "Repeat",
                       actionIcon: "Repeat",
-                      hideActionButton: true,
+                      hideButtons: true,
                       details: [
                         {
                           label1: "From Account",
@@ -622,7 +624,7 @@ class Sprint1 extends Component<Props, State> {
                           value2: "-",
                           actionLabel: "View Receipt",
                           actionIcon: "",
-                          hideActionButton: true,
+                          hideButtons: true,
                         },
                       ],
                     },
@@ -649,8 +651,8 @@ class Sprint1 extends Component<Props, State> {
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
                 amount: "RM 10,135",
-                percentageVal:"6.6",
-                percentageStatus : "Plus"
+                percentageVal: "6.6",
+                percentageStatus: "Plus",
               },
               {
                 accountName: "Foreign Currency Account",
@@ -660,8 +662,8 @@ class Sprint1 extends Component<Props, State> {
                 countryFlagImage: images.common.countryFlag,
                 amount: "AUD 1,392",
                 equivalentAmount: "RM 4,583",
-                percentageVal:"6.6",
-                percentageStatus : "Plus"
+                percentageVal: "6.6",
+                percentageStatus: "Plus",
               },
               {
                 icon: "Plus",
@@ -672,8 +674,8 @@ class Sprint1 extends Component<Props, State> {
                 statusLabel: "ACTIVE",
                 amount: "RM 2,000",
                 amountStatus: "Minus",
-                 percentageVal:"6.6",
-                percentageStatus : "Plus"
+                percentageVal: "6.6",
+                percentageStatus: "Plus",
               },
               {
                 accountName: "Conversion Account",
@@ -681,8 +683,8 @@ class Sprint1 extends Component<Props, State> {
                 statusLabel: "ACTIVE",
                 amount: "RM 9,000",
                 amountStatus: "Plus",
-                percentageVal:"6.6",
-                percentageStatus : "Plus"
+                percentageVal: "6.6",
+                percentageStatus: "Plus",
               },
               {
                 cardLogo:
@@ -692,8 +694,8 @@ class Sprint1 extends Component<Props, State> {
                 statusLabel: "RESTRICTED ACCESS",
                 statusLabelColor: "#FF2626",
                 amount: "RM 0.00",
-                percentageVal:"6.6",
-                percentageStatus : "Plus"
+                percentageVal: "6.6",
+                percentageStatus: "Plus",
               },
               {
                 cardLogo: images.common.masterCard,
@@ -774,8 +776,12 @@ class Sprint1 extends Component<Props, State> {
         <div style={{ backgroundColor: "#EEEEEE", padding: 100 }}>
           <FormContainer
             statusIcon={{
-              icon: "Tick-1",
+              // icon: "Register-1",
               iconColor: { top: "#94EC9B", bottom: "#5BB362" },
+              image: {
+                src: images.common.amyIcon,
+                alt: "logo",
+              },
             }}
             children={
               <List
@@ -980,6 +986,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>FormContainer</Title>
         <CenteredDiv>
           <FormContainer
+            // childrenWrapperStyle={{ padding: 0 }}
             label={"Select your account/card type"}
             showTooltip={true}
             onTooltipClicked={() => alert("clicked!!")}
@@ -1030,6 +1037,7 @@ class Sprint1 extends Component<Props, State> {
                   of AmOnline
                 </p>
                 <InputField
+                  disabled={true}
                   type="text"
                   clearClickHandler={() => alert("clear clicked")}
                   clearIcon={true}
@@ -1153,15 +1161,15 @@ class Sprint1 extends Component<Props, State> {
           title={"Login"}
           leftTitle={"LeftTitle"}
           rightTitle={"rightTitle"}
-          tabTitles={["Security", "Login", "Contact Us"]}
           onSelect={(obj: any) => console.log(obj)}
+          tabTitles={["Security", "Login", "Contact Us"]}
           content={[
-            <ZeroResult
-              hideIcon
-              text={`We can’t seem to find any result for 
-              “Damansara Heights”`}
-            />,
-
+            <div>
+              <SecureImage
+                testId="secure_image_testid"
+                image={images.common.SampleSecureImage}
+              />
+            </div>,
             <>
               <InputField
                 type="text"
@@ -1187,8 +1195,11 @@ class Sprint1 extends Component<Props, State> {
           ]}
         ></Box>
         <TacModal
+          // zIndex={-1}
           onCloseClick={() => {
-            alert("Tac Closed");
+            this.setState({
+              TacModalOpen: false,
+            });
           }}
           responsive={true}
           maxLength={6}
@@ -1196,6 +1207,7 @@ class Sprint1 extends Component<Props, State> {
           clearClickHandler={() => {
             this.setState({ inputValue: "" });
           }}
+          // disabledInput={true}
           inActiveMessage={{
             title: "Your profile is inactive.",
             text: "TAC verification is required to activate your profile.",
@@ -1262,6 +1274,7 @@ class Sprint1 extends Component<Props, State> {
         />
         {/* {console.log(this.state.StickyModalOpen)} */}
         <StickyTimer
+          // zIndex={-1}
           testId={"testId"}
           closeTimeoutMS={1000}
           contentLabel="example"
@@ -1301,7 +1314,6 @@ class Sprint1 extends Component<Props, State> {
             });
           }}
         />
-        />
         <Title>Modals</Title>
         <div
           style={{
@@ -1313,8 +1325,12 @@ class Sprint1 extends Component<Props, State> {
           }}
         >
           <TacModal
+            // disabledInput={true}
+            // zIndex={-1}
             onCloseClick={() => {
-              alert("Tac Closed");
+              this.setState({
+                TacModalOpen: false,
+              });
             }}
             maxLength={6}
             clearIcon={inputValue === "" ? tacClear : !tacClear}
@@ -1344,13 +1360,15 @@ class Sprint1 extends Component<Props, State> {
               errorText: "The TAC is incorrect",
               subText: "Please try again.",
             }}
-            content="TAC was sent to your registered mobile number (**** 6867)"
-            link={{
-              text: "Did not receive TAC? Request new",
-              onLinkClick: () => {
-                alert("Tac link");
-              },
-            }}
+            content={
+              "TAC was sent to your registered mobile number (**** 6867) You should receive a tac within two minuets"
+            }
+            // link={{
+            //   text: "Did not receive TAC? Request new",
+            //   onLinkClick: () => {
+            //     alert("Tac link");
+            //   },
+            // }}
             buttonColor={{
               top: !tacInactive ? "#BDBDBD" : "#FD8585",
               bottom: !tacInactive ? "#BDBDBD" : "#FF2222",
@@ -1362,8 +1380,9 @@ class Sprint1 extends Component<Props, State> {
                 <Prompt
                   testId={"testId"}
                   iconColor={{ top: "#81D988", bottom: "#5BB362" }}
-                  icon={{ name: "Tick-1", color: "#ffffff" }}
+                  icon={{ name: "Tick-1", color: "#ffffff", size: 20 }}
                   text="Your profile is successfully activated."
+                  small
                 />
               </div>
             }
@@ -1405,19 +1424,12 @@ class Sprint1 extends Component<Props, State> {
               });
             }}
           />
-          <StickyTimer
-            testId={"testId"}
-            modalIsOpen={StickyModalOpen}
-            expirationTime={"05:00"}
-            text={
-              "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
-            }
-            showCrossIcon={true}
-          />
         </div>
         <Title>Vertical tab</Title>
         <CenteredDiv>
           <VerticalTab
+          tabHeight ="100px"
+          WrapperStyle = {{backgroundColor : 'red'}}
             testId={"testId"}
             selectedBorderColor="#FD8585"
             minimize={false}
@@ -1428,8 +1440,7 @@ class Sprint1 extends Component<Props, State> {
                 onClick: (index: any) =>
                   this.setState({ verticalActiveTab: index }),
                 icon: {
-                  name: "Account-2",
-                  color: "#ff1000",
+                  name: "Duitnow2",
                   size: 30,
                 },
                 accountTitle: "Savings/Current Accounts",
@@ -1754,7 +1765,8 @@ class Sprint1 extends Component<Props, State> {
                   color: "green",
                   size: 20,
                 },
-                accountTitle: "Savings/Current Accounts",
+                accountTitle: "Accounts",
+                accountTitle2: "& Card Settings",
                 children: (
                   <div
                     style={{
@@ -1846,7 +1858,7 @@ class Sprint1 extends Component<Props, State> {
             minimize={true}
             data={[
               {
-                selected: true,
+                selected: false,
                 onClick: (index: any) => alert(index),
                 icon: {
                   name: "Account3",
@@ -1929,8 +1941,7 @@ class Sprint1 extends Component<Props, State> {
 
                           <ZeroResult
                             testId={"testId"}
-                            text={`We can’t seem to find any result for 
-              “Damansara Heights”`}
+                            text={`We can’t seem to find any result for “Damansara Heights”`}
                           />,
                           <PieChart
                             pieLabels={["Fixed Income 60%", "Equity 10%"]}
@@ -1947,7 +1958,7 @@ class Sprint1 extends Component<Props, State> {
                 ),
               },
               {
-                selected: false,
+                selected: true,
                 onClick: (index: any) => alert(index),
                 icon: {
                   name: "Card",
@@ -2117,7 +2128,7 @@ class Sprint1 extends Component<Props, State> {
               });
             }}
             autoFocus={false}
-            showFilter={false}
+            showFilter={true}
             filterOptions={[
               { label: "Successful", value: "Successful", selected: true },
               { label: "Unsuccessful", value: "Unsuccessful", selected: true },
@@ -2756,6 +2767,51 @@ class Sprint1 extends Component<Props, State> {
               },
             },
             {
+              text: "Account Long text testing",
+              icon: {
+                name: "Account",
+              },
+            },
+          ]}
+        />
+        <Title>IconButtons No Border</Title>
+        <IconButtons
+          removeBorder={true}
+          testId={"testId"}
+          onButtonClick={(item, index) => {
+            this.setState({
+              IconButtonsNum: index,
+            });
+            alert(`${item} with index of ${index} clicked`);
+          }}
+          selected={IconButtonsNum}
+          label="Transfer To"
+          list={[
+            {
+              text: "Account",
+              icon: {
+                name: "Account",
+              },
+            },
+            {
+              text: "Card2",
+              icon: {
+                name: "Card2",
+              },
+            },
+            {
+              text: "Account",
+              icon: {
+                name: "Account",
+              },
+            },
+            {
+              text: "Card2",
+              icon: {
+                name: "Card2",
+              },
+            },
+            {
               text: "Account",
               icon: {
                 name: "Account",
@@ -2955,24 +3011,7 @@ class Sprint1 extends Component<Props, State> {
           What would you like
           to do today?"
         />
-        <Title>TextButtonList</Title>
-        <TextButtonList
-          testId="testId"
-          data={[
-            "Terms & Conditions",
-            "Privacy Notice",
-            "Security Statement",
-            "e-Banking Charter",
-            "Security Alert",
-          ]}
-          onTextClick={(text, _index, testId) => {
-            alert(
-              `${text} with index of ${_index} have been clicked ${testId}`
-            );
-          }}
-          footerText="  Copyright © AmBank (M) Berhad (Company No. 8515-D) All Rights
-          Reserved."
-        />
+
         <Title>TextButton</Title>
         <TextButton
           testId="testId"
@@ -3043,87 +3082,92 @@ class Sprint1 extends Component<Props, State> {
             alert(`${event.target.checked} ${event.target.name} ${testId}`);
           }}
         />
-        <Title>FooterLogo</Title>
+        <Title>TextButtonList -- FooterLogo</Title>
+        <TextButtonList
+          testId="testId"
+          data={[
+            "Terms & Conditions",
+            "Privacy Notice",
+            "Security Statement",
+            "e-Banking Charter",
+            "Security Alert",
+          ]}
+          onTextClick={(text, _index, testId) => {
+            alert(
+              `${text} with index of ${_index} have been clicked ${testId}`
+            );
+          }}
+          footerText="  Copyright © AmBank (M) Berhad (Company No. 8515-D) All Rights
+          Reserved."
+        />
         <FooterLogo
           onLogoClick={(logo, index) => {
             alert(`${logo.src}<=-link  id-=>${logo.id} index-=>${index}`);
           }}
           logos={[
             {
-              src: images.common.bankingInfo_1,
+              src: images.common.AKPK,
               id: "Id-0",
             },
             {
-              src: images.common.bankingInfo_2,
+              src: images.common.ATM,
               id: "Id-1",
             },
             {
-              src: images.common.bankingInfo_3,
+              src: images.common.BNM,
+              id: "Id-1",
+            },
+            {
+              src: images.common.BNMFinancialConsumerAlert,
+              id: "Id-1",
+            },
+            {
+              src: images.common.MasterCardFooter,
+              id: "Id-1",
+            },
+            {
+              src: images.common.MEPS,
+              id: "Id-1",
+            },
+            {
+              src: images.common.MIFC,
+              id: "Id-1",
+            },
+            {
+              src: images.common.PerbankanIslam,
+              id: "Id-1",
+            },
+            {
+              src: images.common.PIDM,
+              id: "Id-1",
+            },
+            {
+              src: images.common.SIDREC,
+              id: "Id-1",
+            },
+            {
+              src: images.common.PoliceAlert,
+              id: "Id-1",
+            },
+            {
+              src: images.common.SMEInfo,
+              id: "Id-1",
+            },
+            {
+              src: images.common.Verisign,
+              id: "Id-1",
+            },
+            {
+              src: images.common.VISA,
+              id: "Id-1",
+            },
+            {
+              src: images.common.MyBayar,
+              id: "Id-1",
+            },
+            {
+              src: images.common.BankingInfo,
               id: "Id-2",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1522827130596-971a53beeadc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-              id: "Id-3",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1554463529-e27854014799?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
-              id: "Id-4",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-5",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-6",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1522827130596-971a53beeadc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-              id: "Id-7",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
-              id: "Id-8",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-9",
-            },
-            {
-              src: images.common.sampleLogo,
-              id: "Id-10",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1557053964-937650b63311?ixlib=rb-1.2.1&auto=format&fit=crop&w=2359&q=80",
-              id: "Id-11",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-12",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-13",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-14",
-            },
-            {
-              src:
-                "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
-              id: "Id-15",
             },
           ]}
         />
@@ -3161,11 +3205,12 @@ class Sprint1 extends Component<Props, State> {
           <StatusIcon
             icon={{ name: "Tick-1" }}
             iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
+            small={true}
           />
           <StatusIcon
             testId={"testId"}
             iconColor={{ top: "#FFA14E", bottom: "#FFA14E" }}
-            icon={{ name: "Fail", color: "#ff3" }}
+            icon={{ name: "Fail", color: "#ff3", size: 70 }}
           />
           <StatusIcon
             iconColor={{ top: "#FD8585", bottom: "#FF2222" }}

@@ -8,18 +8,23 @@
 
 .SelectionTileRowResponsive {
   width: 100% !important;
+  @media (max-width: 576px) {
+    padding: 2rem 1rem 2.25rem 1rem;
+  }
 }
 
 .SelectionTileWrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   border-radius: 0.75rem;
-
-  margin: 0 2rem 1.5rem 0;
+  margin: 0 1.5rem 1.5rem 0;
   cursor: pointer;
   box-shadow: $darkBoxShadow;
   position: relative;
+  @media (max-width: 576px) {
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
 }
 
 .SelectionTileSelector {
@@ -28,7 +33,11 @@
   width: 15.06rem;
   min-height: 5.31rem;
   padding: 1rem;
+  @media (max-width: 576px) {
+    width: 100%;
+  }
 }
+
 .borderBottom {
   position: absolute;
   bottom: 0;
@@ -67,18 +76,6 @@
 .SelectionTileTitle {
   @extend %truncatedText;
 }
-.CenteredDiv {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 15.06rem;
-  height: 3.93rem;
-  border: 1px solid $greyEDE;
-  border-radius: 0.75rem;
-  border-bottom: 0.37rem solid $greyEDE;
-  margin: 0 2rem 1.5rem 0;
-  cursor: pointer;
-}
 
 .Disable {
   background-color: #ddd;
@@ -95,17 +92,31 @@
     $greyEDE 100%
   );
 }
+.CenteredDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15.06rem;
+  height: 3.93rem;
+  border-radius: 0.75rem;
+  margin: 0 1.5rem 1.5rem 0;
+  cursor: pointer;
+  box-shadow: $darkBoxShadow;
+  position: relative;
+}
 .CenteredSelector {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   height: 3.5rem;
   border-top-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
   background-color: #ffff;
   padding: 1rem;
 }
-.SelectedBorder {
-  border-bottom-color: #ff2626;
+.SelectionTileRowResponsive {
+  width: 100% !important;
+}
+.SelectionTileWrapperResponsive {
+  width: 100% !important;
 }

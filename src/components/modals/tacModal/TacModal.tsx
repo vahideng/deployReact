@@ -9,8 +9,8 @@ const { R_15_GREY444, B_15_BLACK, R_14_BLACK, B_15_ORANGE_463 } = Paragraphs;
 
 interface Props {
   testId?: string;
-  responsive?:boolean;
-  content?: string;
+  responsive?: boolean;
+  content?: string | string[];
   link?: { text: string; onLinkClick: () => void };
   modalIsOpen?: boolean;
   handleChange?: any;
@@ -35,11 +35,14 @@ interface Props {
   activeStatus?: boolean;
   activeStatusChild?: ReactNode;
   clearClickHandler?: () => void;
+  onClearIconHover?: (event: MouseEvent, isHover?: boolean) => void;
   onCloseClick?: () => void;
+  zIndex?: number;
+  disabledInput?: boolean;
 }
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
-const customStyles = {
+const customStyles = (props: React.PropsWithChildren<Props>) => ({
   content: {
     top: "auto",
     right: "auto",
@@ -47,58 +50,77 @@ const customStyles = {
     marginRight: "-50%",
     width: "100%",
     left: " 0px",
-    padding:'1.5rem',
-    zIndex: 1000000000
+    padding: "1.5rem",
+    zIndex: props.zIndex ? props.zIndex : 1000000000,
   },
   overlay: {
     background: "rgba(0, 0, 0, 0.5)",
     backgroundBlendMode: "multiply",
-    zIndex: 1000000000,
+    zIndex: props.zIndex ? props.zIndex : 1000000000,
   },
-};
-const TacModal: React.FC<Props> = ({
-  modalIsOpen,
-  handleChange,
-  label,
-  value,
-  notValid,
-  errorMessage,
-  content,
-  buttonTitle,
-  onButtonClick,
-  buttonColor,
-  testId,
-  inActive,
-  inActiveIcon,
-  inActiveMessage,
-  clearIcon,
-  clearClickHandler,
-  activeStatus,
-  activeStatusChild,
-  link,
-  onCloseClick,
-  maxLength,
-  onBlur,
-  onFocus,
-  responsive
-
-}) => {
+});
+const TacModal: React.FC<Props> = (props) => {
+  const {
+    modalIsOpen,
+    handleChange,
+    label,
+    value,
+    notValid,
+    errorMessage,
+    content,
+    buttonTitle,
+    onButtonClick,
+    buttonColor,
+    testId,
+    inActive,
+    inActiveIcon,
+    inActiveMessage,
+    clearIcon,
+    clearClickHandler,
+    activeStatus,
+    activeStatusChild,
+    link,
+    onCloseClick,
+    maxLength,
+    onBlur,
+    onFocus,
+    responsive,
+    onClearIconHover,
+    disabledInput,
+  } = props;
   const [modalStatus, setModalStatus] = useState(modalIsOpen);
   useEffect(() => {
     setModalStatus(modalIsOpen);
   }, [modalIsOpen]);
-    const {TacMainInnerDiv,TacMainInnerDivRes,TacMainDiv,TacInActiveIcon,TacInActiveIconText,TacInputField,
-      TacInputFieldContent,TacInputFieldLink, TacButton, TacCrossButton, TacInActiveIconRes, TacButtonRes} = classes;
+  const {
+    TacMainInnerDiv,
+    TacMainInnerDivRes,
+    TacMainDiv,
+    TacInActiveIcon,
+    TacInActiveIconText,
+    TacInputField,
+    TacInputFieldContent,
+    TacInputFieldLink,
+    TacButton,
+    TacCrossButton,
+    TacInActiveIconRes,
+    TacButtonRes,
+  } = classes;
   return (
     <>
-      <Modal isOpen={!!modalStatus && modalStatus} style={customStyles}>
+      <Modal isOpen={!!modalStatus && modalStatus} style={customStyles(props)}>
         <div id={testId} className={TacMainDiv}>
           {!!activeStatus ? (
             <>{activeStatusChild}</>
           ) : (
-            <div id={testId} className={responsive ? TacMainInnerDivRes : TacMainInnerDiv }>
+            <div
+              id={testId}
+              className={responsive ? TacMainInnerDivRes : TacMainInnerDiv}
+            >
               {!!inActive ? (
-                <div className={responsive? TacInActiveIconRes :TacInActiveIcon}>
+                <div
+                  className={responsive ? TacInActiveIconRes : TacInActiveIcon}
+                >
                   {!!inActiveIcon ? (
                     <Icon
                       icon={inActiveIcon.name}
@@ -119,7 +141,9 @@ const TacModal: React.FC<Props> = ({
                   <form>
                     <div className={TacInputField}>
                       <InputField
-                        responsive={responsive ? responsive : false }
+                        disabled={disabledInput}
+                        onClearIconHover={onClearIconHover}
+                        responsive={responsive ? responsive : false}
                         clearIcon={clearIcon}
                         clearClickHandler={clearClickHandler}
                         testId={`${testId}-0`}
@@ -137,7 +161,16 @@ const TacModal: React.FC<Props> = ({
                       />
                     </div>
                     <div className={TacInputFieldContent}>
-                      <R_15_GREY444>{content}</R_15_GREY444>
+                      {!!content && typeof content === "object" ? (
+                        content.map((item, index) => {
+                          return (
+                            <R_15_GREY444 key={index}>{item}</R_15_GREY444>
+                          );
+                        })
+                      ) : (
+                        <R_15_GREY444>{content}</R_15_GREY444>
+                      )}
+
                       {!!link && (
                         <B_15_ORANGE_463
                           onClick={link.onLinkClick}
@@ -153,7 +186,7 @@ const TacModal: React.FC<Props> = ({
 
               <div className={responsive ? TacButtonRes : TacButton}>
                 <FullButton
-                responsive={responsive ? responsive : false}
+                  responsive={responsive ? responsive : false}
                   testId={`${testId}-1`}
                   buttonColor={{
                     top: buttonColor.top,
@@ -180,7 +213,7 @@ const TacModal: React.FC<Props> = ({
   );
 };
 
-TacModal.defaultProps ={
-  responsive:false
-}
+TacModal.defaultProps = {
+  responsive: false,
+};
 export default TacModal;

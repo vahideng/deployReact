@@ -112,6 +112,7 @@ const Sprint3: React.FC<Props> = () => {
   });
   const [hiddenList, setHiddenList] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [headerTool, setHeaderToll] = useState(false);
 
   const handlerDropdown = (item: any) => {
     console.log(item, "dropdownValue");
@@ -629,7 +630,8 @@ const Sprint3: React.FC<Props> = () => {
           onBlur={() => console.log("onBlurDashboardCart")}
           cartList={[
             {
-              showTooltip: true,
+              selected: true,
+              showTooltip: false,
               onTooltipClicked: () => console.log("clickedTooltip"),
               testId: "testId",
               title: "My UT Account",
@@ -683,7 +685,7 @@ const Sprint3: React.FC<Props> = () => {
       <Title>TransactionLimitList Hidden</Title>
       <div style={{ width: "60vw", margin: "auto" }}>
         <TransactionLimitList
-          selectedIndex={2}
+          selectedIndex={3}
           list={[
             {
               notify: true,
@@ -877,6 +879,7 @@ const Sprint3: React.FC<Props> = () => {
                 <SecureImage
                   testId="secure_image_testid"
                   image={images.common.SampleSecureImage}
+                  type="wide"
                 />
               </CenteredDiv>
 
@@ -914,6 +917,8 @@ const Sprint3: React.FC<Props> = () => {
       <CenteredDiv
         style={{
           margin: "5rem",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
         <AmAccordion
@@ -958,7 +963,7 @@ const Sprint3: React.FC<Props> = () => {
                     title={"ItemName"}
                     icon={<Icon icon={"Settings"} size={18} color={"red"} />}
                     status={
-                      <Icon icon={"CheckboxYes"} size={20} color={"#36A03E"} />
+                      <Icon icon={"accent-tick"} size={20} color={"#36A03E"} />
                     }
                   />
                   <AmListItem
@@ -967,7 +972,7 @@ const Sprint3: React.FC<Props> = () => {
                     title={"ItemName"}
                     icon={<Icon icon={"Security2"} size={18} color={"red"} />}
                     status={
-                      <Icon icon={"CheckboxYes"} size={20} color={"#36A03E"} />
+                      <Icon icon={"accent-tick"} size={20} color={"#36A03E"} />
                     }
                   />
                 </div>
@@ -975,6 +980,36 @@ const Sprint3: React.FC<Props> = () => {
             },
           ]}
         ></AmAccordion>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "30rem",
+            marginTop: "1rem",
+          }}
+        >
+          <PrimaryButton
+            icon={{ name: "delete", color: "#fff" }}
+            title="remove device"
+            onButtonClick={() => {
+              alert("click");
+            }}
+            minWidth="12rem"
+            height="2.5rem"
+            buttonColor={{ top: "#FD8585", bottom: "#FF2222" }}
+          />
+          <PrimaryButton
+            icon={{ name: "delete", color: "#fff" }}
+            title="remove device"
+            minWidth="12rem"
+            height="2.5rem"
+            onButtonClick={() => {
+              alert("click");
+            }}
+            width={"25rem"}
+            buttonColor={{ top: "#dedede", bottom: "#eee" }}
+          />
+        </div>
       </CenteredDiv>
 
       <Title>ListItem (item used inside accordion)</Title>
@@ -989,7 +1024,7 @@ const Sprint3: React.FC<Props> = () => {
           testId="testId-123"
           title="Item with no left but right icon"
           icon={<Icon icon={"Right1"} size={20} color={"#000000"} />}
-          status={<Icon icon={"CheckboxYes"} size={20} color={"#000000"} />}
+          status={<Icon icon={"accent-tick"} size={20} color={"#000000"} />}
         />
         <AmListItem
           testId="testId-345"
@@ -1255,7 +1290,8 @@ const Sprint3: React.FC<Props> = () => {
         />
         <PieChartBox
           title={"Your Ideal Portfolio"}
-          pieLabels={["Fixed Income 100%", "Equity 0%"]}
+          pieLabels={["Fixed Income 0%", "Equity 0%"]}
+          empty={true}
           pieDataSets={{
             data: [100, 0],
             backgroundColor: ["#7AB497", "#FFA463"],
@@ -1343,11 +1379,15 @@ const Sprint3: React.FC<Props> = () => {
         <div style={{ width: 620 }}>
           <HeaderWithIButtons
             headerStyle={{
+              width: "40rem",
               marginTop: "1rem",
               backgroundColor: "rgba(196, 196, 196, 0.3)",
             }}
             icon={{ name: "Amy", color: "#ff2626" }}
             label="Your DuitNow IDs (3/5)"
+            onBlur={() => setHeaderToll(!headerTool)}
+            onTooltipClicked={() => setHeaderToll(!headerTool)}
+            showTooltip={headerTool}
             tooltipData={{
               testId: "101",
               tipChildren: (
@@ -1513,7 +1553,7 @@ const Sprint3: React.FC<Props> = () => {
           <HeaderWithIcons
             headerStyle={{
               backgroundColor: "rgba(196, 196, 196, 0.3)",
-              borderTopRightRadius: '1rem',
+              borderTopRightRadius: "1rem",
             }}
             label={"DuitNow QR"}
             image={{ src: images.common.Duitnow1 }}
@@ -1615,10 +1655,6 @@ const Sprint3: React.FC<Props> = () => {
               },
             },
             {
-              children: <img src={images.common.sampleLogo} width={150} />,
-            },
-
-            {
               avatar: {
                 name: "Kurniawan Suriawati",
                 initials: "KS",
@@ -1656,21 +1692,69 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         />
         <SelectionTile
+          // tileStyle={{ width: "28rem" }}
+          onTileClick={(item, index) => {
+            setSTileNum2(index);
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={sTileNum2}
+          list={[
+            {
+              accountTitle: "Saving Account A",
+              accountNumber: "4522016484444829",
+            },
+            {
+              accountTitle: "Saving Account B",
+              accountNumber: "19000194300233849",
+            },
+            {
+              accountTitle: "Long text Ambank AmMoneyLine AmMoneyLine",
+              accountNumber: "78624595404894028",
+            },
+            {
+              accountTitle: "Ambank BonusLink Visa",
+              accountNumber: "952858022960748293",
+            },
+          ]}
+        />
+        <SelectionTile
           centered={true}
           onTileClick={(item, index) => {
             setSTileNum3(index);
             alert(`${item.centeredText} with indexOf ${index} clicked`);
           }}
           selected={sTileNum3}
+          tileStyle={{ width: "8rem" }}
           list={[
             {
-              centeredText: "Lost",
+              centeredText: "Weekly",
             },
             {
-              centeredText: "Stolen",
+              centeredText: "Monthly",
             },
             {
-              centeredText: "Suspicious Activity",
+              centeredText: "Yearly",
+            },
+          ]}
+        />
+        <SelectionTile
+          centered={true}
+          onTileClick={(item, index) => {
+            setSTileNum3(index);
+            alert(`${item.centeredText} with indexOf ${index} clicked`);
+          }}
+          selected={sTileNum3}
+          tileStyle={{ height: "5rem" }}
+          list={[
+            {
+              centeredChild: <img src={images.common.sampleLogo} width={100} />,
+            },
+            ,
+            {
+              centeredText: "Monthly",
+            },
+            {
+              centeredText: "Yearly",
             },
           ]}
         />

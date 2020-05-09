@@ -82,6 +82,9 @@ const Sprint4: React.FC<Props> = () => {
   const [KeyPadShow, setKeypadShow] = useState(true);
   const tacClear = false;
   const tacClearActiveStatus = false;
+  const [newValue, setNewValue] = useState("");
+  const [newValClear, setNewValClear] = useState(false);
+  const [isClearIconHover, setIsClearIconHover] = useState(false);
 
   // const [linkListBtnColor, setLinkListBtnColor] = useState({
   //   top: '#BDBDBD',
@@ -89,6 +92,8 @@ const Sprint4: React.FC<Props> = () => {
   // });
   const [rateType, setRateType] = useState("test_value3");
   const [isViewRateModalOpen, setIsViewRateModalOpen] = useState(false);
+
+  const [formValue, setFormValue] = useState("");
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -388,18 +393,20 @@ const Sprint4: React.FC<Props> = () => {
             <InputField
               responsive={true}
               notValid={true}
+              isSecure
               errorMessage={{
                 testId: "testId",
                 errorText: "The TAC is incorrect",
                 subText: "Please try again.",
               }}
-              type="text"
-              clearClickHandler={() => alert("clear clicked")}
+              type="password"
+              clearClickHandler={() => setFormValue("")}
               clearIcon={true}
               label="Username"
               icon={{ name: "Account-2" }}
-              value={""}
+              value={formValue}
               handleChange={(event) => {
+                setFormValue(event.target.value);
                 console.log(event.target.value);
               }}
             />
@@ -2526,7 +2533,7 @@ const Sprint4: React.FC<Props> = () => {
           }}
         />
       </CenteredDiv>
-      <Title>FormContainer Disabled</Title>
+      <Title>FormContainer</Title>
       <CenteredDiv>
         <FormContainer
           onBlur={() => console.log("clickedOnBlur")}
@@ -2775,7 +2782,6 @@ const Sprint4: React.FC<Props> = () => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                padding: "2rem",
               }}
             >
               <B_24_BLACK
@@ -2788,7 +2794,9 @@ const Sprint4: React.FC<Props> = () => {
                 Your payment of RM 20.50 to Revenue Harvest Sdn. Bhd. is
                 unsuccessful
               </R_19_BLACK_444>
-              <R_19_BLACK_444 style={{ textAlign: "center" }}>
+              <R_19_BLACK_444
+                style={{ textAlign: "center", marginBottom: "1rem" }}
+              >
                 Unable to perform this transaction. Please call our Contact
                 Centre for assistance.
               </R_19_BLACK_444>
@@ -2811,8 +2819,8 @@ const Sprint4: React.FC<Props> = () => {
                     details: ["Today, 5 January 2019"],
                   },
                   {
-                    leftLabel: "Reference",
-                    rightLabel: "House Rental",
+                    leftLabel: "Reference No/Invoice No",
+                    rightLabel: "House Rental Bangalore",
                   },
                   {
                     leftLabel: "From",
@@ -2821,7 +2829,13 @@ const Sprint4: React.FC<Props> = () => {
                   },
                 ]}
               />
-              <CenteredDiv>
+              <div
+                style={{
+                  marginTop: "2.5rem",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
                 <IconButtons
                   testId={"testId"}
                   onButtonClick={(item: any, index: any) => {
@@ -2836,7 +2850,7 @@ const Sprint4: React.FC<Props> = () => {
                     },
                   ]}
                 />
-              </CenteredDiv>
+              </div>
             </div>
           }
           confirmNoteswidth={"40rem"}
@@ -2857,7 +2871,7 @@ const Sprint4: React.FC<Props> = () => {
             },
           ]}
           Btntitle={"Continue With Transaction"}
-          // Btnwidth={'22.43rem'}
+          Btnwidth={"25rem"}
           onButtonClick={() => alert("check")}
           statusText={" You will be redirected to FPX status page in 9 seconds"}
         />
@@ -2867,6 +2881,7 @@ const Sprint4: React.FC<Props> = () => {
         <ListWithSelectionTile
           testId={"testId"}
           responsive
+          TilerowStyle={{ width: "100%" }}
           listchildren={
             <List
               header={{
@@ -2879,7 +2894,7 @@ const Sprint4: React.FC<Props> = () => {
               list={[
                 {
                   leftLabel: "To",
-                  rightLabel: "Revenue Lawrence Haim 140066",
+                  rightLabel: "Revenue Lawrence Haim",
                   details: [],
                 },
                 {
@@ -2941,12 +2956,12 @@ const Sprint4: React.FC<Props> = () => {
           onButton1Click={() => {
             alert("Button Clicked");
           }}
-          btn1width={"20.43rem"}
+          btn1width={"14.69rem"}
           btn2title={"cancel"}
           onButton2Click={() => {
             alert("Button Clicked");
           }}
-          btn2width={"20.43rem"}
+          btn2width={"14.69rem"}
         />
       </CenteredDiv>
       <Title>Redirect to mobile</Title>
@@ -3097,7 +3112,7 @@ const Sprint4: React.FC<Props> = () => {
                   clearClickHandler={() => alert("clear clicked")}
                   clearIcon={true}
                   label="New Pin"
-                  autoFocus
+                  autoFocus={false}
                   icon={{ name: "Lock" }}
                   onFocus={() => {
                     setKeypadShow(true);
@@ -3159,6 +3174,48 @@ const Sprint4: React.FC<Props> = () => {
 
         <br />
       </div>
+      <Title>Input Field Latest </Title>
+      <CenteredDiv>
+        <div style={{ width: "31.6rem" }}>
+          <InputField
+            notValid={false}
+            errorMessage={{
+              testId: "testId",
+              errorText: "The Password is incorrect",
+              subText: "Please try again.",
+            }}
+            type="text"
+            onClearIconHover={(_e: any, isHover: boolean) => {
+              console.log("hover", isHover);
+              setIsClearIconHover(isHover);
+            }}
+            clearClickHandler={(_e: any) => {
+              setNewValue("");
+              setNewValClear(false);
+            }}
+            clearIcon={newValClear}
+            label="Enter Value"
+            icon={{ name: "Lock" }}
+            value={newValue}
+            onFocus={() => {
+              setNewValClear(!!setNewValue);
+              setKeypadShow(true);
+              setKeypadTopVal(240);
+            }}
+            onBlur={(_e: any) => {
+              if (!isClearIconHover) {
+                setNewValClear(false);
+              } else {
+                // _e.target.focus()
+              }
+            }}
+            handleChange={(event) => {
+              setNewValue(event.target.value);
+              setNewValClear(!!event.target.value);
+            }}
+          />
+        </div>
+      </CenteredDiv>
     </div>
   );
 };

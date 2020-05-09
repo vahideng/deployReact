@@ -36,7 +36,7 @@ const Box: React.FC<Props> = ({
   leftTitleStyle,
   rightTitleStyle,
   onRightButton,
-  buttonColor
+  buttonColor,
 }) => {
   return (
     <div className={classes.BoxMainDiv}>

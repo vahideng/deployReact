@@ -15,6 +15,10 @@
           box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.123279);
 }
 
+.NavLink {
+  height: 100%;
+}
+
 .LeftChild {
   padding: 0;
 }
@@ -25,6 +29,7 @@
 
 .Wrapper {
   width: 100%;
+  border-bottom: 1px solid #dedede;
 }
 
 .Wrapper a {
@@ -53,4 +58,5 @@
 
 .verticalLine {
   border-right: 1px solid #dedded;
+  z-index: 10;
 }

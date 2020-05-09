@@ -3,7 +3,7 @@ import React, {
   FormEvent,
   ChangeEvent,
   ReactNode,
-  CSSProperties
+  CSSProperties,
 } from "react";
 import Paragraphs from "../../assets/typography";
 import classes from "./InputField.module.css";
@@ -27,7 +27,7 @@ interface Props {
     testId?: string | undefined
   ) => void;
   clearIcon?: boolean;
-  clearClickHandler?: () => void;
+  clearClickHandler?: (event: any) => void;
   notValid?: boolean;
   errorMessage?: {
     testId?: string;
@@ -36,16 +36,18 @@ interface Props {
   };
   autoComplete?: string;
   minLength?: number;
-  onBlurTooltip?: () => void; 
+  onBlurTooltip?: () => void;
   maxLength?: number;
   onBlur?: (event: FormEvent) => void;
   onFocus?: (event: FormEvent) => void;
+  onClearIconHover?: (event: MouseEvent, isHover?: boolean) => void;
   tipChildren?: ReactNode;
   bottomLabel?: string;
   bottomLabelStyle?: CSSProperties;
   placeholder?: string;
-  showTooltip ?: boolean;
-  onTooltipClicked ?: ()=> void;
+  showTooltip?: boolean;
+  onTooltipClicked?: () => void;
+  disabled?: boolean;
 }
 
 class InputField extends Component<Props, {}> {
@@ -60,6 +62,7 @@ class InputField extends Component<Props, {}> {
       autoFocus,
       isSecure,
       onSecureClick,
+      onClearIconHover,
       clearIcon,
       clearClickHandler,
       notValid,
@@ -76,10 +79,9 @@ class InputField extends Component<Props, {}> {
       bottomLabel,
       bottomLabelStyle,
       placeholder,
-    
-     
-      showTooltip ,
-  onTooltipClicked 
+      showTooltip,
+      onTooltipClicked,
+      disabled,
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);
@@ -89,6 +91,11 @@ class InputField extends Component<Props, {}> {
     }
     function blurHandler(event: FormEvent) {
       !!onBlur && onBlur(event);
+    }
+    console.log(disabled);
+    let inputClasses = classes.InputFieldIconDiv;
+    if (disabled) {
+      inputClasses = `${classes.InputFieldIconDiv} ${classes.DisabledInput}`;
     }
     return (
       <div
@@ -100,24 +107,31 @@ class InputField extends Component<Props, {}> {
           <div className={classes.TitleDiv}>
             <B_13_BLACK className={classes.InputFieldLabel}>{label}</B_13_BLACK>
             {tipChildren && (
-              <Tooltip  onBlur={onBlurTooltip}  onTooltipClicked ={onTooltipClicked} showTooltip ={showTooltip} tipChildren={tipChildren} rightAlign={true} />
+              <Tooltip
+                onBlur={onBlurTooltip}
+                onTooltipClicked={onTooltipClicked}
+                showTooltip={showTooltip}
+                tipChildren={tipChildren}
+                rightAlign={true}
+              />
             )}
           </div>
         )}
         <div
-          className={classes.InputFieldIconDiv}
+          className={inputClasses}
           style={{
             maxWidth: tacInput ? "34.81rem" : "31.6rem",
-            minWidth: responsive ? "" : "22.6rem"
+            minWidth: responsive ? "" : "22.6rem",
           }}
         >
           {!!icon && (
-            <Icon
-              className={classes.InputFieldIcon}
-              icon={icon.name}
-              color={!!icon.color ? icon.color : "#ff2626"}
-              size={30}
-            />
+            <div className={classes.InputFieldIcon}>
+              <Icon
+                icon={icon.name}
+                color={!!icon.color ? icon.color : "#ff2626"}
+                size={icon.size || 30}
+              />
+            </div>
           )}
 
           <input
@@ -132,11 +146,10 @@ class InputField extends Component<Props, {}> {
                 ? {
                     width: tacInput ? "34.81rem" : "31.6rem",
                     paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                    boxShadow: "none"
                   }
                 : {
                     paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                    width: tacInput ? "34.81rem" : "31.6rem"
+                    width: tacInput ? "34.81rem" : "31.6rem",
                   }
             }
             type={type}
@@ -146,16 +159,29 @@ class InputField extends Component<Props, {}> {
             className={classes.InputFieldInput}
           />
 
-          {!!clearIcon && !isSecure && (
-            <span
-              id={`${testId}-1`}
-              onClick={clearClickHandler}
-              className={classes.InputFieldClear}
-              // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
-            >
-              <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
-            </span>
-          )}
+          {!!clearIcon &&
+            !isSecure &&
+            (onClearIconHover ? (
+              <span
+                id={`${testId}-1`}
+                onClick={clearClickHandler}
+                onMouseEnter={(e: any) => onClearIconHover(e, true)}
+                onMouseLeave={(e: any) => onClearIconHover(e, false)}
+                className={classes.InputFieldClear}
+                // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
+              >
+                <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
+              </span>
+            ) : (
+              <span
+                id={`${testId}-1`}
+                onClick={clearClickHandler}
+                className={classes.InputFieldClear}
+                // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
+              >
+                <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
+              </span>
+            ))}
           {!!isSecure && !!value && (
             <>
               <span
