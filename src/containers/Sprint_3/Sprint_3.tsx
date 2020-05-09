@@ -1737,6 +1737,27 @@ const Sprint3: React.FC<Props> = () => {
             },
           ]}
         />
+        <SelectionTile
+          centered={true}
+          onTileClick={(item, index) => {
+            setSTileNum3(index);
+            alert(`${item.centeredText} with indexOf ${index} clicked`);
+          }}
+          selected={sTileNum3}
+          tileStyle={{ height: "5rem" }}
+          list={[
+            {
+              centeredChild: <img src={images.common.sampleLogo} width={100} />,
+            },
+            ,
+            {
+              centeredText: "Monthly",
+            },
+            {
+              centeredText: "Yearly",
+            },
+          ]}
+        />
       </div>
 
       <Title>Sticky Footer</Title>
