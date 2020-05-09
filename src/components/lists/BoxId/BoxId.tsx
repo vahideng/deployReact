@@ -1,4 +1,4 @@
-import React, { CSSProperties, useState, FormEvent } from "react";
+import React, { CSSProperties, useState, FormEvent, useEffect } from "react";
 import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../../assets/typography";
 import classes from "./BoxId.module.css";
@@ -33,13 +33,12 @@ const BoxId = ({ testId, title, align, titleStyle, list, isActive, width }: Prop
     setSelected(index);
   };
 
-  const closeHandler = () => {
+  const closeHandler = (_e: any) => {
+    // check the existing popover
+    console.log('going into close')
     setSelected(null);
   };
-  const onblurHandler = (button: any, e: FormEvent) => {
-    !!button.onBlur && button.onBlur(e);
-    closeHandler();
-  };
+
   const iconColor = () => {
     if (isActive) {
       return "#000000";
@@ -117,27 +116,7 @@ const BoxId = ({ testId, title, align, titleStyle, list, isActive, width }: Prop
                     >
                       <Icon icon="Menu" size={32} color={iconColor()} />
                     </div>
-                    {selected === index && (
-                      <div className={classes.BoxDiv}>
-                        {item.iconButtons &&
-                          item.iconButtons.map((button, index) => {
-                            return (
-                              <div key={index} className={classes.ButtonDiv}>
-                                <button
-                                  onClick={() => {
-                                    button.onClick();
-                                  }}
-                                  onBlur={(e) => onblurHandler(button, e)}
-                                  className={classes.ButtonIconText}
-                                >
-                                  <Icon icon={button.icon} size={25} />
-                                  {button.text}
-                                </button>
-                              </div>
-                            );
-                          })}
-                      </div>
-                    )}
+                    {selected === index && <ActionPopover item={item} />}
                   </div>
                 </div>
               ) : (
@@ -187,27 +166,7 @@ const BoxId = ({ testId, title, align, titleStyle, list, isActive, width }: Prop
                     >
                       <Icon icon="Menu" size={32} color={iconColor()} />
                     </div>
-                    {selected === index && (
-                      <div className={classes.BoxDiv}>
-                        {item.iconButtons &&
-                          item.iconButtons.map((button, index) => {
-                            return (
-                              <div key={index} className={classes.ButtonDiv}>
-                                <button
-                                  onClick={() => {
-                                    button.onClick();
-                                  }}
-                                  onBlur={(e) => onblurHandler(button, e)}
-                                  className={classes.ButtonIconText}
-                                >
-                                  <Icon icon={button.icon} size={25} />
-                                  {button.text}
-                                </button>
-                              </div>
-                            );
-                          })}
-                      </div>
-                    )}
+                    {selected === index && <ActionPopover item={item} onDocumentClick={closeHandler} />}
                   </div>
                 </div>
               );
@@ -217,5 +176,52 @@ const BoxId = ({ testId, title, align, titleStyle, list, isActive, width }: Prop
     </div>
   );
 };
+
+interface ActionPopoverProp {
+  item?: any;
+  onDocumentClick?: (e?: any) => void;
+}
+
+const ActionPopover = ({item, onDocumentClick}: ActionPopoverProp) => {
+
+  const handleDocumentClick = (e: any) => {
+    console.log('e', e.target)
+    if (!e.target || !e.target.className || !e.target.className.match) return
+    console.log('e.target.className', e.target.className)
+    if (e.target.className.match(/\bignore-click-bubble\b/)) {
+      return
+    }
+    onDocumentClick && onDocumentClick(e);
+  }
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleDocumentClick, true);
+    return () => {
+      document.removeEventListener('mousedown', handleDocumentClick, true);
+    }
+  }, [])
+
+  return (
+    <div className={classes.BoxDiv}>
+    {item.iconButtons &&
+      item.iconButtons.map((button: any, buttonIndex: number) => {
+        return (
+          <div key={buttonIndex} className={classes.ButtonDiv}>
+            <button
+              onClick={(e: any) => {
+                e.stopPropagation();
+                button.onClick && button.onClick();
+              }}
+              className={`${classes.ButtonIconText} ignore-click-bubble`}
+            >
+              <Icon icon={button.icon} size={25} />
+              {button.text}
+            </button>
+          </div>
+        );
+      })}
+  </div>
+  )
+}
 
 export default BoxId;
