@@ -43,7 +43,8 @@
 }
 
 .HeaderWrapper {
-  min-height: 4.875rem;
+  padding-top: 1.8125rem;
+  padding-bottom: 1.8125rem;
   cursor: pointer;
 }
 
