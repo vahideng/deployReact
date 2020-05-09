@@ -1727,16 +1727,13 @@ const Sprint3: React.FC<Props> = () => {
           tileStyle={{ width: "8rem" }}
           list={[
             {
-              centeredChild: <img src={images.common.sampleLogo} width={70} />,
+              centeredText: "Weekly",
             },
             {
-              centeredText: "Lost",
+              centeredText: "Monthly",
             },
             {
-              centeredText: "Stolen",
-            },
-            {
-              centeredText: "Suspicious Activity",
+              centeredText: "Yearly",
             },
           ]}
         />

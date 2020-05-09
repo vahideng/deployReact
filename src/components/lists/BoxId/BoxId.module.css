@@ -122,12 +122,13 @@
   right: 1rem;
   top: 2.6rem;
   width: 10rem;
-  border-radius: 5px;
   height: auto;
   z-index: 100;
   background-color: #ffffff;
   -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
           box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .ButtonDiv {
@@ -137,19 +138,23 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+.ButtonDiv p {
+  margin: 3px 0 0 8px;
 }
 
 .ButtonIconText {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-family: "Nunito Sans";
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 1px;
-  color: #444444;
-  font-weight: 700;
   width: 100%;
   padding: 1rem;
   background-color: #ffffff;
