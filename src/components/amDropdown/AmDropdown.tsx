@@ -39,13 +39,13 @@ interface Props {
   disabled?: boolean;
   minLength?: number;
   maxLength?: number;
-  onBlurDropdown ?: ()=> void;
+  onBlurDropdown?: () => void;
   onBlur?: (event: FormEvent) => void;
   onFocus?: (event: FormEvent) => void;
   inputClickHandler?: () => void;
   max?: string;
   placeholder?: string;
-  containerStyle?: CSSProperties
+  containerStyle?: CSSProperties;
 }
 
 class AmDropdown extends Component<Props, {}> {
@@ -64,6 +64,23 @@ class AmDropdown extends Component<Props, {}> {
     // }
   };
 
+  outSideClickHandler = (e: any) => {
+    //@ts-ignore
+    if (this.node.contains(e.target)) {
+      console.log("click-inside");
+    } else {
+      if (typeof this.props.onBlurDropdown === "function")
+        this.props.onBlurDropdown();
+    }
+  };
+
+  componentWillMount() {
+    document.addEventListener("mousedown", this.outSideClickHandler, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.outSideClickHandler, false);
+  }
   render() {
     const {
       dropdownData,
@@ -82,7 +99,7 @@ class AmDropdown extends Component<Props, {}> {
       minLength,
       maxLength,
       onBlur,
-      onBlurDropdown,
+
       onFocus,
       disabled,
       showDropdown,
@@ -127,7 +144,6 @@ class AmDropdown extends Component<Props, {}> {
       } else if (dropdownBackground) {
         return { backgroundColor: dropdownBackground };
       } else if (max) {
-        
         return { maxHeight: `${max}` };
       } else {
         return {
@@ -137,7 +153,14 @@ class AmDropdown extends Component<Props, {}> {
       }
     };
     return (
-      <div tabIndex={0} onBlur={onBlurDropdown} className={classes.Container} style={{...containerStyle, maxWidth: tacInput ? "34.81rem" : "31.6rem" }}>
+      //@ts-ignore
+      <div ref={(node) => (this.node = node)}
+        className={classes.Container}
+        style={{
+          ...containerStyle,
+          maxWidth: tacInput ? "34.81rem" : "31.6rem",
+        }}
+      >
         <div className={classes.InputFieldMain}>
           {!!label && (
             <B_13_BLACK className={classes.InputFieldLabel}>{label}</B_13_BLACK>

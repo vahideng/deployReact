@@ -19,6 +19,7 @@ const Home: React.FC<Props> = () => {
   const [sprint4, setSprint4] = useState(false);
   const [NodeModule, setNodeModule] = useState(false);
   const [notSupported, setNotSupported] = useState(false);
+  const [condeSnippet, setCondeSnippet] = useState(false);
 
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
@@ -38,6 +39,9 @@ const Home: React.FC<Props> = () => {
   }
   if (notSupported === true) {
     return <Redirect to="/not-supported" />;
+  }
+  if (condeSnippet === true) {
+    return <Redirect to="/codeSnippet" />;
   }
   return (
     <>
@@ -121,6 +125,17 @@ const Home: React.FC<Props> = () => {
                     fontSize: 15,
                   }}
                 />,
+                <TextButton
+                buttonText="Code Snippet"
+                onTextClick={() => {
+                  setCondeSnippet(true);
+                }}
+                buttonStyles={{
+                  color: "#000000",
+                  fontWeight: 400,
+                  fontSize: 15,
+                }}
+              />,
                 <TextDropdown
                   handleChange={(selectedOption: any) => {
                     setSelectedOption(selectedOption);

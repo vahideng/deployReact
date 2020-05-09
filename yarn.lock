@@ -2954,7 +2954,7 @@ amdefine@>=0.0.4:
 
 "amonline-reactjs-component@https://bitbucket.org/alephlabs/my-amonline-component":
   version "0.1.0"
-  resolved "https://bitbucket.org/alephlabs/my-amonline-component#6eda33415d0c7178e264a76c19e5353292995944"
+  resolved "https://bitbucket.org/alephlabs/my-amonline-component#9fb28a3904cca5c2055e18da0e62d8237b749688"
   dependencies:
     "@redux-saga/types" "^1.1.0"
     "@testing-library/jest-dom" "^4.2.4"
@@ -2995,6 +2995,7 @@ amdefine@>=0.0.4:
     react-web-tabs "^1.0.1"
     redux "^4.0.5"
     redux-saga "^1.1.3"
+    rollup-plugin-css-only "^2.0.0"
     rollup-plugin-includepaths "^0.2.3"
     rollup-plugin-scss "^2.4.0"
     styled-components "^5.0.1"
@@ -12331,6 +12332,13 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
+rollup-plugin-css-only@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-css-only/-/rollup-plugin-css-only-2.0.0.tgz#696a0d0bc8072f3cb67eb830ebb579e3bad7ecf6"
+  integrity sha512-RdzeDgrKHrvixVF001fbK/G1C6wZYSs49lBon4dqeW4awgVhPWaaogXtVnVUBbtIeAF5kxaZQI1tJ+UYL0nswg==
+  dependencies:
+    rollup-pluginutils "^2.3.3"
+
 rollup-plugin-includepaths@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/rollup-plugin-includepaths/-/rollup-plugin-includepaths-0.2.3.tgz#244d21b9669a0debe476d825e4a02ed08c06b258"
@@ -12344,7 +12352,7 @@ rollup-plugin-scss@^2.4.0:
     node-sass "4"
     rollup-pluginutils "2"
 
-rollup-pluginutils@2:
+rollup-pluginutils@2, rollup-pluginutils@^2.3.3:
   version "2.8.2"
   resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.8.2.tgz#72f2af0748b592364dbd3389e600e5a9444a351e"
   integrity sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==
