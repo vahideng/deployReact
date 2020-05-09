@@ -91,6 +91,7 @@ class InputField extends Component<Props, {}> {
     function blurHandler(event: FormEvent) {
       !!onBlur && onBlur(event);
     }
+
     return (
       <div
         className={
@@ -153,18 +154,29 @@ class InputField extends Component<Props, {}> {
             className={classes.InputFieldInput}
           />
 
-          {!!clearIcon && !isSecure && (
-            <span
-              id={`${testId}-1`}
-              onClick={clearClickHandler}
-              onMouseEnter={(e: any) => onClearIconHover(e, true)}
-              onMouseLeave={(e: any) => onClearIconHover(e, false)}
-              className={classes.InputFieldClear}
-              // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
-            >
-              <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
-            </span>
-          )}
+          {!!clearIcon &&
+            !isSecure &&
+            (onClearIconHover ? (
+              <span
+                id={`${testId}-1`}
+                onClick={clearClickHandler}
+                onMouseEnter={(e: any) => onClearIconHover(e, true)}
+                onMouseLeave={(e: any) => onClearIconHover(e, false)}
+                className={classes.InputFieldClear}
+                // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
+              >
+                <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
+              </span>
+            ) : (
+              <span
+                id={`${testId}-1`}
+                onClick={clearClickHandler}
+                className={classes.InputFieldClear}
+                // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
+              >
+                <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
+              </span>
+            ))}
           {!!isSecure && !!value && (
             <>
               <span

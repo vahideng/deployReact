@@ -35,6 +35,7 @@ interface Props {
   activeStatus?: boolean;
   activeStatusChild?: ReactNode;
   clearClickHandler?: () => void;
+  onClearIconHover?: (event: MouseEvent, isHover?: boolean) => void;
   onCloseClick?: () => void;
   zIndex?: number;
 }
@@ -83,6 +84,7 @@ const TacModal: React.FC<Props> = (props) => {
     onBlur,
     onFocus,
     responsive,
+    onClearIconHover,
   } = props;
   const [modalStatus, setModalStatus] = useState(modalIsOpen);
   useEffect(() => {
@@ -137,6 +139,7 @@ const TacModal: React.FC<Props> = (props) => {
                   <form>
                     <div className={TacInputField}>
                       <InputField
+                        onClearIconHover={onClearIconHover}
                         responsive={responsive ? responsive : false}
                         clearIcon={clearIcon}
                         clearClickHandler={clearClickHandler}

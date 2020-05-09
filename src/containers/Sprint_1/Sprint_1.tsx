@@ -1196,12 +1196,17 @@ class Sprint1 extends Component<Props, State> {
         <TacModal
           // zIndex={-1}
           onCloseClick={() => {
-            alert("Tac Closed");
+            this.setState({
+              TacModalOpen: false,
+            });
           }}
           responsive={true}
           maxLength={6}
           clearIcon={inputValue === "" ? tacClear : !tacClear}
           clearClickHandler={() => {
+            this.setState({ inputValue: "" });
+          }}
+          onBlur={() => {
             this.setState({ inputValue: "" });
           }}
           inActiveMessage={{
@@ -1323,7 +1328,9 @@ class Sprint1 extends Component<Props, State> {
           <TacModal
             // zIndex={-1}
             onCloseClick={() => {
-              alert("Tac Closed");
+              this.setState({
+                TacModalOpen: false,
+              });
             }}
             maxLength={6}
             clearIcon={inputValue === "" ? tacClear : !tacClear}
@@ -1431,8 +1438,7 @@ class Sprint1 extends Component<Props, State> {
                 onClick: (index: any) =>
                   this.setState({ verticalActiveTab: index }),
                 icon: {
-                  name: "Account-2",
-                  color: "#ff1000",
+                  name: "Duitnow2",
                   size: 30,
                 },
                 accountTitle: "Savings/Current Accounts",
