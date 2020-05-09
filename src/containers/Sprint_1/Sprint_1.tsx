@@ -2759,7 +2759,7 @@ class Sprint1 extends Component<Props, State> {
               },
             },
             {
-              text: "Account",
+              text: "Account Long text testing",
               icon: {
                 name: "Account",
               },
