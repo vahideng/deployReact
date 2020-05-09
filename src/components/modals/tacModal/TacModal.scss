@@ -11,10 +11,10 @@
   @media (max-width: 576px) {
     flex-direction: column;
     min-height: 11rem;
-    width: 100%
+    width: 100%;
   }
 }
-.TacMainInnerDivRes{
+.TacMainInnerDivRes {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -22,7 +22,7 @@
   @media (max-width: 576px) {
     flex-direction: column;
     min-height: 11rem;
-    width: 100%
+    width: 100%;
   }
 }
 .TacButtonRes {
@@ -30,11 +30,9 @@
   margin-top: 2rem;
   margin-right: 2.5rem;
 
-
   @media (max-width: 576px) {
     justify-content: center;
     margin-right: 0px;
- 
   }
 }
 .TacButton {
@@ -74,12 +72,12 @@
   }
 }
 .TacInputFieldContent {
-  width: 38rem;
+  width: 27.5rem;
   padding-top: 1rem;
   padding-left: 1.3rem;
   @media (max-width: 576px) {
     width: 100%;
-    padding-left: 0
+    padding-left: 0;
   }
 }
 .TacInputFieldLink {

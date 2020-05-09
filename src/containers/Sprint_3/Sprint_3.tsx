@@ -879,6 +879,7 @@ const Sprint3: React.FC<Props> = () => {
                 <SecureImage
                   testId="secure_image_testid"
                   image={images.common.SampleSecureImage}
+                  type="wide"
                 />
               </CenteredDiv>
 
@@ -916,6 +917,8 @@ const Sprint3: React.FC<Props> = () => {
       <CenteredDiv
         style={{
           margin: "5rem",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
         <AmAccordion
@@ -960,7 +963,7 @@ const Sprint3: React.FC<Props> = () => {
                     title={"ItemName"}
                     icon={<Icon icon={"Settings"} size={18} color={"red"} />}
                     status={
-                      <Icon icon={"CheckboxYes"} size={20} color={"#36A03E"} />
+                      <Icon icon={"accent-tick"} size={20} color={"#36A03E"} />
                     }
                   />
                   <AmListItem
@@ -969,7 +972,7 @@ const Sprint3: React.FC<Props> = () => {
                     title={"ItemName"}
                     icon={<Icon icon={"Security2"} size={18} color={"red"} />}
                     status={
-                      <Icon icon={"CheckboxYes"} size={20} color={"#36A03E"} />
+                      <Icon icon={"accent-tick"} size={20} color={"#36A03E"} />
                     }
                   />
                 </div>
@@ -977,6 +980,36 @@ const Sprint3: React.FC<Props> = () => {
             },
           ]}
         ></AmAccordion>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "30rem",
+            marginTop: "1rem",
+          }}
+        >
+          <PrimaryButton
+            icon={{ name: "delete", color: "#fff" }}
+            title="remove device"
+            onButtonClick={() => {
+              alert("click");
+            }}
+            minWidth="12rem"
+            height="2.5rem"
+            buttonColor={{ top: "#FD8585", bottom: "#FF2222" }}
+          />
+          <PrimaryButton
+            icon={{ name: "delete", color: "#fff" }}
+            title="remove device"
+            minWidth="12rem"
+            height="2.5rem"
+            onButtonClick={() => {
+              alert("click");
+            }}
+            width={"25rem"}
+            buttonColor={{ top: "#dedede", bottom: "#eee" }}
+          />
+        </div>
       </CenteredDiv>
 
       <Title>ListItem (item used inside accordion)</Title>
@@ -991,7 +1024,7 @@ const Sprint3: React.FC<Props> = () => {
           testId="testId-123"
           title="Item with no left but right icon"
           icon={<Icon icon={"Right1"} size={20} color={"#000000"} />}
-          status={<Icon icon={"CheckboxYes"} size={20} color={"#000000"} />}
+          status={<Icon icon={"accent-tick"} size={20} color={"#000000"} />}
         />
         <AmListItem
           testId="testId-345"
@@ -1694,16 +1727,34 @@ const Sprint3: React.FC<Props> = () => {
           tileStyle={{ width: "8rem" }}
           list={[
             {
-              centeredChild: <img src={images.common.sampleLogo} width={70} />,
+              centeredText: "Weekly",
             },
             {
-              centeredText: "Lost",
+              centeredText: "Monthly",
             },
             {
-              centeredText: "Stolen",
+              centeredText: "Yearly",
+            },
+          ]}
+        />
+        <SelectionTile
+          centered={true}
+          onTileClick={(item, index) => {
+            setSTileNum3(index);
+            alert(`${item.centeredText} with indexOf ${index} clicked`);
+          }}
+          selected={sTileNum3}
+          tileStyle={{ height: "5rem" }}
+          list={[
+            {
+              centeredChild: <img src={images.common.sampleLogo} width={100} />,
+            },
+            ,
+            {
+              centeredText: "Monthly",
             },
             {
-              centeredText: "Suspicious Activity",
+              centeredText: "Yearly",
             },
           ]}
         />

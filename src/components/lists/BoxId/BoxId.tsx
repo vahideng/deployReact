@@ -3,14 +3,14 @@ import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../../assets/typography";
 import classes from "./BoxId.module.css";
 import { Notify } from "../../assets/common/notification";
-const { B_14_BLACK, B_15_BLACK, R_13_BLACK } = Paragraphs;
+const { B_14_BLACK, B_15_BLACK, R_13_BLACK, B_13_GREY444 } = Paragraphs;
 interface Props {
   testId?: string;
   title?: string;
   width?: number | string;
   titleStyle?: CSSProperties;
   isActive?: boolean;
-  align?: 'left' | 'center' | 'right';
+  align?: "left" | "center" | "right";
   list: {
     leftIcon?: { name: string; color?: string; size?: number };
     leftImage?: string;
@@ -26,7 +26,15 @@ interface Props {
   }[];
 }
 
-const BoxId = ({ testId, title, align, titleStyle, list, isActive, width }: Props) => {
+const BoxId = ({
+  testId,
+  title,
+  align,
+  titleStyle,
+  list,
+  isActive,
+  width,
+}: Props) => {
   const [selected, setSelected] = useState(null);
 
   const iconClickHandler = (index: number) => {
@@ -50,14 +58,14 @@ const BoxId = ({ testId, title, align, titleStyle, list, isActive, width }: Prop
 
   const getAlignmentClass = () => {
     switch (align) {
-      case 'center':
+      case "center":
         return classes.FlexCenter;
-      case 'right':
+      case "right":
         return classes.FlexRight;
       default:
         return classes.FlexLeft;
     }
-  }
+  };
 
   //   const onIconClick = {};
   return (
@@ -70,7 +78,9 @@ const BoxId = ({ testId, title, align, titleStyle, list, isActive, width }: Prop
         <B_14_BLACK
           className={classes.Title}
           style={
-            titleStyle ? titleStyle : { color: isActive ? "#36A03E" : "#696969" }
+            titleStyle
+              ? titleStyle
+              : { color: isActive ? "#36A03E" : "#696969" }
           }
         >
           {title}
@@ -99,9 +109,14 @@ const BoxId = ({ testId, title, align, titleStyle, list, isActive, width }: Prop
                       />
                     )}
                     <div className={classes.TextContainer}>
-                      <B_15_BLACK style={{ lineHeight: '20px' }}>{item.boldText}</B_15_BLACK>
+                      <B_15_BLACK style={{ lineHeight: "20px" }}>
+                        {item.boldText}
+                      </B_15_BLACK>
                       {item.subText && (
-                        <R_13_BLACK className={classes.SubText} style={{ lineHeight: '18px' }}>
+                        <R_13_BLACK
+                          className={classes.SubText}
+                          style={{ lineHeight: "18px" }}
+                        >
                           {item.subText}
                         </R_13_BLACK>
                       )}
@@ -122,18 +137,19 @@ const BoxId = ({ testId, title, align, titleStyle, list, isActive, width }: Prop
                         {item.iconButtons &&
                           item.iconButtons.map((button, index) => {
                             return (
-                              <div key={index} className={classes.ButtonDiv}>
-                                <button
-                                  onClick={() => {
-                                    button.onClick();
-                                  }}
-                                  onBlur={(e) => onblurHandler(button, e)}
-                                  className={classes.ButtonIconText}
-                                >
+                              <button
+                                key={index}
+                                onClick={() => {
+                                  button.onClick();
+                                }}
+                                onBlur={(e) => onblurHandler(button, e)}
+                                className={classes.ButtonIconText}
+                              >
+                                <div className={classes.ButtonDiv}>
                                   <Icon icon={button.icon} size={25} />
-                                  {button.text}
-                                </button>
-                              </div>
+                                  <B_13_GREY444>{button.text}</B_13_GREY444>
+                                </div>
+                              </button>
                             );
                           })}
                       </div>
@@ -192,18 +208,19 @@ const BoxId = ({ testId, title, align, titleStyle, list, isActive, width }: Prop
                         {item.iconButtons &&
                           item.iconButtons.map((button, index) => {
                             return (
-                              <div key={index} className={classes.ButtonDiv}>
-                                <button
-                                  onClick={() => {
-                                    button.onClick();
-                                  }}
-                                  onBlur={(e) => onblurHandler(button, e)}
-                                  className={classes.ButtonIconText}
-                                >
+                              <button
+                                key={index}
+                                onClick={() => {
+                                  button.onClick();
+                                }}
+                                onBlur={(e) => onblurHandler(button, e)}
+                                className={classes.ButtonIconText}
+                              >
+                                <div className={classes.ButtonDiv}>
                                   <Icon icon={button.icon} size={25} />
-                                  {button.text}
-                                </button>
-                              </div>
+                                  <B_13_GREY444>{button.text}</B_13_GREY444>
+                                </div>
+                              </button>
                             );
                           })}
                       </div>

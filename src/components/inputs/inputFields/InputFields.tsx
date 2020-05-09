@@ -47,6 +47,7 @@ interface Props {
   placeholder?: string;
   showTooltip?: boolean;
   onTooltipClicked?: () => void;
+  disabled?: boolean;
 }
 
 class InputField extends Component<Props, {}> {
@@ -78,9 +79,9 @@ class InputField extends Component<Props, {}> {
       bottomLabel,
       bottomLabelStyle,
       placeholder,
-
       showTooltip,
       onTooltipClicked,
+      disabled,
     } = this.props;
     function changeHandler(event: ChangeEvent<HTMLInputElement>) {
       handleChange(event, testId);
@@ -90,6 +91,11 @@ class InputField extends Component<Props, {}> {
     }
     function blurHandler(event: FormEvent) {
       !!onBlur && onBlur(event);
+    }
+    console.log(disabled);
+    let inputClasses = classes.InputFieldIconDiv;
+    if (disabled) {
+      inputClasses = `${classes.InputFieldIconDiv} ${classes.DisabledInput}`;
     }
     return (
       <div
@@ -112,7 +118,7 @@ class InputField extends Component<Props, {}> {
           </div>
         )}
         <div
-          className={classes.InputFieldIconDiv}
+          className={inputClasses}
           style={{
             maxWidth: tacInput ? "34.81rem" : "31.6rem",
             minWidth: responsive ? "" : "22.6rem",
@@ -153,18 +159,29 @@ class InputField extends Component<Props, {}> {
             className={classes.InputFieldInput}
           />
 
-          {!!clearIcon && !isSecure && (
-            <span
-              id={`${testId}-1`}
-              onClick={clearClickHandler}
-              onMouseEnter={(e: any) => onClearIconHover(e, true)}
-              onMouseLeave={(e: any) => onClearIconHover(e, false)}
-              className={classes.InputFieldClear}
-              // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
-            >
-              <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
-            </span>
-          )}
+          {!!clearIcon &&
+            !isSecure &&
+            (onClearIconHover ? (
+              <span
+                id={`${testId}-1`}
+                onClick={clearClickHandler}
+                onMouseEnter={(e: any) => onClearIconHover(e, true)}
+                onMouseLeave={(e: any) => onClearIconHover(e, false)}
+                className={classes.InputFieldClear}
+                // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
+              >
+                <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
+              </span>
+            ) : (
+              <span
+                id={`${testId}-1`}
+                onClick={clearClickHandler}
+                className={classes.InputFieldClear}
+                // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
+              >
+                <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
+              </span>
+            ))}
           {!!isSecure && !!value && (
             <>
               <span

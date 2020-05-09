@@ -8,8 +8,11 @@ interface Props {
   text: string;
   iconColor?: any;
   outerIconColor?: string;
-  icon: any;
+  icon?: { name?: string; color?: string; size?: number };
   image?: any;
+  outerRoundSize?: any;
+  innerRoundSize?: any;
+  small?: boolean;
 }
 
 const Prompt: React.FC<Props> = ({
@@ -18,15 +21,21 @@ const Prompt: React.FC<Props> = ({
   testId,
   icon,
   text,
-  outerIconColor
+  outerIconColor,
+  outerRoundSize,
+  innerRoundSize,
+  small,
 }) => {
   return (
     <div className={classes.promptRow} id={testId}>
       <StatusIcon
+        outerRoundSize={outerRoundSize}
+        innerRoundSize={innerRoundSize}
         iconColor={{ top: iconColor.top, bottom: iconColor.bottom }}
         icon={icon}
         image={image}
         outerIconColor={outerIconColor}
+        small={small}
       />
       <B_17_BLACK className={classes.promptText}>{text}</B_17_BLACK>
     </div>

@@ -26,7 +26,7 @@ import ATM from "./images/FooterLogos/ATM.png";
 import BankingInfo from "./images/FooterLogos/BankingInfo.png";
 import BNM from "./images/FooterLogos/BNM.png";
 import BNMFinancialConsumerAlert from "./images/FooterLogos/BNMFinancialConsumerAlert.png";
-import MasterCard from "./images/FooterLogos/MasterCard.png";
+import MasterCardFooter from "./images/FooterLogos/MasterCardFooter.png";
 import MEPS from "./images/FooterLogos/MEPS.png";
 import MIFC from "./images/FooterLogos/MIFC.png";
 import PerbankanIslam from "./images/FooterLogos/PerbankanIslam.png";
@@ -46,7 +46,7 @@ const images: any = {
     BankingInfo,
     BNM,
     BNMFinancialConsumerAlert,
-    MasterCard,
+    MasterCardFooter,
     MEPS,
     MIFC,
     PerbankanIslam,

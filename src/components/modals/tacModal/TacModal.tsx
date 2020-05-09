@@ -35,8 +35,10 @@ interface Props {
   activeStatus?: boolean;
   activeStatusChild?: ReactNode;
   clearClickHandler?: () => void;
+  onClearIconHover?: (event: MouseEvent, isHover?: boolean) => void;
   onCloseClick?: () => void;
   zIndex?: number;
+  disabledInput?: boolean;
 }
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
@@ -83,6 +85,8 @@ const TacModal: React.FC<Props> = (props) => {
     onBlur,
     onFocus,
     responsive,
+    onClearIconHover,
+    disabledInput,
   } = props;
   const [modalStatus, setModalStatus] = useState(modalIsOpen);
   useEffect(() => {
@@ -137,6 +141,8 @@ const TacModal: React.FC<Props> = (props) => {
                   <form>
                     <div className={TacInputField}>
                       <InputField
+                        disabled={disabledInput}
+                        onClearIconHover={onClearIconHover}
                         responsive={responsive ? responsive : false}
                         clearIcon={clearIcon}
                         clearClickHandler={clearClickHandler}

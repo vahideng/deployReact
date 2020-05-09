@@ -6,65 +6,78 @@ interface Props {
   testId?: string;
   iconColor?: any;
   outerIconColor?: string;
-  icon?: any;
+  icon?: { name?: string; color?: string; size?: number };
   image?: any;
-  outerRoundSize?:any;
-  innerRoundSize?:any;
-  iconSize?:number;
+  outerRoundSize?: any;
+  innerRoundSize?: any;
+  small?: boolean;
 }
 
 const StatusIcon: React.FC<Props> = ({
   iconColor,
-  icon,
+  icon = { name: "" },
   image,
   testId,
   outerIconColor,
   outerRoundSize,
   innerRoundSize,
-  iconSize
+  small,
 }) => {
-    let outer:{} = !!outerRoundSize && {width:outerRoundSize,height:outerRoundSize};
-    let inner:{} = !!innerRoundSize && {width:innerRoundSize,height:innerRoundSize};
+  let outer: {} = !!outerRoundSize && {
+    width: outerRoundSize,
+    height: outerRoundSize,
+  };
+  let inner: {} = !!innerRoundSize && {
+    width: innerRoundSize,
+    height: innerRoundSize,
+  };
+  outer = !!small && {
+    width: "3.937rem",
+    height: "3.937rem",
+  };
+  inner = !!small && {
+    width: "2.562rem",
+    height: "2.562rem",
+  };
+  let icSize = !!icon && icon.size;
+  let iconSize = (!!icSize && icSize) || (!!small && 26) || 46;
+
   return (
     <>
       <div
         id={!!testId ? testId : ""}
         className={classes.outerRound}
-        style={
-          {
-          ...outer,  
+        style={{
+          ...outer,
           backgroundColor: outerIconColor
             ? outerIconColor
             : `${iconColor.top}70`,
-            borderRadius : !!outerRoundSize ? outerRoundSize/2 : '3.125rem',
-        }
-      }
+        }}
       >
         <div
           className={classes.innerRound}
           style={
             !!iconColor
               ? {
-                ...inner,
-              background: `linear-gradient(180deg, ${iconColor.top} 0%,  ${iconColor.bottom} 100%)`,
-              borderRadius : !!innerRoundSize ? innerRoundSize/2 : '2.31rem',
-            
+                  ...inner,
+                  background: `linear-gradient(180deg, ${iconColor.top} 0%,  ${iconColor.bottom} 100%)`,
                 }
               : {
-                ...inner,
-                borderRadius : !!innerRoundSize ? innerRoundSize/2 : '2.31rem'
-              }
-              
+                  ...inner,
+                }
           }
         >
-          {!!icon && (
+          {console.log(icon, "icon")}
+
+          {!!icon && !image && (
             <Icon
-              icon={icon.name ? icon.name : "Tick-1"}
-              color={icon.color ? icon.color : "#ffffff"}
-              size={!!iconSize ? iconSize :26}
+              icon={icon.name || "Tick-1"}
+              color={icon.color || "#ffffff"}
+              size={iconSize}
             />
           )}
-          {!!image && (
+          {console.log(image, "image")}
+          {!!image && !icon.name && (
             <img src={image.src} alt={image.alt ? image.alt : "Logo"} />
           )}
         </div>

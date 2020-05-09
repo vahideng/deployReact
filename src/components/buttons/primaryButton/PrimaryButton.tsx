@@ -57,7 +57,6 @@ const PrimaryButton: React.FC<Props> = ({
           height: height,
           boxShadow: shadow,
           minWidth: minWidth && minWidth,
-
           ...buttonStyle,
         }}
       >

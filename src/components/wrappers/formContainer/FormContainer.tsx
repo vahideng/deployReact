@@ -24,7 +24,7 @@ interface Props {
   headerSubText?: string;
   headerTimeStamp?: string;
   label?: string;
-  onBlur?: ()=> void;
+  onBlur?: () => void;
   rightLabel?: {
     onClick?: () => void;
     style?: CSSProperties;
@@ -33,8 +33,8 @@ interface Props {
   tooltip?: ReactNode;
   children?: ReactNode;
   disabled?: boolean;
-  onTooltipClicked ?: ()=> void
-  showTooltip ?: boolean;
+  onTooltipClicked?: () => void;
+  showTooltip?: boolean;
 }
 
 const FormContainer: React.FC<Props> = ({
@@ -52,25 +52,25 @@ const FormContainer: React.FC<Props> = ({
   onTooltipClicked,
   showTooltip,
   onBlur,
-  childrenWrapperStyle
+  childrenWrapperStyle,
 }) => {
   const rightLabelPointer: CSSProperties =
     rightLabel !== undefined && rightLabel.onClick !== undefined
       ? { cursor: "pointer" }
       : {};
 
- const disabledStyle: CSSProperties = disabled && { opacity: 0.5, position: "relative" } || {};
+  const disabledStyle: CSSProperties =
+    (disabled && { opacity: 0.5, position: "relative" }) || {};
 
   let mainContainerCls = classes.FormContainerMain;
   let iconContainerCls = classes.FormContainerIconWrap;
-  let FormContainerContent = [classes.FormContainerContent]
+  let FormContainerContent = [classes.FormContainerContent];
   if (responsive) {
     mainContainerCls = `${mainContainerCls} ${classes.FormContainerMainResponsive}`;
     iconContainerCls = `${iconContainerCls} ${classes.FormContainerIconWrapResponsive}`;
-    FormContainerContent.push(classes.FormContainerContentResponsive) 
+    FormContainerContent.push(classes.FormContainerContentResponsive);
   }
-  
- 
+
   return (
     <div style={disabledStyle}>
       {disabled && <div className={classes.Overlay}></div>}
@@ -79,10 +79,10 @@ const FormContainer: React.FC<Props> = ({
           <span className={classes.FormContainerStatusIcon}>
             <StatusIcon
               testId={statusIcon.testId}
-              icon={!!statusIcon ? statusIcon.icon : ""}
+              icon={{ name: !!statusIcon.icon && statusIcon.icon }}
               iconColor={{
                 top: statusIcon.iconColor.top,
-                bottom: statusIcon.iconColor.bottom
+                bottom: statusIcon.iconColor.bottom,
               }}
               image={!!statusIcon ? statusIcon.image : ""}
             />
@@ -93,7 +93,7 @@ const FormContainer: React.FC<Props> = ({
               color={"#FFFFFF"}
               size={58}
               style={{
-                width: !responsive ? "36.31rem" : "100%"
+                width: !responsive ? "36.31rem" : "100%",
               }}
             />
           </span>
@@ -108,7 +108,7 @@ const FormContainer: React.FC<Props> = ({
             : {
                 width: !responsive ? "36.31rem" : "100%",
                 borderTopLeftRadius: 0,
-                borderTopRightRadius: 0
+                borderTopRightRadius: 0,
               }
         }
       >
@@ -132,9 +132,9 @@ const FormContainer: React.FC<Props> = ({
               {!!tooltip && (
                 <span className={classes.FormContainerTooltip}>
                   <Tooltip
-                  onBlur={onBlur}
-                  showTooltip ={showTooltip}
-                  onTooltipClicked={onTooltipClicked}
+                    onBlur={onBlur}
+                    showTooltip={showTooltip}
+                    onTooltipClicked={onTooltipClicked}
                     tipChildren={tooltip}
                     color="#FFFFFF"
                     testId={`${testId}-1`}
@@ -149,13 +149,17 @@ const FormContainer: React.FC<Props> = ({
               >
                 {rightLabel.label}
               </B_15_ORANGE_463>
-             
             )}
           </div>
         )}
 
         <div className={classes.FormContainerCurve} id={testId}>
-          <div className={FormContainerContent.join(" ")} style={childrenWrapperStyle}>{children}</div>
+          <div
+            className={FormContainerContent.join(" ")}
+            style={childrenWrapperStyle}
+          >
+            {children}
+          </div>
         </div>
       </div>
     </div>

@@ -36,6 +36,10 @@
   outline: none;
   box-shadow: none;
 }
+.DisabledInput {
+  opacity: 0.4;
+  pointer-events: none;
+}
 .InputFieldLabel {
   padding: 0 1.375rem 0 0;
 }

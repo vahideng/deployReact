@@ -406,7 +406,7 @@ const Sprint4: React.FC<Props> = () => {
               icon={{ name: "Account-2" }}
               value={formValue}
               handleChange={(event) => {
-                setFormValue(event.target.value)
+                setFormValue(event.target.value);
                 console.log(event.target.value);
               }}
             />
@@ -2782,7 +2782,6 @@ const Sprint4: React.FC<Props> = () => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                
               }}
             >
               <B_24_BLACK
@@ -2795,7 +2794,9 @@ const Sprint4: React.FC<Props> = () => {
                 Your payment of RM 20.50 to Revenue Harvest Sdn. Bhd. is
                 unsuccessful
               </R_19_BLACK_444>
-              <R_19_BLACK_444 style={{ textAlign: "center" ,marginBottom: "1rem"}}>
+              <R_19_BLACK_444
+                style={{ textAlign: "center", marginBottom: "1rem" }}
+              >
                 Unable to perform this transaction. Please call our Contact
                 Centre for assistance.
               </R_19_BLACK_444>
@@ -2828,7 +2829,13 @@ const Sprint4: React.FC<Props> = () => {
                   },
                 ]}
               />
-              <div style={{marginTop:'2.5rem',display:'flex',justifyContent:'center'}}>
+              <div
+                style={{
+                  marginTop: "2.5rem",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
                 <IconButtons
                   testId={"testId"}
                   onButtonClick={(item: any, index: any) => {
@@ -2864,7 +2871,7 @@ const Sprint4: React.FC<Props> = () => {
             },
           ]}
           Btntitle={"Continue With Transaction"}
-          Btnwidth={'25rem'}
+          Btnwidth={"25rem"}
           onButtonClick={() => alert("check")}
           statusText={" You will be redirected to FPX status page in 9 seconds"}
         />
@@ -2874,7 +2881,7 @@ const Sprint4: React.FC<Props> = () => {
         <ListWithSelectionTile
           testId={"testId"}
           responsive
-          TilerowStyle={{width:'100%'}}
+          TilerowStyle={{ width: "100%" }}
           listchildren={
             <List
               header={{
