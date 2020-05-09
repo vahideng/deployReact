@@ -1659,12 +1659,39 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         />
         <SelectionTile
+          // tileStyle={{ width: "28rem" }}
+          onTileClick={(item, index) => {
+            setSTileNum2(index);
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={sTileNum2}
+          list={[
+            {
+              accountTitle: "Saving Account A",
+              accountNumber: "4522016484444829",
+            },
+            {
+              accountTitle: "Saving Account B",
+              accountNumber: "19000194300233849",
+            },
+            {
+              accountTitle: "Long text Ambank AmMoneyLine AmMoneyLine",
+              accountNumber: "78624595404894028",
+            },
+            {
+              accountTitle: "Ambank BonusLink Visa",
+              accountNumber: "952858022960748293",
+            },
+          ]}
+        />
+        <SelectionTile
           centered={true}
           onTileClick={(item, index) => {
             setSTileNum3(index);
             alert(`${item.centeredText} with indexOf ${index} clicked`);
           }}
           selected={sTileNum3}
+          tileStyle={{ width: "8rem" }}
           list={[
             {
               centeredChild: <img src={images.common.sampleLogo} width={70} />,

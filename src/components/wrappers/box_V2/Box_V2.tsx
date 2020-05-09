@@ -58,6 +58,8 @@ const Box_V2: React.FC<Props> = ({
             defaultIndex={tabIndex}
             titles={tabTitles ? tabTitles : []}
             contents={content ? content : []}
+            titlesStyle={{ borderBottomColor: "transparent" }}
+            smallTab={true}
           />
         </div>
       )}

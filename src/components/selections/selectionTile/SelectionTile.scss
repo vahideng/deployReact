@@ -4,13 +4,12 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
 }
 
 .SelectionTileRowResponsive {
   width: 100% !important;
   @media (max-width: 576px) {
-  padding:2rem 1rem 2.25rem 1rem;
+    padding: 2rem 1rem 2.25rem 1rem;
   }
 }
 
@@ -100,7 +99,7 @@
   width: 15.06rem;
   height: 3.93rem;
   border-radius: 0.75rem;
-  margin: 0 2rem 1.5rem 0;
+  margin: 0 1.5rem 1.5rem 0;
   cursor: pointer;
   box-shadow: $darkBoxShadow;
   position: relative;

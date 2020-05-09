@@ -10,6 +10,7 @@ const { B_14_WHITE, B_15_ORANGE_463, B_24_BLACK, R_15_BLACK } = Paragraphs;
 interface Props {
   testId?: string;
   responsive?: boolean;
+  childrenWrapperStyle?: CSSProperties;
   statusIcon?: {
     testId?: string;
     iconColor: {
@@ -50,7 +51,8 @@ const FormContainer: React.FC<Props> = ({
   responsive,
   onTooltipClicked,
   showTooltip,
-  onBlur
+  onBlur,
+  childrenWrapperStyle
 }) => {
   const rightLabelPointer: CSSProperties =
     rightLabel !== undefined && rightLabel.onClick !== undefined
@@ -153,7 +155,7 @@ const FormContainer: React.FC<Props> = ({
         )}
 
         <div className={classes.FormContainerCurve} id={testId}>
-          <div className={FormContainerContent.join(" ")}>{children}</div>
+          <div className={FormContainerContent.join(" ")} style={childrenWrapperStyle}>{children}</div>
         </div>
       </div>
     </div>

@@ -55,9 +55,7 @@ const AccountsList: React.FC<Props> = ({
             style={{
               display: "flex",
               flex: 1,
-              flexDirection: "column",
-              paddingRight: 31,
-              paddingLeft: 31
+              flexDirection: "column"
             }}
           >
             <R_15_BLACK
