@@ -120,7 +120,7 @@
   position: absolute;
   right: 1rem;
   top: 2.6rem;
-  width: 10rem;
+  width: 8.75rem;
   height: auto;
   z-index: 100;
   background-color: #ffffff;
@@ -147,6 +147,14 @@
   margin: 3px 0 0 8px;
 }
 
+.ButtonDiv:first-child button {
+  padding-top: 1rem;
+}
+
+.ButtonDiv:last-child button {
+  padding-bottom: 1rem;
+}
+
 .ButtonIconText {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -155,7 +163,7 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   background-color: #ffffff;
   border: none;
   outline: none;

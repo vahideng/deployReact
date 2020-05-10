@@ -58,11 +58,12 @@
   background-color: #ffffff;
   -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
           box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+  overflow: hidden;
 }
 
 .Button {
   width: 100%;
-  padding: .8125rem 1.25rem .8125rem 1.25rem;
+  padding: 0.8125rem 1.25rem 0.8125rem 1.25rem;
   background-color: #fff;
   border: none;
   outline: none;
