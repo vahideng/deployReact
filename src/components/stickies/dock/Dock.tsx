@@ -24,7 +24,14 @@ const Dock: React.FC<Props> = (props) => {
         setsIsExpanded(false);
       }
     });
-  });
+    return () => {
+      document.removeEventListener("scroll", () => {
+        if (window.scrollY) {
+          setsIsExpanded(false);
+        }
+      });
+    };
+  }, []);
   return (
     <div
       className={classes.DockMainDiv}

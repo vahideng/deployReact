@@ -67,8 +67,6 @@ const StatusIcon: React.FC<Props> = ({
                 }
           }
         >
-          {console.log(icon, "icon")}
-
           {!!icon && !image && (
             <Icon
               icon={icon.name || "Tick-1"}
@@ -76,7 +74,6 @@ const StatusIcon: React.FC<Props> = ({
               size={iconSize}
             />
           )}
-          {console.log(image, "image")}
           {!!image && !icon.name && (
             <img src={image.src} alt={image.alt ? image.alt : "Logo"} />
           )}

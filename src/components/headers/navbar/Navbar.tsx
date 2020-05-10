@@ -6,6 +6,8 @@ import Profile from "../profile/Profile";
 interface Props {
   testId?: string;
   icon?: { name?: string; color?: string; onIconClick?: () => void };
+  image?: { src: string; style?: CSSProperties };
+  scrolledImage?: { src: string; style?: CSSProperties };
   scrolledIcon?: { name?: string; color?: string; onIconClick?: () => void };
   profile?: {
     testId?: string;
@@ -31,6 +33,8 @@ const Navbar: React.FC<Props> = ({
   profile = {},
   rightButtons,
   testId,
+  image,
+  scrolledImage,
 }) => {
   //@ts-ignore
   const [scrolled, setScrolled] = useState(false);
@@ -58,11 +62,16 @@ const Navbar: React.FC<Props> = ({
             onClick={scrolledIcon.onIconClick}
             className={classes.NavbarScrolledIcon}
           >
-            <Icon
-              icon={scrolledIcon.name ? scrolledIcon.name : "LOGO"}
-              color={scrolledIcon.color ? scrolledIcon.color : "#ff2626"}
-              size={27}
-            />
+            {!!scrolledIcon && !scrolledImage && (
+              <Icon
+                icon={scrolledIcon.name ? scrolledIcon.name : "LOGO"}
+                color={scrolledIcon.color ? scrolledIcon.color : "#ff2626"}
+                size={27}
+              />
+            )}
+            {!!scrolledImage && !scrolledIcon && (
+              <img src={scrolledImage.src} style={scrolledImage.style} />
+            )}
           </div>
         </div>
         <div className={classes.navbarIconDiv}>
@@ -103,11 +112,14 @@ const Navbar: React.FC<Props> = ({
             className={classes.NavbarIcon}
             id={`${testId}-1`}
           >
-            <Icon
-              icon={icon.name ? icon.name : "amonline-white"}
-              color={icon.color ? icon.color : "#ff2626"}
-              size={130}
-            />
+            {!!icon && !image && (
+              <Icon
+                icon={icon.name ? icon.name : "amonline-white"}
+                color={icon.color ? icon.color : "#ff2626"}
+                size={130}
+              />
+            )}
+            {!!image && !icon && <img src={image.src} style={image.style} />}
           </div>
         </div>
         <div className={classes.navbarIconDiv}>
