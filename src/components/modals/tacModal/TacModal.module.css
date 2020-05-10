@@ -42,15 +42,15 @@
 }
 
 .TacButtonRes {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 2rem;
+  margin-top: 1.7rem;
   margin-right: 2.5rem;
 }
 
 @media (max-width: 576px) {
   .TacButtonRes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
