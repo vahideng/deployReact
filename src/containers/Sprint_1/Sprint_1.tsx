@@ -426,7 +426,11 @@ class Sprint1 extends Component<Props, State> {
             name: "LOGO",
             color: "#ff2626",
           }}
-          icon={{}}
+          icon={{
+            onIconClick: () => {
+              alert("click");
+            },
+          }}
           profile={{
             greeting: "Good Morning",
             name: "Adam Constantine",
@@ -776,12 +780,12 @@ class Sprint1 extends Component<Props, State> {
         <div style={{ backgroundColor: "#EEEEEE", padding: 100 }}>
           <FormContainer
             statusIcon={{
-              // icon: "Register-1",
+              icon: "Register-1",
               iconColor: { top: "#94EC9B", bottom: "#5BB362" },
-              image: {
-                src: images.common.amyIcon,
-                alt: "logo",
-              },
+              // image: {
+              //   src: images.common.amyIcon,
+              //   alt: "logo",
+              // },
             }}
             children={
               <List

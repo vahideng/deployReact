@@ -8,11 +8,6 @@
   display: flex;
   justify-content: space-between;
   width: 55.25rem;
-  @media (max-width: 576px) {
-    flex-direction: column;
-    min-height: 11rem;
-    width: 100%;
-  }
 }
 .TacMainInnerDivRes {
   position: relative;
@@ -26,11 +21,11 @@
   }
 }
 .TacButtonRes {
-  display: flex;
-  margin-top: 2rem;
+  margin-top: 1.7rem;
   margin-right: 2.5rem;
 
   @media (max-width: 576px) {
+    display: flex;
     justify-content: center;
     margin-right: 0px;
   }

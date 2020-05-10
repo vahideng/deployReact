@@ -20,6 +20,7 @@ interface Props {
   showTooltip?: boolean;
   onTooltipClicked?: () => void;
   onBlur?: () => void;
+  tipSize?: number;
 }
 
 const HeaderWithIButtons = ({
@@ -38,6 +39,7 @@ const HeaderWithIButtons = ({
   onBlur,
   onTooltipClicked,
   showTooltip,
+  tipSize,
 }: Props) => {
   return (
     <div
@@ -65,6 +67,7 @@ const HeaderWithIButtons = ({
           onTooltipClicked={onTooltipClicked}
           showTooltip={showTooltip}
           tooltipData={tooltipData ? tooltipData : ""}
+          tipSize={tipSize}
         />
       </div>
 

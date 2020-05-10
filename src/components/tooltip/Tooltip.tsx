@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import classes from "./Tooltip.module.css";
 import Icon from "../assets/icons/icon";
-// import OutsideClickHandler from "react-outside-click-handler";
 
 interface TooltipProps {
   testId?: string;

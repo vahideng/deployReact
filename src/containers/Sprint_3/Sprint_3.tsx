@@ -1800,8 +1800,8 @@ const Sprint3: React.FC<Props> = () => {
                   icon: "Edit",
                   text: "Edit",
                   onClick: () => {
-                    console.log('console click')
-                  }
+                    console.log("console click");
+                  },
                 },
                 {
                   icon: "delete",
@@ -1855,8 +1855,8 @@ const Sprint3: React.FC<Props> = () => {
                   icon: "Edit",
                   text: "Edit",
                   onClick: () => {
-                    console.log('console click')
-                  }
+                    console.log("console click");
+                  },
                 },
                 {
                   icon: "delete",
@@ -2008,6 +2008,7 @@ const Sprint3: React.FC<Props> = () => {
               </div>
             ),
           }}
+          tipSize={16}
         />
       </div>
       <Title>

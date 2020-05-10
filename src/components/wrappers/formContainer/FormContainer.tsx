@@ -17,8 +17,8 @@ interface Props {
       top: string;
       bottom: string;
     };
-    icon?: any;
-    image?: any;
+    icon?: string;
+    image?: { src: string; alt?: string };
   };
   headerText?: string;
   headerSubText?: string;
