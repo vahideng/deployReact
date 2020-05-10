@@ -28,7 +28,7 @@ class Tooltip extends Component<TooltipProps, {}> {
       onBlur,
     } = this.props;
 
-    const tooltipSize = tipSize !== undefined ? tipSize : 23;
+    const tooltipSize = tipSize !== undefined ? tipSize : 18.7;
     return (
       <>
         {rightAlign ? (
