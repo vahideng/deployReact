@@ -8,11 +8,6 @@
   display: flex;
   justify-content: space-between;
   width: 55.25rem;
-  @media (max-width: 576px) {
-    flex-direction: column;
-    min-height: 11rem;
-    width: 100%;
-  }
 }
 .TacMainInnerDivRes {
   position: relative;
