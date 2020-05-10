@@ -78,10 +78,18 @@ const Sprint2: React.FC<Props> = () => {
   return (
     <div style={{ paddingTop: 100 }}>
       <Navbar
-        icon={{
-          onIconClick: () => {
+        image={{
+          src:
+            "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
+          onImageClick: () => {
             setHomeRedirect(true);
           },
+          style: { width: "100px", height: "50px" },
+        }}
+        scrolledImage={{
+          src:
+            "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
+          style: { width: "70px", height: "30px" },
         }}
         profile={{
           greeting: "Good Morning",

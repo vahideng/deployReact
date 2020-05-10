@@ -426,7 +426,11 @@ class Sprint1 extends Component<Props, State> {
             name: "LOGO",
             color: "#ff2626",
           }}
-          icon={{}}
+          icon={{
+            onIconClick: () => {
+              alert("click");
+            },
+          }}
           profile={{
             greeting: "Good Morning",
             name: "Adam Constantine",

@@ -6,9 +6,12 @@ import Profile from "../profile/Profile";
 interface Props {
   testId?: string;
   icon?: { name?: string; color?: string; onIconClick?: () => void };
-  image?: { src: string; style?: CSSProperties };
-  scrolledImage?: { src: string; style?: CSSProperties };
-  scrolledIcon?: { name?: string; color?: string; onIconClick?: () => void };
+  image?: { src: string; style?: CSSProperties; onImageClick?: () => void };
+  scrolledImage?: {
+    src: string;
+    style?: CSSProperties;
+  };
+  scrolledIcon?: { name?: string; color?: string };
   profile?: {
     testId?: string;
     initials?: string;
@@ -57,11 +60,7 @@ const Navbar: React.FC<Props> = ({
     >
       <div className={classes.InnerWidth}>
         <div>
-          <div
-            id={`${testId}-0`}
-            onClick={scrolledIcon.onIconClick}
-            className={classes.NavbarScrolledIcon}
-          >
+          <div id={`${testId}-0`} className={classes.NavbarScrolledIcon}>
             {!!scrolledIcon && !scrolledImage && (
               <Icon
                 icon={scrolledIcon.name ? scrolledIcon.name : "LOGO"}
@@ -69,8 +68,12 @@ const Navbar: React.FC<Props> = ({
                 size={27}
               />
             )}
-            {!!scrolledImage && !scrolledIcon && (
-              <img src={scrolledImage.src} style={scrolledImage.style} />
+            {!!scrolledImage && (
+              <img
+                src={scrolledImage.src}
+                style={scrolledImage.style}
+                alt="logo"
+              />
             )}
           </div>
         </div>
@@ -107,19 +110,26 @@ const Navbar: React.FC<Props> = ({
     <div className={classes.NavbarMainDiv} id={testId}>
       <div className={classes.InnerWidth}>
         <div>
-          <div
-            onClick={icon.onIconClick}
-            className={classes.NavbarIcon}
-            id={`${testId}-1`}
-          >
+          <div id={`${testId}-1`} className={classes.NavbarIcon}>
             {!!icon && !image && (
-              <Icon
-                icon={icon.name ? icon.name : "amonline-white"}
-                color={icon.color ? icon.color : "#ff2626"}
-                size={130}
-              />
+              <span onClick={icon.onIconClick}>
+                <Icon
+                  icon={icon.name ? icon.name : "amonline-white"}
+                  color={icon.color ? icon.color : "#ff2626"}
+                  size={130}
+                />
+              </span>
             )}
-            {!!image && !icon && <img src={image.src} style={image.style} />}
+            {!!image && (
+              <>
+                <img
+                  src={image.src}
+                  style={image.style}
+                  onClick={image.onImageClick}
+                  alt="logo"
+                />
+              </>
+            )}
           </div>
         </div>
         <div className={classes.navbarIconDiv}>
