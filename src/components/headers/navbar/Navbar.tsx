@@ -37,13 +37,14 @@ const Navbar: React.FC<Props> = ({
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
-      if (window.scrollY >= 300) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(true);
     });
-  });
+    return () => {
+      document.removeEventListener("scroll", () => {
+        setScrolled(true);
+      });
+    };
+  }, []);
   return scrolled ? (
     <div
       className={classes.NavbarMainDivScrolled}
