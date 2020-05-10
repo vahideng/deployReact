@@ -4,8 +4,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 65px;
 }
 .StatusFormContainerCurve {
+  position: relative;
   max-width: 36.31rem;
   background-color: transparent;
 }
@@ -14,7 +16,10 @@
   
 }
 .StatusFormContainerStatusIcon {
-  margin-bottom: -2rem;
+  position: absolute;
+  left: calc(50% - 52px);
+  top: -65px;
+  z-index: 20;
 }
 .StatusFormContainerContent {
   display: flex;

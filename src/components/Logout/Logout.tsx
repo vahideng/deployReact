@@ -64,8 +64,7 @@ const Logout: React.FC<LogoutProps> = ({
   let containerCls = classes.StatusFormContainerCurve;
   let BtnWidth = btnwidth;
   if (responsive) {
-    containerCls = `${classes.StatusFormContainerCurve} ${classes.StatusFormContainerCurveResponive}`
-
+    containerCls = `${containerCls} ${classes.StatusFormContainerCurveResponive}`
   } 
 
   const {statusIcon,title,subTitle} = header;
@@ -73,63 +72,62 @@ const Logout: React.FC<LogoutProps> = ({
   return (
 
 <div id={testId} className={classes.StatusFormContainerMain}>
-      
-      {!!statusIcon && (
-        <>
-          <span className={classes.StatusFormContainerStatusIcon}>
-            <StatusIcon
-              outerIconColor={statusIcon.outerIconColor}
-              testId={statusIcon.testId}
-              icon={!!statusIcon ? statusIcon.icon : ""}
-              iconColor={{
-                top: statusIcon.iconColor.top,
-                bottom: statusIcon.iconColor.bottom
+      <div className={containerCls} id={testId}>
+        {!!statusIcon && (
+          <>
+            <span className={classes.StatusFormContainerStatusIcon}>
+              <StatusIcon
+                outerIconColor={statusIcon.outerIconColor}
+                testId={statusIcon.testId}
+                icon={!!statusIcon ? statusIcon.icon : ""}
+                iconColor={{
+                  top: statusIcon.iconColor.top,
+                  bottom: statusIcon.iconColor.bottom
+                }}
+                image={!!statusIcon ? statusIcon.image : ""}
+              />
+            </span>
+          </>
+        )}
+        <span className={classes.CurveStyle}>
+            <Icon
+              icon="popup-curve"
+              color={"#FFFFFF"}
+              size={58}
+              style={{
+                width: '36.25rem',
+                position: 'absolute',
+                margin: 'auto',
+                display: 'block',
+                height: '100%',
+                left: '-100%',
+                right:' -100%'
               }}
-              image={!!statusIcon ? statusIcon.image : ""}
             />
           </span>
-        </>
-      )}
-      <div className={containerCls} id={testId}>
-      <span className={classes.CurveStyle}>
-          <Icon
-            icon="popup-curve"
-            color={"#FFFFFF"}
-            size={58}
-            style={{
-              width: '36.25rem',
-              position: 'absolute',
-              margin: 'auto',
-              display: 'block',
-              height: '100%',
-              left: '-100%',
-              right:' -100%'
-            }}
-          />
-        </span>
-        <div className={classes.StatusFormContainerContent}>
-          
-        <B_24_BLACK className={classes.headerTitle} style={header.titleStyle}>
-            {title}
-      </B_24_BLACK>
+          <div className={classes.StatusFormContainerContent}>
+            
+          <B_24_BLACK className={classes.headerTitle} style={header.titleStyle}>
+              {title}
+        </B_24_BLACK>
 
-                <p className={classes.subContent}>
-                 {subTitle}
-                </p>     
-        <LogoutList
-                  itemContainerStyle={{ padding: 0 }}
-                  responsive={responsive}
-                  list={listChildren}
-                />
+                  <p className={classes.subContent}>
+                  {subTitle}
+                  </p>     
+          <LogoutList
+                    itemContainerStyle={{ padding: 0 }}
+                    responsive={responsive}
+                    list={listChildren}
+                  />
+          </div>
+          <div className={classes.btnClass} style={btnContainerStyle}>
+            <PrimaryButton
+              onButtonClick={onButtonClick}
+              title={btntitle}
+              responsive
+              width={BtnWidth}
+            />
         </div>
-        <div className={classes.btnClass} style={btnContainerStyle}>
-          <PrimaryButton
-            onButtonClick={onButtonClick}
-            title={btntitle}
-            responsive
-            width={BtnWidth}
-          />
-      </div>
 
       </div>
     </div>
