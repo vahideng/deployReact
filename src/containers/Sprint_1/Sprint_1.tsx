@@ -992,7 +992,7 @@ class Sprint1 extends Component<Props, State> {
           <FormContainer
             // childrenWrapperStyle={{ padding: 0 }}
             label={"Select your account/card type"}
-            showTooltip={true}
+            showTooltip={false}
             onTooltipClicked={() => alert("clicked!!")}
             tooltip={
               <div>
@@ -1002,7 +1002,7 @@ class Sprint1 extends Component<Props, State> {
               </div>
             }
             children={
-              <div style={{ padding: "2rem" }}>
+              <div>
                 <InputField
                   notValid={true}
                   errorMessage={{
