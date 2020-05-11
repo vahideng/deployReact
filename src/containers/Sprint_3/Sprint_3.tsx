@@ -1788,7 +1788,7 @@ const Sprint3: React.FC<Props> = () => {
           width="30rem"
           title="Active IDs"
           isActive={true}
-          align="center"
+          align="left"
           list={[
             {
               leftIcon: { name: "ID-2", size: 35 },
@@ -1849,7 +1849,6 @@ const Sprint3: React.FC<Props> = () => {
               leftImage:
                 "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
               boldText: "Mobile Number ••••••4546",
-
               iconButtons: [
                 {
                   icon: "Edit",
@@ -2325,15 +2324,25 @@ const Sprint3: React.FC<Props> = () => {
                     }}
                   />
                 </div>
-                <div style={{ marginTop: "1rem", marginBottom: "3rem" }}>
+                <div style={{ display: 'flex', marginTop: "1rem", marginBottom: "3rem" }}>
                   <PrimaryButton
-                    title="Close"
+                    shadowed
+                    title="No"
+                    buttonStyle={{
+                      background: 'linear-gradient(180deg, #F6F6F3 0%, #EAE9E3 100%)',
+                    }}
+                    containerStyle={{
+                      marginRight: '.5rem'
+                    }}
+                    height="3rem"
+                    minWidth="10rem"
+                    titleColor="#000"
                     onButtonClick={() => {
                       setSettingsModalOpen(false);
                     }}
                   />
                   <PrimaryButton
-                    title="Close"
+                    title="Yes"
                     onButtonClick={() => {
                       setSettingsModalOpen(false);
                     }}

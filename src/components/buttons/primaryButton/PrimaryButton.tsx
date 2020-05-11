@@ -18,6 +18,7 @@ interface Props {
   shadowed?: boolean;
   responsive?: boolean;
   buttonStyle?: CSSProperties;
+  containerStyle?: CSSProperties;
 }
 
 const PrimaryButton: React.FC<Props> = ({
@@ -32,9 +33,10 @@ const PrimaryButton: React.FC<Props> = ({
   icon = { name: "", color: "" },
   shadowed,
   titleStyle,
+  containerStyle,
   responsive,
   buttonStyle,
-  minWidth,
+  minWidth = 0,
 }) => {
   const primaryButton = [classes.PrimaryButton];
   if (responsive) {
@@ -46,17 +48,17 @@ const PrimaryButton: React.FC<Props> = ({
     : "";
   const shadow = shadowed ? "0px 4px 9px rgba(0, 0, 0, 0.140925)" : "";
   return !small ? (
-    <div id={testId} className={responsive && classes.fluid}>
+    <div id={testId} className={responsive && classes.fluid} style={containerStyle}>
       <button
         id={`${testId}-0`}
         onClick={onButtonClick}
         className={classes.PrimaryButton}
         style={{
+          height,
+          minWidth,
           background: buttonBg,
           maxWidth: !!width ? width : "18.4375rem",
-          height: height,
           boxShadow: shadow,
-          minWidth: minWidth && minWidth,
           ...buttonStyle,
         }}
       >
