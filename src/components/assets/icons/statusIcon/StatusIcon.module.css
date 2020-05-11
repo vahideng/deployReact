@@ -18,8 +18,8 @@
 .innerRound {
   background: -webkit-gradient(linear, left top, left bottom, from(#94ec9b), to(#5bb362));
   background: linear-gradient(180deg, #94ec9b 0%, #5bb362 100%);
-  width: 4.62rem;
-  height: 4.62rem;
+  width: 4.5rem;
+  height: 4.5rem;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
