@@ -2825,6 +2825,7 @@ class Sprint1 extends Component<Props, State> {
         />
         <Title>InputField</Title>
         <InputField
+          placeholder="PlaceHolder"
           type="text"
           clearClickHandler={() => alert("clear cliked")}
           clearIcon={true}
