@@ -68,6 +68,8 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                   display: "flex",
                   flexDirection: "column",
                   marginLeft: item.cardLogo ? 16 : 0,
+                  width: item.cardLogo ? '12.3125rem' : '15.8125rem',
+                 
                 }}
               >
                 <R_15_GREY444
@@ -89,7 +91,8 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                 </R_15_GREY444>
               </div>
             </div>
-            <div style={{ display: "flex", flex: 0.7 }}>
+            <div style={{ display: "flex", flex: 0.7,
+            marginLeft:  '1.4375rem' }}>
               <R_13_BLACK
                 style={{
                   color: !!item.statusLabelColor && item.statusLabelColor,
@@ -131,7 +134,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                   flex: 1,
                   flexDirection: "row",
                   alignItems: "center",
-                  minWidth: '13rem',
+                  minWidth: '11rem',
                   justifyContent:'flex-end'
                 }}
               >
