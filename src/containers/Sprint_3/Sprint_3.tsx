@@ -2336,7 +2336,7 @@ const Sprint3: React.FC<Props> = () => {
                       marginRight: '.5rem'
                     }}
                     height="3rem"
-                    minWidth="10rem"
+                    minWidth="15rem"
                     titleColor="#000"
                     onButtonClick={() => {
                       setSettingsModalOpen(false);
@@ -2344,6 +2344,7 @@ const Sprint3: React.FC<Props> = () => {
                   />
                   <PrimaryButton
                     title="Yes"
+                    minWidth="15rem"
                     onButtonClick={() => {
                       setSettingsModalOpen(false);
                     }}
