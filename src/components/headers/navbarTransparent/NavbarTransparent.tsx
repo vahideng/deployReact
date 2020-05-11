@@ -1,25 +1,42 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, CSSProperties } from "react";
 import Icon from "src/components/assets/icons/icon";
 import classes from "./NavbarTransparent.module.css";
 
 interface Props {
   testId?: string;
   icon?: { name?: string; color?: string; onIconClick?: () => void };
+  image?: { src: string; style?: CSSProperties; onImageClick?: () => void };
   rightButtons?: ReactNode[];
 }
 
-const NavbarTransparent: React.FC<Props> = ({ rightButtons, icon, testId }) => {
+const NavbarTransparent: React.FC<Props> = ({
+  rightButtons,
+  icon,
+  testId,
+  image,
+}) => {
   return (
     <div className={classes.NavbarTransparentMainDiv} id={testId}>
-      <div onClick={icon?.onIconClick}>
-        <Icon
-          testId={`${testId}-0`}
+      {!!icon && !image && (
+        <div onClick={icon?.onIconClick}>
+          <Icon
+            testId={`${testId}-0`}
+            className={classes.NavbarTransparentIcon}
+            icon={!!icon?.name ? icon.name : "amonline-white"}
+            color={icon?.color ? icon.color : "#ff2626"}
+            size={150}
+          />
+        </div>
+      )}
+      {!!image && !icon && (
+        <img
           className={classes.NavbarTransparentIcon}
-          icon={!!icon?.name ? icon.name : "amonline-white"}
-          color={icon?.color ? icon.color : "#ff2626"}
-          size={150}
+          src={image.src}
+          style={image.style}
+          onClick={image.onImageClick}
+          alt="logo"
         />
-      </div>
+      )}
       <div className={classes.NavbarTransparentIconDiv}>
         {!!rightButtons &&
           rightButtons.map(

@@ -167,7 +167,6 @@ class InputField extends Component<Props, {}> {
                 onMouseEnter={(e: any) => onClearIconHover(e, true)}
                 onMouseLeave={(e: any) => onClearIconHover(e, false)}
                 className={classes.InputFieldClear}
-                // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
               >
                 <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
               </span>
@@ -176,7 +175,6 @@ class InputField extends Component<Props, {}> {
                 id={`${testId}-1`}
                 onClick={clearClickHandler}
                 className={classes.InputFieldClear}
-                // style={!isSecure ? { marginLeft: "2.7rem" } : {}}
               >
                 <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
               </span>
@@ -196,16 +194,28 @@ class InputField extends Component<Props, {}> {
                   size={25}
                 />
               </span>
-              {!!clearIcon && (
-                <span
-                  id={`${testId}-1`}
-                  onClick={clearClickHandler}
-                  className={classes.InputFieldClear}
-                  style={{ right: "3.5rem" }}
-                >
-                  <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
-                </span>
-              )}
+              {!!clearIcon &&
+                (!!onClearIconHover ? (
+                  <span
+                    id={`${testId}-1`}
+                    onClick={clearClickHandler}
+                    className={classes.InputFieldClear}
+                    style={{ right: "3.5rem" }}
+                    onMouseEnter={(e: any) => onClearIconHover(e, true)}
+                    onMouseLeave={(e: any) => onClearIconHover(e, false)}
+                  >
+                    <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
+                  </span>
+                ) : (
+                  <span
+                    id={`${testId}-1`}
+                    onClick={clearClickHandler}
+                    className={classes.InputFieldClear}
+                    style={{ right: "3.5rem" }}
+                  >
+                    <Icon icon="system-close-grey" size={18} color="#DEDEDE" />
+                  </span>
+                ))}
             </>
           )}
         </div>
