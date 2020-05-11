@@ -6,7 +6,12 @@ import Profile from "../profile/Profile";
 interface Props {
   testId?: string;
   icon?: { name?: string; color?: string; onIconClick?: () => void };
-  scrolledIcon?: { name?: string; color?: string; onIconClick?: () => void };
+  image?: { src: string; style?: CSSProperties; onImageClick?: () => void };
+  scrolledImage?: {
+    src: string;
+    style?: CSSProperties;
+  };
+  scrolledIcon?: { name?: string; color?: string };
   profile?: {
     testId?: string;
     initials?: string;
@@ -31,19 +36,22 @@ const Navbar: React.FC<Props> = ({
   profile = {},
   rightButtons,
   testId,
+  image,
+  scrolledImage,
 }) => {
   //@ts-ignore
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
-      if (window.scrollY >= 300) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(true);
     });
-  });
+    return () => {
+      document.removeEventListener("scroll", () => {
+        setScrolled(true);
+      });
+    };
+  }, []);
   return scrolled ? (
     <div
       className={classes.NavbarMainDivScrolled}
@@ -52,16 +60,21 @@ const Navbar: React.FC<Props> = ({
     >
       <div className={classes.InnerWidth}>
         <div>
-          <div
-            id={`${testId}-0`}
-            onClick={scrolledIcon.onIconClick}
-            className={classes.NavbarScrolledIcon}
-          >
-            <Icon
-              icon={scrolledIcon.name ? scrolledIcon.name : "LOGO"}
-              color={scrolledIcon.color ? scrolledIcon.color : "#ff2626"}
-              size={27}
-            />
+          <div id={`${testId}-0`} className={classes.NavbarScrolledIcon}>
+            {!!scrolledIcon && !scrolledImage && (
+              <Icon
+                icon={scrolledIcon.name ? scrolledIcon.name : "LOGO"}
+                color={scrolledIcon.color ? scrolledIcon.color : "#ff2626"}
+                size={27}
+              />
+            )}
+            {!!scrolledImage && (
+              <img
+                src={scrolledImage.src}
+                style={scrolledImage.style}
+                alt="logo"
+              />
+            )}
           </div>
         </div>
         <div className={classes.navbarIconDiv}>
@@ -97,16 +110,26 @@ const Navbar: React.FC<Props> = ({
     <div className={classes.NavbarMainDiv} id={testId}>
       <div className={classes.InnerWidth}>
         <div>
-          <div
-            onClick={icon.onIconClick}
-            className={classes.NavbarIcon}
-            id={`${testId}-1`}
-          >
-            <Icon
-              icon={icon.name ? icon.name : "amonline-white"}
-              color={icon.color ? icon.color : "#ff2626"}
-              size={130}
-            />
+          <div id={`${testId}-1`} className={classes.NavbarIcon}>
+            {!!icon && !image && (
+              <span onClick={icon.onIconClick}>
+                <Icon
+                  icon={icon.name ? icon.name : "amonline-white"}
+                  color={icon.color ? icon.color : "#ff2626"}
+                  size={130}
+                />
+              </span>
+            )}
+            {!!image && (
+              <>
+                <img
+                  src={image.src}
+                  style={image.style}
+                  onClick={image.onImageClick}
+                  alt="logo"
+                />
+              </>
+            )}
           </div>
         </div>
         <div className={classes.navbarIconDiv}>

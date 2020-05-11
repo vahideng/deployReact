@@ -15,6 +15,7 @@ interface Props {
   showTooltip?: boolean;
   onTooltipClicked?: () => void;
   onBlur?: () => void;
+  tipSize?: number;
 }
 
 const LabelToolTip: React.FC<Props> = ({
@@ -25,6 +26,7 @@ const LabelToolTip: React.FC<Props> = ({
   showTooltip,
   onTooltipClicked,
   onBlur,
+  tipSize,
 }) => {
   return (
     <div
@@ -40,6 +42,7 @@ const LabelToolTip: React.FC<Props> = ({
         showTooltip={showTooltip}
         testId={tooltipData.testId}
         tipChildren={tooltipData.tipChildren}
+        tipSize={tipSize}
       />
     </div>
   );

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import classes from "./Tooltip.module.css";
 import Icon from "../assets/icons/icon";
-// import OutsideClickHandler from "react-outside-click-handler";
 
 interface TooltipProps {
   testId?: string;
@@ -29,7 +28,7 @@ class Tooltip extends Component<TooltipProps, {}> {
       onBlur,
     } = this.props;
 
-    const tooltipSize = tipSize !== undefined ? tipSize : 23;
+    const tooltipSize = tipSize !== undefined ? tipSize : 18.7;
     return (
       <>
         {rightAlign ? (

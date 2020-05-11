@@ -92,7 +92,6 @@ class InputField extends Component<Props, {}> {
     function blurHandler(event: FormEvent) {
       !!onBlur && onBlur(event);
     }
-    console.log(disabled);
     let inputClasses = classes.InputFieldIconDiv;
     if (disabled) {
       inputClasses = `${classes.InputFieldIconDiv} ${classes.DisabledInput}`;
