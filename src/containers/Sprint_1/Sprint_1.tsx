@@ -2771,9 +2771,15 @@ class Sprint1 extends Component<Props, State> {
               },
             },
             {
-              text: "Account Long text testing",
+              text: "Business Registration (ROB & ROC)",
               icon: {
-                name: "Account",
+                name: "Business",
+              },
+            },
+            {
+              text: `Business Registration (East Malaysia)`,
+              icon: {
+                name: "Business",
               },
             },
           ]}
