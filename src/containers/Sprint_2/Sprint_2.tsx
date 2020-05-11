@@ -183,19 +183,18 @@ const Sprint2: React.FC<Props> = () => {
       </div>
       <SettingModalCenter
         // zIndex={-1}
-        onRequestClose={() => setSettingModalCenter(false)}
         testId={"testId"}
         modalIsOpen={settingModalCenter}
+        onRequestClose={() => alert("close")}
         modalChildren={
           <StatusFormContainer
             statusIcon={{
-              // icon: "Register-1",
-              iconColor: { top: "#94EC9B", bottom: "#5BB362" },
-              outerIconColor: "#E5FCE6",
+              iconColor: { top: "#FD8585", bottom: "#FF2222" },
               image: {
                 src: images.common.amyIcon,
                 alt: "logo",
               },
+              outerIconColor: "#FFEBEE",
             }}
             children={
               <div
@@ -203,10 +202,43 @@ const Sprint2: React.FC<Props> = () => {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  padding: "2rem",
+                  padding: "0rem 2rem",
+                  marginTop: "1rem",
                 }}
               >
-                <PrimaryButton onButtonClick={() => {}} />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textAlign: "center",
+                    padding: "1rem",
+                  }}
+                >
+                  
+                </div>
+                <div style={{ display: 'flex', flexDirection:"column", marginTop: "1rem", marginBottom: "3rem" }}>
+                  <PrimaryButton
+                    shadowed
+                    title="No"
+                    buttonStyle={{
+                      background: 'linear-gradient(180deg, #F6F6F3 0%, #EAE9E3 100%)',
+                    }}
+                    containerStyle={{
+                      marginRight: '.5rem'
+                    }}
+                    height="3rem"
+                    minWidth="15rem"
+                    titleColor="#000"
+                   
+                  />
+                  <PrimaryButton
+                    title="Yes"
+                    minWidth="15rem"
+                    
+                  />
+                </div>
               </div>
             }
           />

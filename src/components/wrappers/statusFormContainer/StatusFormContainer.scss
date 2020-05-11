@@ -8,6 +8,10 @@
 .StatusFormContainerCurve {
   max-width: 36.31rem;
   background-color: transparent;
+  @media  (max-width: 480px) {
+    width:100%;
+    
+  }
 }
 .StatusFormContainerCurveResponive{
   width: 100% !important;

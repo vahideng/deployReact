@@ -12,7 +12,7 @@ interface Props {
   height?: number | string;
   width?: number | string;
   minWidth?: number | string;
-  onButtonClick: () => void;
+  onButtonClick?: () => void;
   small?: boolean;
   icon?: { name: string; color: string; size?: number };
   shadowed?: boolean;

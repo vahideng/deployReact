@@ -18,6 +18,7 @@ const customStyles = (props: React.PropsWithChildren<Props>) => ({
     transform: "translate(-50%, -50%)",
     background: "transparent",
     border: "none",
+    width: "100%",
     zIndex: props.zIndex ? props.zIndex : 1000000000,
   },
   overlay: {

@@ -1544,6 +1544,11 @@ const Sprint3: React.FC<Props> = () => {
               value: "Unsuccessful",
               closeIconClickHandler: () => alert("clear Unsuccessful"),
             },
+            {
+              label: "EXAMPLE",
+              value: "TEST",
+              closeIconClickHandler: () => alert("clear Unsuccessful"),
+            }
           ]}
         />
       </CenteredDiv>
