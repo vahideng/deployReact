@@ -57,6 +57,26 @@
 
 .InputFieldInput {
   padding-right: 5.2rem;
+  font-family: "Nunito Sans";
+  color: #000000;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.InputFieldInput::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.InputFieldInput:-ms-input-placeholder {
+  font-weight: 400;
+}
+
+.InputFieldInput::-ms-input-placeholder {
+  font-weight: 400;
+}
+
+.InputFieldInput::placeholder {
+  font-weight: 400;
 }
 
 .InputFieldIconDiv input:focus {

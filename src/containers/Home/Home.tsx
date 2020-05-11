@@ -53,10 +53,16 @@ const Home: React.FC<Props> = () => {
         <div style={{ padding: 100 }}>
           <div>
             <NavbarTransparent
-              icon={{
-                onIconClick: () => {
-                  setSprint1(true);
-                },
+              // icon={{
+              //   onIconClick: () => {
+              //     setSprint1(true);
+              //   },
+              // }}
+              image={{
+                src:
+                  "https://images.unsplash.com/photo-1588899428740-3145fdaf2da5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80",
+                style: { width: "6rem", height: "3rem", borderRadius: 8 },
+                onImageClick: () => setSprint1(true),
               }}
               rightButtons={[
                 <TextButton
@@ -126,16 +132,16 @@ const Home: React.FC<Props> = () => {
                   }}
                 />,
                 <TextButton
-                buttonText="Code Snippet"
-                onTextClick={() => {
-                  setCondeSnippet(true);
-                }}
-                buttonStyles={{
-                  color: "#000000",
-                  fontWeight: 400,
-                  fontSize: 15,
-                }}
-              />,
+                  buttonText="Code Snippet"
+                  onTextClick={() => {
+                    setCondeSnippet(true);
+                  }}
+                  buttonStyles={{
+                    color: "#000000",
+                    fontWeight: 400,
+                    fontSize: 15,
+                  }}
+                />,
                 <TextDropdown
                   handleChange={(selectedOption: any) => {
                     setSelectedOption(selectedOption);

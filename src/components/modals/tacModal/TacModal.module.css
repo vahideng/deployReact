@@ -6,6 +6,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding-top: 1rem;
+  min-height: 9.5rem;
 }
 
 .TacMainInnerDiv {
