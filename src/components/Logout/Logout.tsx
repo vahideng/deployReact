@@ -37,6 +37,7 @@ interface LogoutProps {
       styleValue?:CSSProperties;
     },
     rightLabel: {
+      negative?: boolean,
       TimeStamp: string,
       styleTimeStamp?:CSSProperties,
       value:string,
@@ -107,7 +108,7 @@ const Logout: React.FC<LogoutProps> = ({
           </span>
           <div className={classes.StatusFormContainerContent}>
             
-          <B_24_BLACK className={classes.headerTitle} style={header.titleStyle}>
+          <B_24_BLACK  className={classes.headerTitle} style={header.titleStyle}>
               {title}
         </B_24_BLACK>
 
