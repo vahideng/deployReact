@@ -27,7 +27,7 @@ const PrimaryButton: React.FC<Props> = ({
   buttonColor,
   titleColor,
   height,
-  width,
+  width = '25rem',
   onButtonClick,
   small,
   icon = { name: "", color: "" },
@@ -36,7 +36,7 @@ const PrimaryButton: React.FC<Props> = ({
   containerStyle,
   responsive,
   buttonStyle,
-  minWidth = 0,
+  minWidth,
 }) => {
   const primaryButton = [classes.PrimaryButton];
   if (responsive) {
@@ -55,9 +55,10 @@ const PrimaryButton: React.FC<Props> = ({
         className={classes.PrimaryButton}
         style={{
           height,
+          width,
           minWidth,
+          maxWidth: responsive ? 'none' : (width || "25rem"),
           background: buttonBg,
-          maxWidth: !!width ? width : "18.4375rem",
           boxShadow: shadow,
           ...buttonStyle,
         }}
