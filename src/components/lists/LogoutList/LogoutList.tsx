@@ -10,7 +10,8 @@ const {
   R_19_GREY444,
   B_24_BLACK,
   SB_15_BLACK,
-  R_19_GREEN_444
+  R_19_GREEN_444,
+  B_15_RED
 } = Paragraphs;
 
 
@@ -43,6 +44,7 @@ interface LogoutListProps {
       styleValue?: CSSProperties;
     },
     rightLabel:{
+      negative?: boolean;
       TimeStamp?: string;
       styleTimeStamp?: CSSProperties;
       value?: string;
@@ -116,6 +118,8 @@ const LogoutList: React.FC<LogoutListProps> = ({
       )}
       {!!list &&
         list.map((item, index) => {
+          const { rightLabel } = item;
+          const { negative = false, styleValue, value, styleTimeStamp, TimeStamp } = rightLabel;
           return (
             <div
               className={responsive ? classes.ListItemsContainer: classes.ListItemsContainerRes}
@@ -128,14 +132,17 @@ const LogoutList: React.FC<LogoutListProps> = ({
                 <ColDiv className={classes.leftlabel}>
                 <R_19_GREY444 className={classes.leftLabelTextRes} style={item.leftLabel.styleContent}>{item.leftLabel.contentType}</R_19_GREY444>
                 <SB_15_BLACK className={classes.LeftLabel2TextRes}  style={item.leftLabel.styleValue} >{item.leftLabel.value}</SB_15_BLACK>
-                <SB_15_BLACK className={classes.RightLabelRes} style={item.rightLabel.styleValue}>{item.rightLabel.value}</SB_15_BLACK>
+                <SB_15_BLACK className={classes.RightLabelRes} style={styleValue}>{value}</SB_15_BLACK>
                 </ColDiv>
                 <Col className={classes.middleLabelClass}>
                 <R_19_GREEN_444 style={item.middleLabel.styleContent} >{item.middleLabel.content} </R_19_GREEN_444>
                 </Col>
                 <ColDiv className={classes.rightLabel}>
-                <R_19_GREY444 className={classes.RightLabelFirst} style={item.rightLabel.styleTimeStamp}>{item.rightLabel.TimeStamp}</R_19_GREY444>
-                <SB_15_BLACK style={item.rightLabel.styleValue} className={classes.RightLabel2Res}>{item.rightLabel.value}</SB_15_BLACK>
+                <R_19_GREY444 className={classes.RightLabelFirst} style={styleTimeStamp}>{TimeStamp}</R_19_GREY444>
+                <SB_15_BLACK style={styleValue} className={classes.RightLabel2Res}>
+                {negative && <B_15_RED style={{ display: 'inline' }}>- </B_15_RED>}
+                  {value}
+                </SB_15_BLACK>
                 <R_19_GREEN_444 style={item.middleLabel.styleContent} className={classes.middleLabelRes}>{item.middleLabel.content}</R_19_GREEN_444>
                 </ColDiv>
               </div>

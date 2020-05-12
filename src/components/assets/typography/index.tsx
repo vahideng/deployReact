@@ -180,6 +180,14 @@ const SB_15_BLACK = styled.p`
   font-weight: 600;
   line-height: 20px;
 `;
+const B_15_RED = styled.p`
+  font-family: "Nunito Sans";
+  margin: 0;
+  color: #ff2626;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+`;
 
 const B_15_BLACK = styled.p`
   font-family: "Nunito Sans";
@@ -548,4 +556,5 @@ export default {
   R_19_GREEN_444,
   R_19_BLACK_444,
   B_15_BLACK_444,
+  B_15_RED,
 };
