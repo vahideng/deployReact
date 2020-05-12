@@ -3004,7 +3004,7 @@ const Sprint4: React.FC<Props> = () => {
           responsive
           header={{
             title: "You are logged out. Thank you for banking with AmBank",
-            subTitle: "Logged out on Tueday 14/05/2019, 03:06PM",
+            subTitle: "Logged out on Tuesday 14/05/2019, 03:06PM",
             statusIcon: {
               image: {
                 src: images.common.amyIcon,
@@ -3023,6 +3023,7 @@ const Sprint4: React.FC<Props> = () => {
                 styleValue: {},
               },
               rightLabel: {
+                negative: true,
                 TimeStamp: "09:53:55AM",
                 styleTimeStamp: {},
                 value: "RM 236.67",

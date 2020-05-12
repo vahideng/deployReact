@@ -37,6 +37,7 @@ interface LogoutProps {
       styleValue?:CSSProperties;
     },
     rightLabel: {
+      negative?: boolean,
       TimeStamp: string,
       styleTimeStamp?:CSSProperties,
       value:string,
