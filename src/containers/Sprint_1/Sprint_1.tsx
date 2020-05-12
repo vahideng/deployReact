@@ -1447,6 +1447,10 @@ class Sprint1 extends Component<Props, State> {
                   name: "Duitnow2",
                   size: 30,
                 },
+                image: {
+                  source: images.common.sadAmyIcon,
+                  imageStyle: { width: 30 }
+                },
                 accountTitle: "Savings/Current Accounts",
                 children: (
                   <div

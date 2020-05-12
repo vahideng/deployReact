@@ -15,11 +15,22 @@
   position: absolute;
   background-color: #f9f9f9;
   width: 100%;
-
   overflow-y: auto;
-  overflow: scroll;
+  overflow-x: hidden;
   -webkit-overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.DropdownContent::-webkit-scrollbar-thumb {
+  // background-color: #DEDEDE;
+  border-left: 2px solid #DEDEDE;
+}
+.DropdownContent::-webkit-scrollbar {
+  width: 8px;
+}
+.DropdownContent::-webkit-scrollbar-track {
+  padding: 8px 0;
+  background-color: transparent;
 }
 
 .DropdownContent p {

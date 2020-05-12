@@ -74,6 +74,10 @@ const VerticalTabs: React.FC<Props> = ({
                           color: item.icon.color,
                           size: item.icon.size,
                         }}
+                        image={{
+                          source: item?.image?.source,
+                          imageStyle: item?.image?.imageStyle
+                        }}
                         accountTitle={`${minimize ? "" : item.accountTitle}`}
                         accountTitle2={`${
                           minimize

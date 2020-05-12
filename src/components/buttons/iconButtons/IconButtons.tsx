@@ -35,7 +35,8 @@ const IconButtons: React.FC<Props> = ({
           return (
             <div
               id={`${testId}-0${index}`}
-              className={classes.IconButtonsWrapper}
+              // className={classes.IconButtonsWrapper}
+              style={{ marginRight: index === list.length - 1 ? 0 : '2rem' }}
               key={index}
               onClick={() => onButtonClick(item, index)}
             >
