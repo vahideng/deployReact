@@ -12,8 +12,8 @@ interface Props {
   outerIconColor?: string;
   icon?: { name?: string; color?: string; size?: number };
   image?: { src: string; alt?: string };
-  outerRoundSize?: any;
-  innerRoundSize?: any;
+  outerRoundSize?: number | string;
+  innerRoundSize?: number | string;
 }
 
 const SettingSummary: React.FC<Props> = ({
