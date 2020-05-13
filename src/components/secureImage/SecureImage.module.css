@@ -20,6 +20,10 @@
   position: relative;
 }
 
+.SecureImageMainRes {
+  width: 100%;
+}
+
 .SecureImageBG {
   width: 60rem;
   height: 30rem;
