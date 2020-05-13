@@ -198,7 +198,8 @@ const Sprint4: React.FC<Props> = () => {
               list={[
                 {
                   leftLabel: "To",
-                  rightLabel: "Saving Account A vHISSaving Account A vHISSavit A v asdasd sada sadsaSDS Savingving Account A vHISSavit A v asdasd sada sadsaSDS Savingving Account A vHISSavit A v asdasd sada sadsaSDS Saving Account A vHISSaving Account A vHISSavit A v sad sada sadsaSDS",
+                  rightLabel:
+                    "Saving Account A vHISSaving Account A vHISSavit A v asdasd sada sadsaSDS Savingving Account A vHISSavit A v asdasd sada sadsaSDS Savingving Account A vHISSavit A v asdasd sada sadsaSDS Saving Account A vHISSaving Account A vHISSavit A v sad sada sadsaSDS",
                   approved: true,
                   details: ["8881019596535 | AmBank"],
                   amount: {
@@ -2838,7 +2839,11 @@ const Sprint4: React.FC<Props> = () => {
           testId={"testId"}
           responsive
           statusIcon={{
-            icon: "Fail",
+            icon: { name: "Fail" },
+            // image: {
+            //   src:
+            //     "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80",
+            // },
             iconColor: { top: "#FD8585", bottom: "#FF2222" },
             outerIconColor: "#FFEBEE",
           }}

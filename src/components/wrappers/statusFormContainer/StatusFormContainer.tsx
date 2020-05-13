@@ -11,8 +11,8 @@ interface Props {
       bottom: string;
     };
     outerIconColor: string;
-    icon?: string;
-    image?: any;
+    icon?: { name?: string; color?: string; size?: number };
+    image?: { src: string; alt?: string };
   };
 
   children?: ReactNode;
@@ -37,15 +37,12 @@ const StatusFormContainer: React.FC<Props> = ({
             <StatusIcon
               outerIconColor={statusIcon.outerIconColor}
               testId={statusIcon.testId}
-              icon={{
-                name: !!statusIcon ? statusIcon.icon : "",
-                size: 35,
-              }}
+              icon={!!statusIcon && statusIcon.icon}
               iconColor={{
                 top: statusIcon.iconColor.top,
                 bottom: statusIcon.iconColor.bottom,
               }}
-              image={!!statusIcon ? statusIcon.image : ""}
+              image={!!statusIcon.image && statusIcon.image}
               outerRoundSize={"5.625rem"}
               innerRoundSize={"4.3125rem"}
             />

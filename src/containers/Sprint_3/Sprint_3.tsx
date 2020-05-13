@@ -978,6 +978,48 @@ const Sprint3: React.FC<Props> = () => {
                 </div>
               ),
             },
+            {
+              id: "id-3",
+              title: "Macbook Pro",
+              children: (
+                <div>
+                  <AmListItem
+                    key={`accordionCollapseList-id1-1`}
+                    testId={`accordionCollapseList-id1-1`}
+                    title={"ItemName"}
+                    icon={<Icon icon={"Duitnow2"} size={25} />}
+                    status={
+                      <Icon icon={"accent-tick"} size={20} color={"#36A03E"} />
+                    }
+                  />
+                  <AmListItem
+                    key={`accordionCollapseList-id12-2`}
+                    testId={`accordionCollapseList-id2-2`}
+                    title={"ItemName"}
+                    icon={<Icon icon={"Duitnow1"} size={25} />}
+                    status={
+                      <Icon icon={"accent-tick"} size={20} color={"#36A03E"} />
+                    }
+                  />
+                  <AmListItem
+                    key={`accordionCollapseList-id12-2`}
+                    testId={`accordionCollapseList-id2-2`}
+                    title={"ItemName"}
+                    icon={
+                      <img
+                        width={27}
+                        src={
+                          "https://www.ambankgroup.com/eng/Business/PublishingImages/DuitNowLogo.jpg"
+                        }
+                      />
+                    }
+                    status={
+                      <Icon icon={"accent-tick"} size={20} color={"#36A03E"} />
+                    }
+                  />
+                </div>
+              ),
+            },
           ]}
         ></AmAccordion>
         <div
@@ -1154,7 +1196,11 @@ const Sprint3: React.FC<Props> = () => {
           clickOnArrow={() => setDropdown(!showDropdown)}
           showDropdown={showDropdown}
           dropdownData={[
-            { value: "ambank", label: "am aHSH ags as jhasgu AHGSGa haGSY aGYUS gys dsads sda das das das das dsa da ads  dsa" },
+            {
+              value: "ambank",
+              label:
+                "am aHSH ags as jhasgu AHGSGa haGSY aGYUS gys dsads sda das das das das dsa da ads  dsa",
+            },
             { value: "Alpeh", label: "alp" },
             { value: "ambank", label: "am" },
             { value: "Alpeh", label: "alp" },
@@ -1187,8 +1233,8 @@ const Sprint3: React.FC<Props> = () => {
           inputHandleChange={(item) => alert(item.target.value)}
           placeholder="place holder"
         />
-        </div>
-        {/* <AmDropdown
+      </div>
+      {/* <AmDropdown
           max="200px"
           type="text"
           readOnly={false}
@@ -1549,7 +1595,7 @@ const Sprint3: React.FC<Props> = () => {
               label: "EXAMPLE",
               value: "TEST",
               closeIconClickHandler: () => alert("clear Unsuccessful"),
-            }
+            },
           ]}
         />
       </CenteredDiv>
@@ -2185,7 +2231,7 @@ const Sprint3: React.FC<Props> = () => {
       >
         <StatusFormContainer
           statusIcon={{
-            icon: "Fail",
+            icon: { name: "Fail" },
             iconColor: { top: "#FD8585", bottom: "#FF2222" },
             outerIconColor: "#FFEBEE",
           }}
@@ -2331,15 +2377,22 @@ const Sprint3: React.FC<Props> = () => {
                     }}
                   />
                 </div>
-                <div style={{ display: 'flex', marginTop: "1rem", marginBottom: "3rem" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    marginTop: "1rem",
+                    marginBottom: "3rem",
+                  }}
+                >
                   <PrimaryButton
                     shadowed
                     title="No"
                     buttonStyle={{
-                      background: 'linear-gradient(180deg, #F6F6F3 0%, #EAE9E3 100%)',
+                      background:
+                        "linear-gradient(180deg, #F6F6F3 0%, #EAE9E3 100%)",
                     }}
                     containerStyle={{
-                      marginRight: '.5rem'
+                      marginRight: ".5rem",
                     }}
                     height="3rem"
                     minWidth="15rem"

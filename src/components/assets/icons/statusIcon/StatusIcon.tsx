@@ -4,12 +4,12 @@ import Icon from "../icon";
 
 interface Props {
   testId?: string;
-  iconColor?: any;
+  iconColor?: { top?: string; bottom?: string };
   outerIconColor?: string;
   icon?: { name?: string; color?: string; size?: number };
-  image?: any;
-  outerRoundSize?: any;
-  innerRoundSize?: any;
+  image?: { src: string; alt?: string };
+  outerRoundSize?: number | string;
+  innerRoundSize?: number | string;
   small?: boolean;
 }
 
