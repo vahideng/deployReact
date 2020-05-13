@@ -135,6 +135,10 @@
   display: flex;
 }
 
+.ItemTitleContainer p {
+  text-align: justify;
+}
+
 .AmountContainer {
   padding: 0 !important;
   margin: 0 !important;
