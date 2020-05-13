@@ -215,29 +215,30 @@ const Sprint2: React.FC<Props> = () => {
                     textAlign: "center",
                     padding: "1rem",
                   }}
+                ></div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    marginTop: "1rem",
+                    marginBottom: "3rem",
+                  }}
                 >
-                  
-                </div>
-                <div style={{ display: 'flex', flexDirection:"column", marginTop: "1rem", marginBottom: "3rem" }}>
                   <PrimaryButton
                     shadowed
                     title="No"
                     buttonStyle={{
-                      background: 'linear-gradient(180deg, #F6F6F3 0%, #EAE9E3 100%)',
+                      background:
+                        "linear-gradient(180deg, #F6F6F3 0%, #EAE9E3 100%)",
                     }}
                     containerStyle={{
-                      marginRight: '.5rem'
+                      marginRight: ".5rem",
                     }}
                     height="3rem"
                     minWidth="15rem"
                     titleColor="#000"
-                   
                   />
-                  <PrimaryButton
-                    title="Yes"
-                    minWidth="15rem"
-                    
-                  />
+                  <PrimaryButton title="Yes" minWidth="15rem" />
                 </div>
               </div>
             }
@@ -408,90 +409,96 @@ const Sprint2: React.FC<Props> = () => {
         title="Grand Prize RM 1 Million Cash"
       />
       <Title>Transaction Limit List</Title>
-      <Row
-        style={{
-          background: "#FFFFFF",
-          boxShadow: "0px 2px 7px rgba(0, 0, 0, 0.123279)",
-          borderRadius: "20px 20px 0px 0px",
-          margin: "24px 20% auto",
-        }}
-      >
-        <Col
-          sm={3}
-          style={{
-            borderRight: "1px solid #DEDEDE",
-            padding: "0",
-          }}
-        ></Col>
-        <Col sm={9} style={{ padding: "0" }}>
-          <TransactionLimitList
-            selectedIndex={3}
-            list={[
-              {
-                label: "AmBank BonusLink Visa BlackGold",
-                subDetail: "7565 8767 5821 5409",
-                onClick: (item, index) =>
-                  alert(`${JSON.stringify(item)},Index: ${index}`),
-                rightLabelColor: "red",
-                rightLabel: "Default",
-                cardImg: LocalImages.common.card,
-                notify: true,
-              },
-              {
-                label: "Change Password",
-                subDetail: "Password last change: 0 day ago",
-                onClick: (item, index) =>
-                  alert(`${JSON.stringify(item)},Index: ${index}`),
-              },
-              {
-                label: "Investments",
-                subDetail: "Password last change: 0 day ago",
-                onClick: (item, index) =>
-                  alert(`${JSON.stringify(item)},Index: ${index}`),
-                rightLabelColor: "",
-                rightLabel: "",
 
-                cardImg: LocalImages.common.card,
-              },
-              {
-                label: "Online Shopping",
-                subDetail: "Password last change: 0 day ago",
-                onClick: (item, index) =>
-                  alert(`${JSON.stringify(item)},Index: ${index}`),
-                rightLabelColor: "green",
-                rightLabel: "Default",
-              },
-              {
-                label: "FPX Specific Merchant",
-                subDetail: "Password last change: 0 day ago",
-                onClick: (item, index) =>
-                  alert(`${JSON.stringify(item)},Index: ${index}`),
-                rightLabelColor: "#000000",
-                rightLabel: "Show",
-              },
-            ]}
-            testId="testId"
-          />
-          <TransactionLimitList
-            selectedIndex={1}
-            small
-            list={[
-              {
-                label: "DuitNow ID",
+      <div style={{ width: "30rem" }}>
+        <TransactionLimitList
+          selectedIndex={3}
+          list={[
+            {
+              label: "AmBank BonusLink Visa BlackGold",
+              subDetail: "7565 8767 5821 5409",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+              rightLabelColor: "red",
+              rightLabel: "Default",
+              cardImg: LocalImages.common.card,
+              notify: true,
+            },
+            {
+              label: "Change Password",
+              subDetail: "Password last change: 0 day ago",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+            },
+            {
+              label: "Investments",
+              subDetail: "Password last change: 0 day ago",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+              rightLabelColor: "",
+              rightLabel: "",
 
-                onClick: (item, index) =>
-                  alert(`${JSON.stringify(item)},Index: ${index}`),
-              },
-              {
-                label: "DuitNow QR",
-                onClick: (item, index) =>
-                  alert(`${JSON.stringify(item)},Index: ${index}`),
-              },
-            ]}
-            testId="testId"
-          />
-        </Col>
-      </Row>
+              cardImg: LocalImages.common.card,
+            },
+            {
+              label: "Online Shopping",
+              subDetail: "Password last change: 0 day ago",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+              rightLabelColor: "green",
+              rightLabel: "Default",
+            },
+            {
+              label: "FPX Specific Merchant",
+              subDetail: "Password last change: 0 day ago",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+              rightLabelColor: "#000000",
+              rightLabel: "Show",
+            },
+          ]}
+          testId="testId"
+        />
+      </div>
+      <TransactionLimitList
+        selectedIndex={1}
+        small
+        list={[
+          {
+            label: "DuitNow ID",
+
+            onClick: (item, index) =>
+              alert(`${JSON.stringify(item)},Index: ${index}`),
+          },
+          {
+            label: "DuitNow QR",
+            onClick: (item, index) =>
+              alert(`${JSON.stringify(item)},Index: ${index}`),
+          },
+        ]}
+        testId="testId"
+      />
+
+      <>
+        <TransactionLimitList
+          selectedIndex={1}
+          small
+          list={[
+            {
+              label: "DuitNow ID",
+
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+            },
+            {
+              label: "DuitNow QR",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+            },
+          ]}
+          testId="testId"
+        />
+      </>
       <Title>BoxSlider &larr;---&rarr; BoxContent</Title>
       <Row>
         <Col xs={0} md={7}>

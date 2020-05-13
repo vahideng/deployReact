@@ -38,6 +38,8 @@ import LocalImages from "src/components/assets/images";
 import Logout from "src/components/Logout/Logout";
 import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
 import TextWithDetails from "src/components/infographic/textWithDetails/TextWithDetails";
+import Box from "src/components/wrappers/box/Box";
+import SecureImage from "src/components/secureImage/SecureImage";
 const {
   B_13_ORANGE_463,
   R_13_GREY444,
@@ -379,40 +381,96 @@ const Sprint4: React.FC<Props> = () => {
         />
       </CenteredDiv>
       <Title>Box_V2 (Update - Responsive)</Title>
-      <Box_V2
-        hideButton={true}
-        responsive={true}
-        darkShadow
-        split={true}
-        leftTitle={"Cancel"}
-        onLeftButton={() => alert("Cancel")}
-        rightTitle={"Login"}
-        onRightButton={() => alert("Login")}
-        boxChildren={
-          <div style={{ padding: "3rem 1.5rem" }}>
-            <InputField
-              responsive={true}
-              notValid={true}
-              isSecure
-              errorMessage={{
-                testId: "testId",
-                errorText: "The TAC is incorrect",
-                subText: "Please try again.",
-              }}
-              type="password"
-              clearClickHandler={() => setFormValue("")}
-              clearIcon={true}
-              label="Username"
-              icon={{ name: "Account-2" }}
-              value={formValue}
-              handleChange={(event) => {
-                setFormValue(event.target.value);
-                console.log(event.target.value);
-              }}
-            />
-          </div>
-        }
-      />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "100vh",
+          background:
+            "url(https://static.vecteezy.com/system/resources/previews/000/547/469/large_2x/abstract-blurred-background-with-bokeh-sparkling-lights-vector.jpg) center center / cover",
+        }}
+      >
+        <div style={{ width: "90%" }}>
+          <Box
+            title={"Login"}
+            leftTitle={"LeftTitle"}
+            rightTitle={"rightTitle"}
+            onSelect={(obj: any) => console.log(obj)}
+            tabTitles={["Security", "Login", "Contact Us"]}
+            split={true}
+            content={[
+              <div>
+                <SecureImage
+                  testId="secure_image_testid"
+                  image={images.common.SampleSecureImage}
+                />
+              </div>,
+              <>
+                <InputField
+                  tipChildren={<p>test</p>}
+                  type="text"
+                  clearClickHandler={() => alert("clear")}
+                  clearIcon={false}
+                  label="Username"
+                  icon={{ name: "Account-2" }}
+                  value={""}
+                  handleChange={(event) => {
+                    alert(event);
+                  }}
+                />
+                <div style={{ paddingTop: 30 }}>
+                  <TextButton
+                    testId="testId"
+                    buttonText="Forgot username/password?"
+                    onTextClick={(id) => {
+                      alert(`${id} clicked`);
+                    }}
+                  />
+                </div>
+              </>,
+            ]}
+          />
+
+          <p style={{ margin: "100px 0 20px 20px" }}>Box V2 &darr;</p>
+          <Box_V2
+            hideButton={true}
+            responsive={true}
+            darkShadow
+            split={true}
+            leftTitle={"Cancel"}
+            onLeftButton={() => alert("Cancel")}
+            rightTitle={"Login"}
+            onRightButton={() => alert("Login")}
+            boxChildren={
+              <div style={{ padding: "3rem 1.5rem" }}>
+                <InputField
+                  tipChildren={<p>test</p>}
+                  responsive={true}
+                  notValid={true}
+                  isSecure
+                  errorMessage={{
+                    testId: "testId",
+                    errorText: "The TAC is incorrect",
+                    subText: "Please try again.",
+                  }}
+                  type="password"
+                  clearClickHandler={() => setFormValue("")}
+                  clearIcon={true}
+                  label="Username"
+                  icon={{ name: "Account-2" }}
+                  value={formValue}
+                  handleChange={(event) => {
+                    setFormValue(event.target.value);
+                    console.log(event.target.value);
+                  }}
+                />
+              </div>
+            }
+          />
+        </div>
+      </div>
       <Title>InputField</Title>
       <div style={{ paddingLeft: "35vw" }}>
         <InputField
@@ -2581,137 +2639,137 @@ const Sprint4: React.FC<Props> = () => {
         />
       </CenteredDiv>
       <Title>TransactionIconList(Update)</Title>
-      <CenteredDiv>
-        <div style={{ width: "57.1875em" }}>
-          <TransactionIconList
-            testId={"testId"}
-            list={[
-              {
-                date: "Today",
-                expandedIndexes: [0],
-                transactions: [
-                  {
-                    icon: "Transfer",
-                    iconBgColor: "orange",
-                    iconColor: "white",
-                    iconSize: 28,
-                    label1: "TRANSFER TO",
-                    label2: "SEEN OPTICS ",
-                    statusLabel: "SUCCESSFUL",
-                    statusLabelColor: "#36A03E",
-                    changeLabel: "-",
-                    changeLabelColor: "#F73C4A",
-                    amount: "RM 236.78",
-                    actionLabel: "Repeat",
-                    actionIcon: "Repeat",
-                    onActionButtonClick: () => {
-                      alert("Repeat");
+      <>
+        {/* <div style={{ width: ".1875em" }}> */}
+        <TransactionIconList
+          testId={"testId"}
+          list={[
+            {
+              date: "Today",
+              expandedIndexes: [0],
+              transactions: [
+                {
+                  icon: "Transfer",
+                  iconBgColor: "orange",
+                  iconColor: "white",
+                  iconSize: 28,
+                  label1: "TRANSFER TO",
+                  label2: "SEEN OPTICS ",
+                  statusLabel: "SUCCESSFUL",
+                  statusLabelColor: "#36A03E",
+                  changeLabel: "-",
+                  changeLabelColor: "#F73C4A",
+                  amount: "RM 236.78",
+                  actionLabel: "Repeat",
+                  actionIcon: "Repeat",
+                  onActionButtonClick: () => {
+                    alert("Repeat");
+                  },
+                  details: [
+                    {
+                      label1: "From Account",
+                      value1: "15806389266 - Savings Account A",
+                      label2: "Recipient Reference",
+                      value2: "May - Rental",
+                      actionLabel: "Add to Fav",
+                      actionIcon: "Love",
+                      onActionButtonClick: () => {
+                        alert("Fav");
+                        setActionBtnStatus(!actionBtnStatus);
+                      },
                     },
-                    details: [
-                      {
-                        label1: "From Account",
-                        value1: "15806389266 - Savings Account A",
-                        label2: "Recipient Reference",
-                        value2: "May - Rental",
-                        actionLabel: "Add to Fav",
-                        actionIcon: "Love",
-                        onActionButtonClick: () => {
-                          alert("Fav");
-                          setActionBtnStatus(!actionBtnStatus);
-                        },
-                      },
-                      {
-                        label1: "",
-                        value1: "",
-                        label2: "Other Details",
-                        value2: "-",
-                        //  actionLabel: 'View Receipt',
-                        // actionIcon: ''
-                      },
-                    ],
-                  },
-                  {
-                    icon: "Transfer",
-                    iconBgColor: "blue",
-                    iconColor: "white",
-                    iconSize: 28,
-                    label1: "TRANSFER TO",
-                    label2: "SEEN OPTICS ",
-                    statusLabel: "SUCCESSFUL",
-                    statusLabelColor: "#36A03E",
-                    changeLabel: "-",
-                    changeLabelColor: "#F73C4A",
-                    amount: "RM 236.78",
-                    actionLabel: "Repeat",
-                    actionIcon: "Repeat",
-                    details: [
-                      {
-                        label1: "From Account",
-                        value1: "15806389266 - Savings Account A",
-                        label2: "Recipient Reference",
-                        value2: "May - Rental",
-                        actionLabel: "Add to Fav",
-                        actionIcon: "",
-                      },
-                      {
-                        label1: "",
-                        value1: "",
-                        label2: "Other Details",
-                        value2: "-",
-                        actionLabel: "View Receipt",
-                        actionIcon: "",
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                date: "12 Jan 2020",
-                expandedIndexes: [],
-                transactions: [
-                  {
-                    icon: "Loan",
-                    iconBgColor: "red",
-                    iconColor: "white",
-                    iconSize: 28,
-                    label1: "TRANSFER TO",
-                    label2: "LOREM IPSUM SIT DOLOR AMET DAMANSARA PERDANA ",
-                    statusLabel: "SUCCESSFUL",
-                    statusLabelColor: "#36A03E",
-                    changeLabel: "+",
-                    changeLabelColor: "#36A03E",
-                    amount: "RM 1,236.78",
-                    actionLabel: "Repeat",
-                    actionIcon: "Repeat",
-                    details: [
-                      {
-                        label1: "From Account",
-                        value1: "15806389266 - Savings Account A",
-                        label2: "Recipient Reference",
-                        value2: "May - Rental",
-                        actionLabel: "Add to Fav",
-                        actionIcon: "",
-                      },
-                      {
-                        label1: "",
-                        value1: "",
-                        label2: "Other Details",
-                        value2: "-",
-                        actionLabel: "View Receipt",
-                        actionIcon: "",
-                      },
-                    ],
-                  },
-                ],
-              },
-            ]}
-            onTransactionClick={(item, sectionIndex, itemIndex) => {
-              alert("check : " + item);
-              alert(`${sectionIndex} - ${itemIndex}`);
-            }}
-          />
-        </div>
-      </CenteredDiv>
+                    {
+                      label1: "",
+                      value1: "",
+                      label2: "Other Details",
+                      value2: "-",
+                      //  actionLabel: 'View Receipt',
+                      // actionIcon: ''
+                    },
+                  ],
+                },
+                {
+                  icon: "Transfer",
+                  iconBgColor: "blue",
+                  iconColor: "white",
+                  iconSize: 28,
+                  label1: "TRANSFER TO",
+                  label2: "SEEN OPTICS ",
+                  statusLabel: "SUCCESSFUL",
+                  statusLabelColor: "#36A03E",
+                  changeLabel: "-",
+                  changeLabelColor: "#F73C4A",
+                  amount: "RM 236.78",
+                  actionLabel: "Repeat",
+                  actionIcon: "Repeat",
+                  details: [
+                    {
+                      label1: "From Account",
+                      value1: "15806389266 - Savings Account A",
+                      label2: "Recipient Reference",
+                      value2: "May - Rental",
+                      actionLabel: "Add to Fav",
+                      actionIcon: "",
+                    },
+                    {
+                      label1: "",
+                      value1: "",
+                      label2: "Other Details",
+                      value2: "-",
+                      actionLabel: "View Receipt",
+                      actionIcon: "",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              date: "12 Jan 2020",
+              expandedIndexes: [],
+              transactions: [
+                {
+                  icon: "Loan",
+                  iconBgColor: "red",
+                  iconColor: "white",
+                  iconSize: 28,
+                  label1: "TRANSFER TO",
+                  label2: "LOREM IPSUM SIT DOLOR AMET DAMANSARA PERDANA ",
+                  statusLabel: "SUCCESSFUL",
+                  statusLabelColor: "#36A03E",
+                  changeLabel: "+",
+                  changeLabelColor: "#36A03E",
+                  amount: "RM 1,236.78",
+                  actionLabel: "Repeat",
+                  actionIcon: "Repeat",
+                  details: [
+                    {
+                      label1: "From Account",
+                      value1: "15806389266 - Savings Account A",
+                      label2: "Recipient Reference",
+                      value2: "May - Rental",
+                      actionLabel: "Add to Fav",
+                      actionIcon: "",
+                    },
+                    {
+                      label1: "",
+                      value1: "",
+                      label2: "Other Details",
+                      value2: "-",
+                      actionLabel: "View Receipt",
+                      actionIcon: "",
+                    },
+                  ],
+                },
+              ],
+            },
+          ]}
+          onTransactionClick={(item, sectionIndex, itemIndex) => {
+            alert("check : " + item);
+            alert(`${sectionIndex} - ${itemIndex}`);
+          }}
+        />
+        {/* </div> */}
+      </>
       <Title>Form Container disabled state.</Title>
       <CenteredDiv>
         <FormContainer
@@ -2871,7 +2929,6 @@ const Sprint4: React.FC<Props> = () => {
             },
           ]}
           Btntitle={"Continue With Transaction"}
-          Btnwidth={"25rem"}
           onButtonClick={() => alert("check")}
           statusText={" You will be redirected to FPX status page in 9 seconds"}
         />
@@ -3004,7 +3061,7 @@ const Sprint4: React.FC<Props> = () => {
           responsive
           header={{
             title: "You are logged out. Thank you for banking with AmBank",
-            subTitle: "Logged out on Tueday 14/05/2019, 03:06PM",
+            subTitle: "Logged out on Tuesday 14/05/2019, 03:06PM",
             statusIcon: {
               image: {
                 src: images.common.amyIcon,
@@ -3023,6 +3080,7 @@ const Sprint4: React.FC<Props> = () => {
                 styleValue: {},
               },
               rightLabel: {
+                negative: true,
                 TimeStamp: "09:53:55AM",
                 styleTimeStamp: {},
                 value: "RM 236.67",
