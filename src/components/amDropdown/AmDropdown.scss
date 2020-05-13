@@ -18,7 +18,9 @@
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-y: auto;
+
   -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
 }
 
 .DropdownContent::-webkit-scrollbar-thumb {

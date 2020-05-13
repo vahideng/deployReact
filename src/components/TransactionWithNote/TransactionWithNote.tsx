@@ -98,9 +98,9 @@ const TransactionWithNote: React.FC<TransactionWithNoteProps> = ({
            {statusText}
         </R_15_BLACK>
         <PrimaryButton
-         responsive={responsive}
+          responsive={responsive}
           title={Btntitle}
-          width={!!Btnwidth ? Btnwidth : '20.43rem'}
+          width={Btnwidth || '25rem'}
           onButtonClick={onButtonClick}
         />
         </CenteredCol>

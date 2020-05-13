@@ -2935,7 +2935,6 @@ const Sprint4: React.FC<Props> = () => {
             },
           ]}
           Btntitle={"Continue With Transaction"}
-          Btnwidth={"25rem"}
           onButtonClick={() => alert("check")}
           statusText={" You will be redirected to FPX status page in 9 seconds"}
         />
