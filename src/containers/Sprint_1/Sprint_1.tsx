@@ -780,7 +780,7 @@ class Sprint1 extends Component<Props, State> {
         <div style={{ backgroundColor: "#EEEEEE", padding: 100 }}>
           <FormContainer
             statusIcon={{
-              icon: "Register-1",
+              icon: { name: "Register-1" },
               iconColor: { top: "#94EC9B", bottom: "#5BB362" },
               // image: {
               //   src: images.common.amyIcon,
@@ -1449,7 +1449,7 @@ class Sprint1 extends Component<Props, State> {
                 },
                 image: {
                   source: images.common.sadAmyIcon,
-                  imageStyle: { width: 30 }
+                  imageStyle: { width: 30 },
                 },
                 accountTitle: "Savings/Current Accounts",
                 children: (

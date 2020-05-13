@@ -31,6 +31,7 @@ interface Props {
   testId?: string;
   selectedIndex?: number;
   small?: boolean;
+  style?: CSSProperties;
 }
 
 const TransactionLimitList: React.FC<Props> = ({

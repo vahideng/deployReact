@@ -1,18 +1,18 @@
-import React from 'react';
-import classes from './Logout.module.css';
-import Paragraphs from '../assets/typography';
+import React from "react";
+import classes from "./Logout.module.css";
+import Paragraphs from "../assets/typography";
 import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
 import Icon from "src/components/assets/icons/icon";
-import LogoutList from '../lists/LogoutList/LogoutList';
-import { CSSProperties } from 'styled-components';
-import PrimaryButton from '../buttons/primaryButton/PrimaryButton';
+import LogoutList from "../lists/LogoutList/LogoutList";
+import { CSSProperties } from "styled-components";
+import PrimaryButton from "../buttons/primaryButton/PrimaryButton";
 const { B_24_BLACK } = Paragraphs;
 interface LogoutProps {
   testId: string;
-  responsive?:boolean;
+  responsive?: boolean;
   btnContainerStyle?: CSSProperties;
-  btntitle:string;
-  btnwidth?:string;
+  btntitle: string;
+  btnwidth?: string;
   onButtonClick: () => void;
   header?: {
     statusIcon?: {
@@ -22,34 +22,33 @@ interface LogoutProps {
         bottom: string;
       };
       outerIconColor: string;
-      icon?: any;
-      image?: any;
+      icon?: { name?: string; color?: string; size?: number };
+      image?: { src: string; alt?: string };
     };
     title?: string;
     titleStyle?: CSSProperties;
     subTitle?: string;
   };
   listChildren: {
-    leftLabel:{
-      contentType:string;
-      styleContent?:CSSProperties,
-      value:string,
-      styleValue?:CSSProperties;
-    },
+    leftLabel: {
+      contentType: string;
+      styleContent?: CSSProperties;
+      value: string;
+      styleValue?: CSSProperties;
+    };
     rightLabel: {
-      negative?: boolean,
-      TimeStamp: string,
-      styleTimeStamp?:CSSProperties,
-      value:string,
-      styleValue?:CSSProperties
-    },
-    middleLabel:{
-      content : string,
-      styleContent?:CSSProperties,
-    }
+      negative?: boolean;
+      TimeStamp: string;
+      styleTimeStamp?: CSSProperties;
+      value: string;
+      styleValue?: CSSProperties;
+    };
+    middleLabel: {
+      content: string;
+      styleContent?: CSSProperties;
+    };
   }[];
 }
-
 
 const Logout: React.FC<LogoutProps> = ({
   testId,
@@ -60,19 +59,17 @@ const Logout: React.FC<LogoutProps> = ({
   btnContainerStyle,
   btntitle,
   btnwidth,
-
 }) => {
   let containerCls = classes.StatusFormContainerCurve;
   let BtnWidth = btnwidth;
   if (responsive) {
-    containerCls = `${containerCls} ${classes.StatusFormContainerCurveResponive}`
-  } 
+    containerCls = `${containerCls} ${classes.StatusFormContainerCurveResponive}`;
+  }
 
-  const {statusIcon,title,subTitle} = header;
+  const { statusIcon, title, subTitle } = header;
 
   return (
-
-<div id={testId} className={classes.StatusFormContainerMain}>
+    <div id={testId} className={classes.StatusFormContainerMain}>
       <div className={containerCls} id={testId}>
         {!!statusIcon && (
           <>
@@ -80,56 +77,52 @@ const Logout: React.FC<LogoutProps> = ({
               <StatusIcon
                 outerIconColor={statusIcon.outerIconColor}
                 testId={statusIcon.testId}
-                icon={!!statusIcon ? statusIcon.icon : ""}
+                icon={!!statusIcon.icon && statusIcon.icon}
                 iconColor={{
                   top: statusIcon.iconColor.top,
-                  bottom: statusIcon.iconColor.bottom
+                  bottom: statusIcon.iconColor.bottom,
                 }}
-                image={!!statusIcon ? statusIcon.image : ""}
+                image={!!statusIcon.image && statusIcon.image}
               />
             </span>
           </>
         )}
         <span className={classes.CurveStyle}>
-            <Icon
-              icon="popup-curve"
-              color={"#FFFFFF"}
-              size={58}
-              style={{
-                width: '36.25rem',
-                position: 'absolute',
-                margin: 'auto',
-                display: 'block',
-                height: '100%',
-                left: '-100%',
-                right:' -100%'
-              }}
-            />
-          </span>
-          <div className={classes.StatusFormContainerContent}>
-            
-          <B_24_BLACK  className={classes.headerTitle} style={header.titleStyle}>
-              {title}
-        </B_24_BLACK>
+          <Icon
+            icon="popup-curve"
+            color={"#FFFFFF"}
+            size={58}
+            style={{
+              width: "36.25rem",
+              position: "absolute",
+              margin: "auto",
+              display: "block",
+              height: "100%",
+              left: "-100%",
+              right: " -100%",
+            }}
+          />
+        </span>
+        <div className={classes.StatusFormContainerContent}>
+          <B_24_BLACK className={classes.headerTitle} style={header.titleStyle}>
+            {title}
+          </B_24_BLACK>
 
-                  <p className={classes.subContent}>
-                  {subTitle}
-                  </p>     
+          <p className={classes.subContent}>{subTitle}</p>
           <LogoutList
-                    itemContainerStyle={{ padding: 0 }}
-                    responsive={responsive}
-                    list={listChildren}
-                  />
-          </div>
-          <div className={classes.btnClass} style={btnContainerStyle}>
-            <PrimaryButton
-              onButtonClick={onButtonClick}
-              title={btntitle}
-              responsive
-              width={BtnWidth}
-            />
+            itemContainerStyle={{ padding: 0 }}
+            responsive={responsive}
+            list={listChildren}
+          />
         </div>
-
+        <div className={classes.btnClass} style={btnContainerStyle}>
+          <PrimaryButton
+            onButtonClick={onButtonClick}
+            title={btntitle}
+            responsive
+            width={BtnWidth}
+          />
+        </div>
       </div>
     </div>
   );
@@ -137,7 +130,6 @@ const Logout: React.FC<LogoutProps> = ({
 
 export default Logout;
 
-Logout.defaultProps ={
-  responsive : false
-}
-
+Logout.defaultProps = {
+  responsive: false,
+};

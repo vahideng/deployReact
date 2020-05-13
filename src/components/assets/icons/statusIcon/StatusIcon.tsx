@@ -7,7 +7,7 @@ interface Props {
   iconColor?: any;
   outerIconColor?: string;
   icon?: { name?: string; color?: string; size?: number };
-  image?: any;
+  image?: { src: string; alt?: string };
   outerRoundSize?: any;
   innerRoundSize?: any;
   small?: boolean;
