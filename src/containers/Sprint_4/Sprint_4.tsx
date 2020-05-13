@@ -40,6 +40,7 @@ import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
 import TextWithDetails from "src/components/infographic/textWithDetails/TextWithDetails";
 import Box from "src/components/wrappers/box/Box";
 import SecureImage from "src/components/secureImage/SecureImage";
+import BackgroundSingle from "src/components/wrappers/backgroundSingle/BackgroundSingle";
 const {
   B_13_ORANGE_463,
   R_13_GREY444,
@@ -381,96 +382,101 @@ const Sprint4: React.FC<Props> = () => {
         />
       </CenteredDiv>
       <Title>Box_V2 (Update - Responsive)</Title>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          height: "100vh",
-          background:
-            "url(https://static.vecteezy.com/system/resources/previews/000/547/469/large_2x/abstract-blurred-background-with-bokeh-sparkling-lights-vector.jpg) center center / cover",
-        }}
+      <BackgroundSingle
+        style={{ width: "100%", height: "100vh", backgroundSize: "100% 100%" }}
+        image={
+          "https://static.vecteezy.com/system/resources/previews/000/547/469/large_2x/abstract-blurred-background-with-bokeh-sparkling-lights-vector.jpg"
+        }
       >
-        <div style={{ width: "90%" }}>
-          <Box
-            title={"Login"}
-            leftTitle={"LeftTitle"}
-            rightTitle={"rightTitle"}
-            onSelect={(obj: any) => console.log(obj)}
-            tabTitles={["Security", "Login", "Contact Us"]}
-            split={true}
-            content={[
-              <div>
-                <SecureImage
-                  testId="secure_image_testid"
-                  image={images.common.SampleSecureImage}
-                />
-              </div>,
-              <>
-                <InputField
-                  tipChildren={<p>test</p>}
-                  type="text"
-                  clearClickHandler={() => alert("clear")}
-                  clearIcon={false}
-                  label="Username"
-                  icon={{ name: "Account-2" }}
-                  value={""}
-                  handleChange={(event) => {
-                    alert(event);
-                  }}
-                />
-                <div style={{ paddingTop: 30 }}>
-                  <TextButton
-                    testId="testId"
-                    buttonText="Forgot username/password?"
-                    onTextClick={(id) => {
-                      alert(`${id} clicked`);
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div style={{ width: "96%" }}>
+            <Box
+              responsive={true}
+              title={"Login"}
+              leftTitle={"LeftTitle"}
+              rightTitle={"rightTitle"}
+              onSelect={(obj: any) => console.log(obj)}
+              tabTitles={["Security", "Login", "Contact Us"]}
+              split={true}
+              content={[
+                <div>
+                  <SecureImage
+                    responsive={true}
+                    testId="secure_image_testid"
+                    image={images.common.SampleSecureImage}
+                  />
+                </div>,
+                <>
+                  <InputField
+                    tipChildren={<p>test</p>}
+                    type="text"
+                    clearClickHandler={() => alert("clear")}
+                    clearIcon={false}
+                    label="Username"
+                    icon={{ name: "Account-2" }}
+                    value={""}
+                    handleChange={(event) => {
+                      alert(event);
+                    }}
+                  />
+                  <div style={{ paddingTop: 30 }}>
+                    <TextButton
+                      testId="testId"
+                      buttonText="Forgot username/password?"
+                      onTextClick={(id) => {
+                        alert(`${id} clicked`);
+                      }}
+                    />
+                  </div>
+                </>,
+              ]}
+            />
+
+            <p style={{ margin: "100px 0 20px 20px" }}>Box V2 &darr;</p>
+            <Box_V2
+              hideButton={true}
+              responsive={true}
+              darkShadow
+              split={true}
+              leftTitle={"Cancel"}
+              onLeftButton={() => alert("Cancel")}
+              rightTitle={"Login"}
+              onRightButton={() => alert("Login")}
+              boxChildren={
+                <div style={{ padding: "3rem 1.5rem" }}>
+                  <InputField
+                    tipChildren={<p>test</p>}
+                    responsive={true}
+                    notValid={true}
+                    isSecure
+                    errorMessage={{
+                      testId: "testId",
+                      errorText: "The TAC is incorrect",
+                      subText: "Please try again.",
+                    }}
+                    type="password"
+                    clearClickHandler={() => setFormValue("")}
+                    clearIcon={true}
+                    label="Username"
+                    icon={{ name: "Account-2" }}
+                    value={formValue}
+                    handleChange={(event) => {
+                      setFormValue(event.target.value);
+                      console.log(event.target.value);
                     }}
                   />
                 </div>
-              </>,
-            ]}
-          />
-
-          <p style={{ margin: "100px 0 20px 20px" }}>Box V2 &darr;</p>
-          <Box_V2
-            hideButton={true}
-            responsive={true}
-            darkShadow
-            split={true}
-            leftTitle={"Cancel"}
-            onLeftButton={() => alert("Cancel")}
-            rightTitle={"Login"}
-            onRightButton={() => alert("Login")}
-            boxChildren={
-              <div style={{ padding: "3rem 1.5rem" }}>
-                <InputField
-                  tipChildren={<p>test</p>}
-                  responsive={true}
-                  notValid={true}
-                  isSecure
-                  errorMessage={{
-                    testId: "testId",
-                    errorText: "The TAC is incorrect",
-                    subText: "Please try again.",
-                  }}
-                  type="password"
-                  clearClickHandler={() => setFormValue("")}
-                  clearIcon={true}
-                  label="Username"
-                  icon={{ name: "Account-2" }}
-                  value={formValue}
-                  handleChange={(event) => {
-                    setFormValue(event.target.value);
-                    console.log(event.target.value);
-                  }}
-                />
-              </div>
-            }
-          />
+              }
+            />
+          </div>
         </div>
-      </div>
+      </BackgroundSingle>
       <Title>InputField</Title>
       <div style={{ paddingLeft: "35vw" }}>
         <InputField
