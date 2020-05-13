@@ -125,14 +125,14 @@ const List: React.FC<Props> = ({
               <div className={classes.ListItemsDiv}>
                 <R_13_GREY444 className={classes.ListItemLeft}>{item.leftLabel}</R_13_GREY444>
                 <div className={classes.ListItemRightContent}>
-                  <Row className={classes.ItemTitleContainer}>
+                  <div className={classes.ItemTitleContainer}>
                     {item.approved && (
                       <span className={classes.ListTextRightIcon}>
                         <Icon icon="accent-tick" size={13} />
                       </span>
                     )}
                     <B_15_BLACK_444>{item.rightLabel}</B_15_BLACK_444>
-                  </Row>
+                  </div>
 
                   {!!item.details &&
                     item.details.map((detail, index) => {

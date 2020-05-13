@@ -197,7 +197,7 @@ const Sprint4: React.FC<Props> = () => {
               list={[
                 {
                   leftLabel: "To",
-                  rightLabel: "Saving Account A",
+                  rightLabel: "Saving Account A vHISSaving Account A vHISSavit A v asdasd sada sadsaSDS Savingving Account A vHISSavit A v asdasd sada sadsaSDS Savingving Account A vHISSavit A v asdasd sada sadsaSDS Saving Account A vHISSaving Account A vHISSavit A v sad sada sadsaSDS",
                   approved: true,
                   details: ["8881019596535 | AmBank"],
                   amount: {
@@ -210,6 +210,7 @@ const Sprint4: React.FC<Props> = () => {
 
                 {
                   leftLabel: "Date",
+                  approved: true,
                   rightLabel: "Transfer Now",
                   details: ["Today, 5 January 2019"],
                 },

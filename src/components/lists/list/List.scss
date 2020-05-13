@@ -48,6 +48,13 @@
 }
 .ListTextRightIcon {
   padding-right: 0.5rem;
+  margin: 0 !important;
+  padding-top: 4px;
+  align-self: baseline;
+  &svg {
+    vertical-align: middle;
+
+  }
 }
 .ListItemRightContent {
   padding: 0 !important;
@@ -62,15 +69,18 @@
   }
 }
 .ListItemLeft{
+  padding-right: 30%;
   @media (max-width: 576px) {
     max-width: 6.8125rem;
     width: 100%;
+    padding-right: 10%;
   }
 }
 .ItemTitleContainer {
   padding: 0 !important;
   margin: 0 !important;
   align-items: center;
+  display: flex;
 }
 
 .AmountContainer {
