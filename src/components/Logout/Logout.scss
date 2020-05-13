@@ -35,7 +35,8 @@
   padding: 2rem;
 }
   .headerTitle {
-    text-align: "center";
+    text-align: center;
+    line-height: 32px;
     @media (max-width:576px){
       text-align: "center";
       font-size: 18px !important;
