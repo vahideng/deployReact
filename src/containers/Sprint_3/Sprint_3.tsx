@@ -1154,7 +1154,7 @@ const Sprint3: React.FC<Props> = () => {
           clickOnArrow={() => setDropdown(!showDropdown)}
           showDropdown={showDropdown}
           dropdownData={[
-            { value: "ambank", label: "am" },
+            { value: "ambank", label: "am aHSH ags as jhasgu AHGSGa haGSY aGYUS gys dsads sda das das das das dsa da ads  dsa" },
             { value: "Alpeh", label: "alp" },
             { value: "ambank", label: "am" },
             { value: "Alpeh", label: "alp" },
@@ -1187,7 +1187,8 @@ const Sprint3: React.FC<Props> = () => {
           inputHandleChange={(item) => alert(item.target.value)}
           placeholder="place holder"
         />
-        <AmDropdown
+        </div>
+        {/* <AmDropdown
           max="200px"
           type="text"
           readOnly={false}
@@ -1269,7 +1270,7 @@ const Sprint3: React.FC<Props> = () => {
           inputHandleChange={(item) => alert(item.target.value)}
           placeholder="place holder"
         />
-      </div>
+      </div> */}
 
       <Title>Pie Chart Box</Title>
       <div

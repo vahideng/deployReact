@@ -19,7 +19,9 @@
   overflow-y: auto;
   overflow: scroll;
   -webkit-overflow-y: auto;
+
   -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
 }
 
 .DropdownContent p {
