@@ -2839,7 +2839,7 @@ const Sprint4: React.FC<Props> = () => {
           testId={"testId"}
           responsive
           statusIcon={{
-            icon: "Fail",
+            icon: { name: "Fail" },
             // image: {
             //   src:
             //     "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80",
