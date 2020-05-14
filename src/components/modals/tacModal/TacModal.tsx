@@ -5,6 +5,7 @@ import Paragraphs from "../../assets/typography";
 import FullButton from "../../buttons/primaryButton/PrimaryButton";
 import classes from "./TacModal.module.css";
 import Icon from "src/components/assets/icons/icon";
+import { CSSProperties } from "styled-components";
 const { R_15_GREY444, B_15_BLACK, R_14_BLACK, B_15_ORANGE_463 } = Paragraphs;
 
 interface Props {
@@ -39,6 +40,7 @@ interface Props {
   onCloseClick?: () => void;
   zIndex?: number;
   disabledInput?: boolean;
+  innerDivStyle?: CSSProperties;
 }
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
@@ -87,6 +89,7 @@ const TacModal: React.FC<Props> = (props) => {
     responsive,
     onClearIconHover,
     disabledInput,
+    innerDivStyle,
   } = props;
   const [modalStatus, setModalStatus] = useState(modalIsOpen);
   useEffect(() => {
@@ -114,6 +117,7 @@ const TacModal: React.FC<Props> = (props) => {
             <>{activeStatusChild}</>
           ) : (
             <div
+              style={innerDivStyle}
               id={testId}
               className={responsive ? TacMainInnerDivRes : TacMainInnerDiv}
             >

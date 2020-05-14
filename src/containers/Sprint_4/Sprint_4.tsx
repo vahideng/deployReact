@@ -3036,6 +3036,7 @@ const Sprint4: React.FC<Props> = () => {
       <Title>Redirect to mobile</Title>
       <CenteredDiv style={{ width: "100%", backgroundColor: "#EEEEEE" }}>
         <RedirectToMobile
+          // mainStyle={{ background: "red" }}
           backgroundImage={images.common.redirectBg}
           testId="test-id-1"
           logo={{ name: "amonline-white", size: 130 }}
