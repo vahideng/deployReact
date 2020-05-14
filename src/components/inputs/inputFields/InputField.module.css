@@ -158,4 +158,7 @@ input::-ms-clear {
   .InputFieldIconDiv input {
     width: 100% !important;
   }
+  .InputFieldInput {
+    width: 100% !important;
+  }
 }
