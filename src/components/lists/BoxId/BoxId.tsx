@@ -198,6 +198,7 @@ interface ActionPopoverProp {
 const ActionPopover = ({item, onDocumentClick}: ActionPopoverProp) => {
 
   const handleDocumentClick = (e: any) => {
+    console.log('e.target', e.target)
     if (!e.target || !e.target.className || !e.target.className.match) return
     if (e.target.className.match(/\bignore-click-bubble\b/)) {
       return
@@ -225,8 +226,8 @@ const ActionPopover = ({item, onDocumentClick}: ActionPopoverProp) => {
               }}
               className={`${classes.ButtonIconText} ignore-click-bubble`}
             >
-              <Icon icon={button.icon} size={25} />
-              <B_13_GREY444>{button.text}</B_13_GREY444>
+              <Icon className="ignore-click-bubble" icon={button.icon} size={25} />
+              <B_13_GREY444 className="ignore-click-bubble">{button.text}</B_13_GREY444>
             </button>
           </div>
         );
