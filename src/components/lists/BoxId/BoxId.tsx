@@ -225,8 +225,8 @@ const ActionPopover = ({item, onDocumentClick}: ActionPopoverProp) => {
               }}
               className={`${classes.ButtonIconText} ignore-click-bubble`}
             >
-              <Icon icon={button.icon} size={25} />
-              <B_13_GREY444>{button.text}</B_13_GREY444>
+              <Icon className="ignore-click-bubble" icon={button.icon} size={25} />
+              <B_13_GREY444 className="ignore-click-bubble">{button.text}</B_13_GREY444>
             </button>
           </div>
         );
