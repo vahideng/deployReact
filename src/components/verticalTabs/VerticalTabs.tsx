@@ -1,4 +1,4 @@
-import React, { useState, useEffect, CSSProperties } from "react";
+import React, { useState, CSSProperties } from "react";
 import { Tab, Nav } from "react-bootstrap";
 import VerticalTabSelection from "src/components/selections/verticalTabSelection/VerticalTabSelection";
 import Paragraphs from "../assets/typography";
@@ -25,23 +25,24 @@ const VerticalTabs: React.FC<Props> = ({
   tabHeight,
   WrapperStyle
 }) => {
-  const [defaultActiveKey, setDefaultActiveKey] = useState(
+  const [defaultActiveKey] = useState(
     defaultIndex ? defaultIndex : 0
   );
-  const lastIndex = data.length - 1;
-  useEffect(() => {
-    if (data) {
-      data.map((item: any, index: number) => {
-        if (item.selected) {
-          setDefaultActiveKey(index);
-        }
-      });
-    }
-  });
+  // const lastIndex = data.length - 1;
+  // useEffect(() => {
+  //   if (data) {
+  //     data.map((item: any, index: number) => {
+  //       if (item.selected) {
+  //         setDefaultActiveKey(index);
+  //       }
+  //     });
+  //   }
+  // });
+  // borderBottom:
+  // index == lastIndex ? "1px solid transparent" : "1px solid #dedede",
 
-  const customStyle = (index: number, borderRight: boolean) => ({
-    borderBottom:
-      index == lastIndex ? "1px solid transparent" : "1px solid #dedede",
+  const customStyle = ( borderRight: boolean) => ({
+  
     width: minimize ? tabWidth || "5.31rem" : tabWidth || "14.68rem",
     borderRightColor: borderRight
       ? selectedBorderColor
@@ -66,7 +67,6 @@ const VerticalTabs: React.FC<Props> = ({
                   <Nav.Item key={index}  style={tabHeight  && { height :tabHeight }} className={`${classes.Wrapper}`}>
                     <Nav.Link eventKey={index} className={`${classes.NavLink}`}>
                       <VerticalTabSelection
-                      
                         selected={item.selected}
                         onTileClick={() => item.onClick(index)}
                         icon={{
@@ -86,7 +86,7 @@ const VerticalTabs: React.FC<Props> = ({
                             ? item.accountTitle2
                             : ""
                         }`}
-                        tabStyle={customStyle(index, item.selected)}
+                        tabStyle={customStyle( item.selected)}
                       />
                     </Nav.Link>
                   </Nav.Item>
