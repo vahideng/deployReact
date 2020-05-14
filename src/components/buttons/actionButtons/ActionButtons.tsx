@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./ActionButtons.module.css";
 import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../../assets/typography";
-const { SB_11_WHITE } = Paragraphs;
+const { SB_10_WHITE } = Paragraphs;
 interface Props {
   onButtonClick: (item: any, index: number) => void;
   testId?: string;
@@ -19,7 +19,7 @@ const ActionButtons: React.FC<Props> = ({
   list,
   testId,
   onButtonClick,
-  expanded
+  expanded,
 }) => {
   return (
     <div className={classes.ActionButtonsMain} id={testId}>
@@ -35,7 +35,7 @@ const ActionButtons: React.FC<Props> = ({
                 <div
                   className={classes.ActionButtonsIconExpanded}
                   style={{
-                    background: `linear-gradient(180deg, ${item.backgroundColor.top} 0%,  ${item.backgroundColor.bottom} 100%)`
+                    background: `linear-gradient(180deg, ${item.backgroundColor.top} 0%,  ${item.backgroundColor.bottom} 100%)`,
                   }}
                   onClick={() => {
                     onButtonClick(item, index);
@@ -45,9 +45,9 @@ const ActionButtons: React.FC<Props> = ({
                 </div>
 
                 <div className={classes.ActionButtonsWidth}>
-                  <SB_11_WHITE className={classes.ActionButtonsText} style={{}}>
+                  <SB_10_WHITE className={classes.ActionButtonsText} style={{}}>
                     {item.text}
-                  </SB_11_WHITE>
+                  </SB_10_WHITE>
                 </div>
               </div>
             ) : (
@@ -55,7 +55,7 @@ const ActionButtons: React.FC<Props> = ({
                 <div
                   className={classes.ActionButtonsIcon}
                   style={{
-                    background: `linear-gradient(180deg, ${item.backgroundColor.top} 0%,  ${item.backgroundColor.bottom} 100%)`
+                    background: `linear-gradient(180deg, ${item.backgroundColor.top} 0%,  ${item.backgroundColor.bottom} 100%)`,
                   }}
                   onClick={() => {
                     onButtonClick(item, index);

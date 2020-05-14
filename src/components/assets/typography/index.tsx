@@ -113,11 +113,11 @@ const B_11_WHITE = styled.p`
   font-size: 11px;
   font-weight: 700;
 `;
-const SB_11_WHITE = styled.p`
+const SB_10_WHITE = styled.p`
   font-family: "Nunito Sans";
   margin: 0;
   color: #ffffff;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
 `;
 
@@ -535,7 +535,7 @@ export default {
   R_15_GREY444,
   B_17_WHITE,
   SB_16_WHITE,
-  SB_11_WHITE,
+  SB_10_WHITE,
   B_18_BLACK,
   B_24_BLACK,
   R_17_BLACK,
