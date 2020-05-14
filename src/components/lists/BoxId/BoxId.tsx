@@ -198,7 +198,6 @@ interface ActionPopoverProp {
 const ActionPopover = ({item, onDocumentClick}: ActionPopoverProp) => {
 
   const handleDocumentClick = (e: any) => {
-    console.log('e.target', e.target)
     if (!e.target || !e.target.className || !e.target.className.match) return
     if (e.target.className.match(/\bignore-click-bubble\b/)) {
       return
