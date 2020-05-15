@@ -31,16 +31,19 @@ const StatusIcon: React.FC<Props> = ({
     width: innerRoundSize,
     height: innerRoundSize,
   };
-  outer = !!small && {
-    width: "3.937rem",
-    height: "3.937rem",
-  };
-  inner = !!small && {
-    width: "2.562rem",
-    height: "2.562rem",
-  };
+  if (small) {
+    outer = {
+      width: "5rem",
+      height: "5rem",
+    };
+    inner = !!small && {
+      width: "3.625rem",
+      height: "3.625rem",
+    };
+  }
+
   let icSize = !!icon && icon.size;
-  let iconSize = (!!icSize && icSize) || (!!small && 26) || 46;
+  let iconSize = (!!icSize && icSize) || (!!small && 30) || 46;
 
   return (
     <>
@@ -74,7 +77,7 @@ const StatusIcon: React.FC<Props> = ({
               size={iconSize}
             />
           )}
-          {!!image && !icon.name && (
+          {!!image && !icon && (
             <img src={image.src} alt={image.alt ? image.alt : "Logo"} />
           )}
         </div>

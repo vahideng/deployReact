@@ -133,13 +133,14 @@ const Sprint2: React.FC<Props> = () => {
         modalIsOpen={settingModal}
         modalChildren={
           <SettingSummary
-            icon={{ name: "Tick-1", size: 30 }}
+            icon={{ name: "Tick-1" }}
             // image={{ src: images.common.amyIcon }}
             iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
             detailTitle="Successfully Activated"
             detail="Your account has been activated successfully."
-            outerRoundSize={"3.9375rem"}
-            innerRoundSize={"3.01875rem"}
+            // outerRoundSize={"3.9375rem"}
+            // innerRoundSize={"3.01875rem"}
+            smallIcon
           />
         }
       />
