@@ -2889,7 +2889,7 @@ const Sprint4: React.FC<Props> = () => {
                     details: ["Today, 5 January 2019"],
                   },
                   {
-                    leftLabel: "Reference No/Invoice No",
+                    leftLabel: "Reference No/ Invoice No",
                     rightLabel: "House Rental Bangalore House Rental Bangalor House Rental Bangalor House Rental Bangalor House Rental Bangalor House Rental Bangalor House Rental Bangalor",
                   },
                   {
