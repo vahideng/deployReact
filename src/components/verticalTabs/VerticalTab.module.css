@@ -4,6 +4,10 @@
   border-top-left-radius: 1.25rem;
 }
 
+.Container > *:last-child {
+  border-bottom: 1px solid transparent;
+}
+
 .WholeWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
