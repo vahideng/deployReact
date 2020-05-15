@@ -4,7 +4,7 @@ import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../../assets/typography";
 import Line from "src/components/line/Line";
 import styles from 'styled-components';
-import {Col} from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 const {
   B_18_BLACK,
   R_19_GREY444,
@@ -15,7 +15,7 @@ const {
 } = Paragraphs;
 
 
-const ColDiv = styles.div `
+const ColDiv = styles.div`
 display:flex;
 
 flex-direction:column;
@@ -43,14 +43,14 @@ interface LogoutListProps {
       value?: string;
       styleValue?: CSSProperties;
     },
-    rightLabel:{
+    rightLabel: {
       negative?: boolean;
       TimeStamp?: string;
       styleTimeStamp?: CSSProperties;
       value?: string;
       styleValue?: CSSProperties;
     },
-    middleLabel:{
+    middleLabel: {
       content?: string;
       styleContent?: CSSProperties;
     }
@@ -64,8 +64,8 @@ const LogoutList: React.FC<LogoutListProps> = ({
   list,
   responsive,
   width,
-  
-  
+
+
 }) => {
   let containerCls = classes.Container;
   if (responsive) {
@@ -89,31 +89,31 @@ const LogoutList: React.FC<LogoutListProps> = ({
 
           {!header.image
             ? !!header.icon && (
-                <div>
-                  <div className={classes.ListIconDiv}>
-                    <Icon
-                      className={classes.ListIcon}
-                      icon={header.icon.name}
-                      color={
-                        !!header.icon.color ? header.icon.color : "#ff2626"
-                      }
-                    />
-                    <B_18_BLACK>{header.icon.iconText}</B_18_BLACK>
-                  </div>
+              <div>
+                <div className={classes.ListIconDiv}>
+                  <Icon
+                    className={classes.ListIcon}
+                    icon={header.icon.name}
+                    color={
+                      !!header.icon.color ? header.icon.color : "#ff2626"
+                    }
+                  />
+                  <B_18_BLACK>{header.icon.iconText}</B_18_BLACK>
                 </div>
-              )
+              </div>
+            )
             : !!header.image && (
-                <div>
-                  <div className={classes.ListIconDiv}>
-                    <img
-                      src={header.image.name}
-                      alt={header.image.alt}
-                      style={header.image.style}
-                    />
-                    <B_18_BLACK>{header.icon.iconText}</B_18_BLACK>
-                  </div>
+              <div>
+                <div className={classes.ListIconDiv}>
+                  <img
+                    src={header.image.name}
+                    alt={header.image.alt}
+                    style={header.image.style}
+                  />
+                  <B_18_BLACK>{header.icon.iconText}</B_18_BLACK>
                 </div>
-              )}
+              </div>
+            )}
         </div>
       )}
       {!!list &&
@@ -122,32 +122,31 @@ const LogoutList: React.FC<LogoutListProps> = ({
           const { negative = false, styleValue, value, styleTimeStamp, TimeStamp } = rightLabel;
           return (
             <div
-              className={responsive ? classes.ListItemsContainer: classes.ListItemsContainerRes}
+              className={responsive ? classes.ListItemsContainer : classes.ListItemsContainerRes}
               style={itemContainerStyle}
               id={`${testId}-${index}`}
               key={index}
             >
-           
               <div className={classes.ListItemsDiv}>
                 <ColDiv className={classes.leftlabel}>
-                <R_19_GREY444 className={classes.leftLabelTextRes} style={item.leftLabel.styleContent}>{item.leftLabel.contentType}</R_19_GREY444>
-                <SB_15_BLACK className={classes.LeftLabel2TextRes}  style={item.leftLabel.styleValue} >{item.leftLabel.value}</SB_15_BLACK>
-                <SB_15_BLACK className={classes.RightLabelRes} style={styleValue}>{value}</SB_15_BLACK>
+                  <R_19_GREY444 className={classes.leftLabelTextRes} style={item.leftLabel.styleContent}>{item.leftLabel.contentType}</R_19_GREY444>
+                  <SB_15_BLACK className={classes.LeftLabel2TextRes} style={item.leftLabel.styleValue} >{item.leftLabel.value}</SB_15_BLACK>
+                  <SB_15_BLACK className={classes.RightLabelRes} style={styleValue}>{value}</SB_15_BLACK>
                 </ColDiv>
                 <Col className={classes.middleLabelClass}>
-                <R_19_GREEN_444 style={item.middleLabel.styleContent} >{item.middleLabel.content} </R_19_GREEN_444>
+                  <R_19_GREEN_444 style={item.middleLabel.styleContent} >{item.middleLabel.content} </R_19_GREEN_444>
                 </Col>
                 <ColDiv className={classes.rightLabel}>
-                <R_19_GREY444 className={classes.RightLabelFirst} style={styleTimeStamp}>{TimeStamp}</R_19_GREY444>
-                <SB_15_BLACK style={styleValue} className={classes.RightLabel2Res}>
-                {negative && <B_15_RED style={{ display: 'inline' }}>- </B_15_RED>}
-                  {value}
-                </SB_15_BLACK>
-                <R_19_GREEN_444 style={item.middleLabel.styleContent} className={classes.middleLabelRes}>{item.middleLabel.content}</R_19_GREEN_444>
+                  <R_19_GREY444 className={classes.RightLabelFirst} style={styleTimeStamp}>{TimeStamp}</R_19_GREY444>
+                  <SB_15_BLACK style={styleValue} className={classes.RightLabel2Res}>
+                    {negative && <B_15_RED style={{ display: 'inline' }}>- </B_15_RED>}
+                    {value}
+                  </SB_15_BLACK>
+                  <R_19_GREEN_444 style={item.middleLabel.styleContent} className={classes.middleLabelRes}>{item.middleLabel.content}</R_19_GREEN_444>
                 </ColDiv>
               </div>
-              {list.length !== index+1 && 
-              <Line style={{ marginTop: "1rem", marginBottom: "1rem" }} /> }
+              {list.length !== index + 1 &&
+                <Line style={{ marginTop: "1rem", marginBottom: "1rem" }} />}
             </div>
           );
         })}

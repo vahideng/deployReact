@@ -3118,7 +3118,7 @@ const Sprint4: React.FC<Props> = () => {
                 styleValue: {},
               },
               middleLabel: {
-                content: "SUCCESSFUL",
+                content: "Accepted for proccessing Accepted for proccessing",
                 styleContent: {},
               },
             },

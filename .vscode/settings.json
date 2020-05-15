@@ -22,7 +22,7 @@
   },
 
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "liveSassCompile.settings.formats": [
     {
