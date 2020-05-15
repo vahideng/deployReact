@@ -113,14 +113,14 @@
 }
 
 .ListItemLeft {
-  padding-right: 30%;
+  min-width: 100px;
 }
 
 @media (max-width: 576px) {
   .ListItemLeft {
     max-width: 6.8125rem;
     width: 100%;
-    padding-right: 10%;
+    padding-right: 2%;
   }
 }
 
@@ -136,7 +136,7 @@
 }
 
 .ItemTitleContainer p {
-  text-align: justify;
+  text-align: right;
 }
 
 .AmountContainer {

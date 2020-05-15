@@ -131,7 +131,7 @@ const List: React.FC<Props> = ({
                         <Icon icon="accent-tick" size={13} />
                       </span>
                     )}
-                    <B_15_BLACK_444>{item.rightLabel}</B_15_BLACK_444>
+                    <B_15_BLACK_444 style={{fontSize: "13px"}}>{item.rightLabel}</B_15_BLACK_444>
                   </div>
 
                   {!!item.details &&
