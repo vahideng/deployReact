@@ -139,6 +139,7 @@
 .LeftLabel2TextRes {
   margin-top: 0.38rem;
   padding-top: 6px;
+  font-weight: 700 !important;
 }
 
 @media (max-width: 576px) {
