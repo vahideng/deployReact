@@ -79,7 +79,7 @@ const RowDiv = styled.div`
   display: flex;
   flex-direction: "row";
 `;
-interface Props {}
+interface Props { }
 
 const Sprint3: React.FC<Props> = () => {
   const [selectedItem, setSelectedOption] = useState("Persian");
@@ -292,14 +292,14 @@ const Sprint3: React.FC<Props> = () => {
           alert("onRequestClose");
           setIsLoading(false);
         }}
-        // optionalStyle={{
-        //   color: "#3CB371	",
-        //   thickness: 15,
-        //   textStyle: { color: "#006400", fontWeight: "bolder" },
-        //   imageIcon:
-        //     "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
-        //   imageIconStyle: { width: 120, height: 120, borderRadius: "50%" },
-        // }}
+      // optionalStyle={{
+      //   color: "#3CB371	",
+      //   thickness: 15,
+      //   textStyle: { color: "#006400", fontWeight: "bolder" },
+      //   imageIcon:
+      //     "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
+      //   imageIconStyle: { width: 120, height: 120, borderRadius: "50%" },
+      // }}
       />
       <Title>UnitTrustList</Title>
       <CenteredDiv>
@@ -764,7 +764,7 @@ const Sprint3: React.FC<Props> = () => {
                   toggleOffLabel="NO"
                   toggleOnLabel="YES"
                   value={true}
-                  onTogglePress={() => {}}
+                  onTogglePress={() => { }}
                 />
               ),
             },
@@ -792,8 +792,8 @@ const Sprint3: React.FC<Props> = () => {
                     type="text"
                     value=""
                     notValid={false}
-                    handleChange={() => {}}
-                    clearClickHandler={() => {}}
+                    handleChange={() => { }}
+                    clearClickHandler={() => { }}
                     clearIcon={true}
                     label=""
                     icon={{ name: "Lock" }}
@@ -2478,7 +2478,7 @@ const Sprint3: React.FC<Props> = () => {
                         title="Continue"
                         titleColor="#ffffff"
                         buttonColor={buttonColor}
-                        onButtonClick={() => {}}
+                        onButtonClick={() => { }}
                       />
                     </div>
                     <InputField
@@ -2512,7 +2512,7 @@ const Sprint3: React.FC<Props> = () => {
                         title="Continue"
                         titleColor="#ffffff"
                         buttonColor={buttonColor}
-                        onButtonClick={() => {}}
+                        onButtonClick={() => { }}
                       />
                     </div>
                   </div>
@@ -2635,7 +2635,7 @@ const Sprint3: React.FC<Props> = () => {
                         title="Continue"
                         titleColor="#ffffff"
                         buttonColor={buttonColor}
-                        onButtonClick={() => {}}
+                        onButtonClick={() => { }}
                       />
                     </div>
                   </div>

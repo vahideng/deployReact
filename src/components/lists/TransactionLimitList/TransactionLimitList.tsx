@@ -39,6 +39,7 @@ const TransactionLimitList: React.FC<Props> = ({
   testId,
   selectedIndex,
   small,
+  style
 }: Props) => {
   return (
     <div className={classes.ListContainer} id={`${testId}`}>
@@ -62,8 +63,8 @@ const TransactionLimitList: React.FC<Props> = ({
                 !!item.showShadow
                   ? !!item.shadowStyle
                     ? item.shadowStyle
-                    : { boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)" }
-                  : {}
+                    : { boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)", ...style }
+                  : { ...style }
               }
               id={`${testId}-${index}`}
               key={index}
@@ -108,62 +109,62 @@ const TransactionLimitList: React.FC<Props> = ({
                 onButtonClick={item.onHiddenButtonClick}
                 icon={{ name: "field-open-eye", size: 15, color: "#000000" }}
                 buttonColor={{ top: "#F6F6F3", bottom: "#EAE9E3" }}
-                minWidth={"7.4rem"}
+                width="7.4rem"
                 height="2rem"
               />
             </div>
           ) : (
-            <div
-              className={ItemContainerCls}
-              style={
-                !!item.showShadow
-                  ? !!item.shadowStyle
-                    ? item.shadowStyle
-                    : { boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)" }
-                  : {}
-              }
-              id={`${testId}-${index}`}
-              key={index}
-              onClick={() => item.onClick(item, index)}
-            >
-              <div className={classes.ImageContainer}>
-                {!!item.cardImg && (
-                  <img
-                    src={item.cardImg}
-                    alt="CardImage"
-                    style={item.cardImgStyle}
-                    className={classes.TransactionImg}
-                  />
-                )}
-
-                <div className={classes.TextContainer}>
-                  <B_15_BLACK>
-                    {item.label}
-                    {item.notify && <Notify className={classes.notify} />}
-                  </B_15_BLACK>
-
-                  {item.subDetail && (
-                    <R_12_BLACK style={{ marginTop: 5 }}>
-                      {item.subDetail}
-                    </R_12_BLACK>
+              <div
+                className={ItemContainerCls}
+                style={
+                  !!item.showShadow
+                    ? !!item.shadowStyle
+                      ? item.shadowStyle
+                      : { boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)", ...style }
+                    : { ...style }
+                }
+                id={`${testId}-${index}`}
+                key={index}
+                onClick={() => item.onClick(item, index)}
+              >
+                <div className={classes.ImageContainer}>
+                  {!!item.cardImg && (
+                    <img
+                      src={item.cardImg}
+                      alt="CardImage"
+                      style={item.cardImgStyle}
+                      className={classes.TransactionImg}
+                    />
                   )}
+
+                  <div className={classes.TextContainer}>
+                    <B_15_BLACK>
+                      {item.label}
+                      {item.notify && <Notify className={classes.notify} />}
+                    </B_15_BLACK>
+
+                    {item.subDetail && (
+                      <R_12_BLACK style={{ marginTop: 5 }}>
+                        {item.subDetail}
+                      </R_12_BLACK>
+                    )}
+                  </div>
+                </div>
+                <div className={classes.rightLabelDiv}>
+                  {item.rightLabel && (
+                    <B_15_BLACK style={{ color: item.rightLabelColor }}>
+                      {item.rightLabel}
+                    </B_15_BLACK>
+                  )}
+
+                  {
+                    <div className={isSelected && classes.SelectedChevron}>
+                      <Icon icon="Right1" color="#000" size={28} />
+                    </div>
+                  }
                 </div>
               </div>
-              <div className={classes.rightLabelDiv}>
-                {item.rightLabel && (
-                  <B_15_BLACK style={{ color: item.rightLabelColor }}>
-                    {item.rightLabel}
-                  </B_15_BLACK>
-                )}
-
-                {
-                  <div className={isSelected && classes.SelectedChevron}>
-                    <Icon icon="Right1" color="#000" size={28} />
-                  </div>
-                }
-              </div>
-            </div>
-          );
+            );
         })}
     </div>
   );

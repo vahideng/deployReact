@@ -38,7 +38,7 @@ const Title = styled(B_13_ORANGE_463)`
   border-top: 1px solid #ffa463;
   border-bottom: 1px solid #ffa463;
 `;
-interface Props {}
+interface Props { }
 
 const Sprint2: React.FC<Props> = () => {
   const [selectedItem, setSelectedOption] = useState("Persian");
@@ -414,6 +414,7 @@ const Sprint2: React.FC<Props> = () => {
 
       <div style={{ width: "30rem" }}>
         <TransactionLimitList
+          style={{ height: "7rem" }}
           selectedIndex={3}
           list={[
             {
