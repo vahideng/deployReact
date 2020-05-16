@@ -2,7 +2,7 @@ import React, { useState, useEffect, ReactNode, FormEvent } from "react";
 import Modal from "react-modal";
 import InputField from "src/components/inputs/inputFields/InputFields";
 import Paragraphs from "../../assets/typography";
-import FullButton from "../../buttons/primaryButton/PrimaryButton";
+import PrimaryButton from "../../buttons/primaryButton/PrimaryButton";
 import classes from "./TacModal.module.css";
 import Icon from "src/components/assets/icons/icon";
 import { CSSProperties } from "styled-components";
@@ -29,6 +29,8 @@ interface Props {
   buttonTitle?: string;
   onButtonClick?: any;
   buttonColor?: any;
+  buttonStyle?: CSSProperties;
+  BtnContainerStyle?: CSSProperties;
   inActive?: boolean;
   inActiveIcon?: { name?: string; color?: string; size?: number };
   inActiveMessage?: { title: string; text: string };
@@ -73,6 +75,8 @@ const TacModal: React.FC<Props> = (props) => {
     buttonTitle,
     onButtonClick,
     buttonColor,
+    buttonStyle,
+    BtnContainerStyle,
     testId,
     inActive,
     inActiveIcon,
@@ -116,101 +120,103 @@ const TacModal: React.FC<Props> = (props) => {
           {!!activeStatus ? (
             <>{activeStatusChild}</>
           ) : (
-            <div
-              style={innerDivStyle}
-              id={testId}
-              className={responsive ? TacMainInnerDivRes : TacMainInnerDiv}
-            >
-              {!!inActive ? (
-                <div
-                  className={responsive ? TacInActiveIconRes : TacInActiveIcon}
-                >
-                  {!!inActiveIcon ? (
-                    <Icon
-                      icon={inActiveIcon.name}
-                      color={inActiveIcon.color}
-                      size={inActiveIcon.size}
-                    />
-                  ) : (
-                    <Icon icon={"Amy1"} color={"#A9A9A9"} size={60} />
+              <div
+                style={innerDivStyle}
+                id={testId}
+                className={responsive ? TacMainInnerDivRes : TacMainInnerDiv}
+              >
+                {!!inActive ? (
+                  <div
+                    className={responsive ? TacInActiveIconRes : TacInActiveIcon}
+                  >
+                    {!!inActiveIcon ? (
+                      <Icon
+                        icon={inActiveIcon.name}
+                        color={inActiveIcon.color}
+                        size={inActiveIcon.size}
+                      />
+                    ) : (
+                        <Icon icon={"Amy1"} color={"#A9A9A9"} size={60} />
+                      )}
+
+                    <div className={TacInActiveIconText}>
+                      <B_15_BLACK>{inActiveMessage.title}</B_15_BLACK>
+                      <R_14_BLACK>{inActiveMessage.text}</R_14_BLACK>
+                    </div>
+                  </div>
+                ) : (
+                    <>
+                      <form>
+                        <div className={TacInputField}>
+                          <InputField
+                            disabled={disabledInput}
+                            onClearIconHover={onClearIconHover}
+                            responsive={responsive ? responsive : false}
+                            clearIcon={clearIcon}
+                            clearClickHandler={clearClickHandler}
+                            testId={`${testId}-0`}
+                            handleChange={handleChange}
+                            maxLength={maxLength}
+                            onBlur={onBlur}
+                            onFocus={onFocus}
+                            type="password"
+                            label={label}
+                            icon={{ name: "TAC" }}
+                            value={value}
+                            notValid={notValid}
+                            errorMessage={errorMessage}
+                            tacInput={true}
+                          />
+                        </div>
+                        <div className={TacInputFieldContent}>
+                          {!!content && typeof content === "object" ? (
+                            content.map((item, index) => {
+                              return (
+                                <R_15_GREY444 key={index}>{item}</R_15_GREY444>
+                              );
+                            })
+                          ) : (
+                              <R_15_GREY444>{content}</R_15_GREY444>
+                            )}
+
+                          {!!link && (
+                            <B_15_ORANGE_463
+                              onClick={link.onLinkClick}
+                              className={TacInputFieldLink}
+                            >
+                              {link.text}
+                            </B_15_ORANGE_463>
+                          )}
+                        </div>
+                      </form>
+                    </>
                   )}
 
-                  <div className={TacInActiveIconText}>
-                    <B_15_BLACK>{inActiveMessage.title}</B_15_BLACK>
-                    <R_14_BLACK>{inActiveMessage.text}</R_14_BLACK>
-                  </div>
+                <div className={responsive ? TacButtonRes : TacButton}>
+                  <PrimaryButton
+                    buttonStyle={buttonStyle}
+                    containerStyle={BtnContainerStyle}
+                    responsive={responsive ? responsive : false}
+                    testId={`${testId}-1`}
+                    buttonColor={{
+                      top: buttonColor.top,
+                      bottom: buttonColor.bottom,
+                    }}
+                    title={buttonTitle}
+                    onButtonClick={!!onButtonClick && onButtonClick}
+                  />
                 </div>
-              ) : (
-                <>
-                  <form>
-                    <div className={TacInputField}>
-                      <InputField
-                        disabled={disabledInput}
-                        onClearIconHover={onClearIconHover}
-                        responsive={responsive ? responsive : false}
-                        clearIcon={clearIcon}
-                        clearClickHandler={clearClickHandler}
-                        testId={`${testId}-0`}
-                        handleChange={handleChange}
-                        maxLength={maxLength}
-                        onBlur={onBlur}
-                        onFocus={onFocus}
-                        type="password"
-                        label={label}
-                        icon={{ name: "TAC" }}
-                        value={value}
-                        notValid={notValid}
-                        errorMessage={errorMessage}
-                        tacInput={true}
-                      />
-                    </div>
-                    <div className={TacInputFieldContent}>
-                      {!!content && typeof content === "object" ? (
-                        content.map((item, index) => {
-                          return (
-                            <R_15_GREY444 key={index}>{item}</R_15_GREY444>
-                          );
-                        })
-                      ) : (
-                        <R_15_GREY444>{content}</R_15_GREY444>
-                      )}
-
-                      {!!link && (
-                        <B_15_ORANGE_463
-                          onClick={link.onLinkClick}
-                          className={TacInputFieldLink}
-                        >
-                          {link.text}
-                        </B_15_ORANGE_463>
-                      )}
-                    </div>
-                  </form>
-                </>
-              )}
-
-              <div className={responsive ? TacButtonRes : TacButton}>
-                <FullButton
-                  responsive={responsive ? responsive : false}
-                  testId={`${testId}-1`}
-                  buttonColor={{
-                    top: buttonColor.top,
-                    bottom: buttonColor.bottom,
+                <span
+                  className={TacCrossButton}
+                  onClick={() => {
+                    setModalStatus(false);
+                    onCloseClick();
                   }}
-                  title={buttonTitle}
-                  onButtonClick={!!onButtonClick && onButtonClick}
-                />
+                >
+                  <Icon icon={"Fail-2"} size={15} />
+                </span>
               </div>
-              <span
-                className={TacCrossButton}
-                onClick={() => {
-                  setModalStatus(false);
-                  onCloseClick();
-                }}
-              >
-                <Icon icon={"Fail-2"} size={15} />
-              </span>
-            </div>
-          )}
+            )}
         </div>
       </Modal>
     </>

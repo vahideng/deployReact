@@ -78,7 +78,7 @@ const RowDiv = styled.div`
   display: flex;
   flex-direction: "row";
 `;
-interface Props {}
+interface Props { }
 interface State {
   isCheckboxChecked: boolean;
   hidden: boolean;
@@ -1247,6 +1247,7 @@ class Sprint1 extends Component<Props, State> {
             bottom: !tacInactive ? "#BDBDBD" : "#FF2222",
           }}
           buttonTitle={tacInactive ? "Request TAC" : "Continue"}
+          buttonStyle={{ width: "10rem" }}
           activeStatus={tacClearActiveStatus}
           activeStatusChild={
             <div style={{ display: "flex" }}>
@@ -1378,6 +1379,7 @@ class Sprint1 extends Component<Props, State> {
               bottom: !tacInactive ? "#BDBDBD" : "#FF2222",
             }}
             buttonTitle={tacInactive ? "Request TAC" : "Continue"}
+            buttonStyle={{ width: "10rem" }}
             activeStatus={tacClearActiveStatus}
             activeStatusChild={
               <div style={{ display: "flex" }}>
@@ -1754,11 +1756,11 @@ class Sprint1 extends Component<Props, State> {
                       </p>
                       <TextButton
                         buttonText="LEARN MORE >"
-                        onTextClick={() => {}}
+                        onTextClick={() => { }}
                       />
                     </div>
                     <PrimaryButton
-                      onButtonClick={() => {}}
+                      onButtonClick={() => { }}
                       title="Apply Now"
                       buttonColor={{ top: "#f1f1f1", bottom: "#BDBDBD" }}
                     />
