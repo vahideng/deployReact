@@ -55,5 +55,7 @@ const SettingSummary: React.FC<Props> = ({
     </div>
   );
 };
-
+SettingSummary.defaultProps = {
+  smallIcon: true,
+};
 export default SettingSummary;

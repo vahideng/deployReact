@@ -138,9 +138,9 @@ const Sprint2: React.FC<Props> = () => {
             iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
             detailTitle="Successfully Activated"
             detail="Your account has been activated successfully."
-            // outerRoundSize={"3.9375rem"}
-            // innerRoundSize={"3.01875rem"}
-            smallIcon
+            // outerRoundSize={"9.9375rem"}
+            // innerRoundSize={"9.01875rem"}
+            // smallIcon={false}
           />
         }
       />
