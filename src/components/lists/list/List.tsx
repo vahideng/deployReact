@@ -72,7 +72,7 @@ const List: React.FC<Props> = ({
           {!!header.title && (
             <div className={classes.ListTitleDiv}>
               <B_24_BLACK
-                x-ms-format-detection="none" 
+                x-ms-format-detection="none"
                 className={classes.ListTitle}
                 style={header.titleStyle ? header.titleStyle : {}}
               >
@@ -84,38 +84,38 @@ const List: React.FC<Props> = ({
 
           {!header.image
             ? !!header.icon && (
-                <div>
-                  <div className={classes.ListIconDiv}>
-                    <Icon
-                      className={classes.ListIcon}
-                      icon={header.icon.name}
-                      color={
-                        !!header.icon.color ? header.icon.color : "#ff2626"
-                      }
-                    />
-                    <B_18_BLACK>{header.icon.iconText}</B_18_BLACK>
-                  </div>
+              <div>
+                <div className={classes.ListIconDiv}>
+                  <Icon
+                    className={classes.ListIcon}
+                    icon={header.icon.name}
+                    color={
+                      !!header.icon.color ? header.icon.color : "#ff2626"
+                    }
+                  />
+                  <B_18_BLACK>{header.icon.iconText}</B_18_BLACK>
                 </div>
-              )
+              </div>
+            )
             : !!header.image && (
-                <div>
-                  <div className={classes.ListIconDiv}>
-                    <img
-                      src={header.image.name}
-                      alt={header.image.alt}
-                      style={header.image.style}
-                    />
-                    <B_18_BLACK>{header.icon.iconText}</B_18_BLACK>
-                  </div>
+              <div>
+                <div className={classes.ListIconDiv}>
+                  <img
+                    src={header.image.name}
+                    alt={header.image.alt}
+                    style={header.image.style}
+                  />
+                  <B_18_BLACK>{header.icon.iconText}</B_18_BLACK>
                 </div>
-              )}
+              </div>
+            )}
         </div>
       )}
       {!!list &&
         list.map((item, index) => {
           return (
             <div
-              className={responsive ? classes.ListItemsContainer: classes.ListItemsContainerRes}
+              className={responsive ? classes.ListItemsContainer : classes.ListItemsContainerRes}
               style={itemContainerStyle}
               id={`${testId}-${index}`}
               key={index}
@@ -131,7 +131,7 @@ const List: React.FC<Props> = ({
                         <Icon icon="accent-tick" size={13} />
                       </span>
                     )}
-                    <B_15_BLACK_444 style={{fontSize: "13px"}}>{item.rightLabel}</B_15_BLACK_444>
+                    <B_15_BLACK_444 style={{ fontSize: "13px" }}>{item.rightLabel}</B_15_BLACK_444>
                   </div>
 
                   {!!item.details &&
@@ -160,9 +160,9 @@ const List: React.FC<Props> = ({
                     </Row>
                   )}
                   {item.status === undefined ? null : (
-                    <R_13_GREY444 style={{ color: item.status.color }}>
+                    <B_13_ORANGE_463 style={{ color: item.status.color }}>
                       {item.status.content}
-                    </R_13_GREY444>
+                    </B_13_ORANGE_463>
                   )}
                   {item.bottomText === undefined ? null : (
                     <B_13_ORANGE_463

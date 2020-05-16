@@ -38,7 +38,7 @@ const Title = styled(B_13_ORANGE_463)`
   border-top: 1px solid #ffa463;
   border-bottom: 1px solid #ffa463;
 `;
-interface Props {}
+interface Props { }
 
 const Sprint2: React.FC<Props> = () => {
   const [selectedItem, setSelectedOption] = useState("Persian");
@@ -138,9 +138,9 @@ const Sprint2: React.FC<Props> = () => {
             iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
             detailTitle="Successfully Activated"
             detail="Your account has been activated successfully."
-            // outerRoundSize={"3.9375rem"}
-            // innerRoundSize={"3.01875rem"}
-            smallIcon
+            // outerRoundSize={"9.9375rem"}
+            // innerRoundSize={"9.01875rem"}
+            // smallIcon={false}
           />
         }
       />
@@ -414,6 +414,7 @@ const Sprint2: React.FC<Props> = () => {
 
       <div style={{ width: "30rem" }}>
         <TransactionLimitList
+          style={{ height: "7rem" }}
           selectedIndex={3}
           list={[
             {
