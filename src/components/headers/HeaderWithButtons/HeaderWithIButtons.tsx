@@ -81,7 +81,7 @@ const HeaderWithIButtons = ({
           icon={buttonIcon}
           shadowed={true}
           height={"2.5rem"}
-          minWidth={"10.12rem"}
+          width={"10.12rem"}
           titleStyle={{ fontSize: 11, color: "#000000" }}
           {...buttonProps}
         />

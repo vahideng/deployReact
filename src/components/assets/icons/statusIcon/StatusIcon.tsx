@@ -62,12 +62,12 @@ const StatusIcon: React.FC<Props> = ({
           style={
             !!iconColor
               ? {
-                  ...inner,
-                  background: `linear-gradient(180deg, ${iconColor.top} 0%,  ${iconColor.bottom} 100%)`,
-                }
+                ...inner,
+                background: `linear-gradient(180deg, ${iconColor.top} 0%,  ${iconColor.bottom} 100%)`,
+              }
               : {
-                  ...inner,
-                }
+                ...inner,
+              }
           }
         >
           {!!icon && !image && (
