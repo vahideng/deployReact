@@ -2105,7 +2105,7 @@ const Sprint3: React.FC<Props> = () => {
                 {
                   leftLabel: "From",
                   rightLabel: "Savings Account",
-                  details: ["2998202013", "Available Balance: RM 10,301.50"],
+                  details: ["2998202013", "Available Balance: RM 10,301.50", "Available Balance: RM 10,301.50"],
                   status: {
                     content: "UNSUCCESSFUL",
                     color: "red",

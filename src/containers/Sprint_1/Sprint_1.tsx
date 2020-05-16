@@ -563,7 +563,7 @@ class Sprint1 extends Component<Props, State> {
                       iconSize: 28,
                       label1: "TRANSFER TO",
                       label2: "SEEN OPTICS ",
-                      statusLabel: "SUCCESSFUL",
+                      statusLabel: "Accept for Proceesing",
                       statusLabelColor: "#36A03E",
                       changeLabel: "-",
                       changeLabelColor: "#F73C4A",

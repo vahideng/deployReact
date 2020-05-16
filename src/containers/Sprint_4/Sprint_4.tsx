@@ -170,12 +170,7 @@ const Sprint4: React.FC<Props> = () => {
         text={
           "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
         }
-        // children={
-        //   <PrimaryButton
-        //     title="Open StickyTimer"
-        //     onButtonClick={() => {
-        //       alert("onButtonClick");
-        //     }}
+        children={<div style={{backgroundColor:'red'}}><p>hello world </p></div>}       
       />
       <Title>Review & Confirm - Responsive</Title>
       <div
@@ -453,6 +448,7 @@ const Sprint4: React.FC<Props> = () => {
               boxChildren={
                 <div style={{ padding: "3rem 1.5rem" }}>
                   <InputField
+                    showTooltip={false}
                     tipChildren={<p>test</p>}
                     responsive={true}
                     notValid={true}
@@ -2663,7 +2659,7 @@ const Sprint4: React.FC<Props> = () => {
                   iconSize: 28,
                   label1: "TRANSFER TO",
                   label2: "SEEN OPTICS ",
-                  statusLabel: "SUCCESSFUL",
+                  statusLabel: "Accept For Proccessing",
                   statusLabelColor: "#36A03E",
                   changeLabel: "-",
                   changeLabelColor: "#F73C4A",

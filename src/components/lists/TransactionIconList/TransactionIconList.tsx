@@ -151,6 +151,8 @@ const AccountsList: React.FC<Props> = ({
                       style={{
                         color: transaction.statusLabelColor,
                         fontWeight: 'bolder',
+                        whiteSpace: "pre-wrap",
+                        maxWidth: "100px"
                       }}
                     >
                       {transaction.statusLabel}
