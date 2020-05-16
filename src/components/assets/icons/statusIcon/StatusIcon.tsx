@@ -77,7 +77,7 @@ const StatusIcon: React.FC<Props> = ({
               size={iconSize}
             />
           )}
-          {!!image && !icon && (
+          {!!image && !icon.name && (
             <img src={image.src} alt={image.alt ? image.alt : "Logo"} />
           )}
         </div>
