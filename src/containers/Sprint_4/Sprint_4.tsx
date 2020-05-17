@@ -2886,7 +2886,7 @@ const Sprint4: React.FC<Props> = () => {
                   },
                   {
                     leftLabel: "Reference No/ Invoice No",
-                    rightLabel: "House Rental Bangalore House Rental Bangalor House Rental Bangalor House Rental Bangalor House Rental Bangalor House Rental Bangalor House Rental Bangalor",
+                    rightLabel: "Bangalor House Rental Bangalore House Rental Bangalor House Rental Bangalor use Rental Bangalore House Rental Bangalor House Rental Bangalor House Rental Bangalor House Rental Bangalor House Rental Bangalor House Rental Bangalor",
                   },
                   {
                     leftLabel: "From",
