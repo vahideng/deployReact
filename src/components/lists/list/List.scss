@@ -31,15 +31,14 @@
 .ListItemsDiv {
   display: flex;
   justify-content: space-between;
-   
 }
 
 .ListItemsContainer {
   padding: 0rem 3.5rem;
 }
-.ListItemsContainerRes{
+.ListItemsContainerRes {
   padding: 0rem 1rem;
-  &:last-child{
+  &:last-child {
     padding-bottom: 2.5rem;
   }
 }
@@ -53,7 +52,6 @@
   align-self: baseline;
   &svg {
     vertical-align: middle;
-
   }
 }
 .ListItemRightContent {
@@ -68,26 +66,23 @@
     word-break: break-all;
   }
 }
-.ListItemLeft{
- 
+.ListItemLeft {
   min-width: 100px;
   @media (max-width: 576px) {
     max-width: 6.8125rem;
     width: 100%;
     padding-right: 2%;
   }
-
-  
 }
 .ItemTitleContainer {
   padding: 0 !important;
   margin: 0 !important;
   align-items: center;
   max-width: 300px;
-  
+
   display: flex;
-  p{
-  text-align: right;
+  p {
+    text-align: right;
   }
 }
 
@@ -106,4 +101,3 @@
   margin-top: 0.75rem !important;
   cursor: pointer;
 }
-

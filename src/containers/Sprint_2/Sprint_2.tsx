@@ -138,9 +138,9 @@ const Sprint2: React.FC<Props> = () => {
             iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
             detailTitle="Successfully Activated"
             detail="Your account has been activated successfully."
-            // outerRoundSize={"9.9375rem"}
-            // innerRoundSize={"9.01875rem"}
-            // smallIcon={false}
+          // outerRoundSize={"9.9375rem"}
+          // innerRoundSize={"9.01875rem"}
+          // smallIcon={false}
           />
         }
       />
@@ -413,8 +413,9 @@ const Sprint2: React.FC<Props> = () => {
       <Title>Transaction Limit List</Title>
 
       <div style={{ width: "30rem" }}>
+
         <TransactionLimitList
-          style={{ height: "7rem" }}
+          // style={{ height: "5rem" }}
           selectedIndex={3}
           list={[
             {

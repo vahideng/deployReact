@@ -2110,6 +2110,16 @@ const Sprint3: React.FC<Props> = () => {
                     content: "UNSUCCESSFUL",
                     color: "red",
                   },
+                  bottomText: {
+                    content: "Change Account",
+                    onClick: () => alert("Change account"),
+                    style: { backgroundColor: "#dedede", padding: ".5rem" },
+                  },
+                  lefSubText: {
+                    content: "lefSubText",
+
+                    style: { color: "red" },
+                  },
                 },
               ]}
             />
@@ -2209,7 +2219,6 @@ const Sprint3: React.FC<Props> = () => {
                   rightLabel: "Savings Account",
                   details: ["2998202013", "Available Balance: RM 10,301.50"],
                   bottomText: {
-                    // provide color props
                     content: "Change Account",
                     onClick: () => alert("Change account"),
                     style: { backgroundColor: "blue", color: "red" },

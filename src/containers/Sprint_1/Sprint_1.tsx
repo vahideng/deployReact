@@ -990,7 +990,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>FormContainer</Title>
         <CenteredDiv>
           <FormContainer
-            // childrenWrapperStyle={{ padding: 0 }}
+            childrenWrapperStyle={{ padding: "1rem 2rem" }}
             label={"Select your account/card type"}
             showTooltip={false}
             onTooltipClicked={() => alert("clicked!!")}
@@ -1434,8 +1434,8 @@ class Sprint1 extends Component<Props, State> {
         <Title>Vertical tab</Title>
         <CenteredDiv>
           <VerticalTab
-            tabHeight="100px"
-            // WrapperStyle = {{backgroundColor : 'red'}}
+            tabHeight="300px"
+            // WrapperStyle={{ backgroundColor: 'red' }}
             testId={"testId"}
             selectedBorderColor="#FD8585"
             minimize={false}
@@ -1864,6 +1864,7 @@ class Sprint1 extends Component<Props, State> {
         </CenteredDiv>
         <CenteredDiv>
           <VerticalTab
+            tabHeight="300px"
             selectedBorderColor="#FD8585"
             minimize={true}
             data={[

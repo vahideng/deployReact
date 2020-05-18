@@ -32,6 +32,7 @@ interface Props {
   itemContainerStyle?: CSSProperties;
   list?: {
     leftLabel: string;
+    lefSubText?: { content: string, style?: CSSProperties };
     rightLabel?: string;
     approved?: boolean;
     details?: string[];
@@ -171,10 +172,19 @@ const List: React.FC<Props> = ({
                       style={item.bottomText.style}
                     >
                       {item.bottomText.content}
-                    </B_13_ORANGE_463>
-                  )}
+                    </B_13_ORANGE_463>)
+                  }
+
                 </div>
+
               </div>
+              {item.lefSubText === undefined ? null : (
+                <R_13_GREY444
+                  style={item.lefSubText.style}
+                >
+                  {item.lefSubText.content}
+                </R_13_GREY444>
+              )}
             </div>
           );
         })}
