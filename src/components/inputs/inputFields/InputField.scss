@@ -33,7 +33,7 @@
 .InputFieldIconDiv input {
   height: 3.12rem;
   border-radius: 0.95rem;
-  border: 0.5px solid #dedede;
+  border: 1px solid #dedede;
   box-shadow: $darkBoxShadow;
 }
 .InputFieldInput {
@@ -107,7 +107,7 @@ input::-ms-clear {
   .InputFieldIconDiv input {
     width: 100% !important;
   }
-  .InputFieldInput{
-    width:  100% !important;
+  .InputFieldInput {
+    width: 100% !important;
   }
 }
