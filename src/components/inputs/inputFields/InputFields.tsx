@@ -5,6 +5,7 @@ import React, {
   ReactNode,
   CSSProperties,
 } from "react";
+import crypto from 'crypto-random-string';
 import Paragraphs from "../../assets/typography";
 import classes from "./InputField.module.css";
 import Icon from "src/components/assets/icons/icon";
@@ -67,7 +68,7 @@ class InputField extends Component<Props, {}> {
       clearClickHandler,
       notValid,
       errorMessage,
-      autoComplete,
+      autoComplete = 'nope',
       minLength,
       maxLength,
       onBlurTooltip,
@@ -92,6 +93,25 @@ class InputField extends Component<Props, {}> {
     function blurHandler(event: FormEvent) {
       !!onBlur && onBlur(event);
     }
+
+    function getAutoComplete() {
+      switch (type) {
+        case 'password':
+          return 'new-password'
+        default:
+          return autoComplete
+      }
+    }
+
+    function getInputType() {
+      switch (type) {
+        case 'password':
+          return crypto({ length: 10, type: 'base64' })
+        default:
+          return type
+      }
+    }
+
     let inputClasses = classes.InputFieldIconDiv;
     if (disabled) {
       inputClasses = `${classes.InputFieldIconDiv} ${classes.DisabledInput}`;
@@ -132,10 +152,9 @@ class InputField extends Component<Props, {}> {
               />
             </div>
           )}
-
           <input
             placeholder={placeholder}
-            autoComplete={autoComplete ? autoComplete : "off"}
+            autoComplete={getAutoComplete()}
             minLength={minLength}
             maxLength={maxLength}
             onBlur={blurHandler}
@@ -151,7 +170,8 @@ class InputField extends Component<Props, {}> {
                     width: tacInput ? "34.81rem" : "31.6rem",
                   }
             }
-            type={type}
+            data-intention-type={type}
+            type={getInputType()}
             value={value}
             autoFocus={!!autoFocus ? autoFocus : false}
             onChange={changeHandler}

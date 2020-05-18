@@ -88,6 +88,7 @@ const Sprint4: React.FC<Props> = () => {
   const [newValue, setNewValue] = useState("");
   const [newValClear, setNewValClear] = useState(false);
   const [isClearIconHover, setIsClearIconHover] = useState(false);
+  const [testPasswordValue, setTestPasswordValue] = useState('');
 
   // const [linkListBtnColor, setLinkListBtnColor] = useState({
   //   top: '#BDBDBD',
@@ -493,6 +494,48 @@ const Sprint4: React.FC<Props> = () => {
           handleChange={(e) => {
             alert(e);
           }}
+          bottomLabel="Maximum Daily Limit RM 9,999,999.99"
+          // bottomLabelStyle={{ color: "red" }}
+        />
+        <InputField
+          icon={{ name: "RM", color: "#000" }}
+          tipChildren={<p>tipChildren</p>}
+          label="bottomLabel"
+          notValid={false}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The Input Field is wrong",
+            subText: "Please try again.",
+          }}
+          type="password"
+          clearClickHandler={() => {}}
+          value={testPasswordValue}
+          handleChange={(e) => {
+            console.log(e)
+            setTestPasswordValue(e.target.value)
+          }}
+          autoComplete="off"
+          bottomLabel="Maximum Daily Limit RM 9,999,999.99"
+          // bottomLabelStyle={{ color: "red" }}
+        />
+        <InputField
+          icon={{ name: "RM", color: "#000" }}
+          tipChildren={<p>tipChildren</p>}
+          label="bottomLabel"
+          notValid={false}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The Input Field is wrong",
+            subText: "Please try again.",
+          }}
+          type="number"
+          clearClickHandler={() => {}}
+          value={testPasswordValue}
+          handleChange={(e) => {
+            console.log(e)
+            setTestPasswordValue(e.target.value)
+          }}
+          autoComplete="off"
           bottomLabel="Maximum Daily Limit RM 9,999,999.99"
           // bottomLabelStyle={{ color: "red" }}
         />
