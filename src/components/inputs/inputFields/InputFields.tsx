@@ -143,12 +143,12 @@ class InputField extends Component<Props, {}> {
             style={
               autoFocus
                 ? {
-                    width: tacInput ? "34.81rem" : "31.6rem",
+                    width: tacInput ? "34.81rem" : "100%",
                     paddingLeft: !icon ? "1.5rem" : "3.75rem",
                   }
                 : {
                     paddingLeft: !icon ? "1.5rem" : "3.75rem",
-                    width: tacInput ? "34.81rem" : "31.6rem",
+                    width: tacInput ? "34.81rem" : "100%",
                   }
             }
             type={type}
