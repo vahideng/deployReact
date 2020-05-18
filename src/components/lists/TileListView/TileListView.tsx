@@ -167,6 +167,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                     marginLeft:
                       item.icon && item.iconColor && item.iconSize ? 8 : 4,
                     letterSpacing: 0.4,
+                    whiteSpace :"nowrap"
                   }}
                 >
                   {item.amount}

@@ -654,7 +654,7 @@ class Sprint1 extends Component<Props, State> {
                 accountNumber: "123456890",
                 statusLabel: "ACTIVE",
                 statusLabelColor: "#36A03E",
-                amount: "RM 10,135",
+                amount: "RM 1700,140,160",
                 percentageVal: "6.6",
                 percentageStatus: "Plus",
               },
