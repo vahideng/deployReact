@@ -99,8 +99,9 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  width: 300px;
   text-transform: uppercase;
-  margin-left: 3.4rem;
+  margin-left: 3rem;
   min-width: 140px;
   display: -webkit-box;
   display: -ms-flexbox;
