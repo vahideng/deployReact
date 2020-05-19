@@ -645,6 +645,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>TileListView</Title>
         <CenteredDiv>
           <TileListView
+
             testId={"testId"}
             list={[
               {
@@ -655,6 +656,28 @@ class Sprint1 extends Component<Props, State> {
                 statusLabel: "3 Unit Trust Funds",
                 statusLabelColor: "#36A03E",
                 amount: "RM 1700,140,160",
+                percentageVal: "6.6",
+                percentageStatus: "Plus",
+              },
+              {
+                accountName:
+                  "TRUE Savings AmBank Account-i Australia Singapore and alot",
+                accountNickName: "Visa Card Classic",
+                accountNumber: "123456890",
+                statusLabel: "3 Unit Trust Funds",
+                statusLabelColor: "#36A03E",
+                amount: "RM 10000",
+                percentageVal: "6.6",
+                percentageStatus: "Plus",
+              },
+              {
+                accountName:
+                  "TRUE Savings AmBank Account-i Australia Singapore and alot",
+                accountNickName: "Visa Card Classic",
+                accountNumber: "123456890",
+                statusLabel: "3 Unit Trust Funds",
+                statusLabelColor: "#36A03E",
+                amount: "RM 1,000.000.000.00",
                 percentageVal: "6.6",
                 percentageStatus: "Plus",
               },
@@ -672,11 +695,11 @@ class Sprint1 extends Component<Props, State> {
               {
                 icon: "Plus",
                 iconColor: "#36A03E",
-                iconSize: 40,
+                iconSize: 30,
                 accountName: "Conversion Account",
                 accountNumber: "20717524",
                 statusLabel: "ACTIVE",
-                amount: "RM 2,000",
+                amount: "RM 1,000.000.00",
                 amountStatus: "Minus",
                 percentageVal: "6.6",
                 percentageStatus: "Plus",

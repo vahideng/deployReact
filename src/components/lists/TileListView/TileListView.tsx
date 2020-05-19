@@ -57,7 +57,9 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
             key={index}
             id={testId}
           >
-            <div style={{ display: "flex", flex: 1.5, flexDirection: "row" }}>
+
+            {/* first column */}
+            <div style={{ display: "flex", width: "12.8125rem", flexDirection: "row" }}>
               {item.cardLogo && (
                 <div className={classes.imageContainer}>
                   <img src={item.cardLogo} alt="Image" />
@@ -76,7 +78,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                   style={{
                     fontWeight: 600,
                     whiteSpace: "nowrap",
-                    maxWidth: "13.15rem",
+                    maxWidth: "12.8125rem",
                     textOverflow: "ellipsis",
                     overflow: "hidden",
                   }}
@@ -91,8 +93,11 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                 </R_15_GREY444>
               </div>
             </div>
-            <div style={{ display: "flex", flex: 0.7,
-            marginLeft:  '1.4375rem' }}>
+
+              {/* second column */}
+            
+            <div style={{ display: "flex", width:"10rem",
+            marginLeft:  '1.4375rem',   marginRight:  '1.4375rem' }}>
               <R_13_BLACK
                 style={{
                   color: !!item.statusLabelColor && item.statusLabelColor,
@@ -120,10 +125,12 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                 )}
               </R_13_BLACK>
             </div>
+
+  {/* third column */}
             <div
               style={{
                 display: "flex",
-                flex: 0.8,
+                width: "16rem",
                 flexDirection: "column",
                 alignItems: "flex-end",
               }}
