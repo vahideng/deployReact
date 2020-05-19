@@ -61,7 +61,7 @@ const CenteredDiv = styled.div`
   justify-content: center;
   padding: 2rem 0;
 `;
-interface Props {}
+interface Props { }
 
 const Sprint4: React.FC<Props> = () => {
   const [selectedItem, setSelectedOption] = useState("Persian");
@@ -171,7 +171,7 @@ const Sprint4: React.FC<Props> = () => {
         text={
           "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
         }
-        children={<div style={{backgroundColor:'red'}}><p>hello world </p></div>}       
+        children={<div style={{ backgroundColor: 'red' }}><p>hello world </p></div>}
       />
       <Title>Review & Confirm - Responsive</Title>
       <div
@@ -216,7 +216,7 @@ const Sprint4: React.FC<Props> = () => {
                 {
                   leftLabel: "From",
                   rightLabel: "Savings Account",
-                  details: ["2998202013", "Available Balance: RM 10,301.50"],
+                  details: ["2998202013", "Available Balance: RM 2,100,301.50"],
                   status: {
                     content: "UNSUCCESSFUL",
                     color: "red",
@@ -489,13 +489,13 @@ const Sprint4: React.FC<Props> = () => {
             subText: "Please try again.",
           }}
           type="text"
-          clearClickHandler={() => {}}
+          clearClickHandler={() => { }}
           value={""}
           handleChange={(e) => {
             alert(e);
           }}
           bottomLabel="Maximum Daily Limit RM 9,999,999.99"
-          // bottomLabelStyle={{ color: "red" }}
+        // bottomLabelStyle={{ color: "red" }}
         />
         <InputField
           icon={{ name: "RM", color: "#000" }}
@@ -508,7 +508,7 @@ const Sprint4: React.FC<Props> = () => {
             subText: "Please try again.",
           }}
           type="password"
-          clearClickHandler={() => {}}
+          clearClickHandler={() => { }}
           value={testPasswordValue}
           handleChange={(e) => {
             console.log(e)
@@ -516,7 +516,7 @@ const Sprint4: React.FC<Props> = () => {
           }}
           autoComplete="off"
           bottomLabel="Maximum Daily Limit RM 9,999,999.99"
-          // bottomLabelStyle={{ color: "red" }}
+        // bottomLabelStyle={{ color: "red" }}
         />
         <InputField
           icon={{ name: "RM", color: "#000" }}
@@ -529,7 +529,7 @@ const Sprint4: React.FC<Props> = () => {
             subText: "Please try again.",
           }}
           type="number"
-          clearClickHandler={() => {}}
+          clearClickHandler={() => { }}
           value={testPasswordValue}
           handleChange={(e) => {
             console.log(e)
@@ -537,7 +537,7 @@ const Sprint4: React.FC<Props> = () => {
           }}
           autoComplete="off"
           bottomLabel="Maximum Daily Limit RM 9,999,999.99"
-          // bottomLabelStyle={{ color: "red" }}
+        // bottomLabelStyle={{ color: "red" }}
         />
       </div>
       <Title>Sticky Footer</Title>
@@ -763,7 +763,7 @@ const Sprint4: React.FC<Props> = () => {
       <FormContainer
         label="Change Security Image"
         rightLabel={{
-          onClick: () => {},
+          onClick: () => { },
           style: {},
           label: "Remove",
         }}
@@ -927,8 +927,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -992,8 +992,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1057,8 +1057,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1122,8 +1122,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1187,8 +1187,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1258,8 +1258,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1323,8 +1323,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1388,8 +1388,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1453,8 +1453,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1518,8 +1518,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1589,8 +1589,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1654,8 +1654,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1719,8 +1719,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1784,8 +1784,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1849,8 +1849,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1920,8 +1920,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1985,8 +1985,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -2050,8 +2050,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -2115,8 +2115,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -2180,8 +2180,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -2251,8 +2251,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -2316,8 +2316,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -2381,8 +2381,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -2446,8 +2446,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -2511,8 +2511,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
