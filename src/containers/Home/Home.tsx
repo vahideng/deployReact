@@ -191,6 +191,7 @@ const Home: React.FC<Props> = () => {
                 boxChildren={
                   <div style={{ height: 250, padding: "3rem 1rem" }}>
                     <InputField
+                    showTooltip={true}
                       notValid={true}
                       errorMessage={{
                         testId: "testId",

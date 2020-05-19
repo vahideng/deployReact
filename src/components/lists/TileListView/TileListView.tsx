@@ -68,7 +68,7 @@ const TileListView: React.FC<Props> = ({ list, onTileClick, testId }) => {
                   display: "flex",
                   flexDirection: "column",
                   marginLeft: item.cardLogo ? 16 : 0,
-                  width: item.cardLogo ? '12.3125rem' : '15.8125rem',
+                  width: item.cardLogo ? '10.3125rem' : '13.8125rem',
                  
                 }}
               >
