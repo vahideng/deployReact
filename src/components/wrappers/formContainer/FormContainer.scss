@@ -11,23 +11,18 @@
   box-shadow: $mainBoxShadow;
   border-radius: 1.1rem;
   background-color: #ffffff;
-
 }
 .FormContainerIconWrapResponsive {
   width: 100% !important;
 }
 .FormContainerMainResponsive {
   width: 100% !important;
- 
 }
 
-.FormContainerContentResponsive{
-
+.FormContainerContentResponsive {
   @media (max-width: 576px) {
     padding: 0 !important;
   }
-
-
 }
 .FormContainerLabel {
   display: flex;
@@ -51,13 +46,21 @@
 }
 
 .FormContainerTooltip {
+  align-self: center;
+  justify-self: center;
   margin-left: 1rem;
 }
 
 .LeftLabel {
-  padding: 0;
-  margin: 0;
-  align-items: center;
+  display: inline-flex;
+
+  & > *:first-child {
+    margin-right: 1rem;
+  }
+  & > *:last-child {
+    position: relative;
+    top: 2px;
+  }
 }
 .HeaderDiv {
   margin-top: -2px !important;
@@ -69,7 +72,7 @@
 .Header {
   padding-top: 2.5rem;
 }
-.Overlay{
+.Overlay {
   position: absolute;
   left: 0;
   right: 0;

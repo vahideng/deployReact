@@ -83,27 +83,24 @@ const PrimaryButton: React.FC<Props> = ({
       </button>
     </div>
   ) : (
-    <div id={`${testId}-1`}>
-      <button
-        id={testId}
-        onClick={onButtonClick}
-        className={classes.PrimaryButtonSmall}
-        style={{
-          background: buttonBg,
-          width: width,
-          height: height,
-          boxShadow: shadow,
-          ...buttonStyle,
-        }}
-      >
-        <Icon
-          icon={icon.name ? icon.name : "Download"}
-          color={icon.color}
-          size={15}
-        />
-      </button>
-    </div>
-  );
+      <div id={`${testId}-1`}>
+        <button
+          id={testId}
+          onClick={onButtonClick}
+          className={classes.PrimaryButtonSmall}
+          style={{
+            boxShadow: shadow,
+            ...buttonStyle,
+          }}
+        >
+          <Icon
+            icon={icon.name ? icon.name : "Download"}
+            color={icon.color}
+            size={15}
+          />
+        </button>
+      </div>
+    );
 };
 
 PrimaryButton.defaultProps = {

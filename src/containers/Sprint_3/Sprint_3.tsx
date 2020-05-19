@@ -57,7 +57,7 @@ const {
   B_13_ORANGE_463,
   R_12_WHITE,
   B_14_WHITE,
-  B_24_BLACK,
+  // B_24_BLACK,
   B_15_WHITE,
   R_13_GREY969,
   SB_13_BLACK,
@@ -2250,49 +2250,50 @@ const Sprint3: React.FC<Props> = () => {
                 display: "flex",
                 flexDirection: "column",
                 padding: "2rem",
+                width: "50rem"
               }}
             >
-              <B_24_BLACK style={{ textAlign: "center" }}>
-                Transfer Unsuccessful
-              </B_24_BLACK>
-              <br />
-              <p style={{ textAlign: "center" }}>
-                Your payment of RM 20.50 to Revenue Harvest Sdn. Bhd. is
-                unsuccessful
-              </p>
-              <p style={{ textAlign: "center" }}>
-                Unable to perform this transaction. Please call our Contact
-                Centre for assistance.
-              </p>
-              <List
-                itemContainerStyle={{ padding: 0 }}
-                list={[
-                  {
-                    leftLabel: "To",
-                    rightLabel: "Saving Account A",
-                    details: ["8881019596535 | AmBank"],
-                  },
-                  {
-                    leftLabel: "Amount",
-                    rightLabel: "RM 500.00",
-                    details: ["Fees & Charges: RM 0.00"],
-                  },
-                  {
-                    leftLabel: "Date",
-                    rightLabel: "Transfer Now",
-                    details: ["Today, 5 January 2019"],
-                  },
-                  {
-                    leftLabel: "Reference",
-                    rightLabel: "House Rental",
-                  },
-                  {
-                    leftLabel: "From",
-                    rightLabel: "Savings Account",
-                    details: ["2998202013", "Available Balance: RM 10,301.50"],
-                  },
-                ]}
-              />
+              {/* <B_24_BLACK style={{ textAlign: "center" }}>
+              Transfer Unsuccessful
+            </B_24_BLACK>
+            <br />
+            <p style={{ textAlign: "center" }}>
+              Your payment of RM 20.50 to Revenue Harvest Sdn. Bhd. is
+              unsuccessful
+            </p>
+            <p style={{ textAlign: "center" }}>
+              Unable to perform this transaction. Please call our Contact
+              Centre for assistance.
+            </p>
+            <List
+              itemContainerStyle={{ padding: 0 }}
+              list={[
+                {
+                  leftLabel: "To",
+                  rightLabel: "Saving Account A",
+                  details: ["8881019596535 | AmBank"],
+                },
+                {
+                  leftLabel: "Amount",
+                  rightLabel: "RM 500.00",
+                  details: ["Fees & Charges: RM 0.00"],
+                },
+                {
+                  leftLabel: "Date",
+                  rightLabel: "Transfer Now",
+                  details: ["Today, 5 January 2019"],
+                },
+                {
+                  leftLabel: "Reference",
+                  rightLabel: "House Rental",
+                },
+                {
+                  leftLabel: "From",
+                  rightLabel: "Savings Account",
+                  details: ["2998202013", "Available Balance: RM 10,301.50"],
+                },
+              ]}
+            /> */}
             </div>
           }
         />
@@ -2697,7 +2698,7 @@ const Sprint3: React.FC<Props> = () => {
       <Title>PortfolioListContent</Title>
       <div style={{ width: "50%", margin: "0 auto" }}>
         <PortfolioListContent
-          containerStyle={{ backgroundColor: "red" }} // new changes-1-vahideng
+          containerStyle={{ backgroundColor: "#dedede" }} // new changes-1-vahideng
           buttonStyle={{ color: "rgba(0, 113, 130, 0.984)" }} // new changes-2-vahideng
           buttonTextStyle={{ color: "white" }} //new changes-3-vahideng
           borderColor="#8677D9"
