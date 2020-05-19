@@ -3,7 +3,7 @@ import { Card, Accordion, useAccordionToggle } from "react-bootstrap";
 import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../../assets/typography";
 import classes from "./LinkList.module.css";
-const { SB_15_BLACK, R_15_BLACK } = Paragraphs;
+const { B_15_BLACK, R_15_BLACK } = Paragraphs;
 
 declare type ListItem = {
   disabled?: boolean;
@@ -115,7 +115,7 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
     label,
     read,
     subtitle = [],
-    bold,
+    bold = true,
     onListClick = () => {},
     leftIcon,
   } = item;
@@ -140,7 +140,7 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
       <div className={classes.LabelWrapper}>
         <div className={classes.LabelInner}>
           {bold ? (
-            <SB_15_BLACK>{label}</SB_15_BLACK>
+            <B_15_BLACK>{label}</B_15_BLACK>
           ) : (
             <R_15_BLACK>{label}</R_15_BLACK>
           )}
