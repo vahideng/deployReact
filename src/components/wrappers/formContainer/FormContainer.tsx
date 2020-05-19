@@ -4,7 +4,7 @@ import Paragraphs from "../../assets/typography";
 import Tooltip from "src/components/tooltip/Tooltip";
 import Icon from "src/components/assets/icons/icon";
 import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
-import { Row } from "react-bootstrap";
+
 const { B_14_WHITE, B_15_ORANGE_463, B_24_BLACK, R_15_BLACK } = Paragraphs;
 
 interface Props {
@@ -106,10 +106,10 @@ const FormContainer: React.FC<Props> = ({
           !statusIcon
             ? { borderRadius: "1rem" }
             : {
-                width: !responsive ? "36.31rem" : "100%",
-                borderTopLeftRadius: 0,
-                borderTopRightRadius: 0,
-              }
+              width: !responsive ? "36.31rem" : "100%",
+              borderTopLeftRadius: 0,
+              borderTopRightRadius: 0,
+            }
         }
       >
         {
@@ -127,21 +127,19 @@ const FormContainer: React.FC<Props> = ({
         }
         {!!label && (
           <div className={classes.FormContainerLabel} id={`${testId}-0`}>
-            <Row className={classes.LeftLabel}>
+            <div className={classes.LeftLabel}>
               <B_14_WHITE>{label}</B_14_WHITE>
               {!!tooltip && (
-                <span className={classes.FormContainerTooltip}>
-                  <Tooltip
-                    onBlur={onBlur}
-                    showTooltip={showTooltip}
-                    onTooltipClicked={onTooltipClicked}
-                    tipChildren={tooltip}
-                    color="#FFFFFF"
-                    testId={`${testId}-1`}
-                  />
-                </span>
+                <Tooltip
+                  onBlur={onBlur}
+                  showTooltip={showTooltip}
+                  onTooltipClicked={onTooltipClicked}
+                  tipChildren={tooltip}
+                  color="#FFFFFF"
+                  testId={`${testId}-1`}
+                />
               )}
-            </Row>
+            </div>
             {rightLabel === undefined ? null : (
               <B_15_ORANGE_463
                 onClick={rightLabel.onClick}

@@ -1434,7 +1434,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>Vertical tab</Title>
         <CenteredDiv>
           <VerticalTab
-            tabHeight="300px"
+            // tabHeight="300px"
             // WrapperStyle={{ backgroundColor: 'red' }}
             testId={"testId"}
             selectedBorderColor="#FD8585"
@@ -1705,7 +1705,7 @@ class Sprint1 extends Component<Props, State> {
         <Title>VerticalTab with background image</Title>
         <CenteredDiv>
           <VerticalTab
-            tabWidth={"12rem"}
+            // tabWidth={"12rem"}
             selectedBorderColor="#FD8585"
             minimize={false}
             data={[
@@ -1864,7 +1864,7 @@ class Sprint1 extends Component<Props, State> {
         </CenteredDiv>
         <CenteredDiv>
           <VerticalTab
-            tabHeight="300px"
+            // tabHeight="300px"
             selectedBorderColor="#FD8585"
             minimize={true}
             data={[
