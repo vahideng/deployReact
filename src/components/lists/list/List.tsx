@@ -12,7 +12,7 @@ const {
   R_14_GREY444,
   B_24_BLACK,
   B_14_BLACK,
-  B_15_BLACK_444
+  B_15_BLACK
 } = Paragraphs;
 interface Props {
   testId?: string;
@@ -116,7 +116,7 @@ const List: React.FC<Props> = ({
         list.map((item, index) => {
           return (
             <div
-              className={responsive ? classes.ListItemsContainer : classes.ListItemsContainerRes}
+              className={responsive ? classes.ListItemsContainerRes : classes.ListItemsContainer}
               style={itemContainerStyle}
               id={`${testId}-${index}`}
               key={index}
@@ -132,7 +132,7 @@ const List: React.FC<Props> = ({
                         <Icon icon="accent-tick" size={13} />
                       </span>
                     )}
-                    <B_15_BLACK_444 style={{ fontSize: "13px" }}>{item.rightLabel}</B_15_BLACK_444>
+                    <B_15_BLACK>{item.rightLabel}</B_15_BLACK>
                   </div>
 
                   {!!item.details &&

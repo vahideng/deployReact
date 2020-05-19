@@ -10,6 +10,7 @@ const {
   R_19_GREY444,
   B_24_BLACK,
   SB_15_BLACK,
+  B_15_BLACK,
   R_19_GREEN_444,
   B_15_RED
 } = Paragraphs;
@@ -138,10 +139,10 @@ const LogoutList: React.FC<LogoutListProps> = ({
                 </Col>
                 <ColDiv className={classes.rightLabel}>
                   <R_19_GREY444 className={classes.RightLabelFirst} style={styleTimeStamp}>{TimeStamp}</R_19_GREY444>
-                  <SB_15_BLACK style={styleValue} className={classes.RightLabel2Res}>
+                  <B_15_BLACK style={styleValue} className={classes.RightLabel2Res}>
                     {negative && <B_15_RED style={{ display: 'inline' }}>- </B_15_RED>}
                     {value}
-                  </SB_15_BLACK>
+                  </B_15_BLACK>
                   <R_19_GREEN_444 style={item.middleLabel.styleContent} className={classes.middleLabelRes}>{item.middleLabel.content}</R_19_GREEN_444>
                 </ColDiv>
               </div>
