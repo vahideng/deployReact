@@ -33,3 +33,10 @@
   top: 0rem;
   left: 2.5rem;
 }
+
+@media (max-width: 575px) {
+  .TooltipContentMiddle {
+    top: 1.3rem;
+    left: -4.6rem;
+  }
+}

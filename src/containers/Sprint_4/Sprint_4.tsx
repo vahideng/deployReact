@@ -449,7 +449,7 @@ const Sprint4: React.FC<Props> = () => {
               boxChildren={
                 <div style={{ padding: "3rem 1.5rem" }}>
                   <InputField
-                    showTooltip={false}
+                    showTooltip={true}
                     tipChildren={<p>test</p>}
                     responsive={true}
                     notValid={true}

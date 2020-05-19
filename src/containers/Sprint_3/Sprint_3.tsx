@@ -1365,6 +1365,7 @@ const Sprint3: React.FC<Props> = () => {
 
       <CenteredDiv>
         <InputField
+        responsive={true}
           onTooltipClicked={() => alert("tooltipCLicked")}
           showTooltip={true}
           onBlurTooltip={() => console.log("OutsideClick")}
@@ -2316,6 +2317,7 @@ const Sprint3: React.FC<Props> = () => {
         onButtonClick={() => setSettingsModalOpen(true)}
       />
       <SettingModalCenter // give CV  close functionality
+        
         testId={"testId"}
         modalIsOpen={settingsModalOpen}
         onRequestClose={() => alert("close")}
@@ -2355,8 +2357,10 @@ const Sprint3: React.FC<Props> = () => {
                       "If you have forgotten your username and/or password, you can change them in AmOnline",
                     ]}
                     contentStyle={{ marginBottom: "1rem" }}
+                    responsive ={true}
                   />
                   <TextWithDetails
+                  responsive ={true}
                     title="Need more assistance?"
                     direction="row"
                     content={["We're here to help. Get in touch with us"]}
@@ -2364,10 +2368,11 @@ const Sprint3: React.FC<Props> = () => {
                   />
                   <div style={{ marginBottom: "1rem" }}>
                     <LabeledIcon
+                    
                       rightLabel="+603 2178 8888"
                       rightLabelStyle={{
                         fontWeight: 700,
-                        fontSize: "0.93rem",
+                        fontSize: "13px",
                       }}
                       icon={{
                         name: "Call",
@@ -2395,6 +2400,7 @@ const Sprint3: React.FC<Props> = () => {
                 >
                   <PrimaryButton
                     shadowed
+                    responsive={true}
                     title="No"
                     buttonStyle={{
                       background:
@@ -2404,15 +2410,16 @@ const Sprint3: React.FC<Props> = () => {
                       marginRight: ".5rem",
                     }}
                     height="3rem"
-                    minWidth="15rem"
+                    minWidth="4rem"
                     titleColor="#000"
                     onButtonClick={() => {
                       setSettingsModalOpen(false);
                     }}
                   />
                   <PrimaryButton
+                   responsive={true}
                     title="Yes"
-                    minWidth="15rem"
+                    minWidth="4rem"
                     onButtonClick={() => {
                       setSettingsModalOpen(false);
                     }}

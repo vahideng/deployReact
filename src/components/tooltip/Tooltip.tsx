@@ -11,6 +11,7 @@ interface TooltipProps {
   showTooltip?: boolean;
   onBlur?: () => void;
   onTooltipClicked?: () => void;
+  responsive ?: boolean;
 }
 
 class Tooltip extends Component<TooltipProps, {}> {
@@ -25,10 +26,17 @@ class Tooltip extends Component<TooltipProps, {}> {
       tipSize,
       showTooltip,
       onTooltipClicked,
+      responsive,
       onBlur,
     } = this.props;
 
     const tooltipSize = tipSize !== undefined ? tipSize : 18.7;
+
+    const tooltipClass=[ classes.TooltipContentRight]
+
+    if(responsive){
+      tooltipClass.push(classes.TooltipContentMiddle)
+    }
     return (
       <>
         {rightAlign ? (
@@ -49,7 +57,7 @@ class Tooltip extends Component<TooltipProps, {}> {
               />
             </div>
             {showTooltip && (
-              <div id={`${testId}-1`} className={classes.TooltipContentRight}>
+              <div id={`${testId}-1`} className={tooltipClass.join(' ')}>
                 {tipChildren}
               </div>
             )}

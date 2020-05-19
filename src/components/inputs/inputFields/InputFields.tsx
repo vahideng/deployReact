@@ -132,6 +132,7 @@ class InputField extends Component<Props, {}> {
                 showTooltip={showTooltip}
                 tipChildren={tipChildren}
                 rightAlign={true}
+                responsive ={responsive}
               />
             )}
           </div>
