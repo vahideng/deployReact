@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, ReactNode } from "react";
 import Paragraphs from "../";
 import classes from "./CenterText.module.css";
 const { B_24_BLACK, R_15_BLACK } = Paragraphs;
@@ -9,6 +9,7 @@ interface Props {
   titleStyle?: CSSProperties;
   detailText?: string;
   detailTextStyle?: CSSProperties;
+  children ?: ReactNode
 }
 
 const CenterText = ({
@@ -17,7 +18,8 @@ const CenterText = ({
   titleStyle,
   detailText,
   detailTextStyle,
-  testId
+  testId,
+  children
 }: Props) => {
   return (
     <div className={classes.Wrapper} style={mainStyle} id={testId}>
@@ -28,6 +30,7 @@ const CenterText = ({
             {detailText}
           </R_15_BLACK>
         )}
+        {children}
       </div>
     </div>
   );

@@ -576,6 +576,12 @@ const Sprint4: React.FC<Props> = () => {
           mainStyle={{ background: "#eee" }}
           title="You have been logged out"
           detailText="Thank you for banking with AmOnline."
+          children = {
+             <DynamicText
+          text="You will be redirected to FPX status page in"
+          counter={9}
+          inlineText="seconds."
+        />}
         />
       </div>
       <Title>View Rate Container</Title>
