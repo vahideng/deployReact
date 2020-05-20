@@ -21,6 +21,7 @@
   cursor: pointer;
   box-shadow: $darkBoxShadow;
   position: relative;
+  background: #fff;
   @media (max-width: 576px) {
     width: 100%;
     margin: 0 0 1rem 0;
@@ -33,6 +34,7 @@
   width: 15.06rem;
   min-height: 5.31rem;
   padding: 1rem;
+
   @media (max-width: 576px) {
     width: 100%;
   }
@@ -103,6 +105,7 @@
   cursor: pointer;
   box-shadow: $darkBoxShadow;
   position: relative;
+  background: #fff;
 }
 .CenteredSelector {
   display: flex;

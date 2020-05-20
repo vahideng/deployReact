@@ -40,6 +40,7 @@
   -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.129726), 0px 4px 7px rgba(0, 0, 0, 0.11574);
           box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.129726), 0px 4px 7px rgba(0, 0, 0, 0.11574);
   position: relative;
+  background: #fff;
 }
 
 @media (max-width: 576px) {
@@ -121,6 +122,7 @@
   -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.129726), 0px 4px 7px rgba(0, 0, 0, 0.11574);
           box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.129726), 0px 4px 7px rgba(0, 0, 0, 0.11574);
   position: relative;
+  background: #fff;
 }
 
 .CenteredSelector {

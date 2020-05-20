@@ -348,7 +348,7 @@ const Sprint4: React.FC<Props> = () => {
         />
       </CenteredDiv>
       <Title>SelectionTile Responsive</Title>
-      <CenteredDiv>
+      <CenteredDiv style={{ background: "#dedede" }}>
         <SelectionTile
           responsive
           testId={"testId"}
