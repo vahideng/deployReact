@@ -45,7 +45,6 @@
 .HeaderWrapper {
   padding-top: 1.8125rem;
   padding-bottom: 1.8125rem;
-  cursor: pointer;
 }
 
 .CardHeader {
@@ -66,6 +65,10 @@
 
 .LeftIconWrapper {
   margin-right: 0.5rem;
+}
+
+.ToggleWrapper {
+  cursor: pointer;
 }
 
 .AccordionCollapseWrapper {

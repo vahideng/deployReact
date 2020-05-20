@@ -551,7 +551,7 @@ const Sprint4: React.FC<Props> = () => {
         />
       </div>
       <StickyFooter
-        isOpen={stickyFooter}
+        isOpen={true}
         label="Hide Card"
         buttonTitle="Yes, Disable"
         onButtonClick={() => {

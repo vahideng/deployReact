@@ -9,7 +9,7 @@
   @extend .FlexCenter;
   padding-top: 1.8125rem;
   padding-bottom: 1.8125rem;
-  cursor: pointer;
+ 
 }
 
 .CardHeader {
@@ -37,6 +37,7 @@
 
 .ToggleWrapper {
   @extend .FlexRight;
+  cursor: pointer;
 }
 
 .AccordionCollapseWrapper {

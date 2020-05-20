@@ -133,10 +133,10 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
   return (
     <div
       className={classes.HeaderWrapper}
-      onClick={handleToggle}
+     
       style={{ ...cardHeaderInnerStyle, ...item.cardHeaderInnerStyle }}
     >
-      {leftIcon && <div className={classes.LeftIconWrapper}>{leftIcon}</div>}
+      {leftIcon && <div  className={classes.LeftIconWrapper}>{leftIcon}</div>}
       <div className={classes.LabelWrapper}>
         <div className={classes.LabelInner}>
           {bold ? (
@@ -150,7 +150,7 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
           return <R_15_BLACK key={index}>{sub}</R_15_BLACK>;
         })}
       </div>
-      <div className={classes.ToggleWrapper}>
+      <div   onClick={handleToggle}  className={classes.ToggleWrapper}>
         <RightComponent item={item} isOpen={isOpen} />
       </div>
     </div>
