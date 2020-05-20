@@ -11,7 +11,7 @@ interface Props {
     expandedIndexes: Array<number>;
     transactions: {
       icon: string;
-      iconColor: string;
+      iconColor?: string;
       iconSize: number;
       iconBgColor: string;
       label1: string;
@@ -23,7 +23,7 @@ interface Props {
       amount: string;
       actionLabel?: string;
       actionIcon?: string;
-      hideButtons?:boolean;
+      hideButtons?: boolean;
       onActionButtonClick?: () => void;
       details?: {
         label1?: string;
@@ -32,7 +32,7 @@ interface Props {
         value2?: string;
         actionLabel?: string;
         actionIcon?: string;
-        hideButtons?:boolean;
+        hideButtons?: boolean;
         onActionButtonClick?: () => void;
       }[];
     }[];
@@ -44,7 +44,7 @@ const AccountsList: React.FC<Props> = ({
   list,
   onTransactionClick,
   testId,
-  
+
 }) => {
   return (
     <div className={classes.TransactionIconListMainDiv} id={testId}>
@@ -187,7 +187,7 @@ const AccountsList: React.FC<Props> = ({
                       <R_13_BLACK style={{ fontWeight: 700 }}>
                         {transaction.amount}
                       </R_13_BLACK>
-                    </div> 
+                    </div>
                   </div>
                   <div
                     style={{
@@ -235,7 +235,7 @@ const AccountsList: React.FC<Props> = ({
                   </div>
 
                 </div>
-                        
+
                 {item.expandedIndexes.includes(index) && (
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     {transaction.details &&
@@ -342,7 +342,7 @@ const AccountsList: React.FC<Props> = ({
                                 </div>
                               </button>
                             </div>
-                        </div>
+                          </div>
                           {transaction.details &&
                             TDIndex === transaction.details.length - 1 && (
                               <div

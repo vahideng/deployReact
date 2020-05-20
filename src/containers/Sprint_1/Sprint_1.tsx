@@ -520,10 +520,10 @@ class Sprint1 extends Component<Props, State> {
                   expandedIndexes: [0, 1],
                   transactions: [
                     {
-                      icon: "Transfer",
-                      iconBgColor: "orange",
-                      iconColor: "white",
-                      iconSize: 28,
+                      icon: "Duitnow2",
+                      iconBgColor: "#dedede",
+                      // iconColor: "white",
+                      iconSize: 25,
                       label1: "TRANSFER TO",
                       label2: "SEEN OPTICS ",
                       statusLabel: "SUCCESSFUL",
