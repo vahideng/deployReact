@@ -4,7 +4,7 @@ import Paragraphs from "../../assets/typography";
 import Profile from "src/components/headers/profile/Profile";
 import Icon from "src/components/assets/icons/icon";
 
-const { B_16_BLACK, R_14_BLACK, B_15_BLACK } = Paragraphs;
+const { R_14_BLACK, B_15_BLACK } = Paragraphs;
 interface Props {
   responsive?: boolean;
   rowStyle?: CSSProperties;
@@ -87,8 +87,8 @@ const SelectionTile: React.FC<Props> = ({
                       style={
                         selected !== index
                           ? {
-                              fontWeight: "normal",
-                            }
+                            fontWeight: "normal",
+                          }
                           : {}
                       }
                     >
@@ -119,35 +119,50 @@ const SelectionTile: React.FC<Props> = ({
                       greeting={item.avatar.name}
                       alt="AVATAR"
                       src={item.avatar.src}
+                      greetingStyle={selected !== index ? { fontWeight: "normal" } : {}}
                     />
                   </div>
                 ) : (
-                  <div id={`${testId}-0${index}`}>
-                    {!!item.accountTitle && (
-                      <div className={classes.SelectionTileTDiv}>
-                        <B_16_BLACK
-                          x-ms-format-detection="none"
-                          className={classes.SelectionTileTitle}
-                        >
-                          {item.accountTitle}
-                        </B_16_BLACK>
-                      </div>
-                    )}
-                    {!!item.accountNumber && (
-                      <R_14_BLACK x-ms-format-detection="none">
-                        {item.accountNumber}
-                      </R_14_BLACK>
-                    )}
-                    {!!item.amount && (
-                      <B_16_BLACK
-                        className={classes.SelectionTAmount}
-                        x-ms-format-detection="none"
-                      >
-                        {item.amount}
-                      </B_16_BLACK>
-                    )}
-                  </div>
-                )}
+                        <div id={`${testId}-0${index}`}>
+                          {!!item.accountTitle && (
+                            <div className={classes.SelectionTileTDiv}>
+                              <B_15_BLACK
+                                x-ms-format-detection="none"
+                                className={classes.SelectionTileTitle}
+                                style={
+                                  selected !== index
+                                    ? {
+                                      fontWeight: "normal",
+                                    }
+                                    : {}
+                                }
+                              >
+                                {item.accountTitle}
+                              </B_15_BLACK>
+                            </div>
+                          )}
+                          {!!item.accountNumber && (
+                            <R_14_BLACK x-ms-format-detection="none">
+                              {item.accountNumber}
+                            </R_14_BLACK>
+                          )}
+                          {!!item.amount && (
+                            <B_15_BLACK
+                              className={classes.SelectionTAmount}
+                              x-ms-format-detection="none"
+                              style={
+                                selected !== index
+                                  ? {
+                                    fontWeight: "normal",
+                                  }
+                                  : {}
+                              }
+                            >
+                              {item.amount}
+                            </B_15_BLACK>
+                          )}
+                        </div>
+                      )}
               </div>
               {!item.disable && (
                 <div
@@ -163,49 +178,49 @@ const SelectionTile: React.FC<Props> = ({
         })}
     </div>
   ) : (
-    <div className={classes.SelectionTileRow} id={testId} style={rowStyle}>
-      {!!list &&
-        list.map((item, index) => {
-          let disable = null;
-          if (item.disable) {
-            disable = `${classes.Disable}`;
-          }
-          return (
-            <div
-              id={`${testId}-${index}`}
-              onClick={() => onTileClick(item, index)}
-              className={`${classes.CenteredDiv} ${disable} `}
-              key={index}
-              style={tileStyle}
-            >
-              <div className={classes.CenteredSelector}>
-                {item.centeredText && (
-                  <B_15_BLACK
-                    style={
-                      selected !== index
-                        ? {
+      <div className={classes.SelectionTileRow} id={testId} style={rowStyle}>
+        {!!list &&
+          list.map((item, index) => {
+            let disable = null;
+            if (item.disable) {
+              disable = `${classes.Disable}`;
+            }
+            return (
+              <div
+                id={`${testId}-${index}`}
+                onClick={() => onTileClick(item, index)}
+                className={`${classes.CenteredDiv} ${disable} `}
+                key={index}
+                style={tileStyle}
+              >
+                <div className={classes.CenteredSelector}>
+                  {item.centeredText && (
+                    <B_15_BLACK
+                      style={
+                        selected !== index
+                          ? {
                             fontWeight: "normal",
                           }
-                        : {}
-                    }
-                  >
-                    {item.centeredText}
-                  </B_15_BLACK>
-                )}
-                {!!item.centeredChild && item.centeredChild}
+                          : {}
+                      }
+                    >
+                      {item.centeredText}
+                    </B_15_BLACK>
+                  )}
+                  {!!item.centeredChild && item.centeredChild}
+                </div>
+                <div
+                  className={
+                    selected === index
+                      ? `${classes.borderBottomSelected} ${classes.borderBottom}`
+                      : classes.borderBottom
+                  }
+                ></div>
               </div>
-              <div
-                className={
-                  selected === index
-                    ? `${classes.borderBottomSelected} ${classes.borderBottom}`
-                    : classes.borderBottom
-                }
-              ></div>
-            </div>
-          );
-        })}
-    </div>
-  );
+            );
+          })}
+      </div>
+    );
 };
 
 export default SelectionTile;

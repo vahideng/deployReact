@@ -14,6 +14,7 @@ interface Props {
   name?: string;
   alt?: string;
   scrolled?: boolean;
+
 }
 
 const Profile: React.FC<Props> = ({
@@ -34,39 +35,39 @@ const Profile: React.FC<Props> = ({
         {!!src ? (
           <img src={src} alt={alt} />
         ) : (
-          <div
-            className={classes.scrolledAvatarInitials}
-            style={!!initialsBg ? { backgroundColor: initialsBg } : {}}
-          >
-            <XB_11_WHITE>{initials}</XB_11_WHITE>
-          </div>
-        )}
+            <div
+              className={classes.scrolledAvatarInitials}
+              style={!!initialsBg ? { backgroundColor: initialsBg } : {}}
+            >
+              <XB_11_WHITE>{initials}</XB_11_WHITE>
+            </div>
+          )}
       </div>
     </div>
   ) : (
-    <div id={testId}>
-      <div className={`${classes.avatarContainer}`}>
-        {!!src ? (
-          <img src={src} alt={alt} />
-        ) : (
-          <div
-            className={classes.avatarInitials}
-            style={!!initialsBg ? { backgroundColor: initialsBg } : {}}
-          >
-            <XB_14_WHITE>{initials}</XB_14_WHITE>
+      <div id={testId}>
+        <div className={`${classes.avatarContainer}`}>
+          {!!src ? (
+            <img src={src} alt={alt} />
+          ) : (
+              <div
+                className={classes.avatarInitials}
+                style={!!initialsBg ? { backgroundColor: initialsBg } : {}}
+              >
+                <XB_14_WHITE>{initials}</XB_14_WHITE>
+              </div>
+            )}
+          <div className={classes.textContainer}>
+            {!!greeting && (
+              <B_15_BLACK className={classes.greeting} style={greetingStyle}>
+                {greeting}
+              </B_15_BLACK>
+            )}
+            {!!name && <B_15_GREY969 style={nameStyle}>{name}</B_15_GREY969>}
           </div>
-        )}
-        <div className={classes.textContainer}>
-          {!!greeting && (
-            <B_15_BLACK className={classes.greeting} style={greetingStyle}>
-              {greeting}
-            </B_15_BLACK>
-          )}
-          {!!name && <B_15_GREY969 style={nameStyle}>{name}</B_15_GREY969>}
         </div>
       </div>
-    </div>
-  );
+    );
 };
 
 export default Profile;
