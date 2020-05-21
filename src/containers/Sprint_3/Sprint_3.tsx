@@ -1365,7 +1365,7 @@ const Sprint3: React.FC<Props> = () => {
 
       <CenteredDiv>
         <InputField
-        responsive={true}
+          responsive={true}
           onTooltipClicked={() => alert("tooltipCLicked")}
           showTooltip={true}
           onBlurTooltip={() => console.log("OutsideClick")}
@@ -1646,7 +1646,7 @@ const Sprint3: React.FC<Props> = () => {
         </div>
       </CenteredDiv>
       <Title>Selection Tiles</Title>
-      <div style={{ paddingLeft: "2rem" }}>
+      <div style={{ paddingLeft: "2rem", background: "#dedede" }}>
         <SelectionTile
           rowStyle={{ flexWrap: "nowrap" }}
           testId={"testId"}
@@ -2318,7 +2318,7 @@ const Sprint3: React.FC<Props> = () => {
         onButtonClick={() => setSettingsModalOpen(true)}
       />
       <SettingModalCenter // give CV  close functionality
-        
+
         testId={"testId"}
         modalIsOpen={settingsModalOpen}
         onRequestClose={() => alert("close")}
@@ -2358,10 +2358,10 @@ const Sprint3: React.FC<Props> = () => {
                       "If you have forgotten your username and/or password, you can change them in AmOnline",
                     ]}
                     contentStyle={{ marginBottom: "1rem" }}
-                    responsive ={true}
+                    responsive={true}
                   />
                   <TextWithDetails
-                  responsive ={true}
+                    responsive={true}
                     title="Need more assistance?"
                     direction="row"
                     content={["We're here to help. Get in touch with us"]}
@@ -2369,7 +2369,7 @@ const Sprint3: React.FC<Props> = () => {
                   />
                   <div style={{ marginBottom: "1rem" }}>
                     <LabeledIcon
-                    
+
                       rightLabel="+603 2178 8888"
                       rightLabelStyle={{
                         fontWeight: 700,
@@ -2418,7 +2418,7 @@ const Sprint3: React.FC<Props> = () => {
                     }}
                   />
                   <PrimaryButton
-                   responsive={true}
+                    responsive={true}
                     title="Yes"
                     minWidth="4rem"
                     onButtonClick={() => {
