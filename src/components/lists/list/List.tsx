@@ -24,8 +24,9 @@ interface Props {
     titleStyle?: CSSProperties;
     subTitle?: React.ReactNode;
     image?: {
-      name?: any;
+      name?: string;
       alt?: string;
+      imageText?: string;
       style?: CSSProperties;
     };
   };
@@ -102,11 +103,12 @@ const List: React.FC<Props> = ({
               <div>
                 <div className={classes.ListIconDiv}>
                   <img
+                    className={classes.ListIcon}
                     src={header.image.name}
                     alt={header.image.alt}
                     style={header.image.style}
                   />
-                  <B_18_BLACK>{header.icon.iconText}</B_18_BLACK>
+                  <B_18_BLACK>{header.image.imageText}</B_18_BLACK>
                 </div>
               </div>
             )}

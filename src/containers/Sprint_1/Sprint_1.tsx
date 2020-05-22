@@ -805,6 +805,7 @@ class Sprint1 extends Component<Props, State> {
             statusIcon={{
               icon: { name: "Register-1" },
               iconColor: { top: "#94EC9B", bottom: "#5BB362" },
+              // outerIconColor: "red"
               // image: {
               //   src: images.common.amyIcon,
               //   alt: "logo",
@@ -872,11 +873,16 @@ class Sprint1 extends Component<Props, State> {
             children={
               <List
                 header={{
-                  icon: {
-                    name: "LOGO",
-                    color: "#ff2626",
-                    iconText: "Review & Confirm",
-                  },
+                  // icon: {
+                  //   name: "LOGO",
+                  //   color: "#ff2626",
+                  //   iconText: "Review & Confirm",
+                  // },
+                  image: {
+                    name: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80",
+                    style: { width: "3rem" },
+                    imageText: "Review & Confirm"
+                  }
                 }}
                 list={[
                   {
@@ -1011,7 +1017,74 @@ class Sprint1 extends Component<Props, State> {
           />
         </CenteredDiv>
         <Title>FormContainer</Title>
-        <CenteredDiv>
+        <CenteredDiv style={{ flexDirection: "column", alignItems: "center" }}>
+          <FormContainer
+            childrenWrapperStyle={{ padding: "1rem 2rem" }}
+            label={"Select your account/card type"}
+            showTooltip={false}
+            onTooltipClicked={() => alert("clicked!!")}
+            tooltip={
+              <div>
+                <p style={{ color: "#ffffff" }}>
+                  Select your account/card type
+                </p>
+              </div>
+            }
+            children={
+              <div>
+                <SelectionTile
+                  tileStyle={{ margin: ".5rem" }}
+                  onTileClick={(item, index) => {
+                    this.setState({ SelectionTileNum1: index });
+                    alert(
+                      `${item.accountTitle} with indexOf ${index} clicked`
+                    );
+                  }}
+                  selected={SelectionTileNum1}
+                  list={[
+                    {
+                      avatar: {
+                        name: "Myself Adam Constantine",
+                        src:
+                          "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
+                      },
+                    },
+                    {
+                      avatar: {
+                        name: "Christina Azalea Rossie",
+                        initials: "CA",
+                        initialsBg: "#f1f1f1",
+                      },
+                    },
+                    {
+                      children: (
+                        <img src={images.common.sampleLogo} width={150} />
+                      ),
+                    },
+                    {
+                      avatar: {
+                        name: "Kurniawan Suriawati",
+                        initials: "KS",
+                      },
+                    },
+                    {
+                      avatar: {
+                        name: "Deevan Raja",
+                        initials: "DR",
+                      },
+                    },
+                    {
+                      avatar: {
+                        name: "Lee Chong Wei",
+                        initials: "LC",
+                      },
+                    },
+                  ]}
+                />
+              </div>
+            }
+          />
+          <br />
           <FormContainer
             childrenWrapperStyle={{ padding: "1rem 2rem" }}
             label={"Select your account/card type"}
@@ -3248,6 +3321,12 @@ class Sprint1 extends Component<Props, State> {
         />
         <Title>StatusIcon</Title>
         <RowDiv>
+          <StatusIcon
+            icon={{ name: "Tick-1" }}
+            iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
+            small={true}
+            outerIconColor="black"
+          />
           <StatusIcon
             icon={{ name: "Tick-1" }}
             iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
