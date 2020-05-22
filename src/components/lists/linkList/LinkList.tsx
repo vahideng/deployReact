@@ -1,5 +1,6 @@
 import React, { ReactNode, useState } from "react";
 import { Card, Accordion, useAccordionToggle } from "react-bootstrap";
+
 import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../../assets/typography";
 import classes from "./LinkList.module.css";
@@ -45,11 +46,18 @@ const LinkList: React.FC<LinkListProps> = ({
   cardBody,
   accordionStyle,
 }) => {
+
+
+  const [activeKey, setActiveKey] = useState("")
+
   return (
     <div id={testId} className={classes.Container}>
       <Accordion
         defaultActiveKey={defaultActiveKey}
         style={{ ...accordionStyle }}
+        onSelect={(activeKey: any) => setActiveKey(activeKey)
+        }
+
       >
         {list &&
           list.map((item, index) => {
@@ -70,6 +78,7 @@ const LinkList: React.FC<LinkListProps> = ({
                   className={classes.CardHeader}
                 >
                   <AccordionToggle
+                    activeKey={activeKey}
                     item={item}
                     eventKey={`${index}`}
                     defaultActiveKey={defaultActiveKey}
@@ -78,6 +87,7 @@ const LinkList: React.FC<LinkListProps> = ({
                 </Card.Header>
                 {expandable ? (
                   <Accordion.Collapse
+
                     className={classes.AccordionCollapseWrapper}
                     eventKey={`${index}`}
                     style={{
@@ -102,6 +112,7 @@ interface AccordionToggleProps {
   eventKey?: string;
   defaultActiveKey?: string;
   cardHeaderInnerStyle?: any;
+  activeKey?: string
 }
 
 const AccordionToggle: React.FC<AccordionToggleProps> = ({
@@ -109,6 +120,7 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
   eventKey,
   defaultActiveKey,
   cardHeaderInnerStyle,
+  activeKey
 }) => {
   const {
     expandable,
@@ -116,12 +128,17 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
     read,
     subtitle = [],
     bold = true,
-    onListClick = () => {},
+    onListClick = () => { },
     leftIcon,
   } = item;
   const [isOpen, setIsOpen] = useState(defaultActiveKey === eventKey);
-  const decoratedOnClick = useAccordionToggle(eventKey, () =>
-    console.log("totally custom!")
+
+
+  const decoratedOnClick = useAccordionToggle(eventKey, () => {
+    console.log(eventKey, "eventkey");
+
+  }
+
   );
   const handleToggle = (e: any) => {
     onListClick(item);
@@ -133,25 +150,25 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
   return (
     <div
       className={classes.HeaderWrapper}
-     
+
       style={{ ...cardHeaderInnerStyle, ...item.cardHeaderInnerStyle }}
     >
-      {leftIcon && <div  className={classes.LeftIconWrapper}>{leftIcon}</div>}
+      {leftIcon && <div className={classes.LeftIconWrapper}>{leftIcon}</div>}
       <div className={classes.LabelWrapper}>
         <div className={classes.LabelInner}>
           {bold ? (
             <B_15_BLACK>{label}</B_15_BLACK>
           ) : (
-            <R_15_BLACK>{label}</R_15_BLACK>
-          )}
+              <R_15_BLACK>{label}</R_15_BLACK>
+            )}
           {!read && <div className={classes.ReadNotification}></div>}
         </div>
         {subtitle.map((sub: any, index: number) => {
           return <R_15_BLACK key={index}>{sub}</R_15_BLACK>;
         })}
       </div>
-      <div   onClick={handleToggle}  className={classes.ToggleWrapper}>
-        <RightComponent item={item} isOpen={isOpen} />
+      <div onClick={handleToggle} className={classes.ToggleWrapper}>
+        <RightComponent activeKey={activeKey} eventKey={eventKey} item={item} isOpen={isOpen} />
       </div>
     </div>
   );
@@ -160,9 +177,12 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
 interface RightComponentProps {
   item: ListItem;
   isOpen?: boolean;
+  openAccordian?: string
+  eventKey?: any;
+  activeKey?: string
 }
 
-const RightComponent: React.FC<RightComponentProps> = ({ item, isOpen }) => {
+const RightComponent: React.FC<RightComponentProps> = ({ item, isOpen, eventKey, activeKey }) => {
   const { expandable, rightItem } = item;
   if (expandable) {
     return (
@@ -170,16 +190,18 @@ const RightComponent: React.FC<RightComponentProps> = ({ item, isOpen }) => {
         testId="link-list-toggle"
         isOpen={isOpen}
         content={rightItem}
+        eventKey={eventKey}
+        activeKey={activeKey}
       />
     );
   }
   return rightItem ? (
     <>{rightItem}</>
   ) : (
-    <span className={classes.ToggleIcon}>
-      <Icon icon="Right1" size={22} color="#000" />
-    </span>
-  );
+      <span className={classes.ToggleIcon}>
+        <Icon icon="Right1" size={22} color="#000" />
+      </span>
+    );
 };
 interface ExpandIconProps {
   testId?: string;
@@ -189,15 +211,18 @@ interface ExpandIconProps {
   content?: any;
   title?: string;
   isOpen?: boolean;
+  activeKey?: any;
+
+
 }
 
-const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, isOpen }) => {
+const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, activeKey, eventKey }) => {
   if (content) {
     return <>{content}</>;
   }
   return (
     <div className={classes.Content} id={testId}>
-      {isOpen ? (
+      {activeKey === eventKey ? (
         <span className={classes.ToggleIcon}>
           <Icon
             icon="Fail-2"
@@ -207,10 +232,10 @@ const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, isOpen }) => {
           />
         </span>
       ) : (
-        <span className={classes.ToggleIcon}>
-          <Icon icon="Edit" size={25} color="#000" />
-        </span>
-      )}
+          <span className={classes.ToggleIcon}>
+            <Icon icon="Edit" size={25} color="#000" />
+          </span>
+        )}
     </div>
   );
 };
