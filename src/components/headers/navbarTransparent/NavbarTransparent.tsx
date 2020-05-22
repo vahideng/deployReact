@@ -21,7 +21,7 @@ const NavbarTransparent: React.FC<Props> = ({
         <div onClick={icon?.onIconClick}>
           <Icon
             testId={`${testId}-0`}
-            className={classes.NavbarTransparentIcon}
+            className={icon?.onIconClick ? classes.NavbarTransparentIcon : classes.NavbarTransparentIconNoCursor}
             icon={!!icon?.name ? icon.name : "amonline-white"}
             color={icon?.color ? icon.color : "#ff2626"}
             size={150}

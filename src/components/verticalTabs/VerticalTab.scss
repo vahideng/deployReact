@@ -45,8 +45,19 @@
   height: 11.87rem;
   background-size: 43.62rem 11.87rem;
   border-top-right-radius: 1.25rem;
-  padding: 1rem;
+  overflow: hidden;
 }
+
+.RightChildBGOverlay {
+  border-top-left-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+}
+
 .verticalLine {
   border-right: 1px solid #dedded;
   z-index: 10;

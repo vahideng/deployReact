@@ -1745,6 +1745,8 @@ class Sprint1 extends Component<Props, State> {
                     "https://images.unsplash.com/photo-1502101872923-d48509bff386?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
                   title: "INVESTMENT",
                   subTitle: "Freedom to invest in Unit Trust is now yours",
+                  overlay: true,
+                  overlayStyle: { backgroundColor: 'rgba(0,0,0,0.5)' },
                 },
                 children: (
                   <div
@@ -1888,11 +1890,12 @@ class Sprint1 extends Component<Props, State> {
         <CenteredDiv>
           <VerticalTab
             // tabHeight="300px"
+            tabHeight={'75px'}
             selectedBorderColor="#FD8585"
             minimize={true}
             data={[
               {
-                selected: false,
+                selected: true,
                 onClick: (index: any) => alert(index),
                 icon: {
                   name: "Account3",
@@ -1992,7 +1995,7 @@ class Sprint1 extends Component<Props, State> {
                 ),
               },
               {
-                selected: true,
+                selected: false,
                 onClick: (index: any) => alert(index),
                 icon: {
                   name: "Card",

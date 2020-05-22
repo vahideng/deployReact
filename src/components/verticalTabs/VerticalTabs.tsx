@@ -53,7 +53,7 @@ const VerticalTabs: React.FC<Props> = ({
             {!!data &&
               data.map((item: any, index: number) => {
                 return (
-                  <Nav.Item key={index} style={tabHeight && { height: tabHeight }} className={`${classes.Wrapper}`}>
+                  <Nav.Item key={index} style={{ height: tabHeight ? tabHeight : '6rem' }} className={`${classes.Wrapper}`}>
                     <Nav.Link eventKey={index} className={`${classes.NavLink}`}>
                       <VerticalTabSelection
                         selected={item.selected}
@@ -99,8 +99,10 @@ const VerticalTabs: React.FC<Props> = ({
                         }}
                         className={classes.RightChildBG}
                       >
-                        <SB_16_WHITE>{_item.bgImage.title}</SB_16_WHITE>
-                        <B_32_WHITE>{_item.bgImage.subTitle}</B_32_WHITE>
+                        <div className={classes.RightChildBGOverlay} style={_item.bgImage.overlayStyle ? _item.bgImage.overlayStyle : { backgroundColor: _item.bgImage.overlay ? 'rgba(0,0,0,0.3)' : 'transparent' }}>
+                          <SB_16_WHITE>{_item.bgImage.title}</SB_16_WHITE>
+                          <B_32_WHITE>{_item.bgImage.subTitle}</B_32_WHITE>
+                        </div>
                       </div>
                     )}
                     {_item.children}

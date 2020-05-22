@@ -18,7 +18,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  min-height: 6rem;
+  /* min-height: 6rem; */
   height: 100%;
   position: relative;
   border-right: 0.37rem solid transparent;
