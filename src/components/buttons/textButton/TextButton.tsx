@@ -14,7 +14,7 @@ const TextButton: React.FC<Props> = props => {
   const { buttonText, buttonStyles, onTextClick, testId } = props;
 
   return (
-    <div>
+    <div style= {{width:"100%"}}>
       <B_13_ORANGE_463
         className={classes.textButton}
         id={testId}

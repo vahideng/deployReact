@@ -1209,7 +1209,7 @@ class Sprint1 extends Component<Props, State> {
                   alert(event);
                 }}
               />
-              <div style={{ paddingTop: 30 }}>
+              <div style={{ width: "40px", paddingTop: 30 }}>
                 <TextButton
                   testId="testId"
                   buttonText="Forgot username/password?"
@@ -3054,6 +3054,7 @@ class Sprint1 extends Component<Props, State> {
         />
 
         <Title>TextButton</Title>
+        <div style ={{width: "180px"}}>
         <TextButton
           testId="testId"
           buttonText="Forgot username/password?"
@@ -3061,6 +3062,7 @@ class Sprint1 extends Component<Props, State> {
             alert(`${id} clicked`);
           }}
         />
+        </div>
         <CenteredDiv>
           <TextButton
             buttonText="FAQ"
