@@ -11,6 +11,7 @@ interface Props {
   outerRoundSize?: number | string;
   innerRoundSize?: number | string;
   small?: boolean;
+
 }
 
 const StatusIcon: React.FC<Props> = ({
@@ -22,6 +23,7 @@ const StatusIcon: React.FC<Props> = ({
   outerRoundSize,
   innerRoundSize,
   small,
+
 }) => {
   let outer: {} = !!outerRoundSize && {
     width: outerRoundSize,

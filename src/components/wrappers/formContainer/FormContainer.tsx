@@ -18,6 +18,7 @@ interface Props {
       bottom: string;
     };
     icon?: { name?: string; color?: string; size?: number };
+    outerIconColor?: string;
     image?: { src: string; alt?: string };
   };
   headerText?: string;
@@ -85,6 +86,7 @@ const FormContainer: React.FC<Props> = ({
                 bottom: statusIcon.iconColor.bottom,
               }}
               image={!!statusIcon.image && statusIcon.image}
+              outerIconColor={statusIcon.outerIconColor}
             />
           </span>
           <span>

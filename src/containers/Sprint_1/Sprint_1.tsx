@@ -805,6 +805,7 @@ class Sprint1 extends Component<Props, State> {
             statusIcon={{
               icon: { name: "Register-1" },
               iconColor: { top: "#94EC9B", bottom: "#5BB362" },
+              // outerIconColor: "red"
               // image: {
               //   src: images.common.amyIcon,
               //   alt: "logo",
@@ -1083,6 +1084,7 @@ class Sprint1 extends Component<Props, State> {
               </div>
             }
           />
+          <br />
           <FormContainer
             childrenWrapperStyle={{ padding: "1rem 2rem" }}
             label={"Select your account/card type"}
@@ -3314,6 +3316,12 @@ class Sprint1 extends Component<Props, State> {
         />
         <Title>StatusIcon</Title>
         <RowDiv>
+          <StatusIcon
+            icon={{ name: "Tick-1" }}
+            iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
+            small={true}
+            outerIconColor="black"
+          />
           <StatusIcon
             icon={{ name: "Tick-1" }}
             iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
