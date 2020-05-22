@@ -1,11 +1,9 @@
 import React, { ReactNode, useState } from "react";
 import { Card, Accordion, useAccordionToggle } from "react-bootstrap";
-
 import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../../assets/typography";
 import classes from "./LinkList.module.css";
 const { B_15_BLACK, R_15_BLACK } = Paragraphs;
-
 declare type ListItem = {
   disabled?: boolean;
   read?: boolean;
@@ -35,7 +33,6 @@ interface LinkListProps {
   cardBody?: any;
   accordionStyle?: any;
 }
-
 const LinkList: React.FC<LinkListProps> = ({
   testId,
   list,
@@ -46,10 +43,7 @@ const LinkList: React.FC<LinkListProps> = ({
   cardBody,
   accordionStyle,
 }) => {
-
-
   const [activeKey, setActiveKey] = useState("")
-
   return (
     <div id={testId} className={classes.Container}>
       <Accordion
@@ -126,19 +120,22 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
     expandable,
     label,
     read,
-    subtitle = [],
+    subtitle,
     bold = true,
     onListClick = () => { },
     leftIcon,
   } = item;
   const [isOpen, setIsOpen] = useState(defaultActiveKey === eventKey);
-
-
+  let subT: any = ''
+  if (subtitle && subtitle.length && (eventKey == defaultActiveKey && !activeKey)) {
+    subT = subtitle.map((sub: any, index: number) => <R_15_BLACK key={index}>{sub}</R_15_BLACK>)
+  }
+  else if (subtitle && subtitle.length && (eventKey == activeKey)) {
+    subT = subtitle.map((sub: any, index: number) => <R_15_BLACK key={index}>{sub}</R_15_BLACK>)
+  }
   const decoratedOnClick = useAccordionToggle(eventKey, () => {
     console.log(eventKey, "eventkey");
-
   }
-
   );
   const handleToggle = (e: any) => {
     onListClick(item);
@@ -163,9 +160,7 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
             )}
           {!read && <div className={classes.ReadNotification}></div>}
         </div>
-        {subtitle.map((sub: any, index: number) => {
-          return <R_15_BLACK key={index}>{sub}</R_15_BLACK>;
-        })}
+        {subtitle ? subT : null}
       </div>
       <div onClick={handleToggle} className={classes.ToggleWrapper}>
         <RightComponent activeKey={activeKey} eventKey={eventKey} item={item} isOpen={isOpen} />
@@ -212,10 +207,7 @@ interface ExpandIconProps {
   title?: string;
   isOpen?: boolean;
   activeKey?: any;
-
-
 }
-
 const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, activeKey, eventKey }) => {
   if (content) {
     return <>{content}</>;
@@ -239,5 +231,4 @@ const ExpandIcon: React.FC<ExpandIconProps> = ({ testId, content, activeKey, eve
     </div>
   );
 };
-
 export default LinkList;
