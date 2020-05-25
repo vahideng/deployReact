@@ -2731,7 +2731,7 @@ class Sprint1 extends Component<Props, State> {
               accountNumber: "RM 2,000.00",
             },
             {
-              accountTitle: "Ambank AmMoneyLine AmMoneyLine",
+              accountTitle: "Ambank AmMoneyLine",
               accountNumber: "RM 2,000.00",
             },
             {

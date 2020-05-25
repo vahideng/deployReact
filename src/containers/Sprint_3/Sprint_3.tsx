@@ -1819,12 +1819,12 @@ const Sprint3: React.FC<Props> = () => {
               amount: "RM 10,301.50",
             },
             {
-              accountTitle: "Ambank AmMoneyLine AmMoneyLine",
+              accountTitle: "Am bank Am Money Line Am Money Line",
               accountNumber: "RM 2,000.00",
               amount: " RM 11,555.00",
             },
             {
-              accountTitle: "Ambank BonusLink Visa",
+              accountTitle: "Max 2 Line SA Basic-I Fee BonusLink Visa but with very long nickname",
               accountNumber: "RM 2,000.00",
               amount: " RM 55,555.00",
             },
@@ -1852,7 +1852,7 @@ const Sprint3: React.FC<Props> = () => {
               accountNumber: "19000194300233849",
             },
             {
-              accountTitle: "Long text Ambank AmMoneyLine AmMoneyLine",
+              accountTitle: "Long text AmMoneyLine",
               accountNumber: "78624595404894028",
             },
             {

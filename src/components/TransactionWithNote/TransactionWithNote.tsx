@@ -42,6 +42,7 @@ interface TransactionWithNoteProps {
   Btnicon?: { name: string; color: string; size?: number };
   shadowed?: boolean;
   statusText?: string;
+  statusNumber?: string
 }
 
 const CenteredDiv = styled.div`
@@ -70,6 +71,7 @@ const TransactionWithNote: React.FC<TransactionWithNoteProps> = ({
   onButtonClick,
   responsive,
   statusText,
+  statusNumber
 }) => {
   return (
     <div id={testId}>
@@ -92,7 +94,7 @@ const TransactionWithNote: React.FC<TransactionWithNoteProps> = ({
 
         <CenteredCol>
           <R_15_BLACK style={{ marginBottom: "1.5rem" }}>
-            {statusText}
+            {statusText} <strong>{statusNumber}</strong>
           </R_15_BLACK>
           <PrimaryButton
             responsive={responsive}
