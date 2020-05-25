@@ -2727,7 +2727,7 @@ class Sprint1 extends Component<Props, State> {
               accountNumber: "RM 2,000.00",
             },
             {
-              accountTitle: "Ambank AmMoneyLine AmMoneyLine",
+              accountTitle: "Ambank AmMoneyLine",
               accountNumber: "RM 2,000.00",
             },
             {
@@ -3130,14 +3130,14 @@ class Sprint1 extends Component<Props, State> {
         />
 
         <Title>TextButton</Title>
-        <div style ={{width: "180px"}}>
-        <TextButton
-          testId="testId"
-          buttonText="Forgot username/password?"
-          onTextClick={(id) => {
-            alert(`${id} clicked`);
-          }}
-        />
+        <div style={{ width: "180px" }}>
+          <TextButton
+            testId="testId"
+            buttonText="Forgot username/password?"
+            onTextClick={(id) => {
+              alert(`${id} clicked`);
+            }}
+          />
         </div>
         <CenteredDiv>
           <TextButton

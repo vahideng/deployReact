@@ -34,10 +34,10 @@
   width: 15.06rem;
   min-height: 5.31rem;
   padding: 1rem;
-
   @media (max-width: 576px) {
     width: 100%;
   }
+  height: 100%;
 }
 
 .borderBottom {
@@ -71,12 +71,24 @@
   max-width: 13rem;
   overflow: hidden;
 }
-.SelectionTAmount {
-  padding-top: 1rem;
-}
 
+.SelectionMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  & section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.CenterSection {
+  justify-content: center;
+}
 .SelectionTileTitle {
   @extend %truncatedText;
+  -webkit-line-clamp: 2; /* number of lines to show */
 }
 
 .Disable {

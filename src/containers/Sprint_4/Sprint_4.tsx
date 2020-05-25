@@ -551,7 +551,7 @@ const Sprint4: React.FC<Props> = () => {
         />
       </div>
       <StickyFooter
-        isOpen={true}
+        isOpen={stickyFooter}
         label="Hide Card"
         buttonTitle="Yes, Disable"
         onButtonClick={() => {
@@ -576,12 +576,12 @@ const Sprint4: React.FC<Props> = () => {
           mainStyle={{ background: "#eee" }}
           title="You have been logged out"
           detailText="Thank you for banking with AmOnline."
-          children = {
-             <DynamicText
-          text="You will be redirected to FPX status page in"
-          counter={9}
-          inlineText="seconds."
-        />}
+          children={
+            <DynamicText
+              text="You will be redirected to FPX status page in"
+              counter={9}
+              inlineText="seconds."
+            />}
         />
       </div>
       <Title>View Rate Container</Title>
@@ -2987,7 +2987,8 @@ const Sprint4: React.FC<Props> = () => {
           ]}
           Btntitle={"Continue With Transaction"}
           onButtonClick={() => alert("check")}
-          statusText={" You will be redirected to FPX status page in 9 seconds"}
+          statusText={" You will be redirected to FPX status page in"}
+          statusNumber={"9 seconds"}
         />
       </div>
       <Title>ListWithSelectionTile(List,Selection Tile, Primary Buttons)</Title>

@@ -51,6 +51,13 @@ const SelectionTile: React.FC<Props> = ({
     selectionTileRowCls = `${selectionTileRowCls} ${classes.SelectionTileRowResponsive}`;
   }
 
+  let sectionClass = "";
+  list.find((item) => {
+    if (!item.amount) {
+      sectionClass = classes.CenterSection
+    }
+  })
+
   return !centered ? (
     <div className={selectionTileRowCls} id={testId} style={rowStyle}>
       {!!list &&
@@ -123,32 +130,34 @@ const SelectionTile: React.FC<Props> = ({
                     />
                   </div>
                 ) : (
-                        <div id={`${testId}-0${index}`}>
-                          {!!item.accountTitle && (
-                            <div className={classes.SelectionTileTDiv}>
-                              <B_15_BLACK
-                                x-ms-format-detection="none"
-                                className={classes.SelectionTileTitle}
-                                style={
-                                  selected !== index
-                                    ? {
-                                      fontWeight: "normal",
-                                    }
-                                    : {}
-                                }
-                              >
-                                {item.accountTitle}
-                              </B_15_BLACK>
-                            </div>
-                          )}
-                          {!!item.accountNumber && (
-                            <R_14_BLACK x-ms-format-detection="none">
-                              {item.accountNumber}
-                            </R_14_BLACK>
-                          )}
+                        <div id={`${testId}-0${index}`} className={classes.SelectionMain}>
+                          <section className={sectionClass}>
+                            {!!item.accountTitle && (
+                              <div className={classes.SelectionTileTDiv}>
+                                <B_15_BLACK
+                                  x-ms-format-detection="none"
+                                  className={classes.SelectionTileTitle}
+                                  style={
+                                    selected !== index
+                                      ? {
+                                        fontWeight: "normal",
+                                      }
+                                      : {}
+                                  }
+                                >
+                                  {item.accountTitle}
+                                </B_15_BLACK>
+                              </div>
+                            )}
+                            {!!item.accountNumber && (
+                              <R_14_BLACK x-ms-format-detection="none">
+                                {item.accountNumber}
+                              </R_14_BLACK>
+                            )}
+                          </section>
+
                           {!!item.amount && (
                             <B_15_BLACK
-                              className={classes.SelectionTAmount}
                               x-ms-format-detection="none"
                               style={
                                 selected !== index

@@ -21,9 +21,11 @@ $darkBoxShadow: 0px 0px 3px rgba(0, 0, 0, 0.129726),
   0px 4px 7px rgba(0, 0, 0, 0.11574);
 
 %truncatedText {
-  text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 $HorizontalPadding: 0 18vw;
