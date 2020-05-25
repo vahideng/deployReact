@@ -2018,9 +2018,9 @@ class Sprint1 extends Component<Props, State> {
                         alert(index);
                       }}
                     />
-                    <div style={{ width: 700 }}>
+                    <div style={{ width: 700  }}>
                       <AMTabs
-                        titlesStyle={{}}
+                        titlesStyle={{paddingLeft : "80px", paddingRight:"80px"}}
                         defaultIndex={1}
                         onSelect={(obj: any) => {
                           alert(obj);
@@ -2030,10 +2030,10 @@ class Sprint1 extends Component<Props, State> {
                           "Details",
                           "Settings",
                           "Estatments",
-                          "Direct,",
-                          "Debit",
-                       
-                          
+                          "Direct Debit"
+
+
+
                         ]}
                         contents={[
                           <div style={{ padding: "2rem" }}>
@@ -3134,14 +3134,14 @@ class Sprint1 extends Component<Props, State> {
         />
 
         <Title>TextButton</Title>
-        <div style ={{width: "180px"}}>
-        <TextButton
-          testId="testId"
-          buttonText="Forgot username/password?"
-          onTextClick={(id) => {
-            alert(`${id} clicked`);
-          }}
-        />
+        <div style={{ width: "180px" }}>
+          <TextButton
+            testId="testId"
+            buttonText="Forgot username/password?"
+            onTextClick={(id) => {
+              alert(`${id} clicked`);
+            }}
+          />
         </div>
         <CenteredDiv>
           <TextButton
