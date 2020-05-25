@@ -5,7 +5,7 @@ import React, {
   ReactNode,
   CSSProperties,
 } from "react";
-import crypto from 'crypto-random-string';
+
 import Paragraphs from "../../assets/typography";
 import classes from "./InputField.module.css";
 import Icon from "src/components/assets/icons/icon";
@@ -94,6 +94,8 @@ class InputField extends Component<Props, {}> {
       !!onBlur && onBlur(event);
     }
 
+    const inputStyle = [classes.InputFieldInput]
+    
     function getAutoComplete() {
       switch (type) {
         case 'password':
@@ -106,7 +108,9 @@ class InputField extends Component<Props, {}> {
     function getInputType() {
       switch (type) {
         case 'password':
-          return crypto({ length: 10, type: 'base64' })
+          inputStyle.push(classes.Password)
+          return 'text'
+          
         default:
           return type
       }
@@ -116,6 +120,9 @@ class InputField extends Component<Props, {}> {
     if (disabled) {
       inputClasses = `${classes.InputFieldIconDiv} ${classes.DisabledInput}`;
     }
+    
+
+    
     return (
       <div
         className={
@@ -176,7 +183,7 @@ class InputField extends Component<Props, {}> {
             value={value}
             autoFocus={!!autoFocus ? autoFocus : false}
             onChange={changeHandler}
-            className={classes.InputFieldInput}
+            className={inputStyle.join(' ')}
           />
 
           {!!clearIcon &&

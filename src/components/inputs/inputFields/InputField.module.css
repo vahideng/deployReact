@@ -64,7 +64,6 @@
 
 .InputFieldInput {
   padding-right: 5.2rem;
-  font-family: "Nunito Sans";
   color: #000000;
   font-size: 15px;
   font-weight: 700;
@@ -86,8 +85,11 @@
   font-weight: 400;
 }
 
-.InputFieldInput[data-intention-type="password"] {
-  font-family: fake;
+.Password {
+  font-family: "text-security-disc" !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 1px;
+  -webkit-text-security: disc !important;
 }
 
 .InputFieldIconDiv input:focus {

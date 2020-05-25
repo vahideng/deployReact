@@ -355,7 +355,7 @@ const Sprint2: React.FC<Props> = () => {
               clearIcon={true}
               label="input label"
               icon={{ name: "Lock" }}
-              value={"value"}
+              value={""}
               handleChange={(event) => {
                 console.log(event.target.value);
               }}

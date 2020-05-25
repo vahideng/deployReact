@@ -1106,7 +1106,7 @@ class Sprint1 extends Component<Props, State> {
                     errorText: "The TAC is incorrect",
                     subText: "Please try again.",
                   }}
-                  type="text"
+                  type="password"
                   clearClickHandler={() => {
                     console.log("clicked");
                   }}
@@ -2027,9 +2027,13 @@ class Sprint1 extends Component<Props, State> {
                         }}
                         titles={[
                           "Transactions",
+                          "Details",
                           "Settings",
-                          "Security",
-                          "Contact Us",
+                          "Estatments",
+                          "Direct,",
+                          "Debit",
+                       
+                          
                         ]}
                         contents={[
                           <div style={{ padding: "2rem" }}>
