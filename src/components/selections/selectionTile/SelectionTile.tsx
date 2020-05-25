@@ -52,11 +52,9 @@ const SelectionTile: React.FC<Props> = ({
   }
 
   let sectionClass = "";
-  list.find((item) => {
-    if (!item.amount) {
-      sectionClass = classes.CenterSection
-    }
-  })
+  !!list && list.find((item) => !item.amount ? sectionClass = classes.CenterSection : null)
+
+
 
   return !centered ? (
     <div className={selectionTileRowCls} id={testId} style={rowStyle}>
