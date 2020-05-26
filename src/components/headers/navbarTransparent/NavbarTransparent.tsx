@@ -30,7 +30,7 @@ const NavbarTransparent: React.FC<Props> = ({
       )}
       {!!image && !icon && (
         <img
-          className={classes.NavbarTransparentIcon}
+          className={image.onImageClick ? classes.NavbarTransparentIcon : classes.NavbarTransparentIconNoCursor}
           src={image.src}
           style={image.style}
           onClick={image.onImageClick}
