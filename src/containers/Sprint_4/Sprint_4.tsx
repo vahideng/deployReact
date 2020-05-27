@@ -41,6 +41,7 @@ import TextWithDetails from "src/components/infographic/textWithDetails/TextWith
 import Box from "src/components/wrappers/box/Box";
 import SecureImage from "src/components/secureImage/SecureImage";
 import BackgroundSingle from "src/components/wrappers/backgroundSingle/BackgroundSingle";
+
 const {
   B_13_ORANGE_463,
   R_13_GREY444,
@@ -195,7 +196,7 @@ const Sprint4: React.FC<Props> = () => {
                 {
                   leftLabel: "To",
                   rightLabel:
-                    "Saving Account A vHISSaving AccountA vHISSavit A v asdasd sada sadsaSDS Savingving Account A vHISSavit A v asdasd sada sadsaSDS Savingving Account A vHISSavit A v asdasd sada sadsaSDS Saving Account A vHISSaving Account A vHISSavit A v sad sada sadsaSDS",
+                    "Saving Account A vHISSaving SDS Saving Account A vHISSaving Account A vHISSavit A v sad sada sadsaSDS",
                   approved: true,
                   details: ["8881019596535 | AmBank"],
                   amount: {
@@ -204,15 +205,14 @@ const Sprint4: React.FC<Props> = () => {
                     value: "600RM",
                     styleValue: {},
                   },
+                  children: <R_13_GREY444>Fees & charges: <span>RM 1.00</span></R_13_GREY444>
                 },
-
                 {
                   leftLabel: "Date",
                   approved: true,
                   rightLabel: "Transfer Now",
                   details: ["Today, 5 January 2019"],
                 },
-
                 {
                   leftLabel: "From",
                   rightLabel: "Savings Account",
@@ -236,8 +236,15 @@ const Sprint4: React.FC<Props> = () => {
           list={[
             {
               leftLabel: "To",
-              rightLabel: "Saving Account A",
+              rightLabel: "PTPTN",
               details: ["8881019596535 | AmBank"],
+              amount: {
+                content: "Dynamic",
+                styleContent: {},
+                value: "600RM",
+                styleValue: {},
+              },
+
             },
             {
               leftLabel: "Amount",
@@ -916,7 +923,8 @@ const Sprint4: React.FC<Props> = () => {
               defaultActiveContentIndex: "",
               content: [
                 {
-                  label: "Quick Access Limit", // change Lastname
+                  label: "Quick Access Limits", // change Last name
+
                   leftIcon: (
                     <Icon icon="Announcement" size={22} color="#444444" />
                   ),
@@ -974,9 +982,14 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00",
+                    "Current Limit RM 5,00,000",
 
                     // 'Another line of subtitle'
+                  ],
+                  subtitleClose: [
+                    "RM 250.00",
+
+                    // 'Another line of subtitleClose'
                   ],
                   leftBorderColor: "red", // change green
                 },

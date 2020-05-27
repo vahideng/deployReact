@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, ReactNode } from "react";
 import classes from "./List.module.css";
 import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../../assets/typography";
@@ -52,6 +52,7 @@ interface Props {
       onClick?: () => void;
       style?: CSSProperties;
     };
+    children?: ReactNode;
   }[];
 }
 
@@ -153,6 +154,7 @@ const List: React.FC<Props> = ({
                         </R_13_GREY444>
                       );
                     })}
+
                   {item.amount === undefined ? null : (
                     <Row className={classes.AmountContainer}>
                       <R_14_GREY444 style={item.amount.styleContent} className={fontClasses}>
@@ -180,9 +182,9 @@ const List: React.FC<Props> = ({
                       {item.bottomText.content}
                     </B_13_ORANGE_463>)
                   }
+                  {item.children && item.children}
 
                 </div>
-
               </div>
               {item.lefSubText === undefined ? null : (
                 <R_13_GREY444
@@ -191,6 +193,7 @@ const List: React.FC<Props> = ({
                   {item.lefSubText.content}
                 </R_13_GREY444>
               )}
+
             </div>
           );
         })}

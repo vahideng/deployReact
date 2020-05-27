@@ -9,7 +9,8 @@ declare type ListItem = {
   read?: boolean;
   label: string;
   bold?: boolean;
-  subtitle?: any[];
+  subtitle?: string[];
+  subtitleClose?: string[];
   backgroundColor?: string;
   leftBorderColor?: string;
   leftIcon?: ReactNode;
@@ -121,6 +122,7 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
     label,
     read,
     subtitle,
+    subtitleClose,
     bold = true,
     onListClick = () => { },
     leftIcon,
@@ -134,9 +136,10 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
     subT = subtitle.map((sub: any, index: number) => <R_15_BLACK key={index}>{sub}</R_15_BLACK>)
   }
   const decoratedOnClick = useAccordionToggle(eventKey, () => {
-    console.log(eventKey, "eventkey");
+    console.log(eventKey, "eventKey");
   }
   );
+  const closedSub = subtitleClose && eventKey !== activeKey && subtitleClose
   const handleToggle = (e: any) => {
     onListClick(item);
     if (expandable) {
@@ -160,6 +163,7 @@ const AccordionToggle: React.FC<AccordionToggleProps> = ({
             )}
           {!read && <div className={classes.ReadNotification}></div>}
         </div>
+        {closedSub}
         {subtitle ? subT : null}
       </div>
       <div onClick={handleToggle} className={classes.ToggleWrapper}>
