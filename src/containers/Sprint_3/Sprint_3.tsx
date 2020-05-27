@@ -773,8 +773,8 @@ const Sprint3: React.FC<Props> = () => {
               label: "For Testing", // change Lastname
               leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
               bold: true, // chang false
-              onListClick: () => {
-                // window.alert(`clicked on item ${item.label}`);
+              onListClick: (item) => {
+                console.log(item, "item clicked");
                 // window.alert(`ITEM NAME:::: ${item.label}`)
               },
               // rightItem: (
@@ -786,6 +786,7 @@ const Sprint3: React.FC<Props> = () => {
               //   />
               // ), // change
               expandable: true, // change false
+              expandableStatus : true,
               expandableContent: (
                 <>
                   <InputField
@@ -864,7 +865,10 @@ const Sprint3: React.FC<Props> = () => {
               label: "Nickname", // change Lastname
               leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
               bold: true, // chang false
-              onListClick: () => {
+              onListClick: (e: any) => {
+
+                    console.log(e, "item clicked");
+                    
                 // window.alert(`clicked on item ${item.label}`);
                 // window.alert(`ITEM NAME:::: ${item.label}`)
               },
@@ -877,6 +881,7 @@ const Sprint3: React.FC<Props> = () => {
               //   />
               // ), // change
               expandable: true, // change false
+              expandableStatus : false,
               expandableContent: (
                 <>
                   <InputField
