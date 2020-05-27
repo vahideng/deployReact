@@ -67,6 +67,10 @@ const List: React.FC<Props> = ({
   if (responsive) {
     containerCls = `${containerCls} ${classes.ContainerResponsive}`;
   }
+  let fontClasses = "";
+  if (responsive) {
+    fontClasses = classes.ResFonts
+  }
   return (
     <div className={containerCls} id={testId} style={{ width }}>
       {!!header && (
@@ -134,7 +138,7 @@ const List: React.FC<Props> = ({
                         <Icon icon="accent-tick" size={13} />
                       </span>
                     )}
-                    <B_15_BLACK>{item.rightLabel}</B_15_BLACK>
+                    <B_15_BLACK className={fontClasses}>{item.rightLabel}</B_15_BLACK>
                   </div>
 
                   {!!item.details &&
@@ -151,12 +155,12 @@ const List: React.FC<Props> = ({
                     })}
                   {item.amount === undefined ? null : (
                     <Row className={classes.AmountContainer}>
-                      <R_14_GREY444 style={item.amount.styleContent}>
+                      <R_14_GREY444 style={item.amount.styleContent} className={fontClasses}>
                         {item.amount.content}
                       </R_14_GREY444>
                       <B_14_BLACK
                         style={item.amount.styleValue}
-                        className={classes.Amount}
+                        className={`${classes.Amount} ${fontClasses}`}
                       >
                         {item.amount.value}
                       </B_14_BLACK>

@@ -2,8 +2,16 @@
   font-family: Nunito Sans;
 }
 
+.Container p {
+  word-break: keep-all !important;
+}
+
 .ContainerResponsive {
   width: 100% !important;
+}
+
+.ContainerResponsive p {
+  word-break: keep-all !important;
 }
 
 .ListTitleDiv {
@@ -158,4 +166,8 @@
 .BottomText {
   margin-top: 0.75rem !important;
   cursor: pointer;
+}
+
+.ResFonts {
+  font-size: 13px !important;
 }
