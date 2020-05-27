@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, ReactNode } from "react";
 import classes from "./List.module.css";
 import Icon from "src/components/assets/icons/icon";
 import Paragraphs from "../../assets/typography";
@@ -52,6 +52,7 @@ interface Props {
       onClick?: () => void;
       style?: CSSProperties;
     };
+    children?: ReactNode;
   }[];
 }
 
@@ -66,6 +67,10 @@ const List: React.FC<Props> = ({
   let containerCls = classes.Container;
   if (responsive) {
     containerCls = `${containerCls} ${classes.ContainerResponsive}`;
+  }
+  let fontClasses = "";
+  if (responsive) {
+    fontClasses = classes.ResFonts
   }
   return (
     <div className={containerCls} id={testId} style={{ width }}>
@@ -134,7 +139,7 @@ const List: React.FC<Props> = ({
                         <Icon icon="accent-tick" size={13} />
                       </span>
                     )}
-                    <B_15_BLACK>{item.rightLabel}</B_15_BLACK>
+                    <B_15_BLACK className={fontClasses}>{item.rightLabel}</B_15_BLACK>
                   </div>
 
                   {!!item.details &&
@@ -149,14 +154,15 @@ const List: React.FC<Props> = ({
                         </R_13_GREY444>
                       );
                     })}
+
                   {item.amount === undefined ? null : (
                     <Row className={classes.AmountContainer}>
-                      <R_14_GREY444 style={item.amount.styleContent}>
+                      <R_14_GREY444 style={item.amount.styleContent} className={fontClasses}>
                         {item.amount.content}
                       </R_14_GREY444>
                       <B_14_BLACK
                         style={item.amount.styleValue}
-                        className={classes.Amount}
+                        className={`${classes.Amount} ${fontClasses}`}
                       >
                         {item.amount.value}
                       </B_14_BLACK>
@@ -176,9 +182,9 @@ const List: React.FC<Props> = ({
                       {item.bottomText.content}
                     </B_13_ORANGE_463>)
                   }
+                  {item.children && item.children}
 
                 </div>
-
               </div>
               {item.lefSubText === undefined ? null : (
                 <R_13_GREY444
@@ -187,6 +193,7 @@ const List: React.FC<Props> = ({
                   {item.lefSubText.content}
                 </R_13_GREY444>
               )}
+
             </div>
           );
         })}

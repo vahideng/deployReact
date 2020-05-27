@@ -894,6 +894,7 @@ class Sprint1 extends Component<Props, State> {
                     leftLabel: "Amount",
                     rightLabel: "RM 500.00",
                     details: ["Fees & Charges: RM 0.00"],
+
                   },
                   {
                     leftLabel: "Date",
@@ -2018,9 +2019,9 @@ class Sprint1 extends Component<Props, State> {
                         alert(index);
                       }}
                     />
-                    <div style={{ width: 700  }}>
+                    <div style={{ width: 700 }}>
                       <AMTabs
-                        titlesStyle={{paddingLeft : "80px", paddingRight:"80px"}}
+                        titlesStyle={{ paddingLeft: "80px", paddingRight: "80px" }}
                         defaultIndex={1}
                         onSelect={(obj: any) => {
                           alert(obj);

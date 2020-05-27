@@ -12,25 +12,26 @@ interface InputFieldAccordianProps {
   cardStyle?: any;
   cardHeaderStyle?: any;
   cardHeaderInnerStyle?: any;
-  cardBody?:any;
-  accordionStyle?:any;
-  data:{
-    id:string;
-    title:string;
-    defaultActiveContentIndex?:string;
+  cardBody?: any;
+  accordionStyle?: any;
+  data: {
+    id: string;
+    title: string;
+    defaultActiveContentIndex?: string;
     content: {
-      label:string;
-      leftIcon:any;
-      bold:boolean;
-      
-      onListClick:() => void;
-      expandable:boolean;
-      expandableContent:ReactNode;
-      subtitle?:any;
-      leftBorderColor?:string
+      label: string;
+      leftIcon: any;
+      bold: boolean;
+      expandableStatus ?: boolean;
+      onListClick: () => void;
+      expandable: boolean;
+      expandableContent: ReactNode;
+      subtitle?: string[];
+      subtitleClose?: string[];
+      leftBorderColor?: string
     }[];
   }[]
-  
+
 }
 
 const InputAccordian: React.FC<InputFieldAccordianProps> = ({
@@ -45,8 +46,8 @@ const InputAccordian: React.FC<InputFieldAccordianProps> = ({
 
   return (
     <Card className={CardOuterContainer} id={testId}>
-        {
-          data.map((item: any, index: any) => {
+      {
+        data.map((item: any, index: any) => {
           return (
             <Accordion key={`accordion-${item.id}-${index}`} id={item.id}>
               <Card className={classes.CardContainer}>
@@ -65,16 +66,19 @@ const InputAccordian: React.FC<InputFieldAccordianProps> = ({
 
                 <Accordion.Collapse eventKey={index} key={`accordionCollapse-${item.id}-${index}`} id={`accordionCollapse-${item.id}-${index}`}>
                   <Card.Body className={classes.CardBodyContent}>
-                  <LinkList
-                        testId={`link_list_sprint_3_test-${index}`}
-                        defaultActiveKey={item.defaultActiveContentIndex}
-                        accordionStyle={{padding:'0rem 1.5rem',...accordionStyle}}
-                        cardBody={{padding:5,...cardBody}}
-                        cardStyle={{border: 'none',margin:'0rem',backgroundColor:'#ffffff',borderBottom: '1px solid rgba(0,0,0,.125)',...cardStyle}}
-                        cardHeaderStyle={{background: '#fff'
-                        ,margin:'0rem',padding: '0rem',border:'none',...cardHeaderStyle}}
-                        list={item.content}
-                      />
+                    <LinkList
+                    
+                      testId={`link_list_sprint_3_test-${index}`}
+                      defaultActiveKey={item.defaultActiveContentIndex}
+                      accordionStyle={{ padding: '0rem 1.5rem', ...accordionStyle }}
+                      cardBody={{ padding: 5, ...cardBody }}
+                      cardStyle={{ border: 'none', margin: '0rem', backgroundColor: '#ffffff', borderBottom: '1px solid rgba(0,0,0,.125)', ...cardStyle }}
+                      cardHeaderStyle={{
+                        background: '#fff'
+                        , margin: '0rem', padding: '0rem', border: 'none', ...cardHeaderStyle
+                      }}
+                      list={item.content}
+                    />
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -120,10 +124,10 @@ const CustomToggle: React.FC<Props> = ({ eventKey, testId, showIcon, title, open
             {openIcon || <Icon icon="arrowUp" size={18} color="#444444" />}
           </span>
         ) : (
-          <span>
-            {closeIcon || <Icon icon="arrowDown" size={18} color="#444444" />}
-          </span>
-        )
+            <span>
+              {closeIcon || <Icon icon="arrowDown" size={18} color="#444444" />}
+            </span>
+          )
       ) : null}
     </div>
   );
