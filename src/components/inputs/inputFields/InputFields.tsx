@@ -109,6 +109,14 @@ class InputField extends Component<Props, {}> {
       switch (type) {
         case 'password':
           inputStyle.push(classes.Password)
+          if (navigator.userAgent.indexOf("Firefox") != -1) {
+
+
+            inputStyle.push(classes.FireFox)
+            console.log("firefox");
+            
+           
+            }
           return 'text'
           
         default:
@@ -121,14 +129,7 @@ class InputField extends Component<Props, {}> {
       inputClasses = `${classes.InputFieldIconDiv} ${classes.DisabledInput}`;
     }
     
-    if (navigator.userAgent.indexOf("Firefox") != -1) {
-
-
-      inputStyle.push(classes.FireFox)
-      console.log("firefox");
-      
-     
-      }
+   
 
     
     return (
