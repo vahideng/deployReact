@@ -1,5 +1,5 @@
 import React, { ReactNode, CSSProperties } from 'react';
-import classes from './ListWithSelectionTile.module.css';
+import classes from './ListWithSelectionTitle.module.css';
 import FormContainer from '../wrappers/formContainer/FormContainer';
 import PrimaryButton from '../buttons/primaryButton/PrimaryButton';
 import SelectionTile from '../selections/selectionTile/SelectionTile';
@@ -75,7 +75,7 @@ const ListWithSelectionTile: React.FC<ListWithSelectionTileProps> = ({
             responsive={responsive}
             label={tileListLabel}
             children={
-              <div style={{width:'100%'}}>
+              <div style={{width:'100%',}}>
             <SelectionTile
                responsive={responsive} 
                onTileClick={onTileClick}
@@ -88,26 +88,26 @@ const ListWithSelectionTile: React.FC<ListWithSelectionTileProps> = ({
             }
           />
           </div>
-         <div style={{display:'flex',alignItems:'center',flexDirection:'column'}}>
-          <div style={{padding:'0rem 0rem 1rem 0rem',width:'100%'}}>
+              <div  className={classes.listGroupBtnStyl} >
+            <div style={{width: !!btn1width ? btn1width : "20.43rem"}} className={classes.listBtnStyle}>
           <PrimaryButton
             title={btn1title}
             responsive={responsive}
             onButtonClick={onButton1Click}
-            width={btn1width ? btn1width : "20.43rem"}
+            width={!!btn1width ? btn1width : "20.43rem"}
           />
-       </div>
-           <div style={{width:'100%'}}>
+</div>
+<div style={{width: !!btn2width ? btn2width : "20.43rem"}}>
           <PrimaryButton
             onButtonClick={onButton2Click}
             responsive={responsive}
             title={btn2title}
             titleColor="#000000"
             buttonColor={{ top: "#BDBDBD", bottom: "#BDBDBD" }}
-            width={btn2width ? btn2width : "20.43rem"}
+            width={!!btn2width ? btn2width : "20.43rem"}
           />
-   </div> 
-      </div>
+</div>
+</div>
       </div>
      
   );

@@ -6,8 +6,9 @@ interface Props {
   modalChildren: ReactNode;
   modalIsOpen: boolean;
   onRequestClose?: () => void;
+  zIndex?: number;
 }
-const customStyles = {
+const customStyles = (props: React.PropsWithChildren<Props>) => ({
   content: {
     top: "50%",
     left: "50%",
@@ -17,21 +18,18 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     background: "transparent",
     border: "none",
-    zIndex: 1000000000
+    width: "100%",
+    zIndex: props.zIndex ? props.zIndex : 1000000000,
   },
   overlay: {
     background: "rgba(0, 0, 0, 0.5)",
     backgroundBlendMode: "multiply",
-    zIndex: 1000000000
-  }
-};
+    zIndex: props.zIndex ? props.zIndex : 1000000000,
+  },
+});
 
-const AmModal: React.FC<Props> = ({
-  modalChildren,
-  modalIsOpen,
-  testId,
-  onRequestClose
-}) => {
+const AmModal: React.FC<Props> = (props) => {
+  const { modalChildren, modalIsOpen, testId, onRequestClose } = props;
   const [show, setShow] = useState(false);
   useEffect(() => {
     setShow(modalIsOpen);
@@ -49,7 +47,7 @@ const AmModal: React.FC<Props> = ({
       <Modal
         isOpen={show}
         onRequestClose={handleCloseModal}
-        style={customStyles}
+        style={customStyles(props)}
       >
         {modalChildren}
       </Modal>

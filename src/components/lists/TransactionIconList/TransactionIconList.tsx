@@ -3,7 +3,7 @@ import classes from "./TransactionIconList.module.css";
 import Paragraphs from "../../assets/typography";
 import Icon from "src/components/assets/icons/icon";
 
-const { R_13_BLACK, B_13_BLACK, B_11_WHITE, R_15_BLACK } = Paragraphs;
+const { R_13_BLACK, B_13_BLACK, B_11_WHITE, R_15_BLACK, } = Paragraphs;
 interface Props {
   testId?: string;
   list: {
@@ -11,7 +11,7 @@ interface Props {
     expandedIndexes: Array<number>;
     transactions: {
       icon: string;
-      iconColor: string;
+      iconColor?: string;
       iconSize: number;
       iconBgColor: string;
       label1: string;
@@ -23,6 +23,7 @@ interface Props {
       amount: string;
       actionLabel?: string;
       actionIcon?: string;
+      hideButtons?: boolean;
       onActionButtonClick?: () => void;
       details?: {
         label1?: string;
@@ -31,6 +32,7 @@ interface Props {
         value2?: string;
         actionLabel?: string;
         actionIcon?: string;
+        hideButtons?: boolean;
         onActionButtonClick?: () => void;
       }[];
     }[];
@@ -41,7 +43,8 @@ interface Props {
 const AccountsList: React.FC<Props> = ({
   list,
   onTransactionClick,
-  testId
+  testId,
+
 }) => {
   return (
     <div className={classes.TransactionIconListMainDiv} id={testId}>
@@ -52,9 +55,7 @@ const AccountsList: React.FC<Props> = ({
             style={{
               display: "flex",
               flex: 1,
-              flexDirection: "column",
-              paddingRight: 31,
-              paddingLeft: 31
+              flexDirection: "column"
             }}
           >
             <R_15_BLACK
@@ -146,14 +147,16 @@ const AccountsList: React.FC<Props> = ({
                       SUCCESSFUL
                     </R_13_BLACK>{" "}
                     {/* <--- Spacer with opacity 0*/}
-                    <R_13_BLACK
+                    <B_13_BLACK
                       style={{
                         color: transaction.statusLabelColor,
-                        fontWeight: 450
+                        fontWeight: 'bolder',
+                        whiteSpace: "pre-wrap",
+                        maxWidth: "100px"
                       }}
                     >
                       {transaction.statusLabel}
-                    </R_13_BLACK>
+                    </B_13_BLACK>
                   </div>
 
                   <div
@@ -191,10 +194,11 @@ const AccountsList: React.FC<Props> = ({
                       display: "flex",
                       flexDirection: "row",
                       alignItems: "center",
-                      justifyContent: "center"
+                      justifyContent: "center",
+                      opacity: transaction.hideButtons ? 0 : 1
                     }}
                   >
-                      { item.expandedIndexes.includes(index) && ( <button
+                    <button
                       style={{
                         border: "none",
                         background: `linear-gradient(180deg, #F6F6F3 0%, #EAE9E3 100%)`,
@@ -202,6 +206,7 @@ const AccountsList: React.FC<Props> = ({
                         height: "1.9375em",
                         width: "7.5em"
                       }}
+                      disabled={transaction.hideButtons}
                       onClick={
                         transaction.onActionButtonClick &&
                         transaction.onActionButtonClick
@@ -227,8 +232,8 @@ const AccountsList: React.FC<Props> = ({
                         </B_11_WHITE>
                       </div>
                     </button>
-                      )}
                   </div>
+
                 </div>
 
                 {item.expandedIndexes.includes(index) && (
@@ -290,17 +295,16 @@ const AccountsList: React.FC<Props> = ({
                                 {transactionDetail.value2}
                               </B_13_BLACK>
                             </div>
-
                             <div
                               style={{
                                 display: "flex",
                                 flexDirection: "row",
                                 alignItems: "center",
-                                justifyContent: "center"
+                                justifyContent: "center",
+                                opacity: transactionDetail.hideButtons ? 0 : 1
                               }}
                             >
-                             {   item.expandedIndexes.includes(index) && ( 
-                             <button
+                              <button
                                 style={{
                                   border: "none",
                                   background: `linear-gradient(180deg, #F6F6F3 0%, #EAE9E3 100%)`,
@@ -309,6 +313,7 @@ const AccountsList: React.FC<Props> = ({
                                   width: "7.5em",
                                   opacity: transactionDetail.actionLabel ? 1 : 0
                                 }}
+                                disabled={transactionDetail.hideButtons}
                                 onClick={
                                   transactionDetail.onActionButtonClick &&
                                   transactionDetail.onActionButtonClick
@@ -336,8 +341,7 @@ const AccountsList: React.FC<Props> = ({
                                   </B_11_WHITE>
                                 </div>
                               </button>
-                             )} 
-                             </div>
+                            </div>
                           </div>
                           {transaction.details &&
                             TDIndex === transaction.details.length - 1 && (

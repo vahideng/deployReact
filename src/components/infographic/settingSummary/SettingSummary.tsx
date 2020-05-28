@@ -10,11 +10,11 @@ interface Props {
   detail?: string;
   iconColor?: { top: string; bottom: string };
   outerIconColor?: string;
-  icon?: { name: string; color?: string };
+  icon?: { name?: string; color?: string; size?: number };
   image?: { src: string; alt?: string };
-  outerRoundSize?:any;
-  innerRoundSize?:any;
-  iconSize?:number;
+  outerRoundSize?: number | string;
+  innerRoundSize?: number | string;
+  smallIcon?: boolean;
 }
 
 const SettingSummary: React.FC<Props> = ({
@@ -27,7 +27,7 @@ const SettingSummary: React.FC<Props> = ({
   outerIconColor,
   outerRoundSize,
   innerRoundSize,
-  iconSize
+  smallIcon,
 }) => {
   return (
     <div id={testId}>
@@ -42,7 +42,7 @@ const SettingSummary: React.FC<Props> = ({
               outerIconColor={outerIconColor}
               outerRoundSize={outerRoundSize}
               innerRoundSize={innerRoundSize}
-              iconSize={iconSize}
+              small={smallIcon}
             />
           </div>
 
@@ -55,5 +55,7 @@ const SettingSummary: React.FC<Props> = ({
     </div>
   );
 };
-
+SettingSummary.defaultProps = {
+  smallIcon: true,
+};
 export default SettingSummary;

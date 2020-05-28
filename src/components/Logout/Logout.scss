@@ -4,8 +4,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 65px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .StatusFormContainerCurve {
+  position: relative;
   max-width: 36.31rem;
   background-color: transparent;
 }
@@ -14,7 +18,10 @@
   
 }
 .StatusFormContainerStatusIcon {
-  margin-bottom: -2rem;
+  position: absolute;
+  left: calc(50% - 52px);
+  top: -65px;
+  z-index: 20;
 }
 .StatusFormContainerContent {
   display: flex;
@@ -26,23 +33,20 @@
   border-bottom-right-radius: 1.5rem;
   margin-top: -2px;
   padding: 2rem;
-  @media (max-width: 576px) {
-    margin-top: -12px;
-    padding: 1rem;
-  }
-  @media (max-width: 400px) {
-    margin-top: -16px;
-  }
-
 }
   .headerTitle {
-    text-align: "center";
+    text-align: center;
+    line-height: 32px;
     @media (max-width:576px){
       text-align: "center";
       font-size: 18px !important;
     }
   }
   .subContent {
+    font-family: "Nunito Sans";
+    color: #000000;
+    font-size: 15px;
+    font-weight: 400;
     text-align: "center";
     line-height: 18px;
     margin-bottom: 2rem;
@@ -57,12 +61,9 @@
 .btnClass{
   display: flex;
   justify-content: center;
-  margin-top: 3.25rem;
+  margin-top: 2rem;
   margin-bottom: 3.25rem;
   width: 100%;
-  max-width: 24rem;
-  margin-left: auto;
-  margin-right: auto;
   @media (max-width:576px){
     width:100% !important;
     margin-top: 2.5rem !important;
@@ -70,3 +71,11 @@
   
   }
 }
+
+.CurveStyle{
+  position: relative;
+  overflow: hidden;
+  display: block;
+  height: 58px;
+  border-radius: 20px 20px 0 0;
+  }

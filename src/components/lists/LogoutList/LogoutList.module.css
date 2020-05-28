@@ -67,10 +67,9 @@
 }
 
 .leftlabel {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  margin-top: 0.38rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   max-width: 12.88rem;
   width: 100%;
 }
@@ -100,7 +99,10 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  margin-left: 3.8rem;
+  width: 300px;
+  text-transform: uppercase;
+  margin-left: 3rem;
+  min-width: 140px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -138,6 +140,7 @@
 .LeftLabel2TextRes {
   margin-top: 0.38rem;
   padding-top: 6px;
+  font-weight: 700 !important;
 }
 
 @media (max-width: 576px) {

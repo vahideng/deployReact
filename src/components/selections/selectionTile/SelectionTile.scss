@@ -3,55 +3,108 @@
 .SelectionTileRow {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .SelectionTileRowResponsive {
   width: 100% !important;
+  @media (max-width: 576px) {
+    padding: 2rem 1rem 2.25rem 1rem;
+  }
 }
 
 .SelectionTileWrapper {
   display: flex;
-  align-items: center;
-  width: 15.06rem;
-  min-height: 5.31rem;
-  border: 1px solid $greyEDE;
+  flex-direction: column;
   border-radius: 0.75rem;
-  border-bottom: 0.37rem solid $greyEDE;
-  margin: 0 2rem 1.5rem 0;
+  margin: 0 1.5rem 1.5rem 0;
   cursor: pointer;
-}
-
-.SelectionTileWrapperResponsive {
-  flex: 1 !important;
+  box-shadow: $darkBoxShadow;
+  position: relative;
+  background: #fff;
   @media (max-width: 576px) {
-    margin: 0.5rem;
+    width: 100%;
+    margin: 0 0 1rem 0;
   }
 }
 
 .SelectionTileSelector {
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 99%;
-  border-top-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-  background-color: #ffffff;
+  width: 15.06rem;
+  min-height: 5.31rem;
   padding: 1rem;
+  @media (max-width: 576px) {
+    width: 100%;
+  }
+  height: 100%;
+}
+
+.borderBottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1rem;
+  background: linear-gradient(
+    to bottom,
+    #fff 0%,
+    #fff 70%,
+    $greyEDE 70%,
+    $greyEDE 70%,
+    $greyEDE 100%
+  );
+
+  border-bottom-right-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+.borderBottomSelected {
+  background: linear-gradient(
+    to bottom,
+    #fff 0%,
+    #fff 70%,
+    #ff2626 70%,
+    #ff2626 70%,
+    #ff2626 100%
+  );
 }
 .SelectionTileTDiv {
   max-width: 13rem;
   overflow: hidden;
 }
-.SelectionTAmount {
-  padding-top: 1rem;
+
+.SelectionMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  & section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 }
-.SelectionTileChild {
-  display: inline-block;
-  overflow: hidden;
-  padding: 1rem;
+.CenterSection {
+  justify-content: center;
 }
 .SelectionTileTitle {
   @extend %truncatedText;
+  -webkit-line-clamp: 2; /* number of lines to show */
+}
+
+.Disable {
+  background-color: #ddd;
+  opacity: 0.3;
+  cursor: no-drop;
+}
+.borderDisable {
+  background: linear-gradient(
+    to bottom,
+    #ddd 0%,
+    #ddd 70%,
+    $greyEDE 70%,
+    $greyEDE 70%,
+    $greyEDE 100%
+  );
 }
 .CenteredDiv {
   display: flex;
@@ -59,29 +112,26 @@
   align-items: center;
   width: 15.06rem;
   height: 3.93rem;
-  border: 1px solid $greyEDE;
   border-radius: 0.75rem;
-  border-bottom: 0.37rem solid $greyEDE;
-  margin: 0 2rem 1.5rem 0;
+  margin: 0 1.5rem 1.5rem 0;
   cursor: pointer;
-}
-
-.Disable{
-  background-color: #ddd;
-    opacity: 0.3;
-    cursor: no-drop;
+  box-shadow: $darkBoxShadow;
+  position: relative;
+  background: #fff;
 }
 .CenteredSelector {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   height: 3.5rem;
   border-top-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
   background-color: #ffff;
   padding: 1rem;
 }
-.SelectedBorder {
-  border-bottom-color: #ff2626;
+.SelectionTileRowResponsive {
+  width: 100% !important;
+}
+.SelectionTileWrapperResponsive {
+  width: 100% !important;
 }

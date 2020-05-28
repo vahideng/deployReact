@@ -16,6 +16,11 @@ interface Props {
   titleColor?: string;
   onButtonClick: () => void;
   buttonIcon?: { name: string; color: string; size?: number };
+  buttonProps?: any;
+  showTooltip?: boolean;
+  onTooltipClicked?: () => void;
+  onBlur?: () => void;
+  tipSize?: number;
 }
 
 const HeaderWithIButtons = ({
@@ -29,15 +34,20 @@ const HeaderWithIButtons = ({
   buttonLabel,
   buttonColor = { top: "", bottom: "" },
   titleColor,
-  buttonIcon
+  buttonIcon,
+  buttonProps,
+  onBlur,
+  onTooltipClicked,
+  showTooltip,
+  tipSize,
 }: Props) => {
   return (
     <div
       className={classes.MainDiv}
-      style={headerStyle ? headerStyle : {}}
+      style={headerStyle ? headerStyle : { marginTop: "2.5rem" }}
       id={testId}
     >
-      <div className={classes.LeftDiv}>
+      <div className={classes.ContentContainer}>
         <div className={classes.IconDiv}>
           {!!icon && (
             <Icon icon={icon.name} color={icon.color} size={icon.size} />
@@ -53,22 +63,29 @@ const HeaderWithIButtons = ({
 
         <LabelToolTip
           label={label}
+          onBlur={onBlur}
+          onTooltipClicked={onTooltipClicked}
+          showTooltip={showTooltip}
           tooltipData={tooltipData ? tooltipData : ""}
+          tipSize={tipSize}
         />
       </div>
 
-      <PrimaryButton
-        testId={`${testId}-0`}
-        onButtonClick={onButtonClick}
-        title={buttonLabel}
-        buttonColor={{ top: buttonColor.top, bottom: buttonColor.bottom }}
-        titleColor={titleColor}
-        icon={buttonIcon}
-        shadowed={true}
-        width={"10.12rem"}
-        height={"2.5rem"}
-        titleStyle={{ fontSize: 11, color: "#000000" }}
-      />
+      <div className={classes.ButtonContainer}>
+        <PrimaryButton
+          testId={`${testId}-0`}
+          onButtonClick={onButtonClick}
+          title={buttonLabel}
+          buttonColor={{ top: buttonColor.top, bottom: buttonColor.bottom }}
+          titleColor={titleColor}
+          icon={buttonIcon}
+          shadowed={true}
+          height={"2.5rem"}
+          width={"10.12rem"}
+          titleStyle={{ fontSize: 11, color: "#000000" }}
+          {...buttonProps}
+        />
+      </div>
     </div>
   );
 };

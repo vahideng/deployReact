@@ -7,8 +7,9 @@
 
 .HeaderWrapper {
   @extend .FlexCenter;
-  min-height: 4.875rem;
-  cursor: pointer;
+  padding-top: 1.8125rem;
+  padding-bottom: 1.8125rem;
+ 
 }
 
 .CardHeader {
@@ -36,6 +37,7 @@
 
 .ToggleWrapper {
   @extend .FlexRight;
+  cursor: pointer;
 }
 
 .AccordionCollapseWrapper {

@@ -29,6 +29,10 @@
   cursor: pointer;
 }
 
+.NavbarTransparentIconNoCursor {
+  cursor: auto;
+}
+
 .NavbarTransparentButtons {
   margin-left: 2rem;
 }

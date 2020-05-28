@@ -114,12 +114,14 @@ import ErrorPage from "./components/ErrorPage/ErrorPage";
 import RedirectToMobile from './components/RedirectToMobile/RedirectToMobile';
 import Logout from './components/Logout/Logout'
 import BannerCarousel from 'src/components/banners/bannerCarousel/BannerCarousel';
+import NotSupportedPage from 'src/components/NotSupportedPage/NotSupportedPage';
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /// exports
 export {
   //////////////////////////////////////////////////////////////////////////////////////////////
   /// below are sprint-4 components
+  NotSupportedPage,
   Logout,
   TransactionWithNote,
   DynamicText,

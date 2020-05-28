@@ -31,7 +31,7 @@
   background-color: #ffffff;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 576px) {
   .TopDivResponsive {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

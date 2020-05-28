@@ -18,6 +18,9 @@ const Home: React.FC<Props> = () => {
   const [sprint3, setSprint3] = useState(false);
   const [sprint4, setSprint4] = useState(false);
   const [NodeModule, setNodeModule] = useState(false);
+  const [notSupported, setNotSupported] = useState(false);
+  const [condeSnippet, setCondeSnippet] = useState(false);
+
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -34,6 +37,12 @@ const Home: React.FC<Props> = () => {
   if (NodeModule === true) {
     return <Redirect to="/NodeModule" />;
   }
+  if (notSupported === true) {
+    return <Redirect to="/not-supported" />;
+  }
+  if (condeSnippet === true) {
+    return <Redirect to="/codeSnippet" />;
+  }
   return (
     <>
       <BackgroundSingle
@@ -44,10 +53,16 @@ const Home: React.FC<Props> = () => {
         <div style={{ padding: 100 }}>
           <div>
             <NavbarTransparent
-              icon={{
-                onIconClick: () => {
-                  setSprint1(true);
-                },
+              // icon={{
+              //   onIconClick: () => {
+              //     setSprint1(true);
+              //   },
+              // }}
+              image={{
+                src:
+                  "https://images.unsplash.com/photo-1588899428740-3145fdaf2da5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80",
+                style: { width: "6rem", height: "3rem", borderRadius: 8 },
+                onImageClick: () => setSprint1(true),
               }}
               rightButtons={[
                 <TextButton
@@ -84,27 +99,49 @@ const Home: React.FC<Props> = () => {
                   }}
                 />,
                 <TextButton
-                buttonText="Sprint-4"
-                onTextClick={() => {
-                  setSprint4(true);
-                }}
-                buttonStyles={{
-                  color: "#000000",
-                  fontWeight: 400,
-                  fontSize: 15
-                }}
-              />,
-              <TextButton
-                buttonText="NodeModule"
-                onTextClick={() => {
-                  setNodeModule(true);
-                }}
-                buttonStyles={{
-                  color: "#000000",
-                  fontWeight: 400,
-                  fontSize: 15
-                }}
-              />,
+                  buttonText="Sprint-4"
+                  onTextClick={() => {
+                    setSprint4(true);
+                  }}
+                  buttonStyles={{
+                    color: "#000000",
+                    fontWeight: 400,
+                    fontSize: 15,
+                  }}
+                />,
+                <TextButton
+                  buttonText="NodeModule"
+                  onTextClick={() => {
+                    setNodeModule(true);
+                  }}
+                  buttonStyles={{
+                    color: "#000000",
+                    fontWeight: 400,
+                    fontSize: 15,
+                  }}
+                />,
+                <TextButton
+                  buttonText="Not supported Page"
+                  onTextClick={() => {
+                    setNotSupported(true);
+                  }}
+                  buttonStyles={{
+                    color: "#000000",
+                    fontWeight: 400,
+                    fontSize: 15,
+                  }}
+                />,
+                <TextButton
+                  buttonText="Code Snippet"
+                  onTextClick={() => {
+                    setCondeSnippet(true);
+                  }}
+                  buttonStyles={{
+                    color: "#000000",
+                    fontWeight: 400,
+                    fontSize: 15,
+                  }}
+                />,
                 <TextDropdown
                   handleChange={(selectedOption: any) => {
                     setSelectedOption(selectedOption);
@@ -137,6 +174,7 @@ const Home: React.FC<Props> = () => {
           to do today?"
               />
               <Box_V2
+                hideButton={true}
                 title={"Login"}
                 split={split}
                 onButtonClick={() => {
@@ -153,6 +191,9 @@ const Home: React.FC<Props> = () => {
                 boxChildren={
                   <div style={{ height: 250, padding: "3rem 1rem" }}>
                     <InputField
+                  tipChildren={<div>dsdsdsds </div>}
+                    showTooltip={true}
+                    responsive={true}
                       notValid={true}
                       errorMessage={{
                         testId: "testId",

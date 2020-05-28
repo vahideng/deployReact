@@ -1,14 +1,16 @@
 import React, { useState, FormEvent } from "react";
 import Icon from "src/components/assets/icons/icon";
 import classes from "./TooltipDropdown.module.css";
+import Paragraphs from "../assets/typography";
 // import OutsideClickHandler from "react-outside-click-handler";
-
+const { B_13_GREY444 } = Paragraphs
 interface Props {
   testId?: string;
   icon?: { name?: string; color?: string; size?: number };
   iconButtons?: {
     icon: string;
     text: string;
+    size?: number;
     onClick?: () => void;
     onBlur?: (event: FormEvent) => void;
   }[];
@@ -37,23 +39,23 @@ const TooltipDropdown = ({ testId, icon, iconButtons }: Props) => {
           <div className={classes.BoxDiv}>
             {iconButtons &&
               iconButtons.map((button, index) => {
+                const { size = 25, text, icon, onClick  } = button
                 return (
-                  <div key={index} className={classes.ButtonDiv}>
-                    <button
-                      onClick={() => {
-                        button.onClick();
-                      }}
-                      onBlur={e => onblurHandler(button, e)}
-                      className={classes.ButtonIconText}
-                    >
-                      <Icon
-                        icon={button.icon}
-                        size={25}
-                        className={classes.ButtonIcon}
-                      />
-                      {button.text}
-                    </button>
-                  </div>
+                  <button
+                    key={index}
+                    onClick={onClick}
+                    onBlur={e => onblurHandler(button, e)}
+                    className={classes.Button}
+                  >
+                    <Icon
+                      icon={icon}
+                      size={size}
+                      className={classes.ButtonIcon}
+                    />
+                    <B_13_GREY444 style={{ marginLeft: '.75rem' }}>
+                      {text}
+                    </B_13_GREY444>
+                  </button>
                 );
               })}
           </div>

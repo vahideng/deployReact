@@ -38,7 +38,7 @@ const Title = styled(B_13_ORANGE_463)`
   border-top: 1px solid #ffa463;
   border-bottom: 1px solid #ffa463;
 `;
-interface Props {}
+interface Props { }
 
 const Sprint2: React.FC<Props> = () => {
   const [selectedItem, setSelectedOption] = useState("Persian");
@@ -78,10 +78,18 @@ const Sprint2: React.FC<Props> = () => {
   return (
     <div style={{ paddingTop: 100 }}>
       <Navbar
-        icon={{
-          onIconClick: () => {
+        image={{
+          src:
+            "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
+          onImageClick: () => {
             setHomeRedirect(true);
           },
+          style: { width: "100px", height: "50px" },
+        }}
+        scrolledImage={{
+          src:
+            "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
+          style: { width: "70px", height: "30px" },
         }}
         profile={{
           greeting: "Good Morning",
@@ -125,13 +133,17 @@ const Sprint2: React.FC<Props> = () => {
         modalIsOpen={settingModal}
         modalChildren={
           <SettingSummary
-            icon={{ name: "Tick-1" }}
+          outerRoundSize="10rem" // circle size
+          innerRoundSize ="10rem" //circle size
+          smallIcon = {false}    //!important
+            icon={{ name: "Tick-1" , size: 160}}
+            // image={{ src: images.common.amyIcon }}
             iconColor={{ top: "#94EC9B", bottom: "#5BB362" }}
             detailTitle="Successfully Activated"
             detail="Your account has been activated successfully."
-            outerRoundSize={'3.9375rem'}
-            innerRoundSize={'3.01875rem'}
-            
+          // outerRoundSize={"9.9375rem"}
+          // innerRoundSize={"9.01875rem"}
+          // smallIcon={false}
           />
         }
       />
@@ -174,17 +186,20 @@ const Sprint2: React.FC<Props> = () => {
           }
         />
       </div>
-      <Title>SettingModalCenter</Title>
       <SettingModalCenter
-        onRequestClose={() => setSettingModalCenter(false)}
+        // zIndex={-1}
         testId={"testId"}
         modalIsOpen={settingModalCenter}
+        onRequestClose={() => alert("close")}
         modalChildren={
           <StatusFormContainer
             statusIcon={{
-              icon: "Tick-1",
-              iconColor: { top: "#94EC9B", bottom: "#5BB362" },
-              outerIconColor: "#E5FCE6",
+              iconColor: { top: "#FD8585", bottom: "#FF2222" },
+              image: {
+                src: images.common.amyIcon,
+                alt: "logo",
+              },
+              outerIconColor: "#FFEBEE",
             }}
             children={
               <div
@@ -192,10 +207,44 @@ const Sprint2: React.FC<Props> = () => {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  padding: "2rem",
+                  padding: "0rem 2rem",
+                  marginTop: "1rem",
                 }}
               >
-                  <PrimaryButton onButtonClick={() => {}} />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textAlign: "center",
+                    padding: "1rem",
+                  }}
+                ></div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    marginTop: "1rem",
+                    marginBottom: "3rem",
+                  }}
+                >
+                  <PrimaryButton
+                    shadowed
+                    title="No"
+                    buttonStyle={{
+                      background:
+                        "linear-gradient(180deg, #F6F6F3 0%, #EAE9E3 100%)",
+                    }}
+                    containerStyle={{
+                      marginRight: ".5rem",
+                    }}
+                    height="3rem"
+                    minWidth="15rem"
+                    titleColor="#000"
+                  />
+                  <PrimaryButton title="Yes" minWidth="15rem" />
+                </div>
               </div>
             }
           />
@@ -263,20 +312,49 @@ const Sprint2: React.FC<Props> = () => {
       <Title>Box_V2</Title>
       <Box_V2
         title={"Login"}
+        hideButton
+        // tabTitles={["Security", "Login", "Contact Us"]}
+        // content={[
+        //   <p>We can’t seem to find any result for “Damansara Heights”</p>,
+        //   <>
+        //     <InputField
+        //       type="text"
+        //       clearClickHandler={() => alert("clear")}
+        //       clearIcon={false}
+        //       label="Username"
+        //       icon={{ name: "Account-2" }}
+        //       value={""}
+        //       handleChange={(event) => {
+        //         alert(event);
+        //       }}
+        //     />
+        //     <div style={{ paddingTop: 30 }}>
+        //       <TextButton
+        //         testId="testId"
+        //         buttonText="Forgot username/password?"
+        //         onTextClick={(id) => {
+        //           alert(`${id} clicked`);
+        //         }}
+        //       />
+        //     </div>
+        //   </>,
+        // ]}
         boxChildren={
           <div style={{ padding: "3rem 1.5rem" }}>
             <InputField
+              tipChildren={<p>tip</p>}
               notValid={true}
               errorMessage={{
                 testId: "testId",
                 errorText: "The TAC is incorrect",
                 subText: "Please try again.",
               }}
-              type="text"
+              type="password"
+              isSecure={true}
               clearClickHandler={() => alert("clear clicked")}
               clearIcon={true}
               label="input label"
-              icon={{ name: "Account-2" }}
+              icon={{ name: "Lock" }}
               value={""}
               handleChange={(event) => {
                 console.log(event.target.value);
@@ -336,72 +414,98 @@ const Sprint2: React.FC<Props> = () => {
         title="Grand Prize RM 1 Million Cash"
       />
       <Title>Transaction Limit List</Title>
-      <Row
-        style={{
-          background: "#FFFFFF",
-          boxShadow: "0px 2px 7px rgba(0, 0, 0, 0.123279)",
-          borderRadius: "20px 20px 0px 0px",
-          margin: "24px 20% auto",
-        }}
-      >
-        <Col
-          sm={3}
-          style={{
-            borderRight: "1px solid #DEDEDE",
-            padding: "0",
-          }}
-        ></Col>
-        <Col sm={9} style={{ padding: "0" }}>
-          <TransactionLimitList
-            list={[
-              {
-                label: "AmBank BonusLink Visa BlackGold",
-                subDetail: "7565 8767 5821 5409",
-                onClick: (item, index) =>
-                  alert(`${JSON.stringify(item)},Index: ${index}`),
-                rightLabelColor: "red",
-                rightLabel: "Default",
-                cardImg: LocalImages.common.card,
-                notify: true,
-              },
-              {
-                label: "Change Password",
-                subDetail: "Password last change: 0 day ago",
-                onClick: (item, index) =>
-                  alert(`${JSON.stringify(item)},Index: ${index}`),
-              },
-              {
-                label: "Investments",
-                subDetail: "Password last change: 0 day ago",
-                onClick: (item, index) =>
-                  alert(`${JSON.stringify(item)},Index: ${index}`),
-                rightLabelColor: "",
-                rightLabel: "",
 
-                cardImg: LocalImages.common.card,
-              },
-              {
-                label: "Online Shopping",
-                subDetail: "Password last change: 0 day ago",
-                onClick: (item, index) =>
-                  alert(`${JSON.stringify(item)},Index: ${index}`),
-                rightLabelColor: "green",
-                rightLabel: "Default",
-              },
-              {
-                label: "FPX Specific Merchant",
-                subDetail: "Password last change: 0 day ago",
-                onClick: (item, index) =>
-                  alert(`${JSON.stringify(item)},Index: ${index}`),
+      <div style={{ width: "30rem" }}>
 
-                rightLabelColor: "#000000",
-                rightLabel: "Show",
-              },
-            ]}
-            testId="testId"
-          />
-        </Col>
-      </Row>
+        <TransactionLimitList
+          // style={{ height: "5rem" }}
+          selectedIndex={3}
+          list={[
+            {
+              label: "AmBank BonusLink Visa BlackGold",
+              subDetail: "7565 8767 5821 5409",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+              rightLabelColor: "red",
+              rightLabel: "Default",
+              cardImg: LocalImages.common.card,
+              notify: true,
+            },
+            {
+              label: "Change Password",
+              subDetail: "Password last change: 0 day ago",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+            },
+            {
+              label: "Investments",
+              subDetail: "Password last change: 0 day ago",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+              rightLabelColor: "",
+              rightLabel: "",
+
+              cardImg: LocalImages.common.card,
+            },
+            {
+              label: "Online Shopping",
+              subDetail: "Password last change: 0 day ago",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+              rightLabelColor: "green",
+              rightLabel: "Default",
+            },
+            {
+              label: "FPX Specific Merchant",
+              subDetail: "Password last change: 0 day ago",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+              rightLabelColor: "#000000",
+              rightLabel: "Show",
+            },
+          ]}
+          testId="testId"
+        />
+      </div>
+      <TransactionLimitList
+        selectedIndex={1}
+        small
+        list={[
+          {
+            label: "DuitNow ID",
+
+            onClick: (item, index) =>
+              alert(`${JSON.stringify(item)},Index: ${index}`),
+          },
+          {
+            label: "DuitNow QR",
+            onClick: (item, index) =>
+              alert(`${JSON.stringify(item)},Index: ${index}`),
+          },
+        ]}
+        testId="testId"
+      />
+
+      <>
+        <TransactionLimitList
+          selectedIndex={1}
+          small
+          list={[
+            {
+              label: "DuitNow ID",
+
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+            },
+            {
+              label: "DuitNow QR",
+              onClick: (item, index) =>
+                alert(`${JSON.stringify(item)},Index: ${index}`),
+            },
+          ]}
+          testId="testId"
+        />
+      </>
       <Title>BoxSlider &larr;---&rarr; BoxContent</Title>
       <Row>
         <Col xs={0} md={7}>
@@ -434,14 +538,14 @@ const Sprint2: React.FC<Props> = () => {
                 },
               },
               {
-                tagText: "ANNOUNCeMeNTS",
-                title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+                tagText: "ANNOUNCeMeNTS-3",
+                title: "shall be valid to all Cases affecting Ambassadors",
                 descriptions:
                   "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term",
               },
               {
-                tagText: "ANNOUNCeMeNTS",
-                title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
+                tagText: "ANNOUNCeMeNTS-4",
+                title: "Pay Bills to Majlis Seremban via JomPAY",
                 descriptions:
                   "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term",
               },
@@ -523,6 +627,7 @@ const Sprint2: React.FC<Props> = () => {
           />
         </div>
       </div>
+      <Title>BoxSlider Single Item</Title>
       <BoxSlider
         sliderItems={[
           {
@@ -538,31 +643,65 @@ const Sprint2: React.FC<Props> = () => {
               },
             },
           },
-          {
-            tagText: "ANNOUNCeMeNTS",
-            title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
-            descriptions:
-              "The semiotics of the console in faded pinks and yellows. They were dropping, losing altitude in a canyon of rainbow foliage, a lurid communal mural that completely covered the hull of the previous century",
-            readMore: {
-              text: "read more",
-              onReadClick: () => {
-                alert("ReadMore");
-              },
-            },
-          },
-          {
-            tagText: "ANNOUNCeMeNTS",
-            title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
-            descriptions:
-              "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term",
-          },
-          {
-            tagText: "ANNOUNCeMeNTS",
-            title: "Pay Bills to Majlis Bandaraya Seremban via JomPAY",
-            descriptions:
-              "We will enlarge our ability to iterate virtually. It sounds wonderful, but it's 100 percent accurate! The experiences factor is short-term",
-          },
         ]}
+      />
+      <FormContainer
+        label={"Select your account/card type"}
+        tooltip={
+          <div>
+            <p style={{ color: "#ffffff" }}>When would you like to transfer?</p>
+          </div>
+        }
+        children={
+          <div style={{ padding: "1rem" }}>
+            <div>Input Date: {`${inputDate}`}</div>
+            <div>Selected Date: {`${selectedDate}`}</div>
+
+            <CalendarBox
+              label="Effective Date"
+              minDate={moment()
+                .add(1, "day")
+                .toDate()}
+              maxDate={moment()
+                .add(7, "day")
+                .toDate()}
+              onChangeDate={handleOnChange}
+              onChangeInput={handleInputDateChange}
+              placeholderText="DD / MM / YYYY"
+              selectedDate={selectedDate}
+              value={inputDate}
+            />
+          </div>
+        }
+      />
+      <FormContainer
+        label={"Select your account/card type"}
+        tooltip={
+          <div>
+            <p style={{ color: "#ffffff" }}>When would you like to transfer?</p>
+          </div>
+        }
+        children={
+          <div style={{ padding: "1rem" }}>
+            <div>Input Date: {`${inputDate}`}</div>
+            <div>Selected Date: {`${selectedDate}`}</div>
+
+            <CalendarBox
+              label="Effective Date"
+              minDate={moment()
+                .add(1, "day")
+                .toDate()}
+              maxDate={moment()
+                .add(7, "day")
+                .toDate()}
+              onChangeDate={handleOnChange}
+              onChangeInput={handleInputDateChange}
+              placeholderText="DD / MM / YYYY"
+              selectedDate={selectedDate}
+              value={inputDate}
+            />
+          </div>
+        }
       />
       <Title>Second Banner</Title>
       <div
@@ -604,7 +743,6 @@ const Sprint2: React.FC<Props> = () => {
           title="Lorem Ipsum"
           linkOnClick={() => alert("click")}
         />
-
         <div
           style={{
             display: "flex",

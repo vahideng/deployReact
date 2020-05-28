@@ -1,7 +1,10 @@
 .ListTitle {
-  text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 .DetailListMainDiv {
@@ -11,7 +14,7 @@
 }
 
 .DetailListTitle {
-  padding: 2rem 0;
+  padding: 0  0 2rem 0;
   max-width: 23.38rem;
   margin: 0 auto;
 }

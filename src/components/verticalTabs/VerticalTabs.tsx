@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, CSSProperties } from "react";
 import { Tab, Nav } from "react-bootstrap";
 import VerticalTabSelection from "src/components/selections/verticalTabSelection/VerticalTabSelection";
 import Paragraphs from "../assets/typography";
@@ -12,6 +12,8 @@ interface Props {
   minimize: boolean;
   defaultIndex?: number;
   tabWidth?: string;
+  tabHeight?: string;
+  WrapperStyle?: CSSProperties;
 }
 const VerticalTabs: React.FC<Props> = ({
   data,
@@ -20,25 +22,17 @@ const VerticalTabs: React.FC<Props> = ({
   testId,
   defaultIndex,
   tabWidth,
+  tabHeight,
+  WrapperStyle
 }) => {
-  const [defaultActiveKey, setDefaultActiveKey] = useState(
+  const [defaultActiveKey] = useState(
     defaultIndex ? defaultIndex : 0
   );
-  const lastIndex = data.length - 1;
-  useEffect(() => {
-    if (data) {
-      data.map((item: any, index: number) => {
-        if (item.selected) {
-          setDefaultActiveKey(index);
-        }
-      });
-    }
-  });
 
-  const customStyle = (index: number, borderRight: boolean) => ({
-    borderBottom:
-      index == lastIndex ? "1px solid transparent" : "1px solid #dedede",
-    width: minimize ? "6rem" : tabWidth ? tabWidth : "14.68rem",
+
+  const customStyle = (borderRight: boolean) => ({
+
+    width: minimize ? tabWidth || "5.31rem" : tabWidth || "14.68rem",
     borderRightColor: borderRight
       ? selectedBorderColor
         ? selectedBorderColor
@@ -46,18 +40,20 @@ const VerticalTabs: React.FC<Props> = ({
       : "",
   });
 
+
+
   return (
     <Tab.Container
       id={`verticalTabs ${testId}`}
       defaultActiveKey={defaultActiveKey}
     >
-      <div className={classes.WholeWrapper}>
+      <div style={WrapperStyle} className={classes.WholeWrapper}>
         <div className={classes.LeftChild}>
           <Nav variant="pills" className={`${classes.Container} flex-column `}>
             {!!data &&
               data.map((item: any, index: number) => {
                 return (
-                  <Nav.Item key={index} className={`${classes.Wrapper}`}>
+                  <Nav.Item key={index} style={{ height: tabHeight ? tabHeight : '6rem' }} className={`${classes.Wrapper}`}>
                     <Nav.Link eventKey={index} className={`${classes.NavLink}`}>
                       <VerticalTabSelection
                         selected={item.selected}
@@ -67,8 +63,19 @@ const VerticalTabs: React.FC<Props> = ({
                           color: item.icon.color,
                           size: item.icon.size,
                         }}
+                        image={{
+                          source: item?.image?.source,
+                          imageStyle: item?.image?.imageStyle
+                        }}
                         accountTitle={`${minimize ? "" : item.accountTitle}`}
-                        tabStyle={customStyle(index, item.selected)}
+                        accountTitle2={`${
+                          minimize
+                            ? ""
+                            : item.accountTitle2
+                              ? item.accountTitle2
+                              : ""
+                          }`}
+                        tabStyle={customStyle(item.selected)}
                       />
                     </Nav.Link>
                   </Nav.Item>
@@ -88,12 +95,14 @@ const VerticalTabs: React.FC<Props> = ({
                         style={{
                           backgroundImage: `url(${
                             !!_item.bgImage ? _item.bgImage.background : ""
-                          })`,
+                            })`,
                         }}
                         className={classes.RightChildBG}
                       >
-                        <SB_16_WHITE>{_item.bgImage.title}</SB_16_WHITE>
-                        <B_32_WHITE>{_item.bgImage.subTitle}</B_32_WHITE>
+                        <div className={classes.RightChildBGOverlay} style={_item.bgImage.overlayStyle ? _item.bgImage.overlayStyle : { backgroundColor: _item.bgImage.overlay ? 'rgba(0,0,0,0.3)' : 'transparent' }}>
+                          <SB_16_WHITE>{_item.bgImage.title}</SB_16_WHITE>
+                          <B_32_WHITE>{_item.bgImage.subTitle}</B_32_WHITE>
+                        </div>
                       </div>
                     )}
                     {_item.children}

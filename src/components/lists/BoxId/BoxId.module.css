@@ -1,17 +1,51 @@
-.MainDiv {
-  width: 35.5rem;
-}
-
-.WrapperDiv {
+.FlexCenter, .FlexLeft, .FlexRight, .FlexTop, .FlexBottom, .WrapperDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.FlexLeft {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.FlexRight {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.FlexTop {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.FlexBottom {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.MainDiv {
+  width: 100%;
+}
+
+.WrapperDiv {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   min-height: 4.62rem;
 }
 
@@ -45,8 +79,7 @@
 }
 
 .Title {
-  padding-bottom: 1.5rem;
-  padding-top: 2rem;
+  padding: 2rem 0 1.5rem 1rem;
 }
 
 .IconDiv {
@@ -72,7 +105,7 @@
 }
 
 .SubText {
-  padding-top: 5px;
+  padding-top: 4px;
 }
 
 .rightIcon {
@@ -87,13 +120,14 @@
   position: absolute;
   right: 1rem;
   top: 2.6rem;
-  width: 10rem;
-  border-radius: 5px;
+  width: 8.75rem;
   height: auto;
   z-index: 100;
   background-color: #ffffff;
   -webkit-box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
           box-shadow: 1px 0px 5px #e5e5e5, -1px 0px 5px #e5e5e5, 0px -1px 5px #e5e5e5, 0px 1px 5px #e5e5e5;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .ButtonDiv {
@@ -103,21 +137,33 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+.ButtonDiv p {
+  margin: 3px 0 0 8px;
+}
+
+.ButtonDiv:first-child button {
+  padding-top: 1rem;
+}
+
+.ButtonDiv:last-child button {
+  padding-bottom: 1rem;
 }
 
 .ButtonIconText {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-family: "Nunito Sans";
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 1px;
-  color: #444444;
-  font-weight: 700;
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   background-color: #ffffff;
   border: none;
   outline: none;

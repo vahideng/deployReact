@@ -11,25 +11,23 @@ interface Props {
       bottom: string;
     };
     outerIconColor: string;
-    icon?: any;
-    image?: any;
+    icon?: { name?: string; color?: string; size?: number };
+    image?: { src: string; alt?: string };
   };
 
   children?: ReactNode;
-  responsive?:boolean;
+  responsive?: boolean;
 }
 
 const StatusFormContainer: React.FC<Props> = ({
   children,
   statusIcon,
   testId,
-  responsive
+  responsive,
 }) => {
   let containerCls = classes.StatusFormContainerCurve;
-  let IconWidth =  "36.31rem";
   if (responsive) {
-    containerCls = `${classes.StatusFormContainerCurve} ${classes.StatusFormContainerCurveResponive}`
-    IconWidth = '100%';
+    containerCls = `${classes.StatusFormContainerCurve} ${classes.StatusFormContainerCurveResponive}`;
   }
   return (
     <div className={classes.StatusFormContainerMain}>
@@ -39,25 +37,32 @@ const StatusFormContainer: React.FC<Props> = ({
             <StatusIcon
               outerIconColor={statusIcon.outerIconColor}
               testId={statusIcon.testId}
-              icon={!!statusIcon ? statusIcon.icon : ""}
+              icon={!!statusIcon && statusIcon.icon}
               iconColor={{
                 top: statusIcon.iconColor.top,
-                bottom: statusIcon.iconColor.bottom
+                bottom: statusIcon.iconColor.bottom,
               }}
-              image={!!statusIcon ? statusIcon.image : ""}
+              image={!!statusIcon.image && statusIcon.image}
+              outerRoundSize={"5.625rem"}
+              innerRoundSize={"4.3125rem"}
             />
           </span>
         </>
       )}
       <div className={containerCls} id={testId}>
-        <span>
+        <span className={classes.CurveStyle}>
           <Icon
             icon="popup-curve"
             color={"#FFFFFF"}
             size={58}
             style={{
-              width: IconWidth,
-          
+              width: "36.25rem",
+              position: "absolute",
+              margin: "auto",
+              display: "block",
+              height: "100%",
+              left: "-100%",
+              right: " -100%",
             }}
           />
         </span>
@@ -71,4 +76,4 @@ export default StatusFormContainer;
 
 StatusFormContainer.defaultProps = {
   responsive: false,
-}
+};

@@ -50,7 +50,7 @@ class SearchBar extends Component<Props, State> {
     super(props);
     this.state = {
       inputFocused: false,
-      filterExpanded: false
+      filterExpanded: false,
     };
   }
   handleClickOutside = (evt: any) => {
@@ -71,7 +71,7 @@ class SearchBar extends Component<Props, State> {
       selectedFilters,
       showFilter,
       sectionFilter,
-      sectionFilterOptions
+      sectionFilterOptions,
     } = this.props;
 
     const {
@@ -79,7 +79,11 @@ class SearchBar extends Component<Props, State> {
     } = this.state;
 
     return (
-      <div className={classes.SearchBar}>
+      <div
+        className={classes.SearchBar}
+        tabIndex={0}
+        onBlur={() => this.setState({ filterExpanded: false })}
+      >
         <div className={classes.SearchBarContainer}>
           {showFilter && (
             <div
@@ -95,7 +99,7 @@ class SearchBar extends Component<Props, State> {
               <R_13_BLACK style={{ fontWeight: 600, marginRight: 5 }}>
                 Filter
               </R_13_BLACK>
-              <div>
+              <div style={{ display: "flex" }}>
                 {this.state.filterExpanded ? (
                   <span className={classes.SearchBarArrow}>
                     <Icon icon="arrowUp" size={10} />
@@ -114,7 +118,7 @@ class SearchBar extends Component<Props, State> {
             placeholder={!this.state.inputFocused && placeholder}
             value={value}
             autoFocus={!!autoFocus ? autoFocus : false}
-            onChange={event => {
+            onChange={(event) => {
               handleChange(event, testId);
             }}
             onFocus={() => this.setState({ inputFocused: true })}
@@ -171,7 +175,9 @@ class SearchBar extends Component<Props, State> {
                             {option.label}
                           </R_13_BLACK>
                           <span
-                            className={classes.SectionFilterOptionSelectedContainer}
+                            className={
+                              classes.SectionFilterOptionSelectedContainer
+                            }
                             style={{ opacity: option.selected ? 1 : 0 }}
                           >
                             <Icon icon="Tick-1" size={22} color="36A03E" />

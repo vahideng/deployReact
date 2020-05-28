@@ -1,25 +1,23 @@
-import React, { ReactNode } from 'react';
-import Paragraphs from '../assets/typography';
-import StatusFormContainer from '../wrappers/statusFormContainer/StatusFormContainer';
+import React, { ReactNode } from "react";
+import Paragraphs from "../assets/typography";
+import StatusFormContainer from "../wrappers/statusFormContainer/StatusFormContainer";
 import styled, { CSSProperties } from "styled-components";
-import ConfirmNotes from '../confirmNotes/ConfirmNotes';
-import PrimaryButton from '../buttons/primaryButton/PrimaryButton';
+import ConfirmNotes from "../confirmNotes/ConfirmNotes";
+import PrimaryButton from "../buttons/primaryButton/PrimaryButton";
 const { R_15_BLACK } = Paragraphs;
-
 
 interface TransactionWithNoteProps {
   testId: string;
   formContainerchildren: ReactNode;
-  responsive?:boolean;
+  responsive?: boolean;
   confirmNotesBody: {
     content: string;
-    style: {}
-
+    style: {};
   }[];
   confirmNotesTitle?: {
     content: string;
-    style: {}
-  }
+    style: {};
+  };
   statusIcon?: {
     testId?: string;
     iconColor: {
@@ -27,8 +25,8 @@ interface TransactionWithNoteProps {
       bottom: string;
     };
     outerIconColor: string;
-    icon?: any;
-    image?: any;
+    icon?: { name?: string; color?: string; size?: number };
+    image?: { src: string; alt?: string };
   };
 
   confirmNotesdisabled?: boolean;
@@ -43,7 +41,8 @@ interface TransactionWithNoteProps {
   Btnsmall?: boolean;
   Btnicon?: { name: string; color: string; size?: number };
   shadowed?: boolean;
-  statusText?:string;
+  statusText?: string;
+  statusNumber?: string
 }
 
 const CenteredDiv = styled.div`
@@ -51,6 +50,13 @@ const CenteredDiv = styled.div`
   flexdirection: row;
   justify-content: center;
   padding: 2rem 0;
+`;
+
+const CenteredCol = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const TransactionWithNote: React.FC<TransactionWithNoteProps> = ({
@@ -64,9 +70,9 @@ const TransactionWithNote: React.FC<TransactionWithNoteProps> = ({
   Btnwidth,
   onButtonClick,
   responsive,
-  statusText
+  statusText,
+  statusNumber
 }) => {
-
   return (
     <div id={testId}>
       <StatusFormContainer
@@ -75,8 +81,8 @@ const TransactionWithNote: React.FC<TransactionWithNoteProps> = ({
         children={formContainerchildren}
       />
 
-      <CenteredDiv style={{ flexDirection: 'column', alignItems: 'center' }}>
-        <div style={{ maxWidth: '36.3rem' }}>
+      <CenteredDiv style={{ flexDirection: "column", alignItems: "center" }}>
+        <div style={{ maxWidth: "36.3rem" }}>
           <ConfirmNotes
             testId="sprint_4_confirm_notes"
             title={confirmNotesTitle}
@@ -86,19 +92,17 @@ const TransactionWithNote: React.FC<TransactionWithNoteProps> = ({
           />
         </div>
 
-        <div>
-          <R_15_BLACK>
-           {statusText}
-        </R_15_BLACK>
-        <div  style={{ marginTop: '1.5em' }}>
-        <PrimaryButton
-         responsive={responsive}
-          title={Btntitle}
-          width={Btnwidth ? Btnwidth : '25rem'}
-          onButtonClick={onButtonClick}
-        />
-        </div>
-        </div>
+        <CenteredCol>
+          <R_15_BLACK style={{ marginBottom: "1.5rem" }}>
+            {statusText} <strong>{statusNumber}</strong>
+          </R_15_BLACK>
+          <PrimaryButton
+            responsive={responsive}
+            title={Btntitle}
+            width={Btnwidth || "25rem"}
+            onButtonClick={onButtonClick}
+          />
+        </CenteredCol>
       </CenteredDiv>
     </div>
   );
@@ -106,6 +110,6 @@ const TransactionWithNote: React.FC<TransactionWithNoteProps> = ({
 
 export default TransactionWithNote;
 
-TransactionWithNote.defaultProps={
-  responsive:false
-}
+TransactionWithNote.defaultProps = {
+  responsive: false,
+};

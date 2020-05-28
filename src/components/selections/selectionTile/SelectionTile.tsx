@@ -4,7 +4,7 @@ import Paragraphs from "../../assets/typography";
 import Profile from "src/components/headers/profile/Profile";
 import Icon from "src/components/assets/icons/icon";
 
-const { B_16_BLACK, R_14_BLACK, B_15_BLACK } = Paragraphs;
+const { R_14_BLACK, B_15_BLACK } = Paragraphs;
 interface Props {
   responsive?: boolean;
   rowStyle?: CSSProperties;
@@ -20,7 +20,7 @@ interface Props {
     iconLabel?: string;
     centeredText?: string;
     centeredChild?: ReactNode;
-    disable ?: boolean;
+    disable?: boolean;
     avatar?: {
       name: string;
       src?: string;
@@ -50,41 +50,32 @@ const SelectionTile: React.FC<Props> = ({
     selectionTileWrapperCls = `${selectionTileWrapperCls} ${classes.SelectionTileWrapperResponsive}`;
     selectionTileRowCls = `${selectionTileRowCls} ${classes.SelectionTileRowResponsive}`;
   }
- 
+
+  let sectionClass = "";
+  !!list && list.find((item) => !item.amount ? sectionClass = classes.CenterSection : null)
 
 
 
-  function BorderClass(index: number) {
-    if (selected === index) {
-      return classes.SelectedBorder;
-    } else {
-      return null;
-    }
-  }
   return !centered ? (
-    <div  className={selectionTileRowCls} id={testId} style={rowStyle}>
+    <div className={selectionTileRowCls} id={testId} style={rowStyle}>
       {!!list &&
         list.map((item, index) => {
-
-          
-         let disable = null
-          if(item.disable){
-            disable = `${classes.Disable}`
+          let disable = null;
+          if (item.disable) {
+            disable = `${classes.Disable}`;
           }
           return (
             <div
               id={`${testId}-${index}`}
-            onClick={!disable ? () => onTileClick(item, index) : null}
-              className={`${selectionTileWrapperCls} ${disable} ${BorderClass(
-                index
-              )}`}
+              onClick={!disable ? () => onTileClick(item, index) : null}
+              className={`${selectionTileWrapperCls} ${disable}`}
               key={index}
               style={tileStyle}
             >
               <div
                 className={classes.SelectionTileSelector}
                 style={{
-                  justifyContent: item.iconLabel ? "center" : "flex-start"
+                  justifyContent: item.iconLabel ? "center" : "flex-start",
                 }}
               >
                 {item.iconLabel ? (
@@ -93,7 +84,7 @@ const SelectionTile: React.FC<Props> = ({
                       display: "flex",
                       flexDirection: "row",
                       alignItems: "center",
-                      justifyContent: "center"
+                      justifyContent: "center",
                     }}
                   >
                     <B_15_BLACK
@@ -101,8 +92,8 @@ const SelectionTile: React.FC<Props> = ({
                       style={
                         selected !== index
                           ? {
-                              fontWeight: "normal"
-                            }
+                            fontWeight: "normal",
+                          }
                           : {}
                       }
                     >
@@ -124,9 +115,7 @@ const SelectionTile: React.FC<Props> = ({
                     )}
                   </div>
                 ) : item.children ? (
-                  <div className={classes.SelectionTileChild}>
-                    {item.children}
-                  </div>
+                  <>{item.children}</>
                 ) : !!item.avatar ? (
                   <div>
                     <Profile
@@ -135,71 +124,110 @@ const SelectionTile: React.FC<Props> = ({
                       greeting={item.avatar.name}
                       alt="AVATAR"
                       src={item.avatar.src}
+                      greetingStyle={selected !== index ? { fontWeight: "normal" } : {}}
                     />
                   </div>
                 ) : (
-                  <div id={`${testId}-0${index}`}>
-                    {!!item.accountTitle && (
-                      <div className={classes.SelectionTileTDiv}>
-                        <B_16_BLACK
-                        x-ms-format-detection="none" 
-                        className={classes.SelectionTileTitle}>
-                          {item.accountTitle}
-                        </B_16_BLACK>
-                      </div>
-                    )}
-                    {!!item.accountNumber && (
-                      <R_14_BLACK   
-                       x-ms-format-detection="none" 
-                       >{item.accountNumber}</R_14_BLACK>
-                    )}
-                    {!!item.amount && (
-                      <B_16_BLACK className={classes.SelectionTAmount}
-                      x-ms-format-detection="none" 
-                      >
-                        {item.amount}
-                      </B_16_BLACK>
-                    )}
-                  </div>
-                )}
+                        <div id={`${testId}-0${index}`} className={classes.SelectionMain}>
+                          <section className={sectionClass}>
+                            {!!item.accountTitle && (
+                              <div className={classes.SelectionTileTDiv}>
+                                <B_15_BLACK
+                                  x-ms-format-detection="none"
+                                  className={classes.SelectionTileTitle}
+                                  style={
+                                    selected !== index
+                                      ? {
+                                        fontWeight: "normal",
+                                      }
+                                      : {}
+                                  }
+                                >
+                                  {item.accountTitle}
+                                </B_15_BLACK>
+                              </div>
+                            )}
+                            {!!item.accountNumber && (
+                              <R_14_BLACK x-ms-format-detection="none">
+                                {item.accountNumber}
+                              </R_14_BLACK>
+                            )}
+                          </section>
+
+                          {!!item.amount && (
+                            <B_15_BLACK
+                              x-ms-format-detection="none"
+                              style={
+                                selected !== index
+                                  ? {
+                                    fontWeight: "normal",
+                                  }
+                                  : {}
+                              }
+                            >
+                              {item.amount}
+                            </B_15_BLACK>
+                          )}
+                        </div>
+                      )}
               </div>
+              {!item.disable && (
+                <div
+                  className={
+                    selected === index
+                      ? `${classes.borderBottomSelected} ${classes.borderBottom}`
+                      : classes.borderBottom
+                  }
+                ></div>
+              )}
             </div>
           );
         })}
     </div>
   ) : (
-    <div className={classes.SelectionTileRow} id={testId} style={rowStyle}>
-      {!!list &&
-        list.map((item, index) => {
-          return (
-            <div
-              id={`${testId}-${index}`}
-              onClick={() => onTileClick(item, index)}
-              className={`${classes.CenteredDiv} ${BorderClass(index)}`}
-              key={index}
-              style={tileStyle}
-            >
-              <div className={classes.CenteredSelector}>
-                {item.centeredText && (
-                  <B_15_BLACK
-                    style={
-                      selected !== index
-                        ? {
+      <div className={classes.SelectionTileRow} id={testId} style={rowStyle}>
+        {!!list &&
+          list.map((item, index) => {
+            let disable = null;
+            if (item.disable) {
+              disable = `${classes.Disable}`;
+            }
+            return (
+              <div
+                id={`${testId}-${index}`}
+                onClick={() => onTileClick(item, index)}
+                className={`${classes.CenteredDiv} ${disable} `}
+                key={index}
+                style={tileStyle}
+              >
+                <div className={classes.CenteredSelector}>
+                  {item.centeredText && (
+                    <B_15_BLACK
+                      style={
+                        selected !== index
+                          ? {
                             fontWeight: "normal",
                           }
-                        : {}
-                    }
-                  >
-                    {item.centeredText}
-                  </B_15_BLACK>
-                )}
-                {!!item.centeredChild && item.centeredChild}
+                          : {}
+                      }
+                    >
+                      {item.centeredText}
+                    </B_15_BLACK>
+                  )}
+                  {!!item.centeredChild && item.centeredChild}
+                </div>
+                <div
+                  className={
+                    selected === index
+                      ? `${classes.borderBottomSelected} ${classes.borderBottom}`
+                      : classes.borderBottom
+                  }
+                ></div>
               </div>
-            </div>
-          );
-        })}
-    </div>
-  );
+            );
+          })}
+      </div>
+    );
 };
 
 export default SelectionTile;

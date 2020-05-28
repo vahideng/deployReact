@@ -7,16 +7,17 @@ interface Props {
   testId?: string;
   title?: string;
   titleList?: string[];
+  onBlur?: () => void;
   list?: {
     leftText: string;
     rightText: string;
     tipChildren?: ReactNode;
-    showTooltip ?: boolean;
-    onTooltipClicked ?: ()=> void;
+    showTooltip?: boolean;
+    onTooltipClicked?: () => void;
   }[];
 }
 
-const DetailList: React.FC<Props> = ({ list, title, testId, titleList }) => {
+const DetailList: React.FC<Props> = ({ list, title, testId, titleList, onBlur }) => {
   return (
     <div className={classes.DetailListMainDiv} id={testId}>
       {title ? (
@@ -59,7 +60,13 @@ const DetailList: React.FC<Props> = ({ list, title, testId, titleList }) => {
                       className={classes.DetailListToolIcon}
                       id={`${testId}-0${index}`}
                     >
-                      <Tooltip showTooltip={item.showTooltip} onTooltipClicked={item.onTooltipClicked} tipChildren={item.tipChildren} testId={testId} />
+                      <Tooltip
+                      onBlur ={onBlur}
+                        showTooltip={item.showTooltip}
+                        onTooltipClicked={item.onTooltipClicked}
+                        tipChildren={item.tipChildren}
+                        testId={testId}
+                      />
                     </div>
                   )}
                 </div>
@@ -72,5 +79,3 @@ const DetailList: React.FC<Props> = ({ list, title, testId, titleList }) => {
 };
 
 export default DetailList;
-
-

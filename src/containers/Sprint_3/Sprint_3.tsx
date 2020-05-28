@@ -57,7 +57,7 @@ const {
   B_13_ORANGE_463,
   R_12_WHITE,
   B_14_WHITE,
-  B_24_BLACK,
+  // B_24_BLACK,
   B_15_WHITE,
   R_13_GREY969,
   SB_13_BLACK,
@@ -79,7 +79,7 @@ const RowDiv = styled.div`
   display: flex;
   flex-direction: "row";
 `;
-interface Props {}
+interface Props { }
 
 const Sprint3: React.FC<Props> = () => {
   const [selectedItem, setSelectedOption] = useState("Persian");
@@ -112,6 +112,7 @@ const Sprint3: React.FC<Props> = () => {
   });
   const [hiddenList, setHiddenList] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [headerTool, setHeaderToll] = useState(false);
 
   const handlerDropdown = (item: any) => {
     console.log(item, "dropdownValue");
@@ -291,14 +292,14 @@ const Sprint3: React.FC<Props> = () => {
           alert("onRequestClose");
           setIsLoading(false);
         }}
-        // optionalStyle={{
-        //   color: "#3CB371	",
-        //   thickness: 15,
-        //   textStyle: { color: "#006400", fontWeight: "bolder" },
-        //   imageIcon:
-        //     "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
-        //   imageIconStyle: { width: 120, height: 120, borderRadius: "50%" },
-        // }}
+      // optionalStyle={{
+      //   color: "#3CB371	",
+      //   thickness: 15,
+      //   textStyle: { color: "#006400", fontWeight: "bolder" },
+      //   imageIcon:
+      //     "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
+      //   imageIconStyle: { width: 120, height: 120, borderRadius: "50%" },
+      // }}
       />
       <Title>UnitTrustList</Title>
       <CenteredDiv>
@@ -626,10 +627,12 @@ const Sprint3: React.FC<Props> = () => {
       <Title>DashboardCart</Title>
       <div style={{ width: "20%", margin: "2rem auto" }}>
         <DashboardCart
+          onBlur={() => console.log("onBlurDashboardCart")}
           cartList={[
             {
-              showTooltip: true,
-              onTooltipClicked: () => alert("clickedTooltip"),
+              selected: true,
+              showTooltip: false,
+              onTooltipClicked: () => console.log("clickedTooltip"),
               testId: "testId",
               title: "My UT Account",
               subtitle: { content: "123456", icon: "User1" },
@@ -651,7 +654,7 @@ const Sprint3: React.FC<Props> = () => {
                   },
                 },
               ],
-              onClickContainer: () => alert("Clicked"),
+              onClickContainer: () => console.log("clickedTooltip"),
               tooltip: true,
               footerLabel: "Last Updated: 11 Nov 2019",
               tipChildren: <div>tip tooltip</div>,
@@ -682,14 +685,13 @@ const Sprint3: React.FC<Props> = () => {
       <Title>TransactionLimitList Hidden</Title>
       <div style={{ width: "60vw", margin: "auto" }}>
         <TransactionLimitList
+          selectedIndex={3}
           list={[
             {
               notify: true,
               label: "AmBank BonusLink Visa BlackGold",
               subDetail: "7565 8767 5821 5409",
-              onClick: (item, index) =>
-                alert(`${JSON.stringify(item)},Index: ${index}`),
-
+              onClick: (_item, index) => console.log(index),
               cardImg: LocalImages.common.card,
               hidden: hiddenList,
               onHiddenButtonClick: () => {
@@ -762,16 +764,111 @@ const Sprint3: React.FC<Props> = () => {
                   toggleOffLabel="NO"
                   toggleOnLabel="YES"
                   value={true}
-                  onTogglePress={() => {}}
+                  onTogglePress={() => { }}
                 />
               ),
             },
             { label: "Change Card PIN" },
             {
+              label: "For Testing", // change Lastname
+              leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
+              bold: true, // chang false
+              onListClick: (item) => {
+                console.log(item, "item clicked");
+                // window.alert(`ITEM NAME:::: ${item.label}`)
+              },
+              // rightItem: (
+              //   <ToggleButton
+              //     toggleOffLabel="NO"
+              //     toggleOnLabel="YES"
+              //     value={true}
+              //     onTogglePress={() => {}}
+              //   />
+              // ), // change
+              expandable: true, // change false
+              expandableStatus : true,
+              expandableContent: (
+                <>
+                  <InputField
+                    type="text"
+                    value=""
+                    notValid={false}
+                    handleChange={() => { }}
+                    clearClickHandler={() => { }}
+                    clearIcon={true}
+                    label=""
+                    icon={{ name: "Lock" }}
+                    errorMessage={{
+                      errorText: "something wrong",
+                      subText: "detail error",
+                    }}
+                    {...{
+                      type: "text", // change number
+                      value: linkListInputValue,
+                      notValid: false, // change true
+                      handleChange: (e: any) => {
+                        // window.alert(`text change: ${e.target.value}`)
+                        setLinkListInputValue(e.target.value);
+                        setLinkListClear(true);
+                        setLinkListBtnColor({
+                          top: "#FF0D0D",
+                          bottom: "#FD8585",
+                        });
+                      },
+                      clearClickHandler: () => {
+                        // window.alert(`clear change`)
+                        setLinkListInputValue("");
+                        setLinkListClear(false);
+                        setLinkListBtnColor({
+                          top: "#BDBDBD",
+                          bottom: "#BDBDBD",
+                        });
+                      },
+                      clearIcon: linkListInputValue ? true : linkListClear, // change false
+                      label: "", // change Test Input
+                      icon: { name: "Lock" }, // change Amy
+                      errorMessage: {
+                        errorText: "something wrong",
+                        subText: "detail error",
+                      },
+                    }}
+                  />
+                  <PrimaryButton
+                    onButtonClick={() => {
+                      window.alert("Button Clicked");
+                    }}
+                    title={"Update"}
+                    titleColor={"#fff"}
+                    buttonColor={{
+                      top: "#BDBDBD",
+                      bottom: "#BDBDBD",
+                    }}
+                    {...{
+                      onButtonClick: () => {
+                        alert("Button Clicked");
+                      },
+                      title: "Update",
+                      titleColor: "#fff",
+                      buttonColor: linkListBtnColor,
+                    }}
+                  />
+                </>
+              ),
+              subtitle: [
+                "AmBank BonusLink Visa",
+                "AmBank BonusLink Mastercard", // change
+                // 'Another line of subtitle'
+              ],
+              leftBorderColor: "red", // change green
+            },
+            {
               label: "Nickname", // change Lastname
               leftIcon: <Icon icon="Announcement" size={22} color="#444444" />,
               bold: true, // chang false
-              onListClick: () => {
+              onListClick: (e: any) => {
+
+                    console.log(e, "item clicked");
+                    
                 // window.alert(`clicked on item ${item.label}`);
                 // window.alert(`ITEM NAME:::: ${item.label}`)
               },
@@ -784,14 +881,15 @@ const Sprint3: React.FC<Props> = () => {
               //   />
               // ), // change
               expandable: true, // change false
+              expandableStatus : false,
               expandableContent: (
                 <>
                   <InputField
                     type="text"
                     value=""
                     notValid={false}
-                    handleChange={() => {}}
-                    clearClickHandler={() => {}}
+                    handleChange={() => { }}
+                    clearClickHandler={() => { }}
                     clearIcon={true}
                     label=""
                     icon={{ name: "Lock" }}
@@ -877,6 +975,7 @@ const Sprint3: React.FC<Props> = () => {
                 <SecureImage
                   testId="secure_image_testid"
                   image={images.common.SampleSecureImage}
+                  type="wide"
                 />
               </CenteredDiv>
 
@@ -914,6 +1013,8 @@ const Sprint3: React.FC<Props> = () => {
       <CenteredDiv
         style={{
           margin: "5rem",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
         <AmAccordion
@@ -958,7 +1059,7 @@ const Sprint3: React.FC<Props> = () => {
                     title={"ItemName"}
                     icon={<Icon icon={"Settings"} size={18} color={"red"} />}
                     status={
-                      <Icon icon={"CheckboxYes"} size={20} color={"#36A03E"} />
+                      <Icon icon={"accent-tick"} size={20} color={"#36A03E"} />
                     }
                   />
                   <AmListItem
@@ -967,7 +1068,49 @@ const Sprint3: React.FC<Props> = () => {
                     title={"ItemName"}
                     icon={<Icon icon={"Security2"} size={18} color={"red"} />}
                     status={
-                      <Icon icon={"CheckboxYes"} size={20} color={"#36A03E"} />
+                      <Icon icon={"accent-tick"} size={20} color={"#36A03E"} />
+                    }
+                  />
+                </div>
+              ),
+            },
+            {
+              id: "id-3",
+              title: "Macbook Pro",
+              children: (
+                <div>
+                  <AmListItem
+                    key={`accordionCollapseList-id1-1`}
+                    testId={`accordionCollapseList-id1-1`}
+                    title={"ItemName"}
+                    icon={<Icon icon={"Duitnow2"} size={25} />}
+                    status={
+                      <Icon icon={"accent-tick"} size={20} color={"#36A03E"} />
+                    }
+                  />
+                  <AmListItem
+                    key={`accordionCollapseList-id12-2`}
+                    testId={`accordionCollapseList-id2-2`}
+                    title={"ItemName"}
+                    icon={<Icon icon={"Duitnow1"} size={25} />}
+                    status={
+                      <Icon icon={"accent-tick"} size={20} color={"#36A03E"} />
+                    }
+                  />
+                  <AmListItem
+                    key={`accordionCollapseList-id12-2`}
+                    testId={`accordionCollapseList-id2-2`}
+                    title={"ItemName"}
+                    icon={
+                      <img
+                        width={27}
+                        src={
+                          "https://www.ambankgroup.com/eng/Business/PublishingImages/DuitNowLogo.jpg"
+                        }
+                      />
+                    }
+                    status={
+                      <Icon icon={"accent-tick"} size={20} color={"#36A03E"} />
                     }
                   />
                 </div>
@@ -975,6 +1118,36 @@ const Sprint3: React.FC<Props> = () => {
             },
           ]}
         ></AmAccordion>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "30rem",
+            marginTop: "1rem",
+          }}
+        >
+          <PrimaryButton
+            icon={{ name: "delete", color: "#fff" }}
+            title="remove device"
+            onButtonClick={() => {
+              alert("click");
+            }}
+            minWidth="12rem"
+            height="2.5rem"
+            buttonColor={{ top: "#FD8585", bottom: "#FF2222" }}
+          />
+          <PrimaryButton
+            icon={{ name: "delete", color: "#fff" }}
+            title="remove device"
+            minWidth="12rem"
+            height="2.5rem"
+            onButtonClick={() => {
+              alert("click");
+            }}
+            width={"25rem"}
+            buttonColor={{ top: "#dedede", bottom: "#eee" }}
+          />
+        </div>
       </CenteredDiv>
 
       <Title>ListItem (item used inside accordion)</Title>
@@ -989,7 +1162,7 @@ const Sprint3: React.FC<Props> = () => {
           testId="testId-123"
           title="Item with no left but right icon"
           icon={<Icon icon={"Right1"} size={20} color={"#000000"} />}
-          status={<Icon icon={"CheckboxYes"} size={20} color={"#000000"} />}
+          status={<Icon icon={"accent-tick"} size={20} color={"#000000"} />}
         />
         <AmListItem
           testId="testId-345"
@@ -1108,6 +1281,7 @@ const Sprint3: React.FC<Props> = () => {
         }}
       >
         <AmDropdown
+          onBlurDropdown={() => setDropdown(false)}
           containerStyle={{
             marginBottom: "1rem",
           }}
@@ -1118,7 +1292,11 @@ const Sprint3: React.FC<Props> = () => {
           clickOnArrow={() => setDropdown(!showDropdown)}
           showDropdown={showDropdown}
           dropdownData={[
-            { value: "ambank", label: "am" },
+            {
+              value: "ambank",
+              label:
+                "am aHSH ags as jhasgu AHGSGa haGSY aGYUS gys dsads sda das das das das dsa da ads  dsa",
+            },
             { value: "Alpeh", label: "alp" },
             { value: "ambank", label: "am" },
             { value: "Alpeh", label: "alp" },
@@ -1151,89 +1329,90 @@ const Sprint3: React.FC<Props> = () => {
           inputHandleChange={(item) => alert(item.target.value)}
           placeholder="place holder"
         />
-        <AmDropdown
-          max="200px"
-          type="text"
-          readOnly={false}
-          disabled={false}
-          clickOnArrow={() => setDropdown(!showDropdown)}
-          showDropdown={showDropdown}
-          dropdownData={[
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
-          ]}
-          notValid={false}
-          errorMessage={{
-            testId: "testId",
-            errorText: "The TAC is incorrect",
-            subText: "Please try again.",
-          }}
-          inputClickHandler={() => setDropdown(!showDropdown)}
-          arrowIcon={true}
-          label="dropdown label"
-          icon={{ name: "Account-2" }}
-          value={dropdownValue}
-          handleChange={(event, item, testId) => {
-            console.log(event, testId);
-            handlerDropdown(item);
-          }}
-          inputHandleChange={(item) => alert(item.target.value)}
-          placeholder="place holder"
-        />
-        <AmDropdown
-          max="200px"
-          type="text"
-          readOnly={false}
-          disabled={false}
-          clickOnArrow={() => setDropdown(!showDropdown)}
-          showDropdown={showDropdown}
-          dropdownData={[
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
-            { value: "ambank", label: "am" },
-            { value: "Alpeh", label: "alp" },
-          ]}
-          notValid={false}
-          errorMessage={{
-            testId: "testId",
-            errorText: "The TAC is incorrect",
-            subText: "Please try again.",
-          }}
-          inputClickHandler={() => setDropdown(!showDropdown)}
-          arrowIcon={true}
-          label="dropdown label"
-          icon={{ name: "Account-2" }}
-          value={dropdownValue}
-          handleChange={(event, item, testId) => {
-            console.log(event, testId);
-            handlerDropdown(item);
-          }}
-          inputHandleChange={(item) => alert(item.target.value)}
-          placeholder="place holder"
-        />
       </div>
+      {/* <AmDropdown
+          max="200px"
+          type="text"
+          readOnly={false}
+          disabled={false}
+          clickOnArrow={() => setDropdown(!showDropdown)}
+          showDropdown={showDropdown}
+          dropdownData={[
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+          ]}
+          notValid={false}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The TAC is incorrect",
+            subText: "Please try again.",
+          }}
+          inputClickHandler={() => setDropdown(!showDropdown)}
+          arrowIcon={true}
+          label="dropdown label"
+          icon={{ name: "Account-2" }}
+          value={dropdownValue}
+          handleChange={(event, item, testId) => {
+            console.log(event, testId);
+            handlerDropdown(item);
+          }}
+          inputHandleChange={(item) => alert(item.target.value)}
+          placeholder="place holder"
+        />
+        <AmDropdown
+          max="200px"
+          type="text"
+          readOnly={false}
+          disabled={false}
+          clickOnArrow={() => setDropdown(!showDropdown)}
+          showDropdown={showDropdown}
+          dropdownData={[
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+            { value: "ambank", label: "am" },
+            { value: "Alpeh", label: "alp" },
+          ]}
+          notValid={false}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The TAC is incorrect",
+            subText: "Please try again.",
+          }}
+          inputClickHandler={() => setDropdown(!showDropdown)}
+          arrowIcon={true}
+          label="dropdown label"
+          icon={{ name: "Account-2" }}
+          value={dropdownValue}
+          handleChange={(event, item, testId) => {
+            console.log(event, testId);
+            handlerDropdown(item);
+          }}
+          inputHandleChange={(item) => alert(item.target.value)}
+          placeholder="place holder"
+        />
+      </div> */}
 
       <Title>Pie Chart Box</Title>
       <div
@@ -1254,7 +1433,8 @@ const Sprint3: React.FC<Props> = () => {
         />
         <PieChartBox
           title={"Your Ideal Portfolio"}
-          pieLabels={["Fixed Income 100%", "Equity 0%"]}
+          pieLabels={["Fixed Income 0%", "Equity 0%"]}
+          empty={true}
           pieDataSets={{
             data: [100, 0],
             backgroundColor: ["#7AB497", "#FFA463"],
@@ -1281,8 +1461,10 @@ const Sprint3: React.FC<Props> = () => {
 
       <CenteredDiv>
         <InputField
+          responsive={true}
           onTooltipClicked={() => alert("tooltipCLicked")}
           showTooltip={true}
+          onBlurTooltip={() => console.log("OutsideClick")}
           tipChildren={
             <div>
               <B_15_WHITE>Password</B_15_WHITE>
@@ -1341,10 +1523,15 @@ const Sprint3: React.FC<Props> = () => {
         <div style={{ width: 620 }}>
           <HeaderWithIButtons
             headerStyle={{
+              width: "40rem",
+              marginTop: "1rem",
               backgroundColor: "rgba(196, 196, 196, 0.3)",
             }}
             icon={{ name: "Amy", color: "#ff2626" }}
             label="Your DuitNow IDs (3/5)"
+            onBlur={() => setHeaderToll(!headerTool)}
+            onTooltipClicked={() => setHeaderToll(!headerTool)}
+            showTooltip={headerTool}
             tooltipData={{
               testId: "101",
               tipChildren: (
@@ -1501,6 +1688,11 @@ const Sprint3: React.FC<Props> = () => {
               value: "Unsuccessful",
               closeIconClickHandler: () => alert("clear Unsuccessful"),
             },
+            {
+              label: "EXAMPLE",
+              value: "TEST",
+              closeIconClickHandler: () => alert("clear Unsuccessful"),
+            },
           ]}
         />
       </CenteredDiv>
@@ -1510,6 +1702,7 @@ const Sprint3: React.FC<Props> = () => {
           <HeaderWithIcons
             headerStyle={{
               backgroundColor: "rgba(196, 196, 196, 0.3)",
+              borderTopRightRadius: "1rem",
             }}
             label={"DuitNow QR"}
             image={{ src: images.common.Duitnow1 }}
@@ -1549,7 +1742,7 @@ const Sprint3: React.FC<Props> = () => {
         </div>
       </CenteredDiv>
       <Title>Selection Tiles</Title>
-      <div style={{ paddingLeft: "2rem" }}>
+      <div style={{ paddingLeft: "2rem", background: "#dedede" }}>
         <SelectionTile
           rowStyle={{ flexWrap: "nowrap" }}
           testId={"testId"}
@@ -1611,10 +1804,6 @@ const Sprint3: React.FC<Props> = () => {
               },
             },
             {
-              children: <img src={images.common.sampleLogo} width={150} />,
-            },
-
-            {
               avatar: {
                 name: "Kurniawan Suriawati",
                 initials: "KS",
@@ -1635,12 +1824,12 @@ const Sprint3: React.FC<Props> = () => {
               amount: "RM 10,301.50",
             },
             {
-              accountTitle: "Ambank AmMoneyLine AmMoneyLine",
+              accountTitle: "Am bank Am Money Line Am Money Line",
               accountNumber: "RM 2,000.00",
               amount: " RM 11,555.00",
             },
             {
-              accountTitle: "Ambank BonusLink Visa",
+              accountTitle: "Max 2 Line SA Basic-I Fee BonusLink Visa but with very long nickname",
               accountNumber: "RM 2,000.00",
               amount: " RM 55,555.00",
             },
@@ -1652,21 +1841,69 @@ const Sprint3: React.FC<Props> = () => {
           ]}
         />
         <SelectionTile
+          // tileStyle={{ width: "28rem" }}
+          onTileClick={(item, index) => {
+            setSTileNum2(index);
+            alert(`${item.accountTitle} with indexOf ${index} clicked`);
+          }}
+          selected={sTileNum2}
+          list={[
+            {
+              accountTitle: "Saving Account A",
+              accountNumber: "4522016484444829",
+            },
+            {
+              accountTitle: "Saving Account B",
+              accountNumber: "19000194300233849",
+            },
+            {
+              accountTitle: "Long text AmMoneyLine",
+              accountNumber: "78624595404894028",
+            },
+            {
+              accountTitle: "Ambank BonusLink Visa",
+              accountNumber: "952858022960748293",
+            },
+          ]}
+        />
+        <SelectionTile
           centered={true}
           onTileClick={(item, index) => {
             setSTileNum3(index);
             alert(`${item.centeredText} with indexOf ${index} clicked`);
           }}
           selected={sTileNum3}
+          tileStyle={{ width: "8rem" }}
           list={[
             {
-              centeredText: "Lost",
+              centeredText: "Weekly",
             },
             {
-              centeredText: "Stolen",
+              centeredText: "Monthly",
             },
             {
-              centeredText: "Suspicious Activity",
+              centeredText: "Yearly",
+            },
+          ]}
+        />
+        <SelectionTile
+          centered={true}
+          onTileClick={(item, index) => {
+            setSTileNum3(index);
+            alert(`${item.centeredText} with indexOf ${index} clicked`);
+          }}
+          selected={sTileNum3}
+          tileStyle={{ height: "5rem" }}
+          list={[
+            {
+              centeredChild: <img src={images.common.sampleLogo} width={100} />,
+            },
+            ,
+            {
+              centeredText: "Monthly",
+            },
+            {
+              centeredText: "Yearly",
             },
           ]}
         />
@@ -1694,112 +1931,118 @@ const Sprint3: React.FC<Props> = () => {
         iconText="Disable online purchases for AmBank Debit Card?"
       />
       <Title>BoxId</Title>
-      <CenteredDiv>
-        <div>
-          <BoxId
-            title="Active IDs"
-            isActive={true}
-            list={[
-              {
-                leftIcon: { name: "ID-2" },
-                boldText: "ID Number ••••••9876",
-                subText: "Maybank  |  ••••••••4321",
-                notification: true,
-                iconButtons: [
-                  {
-                    icon: "Edit",
-                    text: "Edit",
-                    onClick: () => alert("click"),
-                  },
-                  {
-                    icon: "delete",
-                    text: "Delete",
-                    onClick: () => alert("click"),
-                  },
-                  {
-                    icon: "Clear",
-                    text: "Deactivate",
-                    onClick: () => alert("click"),
-                  },
-                ],
-              },
-              {
-                leftIcon: { name: "Mobile" },
-                boldText: "Mobile Number ••••••1234",
-                subText: "Ambank  |  ••••••••3463",
-                iconButtons: [
-                  {
-                    icon: "Edit",
-                    text: "Edit",
-                    onClick: () => alert("click"),
-                  },
-                  {
-                    icon: "delete",
-                    text: "Delete",
-                    onClick: () => alert("click"),
-                  },
-                  {
-                    icon: "Clear",
-                    text: "Deactivate",
-                    onClick: () => alert("click"),
-                  },
-                ],
-              },
-            ]}
-          />
 
-          <BoxId
-            title="Inactive IDs"
-            list={[
-              {
-                leftImage:
-                  "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
-                boldText: "Mobile Number ••••••4546",
+      <div>
+        <BoxId
+          width="30rem"
+          title="Active IDs"
+          isActive={true}
+          align="left"
+          list={[
+            {
+              leftIcon: { name: "ID-2", size: 35 },
+              boldText: "ID Number ••••••9876",
+              subText: "Maybank  |  ••••••••4321",
+              notification: true,
+              iconButtons: [
+                {
+                  icon: "Edit",
+                  text: "Edit",
+                  onClick: () => {
+                    console.log("console click");
+                  },
+                },
+                {
+                  icon: "delete",
+                  text: "Delete",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "Clear",
+                  text: "Deactivate",
+                  onClick: () => alert("click"),
+                },
+              ],
+            },
+            {
+              leftIcon: { name: "Mobile" },
+              boldText: "Mobile Number ••••••1234",
+              subText: "Ambank  |  ••••••••3463",
+              iconButtons: [
+                {
+                  icon: "Edit",
+                  text: "Edit",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "delete",
+                  text: "Delete",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "Clear",
+                  text: "Deactivate",
+                  onClick: () => alert("click"),
+                },
+              ],
+            },
+          ]}
+        />
 
-                iconButtons: [
-                  {
-                    icon: "Edit",
-                    text: "Edit",
-                    onClick: () => alert("click"),
+        <BoxId
+          width={400}
+          title="Inactive IDs"
+          list={[
+            {
+              leftIcon: { name: "Mobile", size: 35 }, // example here
+              leftImage:
+                "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
+              boldText: "Mobile Number ••••••4546",
+              iconButtons: [
+                {
+                  icon: "Edit",
+                  text: "Edit",
+                  onClick: () => {
+                    console.log("console click");
                   },
-                  {
-                    icon: "delete",
-                    text: "Delete",
-                    onClick: () => alert("click"),
-                  },
-                  {
-                    icon: "Clear",
-                    text: "Deactivate",
-                    onClick: () => alert("click"),
-                  },
-                ],
-              },
-            ]}
-          />
+                },
+                {
+                  icon: "delete",
+                  text: "Delete",
+                  onClick: () => alert("click"),
+                },
+                {
+                  icon: "Clear",
+                  text: "Deactivate",
+                  onClick: () => alert("click"),
+                },
+              ],
+            },
+          ]}
+        />
 
-          <BoxId
-            title="Active"
-            isActive={true}
-            list={[
-              {
-                leftImage: images.common.Duitnow1,
-                boldText: "DuitNow QR",
-                subText: "Savings Account A  |  ••••••••4321",
-                iconButtons: [
-                  {
-                    icon: "Switch",
-                    text: "Change Default Account",
-                    onClick: () => alert("click"),
-                    onBlur: (e: { target: any }) =>
-                      console.log(e.target, "blur"),
-                    // onFocus: e => console.log(e.target, "focus")
-                  },
-                ],
-              },
-            ]}
-          />
-        </div>
-      </CenteredDiv>
+        <BoxId
+          title="Active"
+          isActive={true}
+          list={[
+            {
+              leftImage: images.common.Duitnow1,
+              boldText: "DuitNow QR",
+              subText: "Savings Account A  |  ••••••••4321",
+              iconButtons: [
+                {
+                  icon: "Switch",
+                  text: "Change Default Account",
+                  onClick: () => alert("click"),
+                  onBlur: (e: { target: any }) => console.log(e.target, "blur"),
+                  // onFocus: e => console.log(e.target, "focus")
+                },
+              ],
+            },
+          ]}
+        />
+      </div>
+
       <Title>TooltipDropdown</Title>
       <CenteredDiv>
         <TooltipDropdown
@@ -1879,6 +2122,7 @@ const Sprint3: React.FC<Props> = () => {
       <Title>Label Tool Tip</Title>
       <div style={{ padding: "0 25%" }}>
         <LabelToolTip
+          onBlur={() => console.log("onBlur")}
           showTooltip={false}
           onTooltipClicked={() => alert("tooltipClicked")}
           label="Portfolio Comparison"
@@ -1898,6 +2142,7 @@ const Sprint3: React.FC<Props> = () => {
         />
         <br />
         <LabelToolTip
+          onBlur={() => console.log("onBlur")}
           spaceBetween={true}
           showTooltip={true}
           label="Select your proffered account to send and received money"
@@ -1911,6 +2156,7 @@ const Sprint3: React.FC<Props> = () => {
               </div>
             ),
           }}
+          tipSize={16}
         />
       </div>
       <Title>
@@ -1956,10 +2202,20 @@ const Sprint3: React.FC<Props> = () => {
                 {
                   leftLabel: "From",
                   rightLabel: "Savings Account",
-                  details: ["2998202013", "Available Balance: RM 10,301.50"],
+                  details: ["2998202013", "Available Balance: RM 10,301.50", "Available Balance: RM 10,301.50"],
                   status: {
                     content: "UNSUCCESSFUL",
                     color: "red",
+                  },
+                  bottomText: {
+                    content: "Change Account",
+                    onClick: () => alert("Change account"),
+                    style: { backgroundColor: "#dedede", padding: ".5rem" },
+                  },
+                  lefSubText: {
+                    content: "lefSubText",
+
+                    style: { color: "red" },
                   },
                 },
               ]}
@@ -2060,7 +2316,6 @@ const Sprint3: React.FC<Props> = () => {
                   rightLabel: "Savings Account",
                   details: ["2998202013", "Available Balance: RM 10,301.50"],
                   bottomText: {
-                    // provide color props
                     content: "Change Account",
                     onClick: () => alert("Change account"),
                     style: { backgroundColor: "blue", color: "red" },
@@ -2082,7 +2337,7 @@ const Sprint3: React.FC<Props> = () => {
       >
         <StatusFormContainer
           statusIcon={{
-            icon: "Fail",
+            icon: { name: "Fail" },
             iconColor: { top: "#FD8585", bottom: "#FF2222" },
             outerIconColor: "#FFEBEE",
           }}
@@ -2092,49 +2347,50 @@ const Sprint3: React.FC<Props> = () => {
                 display: "flex",
                 flexDirection: "column",
                 padding: "2rem",
+                width: "50rem"
               }}
             >
-              <B_24_BLACK style={{ textAlign: "center" }}>
-                Transfer Unsuccessful
-              </B_24_BLACK>
-              <br />
-              <p style={{ textAlign: "center" }}>
-                Your payment of RM 20.50 to Revenue Harvest Sdn. Bhd. is
-                unsuccessful
-              </p>
-              <p style={{ textAlign: "center" }}>
-                Unable to perform this transaction. Please call our Contact
-                Centre for assistance.
-              </p>
-              <List
-                itemContainerStyle={{ padding: 0 }}
-                list={[
-                  {
-                    leftLabel: "To",
-                    rightLabel: "Saving Account A",
-                    details: ["8881019596535 | AmBank"],
-                  },
-                  {
-                    leftLabel: "Amount",
-                    rightLabel: "RM 500.00",
-                    details: ["Fees & Charges: RM 0.00"],
-                  },
-                  {
-                    leftLabel: "Date",
-                    rightLabel: "Transfer Now",
-                    details: ["Today, 5 January 2019"],
-                  },
-                  {
-                    leftLabel: "Reference",
-                    rightLabel: "House Rental",
-                  },
-                  {
-                    leftLabel: "From",
-                    rightLabel: "Savings Account",
-                    details: ["2998202013", "Available Balance: RM 10,301.50"],
-                  },
-                ]}
-              />
+              {/* <B_24_BLACK style={{ textAlign: "center" }}>
+              Transfer Unsuccessful
+            </B_24_BLACK>
+            <br />
+            <p style={{ textAlign: "center" }}>
+              Your payment of RM 20.50 to Revenue Harvest Sdn. Bhd. is
+              unsuccessful
+            </p>
+            <p style={{ textAlign: "center" }}>
+              Unable to perform this transaction. Please call our Contact
+              Centre for assistance.
+            </p>
+            <List
+              itemContainerStyle={{ padding: 0 }}
+              list={[
+                {
+                  leftLabel: "To",
+                  rightLabel: "Saving Account A",
+                  details: ["8881019596535 | AmBank"],
+                },
+                {
+                  leftLabel: "Amount",
+                  rightLabel: "RM 500.00",
+                  details: ["Fees & Charges: RM 0.00"],
+                },
+                {
+                  leftLabel: "Date",
+                  rightLabel: "Transfer Now",
+                  details: ["Today, 5 January 2019"],
+                },
+                {
+                  leftLabel: "Reference",
+                  rightLabel: "House Rental",
+                },
+                {
+                  leftLabel: "From",
+                  rightLabel: "Savings Account",
+                  details: ["2998202013", "Available Balance: RM 10,301.50"],
+                },
+              ]}
+            /> */}
             </div>
           }
         />
@@ -2158,18 +2414,19 @@ const Sprint3: React.FC<Props> = () => {
         onButtonClick={() => setSettingsModalOpen(true)}
       />
       <SettingModalCenter // give CV  close functionality
+
         testId={"testId"}
         modalIsOpen={settingsModalOpen}
         onRequestClose={() => alert("close")}
         modalChildren={
           <StatusFormContainer
             statusIcon={{
-              iconColor: { top: "#DCEAEA", bottom: "#7FA2A2" },
+              iconColor: { top: "#FD8585", bottom: "#FF2222" },
               image: {
                 src: images.common.amyIcon,
                 alt: "logo",
               },
-              outerIconColor: "#EAF4F4",
+              outerIconColor: "#FFEBEE",
             }}
             children={
               <div
@@ -2197,8 +2454,10 @@ const Sprint3: React.FC<Props> = () => {
                       "If you have forgotten your username and/or password, you can change them in AmOnline",
                     ]}
                     contentStyle={{ marginBottom: "1rem" }}
+                    responsive={true}
                   />
                   <TextWithDetails
+                    responsive={true}
                     title="Need more assistance?"
                     direction="row"
                     content={["We're here to help. Get in touch with us"]}
@@ -2206,10 +2465,11 @@ const Sprint3: React.FC<Props> = () => {
                   />
                   <div style={{ marginBottom: "1rem" }}>
                     <LabeledIcon
+
                       rightLabel="+603 2178 8888"
                       rightLabelStyle={{
                         fontWeight: 700,
-                        fontSize: "0.93rem",
+                        fontSize: "13px",
                       }}
                       icon={{
                         name: "Call",
@@ -2228,9 +2488,35 @@ const Sprint3: React.FC<Props> = () => {
                     }}
                   />
                 </div>
-                <div style={{ marginTop: "1rem", marginBottom: "3rem" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    marginTop: "1rem",
+                    marginBottom: "3rem",
+                  }}
+                >
                   <PrimaryButton
-                    title="Close"
+                    shadowed
+                    responsive={true}
+                    title="No"
+                    buttonStyle={{
+                      background:
+                        "linear-gradient(180deg, #F6F6F3 0%, #EAE9E3 100%)",
+                    }}
+                    containerStyle={{
+                      marginRight: ".5rem",
+                    }}
+                    height="3rem"
+                    minWidth="4rem"
+                    titleColor="#000"
+                    onButtonClick={() => {
+                      setSettingsModalOpen(false);
+                    }}
+                  />
+                  <PrimaryButton
+                    responsive={true}
+                    title="Yes"
+                    minWidth="4rem"
                     onButtonClick={() => {
                       setSettingsModalOpen(false);
                     }}
@@ -2305,7 +2591,7 @@ const Sprint3: React.FC<Props> = () => {
                         title="Continue"
                         titleColor="#ffffff"
                         buttonColor={buttonColor}
-                        onButtonClick={() => {}}
+                        onButtonClick={() => { }}
                       />
                     </div>
                     <InputField
@@ -2339,7 +2625,7 @@ const Sprint3: React.FC<Props> = () => {
                         title="Continue"
                         titleColor="#ffffff"
                         buttonColor={buttonColor}
-                        onButtonClick={() => {}}
+                        onButtonClick={() => { }}
                       />
                     </div>
                   </div>
@@ -2462,7 +2748,7 @@ const Sprint3: React.FC<Props> = () => {
                         title="Continue"
                         titleColor="#ffffff"
                         buttonColor={buttonColor}
-                        onButtonClick={() => {}}
+                        onButtonClick={() => { }}
                       />
                     </div>
                   </div>
@@ -2515,7 +2801,7 @@ const Sprint3: React.FC<Props> = () => {
       <Title>PortfolioListContent</Title>
       <div style={{ width: "50%", margin: "0 auto" }}>
         <PortfolioListContent
-          containerStyle={{ backgroundColor: "red" }} // new changes-1-vahideng
+          containerStyle={{ backgroundColor: "#dedede" }} // new changes-1-vahideng
           buttonStyle={{ color: "rgba(0, 113, 130, 0.984)" }} // new changes-2-vahideng
           buttonTextStyle={{ color: "white" }} //new changes-3-vahideng
           borderColor="#8677D9"

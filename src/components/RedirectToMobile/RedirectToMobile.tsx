@@ -1,45 +1,47 @@
-import React, { CSSProperties } from 'react';
-import classes from './RedirectToMobile.module.css';
+import React, { CSSProperties } from "react";
+import classes from "./RedirectToMobile.module.css";
 // import { Card, Col } from 'react-bootstrap';
 // import Icon from 'src/components/assets/icons/icon';
-import Paragraphs from '../../components/assets/typography';
+import Paragraphs from "../../components/assets/typography";
 
 import Icon from "src/components/assets/icons/icon";
 import PrimaryButton from "src/components/buttons/primaryButton/PrimaryButton";
 const { SB_32_BLACK, SB_15_BLACK, B_13_ORANGE_463 } = Paragraphs;
 
 interface RedirectToMobileProps {
-  testId: string,
-  
+  testId: string;
+
   header?: {
     content?: string;
     contentStyle?: CSSProperties;
     testId: string;
     title: string;
-    titleStyle?: CSSProperties},
-    logo?: {
-      name?: string
-      color?: string
-      size?: number
-    },
-    button:{ 
-      testId: string;
-      title: string;
-      titleColor?: string;
-      buttonColor?: any;
-      height?: number | string;
-      width?: number | string;
-      onButtonClick: () => void;
-      small?: boolean;
-      icon?: { name: string; color: string };
-    },
-    backgroundImage ?: any;
-    continueWithWeb ?:{
-      content: string;
-      contentStyle?: any;
-      onClick: any
-    }
-    gradient?: boolean;
+    titleStyle?: CSSProperties;
+  };
+  logo?: {
+    name?: string;
+    color?: string;
+    size?: number;
+  };
+  button: {
+    testId: string;
+    title: string;
+    titleColor?: string;
+    buttonColor?: any;
+    height?: number | string;
+    width?: number | string;
+    onButtonClick: () => void;
+    small?: boolean;
+    icon?: { name: string; color: string };
+  };
+  backgroundImage?: any;
+  continueWithWeb?: {
+    content: string;
+    contentStyle?: any;
+    onClick: any;
+  };
+  gradient?: boolean;
+  mainStyle?: CSSProperties;
 }
 
 const RedirectToMobile: React.FC<RedirectToMobileProps> = ({
@@ -47,13 +49,20 @@ const RedirectToMobile: React.FC<RedirectToMobileProps> = ({
   logo,
   header,
   button,
-  backgroundImage ,
-  continueWithWeb, 
-  gradient = true
+  backgroundImage,
+  continueWithWeb,
+  gradient = true,
+  mainStyle,
 }) => {
   return (
-    <div id={testId} className={classes.MainContainer} style={{ backgroundImage: `url(${backgroundImage})`}}>
-       <Icon
+    <div
+      id={testId}
+      className={classes.MainContainer}
+      style={
+        mainStyle ? mainStyle : { backgroundImage: `url(${backgroundImage})` }
+      }
+    >
+      <Icon
         icon={logo.name ? logo.name : "LOGO"}
         color={logo.color ? logo.color : "#ff2626"}
         size={logo.size ? logo.size : 130}
@@ -77,13 +86,19 @@ const RedirectToMobile: React.FC<RedirectToMobileProps> = ({
         small={button.small}
         icon={button.icon}
       />
-      {continueWithWeb && <div className={classes.bottomAlign}>
-        <B_13_ORANGE_463 onClick={continueWithWeb.onClick} style={continueWithWeb.contentStyle}>{continueWithWeb.content}</B_13_ORANGE_463>
-      </div>}
+      {continueWithWeb && (
+        <div className={classes.bottomAlign}>
+          <B_13_ORANGE_463
+            onClick={continueWithWeb.onClick}
+            style={continueWithWeb.contentStyle}
+          >
+            {continueWithWeb.content}
+          </B_13_ORANGE_463>
+        </div>
+      )}
       {gradient && <div className={classes.overlay}></div>}
     </div>
   );
 };
-
 
 export default RedirectToMobile;

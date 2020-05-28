@@ -4,6 +4,10 @@
   border-top-left-radius: 1.25rem;
 }
 
+.Container > *:last-child {
+  border-bottom: 1px solid transparent;
+}
+
 .WholeWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,6 +17,10 @@
   min-width: 57.18rem;
   -webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.123279);
           box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.123279);
+}
+
+.NavLink {
+  height: 100%;
 }
 
 .LeftChild {
@@ -25,6 +33,7 @@
 
 .Wrapper {
   width: 100%;
+  border-bottom: 1px solid #dedede;
 }
 
 .Wrapper a {
@@ -48,9 +57,27 @@
   height: 11.87rem;
   background-size: 43.62rem 11.87rem;
   border-top-right-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.RightChildBGOverlay {
+  border-top-left-radius: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   padding: 1rem;
+  height: 100%;
+  width: 100%;
 }
 
 .verticalLine {
   border-right: 1px solid #dedded;
+  z-index: 10;
 }

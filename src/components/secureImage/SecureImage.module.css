@@ -20,8 +20,12 @@
   position: relative;
 }
 
+.SecureImageMainRes {
+  width: 100%;
+}
+
 .SecureImageBG {
-  width: 60rem;
+  width: 100%;
   height: 30rem;
   border-radius: 1rem;
   -o-object-fit: inherit;
@@ -70,7 +74,7 @@
 }
 
 .SecureImageBGWide {
-  width: 60rem;
+  width: 100%;
   height: 30rem;
   border-radius: 1rem;
   -o-object-fit: inherit;

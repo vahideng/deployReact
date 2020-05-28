@@ -38,7 +38,16 @@ import LocalImages from "src/components/assets/images";
 import Logout from "src/components/Logout/Logout";
 import StickyTimer from "src/components/modals/stickyTimer/StickyTimer";
 import TextWithDetails from "src/components/infographic/textWithDetails/TextWithDetails";
-const { B_13_ORANGE_463, R_13_GREY444, B_24_BLACK} = Paragraphs;
+import Box from "src/components/wrappers/box/Box";
+import SecureImage from "src/components/secureImage/SecureImage";
+import BackgroundSingle from "src/components/wrappers/backgroundSingle/BackgroundSingle";
+
+const {
+  B_13_ORANGE_463,
+  R_13_GREY444,
+  B_24_BLACK,
+  R_19_BLACK_444,
+} = Paragraphs;
 
 const Title = styled(B_13_ORANGE_463)`
   text-align: center;
@@ -53,7 +62,7 @@ const CenteredDiv = styled.div`
   justify-content: center;
   padding: 2rem 0;
 `;
-interface Props {}
+interface Props { }
 
 const Sprint4: React.FC<Props> = () => {
   const [selectedItem, setSelectedOption] = useState("Persian");
@@ -77,6 +86,10 @@ const Sprint4: React.FC<Props> = () => {
   const [KeyPadShow, setKeypadShow] = useState(true);
   const tacClear = false;
   const tacClearActiveStatus = false;
+  const [newValue, setNewValue] = useState("");
+  const [newValClear, setNewValClear] = useState(false);
+  const [isClearIconHover, setIsClearIconHover] = useState(false);
+  const [testPasswordValue, setTestPasswordValue] = useState('');
 
   // const [linkListBtnColor, setLinkListBtnColor] = useState({
   //   top: '#BDBDBD',
@@ -84,6 +97,8 @@ const Sprint4: React.FC<Props> = () => {
   // });
   const [rateType, setRateType] = useState("test_value3");
   const [isViewRateModalOpen, setIsViewRateModalOpen] = useState(false);
+
+  const [formValue, setFormValue] = useState("");
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
@@ -127,6 +142,7 @@ const Sprint4: React.FC<Props> = () => {
           {
             iconName: "Settings",
             onButtonClick: () => alert("button-2-Clicked"),
+            selected: true,
           },
           {
             iconName: "Share",
@@ -141,6 +157,7 @@ const Sprint4: React.FC<Props> = () => {
         }}
       />
       <StickyTimer
+        showCrossIcon={true}
         responsive={true}
         testId={"testId"}
         closeTimeoutMS={1000}
@@ -150,17 +167,12 @@ const Sprint4: React.FC<Props> = () => {
           setStickyTimer(!stickyTimer);
         }}
         modalIsOpen={stickyTimer}
-        expirationTime={20}
+        expirationTime={"20"}
         expirationText="Seconds"
         text={
           "You will receive an AmSecure notification on your primary registered phone to approve or reject this transaction. Please ensure that you have downloaded/updated the latest version of AmOnline App and have a working internet connection on your phone."
         }
-        // children={
-        //   <PrimaryButton
-        //     title="Open StickyTimer"
-        //     onButtonClick={() => {
-        //       alert("onButtonClick");
-        //     }}
+        children={<div style={{ backgroundColor: 'red' }}><p>hello world </p></div>}
       />
       <Title>Review & Confirm - Responsive</Title>
       <div
@@ -183,7 +195,8 @@ const Sprint4: React.FC<Props> = () => {
               list={[
                 {
                   leftLabel: "To",
-                  rightLabel: "Saving Account A",
+                  rightLabel:
+                    "Saving Account A vHISSaving SDS Saving Account A vHISSaving Account A vHISSavit A v sad sada sadsaSDS",
                   approved: true,
                   details: ["8881019596535 | AmBank"],
                   amount: {
@@ -192,18 +205,18 @@ const Sprint4: React.FC<Props> = () => {
                     value: "600RM",
                     styleValue: {},
                   },
+                  children: <R_13_GREY444>Fees & charges: <span>RM 1.00</span></R_13_GREY444>
                 },
-
                 {
                   leftLabel: "Date",
+                  approved: true,
                   rightLabel: "Transfer Now",
                   details: ["Today, 5 January 2019"],
                 },
-
                 {
                   leftLabel: "From",
                   rightLabel: "Savings Account",
-                  details: ["2998202013", "Available Balance: RM 10,301.50"],
+                  details: ["2998202013", "Available Balance: RM 2,100,301.50"],
                   status: {
                     content: "UNSUCCESSFUL",
                     color: "red",
@@ -223,8 +236,15 @@ const Sprint4: React.FC<Props> = () => {
           list={[
             {
               leftLabel: "To",
-              rightLabel: "Saving Account A",
+              rightLabel: "PTPTN",
               details: ["8881019596535 | AmBank"],
+              amount: {
+                content: "Dynamic",
+                styleContent: {},
+                value: "600RM",
+                styleValue: {},
+              },
+
             },
             {
               leftLabel: "Amount",
@@ -335,7 +355,7 @@ const Sprint4: React.FC<Props> = () => {
         />
       </CenteredDiv>
       <Title>SelectionTile Responsive</Title>
-      <CenteredDiv>
+      <CenteredDiv style={{ background: "#dedede" }}>
         <SelectionTile
           responsive
           testId={"testId"}
@@ -367,37 +387,102 @@ const Sprint4: React.FC<Props> = () => {
         />
       </CenteredDiv>
       <Title>Box_V2 (Update - Responsive)</Title>
-      <Box_V2
-        responsive={true}
-        darkShadow
-        split={true}
-        leftTitle={"Cancel"}
-        onLeftButton={() => alert("Cancel")}
-        rightTitle={"Login"}
-        onRightButton={() => alert("Login")}
-        boxChildren={
-          <div style={{ padding: "3rem 1.5rem" }}>
-            <InputField
+      <BackgroundSingle
+        style={{ width: "100%", height: "100vh", backgroundSize: "100% 100%" }}
+        image={
+          "https://static.vecteezy.com/system/resources/previews/000/547/469/large_2x/abstract-blurred-background-with-bokeh-sparkling-lights-vector.jpg"
+        }
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div style={{ width: "96%" }}>
+            <Box
               responsive={true}
-              notValid={true}
-              errorMessage={{
-                testId: "testId",
-                errorText: "The TAC is incorrect",
-                subText: "Please try again.",
-              }}
-              type="text"
-              clearClickHandler={() => alert("clear clicked")}
-              clearIcon={true}
-              label="Username"
-              icon={{ name: "Account-2" }}
-              value={""}
-              handleChange={(event) => {
-                console.log(event.target.value);
-              }}
+              title={"Login"}
+              leftTitle={"LeftTitle"}
+              rightTitle={"rightTitle"}
+              onSelect={(obj: any) => console.log(obj)}
+              tabTitles={["Security", "Login", "Contact Us"]}
+              split={true}
+              content={[
+                <div>
+                  <SecureImage
+                    responsive={true}
+                    testId="secure_image_testid"
+                    image={images.common.SampleSecureImage}
+                  />
+                </div>,
+                <>
+                  <InputField
+                    tipChildren={<p>test</p>}
+                    type="text"
+                    clearClickHandler={() => alert("clear")}
+                    clearIcon={false}
+                    label="Username"
+                    icon={{ name: "Account-2" }}
+                    value={""}
+                    handleChange={(event) => {
+                      alert(event);
+                    }}
+                  />
+                  <div style={{ paddingTop: 30 }}>
+                    <TextButton
+                      testId="testId"
+                      buttonText="Forgot username/password?"
+                      onTextClick={(id) => {
+                        alert(`${id} clicked`);
+                      }}
+                    />
+                  </div>
+                </>,
+              ]}
+            />
+
+            <p style={{ margin: "100px 0 20px 20px" }}>Box V2 &darr;</p>
+            <Box_V2
+              hideButton={true}
+              responsive={true}
+              darkShadow
+              split={true}
+              leftTitle={"Cancel"}
+              onLeftButton={() => alert("Cancel")}
+              rightTitle={"Login"}
+              onRightButton={() => alert("Login")}
+              boxChildren={
+                <div style={{ padding: "3rem 1.5rem" }}>
+                  <InputField
+                    showTooltip={true}
+                    tipChildren={<p>test</p>}
+                    responsive={true}
+                    notValid={true}
+                    isSecure
+                    errorMessage={{
+                      testId: "testId",
+                      errorText: "The TAC is incorrect",
+                      subText: "Please try again.",
+                    }}
+                    type="password"
+                    clearClickHandler={() => setFormValue("")}
+                    clearIcon={true}
+                    label="Username"
+                    icon={{ name: "Account-2" }}
+                    value={formValue}
+                    handleChange={(event) => {
+                      setFormValue(event.target.value);
+                      console.log(event.target.value);
+                    }}
+                  />
+                </div>
+              }
             />
           </div>
-        }
-      />
+        </div>
+      </BackgroundSingle>
       <Title>InputField</Title>
       <div style={{ paddingLeft: "35vw" }}>
         <InputField
@@ -411,13 +496,55 @@ const Sprint4: React.FC<Props> = () => {
             subText: "Please try again.",
           }}
           type="text"
-          clearClickHandler={() => {}}
+          clearClickHandler={() => { }}
           value={""}
           handleChange={(e) => {
             alert(e);
           }}
           bottomLabel="Maximum Daily Limit RM 9,999,999.99"
-          // bottomLabelStyle={{ color: "red" }}
+        // bottomLabelStyle={{ color: "red" }}
+        />
+        <InputField
+          icon={{ name: "RM", color: "#000" }}
+          tipChildren={<p>tipChildren</p>}
+          label="bottomLabel"
+          notValid={false}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The Input Field is wrong",
+            subText: "Please try again.",
+          }}
+          type="password"
+          clearClickHandler={() => { }}
+          value={testPasswordValue}
+          handleChange={(e) => {
+            console.log(e)
+            setTestPasswordValue(e.target.value)
+          }}
+          autoComplete="off"
+          bottomLabel="Maximum Daily Limit RM 9,999,999.99"
+        // bottomLabelStyle={{ color: "red" }}
+        />
+        <InputField
+          icon={{ name: "RM", color: "#000" }}
+          tipChildren={<p>tipChildren</p>}
+          label="bottomLabel"
+          notValid={false}
+          errorMessage={{
+            testId: "testId",
+            errorText: "The Input Field is wrong",
+            subText: "Please try again.",
+          }}
+          type="number"
+          clearClickHandler={() => { }}
+          value={testPasswordValue}
+          handleChange={(e) => {
+            console.log(e)
+            setTestPasswordValue(e.target.value)
+          }}
+          autoComplete="off"
+          bottomLabel="Maximum Daily Limit RM 9,999,999.99"
+        // bottomLabelStyle={{ color: "red" }}
         />
       </div>
       <Title>Sticky Footer</Title>
@@ -456,6 +583,12 @@ const Sprint4: React.FC<Props> = () => {
           mainStyle={{ background: "#eee" }}
           title="You have been logged out"
           detailText="Thank you for banking with AmOnline."
+          children={
+            <DynamicText
+              text="You will be redirected to FPX status page in"
+              counter={9}
+              inlineText="seconds."
+            />}
         />
       </div>
       <Title>View Rate Container</Title>
@@ -643,7 +776,7 @@ const Sprint4: React.FC<Props> = () => {
       <FormContainer
         label="Change Security Image"
         rightLabel={{
-          onClick: () => {},
+          onClick: () => { },
           style: {},
           label: "Remove",
         }}
@@ -790,7 +923,8 @@ const Sprint4: React.FC<Props> = () => {
               defaultActiveContentIndex: "",
               content: [
                 {
-                  label: "Quick Access Limit", // change Lastname
+                  label: "Quick Access Limits", // change Last name
+
                   leftIcon: (
                     <Icon icon="Announcement" size={22} color="#444444" />
                   ),
@@ -800,6 +934,7 @@ const Sprint4: React.FC<Props> = () => {
                     // window.alert(`ITEM NAME:::: ${item.label}`)
                   },
                   expandable: true, // change false
+                  expandableStatus :false,
                   expandableContent: (
                     <>
                       <div style={{ padding: 0 }}>
@@ -807,8 +942,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -848,9 +983,14 @@ const Sprint4: React.FC<Props> = () => {
                     </>
                   ),
                   subtitle: [
-                    "RM 250.00",
+                    "Current Limit RM 5,00,000",
 
                     // 'Another line of subtitle'
+                  ],
+                  subtitleClose: [
+                    "RM 250.00",
+
+                    // 'Another line of subtitleClose'
                   ],
                   leftBorderColor: "red", // change green
                 },
@@ -872,8 +1012,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -937,8 +1077,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1002,8 +1142,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1067,8 +1207,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1138,8 +1278,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1203,8 +1343,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1268,8 +1408,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1333,8 +1473,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1398,8 +1538,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1469,8 +1609,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1534,8 +1674,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1599,8 +1739,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1664,8 +1804,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1729,8 +1869,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1800,8 +1940,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1865,8 +2005,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1930,8 +2070,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -1995,8 +2135,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -2060,8 +2200,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -2131,8 +2271,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -2196,8 +2336,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -2261,8 +2401,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -2326,8 +2466,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -2391,8 +2531,8 @@ const Sprint4: React.FC<Props> = () => {
                           type="text"
                           value="9,99,99,999"
                           notValid={false}
-                          handleChange={() => {}}
-                          clearClickHandler={() => {}}
+                          handleChange={() => { }}
+                          clearClickHandler={() => { }}
                           clearIcon={true}
                           label=""
                           icon={{ name: "Lock" }}
@@ -2518,10 +2658,10 @@ const Sprint4: React.FC<Props> = () => {
           }}
         />
       </CenteredDiv>
-      <Title>FormContainer Disabled</Title>
+      <Title>FormContainer</Title>
       <CenteredDiv>
         <FormContainer
-          disabled
+          onBlur={() => console.log("clickedOnBlur")}
           label={"Select your account/card type"}
           showTooltip={false}
           tooltip={
@@ -2566,8 +2706,8 @@ const Sprint4: React.FC<Props> = () => {
         />
       </CenteredDiv>
       <Title>TransactionIconList(Update)</Title>
-      <CenteredDiv>
-        <div style={{ width: "57.1875em" }}>
+      <>
+        <div style={{ width: "50rem", margin: "0 auto" }}>
           <TransactionIconList
             testId={"testId"}
             list={[
@@ -2576,13 +2716,13 @@ const Sprint4: React.FC<Props> = () => {
                 expandedIndexes: [0],
                 transactions: [
                   {
-                    icon: "Transfer",
-                    iconBgColor: "orange",
+                    icon: "Duitnow1",
+                    iconBgColor: "#FD8585",
                     iconColor: "white",
                     iconSize: 28,
                     label1: "TRANSFER TO",
                     label2: "SEEN OPTICS ",
-                    statusLabel: "SUCCESSFUL",
+                    statusLabel: "Accept For Proccessing",
                     statusLabelColor: "#36A03E",
                     changeLabel: "-",
                     changeLabelColor: "#F73C4A",
@@ -2696,7 +2836,7 @@ const Sprint4: React.FC<Props> = () => {
             }}
           />
         </div>
-      </CenteredDiv>
+      </>
       <Title>Form Container disabled state.</Title>
       <CenteredDiv>
         <FormContainer
@@ -2758,7 +2898,11 @@ const Sprint4: React.FC<Props> = () => {
           testId={"testId"}
           responsive
           statusIcon={{
-            icon: "Fail",
+            icon: { name: "Fail" },
+            // image: {
+            //   src:
+            //     "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80",
+            // },
             iconColor: { top: "#FD8585", bottom: "#FF2222" },
             outerIconColor: "#FFEBEE",
           }}
@@ -2767,21 +2911,24 @@ const Sprint4: React.FC<Props> = () => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                padding: "2rem",
               }}
             >
-              <B_24_BLACK style={{ textAlign: "center" }}>
+              <B_24_BLACK
+                style={{ textAlign: "center", marginBottom: "1.5rem" }}
+              >
                 Transfer Unsuccessful
               </B_24_BLACK>
-              <br />
-              <p style={{ textAlign: "center" }}>
+
+              <R_19_BLACK_444 style={{ textAlign: "center" }}>
                 Your payment of RM 20.50 to Revenue Harvest Sdn. Bhd. is
                 unsuccessful
-              </p>
-              <p style={{ textAlign: "center" }}>
+              </R_19_BLACK_444>
+              <R_19_BLACK_444
+                style={{ textAlign: "center", marginBottom: "1rem" }}
+              >
                 Unable to perform this transaction. Please call our Contact
                 Centre for assistance.
-              </p>
+              </R_19_BLACK_444>
               <List
                 itemContainerStyle={{ padding: 0 }}
                 list={[
@@ -2801,8 +2948,8 @@ const Sprint4: React.FC<Props> = () => {
                     details: ["Today, 5 January 2019"],
                   },
                   {
-                    leftLabel: "Reference",
-                    rightLabel: "House Rental",
+                    leftLabel: "Reference No/ Invoice No",
+                    rightLabel: "Bangalor House Rental Bangalore House Rental Bangalor House Rental Bangalor use Rental Bangalore House Rental Bangalor House Rental Bangalor House Rental Bangalor House Rental Bangalor House Rental Bangalor House Rental Bangalor",
                   },
                   {
                     leftLabel: "From",
@@ -2811,7 +2958,13 @@ const Sprint4: React.FC<Props> = () => {
                   },
                 ]}
               />
-              <CenteredDiv>
+              <div
+                style={{
+                  marginTop: "2.5rem",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
                 <IconButtons
                   testId={"testId"}
                   onButtonClick={(item: any, index: any) => {
@@ -2826,7 +2979,7 @@ const Sprint4: React.FC<Props> = () => {
                     },
                   ]}
                 />
-              </CenteredDiv>
+              </div>
             </div>
           }
           confirmNoteswidth={"40rem"}
@@ -2847,9 +3000,9 @@ const Sprint4: React.FC<Props> = () => {
             },
           ]}
           Btntitle={"Continue With Transaction"}
-          // Btnwidth={'22.43rem'}
           onButtonClick={() => alert("check")}
-          statusText={" You will be redirected to FPX status page in 9 seconds"}
+          statusText={" You will be redirected to FPX status page in"}
+          statusNumber={"9 seconds"}
         />
       </div>
       <Title>ListWithSelectionTile(List,Selection Tile, Primary Buttons)</Title>
@@ -2857,6 +3010,7 @@ const Sprint4: React.FC<Props> = () => {
         <ListWithSelectionTile
           testId={"testId"}
           responsive
+          TilerowStyle={{ width: "100%" }}
           listchildren={
             <List
               header={{
@@ -2869,7 +3023,7 @@ const Sprint4: React.FC<Props> = () => {
               list={[
                 {
                   leftLabel: "To",
-                  rightLabel: "Revenue Lawrence Haim 140066",
+                  rightLabel: "Revenue Lawrence Haim",
                   details: [],
                 },
                 {
@@ -2931,17 +3085,18 @@ const Sprint4: React.FC<Props> = () => {
           onButton1Click={() => {
             alert("Button Clicked");
           }}
-          btn1width={"20.43rem"}
+          btn1width={"14.69rem"}
           btn2title={"cancel"}
           onButton2Click={() => {
             alert("Button Clicked");
           }}
-          btn2width={"20.43rem"}
+          btn2width={"14.69rem"}
         />
       </CenteredDiv>
       <Title>Redirect to mobile</Title>
       <CenteredDiv style={{ width: "100%", backgroundColor: "#EEEEEE" }}>
         <RedirectToMobile
+          // mainStyle={{ background: "red" }}
           backgroundImage={images.common.redirectBg}
           testId="test-id-1"
           logo={{ name: "amonline-white", size: 130 }}
@@ -2978,8 +3133,8 @@ const Sprint4: React.FC<Props> = () => {
           testId={"testId"}
           responsive
           header={{
-            title: "You have successfully logged out.",
-            subTitle: "Logged out on Tueday 14/05/2019, 03:06PM",
+            title: "You are logged out. Thank you for banking with AmBank",
+            subTitle: "Logged out on Tuesday 14/05/2019, 03:06PM",
             statusIcon: {
               image: {
                 src: images.common.amyIcon,
@@ -2998,13 +3153,14 @@ const Sprint4: React.FC<Props> = () => {
                 styleValue: {},
               },
               rightLabel: {
+                negative: true,
                 TimeStamp: "09:53:55AM",
                 styleTimeStamp: {},
                 value: "RM 236.67",
                 styleValue: {},
               },
               middleLabel: {
-                content: "SUCCESSFUL",
+                content: "Accepted for proccessing",
                 styleContent: {},
               },
             },
@@ -3022,7 +3178,7 @@ const Sprint4: React.FC<Props> = () => {
                 styleValue: {},
               },
               middleLabel: {
-                content: "SUCCESSFUL",
+                content: "Accepted for proccessing Accepted for proccessing",
                 styleContent: {},
               },
             },
@@ -3046,7 +3202,7 @@ const Sprint4: React.FC<Props> = () => {
             },
           ]}
           btntitle="Back to Homepage"
-          btnwidth="25rem"
+          btnwidth="30rem"
           onButtonClick={() => {
             alert("check");
           }}
@@ -3057,96 +3213,140 @@ const Sprint4: React.FC<Props> = () => {
           margin: "0 auto",
           padding: 4,
           width: "50%",
-          position:'relative'
+          position: "relative",
         }}
       >
         <br />
         <FormContainer
           label="Please create a new PIN for your card"
           children={
-            <div style={{ padding: "2rem",position:'relative' }}>
-                <TextWithDetails
-          title="AmBank Bonuslink Visa"
-          content={["5464 4364 7863 0797"]}
-          image={{ src: LocalImages.common.card }}
-        />
-           <br />
-        <R_13_GREY444>Set your PIN by clicking on the NumPad</R_13_GREY444>
-          <br />
-          <div style={{width:'31.6rem'}}>
-        <InputField
-          notValid={false}
-          errorMessage={{
-            testId: "testId",
-            errorText: "The Password is incorrect",
-            subText: "Please try again.",
-          }}
-          type="text"
-          clearClickHandler={() => alert("clear clicked")}
-          clearIcon={true}
-          label="New Pin"
-          autoFocus
-          icon={{ name: "Lock" }}
-          onFocus={() => {
-            setKeypadShow(true);
-            setKeypadTopVal(130);
-          }}
-          value={""}
-          handleChange={(event) => {
-            alert({
-              inputValue: event.target.value,
-            });
-          }}
-        /></div>
-          <div style={{right:0}}>
-          <AmResetPin
-          testId="testId"
-          keysArray={[5, 8, 1, 0, 4, 6, 2, 9, 3, 7]}
-          onEnterClick={() => {
-            setKeypadShow(false);
-          }}
-          onNumberSelected={(item: any) => {
-            alert(item);
-          }}
-          EnterIcon={{ name: "back-arrow", size: 30, color: "#000000" }}
-          pointerTopVal={KeypadTopVal}
-          showKeyPad={KeyPadShow}
-          keypadStyle={{bottom:0,right:0}}
-        />
-        </div>
-       <br />
-       <div style={{width:'31.6rem'}}>
-        <InputField
-          notValid={false}
-          errorMessage={{
-            testId: "testId",
-            errorText: "The Password is incorrect",
-            subText: "Please try again.",
-          }}
-          type="text"
-          clearClickHandler={() => alert("clear clicked")}
-          clearIcon={true}
-          label="Confirm New Pin"
-          icon={{ name: "Lock" }}
-          value={""}
-          onFocus={() => {
-            setKeypadShow(true);
-            setKeypadTopVal(240);
-          }}
-          handleChange={(event) => {
-            alert({
-              inputValue: event.target.value,
-            });
-           
-          }}
-        />
-     </div>
+            <div style={{ padding: "2rem", position: "relative" }}>
+              <TextWithDetails
+                title="AmBank Bonuslink Visa"
+                content={["5464 4364 7863 0797"]}
+                image={{ src: LocalImages.common.card }}
+              />
+              <br />
+              <R_13_GREY444>
+                Set your PIN by clicking on the NumPad
+              </R_13_GREY444>
+              <br />
+              <div style={{ width: "31.6rem" }}>
+                <InputField
+                  notValid={false}
+                  errorMessage={{
+                    testId: "testId",
+                    errorText: "The Password is incorrect",
+                    subText: "Please try again.",
+                  }}
+                  type="text"
+                  clearClickHandler={() => alert("clear clicked")}
+                  clearIcon={true}
+                  label="New Pin"
+                  autoFocus={false}
+                  icon={{ name: "Lock" }}
+                  onFocus={() => {
+                    setKeypadShow(true);
+                    setKeypadTopVal(130);
+                  }}
+                  value={""}
+                  handleChange={(event) => {
+                    alert({
+                      inputValue: event.target.value,
+                    });
+                  }}
+                />
+              </div>
+              <div style={{ right: 0 }}>
+                <AmResetPin
+                  testId="testId"
+                  keysArray={[5, 8, 1, 0, 4, 6, 2, 9, 3, 7]}
+                  onEnterClick={() => {
+                    setKeypadShow(false);
+                  }}
+                  onNumberSelected={(item: any) => {
+                    alert(item);
+                  }}
+                  EnterIcon={{ name: "back-arrow", size: 30, color: "#000000" }}
+                  pointerTopVal={KeypadTopVal}
+                  showKeyPad={KeyPadShow}
+                  keypadStyle={{ bottom: 0, right: 0 }}
+                />
+              </div>
+              <br />
+              <div style={{ width: "31.6rem" }}>
+                <InputField
+                  notValid={false}
+                  errorMessage={{
+                    testId: "testId",
+                    errorText: "The Password is incorrect",
+                    subText: "Please try again.",
+                  }}
+                  type="text"
+                  clearClickHandler={() => alert("clear clicked")}
+                  clearIcon={true}
+                  label="Confirm New Pin"
+                  icon={{ name: "Lock" }}
+                  value={""}
+                  onFocus={() => {
+                    setKeypadShow(true);
+                    setKeypadTopVal(240);
+                  }}
+                  handleChange={(event) => {
+                    alert({
+                      inputValue: event.target.value,
+                    });
+                  }}
+                />
+              </div>
             </div>
           }
         />
 
         <br />
       </div>
+      <Title>Input Field Latest </Title>
+      <CenteredDiv>
+        <div style={{ width: "31.6rem" }}>
+          <InputField
+            notValid={false}
+            errorMessage={{
+              testId: "testId",
+              errorText: "The Password is incorrect",
+              subText: "Please try again.",
+            }}
+            type="text"
+            onClearIconHover={(_e: any, isHover: boolean) => {
+              console.log("hover", isHover);
+              setIsClearIconHover(isHover);
+            }}
+            clearClickHandler={(_e: any) => {
+              setNewValue("");
+              setNewValClear(false);
+            }}
+            clearIcon={newValClear}
+            label="Enter Value"
+            icon={{ name: "Lock" }}
+            value={newValue}
+            onFocus={() => {
+              setNewValClear(!!setNewValue);
+              setKeypadShow(true);
+              setKeypadTopVal(240);
+            }}
+            onBlur={(_e: any) => {
+              if (!isClearIconHover) {
+                setNewValClear(false);
+              } else {
+                // _e.target.focus()
+              }
+            }}
+            handleChange={(event) => {
+              setNewValue(event.target.value);
+              setNewValClear(!!event.target.value);
+            }}
+          />
+        </div>
+      </CenteredDiv>
     </div>
   );
 };

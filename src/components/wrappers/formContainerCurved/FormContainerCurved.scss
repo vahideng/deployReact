@@ -10,7 +10,7 @@
   padding-left: 2rem;
 }
 .Content {
-  width: 52.18rem;
+  width: 52.1875rem;
   box-shadow: 1px 1px 1px #dedede, -1px 1px 1px #dedede;
   border-radius: 0.7rem;
   border-top-left-radius: 0;
@@ -52,10 +52,10 @@
   justify-content: center;
   align-items: center;
   border-top-right-radius: 1.5rem;
+  position: relative;
 }
 .SecondCurve {
   display: flex;
-  position: relative;
   justify-content: center;
   align-items: center;
   width: 11rem;
@@ -67,7 +67,7 @@
   transform: rotate(360deg) scaleX(-1);
   position: absolute;
   top: 0;
-  left: 0;
+  left: -2px;
   background-color: #c4c4c4;
   width: 1.5rem;
 }

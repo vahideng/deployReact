@@ -16,6 +16,7 @@ interface Props {
       color?: string;
     };
   }[];
+  removeBorder?: boolean;
 }
 
 const IconButtons: React.FC<Props> = ({
@@ -24,6 +25,7 @@ const IconButtons: React.FC<Props> = ({
   selected,
   onButtonClick,
   testId,
+  removeBorder,
 }) => {
   return (
     <div id={testId}>
@@ -33,21 +35,26 @@ const IconButtons: React.FC<Props> = ({
           return (
             <div
               id={`${testId}-0${index}`}
-              className={classes.IconButtonsWrapper}
+              // className={classes.IconButtonsWrapper}
+              style={{ marginRight: index === list.length - 1 ? 0 : '2rem' }}
               key={index}
               onClick={() => onButtonClick(item, index)}
             >
-              <div
-                style={
-                  selected === index ? { borderBottomColor: "#ff2626" } : {}
-                }
-                className={`${classes.IconButtonsIcon}`}
-              >
+              <div className={`${classes.IconButtonsIcon}`}>
                 <Icon
                   icon={item.icon.name}
                   size={!!item.icon.size ? item.icon.size : 30}
                   color={!!item.icon.color ? item.icon.color : "#ff2626"}
                 />
+                {!removeBorder && (
+                  <div
+                    className={
+                      selected === index
+                        ? `${classes.selectedBtn} ${classes.Btn}`
+                        : classes.Btn
+                    }
+                  ></div>
+                )}
               </div>
               <div className={classes.TextWrapper}>
                 {selected === index ? (

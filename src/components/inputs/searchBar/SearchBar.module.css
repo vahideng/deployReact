@@ -9,6 +9,7 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  outline: none;
 }
 
 .SearchBarContainer {
@@ -244,7 +245,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-bottom: 0.3rem;
   cursor: pointer;
 }
 
@@ -263,6 +263,12 @@
 
 .IconContainer {
   margin-right: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .InputFieldPassword {

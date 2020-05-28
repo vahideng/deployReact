@@ -13,24 +13,42 @@ const CustomCarousel = (props: Props) => {
 
   const RenderDefault = () => {
     const [stateIndex, setStateIndex] = useState(0);
-    const [rightDisable, setRightDisable] = useState(false);
-    const [leftDisable, setLeftDisable] = useState(true);
+    const [rightDisable, setRightDisable] = useState(null);
+    const [leftDisable, setLeftDisable] = useState(null);
+    const [singleItem, setSingleItem] = useState(null);
 
-    const onRightClick = (items: any, index: number) => {
+    const onRightClick = () => {
       setStateIndex(stateIndex + 1);
-      setLeftDisable(false);
-      if (items[0].length - 2 === index) {
-        setRightDisable(!rightDisable);
-      }
     };
 
-    const onLeftClick = (index: number) => {
+    const onLeftClick = () => {
       setStateIndex(stateIndex - 1);
-      setRightDisable(false);
-      if (index === 1) {
-        setLeftDisable(true);
-      }
     };
+    const dataLength = items[0].length;
+    let singleItemClass: string = null;
+    if (singleItem) {
+      singleItemClass = classes.SingleItemClass;
+    }
+
+    useEffect(() => {
+      if (items[0].length - 1 === stateIndex) {
+        setRightDisable(true);
+        setLeftDisable(false);
+      } else if (stateIndex === 0) {
+        setLeftDisable(true);
+        setRightDisable(false);
+      } else {
+        setLeftDisable(false);
+        setRightDisable(false);
+      }
+    }, [stateIndex]);
+
+    useEffect(() => {
+      if (dataLength === 1) {
+        setSingleItem(true);
+      }
+    }, []);
+
     return (
       <>
         <div>
@@ -46,20 +64,20 @@ const CustomCarousel = (props: Props) => {
                     style={
                       leftDisable ? { pointerEvents: "none", opacity: 0.4 } : {}
                     }
-                    onClick={() => onLeftClick(index)}
-                    className={classes.Chevrons}
+                    onClick={onLeftClick}
+                    className={`${classes.Chevrons} ${singleItemClass}`}
                   >
                     <Icon icon="left" color="#FF2626" size={32} />
                   </span>
-                  <div className={classes.Children}>{item.children}</div>
+                  <div className={`${classes.Children} `}>{item.children}</div>
                   <span
                     style={
                       rightDisable
                         ? { pointerEvents: "none", opacity: 0.4 }
                         : {}
                     }
-                    onClick={() => onRightClick(items, index)}
-                    className={classes.Chevrons}
+                    onClick={onRightClick}
+                    className={`${classes.Chevrons} ${singleItemClass}`}
                   >
                     <Icon icon="Right1" color="#FF2626" size={32} />
                   </span>
@@ -68,7 +86,7 @@ const CustomCarousel = (props: Props) => {
             );
           })}
         </div>
-        <div className={classes.CarouselIndicDiv}>
+        <div className={`${classes.CarouselIndicDiv}  ${singleItemClass}`}>
           {items[0].map((_item: any, index: any) => {
             return (
               <span

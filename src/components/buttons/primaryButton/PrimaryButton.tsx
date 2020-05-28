@@ -11,11 +11,14 @@ interface Props {
   buttonColor?: { top: string; bottom: string };
   height?: number | string;
   width?: number | string;
-  onButtonClick: () => void;
+  minWidth?: number | string;
+  onButtonClick?: () => void;
   small?: boolean;
   icon?: { name: string; color: string; size?: number };
   shadowed?: boolean;
-  responsive?:boolean;
+  responsive?: boolean;
+  buttonStyle?: CSSProperties;
+  containerStyle?: CSSProperties;
 }
 
 const PrimaryButton: React.FC<Props> = ({
@@ -24,17 +27,20 @@ const PrimaryButton: React.FC<Props> = ({
   buttonColor,
   titleColor,
   height,
-  width,
+  width = '25rem',
   onButtonClick,
   small,
   icon = { name: "", color: "" },
   shadowed,
   titleStyle,
-  responsive
+  containerStyle,
+  responsive,
+  buttonStyle,
+  minWidth,
 }) => {
   const primaryButton = [classes.PrimaryButton];
-    if (responsive) {
-      primaryButton.push(classes.fluid);
+  if (responsive) {
+    primaryButton.push(classes.fluid);
   }
 
   const buttonBg = !!buttonColor
@@ -42,17 +48,19 @@ const PrimaryButton: React.FC<Props> = ({
     : "";
   const shadow = shadowed ? "0px 4px 9px rgba(0, 0, 0, 0.140925)" : "";
   return !small ? (
-    <div id={testId} className={responsive && classes.fluid}>
+    <div id={testId} className={responsive && classes.fluid} style={containerStyle}>
       <button
         id={`${testId}-0`}
         onClick={onButtonClick}
         className={classes.PrimaryButton}
         style={{
+          height,
+          width,
+          minWidth,
+          maxWidth: responsive ? 'none' : (width || "25rem"),
           background: buttonBg,
-          maxWidth: !!width?width:'18.4375rem',
-          width:"100%",
-          height: height,
           boxShadow: shadow,
+          ...buttonStyle,
         }}
       >
         <div className={classes.IconDiv}>
@@ -75,30 +83,28 @@ const PrimaryButton: React.FC<Props> = ({
       </button>
     </div>
   ) : (
-    <div id={`${testId}-1`}>
-      <button
-        id={testId}
-        onClick={onButtonClick}
-        className={classes.PrimaryButtonSmall}
-        style={{
-          background: buttonBg,
-          width:width,
-          height: height,
-          boxShadow: shadow,
-        }}
-      >
-        <Icon
-          icon={icon.name ? icon.name : "Download"}
-          color={icon.color}
-          size={15}
-        />
-      </button>
-    </div>
-  );
+      <div id={`${testId}-1`}>
+        <button
+          id={testId}
+          onClick={onButtonClick}
+          className={classes.PrimaryButtonSmall}
+          style={{
+            boxShadow: shadow,
+            ...buttonStyle,
+          }}
+        >
+          <Icon
+            icon={icon.name ? icon.name : "Download"}
+            color={icon.color}
+            size={15}
+          />
+        </button>
+      </div>
+    );
 };
 
 PrimaryButton.defaultProps = {
-  responsive : false,
-}
+  responsive: false,
+};
 
 export default PrimaryButton;

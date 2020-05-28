@@ -22,6 +22,10 @@
   padding: 1.25rem;
 }
 
+.ItemContainerSelected {
+  background: #f8f8f8;
+}
+
 .ImageContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -66,4 +70,17 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.SelectedChevron {
+  margin: 0 -1rem 0 0.5rem;
+}
+
+.smallCart {
+  padding: 0 1.25rem;
+}
+
+.smallCartSelected {
+  background: #f8f8f8;
+  padding: 0.5rem 1.25rem;
 }

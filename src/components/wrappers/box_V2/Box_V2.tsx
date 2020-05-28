@@ -20,6 +20,7 @@ interface Props {
   rightTitle?: string;
   boxChildren?: ReactNode;
   darkShadow?: boolean;
+  hideButton?: boolean;
 }
 
 const Box_V2: React.FC<Props> = ({
@@ -39,18 +40,17 @@ const Box_V2: React.FC<Props> = ({
   boxChildren,
   responsive,
   darkShadow,
+  hideButton,
 }) => {
-  let containerCls = classes.BoxMainDiv
+  let containerCls = classes.BoxMainDiv;
   if (responsive) {
-    containerCls = `${containerCls} ${classes.BoxMainDivFlexible}`
+    containerCls = `${containerCls} ${classes.BoxMainDivFlexible}`;
   }
   if (darkShadow) {
-    containerCls = `${containerCls} ${classes.DarkShadow}`
+    containerCls = `${containerCls} ${classes.DarkShadow}`;
   }
   return (
-    <div
-      className={containerCls}
-    >
+    <div className={containerCls}>
       {!!content && (
         <div className={classes.Container}>
           <AMTabs
@@ -58,11 +58,16 @@ const Box_V2: React.FC<Props> = ({
             defaultIndex={tabIndex}
             titles={tabTitles ? tabTitles : []}
             contents={content ? content : []}
+            titlesStyle={{ borderBottomColor: "transparent" }}
+            smallTab={true}
           />
         </div>
       )}
       {!!boxChildren && <div>{boxChildren}</div>}
-      <div className={classes.Wrapper}>
+      <div
+        className={classes.Wrapper}
+        style={hideButton ? { display: "none" } : {}}
+      >
         <FullButton
           title={title}
           split={split}

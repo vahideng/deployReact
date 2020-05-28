@@ -39,12 +39,13 @@ interface Props {
   disabled?: boolean;
   minLength?: number;
   maxLength?: number;
+  onBlurDropdown?: () => void;
   onBlur?: (event: FormEvent) => void;
   onFocus?: (event: FormEvent) => void;
   inputClickHandler?: () => void;
   max?: string;
   placeholder?: string;
-  containerStyle?: CSSProperties
+  containerStyle?: CSSProperties;
 }
 
 class AmDropdown extends Component<Props, {}> {
@@ -63,6 +64,23 @@ class AmDropdown extends Component<Props, {}> {
     // }
   };
 
+  outSideClickHandler = (e: any) => {
+    //@ts-ignore
+    if (this.node.contains(e.target)) {
+      console.log("click-inside");
+    } else {
+      if (typeof this.props.onBlurDropdown === "function")
+        this.props.onBlurDropdown();
+    }
+  };
+
+  componentWillMount() {
+    document.addEventListener("mousedown", this.outSideClickHandler, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.outSideClickHandler, false);
+  }
   render() {
     const {
       dropdownData,
@@ -81,6 +99,7 @@ class AmDropdown extends Component<Props, {}> {
       minLength,
       maxLength,
       onBlur,
+
       onFocus,
       disabled,
       showDropdown,
@@ -125,7 +144,6 @@ class AmDropdown extends Component<Props, {}> {
       } else if (dropdownBackground) {
         return { backgroundColor: dropdownBackground };
       } else if (max) {
-        
         return { maxHeight: `${max}` };
       } else {
         return {
@@ -135,7 +153,14 @@ class AmDropdown extends Component<Props, {}> {
       }
     };
     return (
-      <div className={classes.Container} style={containerStyle}>
+      //@ts-ignore
+      <div ref={(node) => (this.node = node)}
+        className={classes.Container}
+        style={{
+          ...containerStyle,
+          maxWidth: tacInput ? "34.81rem" : "31.6rem",
+        }}
+      >
         <div className={classes.InputFieldMain}>
           {!!label && (
             <B_13_BLACK className={classes.InputFieldLabel}>{label}</B_13_BLACK>
@@ -191,11 +216,11 @@ class AmDropdown extends Component<Props, {}> {
               >
                 {!showDropdown ? (
                   <span className={classes.TextDropdownIcons}>
-                    <Icon icon="arrowDown" size={18} color={"#000000"} />
+                    <Icon icon="arrowDown" size={16} color={"#000000"} />
                   </span>
                 ) : (
                   <span className={classes.TextDropdownIcons}>
-                    <Icon icon="arrowUp" size={18} color={"#000000"} />
+                    <Icon icon="arrowUp" size={16} color={"#000000"} />
                   </span>
                 )}
               </span>
@@ -217,7 +242,6 @@ class AmDropdown extends Component<Props, {}> {
                 })}
             </div>
           ) : null}
-
           {!!notValid && (
             <div className={classes.InputFieldError}>
               <InlineMessage

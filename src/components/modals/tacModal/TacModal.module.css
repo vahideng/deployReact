@@ -6,6 +6,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding-top: 1rem;
+  min-height: 9.5rem;
 }
 
 .TacMainInnerDiv {
@@ -17,17 +18,6 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 55.25rem;
-}
-
-@media (max-width: 576px) {
-  .TacMainInnerDiv {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    min-height: 11rem;
-    width: 100%;
-  }
 }
 
 .TacMainInnerDivRes {
@@ -53,15 +43,15 @@
 }
 
 .TacButtonRes {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 2rem;
+  margin-top: 1.7rem;
   margin-right: 2.5rem;
 }
 
 @media (max-width: 576px) {
   .TacButtonRes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -131,7 +121,7 @@
 }
 
 .TacInputFieldContent {
-  width: 38rem;
+  width: 27.5rem;
   padding-top: 1rem;
   padding-left: 1.3rem;
 }

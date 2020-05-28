@@ -4,25 +4,28 @@ import Paragraphs from "../../assets/typography";
 import Tooltip from "src/components/tooltip/Tooltip";
 import Icon from "src/components/assets/icons/icon";
 import StatusIcon from "src/components/assets/icons/statusIcon/StatusIcon";
-import { Row } from "react-bootstrap";
+
 const { B_14_WHITE, B_15_ORANGE_463, B_24_BLACK, R_15_BLACK } = Paragraphs;
 
 interface Props {
   testId?: string;
   responsive?: boolean;
+  childrenWrapperStyle?: CSSProperties;
   statusIcon?: {
     testId?: string;
     iconColor: {
       top: string;
       bottom: string;
     };
-    icon?: any;
-    image?: any;
+    icon?: { name?: string; color?: string; size?: number };
+    outerIconColor?: string;
+    image?: { src: string; alt?: string };
   };
   headerText?: string;
   headerSubText?: string;
   headerTimeStamp?: string;
   label?: string;
+  onBlur?: () => void;
   rightLabel?: {
     onClick?: () => void;
     style?: CSSProperties;
@@ -31,8 +34,8 @@ interface Props {
   tooltip?: ReactNode;
   children?: ReactNode;
   disabled?: boolean;
-  onTooltipClicked ?: ()=> void
-  showTooltip ?: boolean;
+  onTooltipClicked?: () => void;
+  showTooltip?: boolean;
 }
 
 const FormContainer: React.FC<Props> = ({
@@ -48,25 +51,27 @@ const FormContainer: React.FC<Props> = ({
   disabled = false,
   responsive,
   onTooltipClicked,
-  showTooltip
+  showTooltip,
+  onBlur,
+  childrenWrapperStyle,
 }) => {
   const rightLabelPointer: CSSProperties =
     rightLabel !== undefined && rightLabel.onClick !== undefined
       ? { cursor: "pointer" }
       : {};
 
- const disabledStyle: CSSProperties = disabled && { opacity: 0.5, position: "relative" } || {};
+  const disabledStyle: CSSProperties =
+    (disabled && { opacity: 0.5, position: "relative" }) || {};
 
   let mainContainerCls = classes.FormContainerMain;
   let iconContainerCls = classes.FormContainerIconWrap;
-  let FormContainerContent = [classes.FormContainerContent]
+  let FormContainerContent = [classes.FormContainerContent];
   if (responsive) {
     mainContainerCls = `${mainContainerCls} ${classes.FormContainerMainResponsive}`;
     iconContainerCls = `${iconContainerCls} ${classes.FormContainerIconWrapResponsive}`;
-    FormContainerContent.push(classes.FormContainerContentResponsive) 
+    FormContainerContent.push(classes.FormContainerContentResponsive);
   }
-  
- 
+
   return (
     <div style={disabledStyle}>
       {disabled && <div className={classes.Overlay}></div>}
@@ -75,12 +80,13 @@ const FormContainer: React.FC<Props> = ({
           <span className={classes.FormContainerStatusIcon}>
             <StatusIcon
               testId={statusIcon.testId}
-              icon={!!statusIcon ? statusIcon.icon : ""}
+              icon={statusIcon.icon && statusIcon.icon}
               iconColor={{
                 top: statusIcon.iconColor.top,
-                bottom: statusIcon.iconColor.bottom
+                bottom: statusIcon.iconColor.bottom,
               }}
-              image={!!statusIcon ? statusIcon.image : ""}
+              image={!!statusIcon.image && statusIcon.image}
+              outerIconColor={statusIcon.outerIconColor}
             />
           </span>
           <span>
@@ -89,7 +95,7 @@ const FormContainer: React.FC<Props> = ({
               color={"#FFFFFF"}
               size={58}
               style={{
-                width: !responsive ? "36.31rem" : "100%"
+                width: !responsive ? "36.31rem" : "100%",
               }}
             />
           </span>
@@ -102,10 +108,10 @@ const FormContainer: React.FC<Props> = ({
           !statusIcon
             ? { borderRadius: "1rem" }
             : {
-                width: !responsive ? "36.31rem" : "100%",
-                borderTopLeftRadius: 0,
-                borderTopRightRadius: 0
-              }
+              width: !responsive ? "36.31rem" : "100%",
+              borderTopLeftRadius: 0,
+              borderTopRightRadius: 0,
+            }
         }
       >
         {
@@ -123,20 +129,19 @@ const FormContainer: React.FC<Props> = ({
         }
         {!!label && (
           <div className={classes.FormContainerLabel} id={`${testId}-0`}>
-            <Row className={classes.LeftLabel}>
+            <div className={classes.LeftLabel}>
               <B_14_WHITE>{label}</B_14_WHITE>
               {!!tooltip && (
-                <span className={classes.FormContainerTooltip}>
-                  <Tooltip
-                  showTooltip ={showTooltip}
+                <Tooltip
+                  onBlur={onBlur}
+                  showTooltip={showTooltip}
                   onTooltipClicked={onTooltipClicked}
-                    tipChildren={tooltip}
-                    color="#FFFFFF"
-                    testId={`${testId}-1`}
-                  />
-                </span>
+                  tipChildren={tooltip}
+                  color="#FFFFFF"
+                  testId={`${testId}-1`}
+                />
               )}
-            </Row>
+            </div>
             {rightLabel === undefined ? null : (
               <B_15_ORANGE_463
                 onClick={rightLabel.onClick}
@@ -144,13 +149,17 @@ const FormContainer: React.FC<Props> = ({
               >
                 {rightLabel.label}
               </B_15_ORANGE_463>
-             
             )}
           </div>
         )}
 
         <div className={classes.FormContainerCurve} id={testId}>
-          <div className={FormContainerContent.join(" ")}>{children}</div>
+          <div
+            className={FormContainerContent.join(" ")}
+            style={childrenWrapperStyle}
+          >
+            {children}
+          </div>
         </div>
       </div>
     </div>

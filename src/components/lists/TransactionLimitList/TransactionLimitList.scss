@@ -1,3 +1,5 @@
+@import "../../assets/common/common.scss";
+
 .ListContainer {
   padding: 1.5rem;
 }
@@ -13,6 +15,9 @@
   justify-content: space-between;
   margin-bottom: 1rem;
   padding: 1.25rem;
+}
+.ItemContainerSelected {
+  background: $white8F8;
 }
 .ImageContainer {
   display: flex;
@@ -41,4 +46,14 @@
 .rightLabelDiv {
   display: flex;
   align-items: center;
+}
+.SelectedChevron {
+  margin: 0 -1rem 0 0.5rem;
+}
+.smallCart {
+  padding: 0 1.25rem;
+}
+.smallCartSelected {
+  background: $white8F8;
+  padding: 0.5rem 1.25rem;
 }

@@ -1,12 +1,15 @@
 @import "../assets/common/common.scss";
+@import "../assets/common/flex.scss";
 
 .Icon {
   cursor: pointer;
 }
+
 .MainDiv {
   position: relative;
   width: 2rem;
 }
+
 .BoxDiv {
   position: absolute;
   right: 1rem;
@@ -17,22 +20,15 @@
   z-index: 100;
   background-color: #ffffff;
   box-shadow: $mainBoxShadow;
-}
-.ButtonDiv {
-  display: flex;
-  align-items: center;
+  overflow: hidden;
 }
 
-.ButtonIconText {
-  display: flex;
-  font-family: "Nunito Sans";
-  align-items: center;
-  margin: 1px;
-  color: #444444;
-  font-weight: 700;
+.Button {
+  @extend .FlexCenter;
+  @extend .FlexLeft;
   width: 100%;
-  padding: 1rem;
-  background-color: #ffffff;
+  padding: 0.8125rem 1.25rem 0.8125rem 1.25rem;
+  background-color: #fff;
   border: none;
   outline: none;
   cursor: pointer;

@@ -8,6 +8,7 @@ interface Props {
   testId?: string;
   selected?: number;
   tipChildren?: any;
+  onBlur ?: ()=> void;
   divider?: number;
   showTooltip ?: boolean;
   onTooltipClicked ?: ()=> void;
@@ -25,6 +26,7 @@ const DetailListMonthly: React.FC<Props> = ({
   tipChildren,
   testId,
   divider,
+  onBlur,
   showTooltip,
   onTooltipClicked
 }) => {
@@ -74,7 +76,7 @@ const DetailListMonthly: React.FC<Props> = ({
           );
         })}
       <div className={classes.DetailListMonthTopTool}>
-        {!!tipChildren && <Tooltip showTooltip={showTooltip} onTooltipClicked={onTooltipClicked} tipChildren={tipChildren} />}
+        {!!tipChildren && <Tooltip onBlur={onBlur} showTooltip={showTooltip} onTooltipClicked={onTooltipClicked} tipChildren={tipChildren} />}
       </div>
 
       {!!list &&

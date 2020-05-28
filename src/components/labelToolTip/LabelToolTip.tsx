@@ -12,8 +12,10 @@ interface Props {
   label: string;
   labelStyle?: CSSProperties;
   spaceBetween?: boolean;
-  showTooltip ?: boolean;
-  onTooltipClicked ?: () => void
+  showTooltip?: boolean;
+  onTooltipClicked?: () => void;
+  onBlur?: () => void;
+  tipSize?: number;
 }
 
 const LabelToolTip: React.FC<Props> = ({
@@ -22,7 +24,9 @@ const LabelToolTip: React.FC<Props> = ({
   labelStyle,
   spaceBetween,
   showTooltip,
-  onTooltipClicked
+  onTooltipClicked,
+  onBlur,
+  tipSize,
 }) => {
   return (
     <div
@@ -32,14 +36,14 @@ const LabelToolTip: React.FC<Props> = ({
       <div className={classes.toolTipLabel}>
         <B_16_BLACK style={labelStyle ? labelStyle : {}}>{label}</B_16_BLACK>
       </div>
-      <div>
-        <Tooltip
-        onTooltipClicked ={onTooltipClicked}
-          showTooltip ={showTooltip}
-          testId={tooltipData.testId}
-          tipChildren={tooltipData.tipChildren}
-        />
-      </div>
+      <Tooltip
+        onBlur={onBlur}
+        onTooltipClicked={onTooltipClicked}
+        showTooltip={showTooltip}
+        testId={tooltipData.testId}
+        tipChildren={tooltipData.tipChildren}
+        tipSize={tipSize}
+      />
     </div>
   );
 };

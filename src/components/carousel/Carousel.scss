@@ -25,22 +25,23 @@
 .CarouselItem {
   display: flex;
   overflow: hidden;
-
 }
-  .Chevrons {
-    cursor: pointer;
-    align-self: center;
-    padding: 1rem;
-  }
-  .Children {
-    width: 100%;
-    animation: Children 0.4s ease-in-out;
-    position: relative;
-  }
-  .ChildrenWide {
-    width: 100%;
-    position: relative;
-  
+.Chevrons {
+  cursor: pointer;
+  align-self: center;
+  padding: 1rem;
+}
+.SingleItemClass {
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+.Children {
+  width: 100%;
+  position: relative;
+}
+.ChildrenWide {
+  width: 100%;
+  position: relative;
 }
 
 .leftAnimation {
@@ -62,21 +63,4 @@
   z-index: 11;
   transition: background 0.5s ease-in-out, border 1s ease-in-out;
   cursor: pointer;
-}
-
-@keyframes Children {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 0;
-  }
-}
-@keyframes leftAnimation {
-  0% {
-    right: -100%;
-  }
-  100% {
-    right: 0;
-  }
 }

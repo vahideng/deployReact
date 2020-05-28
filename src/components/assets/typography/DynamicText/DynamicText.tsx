@@ -23,7 +23,6 @@ const DynamicText = ({
       <R_15_BLACK style={textStyle} id={testId}>
         {text}
         <strong style={inlineTextStyle}>
-          {" "}
           {counter} {inlineText}
         </strong>
       </R_15_BLACK>

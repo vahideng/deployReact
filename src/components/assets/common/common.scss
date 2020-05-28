@@ -9,6 +9,7 @@ $greyF6F: #f6f6f3;
 $greyEAE: #eae9e3;
 $greyD8D: #d8d8d8;
 $white7F7: #f7f7f7;
+$white8F8: #f8f8f8;
 $green03e: #36a03e;
 $green988: #81d988;
 $blue269: #2694eb;
@@ -20,9 +21,11 @@ $darkBoxShadow: 0px 0px 3px rgba(0, 0, 0, 0.129726),
   0px 4px 7px rgba(0, 0, 0, 0.11574);
 
 %truncatedText {
-  text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 $HorizontalPadding: 0 18vw;

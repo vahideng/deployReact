@@ -3,6 +3,7 @@ import classes from "./Box.module.css";
 import AMTabs from "src/components/buttons/tabs/Tabs";
 import FullButton from "src/components/buttons/fullButton/FullButton";
 interface Props {
+  responsive?: boolean;
   content: any;
   fullButton?: boolean;
   onSelect?: any;
@@ -36,10 +37,15 @@ const Box: React.FC<Props> = ({
   leftTitleStyle,
   rightTitleStyle,
   onRightButton,
-  buttonColor
+  buttonColor,
+  responsive,
 }) => {
+  let containerCls = classes.BoxMainDiv;
+  if (responsive) {
+    containerCls = `${containerCls} ${classes.BoxMainDivFlexible}`;
+  }
   return (
-    <div className={classes.BoxMainDiv}>
+    <div className={containerCls}>
       <div className={classes.Container}>
         <AMTabs
           onSelect={onSelect}
