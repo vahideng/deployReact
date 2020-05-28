@@ -786,7 +786,7 @@ const Sprint3: React.FC<Props> = () => {
               //   />
               // ), // change
               expandable: true, // change false
-              expandableStatus : true,
+              expandableStatus: true,
               expandableContent: (
                 <>
                   <InputField
@@ -867,8 +867,8 @@ const Sprint3: React.FC<Props> = () => {
               bold: true, // chang false
               onListClick: (e: any) => {
 
-                    console.log(e, "item clicked");
-                    
+                console.log(e, "item clicked");
+
                 // window.alert(`clicked on item ${item.label}`);
                 // window.alert(`ITEM NAME:::: ${item.label}`)
               },
@@ -881,7 +881,7 @@ const Sprint3: React.FC<Props> = () => {
               //   />
               // ), // change
               expandable: true, // change false
-              expandableStatus : false,
+              expandableStatus: false,
               expandableContent: (
                 <>
                   <InputField
@@ -1994,7 +1994,7 @@ const Sprint3: React.FC<Props> = () => {
           title="Inactive IDs"
           list={[
             {
-              leftIcon: { name: "Mobile", size: 35 }, // example here
+              // leftIcon: { name: "Mobile", size: 35 }, // example here
               leftImage:
                 "https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80",
               boldText: "Mobile Number ••••••4546",
@@ -2144,7 +2144,7 @@ const Sprint3: React.FC<Props> = () => {
         <LabelToolTip
           onBlur={() => console.log("onBlur")}
           spaceBetween={true}
-          showTooltip={true}
+          showTooltip={false}
           label="Select your proffered account to send and received money"
           labelStyle={{ color: "#444444", fontWeight: 400 }}
           tooltipData={{
@@ -2160,69 +2160,64 @@ const Sprint3: React.FC<Props> = () => {
         />
       </div>
       <Title>
-        PayBillList using (FormContainer and List component)and Line
+        Responsive FormContainer and List
       </Title>
-      <div
-        style={{
-          margin: "0 auto",
-          padding: 4,
-          width: "50%",
-        }}
-      >
-        <FormContainer
-          children={
-            <List
-              header={{
-                icon: {
-                  name: "LOGO",
-                  color: "#ff2626",
-                  iconText: "Review & Confirm",
+      <FormContainer
+        responsive={true}
+        children={
+          <List
+            responsive={true}
+            header={{
+              icon: {
+                name: "LOGO",
+                color: "#ff2626",
+                iconText: "Review & Confirm",
+              },
+            }}
+            list={[
+              {
+                leftLabel: "To",
+                rightLabel: "Saving Account A",
+                approved: true,
+                details: ["8881019596535 | AmBank"],
+                amount: {
+                  content: "Dynamic",
+                  styleContent: {},
+                  value: "600RM",
+                  styleValue: {},
                 },
-              }}
-              list={[
-                {
-                  leftLabel: "To",
-                  rightLabel: "Saving Account A",
-                  approved: true,
-                  details: ["8881019596535 | AmBank"],
-                  amount: {
-                    content: "Dynamic",
-                    styleContent: {},
-                    value: "600RM",
-                    styleValue: {},
-                  },
-                },
+              },
 
-                {
-                  leftLabel: "Date",
-                  rightLabel: "Transfer Now",
-                  details: ["Today, 5 January 2019"],
-                },
+              {
+                leftLabel: "Date",
+                rightLabel: "Transfer Now",
+                details: ["Today, 5 January 2019"],
+              },
 
-                {
-                  leftLabel: "From",
-                  rightLabel: "Savings Account",
-                  details: ["2998202013", "Available Balance: RM 10,301.50", "Available Balance: RM 10,301.50"],
-                  status: {
-                    content: "UNSUCCESSFUL",
-                    color: "red",
-                  },
-                  bottomText: {
-                    content: "Change Account",
-                    onClick: () => alert("Change account"),
-                    style: { backgroundColor: "#dedede", padding: ".5rem" },
-                  },
-                  lefSubText: {
-                    content: "lefSubText",
-
-                    style: { color: "red" },
-                  },
+              {
+                leftLabel: "From",
+                rightLabel: "Savings Account",
+                details: ["2998202013", "Available Balance: RM 10,301.50", "Available Balance: RM 10,301.50"],
+                status: {
+                  content: "UNSUCCESSFUL",
+                  color: "red",
                 },
-              ]}
-            />
-          }
-        />
-      </div>
+                bottomText: {
+                  content: "Change Account",
+                  onClick: () => alert("Change account"),
+                  style: { backgroundColor: "#dedede", padding: ".5rem" },
+                },
+                lefSubText: {
+                  content: "lefSubText",
+
+                  style: { color: "red" },
+                },
+              },
+            ]}
+          />
+        }
+      />
+
       <Title>PaymentBox (Using FormContainer component)</Title>
       <div
         style={{
