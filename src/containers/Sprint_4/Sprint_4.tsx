@@ -98,7 +98,7 @@ const Sprint4: React.FC<Props> = () => {
   const [rateType, setRateType] = useState("test_value3");
   const [isViewRateModalOpen, setIsViewRateModalOpen] = useState(false);
 
-  const [formValue, setFormValue] = useState("");
+  const [formValue, setFormValue] = useState("2121212");
   if (sprint1 === true) {
     return <Redirect to="/sprint-1" />;
   }
