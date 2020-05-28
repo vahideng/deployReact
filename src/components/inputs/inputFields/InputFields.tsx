@@ -121,6 +121,14 @@ class InputField extends Component<Props, {}> {
       inputClasses = `${classes.InputFieldIconDiv} ${classes.DisabledInput}`;
     }
     
+    if (navigator.userAgent.indexOf("Firefox") != -1) {
+
+
+      inputStyle.push(classes.FireFox)
+      console.log("firefox");
+      
+     
+      }
 
     
     return (

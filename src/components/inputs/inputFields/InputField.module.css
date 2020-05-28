@@ -86,10 +86,15 @@
 }
 
 .Password {
-  font-family: "text-security-disc" !important;
+  font-family: dotsfont;
+  /* Use -webkit-text-security if the browser supports it */
+  -webkit-text-security: disc !important;
   font-size: 1.2rem !important;
   letter-spacing: 1px;
-  -webkit-text-security: disc !important;
+}
+
+.FireFox {
+  font-size: 8px !important;
 }
 
 .InputFieldIconDiv input:focus {

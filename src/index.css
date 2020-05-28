@@ -18,3 +18,17 @@ code {
   font-family: "Nunito Sans", sans-serif source-code-pro, Menlo, Monaco,
     Consolas, "Courier New", monospace;
 }
+
+
+@font-face {
+  font-family: 'dotsfont';
+  src: url('./assets//fonts//dotsfont.eot');
+  src: url('./assets/fonts/dotsfont.eot?#iefix') format('embedded-opentype'),
+       url('./assets/fonts/dotsfont.woff') format('woff'),
+       url('./assets/fonts/dotsfont.ttf') format('truetype'),
+       url('./assets/fonts/dotsfont.svg#dotsfontregular') format('svg');
+}
+
+[conceal]:not(:active):not(:focus) {
+  font-family: 'dotsfont';
+}
