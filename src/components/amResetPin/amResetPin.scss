@@ -1,6 +1,6 @@
-.mainContainer{
+  .mainContainer{
   position: absolute;
-  width: 14.375rem;
+  width: 15rem;
   height: 19rem;
   background: #474747;
   border: 0.5px solid #DEDEDE;
@@ -59,4 +59,5 @@
   flex-direction: row;
   margin-top: 0.825rem;
   justify-content: flex-end;
+  margin-right: 0.6rem;
 }
