@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/testAmbank/precache-manifest.ac364e401223404d2cc066bcf7455d2d.js"
+  "/testAmbank/precache-manifest.83770af9a174804f5d1894930d640ea4.js"
 );
 
 self.addEventListener('message', (event) => {

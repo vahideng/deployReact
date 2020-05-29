@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/testAmbank/static/css/main.60d8660f.chunk.css",
-    "main.js": "/testAmbank/static/js/main.22e4b2ab.chunk.js",
-    "main.js.map": "/testAmbank/static/js/main.22e4b2ab.chunk.js.map",
+    "main.css": "/testAmbank/static/css/main.52a89aa5.chunk.css",
+    "main.js": "/testAmbank/static/js/main.b822996f.chunk.js",
+    "main.js.map": "/testAmbank/static/js/main.b822996f.chunk.js.map",
     "runtime-main.js": "/testAmbank/static/js/runtime-main.ab793848.js",
     "runtime-main.js.map": "/testAmbank/static/js/runtime-main.ab793848.js.map",
     "static/css/2.5030c15d.chunk.css": "/testAmbank/static/css/2.5030c15d.chunk.css",
-    "static/js/2.c214fb70.chunk.js": "/testAmbank/static/js/2.c214fb70.chunk.js",
-    "static/js/2.c214fb70.chunk.js.map": "/testAmbank/static/js/2.c214fb70.chunk.js.map",
+    "static/js/2.b0686e77.chunk.js": "/testAmbank/static/js/2.b0686e77.chunk.js",
+    "static/js/2.b0686e77.chunk.js.map": "/testAmbank/static/js/2.b0686e77.chunk.js.map",
     "index.html": "/testAmbank/index.html",
-    "precache-manifest.ac364e401223404d2cc066bcf7455d2d.js": "/testAmbank/precache-manifest.ac364e401223404d2cc066bcf7455d2d.js",
+    "precache-manifest.83770af9a174804f5d1894930d640ea4.js": "/testAmbank/precache-manifest.83770af9a174804f5d1894930d640ea4.js",
     "service-worker.js": "/testAmbank/service-worker.js",
     "static/css/2.5030c15d.chunk.css.map": "/testAmbank/static/css/2.5030c15d.chunk.css.map",
-    "static/css/main.60d8660f.chunk.css.map": "/testAmbank/static/css/main.60d8660f.chunk.css.map",
-    "static/js/2.c214fb70.chunk.js.LICENSE": "/testAmbank/static/js/2.c214fb70.chunk.js.LICENSE",
+    "static/css/main.52a89aa5.chunk.css.map": "/testAmbank/static/css/main.52a89aa5.chunk.css.map",
+    "static/js/2.b0686e77.chunk.js.LICENSE": "/testAmbank/static/js/2.b0686e77.chunk.js.LICENSE",
     "static/media/ATM.png": "/testAmbank/static/media/ATM.67256f81.png",
     "static/media/Google-Chrome.png": "/testAmbank/static/media/Google-Chrome.deb48869.png",
     "static/media/MasterCardFooter.png": "/testAmbank/static/media/MasterCardFooter.c78d29f7.png",
@@ -32,14 +32,13 @@
     "static/media/profilePic.png": "/testAmbank/static/media/profilePic.aca8548c.png",
     "static/media/redirect-bg.png": "/testAmbank/static/media/redirect-bg.38cf459a.png",
     "static/media/sad-amy.png": "/testAmbank/static/media/sad-amy.d5439a89.png",
-    "static/media/secure-image.png": "/testAmbank/static/media/secure-image.ee12471a.png",
-    "static/media/slider.png": "/testAmbank/static/media/slider.b63a09ca.png"
+    "static/media/secure-image.png": "/testAmbank/static/media/secure-image.ee12471a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ab793848.js",
     "static/css/2.5030c15d.chunk.css",
-    "static/js/2.c214fb70.chunk.js",
-    "static/css/main.60d8660f.chunk.css",
-    "static/js/main.22e4b2ab.chunk.js"
+    "static/js/2.b0686e77.chunk.js",
+    "static/css/main.52a89aa5.chunk.css",
+    "static/js/main.b822996f.chunk.js"
   ]
 }

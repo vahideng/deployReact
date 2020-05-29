@@ -12,7 +12,7 @@ import NotSupportedPage from "./components/NotSupportedPage/NotSupportedPage";
 import TextButton from "src/components/buttons/textButton/TextButton";
 import assets from "src/assets/index";
 
-import NodeModule from "./containers/nodeMoudleTest";
+// import NodeModule from "./containers/nodeMoudleTest";
 const App: React.FC = () => {
   return (
     <Router>
@@ -32,9 +32,9 @@ const App: React.FC = () => {
         <Route path="/sprint-4" exact>
           <Sprint4 />
         </Route>
-        <Route path="/NodeModule" exact>
+        {/* <Route path="/NodeModule" exact>
           <NodeModule />
-        </Route>
+        </Route> */}
 
         <Route path="/codeSnippet" exact>
           <CodeSnippetFromCV />
