@@ -2,7 +2,7 @@
   "name": "amonline-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://vahideng.github.io/testAmbank",
+  "homepage": "http://vahideng.github.io/deployReact",
   "dependencies": {
     "@redux-saga/types": "1.1.0",
     "@testing-library/jest-dom": "4.2.4",
