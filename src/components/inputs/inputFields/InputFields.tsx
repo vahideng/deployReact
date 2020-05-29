@@ -11,6 +11,11 @@ import classes from "./InputField.module.css";
 import Icon from "src/components/assets/icons/icon";
 import InlineMessage from "src/components/infographic/inlineMessage/InlineMessage";
 import Tooltip from "src/components/tooltip/Tooltip";
+
+import parser from 'ua-parser-js'
+
+
+
 const { B_13_BLACK, R_13_GREY444 } = Paragraphs;
 interface Props {
   responsive?: boolean;
@@ -105,11 +110,19 @@ class InputField extends Component<Props, {}> {
       }
     }
 
+//@ts-ignore
+    const result = parser.UAParser();
+   const browserName = result.browser.name
+   const browserVersion = result.browser.major
+   const browserOS = result.os.name
+
+   console.log("this app is running on =>> ",browserName,browserVersion,browserOS);
+ // || (browserName === "Edge" && browserVersion <70
     function getInputType() {
       switch (type) {
         case 'password':
           inputStyle.push(classes.Password)
-          if (navigator.userAgent.indexOf("Firefox") != -1) {
+          if (navigator.userAgent.indexOf("Firefox") != -1 ||(browserName === "Edge" && browserVersion <70) && browserOS ==="windows" )  {
 
 
             inputStyle.push(classes.FireFox)
